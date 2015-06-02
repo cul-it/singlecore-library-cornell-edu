@@ -1,5 +1,4 @@
 # -*- encoding : utf-8 -*-
-require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
 
@@ -8,18 +7,18 @@ class CatalogController < ApplicationController
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = { 
-      :qt => 'get',
+      :qt => 'search',
       :qf => 'id Village_s Founder_t Senechal_t Date_i Date_Founded_s Image_View_Description Market_Square_Details_t Plan_and_Site_Details_t Special_Features_t Deity_Central_Figure_t Inscription_s',
       :rows => 10,
       :fl => '*,score',
-      :defType => 'dismax',
+      :defType => 'edismax',
 
  
     }
     
 
     # solr path which will be added to solr base url before the other solr params.
-    config.solr_path = 'select' 
+    #config.solr_path = 'select' 
     
     # items to show per page, each number in the array represent another option to choose from.
     #config.per_page = [10,20,50,100]
@@ -62,10 +61,10 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
-    config.add_facet_field 'Village_s', :label => 'Village', :sort => 'count', :limit => 5, solr_params: { 'facet.mincount' => 1 }
-    config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => 5, solr_params: { 'facet.mincount' => 1 }
-    config.add_facet_field 'Founder_t', :label => 'Founder', :sort => 'count', :limit => 5, solr_params: { 'facet.mincount' => 1 }
-    config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count', :limit => 5, solr_params: { 'facet.mincount' => 1 }
+    config.add_facet_field 'Village_s', :label => 'Village', :sort => 'count'
+    config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count'
+    config.add_facet_field 'Founder_t', :label => 'Founder', :sort => 'count'
+    config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count'
 
 
     #config.add_facet_field 'subject_topic_facet', :label => 'Topic', :limit => 20 
