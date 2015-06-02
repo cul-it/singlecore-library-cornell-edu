@@ -3,7 +3,7 @@
 
 .cornell-identity {
 	.container {
-		background: $cornell-red;
+		background: $cornell-black;
 	}
 	button {
 		i {
@@ -16,10 +16,10 @@
 // ------------------- //
 .brand {
 	text-transform: uppercase;
-	font-size: 40px;
+	font-size: 36px;
 	font-family: $font-family-cul;
 	display: block;
-	color: $graphite;
+	color: $orange;
 	line-height: 1em;
 }
 .brand:hover, .brand:active, .brand:focus {
@@ -27,7 +27,7 @@
 	text-decoration: none;
 }
 .cul-brand {
-	color: $light-gray;
+	color: $cornell-black;
 	font-size: 18px;
 	font-family: $font-family-cul;
 	display: block;
