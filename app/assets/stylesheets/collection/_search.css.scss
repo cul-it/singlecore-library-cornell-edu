@@ -5,3 +5,16 @@
 	background: $pale-gray;
 	padding: .5em 0;
 }
+.btn-search {
+	background: inherit;
+	.glyphicon {
+		color: $orange;
+		font-size: 24px;
+	}
+}
+.search-group {
+	width: 70%;
+	.search_q {
+		width: 100%;
+	}
+}

@@ -2,5 +2,15 @@
 // --------------- //
 .panel-group .panel {
 	border-radius: 0;
-	
+
+}
+
+.panel-default > .panel-heading {
+	background: inherit;
+}
+.panel {
+	box-shadow: none;
+}
+.panel-heading.collapse-toggle .panel-title:after {
+	color: $orange; // chevron icon
 }
