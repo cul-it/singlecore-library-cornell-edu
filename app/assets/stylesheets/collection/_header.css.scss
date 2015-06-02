@@ -23,7 +23,7 @@
 	line-height: 1em;
 }
 .brand:hover, .brand:active, .brand:focus {
-	color: inherit;
+	color: $orange;
 	text-decoration: none;
 }
 .cul-brand {
@@ -34,7 +34,7 @@
 	margin-left: 4px;
 }
 .cul-brand:hover {
-	color: $pale-gray;
+	color: inherit;
 	text-decoration: none;
 }
 

@@ -14,3 +14,8 @@
 .panel-heading.collapse-toggle .panel-title:after {
 	color: $orange; // chevron icon
 }
+.remove:hover {
+	background: $orange !important;
+	color: white;
+	box-shadow: none;
+}
