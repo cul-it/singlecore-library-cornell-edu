@@ -16,15 +16,15 @@ a:hover {
 }
 
 // Add underlines to links in main content area
-.main-content,
+#content,
 footer {
 	a {
-		border-bottom: 1px dotted $light-gray;
+		border-bottom: 1px dotted $footer-gray;
 	}
 	a:hover,
 	a:active,
 	a:focus {
-		border-bottom: 1px solid $light-gray;
+		border-bottom: 1px solid $footer-gray;
 		text-decoration: none;
 	}
 }
