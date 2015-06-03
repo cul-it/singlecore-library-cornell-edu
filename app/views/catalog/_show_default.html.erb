@@ -2,7 +2,10 @@
 <% if render_document_show_field_value :document => document, :field => "Media_URL_s" %>
 	<div class="document-image">
 		<img id="zoom_01" class="img-responsive" src='<%= render_document_show_field_value :document => document, :field => "Media_URL_s" %>' /> 
-		<script>$("#zoom_01").elevateZoom();</script>
+		<script>
+			$("#zoom_01").elevateZoom({ zoomType: "inner", cursor: "crosshair" });
+		</script>
+		<p class="text-muted text-center"><small>Mouse over image to zoom</small></p>
 	</div>
 <% end %>
 <dl class="dl-horizontal  dl-invert">
