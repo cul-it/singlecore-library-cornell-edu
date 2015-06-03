@@ -1,17 +1,15 @@
 <%# default partial to display solr document fields in catalog show view -%>
+<% if render_document_show_field_value :document => document, :field => "Media_URL_s" %>
+	<div class="document-image">
+		<img id="zoom_01" class="img-responsive" src='<%= render_document_show_field_value :document => document, :field => "Media_URL_s" %>' /> 
+		<script>$("#zoom_01").elevateZoom();</script>
+	</div>
+<% end %>
 <dl class="dl-horizontal  dl-invert">
-  <% document.each do |field_name, field| -%>
-
-  <% if field_name == 'Media_URL_s' %>
-  <div style="width: 50%">
-  <img id="zoom_01" class="img-responsive" src='<%= render_document_show_field_value :document => document, :field => "Media_URL_s" %>' />
-  </div>
-<script>$("#zoom_01").elevateZoom({zoomType	: "lens", lensShape : "round", lensSize : 200});</script>
-
-
-<% else %>
-	    <dt class="blacklight-<%= field_name.parameterize %>"><%= field_name %></dt>
-	    <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
-  <% end -%>
+  	<% document.each do |field_name, field| -%>
+  		<% unless field_name == 'Media_URL_s' %>
+	    	<dt class="blacklight-<%= field_name.parameterize %>"><%= field_name %></dt>
+	    	<dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
+	    <% end -%>
   <% end %>
 </dl>
