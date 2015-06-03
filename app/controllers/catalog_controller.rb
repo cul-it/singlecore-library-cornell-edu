@@ -105,7 +105,6 @@ class CatalogController < ApplicationController
     config.add_index_field 'Market_Square_Details_t', :label => 'Details'
     config.add_index_field 'Deity_Central_Figure_t', :label => 'Deity Central Figure'
     config.add_index_field 'Collection_s', :label => 'Collection'
-    config.add_index_field 'Media_URL_s', :label => 'Collection', :show => false
 
 
     #config.add_index_field 'language_facet', :label => 'Language'
