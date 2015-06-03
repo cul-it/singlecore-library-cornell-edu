@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.elevateZoom-3.0.8.min
 //
 // Required by Blacklight
 //= require blacklight/blacklight

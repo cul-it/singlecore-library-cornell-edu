@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/sul-dlss/openseadragon-rails.git
+  revision: 88e48e1f62a49d4e382948ae08eba6e993cd6773
+  specs:
+    openseadragon (0.0.5)
+      rails (> 3.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -172,6 +179,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  openseadragon!
   rails (= 4.2.0)
   rsolr (~> 1.0.6)
   sass-rails (~> 5.0)
