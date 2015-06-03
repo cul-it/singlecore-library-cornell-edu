@@ -1,5 +1,5 @@
 // Search bar
-// -------------------------
+// ------------------------- //
 
 #search-navbar {
 	background: $pale-gray;
@@ -16,5 +16,14 @@
 	width: 70%;
 	.search_q {
 		width: 100%;
+	}
+}
+
+// Search History, etc., links
+// ------------------------------ //
+.util-links {
+	.nav > li > a {
+		color: $dark-gray;
+		font-size: 14px;
 	}
 }

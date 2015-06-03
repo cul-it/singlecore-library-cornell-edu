@@ -44,6 +44,15 @@
 	padding: 1.5em 0;
 	margin-bottom: 0;
 }
+.nav.site-nav {
+	li > a {
+		color: $dark-gray;
+		text-transform: uppercase;
+	}
+	a:hover, a:active, a:focus {
+		background: inherit;
+	}
+}
 
 // MEDIA QUERIES
 // -------------------------
