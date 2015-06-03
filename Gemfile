@@ -31,6 +31,8 @@ gem 'openseadragon', github: 'sul-dlss/openseadragon-rails'
 # Use font-awesome for icons 
 gem 'font-awesome-sass', '~> 4.3.0'
 
+gem 'blacklight-gallery'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

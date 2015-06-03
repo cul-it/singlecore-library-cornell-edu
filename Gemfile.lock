@@ -56,6 +56,10 @@ GEM
       nokogiri (~> 1.6)
       rails (>= 3.2.6, < 5)
       rsolr (~> 1.0.11)
+    blacklight-gallery (0.1.0)
+      blacklight (~> 5.0)
+      bootstrap-sass (~> 3.0)
+      rails
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -146,7 +150,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     spring (1.3.6)
-    sprockets (3.1.0)
+    sprockets (3.2.0)
       rack (~> 1.0)
     sprockets-rails (2.3.1)
       actionpack (>= 3.0)
@@ -177,6 +181,7 @@ PLATFORMS
 
 DEPENDENCIES
   blacklight
+  blacklight-gallery
   byebug
   coffee-rails (~> 4.1.0)
   font-awesome-sass (~> 4.3.0)
