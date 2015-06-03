@@ -8,10 +8,11 @@ class CatalogController < ApplicationController
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = { 
       :qt => 'search',
-      :qf => 'id Village_s Founder_s Title_t Senechal_t Date_i Date_Founded_s Image_View_Description_t Market_Square_Details_t Plan_and_Site_Details_t Special_Features_t Deity_Central_Figure_t Inscription_s',
+      :qf => 'id  Founder_s Title_t Senechal_t Date_i Date_Founded_s Image_View_Description_t Market_Square_Details_t Plan_and_Site_Details_t Special_Features_t Deity_Central_Figure_t Inscription_s',
       :rows => 10,
       :fl => '*,score',
-      :defType => 'dismax',
+      :defType => 'edismax',
+      :"q.alt" => '*:*'
 
  
     }
@@ -32,6 +33,7 @@ class CatalogController < ApplicationController
      :fl => '*',
      :rows => 1,
      :q => '{!raw f=id v=$id}',
+     :defType => 'edismax'
     }
 
     # solr field configuration for search results/index views
@@ -40,7 +42,7 @@ class CatalogController < ApplicationController
 
     # solr field configuration for document/show views
     config.show.title_field = 'Title_t'
-    #config.show.display_type_field = 'format'
+    config.show.display_type_field = 'Image_Type_s'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -61,10 +63,12 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
-    config.add_facet_field 'Village_s', :label => 'Village', :sort => 'count'
-    config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count'
-    config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count'
-    config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count'
+    config.add_facet_field 'Village_s', :label => 'Village', :limit => true, :mincount => 1
+    config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true, :limit => true, :limit => true, :limit => true
+    config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true, :limit => true, :limit => true
+    config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count', :limit => true, :limit => true
+    config.add_facet_field 'Collection_s', :label => 'Collection', :sort => 'count', :limit => true
+    config.add_facet_field 'Image_Type_s', :label => 'File Type', :sort => 'count', :limit => true
 
 
     #config.add_facet_field 'subject_topic_facet', :label => 'Topic', :limit => 20 
@@ -93,7 +97,9 @@ class CatalogController < ApplicationController
     config.add_index_field 'Village_s', :label => 'Village'
     config.add_index_field 'Founder_t', :label => 'Founder'
     config.add_index_field 'Market_Square_Details_t', :label => 'Details'
-    config.add_index_field 'Deity_Central_Figure_t', :label => 'Deity'
+    config.add_index_field 'Deity_Central_Figure_t', :label => 'Deity Central Figure'
+    config.add_index_field 'Collection_s', :label => 'Collection'
+
     #config.add_index_field 'language_facet', :label => 'Language'
     #config.add_index_field 'published_display', :label => 'Published'
     #config.add_index_field 'published_vern_display', :label => 'Published'
