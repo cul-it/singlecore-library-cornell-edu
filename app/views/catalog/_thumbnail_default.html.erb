@@ -1,0 +1,8 @@
+<%- if has_thumbnail?(document) && tn = render_thumbnail_tag(document, {}, :counter => document_counter_with_offset(document_counter)) %>
+<div class="document-thumbnail">
+<% thumb = render_index_field_value :document => document, :field => "Media_URL_s"  %>
+<% thumb = thumb.split('?')[0]+'/size/1'  %>
+<% thumb = "<img src='" + thumb + "'>" %>
+<%= thumb.html_safe %>
+</div>  
+<%- end %>

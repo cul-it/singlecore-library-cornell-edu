@@ -12,7 +12,8 @@ class CatalogController < ApplicationController
       :rows => 10,
       :fl => '*,score',
       :defType => 'edismax',
-      :"q.alt" => '*:*'
+      :"q.alt" => '*:*',
+      :"facet.mincount" => 1
 
  
     }
@@ -38,7 +39,12 @@ class CatalogController < ApplicationController
 
     # solr field configuration for search results/index views
     config.index.title_field = 'Title_t'
-    #config.index.display_type_field = 'format'
+    config.index.thumbnail_field = "Media_URL_s"
+
+
+
+
+    config.index.display_type_field = 'Image_Type_s'
 
     # solr field configuration for document/show views
     config.show.title_field = 'Title_t'
@@ -99,6 +105,8 @@ class CatalogController < ApplicationController
     config.add_index_field 'Market_Square_Details_t', :label => 'Details'
     config.add_index_field 'Deity_Central_Figure_t', :label => 'Deity Central Figure'
     config.add_index_field 'Collection_s', :label => 'Collection'
+    config.add_index_field 'Media_URL_s', :label => 'Collection', :show => false
+
 
     #config.add_index_field 'language_facet', :label => 'Language'
     #config.add_index_field 'published_display', :label => 'Published'
