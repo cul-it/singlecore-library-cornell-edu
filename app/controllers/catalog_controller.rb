@@ -8,10 +8,10 @@ class CatalogController < ApplicationController
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = { 
       :qt => 'search',
-      :qf => 'id Village_s Founder_t Senechal_t Date_i Date_Founded_s Image_View_Description Market_Square_Details_t Plan_and_Site_Details_t Special_Features_t Deity_Central_Figure_t Inscription_s',
+      :qf => 'id Village_s Founder_s Title_t Senechal_t Date_i Date_Founded_s Image_View_Description_t Market_Square_Details_t Plan_and_Site_Details_t Special_Features_t Deity_Central_Figure_t Inscription_s',
       :rows => 10,
       :fl => '*,score',
-      :defType => 'edismax',
+      :defType => 'dismax',
 
  
     }
@@ -35,11 +35,11 @@ class CatalogController < ApplicationController
     }
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'id'
+    config.index.title_field = 'Title_t'
     #config.index.display_type_field = 'format'
 
     # solr field configuration for document/show views
-    config.show.title_field = 'id'
+    config.show.title_field = 'Title_t'
     #config.show.display_type_field = 'format'
 
     # solr fields that will be treated as facets by the blacklight application
@@ -63,7 +63,7 @@ class CatalogController < ApplicationController
     # facet bar
     config.add_facet_field 'Village_s', :label => 'Village', :sort => 'count'
     config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count'
-    config.add_facet_field 'Founder_t', :label => 'Founder', :sort => 'count'
+    config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count'
     config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count'
 
 
@@ -89,7 +89,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
-    config.add_index_field 'id', :label => 'Title'
+    config.add_index_field 'Title_t', :label => 'Title'
     config.add_index_field 'Village_s', :label => 'Village'
     config.add_index_field 'Founder_t', :label => 'Founder'
     config.add_index_field 'Market_Square_Details_t', :label => 'Details'
