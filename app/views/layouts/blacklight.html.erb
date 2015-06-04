@@ -35,6 +35,9 @@
 
   <%= render partial: 'shared/ajax_modal' %>
 
+  <% if current_page?('/ragamala') %>
+    <div class="hero">
+  <% end %>
   <div id="main-container" class="container">
     <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
 
@@ -45,8 +48,10 @@
       <%= yield %>
     </div>
   </div>
+  <% if current_page?('/ragamala') %>
+    </div>
+  <% end %>
 
   <%= render :partial => 'shared/footer' %>
-  hey there
   </body>
 </html>

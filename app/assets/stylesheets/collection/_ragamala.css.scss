@@ -5,6 +5,14 @@
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
-
+		min-height: 500px;
 	}
+	.home-text {
+		color: white;
+		.well {
+			background: rgba(0,0,0,.8);
+			border: 0;
+		}
+	}
+
 }
