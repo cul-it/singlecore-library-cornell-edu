@@ -15,16 +15,18 @@ a:hover {
 	text-decoration: underline;
 }
 
-// Add underlines to links in main content area
-#content,
-footer {
+// Add underlines to some links for better usability/accessibility
+.page_links,
+.document,
+.facet_select,
+.home-text {
 	a {
-		border-bottom: 1px dotted $footer-gray;
+		border-bottom: 1px dotted $light-gray;
 	}
 	a:hover,
 	a:active,
 	a:focus {
-		border-bottom: 1px solid $footer-gray;
+		border-bottom: 1px solid $light-gray;
 		text-decoration: none;
 	}
 }
@@ -59,15 +61,3 @@ h2:first-child {
 	margin-top: 0;
 }
 
-
-// Well overrides
-// ------------------- //
-.well {
-	border-radius: 0;
-	box-shadow: none;
-	background: $well-bg;
-}
-.constraints-container {
-	background: inherit;
-	border: 0;
-}

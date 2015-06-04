@@ -1,0 +1,17 @@
+// Well overrides
+// ------------------- //
+.well {
+	border-radius: 0;
+	box-shadow: none;
+	background: $well-bg;
+}
+.constraints-container {
+	background: inherit;
+	border: 0;
+}
+
+// Buttons
+// ------------------- //
+.btn:active, .btn:focus {
+	box-shadow: none;
+}
