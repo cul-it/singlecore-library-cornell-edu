@@ -10,6 +10,7 @@
 			color: white;
 		}
 	}
+	background: white;
 }
 
 // Library brand
@@ -38,8 +39,10 @@
 	text-decoration: none;
 }
 
-// Navbar
 // -------------------------
+#header-navbar {
+	background: white;
+}
 .navbar {
 	padding: 1.5em 0;
 	margin-bottom: 0;

@@ -1,5 +1,11 @@
 #main-container {
-	padding-top: 3em;
+	padding: 3em 0;
+	background: white;
+}
+.hero {
+	#main-container {
+		background: inherit; // hero should be used for a large background image, so inherit that background instead of white
+	}
 }
 
 // Collection home pages 
