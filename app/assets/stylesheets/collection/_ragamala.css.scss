@@ -1,4 +1,4 @@
-.blacklight-ragamala {
+body.blacklight-catalog-index.blacklight-ragamala-home {
 	.hero {
 		background: url("hero-ragamala.jpg") no-repeat;
 		-webkit-background-size: cover;
@@ -6,12 +6,15 @@
 		-o-background-size: cover;
 		background-size: cover;
 		min-height: 600px;
+		color: white
 	}
 	.home-text {
 		color: white;
 		.well {
 			background: rgba(0,0,0,.8);
 			border: 0;
+			left: 75%;
+			position:relative;
 		}
 	}
 

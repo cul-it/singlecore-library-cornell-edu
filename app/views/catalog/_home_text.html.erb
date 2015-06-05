@@ -1,3 +1,11 @@
+<% if params[:subject] == 'reps-bastides' %>
+
+  <%= render :partial => '/reps_bastides/home_text.html.erb' %>
+
+  <% elsif params[:subject] == 'ragamala' %>
+    <%= render :partial => '/ragamala/home_text.html.erb' %>
+<% else %>
+
 <div class="home-text">
   <div class="well">
     <h1><%= t('blacklight.welcome') %></h1>
@@ -39,3 +47,5 @@
     </div>
   </div>
 </div>
+
+<% end %>

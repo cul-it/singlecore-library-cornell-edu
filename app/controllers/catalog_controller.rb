@@ -5,7 +5,31 @@ class CatalogController < ApplicationController
 
   include Blacklight::Catalog
 
+before_action  do
 
+if params[:subject] == "ragamala"
+  blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_s}Ragmala Paintings",
+      :qt => 'search',
+      :qf => 'id  Founder_s Title_t Senechal_t Date_i Date_Founded_s Image_View_Description_t Market_Square_Details_t Plan_and_Site_Details_t Special_Features_t Deity_Central_Figure_t Inscription_s',
+      :rows => 10,
+      :fl => '*,score',
+      :defType => 'edismax',
+      :"q.alt" => '*:*',
+      :"facet.mincount" => 2}
+
+elsif params[:subject] == "reps-bastides"
+  blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_s}Reps Bastides",
+   :qt => 'search',
+      :qf => 'id  Founder_s Title_t Senechal_t Date_i Date_Founded_s Image_View_Description_t Market_Square_Details_t Plan_and_Site_Details_t Special_Features_t Deity_Central_Figure_t Inscription_s',
+      :rows => 10,
+      :fl => '*,score',
+      :defType => 'edismax',
+      :"q.alt" => '*:*',
+      :"facet.mincount" => 2}
+end
+
+
+end
 
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
@@ -16,7 +40,7 @@ class CatalogController < ApplicationController
       :fl => '*,score',
       :defType => 'edismax',
       :"q.alt" => '*:*',
-      :"facet.mincount" => 1
+      :"facet.mincount" => 2
 
  
     }
@@ -72,10 +96,10 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
-    config.add_facet_field 'Village_s', :label => 'Village', :limit => true, :mincount => 1
-    config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true, :limit => true, :limit => true, :limit => true
-    config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true, :limit => true, :limit => true
-    config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count', :limit => true, :limit => true
+    config.add_facet_field 'Village_s', :label => 'Village', :limit => true
+    config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
+    config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
+    config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count', :limit => true
     config.add_facet_field 'Collection_s', :label => 'Collection', :sort => 'count', :limit => true
     config.add_facet_field 'Image_Type_s', :label => 'File Type', :sort => 'count', :limit => true
 
