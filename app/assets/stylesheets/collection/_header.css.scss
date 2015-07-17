@@ -20,7 +20,8 @@
 	font-size: 36px;
 	font-family: $font-family-cul;
 	display: block;
-	color: $orange;
+	// color: $orange;
+	color: $dark-gray;
 	line-height: 1em;
 }
 .brand:hover, .brand:active, .brand:focus {
@@ -29,10 +30,11 @@
 }
 .cul-brand {
 	color: $cornell-black;
-	font-size: 18px;
+	font-size: 24px;
 	font-family: $font-family-cul;
 	display: block;
 	margin-left: 4px;
+	color: $medium-gray;
 }
 .cul-brand:hover {
 	color: inherit;
@@ -44,7 +46,7 @@
 	background: white;
 }
 .navbar {
-	padding: 1.5em 0;
+	padding: 1em 0 1.5em 0;
 	margin-bottom: 0;
 }
 .nav.site-nav {
