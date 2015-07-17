@@ -30,16 +30,14 @@
     <![endif]-->
 
   </head>
+
   <% if current_page?('/ragamala') && params[:f].nil?  %>
-
-  <body class="<%= render_body_class %> blacklight-<%= params[:subject] %>-home blacklight-<%= params[:subject] %>">
+    <body class="<%= render_body_class %> blacklight-<%= params[:subject] %>-home blacklight-<%= params[:subject] %>">
   <% else %>
-
-  <body class="<%= render_body_class %> blacklight-<%= params[:subject] %>">
-
+    <body class="<%= render_body_class %> blacklight-<%= params[:subject] %>">
   <% end %>
-  <%= render :partial => 'shared/header_navbar' %>
 
+  <%= render :partial => 'shared/header_navbar' %>
   <%= render partial: 'shared/ajax_modal' %>
 
   <% if current_page?('/ragamala') && (params[:f].nil? && params[:q].nil?)  %>
@@ -50,18 +48,11 @@
       <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
 
       <% if params[:subject] == "reps-bastides" %>
-
-      <h1 class="collection-title"><a href="/reps-bastides">Johns Reps Collection: Bastides</a></h1>
-
+        <h1 class="collection-title"><a href="/reps-bastides">Johns Reps Collection: Bastides</a></h1>
       <% end %>
-
       <% if params[:subject] == "ragamala" && (!params[:f].nil? || !params[:q].nil? || params[:action] == 'show')  %>
-
-      <h1 class="collection-title"><a href="/ragamala">Ragamala Paintings</a></h1>
-
+        <h1 class="collection-title"><a href="/ragamala">Ragamala Paintings</a></h1>
       <% end %>
-
-
       <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
 
       <div class="row">
