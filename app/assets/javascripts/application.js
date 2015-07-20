@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//
+// Required by Blacklight-Maps
+//= require blacklight-maps
 //= require jquery.elevateZoom-3.0.8.min
 //= require blacklight_gallery
 //

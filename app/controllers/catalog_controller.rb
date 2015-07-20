@@ -14,8 +14,7 @@ if params[:subject] == "ragamala"
       :rows => 10,
       :fl => '*,score',
       :defType => 'edismax',
-      :"q.alt" => '*:*',
-      :"facet.mincount" => 2}
+      :"q.alt" => '*:*'}
 
 elsif params[:subject] == "reps-bastides"
   blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_s}Reps Bastides",
@@ -24,8 +23,7 @@ elsif params[:subject] == "reps-bastides"
       :rows => 10,
       :fl => '*,score',
       :defType => 'edismax',
-      :"q.alt" => '*:*',
-      :"facet.mincount" => 2}
+      :"q.alt" => '*:*'}
 end
 
 
@@ -35,12 +33,10 @@ end
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = { 
       :qt => 'search',
-      :qf => 'id  Founder_s Title_t Senechal_t Date_i Date_Founded_s Image_View_Description_t Market_Square_Details_t Plan_and_Site_Details_t Special_Features_t Deity_Central_Figure_t Inscription_s',
       :rows => 10,
       :fl => '*,score',
       :defType => 'edismax',
       :"q.alt" => '*:*',
-      :"facet.mincount" => 2
 
  
     }
@@ -64,18 +60,28 @@ end
      :defType => 'edismax'
     }
 
+    # geolocation settings 
+
+    config.add_facet_field 'where_ssim', :limit => -2, :label => 'Coordinates', :show => false
+    config.show.partials << :show_maplet
+    config.view.maps.coordinates_field = "where_geocoordinates"
+    config.view.maps.coordinates_facet_field = 'where_ssim'
+    config.view.maps.facet_mode = "coordinates" # or "coordinates"    config.view.maps.search_mode = "coordinates"
+
+
+
     # solr field configuration for search results/index views
-    config.index.title_field = 'Title_t'
-    config.index.thumbnail_field = "Media_URL_s"
+    config.index.title_field = 'title_tesim'
+    config.index.thumbnail_field = 'Media_URL_size_2_tesim'
 
 
 
 
-    config.index.display_type_field = 'Image_Type_s'
+    config.index.display_type_field = 'content_type_tesim'
 
     # solr field configuration for document/show views
-    config.show.title_field = 'Title_t'
-    config.show.display_type_field = 'Image_Type_s'
+    config.show.title_field = 'title_tesim'
+    config.show.display_type_field = 'content_type_tesim'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -96,15 +102,15 @@ end
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
-    config.add_facet_field 'Village_s', :label => 'Village', :limit => true
-    config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
-    config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
-    config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count', :limit => true
-    config.add_facet_field 'Collection_s', :label => 'Collection', :sort => 'count', :limit => true
-    config.add_facet_field 'Image_Type_s', :label => 'File Type', :sort => 'count', :limit => true
+    #config.add_facet_field 'Village_s', :label => 'Village', :limit => true
+    #config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
+    #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
+    #config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count', :limit => true
+    config.add_facet_field 'Collection_tesim', :label => 'Collection', :sort => 'count', :limit => 5
+    config.add_facet_field 'Content_Type_tesim', :label => 'File Type', :sort => 'count', :limit => 5
+    config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5 
+    config.add_facet_field 'materials_tesim', :label => 'Materials', :limit => 5 
 
-
-    #config.add_facet_field 'subject_topic_facet', :label => 'Topic', :limit => 20 
     #config.add_facet_field 'language_facet', :label => 'Language', :limit => true 
     #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number' 
     #config.add_facet_field 'subject_geo_facet', :label => 'Region' 
