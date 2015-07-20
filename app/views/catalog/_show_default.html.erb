@@ -1,17 +1,27 @@
 <%# default partial to display solr document fields in catalog show view -%>
 
 <%# show image %>
-<% if render_document_show_field_value :document => document, :field => "Media_URL_s"  %>
-	<% if !render_document_show_field_value(:document => document, :field => "Media_URL_s").blank?  %>
-		<div class="document-image">
-			<img id="zoom_01" class="img-responsive" src='<%= render_document_show_field_value :document => document, :field => "Media_URL_s" %>' /> 
-			<script>
-				$("#zoom_01").elevateZoom({ zoomType: "inner", cursor: "crosshair" });
-			</script>
-			<p class="text-muted text-center"><small>Mouse over image to zoom</small></p>
-		</div>
-	<%end%>
-<% end %>
+
+
+<div id="openseadragon1" style="width: 800px; height: 600px"></div>
+<script type="text/javascript">
+    var viewer = OpenSeadragon({
+        id: "openseadragon1", 
+        showNavigator: true,      
+        tileSources: {
+        type: 'legacy-image-pyramid',
+        levels:[{
+            url: '<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>',
+            width: <%= render_document_show_field_value :document => document, :field => "img_width_tesim" %>,
+
+            height:<%= render_document_show_field_value :document => document, :field => "img_height_tesim" %>
+            
+        }]
+    }
+
+    });
+</script>
+
 
 <%# show image %>
 <% if document[:id] == '2877880' %>
@@ -30,9 +40,14 @@
 <%# show fields except image and kaltura ID %>
 <dl class="dl-horizontal  dl-invert">
   	<% document.each do |field_name, field| -%>
-  		<% unless field_name == 'Media_URL_s' || field_name =='KalturaID_s' %>
+  	<% if !field.blank? && !field_name.include?("_ssi") && field.is_a?(Array) %>
+  		<% unless field_name == 'Media_URL_s' || field_name =='KalturaID_s' || field == '" "'%>
 	    	<dt class="blacklight-<%= field_name.parameterize %>"><%= field_name %></dt>
 	    	<dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
 	    <% end -%>
+	    <% end %>
   <% end %>
 </dl>
+
+
+

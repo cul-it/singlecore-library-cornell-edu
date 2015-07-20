@@ -8,9 +8,9 @@ class CatalogController < ApplicationController
 before_action  do
 
 if params[:subject] == "ragamala"
-  blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_s}Ragmala Paintings",
+  blacklight_config.default_solr_params = {:fq => "{!raw f=collection_tesim}Ragmala Paintings",
       :qt => 'search',
-      :qf => 'id  Founder_s Title_t Senechal_t Date_i Date_Founded_s Image_View_Description_t Market_Square_Details_t Plan_and_Site_Details_t Special_Features_t Deity_Central_Figure_t Inscription_s',
+      :qf => 'id title_tesim  date_tsi deity_central_figure_tesim inscription_tesim',
       :rows => 10,
       :fl => '*,score',
       :defType => 'edismax',
@@ -19,7 +19,7 @@ if params[:subject] == "ragamala"
 elsif params[:subject] == "reps-bastides"
   blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_s}Reps Bastides",
    :qt => 'search',
-      :qf => 'id  Founder_s Title_t Senechal_t Date_i Date_Founded_s Image_View_Description_t Market_Square_Details_t Plan_and_Site_Details_t Special_Features_t Deity_Central_Figure_t Inscription_s',
+      :qf => 'id  founder_tesim title_tesim senechal_tesim date_tsi date_founded_tsi image_view_description_tesim market_square_details_tesim plan_site_details_tesim special_features_tesim deity_central_figure_tesim inscription_tesim',
       :rows => 10,
       :fl => '*,score',
       :defType => 'edismax',
@@ -37,6 +37,7 @@ end
       :fl => '*,score',
       :defType => 'edismax',
       :"q.alt" => '*:*',
+      :"facet.mincount" => 1
 
  
     }
@@ -71,8 +72,8 @@ end
 
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'title_tesim'
-    config.index.thumbnail_field = 'Media_URL_size_2_tesim'
+    config.index.title_field = 'Title_tesim','title_tesim'
+    config.index.thumbnail_field = 'media_URL_size_2_tesim'
 
 
 
@@ -106,7 +107,8 @@ end
     #config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
     #config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count', :limit => true
-    config.add_facet_field 'Collection_tesim', :label => 'Collection', :sort => 'count', :limit => 5
+    config.add_facet_field 'Collection_tesim', :label => 'Collection', :sort => 'index', :limit => 5
+    config.add_facet_field 'author_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'Content_Type_tesim', :label => 'File Type', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5 
     config.add_facet_field 'materials_tesim', :label => 'Materials', :limit => 5 

@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'openseadragon', github: 'sul-dlss/openseadragon-rails'
+gem 'openseadragon'
 
 # Use font-awesome for icons 
 gem 'font-awesome-sass', '~> 4.3.0'
