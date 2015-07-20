@@ -33,6 +33,8 @@ gem 'font-awesome-sass', '~> 4.3.0'
 
 gem 'blacklight-gallery'
 
+gem 'blacklight-maps'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
