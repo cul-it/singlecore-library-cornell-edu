@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get '/collections-map' => 'catalog#map'
-   get '/:subject' => 'catalog#index'
-  get '/:subject/catalog/:id' => 'catalog#show'
+
 
     root "catalog#index"
 
