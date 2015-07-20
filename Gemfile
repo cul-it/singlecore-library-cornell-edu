@@ -13,9 +13,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
- gem 'therubyracer', :platforms => :ruby
+ gem 'therubyracer', platforms: :ruby
 
-gem 'tzinfo-data', :platforms => [:mingw, :mswin, :x64_mingw]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -24,9 +24,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', :group => :doc
+gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'openseadragon', :github => 'sul-dlss/openseadragon-rails'
+gem 'openseadragon', github: 'sul-dlss/openseadragon-rails'
 
 # Use font-awesome for icons 
 gem 'font-awesome-sass', '~> 4.3.0'
