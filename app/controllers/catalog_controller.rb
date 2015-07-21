@@ -8,16 +8,18 @@ class CatalogController < ApplicationController
 before_action  do
 
 if params[:subject] == "ragamala"
-  blacklight_config.default_solr_params = {:fq => "{!raw f=collection_tesim}Ragmala Paintings",
+  blacklight_config.default_solr_params = 
+  {:fq => 'Collection_tesim:"Ragamala Paintings"',
       :qt => 'search',
-      :qf => 'id title_tesim  date_tsi deity_central_figure_tesim inscription_tesim',
+      :qf => 'deity_central_figure_tesim collection_tesim Title_tesim media_URL_size_2_tesim',
       :rows => 10,
       :fl => '*,score',
       :defType => 'edismax',
-      :"q.alt" => '*:*'}
+      :"q.alt" => '*:*',
+      :"facet.mincount" => 2}
 
 elsif params[:subject] == "reps-bastides"
-  blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_s}Reps Bastides",
+  blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_tesim}Reps Bastides",
    :qt => 'search',
       :qf => 'id  founder_tesim title_tesim senechal_tesim date_tsi date_founded_tsi image_view_description_tesim market_square_details_tesim plan_site_details_tesim special_features_tesim deity_central_figure_tesim inscription_tesim',
       :rows => 10,
@@ -52,14 +54,7 @@ end
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SearchHelper#solr_doc_params) or
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
-    config.default_document_solr_params = {
-      :qt => 'search',
-    #  ## These are hard-coded in the blacklight 'document' requestHandler
-     :fl => '*',
-     :rows => 1,
-     :q => '{!raw f=id v=$id}',
-     :defType => 'edismax'
-    }
+
 
     # geolocation settings 
 
@@ -81,7 +76,7 @@ end
     config.index.display_type_field = 'content_type_tesim'
 
     # solr field configuration for document/show views
-    config.show.title_field = 'title_tesim'
+    config.show.title_field = 'title_tesim','Title_tesim'
     config.show.display_type_field = 'content_type_tesim'
 
     # solr fields that will be treated as facets by the blacklight application
@@ -106,7 +101,7 @@ end
     #config.add_facet_field 'Village_s', :label => 'Village', :limit => true
     #config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
-    #config.add_facet_field 'Deity_Central_Figure_t', :label => 'Deity', :sort => 'count', :limit => true
+    config.add_facet_field 'deity_central_figure_tesim', :label => 'Deity', :sort => 'count', :limit => true
     config.add_facet_field 'Collection_tesim', :label => 'Collection', :sort => 'index', :limit => 5
     config.add_facet_field 'author_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'Content_Type_tesim', :label => 'File Type', :sort => 'count', :limit => 5
@@ -138,8 +133,8 @@ end
     config.add_index_field 'Village_s', :label => 'Village'
     config.add_index_field 'Founder_t', :label => 'Founder'
     config.add_index_field 'Market_Square_Details_t', :label => 'Details'
-    config.add_index_field 'Deity_Central_Figure_t', :label => 'Deity Central Figure'
-    config.add_index_field 'Collection_s', :label => 'Collection'
+    config.add_index_field 'deity_central_figure_tesim', :label => 'Deity'
+    config.add_index_field 'Collection_tesim', :label => 'Collection'
 
 
     #config.add_index_field 'language_facet', :label => 'Language'

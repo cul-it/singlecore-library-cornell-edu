@@ -1,9 +1,12 @@
-Rails.application.routes.draw do
 
+Rails.application.routes.draw do
+   get '/:subject' => 'catalog#index'
+  get '/:subject/catalog/:id' => 'catalog#show'
 
     root "catalog#index"
 
   blacklight_for :catalog
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
