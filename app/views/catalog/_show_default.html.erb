@@ -41,10 +41,8 @@
 <dl class="dl-horizontal  dl-invert">
   	<% document.each do |field_name, field| -%>
   	<% if !field.blank? && !field_name.include?("_ssi") && field.is_a?(Array) %>
-  		<% unless field_name == 'Media_URL_s' || field_name =='KalturaID_s' || field == '" "'%>
 	    	<dt class="blacklight-<%= field_name.parameterize %>"><%= field_name %></dt>
 	    	<dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
-	    <% end -%>
 	    <% end %>
   <% end %>
 </dl>
