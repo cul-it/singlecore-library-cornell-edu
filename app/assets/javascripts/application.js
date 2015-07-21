@@ -16,9 +16,7 @@
 //
 // Required by Blacklight-Maps
 //= require blacklight-maps
-//= require jquery.elevateZoom-3.0.8.min
 //= require blacklight_gallery
-//= require openseadragon.js
 // Required by Blacklight
 //= require blacklight/blacklight
 //= require_tree .
