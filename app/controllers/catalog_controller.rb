@@ -31,7 +31,13 @@ end
 
 end
 
-  configure_blacklight do |config|
+  configure_blacklight do |config|          config.view.gallery.partials = [:index_header, :index]
+          config.view.masonry.partials = [:index]
+          config.view.slideshow.partials = [:index]
+
+          config.show.tile_source_field = :content_metadata_image_iiif_info_ssm
+          config.show.partials.insert(1, :openseadragon)
+
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = { 
       :qt => 'search',
@@ -107,6 +113,8 @@ end
     config.add_facet_field 'Content_Type_tesim', :label => 'File Type', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5 
     config.add_facet_field 'materials_tesim', :label => 'Materials', :limit => 5 
+    config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
+    config.add_facet_field 'country_tesim', :label => 'Country', :limit => 20
 
     #config.add_facet_field 'language_facet', :label => 'Language', :limit => true 
     #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number' 
@@ -129,10 +137,10 @@ end
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
-    config.add_index_field 'Title_t', :label => 'Title'
-    config.add_index_field 'Village_s', :label => 'Village'
-    config.add_index_field 'Founder_t', :label => 'Founder'
-    config.add_index_field 'Market_Square_Details_t', :label => 'Details'
+    config.add_index_field 'Title_tesim', :label => 'Title'
+    config.add_index_field 'village_tesim', :label => 'Village'
+    config.add_index_field 'founder_tesim', :label => 'Founder'
+    config.add_index_field 'market_square_details_tesim', :label => 'Details'
     config.add_index_field 'deity_central_figure_tesim', :label => 'Deity'
     config.add_index_field 'Collection_tesim', :label => 'Collection'
 
