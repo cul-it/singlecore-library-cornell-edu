@@ -9,7 +9,7 @@ before_action  do
 
 if params[:subject] == "ragamala"
   blacklight_config.default_solr_params = 
-  {:fq => 'Collection_tesim:"Ragamala Paintings"',
+  {:fq => 'Collection_tesim:"Ragamala Paintings" AND -notes_tesim:"Not for publication"',
       :qt => 'search',
       :qf => 'deity_central_figure_tesim collection_tesim Title_tesim media_URL_size_2_tesim',
       :rows => 10,
@@ -18,6 +18,9 @@ if params[:subject] == "ragamala"
       :"q.alt" => '*:*',
       :"facet.mincount" => 2}
 
+      blacklight_config.add_facet_field :deity_central_figure_tesim, :label => 'Central Deity'
+
+  
 elsif params[:subject] == "reps-bastides"
   blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_tesim}Reps Bastides",
    :qt => 'search',
@@ -31,7 +34,16 @@ end
 
 end
 
-  configure_blacklight do |config|          config.view.gallery.partials = [:index_header, :index]
+
+
+  configure_blacklight do |config|          
+          config.view.gallery.partials = [:index_header, :index]
+          config.view.masonry.partials = [:index]
+          config.view.slideshow.partials = [:index]
+
+          config.show.tile_source_field = :media_URL_tesim
+          
+          config.view.gallery.partials = [:index_header, :index]
           config.view.masonry.partials = [:index]
           config.view.slideshow.partials = [:index]
 
@@ -44,9 +56,8 @@ end
       :fl => '*,score',
       :defType => 'edismax',
       :"q.alt" => '*:*',
-      :"facet.mincount" => 1
-
- 
+      :"facet.mincount" => 1,
+      :fq => '-notes_tesim:"Not for publication"'
     }
     
 
@@ -106,14 +117,14 @@ end
     #config.add_facet_field 'Village_s', :label => 'Village', :limit => true
     #config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
-    config.add_facet_field 'deity_central_figure_tesim', :label => 'Deity', :sort => 'count', :limit => true
     config.add_facet_field 'Collection_tesim', :label => 'Collection', :sort => 'index', :limit => 5
     config.add_facet_field 'author_tesim', :label => 'Creator', :sort => 'count', :limit => 5
-    config.add_facet_field 'Content_Type_tesim', :label => 'File Type', :sort => 'count', :limit => 5
+    config.add_facet_field 'content_type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5 
     config.add_facet_field 'materials_tesim', :label => 'Materials', :limit => 5 
     config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
     config.add_facet_field 'country_tesim', :label => 'Country', :limit => 20
+
 
     #config.add_facet_field 'language_facet', :label => 'Language', :limit => true 
     #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number' 
@@ -136,7 +147,6 @@ end
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
-    config.add_index_field 'Title_tesim', :label => 'Title'
     config.add_index_field 'village_tesim', :label => 'Village'
     config.add_index_field 'founder_tesim', :label => 'Founder'
     config.add_index_field 'market_square_details_tesim', :label => 'Details'
@@ -151,7 +161,15 @@ end
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
-    config.add_show_field 'id', :label => 'Title'
+    config.add_show_field 'deity_central_figure_tesim', :label => 'Central Deity'
+    config.add_show_field 'author_tesim', :label => 'Creator(s)'
+    config.add_show_field 'content_type_tesim', :label => 'Work Type'
+    config.add_show_field 'description_tesim', :label => 'Description'
+    config.add_show_field 'media_URL_tesim', :label => 'Download original image'
+    config.add_show_field 'Collection_tesim', :label => 'Collection'
+    config.add_show_field 'Image_Type_tesim', :label => 'Work Type'
+
+
     #config.add_show_field 'title_vern_display', :label => 'Title'
     #config.add_show_field 'subtitle_display', :label => 'Subtitle'
     #config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
