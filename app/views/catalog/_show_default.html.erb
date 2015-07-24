@@ -1,28 +1,26 @@
 <%# default partial to display solr document fields in catalog show view -%>
 
 <%# show image %>
-
-
+<% coll = render_document_show_field_value :document => document, :field => "Collection_tesim" %>
+<% project = render_document_show_field_value :document => document, :field => "project_id_tesim" %>
+<% asset = render_document_show_field_value :document => document, :field => "asset_id_tesim" %>
+<% if coll = "Reps Photographs Collection" %>
 <div id="openseadragon1" style="width: 800px; height: 600px"></div>
-<script type="text/javascript">
-    var viewer = OpenSeadragon({
-        id: "openseadragon1", 
-        showNavigator: true,      
-        tileSources: {
-        type: 'legacy-image-pyramid',
-        levels:[{
-            url: '<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>',
-            width: <%= render_document_show_field_value :document => document, :field => "img_width_tesim" %>,
-
-            height:<%= render_document_show_field_value :document => document, :field => "img_height_tesim" %>
-            
-        }]
-    }
-
-    });
+<script>
+//<![CDATA[
+        function initOpenSeadragon() {
+          OpenSeadragon({
+  id: "openseadragon1",
+  minZoomImageRatio: 1,
+  prefixUrl: "/",
+  tileSources: "http://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= project %>/<%= asset %>/image/info.json"});
+        }
+        window.onload = initOpenSeadragon;
+        document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
+//]]>
 </script>
 
-
+<% end %>
 
 
 

@@ -41,7 +41,6 @@ end
           config.view.masonry.partials = [:index]
           config.view.slideshow.partials = [:index]
 
-          config.show.tile_source_field = :media_URL_tesim
           
           config.view.gallery.partials = [:index_header, :index]
           config.view.masonry.partials = [:index]
