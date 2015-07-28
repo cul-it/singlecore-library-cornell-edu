@@ -3,16 +3,16 @@
 <%# show image %>
 <% coll = render_document_show_field_value :document => document, :field => "Collection_tesim" %>
 <% project = render_document_show_field_value :document => document, :field => "project_id_tesim" %>
-<% asset = render_document_show_field_value :document => document, :field => "asset_id_tesim" %>
+<% asset = request.original_url.split('ss')[1].split(':')[1] %>
 <% if coll = "Reps Photographs Collection" %>
-<div id="openseadragon1" style="width: 800px; height: 600px"></div>
+<div id="openseadragon1" style="width: 800px; height: 600px; background-color:#000"></div>
 <script>
 //<![CDATA[
         function initOpenSeadragon() {
           OpenSeadragon({
   id: "openseadragon1",
   minZoomImageRatio: 1,
-  prefixUrl: "/",
+  prefixUrl: "/images/",
   tileSources: "http://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= project %>/<%= asset %>/image/info.json"});
         }
         window.onload = initOpenSeadragon;
@@ -29,13 +29,10 @@
 <dl class="dl-horizontal  dl-invert">
   	<% document.each do |field_name, field| -%>
   	<% if !field.blank? && !field_name.include?("_ssi") && field.is_a?(Array) %>
-	    	
+
       <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
       <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
 
 	    <% end %>
   <% end %>
 </dl>
-
-
-
