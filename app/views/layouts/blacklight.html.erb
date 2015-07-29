@@ -40,10 +40,20 @@
   <%= render :partial => 'shared/header_navbar' %>
   <%= render partial: 'shared/ajax_modal' %>
 
+  <%# add hero for collections that need it %>
   <% if current_page?('/ragamala') && (params[:f].nil? && params[:q].nil?)  %>
     <div class="hero">
   <% end %>
+
   <div id="main-container">
+
+    <%# home page featured image %>
+    <%# if is_home? %>
+      <!-- <div class="container-fluid hero-home">
+        <%= image_tag "hero/hero-ragamala-home.jpg" , alt: "Image from the Ragamala Collection" %>
+      </div> -->
+    <%# end %>
+
     <div class="container">
       <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
 
@@ -60,6 +70,8 @@
       </div>
     </div>
   </div>
+
+  <%# close the hero for those that used it %>
   <% if current_page?('/ragamala') && (params[:f].nil? && params[:q].nil?)  %>
     </div>
   <% end %>

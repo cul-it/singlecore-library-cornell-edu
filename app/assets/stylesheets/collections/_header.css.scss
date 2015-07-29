@@ -3,7 +3,7 @@
 
 .cornell-identity {
 	.container {
-		background: $cornell-black;
+		background: $cornell-red;
 	}
 	button {
 		i {
@@ -21,11 +21,11 @@
 	font-family: $font-family-cul;
 	// display: block;
 	// color: $orange;
-	color: $dark-gray;
+	color: #444;
 	line-height: 1em;
 }
 .brand:hover, .brand:active, .brand:focus {
-	color: $dark-gray;
+	color: #444;
 	text-decoration: none;
 }
 .cul-brand {
@@ -52,14 +52,20 @@
 	}
 }
 
+// Navbar
 // -------------------------
 #header-navbar {
 	background: white;
 }
 .navbar {
-	padding: 1em 0 1.5em 0;
+	padding: .5em 0 1em 0;
 	margin-bottom: 0;
 }
+// .blacklight-catalog-index {
+// 	.navbar {
+// 		padding: 1.5em 0 2em 0;
+// 	}
+// }
 .nav.site-nav {
 	li > a {
 		color: $dark-gray;
