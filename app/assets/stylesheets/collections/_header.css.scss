@@ -19,13 +19,13 @@
 	text-transform: uppercase;
 	font-size: 36px;
 	font-family: $font-family-cul;
-	display: block;
+	// display: block;
 	// color: $orange;
 	color: $dark-gray;
 	line-height: 1em;
 }
 .brand:hover, .brand:active, .brand:focus {
-	color: $orange;
+	color: $dark-gray;
 	text-decoration: none;
 }
 .cul-brand {
@@ -39,6 +39,17 @@
 .cul-brand:hover {
 	color: inherit;
 	text-decoration: none;
+}
+// Beta label
+.navbar-header {
+	.label-info {
+		font-size: 90%;
+		vertical-align: super;
+		font-weight: normal;
+		text-transform: uppercase;
+		border-radius: 0;
+		margin-left: .5em;
+	}
 }
 
 // -------------------------
