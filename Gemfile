@@ -31,6 +31,9 @@ gem 'openseadragon'
 # Use font-awesome for icons 
 gem 'font-awesome-sass', '~> 4.3.0'
 
+#static pages gem
+gem 'high_voltage', '~> 2.3.0'
+
 gem 'blacklight-gallery'
 
 gem 'blacklight-maps'

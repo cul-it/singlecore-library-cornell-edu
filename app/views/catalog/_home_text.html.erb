@@ -1,38 +1,9 @@
-<% if params[:subject] == 'reps-bastides' %>
-
-  <%= render :partial => '/reps_bastides/home_text.html.erb' %>
-
-  <% elsif params[:subject] == 'ragamala' %>
-    <%= render :partial => '/ragamala/home_text.html.erb' %>
-<% else %>
-
 <div class="home-text">
   <div class="well">
     <h1><%= t('blacklight.welcome') %></h1>
     <p>We're transitioning to a new, more integrated search platform for our digital collections. In the meantime you can search this site, or <a href="http://newcatalog.library.cornell.edu/digitalcollections">view a complete list of our digital collections</a>.</p>
   </div>
   <h2>Recently added</h2>
-  <div class="media">
-    <div class="media-left media-middle">
-      <a href="/gamelan">
-        <%= image_tag "thumb/thumb-gamelan.jpg" , alt: "", class: "media-object" %>
-      </a>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><a href="/gamelan">Gamelan Archive of Field Recordings</a></h4>
-      <!-- ... -->
-    </div>
-  </div>
-  <!-- <div class="media">
-    <div class="media-left media-middle">
-      <a href="/bastides">
-        <%= image_tag "thumb/thumb-bastides.jpg" , alt: "", class: "media-object" %>
-      </a>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><a href="/bastides">John Reps Collection: Bastides</a></h4>
-    </div>
-  </div> -->
   <div class="media">
     <div class="media-left media-middle">
       <a href="/ragamala">
@@ -44,17 +15,4 @@
       <h4 class="media-heading"><a href="/ragamala">Ragamala Paintings</a></h4>
     </div>
   </div>
-  <div class="media">
-    <div class="media-left media-middle">
-      <a href="/aerialny">
-        <%= image_tag "thumb/thumb-aerialny.jpg" , alt: "", class: "media-object" %>
-      </a>
-      </a>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><a href="/aerialny">New York Aerial Photographs</a></h4>
-    </div>
-  </div>
 </div>
-
-<% end %>
