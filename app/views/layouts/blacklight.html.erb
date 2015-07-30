@@ -40,11 +40,6 @@
   <%= render :partial => 'shared/header_navbar' %>
   <%= render partial: 'shared/ajax_modal' %>
 
-  <%# add hero for collections that need it %>
-  <% if current_page?('/ragamala') && (params[:f].nil? && params[:q].nil?)  %>
-    <div class="hero">
-  <% end %>
-
   <div id="main-container">
 
     <%# home page featured image %>
@@ -63,6 +58,9 @@
       <% if params[:subject] == "ragamala" && (!params[:f].nil? || !params[:q].nil? || params[:action] == 'show')  %>
         <h1 class="collection-title"><a href="/ragamala">Ragamala Paintings</a></h1>
       <% end %>
+      <% if params[:subject] == "aerialny" && (!params[:f].nil? || !params[:q].nil? || params[:action] == 'show')  %>
+        <h1 class="collection-title"><a href="/ragamala">New York Aerial Photographs</a></h1>
+      <% end %>
       <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
 
 
@@ -72,11 +70,6 @@
       </div>
     </div>
   </div>
-
-  <%# close the hero for those that used it %>
-  <% if current_page?('/ragamala') && (params[:f].nil? && params[:q].nil?)  %>
-    </div>
-  <% end %>
 
   <%= render :partial => 'shared/footer' %>
   </body>
