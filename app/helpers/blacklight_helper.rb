@@ -23,7 +23,7 @@ def link_to_document(doc, field_or_opts = nil, opts={:counter => nil})
     id=doc
     if params[:subject]
     subject=params[:subject]
-    link_to label, '/'+subject +'/' +'catalog' + '/' + doc[:id], document_link_params(doc, opts)
+    link_to label, '/'+'catalog' + '/' + doc[:id] + '?subject=' + subject, document_link_params(doc, opts) 
   else
     link_to label, url_for_document(doc), document_link_params(doc, opts)
   end

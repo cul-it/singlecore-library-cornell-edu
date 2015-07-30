@@ -1,12 +1,7 @@
 
 Rails.application.routes.draw do
-  get '/bookmarks' => 'bookmarks#index'
-  get '/:subject' => 'catalog#index'
-  get '/:subject/catalog/:id' => 'catalog#show'
-    get '/ragamala' => 'high_voltage/pages#show', id: 'ragamala/index'
-
+  get '/ragamala/' => 'high_voltage/pages#show', id: 'ragamala/index'
   root "catalog#index"
-
   blacklight_for :catalog
 
 
