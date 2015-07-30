@@ -1,21 +1,36 @@
-body.blacklight-catalog-index.blacklight-ragamala-home {
-	.hero {
-		background: url("hero/hero-ragamala.jpg") no-repeat;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		min-height: 600px;
-		color: white
-	}
-	.home-text {
+.hero-ragamala {
+	background: url("hero/hero-ragamala.jpg") no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 600px;
+	color: white
+}
+.wrapper-ragamala {
+	.well {
+		background: rgba(0,0,0,.8);
+		border: 0;
+		margin-top: 4em;
+		position:relative;
 		color: white;
-		.well {
-			background: rgba(0,0,0,.8);
-			border: 0;
-			left: 75%;
-			position:relative;
+	}
+	.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .nav-pills > li > a:hover, .nav-pills > li > a:active, .nav-pills > li > a:focus {
+		background: #b39f5d;
+		border-bottom: 0;
+		i {
+			color: white;
 		}
 	}
-
+	.nav-pills > li > a {
+		color: white;
+	}
+	.nav-pills {
+		i {
+			margin-left: .25em;
+			color: $light-gray;
+			font-size: 85%;
+			color: $light-gray;
+		}
+	}
 }

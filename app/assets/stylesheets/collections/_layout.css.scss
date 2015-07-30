@@ -2,10 +2,9 @@
 	padding: 0 0 3em 0;
 	background: white;
 }
-.hero {
-	#main-container {
-		background: inherit; // hero should be used for a large background image, so inherit that background instead of white
-	}
+// Used on special collection pages
+.main-text {
+	padding-top: 3em;
 }
 
 // Collection home pages 

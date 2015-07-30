@@ -15,3 +15,14 @@
 .btn:active, .btn:focus {
 	box-shadow: none;
 }
+
+// Special collections layout
+// ----------------------------- //
+.top-link {
+	font-size: 14px;
+	text-align: right;
+	i {
+		margin-left: .25em;
+		font-size: 85%;
+	}
+}
