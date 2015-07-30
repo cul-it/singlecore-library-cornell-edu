@@ -31,11 +31,7 @@
 
   </head>
 
-  <% if params[:subject].present?  %>
-    <body class="<%= render_body_class %> blacklight-<%= params[:subject] %>-home blacklight-<%= params[:subject] %>">
-  <% else %>
-    <body class="<%= render_body_class %>">
-  <% end %>
+  <body class="<%= render_body_class %>">
 
 <%# this is your full navbar %>
   <%= render :partial => 'shared/header_navbar' %>
