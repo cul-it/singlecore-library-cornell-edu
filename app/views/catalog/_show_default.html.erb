@@ -26,7 +26,7 @@
 
 
 <%# show fields except image and kaltura ID %>
-<dl class="dl-horizontal  dl-invert">
+<dl class="dl-horizontal  dl-invert metadata">
   	<% document.each do |field_name, field| -%>
   	<% if !field.blank? && !field_name.include?("_ssi") && field.is_a?(Array) %>
 
