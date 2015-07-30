@@ -2,6 +2,12 @@
 	padding: 0 0 3em 0;
 	background: white;
 }
+.blacklight-catalog-index,
+.blacklight-catalog-show {
+	#main-container {
+		padding-top: 3em;
+	}
+}
 // Used on special collection pages
 .main-text {
 	padding-top: 3em;
@@ -10,5 +16,5 @@
 // Collection home pages 
 // ------------------------- //
 .collection-title {
-	padding-left: 15px;
+	font-weight: 400;
 }
