@@ -29,13 +29,164 @@
 
 
 <%# show fields except image and kaltura ID %>
-<dl class="dl-horizontal  dl-invert">
-  	<% document.each do |field_name, field| -%>
-  	<% if !field.blank? && field_name != "image_restricted_tesim" %>
+<% if (render_document_show_field_value :document => document, :field => "Collection_tesim").present? %>
 
-      <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
-      <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
+             <dt class="blacklight-collection%>">
+        Collection
+      </dt>
 
-	    <% end %>
-  <% end %>
-</dl>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "Collection_tesim" %>
+      </dd>
+
+
+
+<%end%>
+
+<% if (render_document_show_field_value :document => document, :field => "county_tesim").present? %>
+
+             <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "county_tesim" %>
+      </dd>
+
+
+
+<%end%>
+
+<% if (render_document_show_field_value :document => document, :field => "latest_date_tsi").present? %>
+
+             <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "latest_date_tsi" %>
+      </dd>
+
+
+
+<%end%>
+<% if (render_document_show_field_value :document => document, :field => "source_tsi").present? %>
+
+             <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "source_tsi" %>
+      </dd>
+
+
+
+<%end%>
+
+<% if (render_document_show_field_value :document => document, :field => "repository_tsi").present? %>
+
+             <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "repository_tsi" %>
+      </dd>
+
+<% end %>
+
+<% if (render_document_show_field_value :document => document, :field => "culture_tesim").present? %>
+
+      <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "culture_tesim" %>
+      </dd>
+<%end%>
+
+<% if (render_document_show_field_value :document => document, :field => "earliest_date_tsi").present? %>
+
+      <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "earliest_date_tsi" %>
+      </dd>
+<%end%>
+
+<% if (render_document_show_field_value :document => document, :field => "materials_tesim").present? %>
+
+      <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "materials_tesim" %>
+      </dd>
+<%end%>
+
+
+<% if (render_document_show_field_value :document => document, :field => "culture_tesim").present? %>
+
+      <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "culture_tesim" %>
+      </dd>
+<%end%>
+
+
+
+<% if (render_document_show_field_value :document => document, :field => "centerpoint_tesim").present? %>
+
+      <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "centerpoint_tesim" %>
+      </dd>
+<%end%>
+
+<% if (render_document_show_field_value :document => document, :field => "subject_tesim").present? %>
+
+      <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "subject_tesim" %>
+      </dd>
+<%end%>
+
+
+
+<% if (render_document_show_field_value :document => document, :field => "location_tesim").present? %>
+
+      <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "location_tesim" %>
+      </dd>
+<%end%>
+
+
+<% if (render_document_show_field_value :document => document, :field => "collection_website_tesim").present? %>
+
+      <dt class="blacklight-collection%>">
+        Collection Website
+      </dt>
+      <dd class="blacklight-collection">
+      <a href="<%= render_document_show_field_value :document => document, :field => "collection_website_tesim" %>">Collection website</a>
+      </dd>
+<%end%>
+
+
+
+
+
+
+ <a class="btn btn-info pull-left" href="<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>">Download Original Image</a>
+ <a href="#" style="float:right">View in Shared Shelf Commons</a>
+
