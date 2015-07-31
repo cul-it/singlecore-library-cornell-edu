@@ -18,7 +18,6 @@ if params[:subject] == "ragamala"
       :"q.alt" => '*:*',
       :"facet.mincount" => 2}
 
-      blacklight_config.add_facet_field :deity_central_figure_tesim, :label => 'Central Deity'
 
 
 elsif params[:subject] == "reps-bastides"
@@ -59,7 +58,7 @@ end
       :fl => '*,score',
       :defType => 'edismax',
       :"q.alt" => '*:*',
-      :fq => '-notes_tesim:"Not for publication"',
+      :fq => '-notes_tesim:"Not for publication" AND -media_URL_size_2_tesim:"http://catalog.sharedshelf.artstor.org/images/ss_noimage-0.png"',
       :"facet.mincount" => 1
     }
 
@@ -125,6 +124,8 @@ end
     config.add_facet_field 'content_type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5
     config.add_facet_field 'materials_tesim', :label => 'Materials', :limit => 5
+    config.add_facet_field 'deity_central_figure_tesim', :label => 'Central Deity', :limit => 5
+
     #config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
     #config.add_facet_field 'country_tesim', :label => 'Country', :limit => 20
 
@@ -152,7 +153,7 @@ end
     #   The ordering of the field names is the order of the display
     config.add_index_field 'village_tesim', :label => 'Village'
     config.add_index_field 'founder_tesim', :label => 'Founder'
-    config.add_index_field 'market_square_details_tesim', :label => 'Details'
+    config.add_index_field 'market_square_details_tesim', :label => 'Market Square Details'
     config.add_index_field 'deity_central_figure_tesim', :label => 'Deity'
     config.add_index_field 'Collection_tesim', :label => 'Collection', :link_to_search => true
 
@@ -164,13 +165,17 @@ end
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field 'deity_central_figure_tesim', :label => 'Central Deity'
-    config.add_show_field 'author_tesim', :label => 'Creator(s)'
-    config.add_show_field 'content_type_tesim', :label => 'Work Type'
-    config.add_show_field 'description_tesim', :label => 'Description'
+    config.add_show_field 'deity_central_figure_tesim', :label => 'Central Deity', :link_to_search => true
+    config.add_show_field 'author_tesim', :label => 'Creator(s)', :link_to_search => true
+    config.add_show_field 'content_type_tesim', :label => 'Work Type', :link_to_search => true
+    config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
     config.add_show_field 'media_URL_tesim', :label => 'Download original image'
     config.add_show_field 'Collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_show_field 'Image_Type_tesim', :label => 'Work Type'
+    config.add_show_field 'Image_Type_tesim', :label => 'Work Type', :link_to_search => true
+    config.add_show_field 'materials_tesim', :label => 'Materials', :link_to_search => true
+    config.add_show_field 'culture_tesim', :label => 'Materials', :link_to_search => true
+    config.add_show_field 'subject_tesim', :label => 'Materials', :link_to_search => true
+    config.add_show_field 'location_tesim', :label => 'Materials', :link_to_search => true
 
 
     #config.add_show_field 'title_vern_display', :label => 'Title'

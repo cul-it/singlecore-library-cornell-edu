@@ -32,7 +32,7 @@
 <%# show image %>
 
 <%# show fields except image and kaltura ID %>
-<dl class="dl-horizontal  dl-invert">
+<dl class="dl-horizontal dl-invert metadata">
   	<% if (render_document_show_field_value :document => document, :field => "deity_central_figure_tesim").present? %>
       <dt class="blacklight-deity %>">
         Central Deity
@@ -86,9 +86,21 @@
 
 
 <%end%>
-          
+        <% if (render_document_show_field_value :document => document, :field => "collection_website_tesim").present? %>
+
+     
+      <a class="btn btn-info" href="<%= render_document_show_field_value :document => document, :field => "collection_website_tesim" %>">Collection website</a>
+<%end%>
+
+
+ <div style="margin-top:5px; padding:10px; clear:both"><a class="btn btn-info pull-left" href="<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>">Download Original Image</a>
+
+<br /><br />
+ </div>
+ <div style="margin-top:5px; padding:10px"><a href="#" >View in Shared Shelf Commons</a></div>
+
+ </div>  
         </dl>
 
- <a class="btn btn-info pull-left" href="<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>">Download Original Image</a>
- <a href="#" style="float:right">View in Shared Shelf Commons</a>
+ 
 

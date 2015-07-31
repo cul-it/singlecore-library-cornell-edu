@@ -3,6 +3,12 @@
 
 <% params[:subject] = 'aerialny' %>
 
+
+
+
+
+
+
 <%# show image %>
 <div id="openseadragon1" style="width: 600px; height: 400px; background-color:#000"></div>
 <script type="text/javascript">
@@ -29,9 +35,13 @@
 
 
 <%# show fields except image and kaltura ID %>
+
+
+<dl class="dl-horizontal dl-invert metadata">
+
 <% if (render_document_show_field_value :document => document, :field => "Collection_tesim").present? %>
 
-             <dt class="blacklight-collection%>">
+             <dt class="blacklight-collection>">
         Collection
       </dt>
 
@@ -43,10 +53,32 @@
 
 <%end%>
 
+<% if (render_document_show_field_value :document => document, :field => "centerpoint_tesim").present? %>
+
+      <dt class="blacklight-collection%>">
+        Centerpoint
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "centerpoint_tesim" %>
+      </dd>
+<%end%>
+
+
+<% if (render_document_show_field_value :document => document, :field => "location_tesim").present? %>
+
+      <dt class="blacklight-collection%>">
+        Location
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "location_tesim" %>
+      </dd>
+<%end%>
+
+
 <% if (render_document_show_field_value :document => document, :field => "county_tesim").present? %>
 
              <dt class="blacklight-collection%>">
-        Collection
+        County
       </dt>
 
       <dd class="blacklight-collection">
@@ -60,7 +92,7 @@
 <% if (render_document_show_field_value :document => document, :field => "latest_date_tsi").present? %>
 
              <dt class="blacklight-collection%>">
-        Collection
+        Latest Date
       </dt>
 
       <dd class="blacklight-collection">
@@ -73,7 +105,7 @@
 <% if (render_document_show_field_value :document => document, :field => "source_tsi").present? %>
 
              <dt class="blacklight-collection%>">
-        Collection
+        Source
       </dt>
 
       <dd class="blacklight-collection">
@@ -87,7 +119,7 @@
 <% if (render_document_show_field_value :document => document, :field => "repository_tsi").present? %>
 
              <dt class="blacklight-collection%>">
-        Collection
+        Repository
       </dt>
 
       <dd class="blacklight-collection">
@@ -96,20 +128,20 @@
 
 <% end %>
 
-<% if (render_document_show_field_value :document => document, :field => "culture_tesim").present? %>
+<% if (render_document_show_field_value :document => document, :field => "country_tesim").present? %>
 
       <dt class="blacklight-collection%>">
-        Collection
+        Country
       </dt>
       <dd class="blacklight-collection">
-        <%= render_document_show_field_value :document => document, :field => "culture_tesim" %>
+        <%= render_document_show_field_value :document => document, :field => "country_tesim" %>
       </dd>
 <%end%>
 
 <% if (render_document_show_field_value :document => document, :field => "earliest_date_tsi").present? %>
 
       <dt class="blacklight-collection%>">
-        Collection
+        Earliest Date
       </dt>
       <dd class="blacklight-collection">
         <%= render_document_show_field_value :document => document, :field => "earliest_date_tsi" %>
@@ -119,7 +151,7 @@
 <% if (render_document_show_field_value :document => document, :field => "materials_tesim").present? %>
 
       <dt class="blacklight-collection%>">
-        Collection
+        Materials
       </dt>
       <dd class="blacklight-collection">
         <%= render_document_show_field_value :document => document, :field => "materials_tesim" %>
@@ -130,7 +162,7 @@
 <% if (render_document_show_field_value :document => document, :field => "culture_tesim").present? %>
 
       <dt class="blacklight-collection%>">
-        Collection
+        Culture
       </dt>
       <dd class="blacklight-collection">
         <%= render_document_show_field_value :document => document, :field => "culture_tesim" %>
@@ -139,20 +171,12 @@
 
 
 
-<% if (render_document_show_field_value :document => document, :field => "centerpoint_tesim").present? %>
 
-      <dt class="blacklight-collection%>">
-        Collection
-      </dt>
-      <dd class="blacklight-collection">
-        <%= render_document_show_field_value :document => document, :field => "centerpoint_tesim" %>
-      </dd>
-<%end%>
 
 <% if (render_document_show_field_value :document => document, :field => "subject_tesim").present? %>
 
       <dt class="blacklight-collection%>">
-        Collection
+        Subject
       </dt>
       <dd class="blacklight-collection">
         <%= render_document_show_field_value :document => document, :field => "subject_tesim" %>
@@ -160,33 +184,19 @@
 <%end%>
 
 
-
-<% if (render_document_show_field_value :document => document, :field => "location_tesim").present? %>
-
-      <dt class="blacklight-collection%>">
-        Collection
-      </dt>
-      <dd class="blacklight-collection">
-        <%= render_document_show_field_value :document => document, :field => "location_tesim" %>
-      </dd>
-<%end%>
-
-
 <% if (render_document_show_field_value :document => document, :field => "collection_website_tesim").present? %>
 
-      <dt class="blacklight-collection%>">
-        Collection Website
-      </dt>
-      <dd class="blacklight-collection">
-      <a href="<%= render_document_show_field_value :document => document, :field => "collection_website_tesim" %>">Collection website</a>
-      </dd>
+     
+      <a class="btn btn-info" href="<%= render_document_show_field_value :document => document, :field => "collection_website_tesim" %>">Collection website</a>
 <%end%>
 
 
+ <div style="margin-top:5px; padding:10px; clear:both"><a class="btn btn-info pull-left" href="<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>">Download Original Image</a>
 
+<br /><br />
+ </div>
+ <div style="margin-top:5px; padding:10px"><a href="#" >View in Shared Shelf Commons</a></div>
 
-
-
- <a class="btn btn-info pull-left" href="<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>">Download Original Image</a>
- <a href="#" style="float:right">View in Shared Shelf Commons</a>
+ </div>
+</dl>
 
