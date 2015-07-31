@@ -86,6 +86,24 @@
 
 
 <%end%>
+
+
+    <% if (render_document_show_field_value :document => document, :field => "fd_43718_ssi").present? %>
+
+             <dt class="blacklight-collection%>">
+        Country
+      </dt>
+
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "fd_43718_ssi" %>
+      </dd>
+
+
+
+<%end%>
+
+
+
         <% if (render_document_show_field_value :document => document, :field => "collection_website_tesim").present? %>
 
      
