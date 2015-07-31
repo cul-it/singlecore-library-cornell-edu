@@ -30,7 +30,6 @@ elsif params[:subject] == "reps-bastides"
       :"q.alt" => '*:*',
     :"facet.mincount" => 1}
 
-    blacklight_config.add_facet_field :founder_tesim, :label => 'Village Founder'
 
 end
 
@@ -125,6 +124,8 @@ end
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5
     config.add_facet_field 'materials_tesim', :label => 'Materials', :limit => 5
     config.add_facet_field 'deity_central_figure_tesim', :label => 'Central Deity', :limit => 5
+    config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5
+
 
     #config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
     #config.add_facet_field 'country_tesim', :label => 'Country', :limit => 20
@@ -176,6 +177,10 @@ end
     config.add_show_field 'culture_tesim', :label => 'Materials', :link_to_search => true
     config.add_show_field 'subject_tesim', :label => 'Materials', :link_to_search => true
     config.add_show_field 'location_tesim', :label => 'Materials', :link_to_search => true
+    config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
+    config.add_show_field 'founder_tesim', :label => 'Founder', :link_to_search => true
+    config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true
+
 
 
     #config.add_show_field 'title_vern_display', :label => 'Title'

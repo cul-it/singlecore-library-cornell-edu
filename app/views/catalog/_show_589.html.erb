@@ -1,0 +1,118 @@
+<%# default partial to display solr document fields in catalog show view -%>
+
+<%# show image %>
+<% coll = render_document_show_field_value :document => document, :field => "Collection_tesim" %>
+<% project = render_document_show_field_value :document => document, :field => "project_id_ssi" %>
+<% asset = request.original_url.split('ss')[1].split(':')[1] %>
+<% if coll = "Reps Photographs Collection" %>
+<div id="openseadragon1" style="width: 800px; height: 600px; background-color:#000"></div>
+<script>
+//<![CDATA[
+        function initOpenSeadragon() {
+          OpenSeadragon({
+  id: "openseadragon1",
+  minZoomImageRatio: 1,
+  prefixUrl: "/images/",
+  tileSources: "http://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= project %>/<%= asset %>/image/info.json"});
+        }
+        window.onload = initOpenSeadragon;
+        document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
+//]]>
+</script>
+
+<% end %>
+
+
+
+
+<%# show fields except image and kaltura ID %>
+<dl class="dl-horizontal  dl-invert metadata">
+  	
+      <% if (render_document_show_field_value :document => document, :field => "Collection_tesim").present? %>
+      <dt class="blacklight-collection%>">
+        Collection
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "Collection_tesim" %>
+      </dd>
+      <%end%>
+
+      <% if (render_document_show_field_value :document => document, :field => "special__features_tesim").present? %>
+      <dt class="blacklight-collection%>">
+        Special Features
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "special_features_tesim" %>
+      </dd>
+      <%end%>
+
+
+      <% if (render_document_show_field_value :document => document, :field => "market_square_details_tesim").present? %>
+      <dt class="blacklight-collection%>">
+        Market Square Details
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "market_square_details_tesim" %>
+      </dd>
+      <%end%>
+
+
+
+      <% if (render_document_show_field_value :document => document, :field => "plan_site_details_tesim").present? %>
+      <dt class="blacklight-collection%>">
+        Plan Site Details
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "plan_site_details_tesim" %>
+      </dd>
+      <%end%>
+
+
+      <% if (render_document_show_field_value :document => document, :field => "founder_tesim").present? %>
+      <dt class="blacklight-collection%>">
+        Founder
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "founder_tesim" %>
+      </dd>
+      <%end%>
+
+
+
+
+      <% if (render_document_show_field_value :document => document, :field => "fd_27325_tsi").present? %>
+      <dt class="blacklight-collection%>">
+        Year taken
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "fd_27325_tsi" %>
+      </dd>
+      <%end%>
+
+      <% if (render_document_show_field_value :document => document, :field => "country_tesim").present? %>
+      <dt class="blacklight-collection%>">
+        Country
+      </dt>
+      <dd class="blacklight-collection">
+        <%= render_document_show_field_value :document => document, :field => "country_tesim" %>
+      </dd>
+      <%end%>
+
+        <% if (render_document_show_field_value :document => document, :field => "collection_website_tesim").present? %>
+
+     
+      <a class="btn btn-info" href="<%= render_document_show_field_value :document => document, :field => "collection_website_tesim" %>">Collection website</a>
+<%end%>
+
+
+ <div style="margin-top:5px; padding:10px; clear:both"><a class="btn btn-info pull-left" href="<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>">Download Original Image</a>
+
+<br /><br />
+ </div>
+ <div style="margin-top:5px; padding:10px"><a href="#" >View in Shared Shelf Commons</a></div>
+
+ </div>  
+        </dl>
+
+ 
+
