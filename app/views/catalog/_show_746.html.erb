@@ -14,7 +14,7 @@
         tileSources: {
         type: 'legacy-image-pyramid',
         levels:[{
-            url: '<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>.jpg',
+            url: '<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>',
             width: <%= render_document_show_field_value :document => document, :field => "img_width_tesim" %>,
 
             height:<%= render_document_show_field_value :document => document, :field => "img_height_tesim" %>
@@ -25,7 +25,6 @@
     });
 </script>
 
-<% image = render_document_show_field_value :document => document, :field => "media_URL_tesim" %>
 
 
 
