@@ -92,11 +92,11 @@ end
 
 
 
-    config.index.display_type_field = 'content_type_tesim'
+    config.index.display_type_field = 'project_id_ssi'
 
     # solr field configuration for document/show views
     config.show.title_field = 'title_tesim','Title_tesim'
-    config.show.display_type_field = 'content_type_tesim'
+    config.show.display_type_field = 'project_id_ssi'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -154,7 +154,7 @@ end
     config.add_index_field 'founder_tesim', :label => 'Founder'
     config.add_index_field 'market_square_details_tesim', :label => 'Details'
     config.add_index_field 'deity_central_figure_tesim', :label => 'Deity'
-    config.add_index_field 'Collection_tesim', :label => 'Collection'
+    config.add_index_field 'Collection_tesim', :label => 'Collection', :link_to_search => true
 
 
     #config.add_index_field 'language_facet', :label => 'Language'
@@ -169,7 +169,7 @@ end
     config.add_show_field 'content_type_tesim', :label => 'Work Type'
     config.add_show_field 'description_tesim', :label => 'Description'
     config.add_show_field 'media_URL_tesim', :label => 'Download original image'
-    config.add_show_field 'Collection_tesim', :label => 'Collection'
+    config.add_show_field 'Collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'Image_Type_tesim', :label => 'Work Type'
 
 

@@ -1,7 +1,8 @@
 
 Rails.application.routes.draw do
-  get '/ragamala/' => 'high_voltage/pages#show', id: 'ragamala/index'
-  get '/aerialny/' => 'high_voltage/pages#show', id: 'aerialny/index'
+  get '/ragamala' => 'high_voltage/pages#show', id: 'ragamala/index'
+  get '/aerialny' => 'high_voltage/pages#show', id: 'aerialny/index'
+  get '/reps-bastides' => 'high_voltage/pages#show', id: 'reps_bastides/index'
   root "catalog#index"
   blacklight_for :catalog
 

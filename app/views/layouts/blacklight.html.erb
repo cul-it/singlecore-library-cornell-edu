@@ -59,7 +59,7 @@
         <h1 class="collection-title"><a href="/ragamala">Ragamala Paintings</a></h1>
       <% end %>
       <% if params[:subject] == "aerialny" && (!params[:f].nil? || !params[:q].nil? || params[:action] == 'show')  %>
-        <h1 class="collection-title"><a href="/ragamala">New York Aerial Photographs</a></h1>
+        <h1 class="collection-title"><a href="/aerialny">New York Aerial Photographs</a></h1>
       <% end %>
       <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
 
