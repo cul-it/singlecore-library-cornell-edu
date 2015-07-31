@@ -9,7 +9,7 @@ before_action  do
 
 if params[:subject] == "ragamala"
   blacklight_config.default_solr_params =
-  {:fq => 'Collection_tesim:"Ragamala Paintings" AND -notes_tesim:"Not for publication"',
+  {:fq => 'Collection_tesim:"Ragamala Paintings" AND -notes_tesim:"Not for publication" AND -media_URL_size_2_tesim:"http://catalog.sharedshelf.artstor.org/images/ss_noimage-0.png"',
       :qt => 'search',
       :qf => 'deity_central_figure_tesim collection_tesim Title_tesim media_URL_size_2_tesim',
       :rows => 10,
