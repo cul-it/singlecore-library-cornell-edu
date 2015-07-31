@@ -180,7 +180,7 @@ end
     config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
     config.add_show_field 'founder_tesim', :label => 'Founder', :link_to_search => true
     config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true
-
+    config.add_show_field 'fd_43718_ssi', :label => 'Country', :link_to_search => true
 
 
     #config.add_show_field 'title_vern_display', :label => 'Title'
