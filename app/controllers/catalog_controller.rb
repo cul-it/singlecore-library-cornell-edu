@@ -125,6 +125,9 @@ end
     config.add_facet_field 'materials_tesim', :label => 'Materials', :limit => 5
     config.add_facet_field 'deity_central_figure_tesim', :label => 'Central Deity', :limit => 5
     config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5
+    config.add_facet_field 'fd_27325_tsi', :label => 'Year of photo', :limit => 5
+    config.add_facet_field 'senechal_tesim', :label => 'Senechal', :limit => 5
+    config.add_facet_field 'village_tesim', :label => 'Village', :limit => 5
 
 
     #config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
@@ -179,8 +182,10 @@ end
     config.add_show_field 'location_tesim', :label => 'Materials', :link_to_search => true
     config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
     config.add_show_field 'founder_tesim', :label => 'Founder', :link_to_search => true
+    config.add_show_field 'village_tesim', :label => 'Village', :link_to_search => true
     config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true
     config.add_show_field 'fd_43718_ssi', :label => 'Country', :link_to_search => true
+    config.add_show_field 'senechal_tesim', :label => 'Senechal', :link_to_search => true
 
 
     #config.add_show_field 'title_vern_display', :label => 'Title'
