@@ -22,3 +22,53 @@
 .facets-heading {
 	margin: 0;
 }
+
+// Limit your search panel heading
+#facets {
+	padding-bottom: 0;
+	.top-panel-heading {
+		border-radius: 0;
+		border: 0;
+		padding: 0;
+	}
+	.facets-toggle {
+		margin: 0;
+		display: block;
+		float: none;
+		width: 100%;
+		text-align: left;
+		border-radius: 0;
+		font-size: 14px;
+		i {
+			float: right;
+			padding-top: .15em;
+		}
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+  // /* Extra small devices (phones, up to 480px) */
+  // /* No media query since this is the default in Bootstrap */
+
+  // /* Small devices (tablets, 768px and up) */
+  // @media (min-width: @screen-sm) { ... }
+
+  // /* Medium devices (desktops, 992px and up) */
+  // @media (min-width: @screen-md) { ... }
+
+  // /* Large devices (large desktops, 1200px and up) */
+  // @media (min-width: @screen-lg) { ... }
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm) { 
+	#facets {
+		.top-panel-heading {
+			padding: 10px 15px;
+		}
+	}
+}
+
+
