@@ -57,6 +57,13 @@
 	margin-bottom: .25em;
 }
 
+// Openseadragon viewer
+// ------------------------ //
+#openseadragon1 {
+	 width: 320px;
+	 height: 520px;
+	 background-color:#000;
+}
 
 // MEDIA QUERIES
 // -------------------------
@@ -80,11 +87,23 @@
 		float: right;
 		margin-right: -15px;
 	}
+	#openseadragon1 {
+		 width: 450px;
+		 height: 650px;
+	}
 }
 
 /* Medium devices (desktops, 992px and up) */
-// @media (min-width: $screen-md) {
-// }
+@media (min-width: $screen-md) {
+	#openseadragon1 {
+		width: 650px;
+		height: 850px;
+	}
+}
 /* Large devices (desktops, 1200px and up) */
-// @media (min-width: $screen-lg) {
-// }
+@media (min-width: $screen-lg) {
+	#openseadragon1 {
+		width: 800px;
+		height: 1000px;
+	}
+}
