@@ -33,9 +33,58 @@
 	}
 }
 
+// Special collections horizontal context nav
+// --------------------------------------------- //
+.nav-context-horizontal {
+	li {
+		float: left;
+	}
+	li > a {
+		padding: 0 15px;
+		color: $dark-gray;
+		text-transform: uppercase;
+	}
+	li > a:hover, li > a:active, li > a:focus {
+		background: inherit;
+		color: $dark-gray;
+	}
+}
+
 
 // Bootstrap overrides
 // --------------------- //
 .nav-pills > li {
 	margin-bottom: .25em;
 }
+
+
+// MEDIA QUERIES
+// -------------------------
+
+  // /* Extra small devices (phones, up to 480px) */
+  // /* No media query since this is the default in Bootstrap */
+
+  // /* Small devices (tablets, 768px and up) */
+  // @media (min-width: @screen-sm) { ... }
+
+  // /* Medium devices (desktops, 992px and up) */
+  // @media (min-width: @screen-md) { ... }
+
+  // /* Large devices (large desktops, 1200px and up) */
+  // @media (min-width: @screen-lg) { ... }
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm) { 
+	.nav-context-horizontal {
+		float: right;
+		margin-right: -15px;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+// @media (min-width: $screen-md) {
+// }
+/* Large devices (desktops, 1200px and up) */
+// @media (min-width: $screen-lg) {
+// }

@@ -5,32 +5,67 @@
 	-o-background-size: cover;
 	background-size: cover;
 	min-height: 600px;
-	color: white
+	color: white;
+	padding-bottom: 4em;
 }
 .wrapper-ragamala {
+	padding-bottom: 0 !important;
 	.well {
 		background: rgba(0,0,0,.8);
 		border: 0;
 		margin-top: 4em;
 		position:relative;
 		color: white;
-	}
-	.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus, .nav-pills > li > a:hover, .nav-pills > li > a:active, .nav-pills > li > a:focus {
-		background: #b39f5d;
-		border-bottom: 0;
-		i {
-			color: white;
+		li {
+			a, a:hover, a:active, a:focus {
+				text-decoration: underline;
+				color: white;
+			}
+		}
+		p {
+			font-size: 16px;
 		}
 	}
-	.nav-pills > li > a {
+	.btn-default {
+		background: #b39f5d;
+		border-bottom: 0;
+		border-color: #b39f5d;
+		font-size: 18px;
 		color: white;
 	}
-	.nav-pills {
-		i {
-			margin-left: .25em;
-			color: $light-gray;
-			font-size: 85%;
-			color: $light-gray;
+	.nav-context-horizontal {
+		margin: 1em 0 1em -15px;
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+  // /* Extra small devices (phones, up to 480px) */
+  // /* No media query since this is the default in Bootstrap */
+
+  // /* Small devices (tablets, 768px and up) */
+  // @media (min-width: @screen-sm) { ... }
+
+  // /* Medium devices (desktops, 992px and up) */
+  // @media (min-width: @screen-md) { ... }
+
+  // /* Large devices (large desktops, 1200px and up) */
+  // @media (min-width: @screen-lg) { ... }
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm) { 
+	.wrapper-ragamala {
+		.nav-context-horizontal {
+			margin-top: 3em;
 		}
 	}
 }
+
+/* Medium devices (desktops, 992px and up) */
+// @media (min-width: $screen-md) {
+// }
+/* Large devices (desktops, 1200px and up) */
+// @media (min-width: $screen-lg) {
+// }
