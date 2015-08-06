@@ -2,34 +2,7 @@
 
 <% params[:subject] = 'ragamala' %>
 
-<%# show image %>
-
-
-<div id="openseadragon1"></div>
-<script type="text/javascript">
-    var viewer = OpenSeadragon({
-        id: "openseadragon1", 
-        prefixUrl: "/assets/",
-        showNavigator: true,      
-        tileSources: {
-        type: 'legacy-image-pyramid',
-        levels:[{
-            url: '<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>',
-            width: <%= render_document_show_field_value :document => document, :field => "img_width_tesim" %>,
-
-            height:<%= render_document_show_field_value :document => document, :field => "img_height_tesim" %>
-            
-        }]
-    }
-
-    });
-</script>
-
-
-
-
-
-<%# show image %>
+<%= render 'image_viewer_legacy' %>
 
 <%# show fields except image and kaltura ID %>
 <dl class="dl-horizontal dl-invert metadata">

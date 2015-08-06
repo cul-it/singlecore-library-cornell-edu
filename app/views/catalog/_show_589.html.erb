@@ -1,29 +1,6 @@
 <%# default partial to display solr document fields in catalog show view -%>
 
-<%# show image %>
-<% coll = render_document_show_field_value :document => document, :field => "Collection_tesim" %>
-<% project = render_document_show_field_value :document => document, :field => "project_id_ssi" %>
-<% asset = request.original_url.split('ss')[1].split(':')[1] %>
-<% if coll = "Reps Photographs Collection" %>
-<div id="openseadragon1" style="width: 800px; height: 600px; background-color:#000"></div>
-<script>
-//<![CDATA[
-        function initOpenSeadragon() {
-          OpenSeadragon({
-  id: "openseadragon1",
-  minZoomImageRatio: 1,
-  prefixUrl: "/images/",
-  tileSources: "http://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= project %>/<%= asset %>/image/info.json"});
-        }
-        window.onload = initOpenSeadragon;
-        document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
-//]]>
-</script>
-
-<% end %>
-
-
-
+<%= render 'image_viewer' %>
 
 <%# show fields except image and kaltura ID %>
 <dl class="dl-horizontal  dl-invert metadata">
