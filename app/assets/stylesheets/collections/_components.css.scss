@@ -50,60 +50,11 @@
 	}
 }
 
-
 // Bootstrap overrides
 // --------------------- //
 .nav-pills > li {
 	margin-bottom: .25em;
 }
 
-// Openseadragon viewer
-// ------------------------ //
-#openseadragon1 {
-	 width: 320px;
-	 height: 520px;
-	 background-color:#000;
-}
-
-// MEDIA QUERIES
-// -------------------------
-
-  // /* Extra small devices (phones, up to 480px) */
-  // /* No media query since this is the default in Bootstrap */
-
-  // /* Small devices (tablets, 768px and up) */
-  // @media (min-width: @screen-sm) { ... }
-
-  // /* Medium devices (desktops, 992px and up) */
-  // @media (min-width: @screen-md) { ... }
-
-  // /* Large devices (large desktops, 1200px and up) */
-  // @media (min-width: @screen-lg) { ... }
 
 
-/* Small devices (tablets, 768px and up) */
-@media (min-width: $screen-sm) { 
-	.nav-context-horizontal {
-		float: right;
-		margin-right: -15px;
-	}
-	#openseadragon1 {
-		 width: 450px;
-		 height: 650px;
-	}
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: $screen-md) {
-	#openseadragon1 {
-		width: 650px;
-		height: 850px;
-	}
-}
-/* Large devices (desktops, 1200px and up) */
-@media (min-width: $screen-lg) {
-	#openseadragon1 {
-		width: 800px;
-		height: 1000px;
-	}
-}
