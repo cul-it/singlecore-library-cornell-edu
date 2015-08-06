@@ -1,23 +1,24 @@
 <% @media_url = render_document_show_field_value(:document => @document, :field => 'media_URL_tesim') %>
 <% @img_width = render_document_show_field_value(:document => @document, :field => 'img_width_tesim') %>
 <% @img_height = render_document_show_field_value(:document => @document, :field => 'img_height_tesim') %>
+<div class="col-md-8">
+    <div id="openseadragon1"></div>
+    <script type="text/javascript">
+        var viewer = OpenSeadragon({
+            id: "openseadragon1", 
+            prefixUrl: "/assets/",
+            showNavigator: true,      
+            tileSources: {
+            type: 'legacy-image-pyramid',
+            levels:[{
+                url: '<%= @media_url %>',
+                width: <%= @img_width %>,
 
-<div id="openseadragon1"></div>
-<script type="text/javascript">
-    var viewer = OpenSeadragon({
-        id: "openseadragon1", 
-        prefixUrl: "/assets/",
-        showNavigator: true,      
-        tileSources: {
-        type: 'legacy-image-pyramid',
-        levels:[{
-            url: '<%= @media_url %>',
-            width: <%= @img_width %>,
+                height:<%= @img_height %>
+                
+            }]
+        }
 
-            height:<%= @img_height %>
-            
-        }]
-    }
-
-    });
-</script>
+        });
+    </script>
+</div>

@@ -1,3 +1,31 @@
+// Metadata display
+// ------------------------ //
+.metadata {
+	margin-top: 2em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid $border-color;
+	dt {
+		color: $medium-gray;
+		font-weight: 400;
+	}
+	dd {
+		margin-bottom: 1em;
+		font-size: 16px;
+	}
+}
+
+// Download links
+// ------------------------ //
+.download-list {
+	margin: 2em 0 0 2.75em;
+	li {
+		margin-bottom: .5em;
+	}
+	i {
+		color: $medium-gray;
+	}
+}
+
 // Image zoom
 // ------------------------ //
 .document-image {
@@ -55,8 +83,14 @@
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md) {
 	#openseadragon1 {
-		width: 650px;
-		height: 650px;
+		width: 600px;
+		height: 600px;
+	}
+	.download-list {
+		margin-left: 1.85em;
+	}
+	.metadata {
+		margin-top: 0;
 	}
 }
 /* Large devices (desktops, 1200px and up) */

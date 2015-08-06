@@ -4,92 +4,49 @@
 
 <%= render 'image_viewer_legacy' %>
 
-<%# show fields except image and kaltura ID %>
-<dl class="dl-horizontal dl-invert metadata">
-  	<% if (render_document_show_field_value :document => document, :field => "deity_central_figure_tesim").present? %>
-      <dt class="blacklight-deity %>">
+<div class="col-md-4">
+  <%# show fields except image and kaltura ID %>
+  <dl class="metadata">
+    <% if (render_document_show_field_value :document => document, :field => "deity_central_figure_tesim").present? %>
+      <dt class="blacklight-deity">
         Central Deity
       </dt>
-
       <dd class="blacklight-deity">
         <%= render_document_show_field_value :document => document, :field => "deity_central_figure_tesim" %>
       </dd>
-<% end %>
-
-
-
-
+    <% end %>
     <% if (render_document_show_field_value :document => document, :field => "style_period_tesim").present? %>
-
-       <dt class="blacklight-period %>">
+      <dt class="blacklight-period">
         Style/Period
       </dt>
-
       <dd class="blacklight-period">
         <%= render_document_show_field_value :document => document, :field => "style_period_tesim" %>
       </dd>
-<% end %>
-
-
-
-     
+    <% end %>
     <% if (render_document_show_field_value :document => document, :field => "description_tesim").present? %>
-
-
-       <dt class="blacklight-description %>">
+      <dt class="blacklight-description">
         Description
       </dt>
-
       <dd class="blacklight-description">
         <%= render_document_show_field_value :document => document, :field => "description_tesim" %>
       </dd>
-
-<% end %>
-
+    <% end %>
     <% if (render_document_show_field_value :document => document, :field => "Collection_tesim").present? %>
-
-             <dt class="blacklight-collection%>">
+      <dt class="blacklight-collection">
         Collection
       </dt>
-
       <dd class="blacklight-collection">
         <%= render_document_show_field_value :document => document, :field => "Collection_tesim" %>
       </dd>
-
-
-
-<%end%>
-
-
+    <%end%>
     <% if (render_document_show_field_value :document => document, :field => "fd_43718_ssi").present? %>
-
-             <dt class="blacklight-collection%>">
+      <dt class="blacklight-country">
         Country
       </dt>
-
-      <dd class="blacklight-collection">
+      <dd class="blacklight-country">
         <%= render_document_show_field_value :document => document, :field => "fd_43718_ssi" %>
       </dd>
-
-
-
-<%end%>
-
-
-
-        <% if (render_document_show_field_value :document => document, :field => "collection_website_tesim").present? %>
-
-     
-      <a class="btn btn-info" href="<%= render_document_show_field_value :document => document, :field => "collection_website_tesim" %>">Collection website</a>
-<%end%>
-
-
- <div style="margin-top:5px; padding:10px; clear:both"><a class="btn btn-info pull-left" href="<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>">Download Original Image</a>
-
-<br /><br />
- </div>
- <div style="margin-top:5px; padding:10px"><a href="#" >View in Shared Shelf Commons</a></div>
-
-        </dl>
- 
-
+    <%end%>
+  </dl>
+  <%= render 'show_download' %>
+</div>
