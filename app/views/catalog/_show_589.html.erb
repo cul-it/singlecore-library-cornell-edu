@@ -1,95 +1,67 @@
-<%# default partial to display solr document fields in catalog show view -%>
+<%# reps bastides item view -%>
 
 <%= render 'image_viewer' %>
 
-<%# show fields except image and kaltura ID %>
-<dl class="dl-horizontal  dl-invert metadata">
-  	
-      <% if (render_document_show_field_value :document => document, :field => "Collection_tesim").present? %>
-      <dt class="blacklight-collection%>">
+<div class="col-md-4">
+  <%# show fields except image and kaltura ID %>
+  <dl class="metadata">
+    <% if (render_document_show_field_value :document => document, :field => "Collection_tesim").present? %>
+      <dt>
         Collection
       </dt>
-      <dd class="blacklight-collection">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "Collection_tesim" %>
       </dd>
-      <%end%>
-
-      <% if (render_document_show_field_value :document => document, :field => "special__features_tesim").present? %>
-      <dt class="blacklight-collection%>">
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "special__features_tesim").present? %>
+      <dt>
         Special Features
       </dt>
-      <dd class="blacklight-collection">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "special_features_tesim" %>
       </dd>
-      <%end%>
-
-
-      <% if (render_document_show_field_value :document => document, :field => "market_square_details_tesim").present? %>
-      <dt class="blacklight-collection%>">
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "market_square_details_tesim").present? %>
+      <dt>
         Market Square Details
       </dt>
-      <dd class="blacklight-collection">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "market_square_details_tesim" %>
       </dd>
-      <%end%>
-
-
-
-      <% if (render_document_show_field_value :document => document, :field => "plan_site_details_tesim").present? %>
-      <dt class="blacklight-collection%>">
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "plan_site_details_tesim").present? %>
+      <dt>
         Plan Site Details
       </dt>
-      <dd class="blacklight-collection">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "plan_site_details_tesim" %>
       </dd>
-      <%end%>
-
-
-      <% if (render_document_show_field_value :document => document, :field => "founder_tesim").present? %>
-      <dt class="blacklight-collection%>">
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "founder_tesim").present? %>
+      <dt>
         Founder
       </dt>
-      <dd class="blacklight-collection">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "founder_tesim" %>
       </dd>
-      <%end%>
-
-
-
-
-      <% if (render_document_show_field_value :document => document, :field => "fd_27325_tsi").present? %>
-      <dt class="blacklight-collection%>">
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "fd_27325_tsi").present? %>
+      <dt>
         Year taken
       </dt>
-      <dd class="blacklight-collection">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "fd_27325_tsi" %>
       </dd>
-      <%end%>
-
-      <% if (render_document_show_field_value :document => document, :field => "country_tesim").present? %>
-      <dt class="blacklight-collection%>">
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "country_tesim").present? %>
+      <dt>
         Country
       </dt>
-      <dd class="blacklight-collection">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "country_tesim" %>
       </dd>
-      <%end%>
-
-        <% if (render_document_show_field_value :document => document, :field => "collection_website_tesim").present? %>
-
-     
-      <a class="btn btn-info" href="<%= render_document_show_field_value :document => document, :field => "collection_website_tesim" %>">Collection website</a>
-<%end%>
-
-
- <div style="margin-top:5px; padding:10px; clear:both"><a class="btn btn-info pull-left" href="<%= render_document_show_field_value :document => document, :field => "media_URL_tesim" %>">Download Original Image</a>
-
-<br /><br />
- </div>
- <div style="margin-top:5px; padding:10px"><a href="#" >View in Shared Shelf Commons</a></div>
-
- </div>  
-        </dl>
-
- 
+    <%end%>
+  </dl>
+  <%= render 'show_download' %>
+</div>
 

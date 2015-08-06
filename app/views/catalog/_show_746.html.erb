@@ -8,42 +8,42 @@
   <%# show fields except image and kaltura ID %>
   <dl class="metadata">
     <% if (render_document_show_field_value :document => document, :field => "deity_central_figure_tesim").present? %>
-      <dt class="blacklight-deity">
+      <dt>
         Central Deity
       </dt>
-      <dd class="blacklight-deity">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "deity_central_figure_tesim" %>
       </dd>
     <% end %>
     <% if (render_document_show_field_value :document => document, :field => "style_period_tesim").present? %>
-      <dt class="blacklight-period">
+      <dt>
         Style/Period
       </dt>
-      <dd class="blacklight-period">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "style_period_tesim" %>
       </dd>
     <% end %>
     <% if (render_document_show_field_value :document => document, :field => "description_tesim").present? %>
-      <dt class="blacklight-description">
+      <dt>
         Description
       </dt>
-      <dd class="blacklight-description">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "description_tesim" %>
       </dd>
     <% end %>
     <% if (render_document_show_field_value :document => document, :field => "Collection_tesim").present? %>
-      <dt class="blacklight-collection">
+      <dt>
         Collection
       </dt>
-      <dd class="blacklight-collection">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "Collection_tesim" %>
       </dd>
     <%end%>
     <% if (render_document_show_field_value :document => document, :field => "fd_43718_ssi").present? %>
-      <dt class="blacklight-country">
+      <dt>
         Country
       </dt>
-      <dd class="blacklight-country">
+      <dd>
         <%= render_document_show_field_value :document => document, :field => "fd_43718_ssi" %>
       </dd>
     <%end%>

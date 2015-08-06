@@ -2,9 +2,9 @@
 
 <%= render 'image_viewer_legacy' %>
 
-<div class="col-sm-4">
+<div class="col-md-4">
 	<%# show fields except image and kaltura ID %>
-	<dl class="dl-horizontal  dl-invert metadata">
+	<dl class="metadata">
 	  <% document.each do |field_name, field| -%>
 	  	<% if !field.blank? %>
 	      <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
