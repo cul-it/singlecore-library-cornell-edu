@@ -18,6 +18,18 @@ if params[:subject] == "ragamala"
       :"q.alt" => '*:*',
       :"facet.mincount" => 2}
 
+elsif params[:subject] == "aerialny"
+  blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_tesim}NYS Aerial Photographs",
+   :qt => 'search',
+      :qf => 'id founder_tesim title_tesim senechal_tesim date_tsi date_founded_tsi image_view_description_tesim market_square_details_tesim plan_site_details_tesim special_features_tesim deity_central_figure_tesim inscription_tesim',
+      :rows => 10,
+      :fl => '*,score',
+      :defType => 'edismax',
+      :"q.alt" => '*:*',
+    :"facet.mincount" => 1}
+
+
+
 
 
 elsif params[:subject] == "reps-bastides"
@@ -118,7 +130,7 @@ end
     #config.add_facet_field 'Village_s', :label => 'Village', :limit => true
     #config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
-    config.add_facet_field 'Collection_tesim', :label => 'Collection', :sort => 'index', :limit => 5
+    config.add_facet_field 'Collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
     config.add_facet_field 'author_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'content_type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5
