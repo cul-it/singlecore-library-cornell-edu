@@ -33,8 +33,12 @@
 		font-size: 18px;
 		color: white;
 	}
-	.nav-context-horizontal {
+	.nav-collection {
 		margin: 1em -15px;
+		li > a, li > a:hover {
+			background: #b39f5d;
+			color: white;
+		}
 	}
 }
 
@@ -57,7 +61,7 @@
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm) { 
 	.wrapper-ragamala {
-		.nav-context-horizontal {
+		.nav-collection {
 			margin-top: 3em;
 		}
 	}

@@ -1,17 +1,17 @@
 #main-container {
-	padding: 0 0 3em 0;
+	padding: 1em 0 3em 0;
 	background: white;
 }
 // Used on special collection pages
-.main-text {
-	padding-top: 3em;
-}
-.blacklight-catalog-index,
-.blacklight-catalog-show {
-	#main-container {
-		padding-top: 1em;
-	}
-}
+// .main-text {
+// 	padding-top: 3em;
+// }
+// .blacklight-catalog-index,
+// .blacklight-catalog-show {
+// 	#main-container {
+// 		padding-top: 1em;
+// 	}
+// }
 
 // Collection home pages 
 // ------------------------- //
@@ -38,11 +38,11 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm) { 
-	.blacklight-catalog-index,
-	.blacklight-catalog-show {
-		#main-container {
-			padding-top: 3em;
-		}
-	}
+	// .blacklight-catalog-index,
+	// .blacklight-catalog-show {
+	// 	#main-container {
+	// 		padding-top: 3em;
+	// 	}
+	// }
 }
 
