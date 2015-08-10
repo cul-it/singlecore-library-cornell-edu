@@ -1,9 +1,10 @@
 <%# default partial to display solr document fields in catalog show view -%>
 
-<%= render 'image_viewer_legacy' %>
+<%= render 'image_viewer' %>
 
 <div class="col-md-4">
 	<%# show fields except image and kaltura ID %>
+	WHAT TEMPLATE IS THIS? SHOW_DEFAULT
 	<dl class="metadata">
 	  <% document.each do |field_name, field| -%>
 	  	<% if !field.blank? %>
