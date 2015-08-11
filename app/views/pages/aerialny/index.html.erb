@@ -6,13 +6,7 @@
 					<h1 class="collection-title">New York Aerial Photographs</h1>
 				</div>
 				<div class="col-sm-6">
-					<button class="btn btn-collection visible-xs"><i class="fa fa-bars"><span class="sr-only">Collection menu</span></i></button>
-					<ul class="nav nav-pills nav-collection">
-						<li><a href="/aerialny">Home</a></li>
-						<li><a href="/aerialny/collection?q=&search_field=all_fields">Browse collection</a></li>
-						<li><a href="/aerialny/using">Using the collection</a></li>
-						<li><a href="/aerialny/about">About the project</a></li>
-					</ul>
+					<%= render partial: 'pages/aerialny/menu' %>
 				</div>
 			</div>
 		</div>
@@ -27,7 +21,7 @@
 			</div>
 			<div class="col-sm-8">
 				<p class="lead">This site presents a series of historical aerial photographs of the state of New York. It was produced under a Cornell University Library Faculty Grant to Eugenia M. Barnaba, Program Leader, Resource Inventory Cornell Institute for Resource Information Sciences.</p>
-				<p><a class="btn btn-info" href="/aerialny/collection?q=&search_field=all_fields">Browse the New York Aerial Photographs Collection</a></p>
+				<p><a class="btn btn-info" href="/aerialny/collection?q=&search_field=all_fields&view=maps">Browse the New York Aerial Photographs Collection</a></p>
 			</div>
 		</div>
 	</div>
