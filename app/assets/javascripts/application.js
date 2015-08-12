@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //
+// Required by Blacklight-Maps
+//= require blacklight-maps
+//= require blacklight_gallery
 // Required by Blacklight
 //= require blacklight/blacklight
 //= require_tree .

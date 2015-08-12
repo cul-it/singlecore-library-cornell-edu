@@ -4,6 +4,8 @@ gem "blacklight"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
+gem "dotenv-rails"
+gem "dotenv-deployment"
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -25,6 +27,18 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'openseadragon'
+
+# Use font-awesome for icons 
+gem 'font-awesome-sass', '~> 4.3.0'
+
+#static pages gem
+gem 'high_voltage', '~> 2.3.0'
+
+gem 'blacklight-gallery'
+
+gem 'blacklight-maps'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

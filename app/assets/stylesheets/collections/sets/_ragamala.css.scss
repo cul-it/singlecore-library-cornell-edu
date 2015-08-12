@@ -1,0 +1,75 @@
+.hero-ragamala {
+	background: url("sets/ragamala/hero-ragamala.jpg") no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 600px;
+	color: white;
+	padding-bottom: 4em;
+}
+.wrapper-ragamala {
+	padding-bottom: 0 !important;
+	.well {
+		background: rgba(0,0,0,.8);
+		border: 0;
+		margin-top: 4em;
+		position:relative;
+		color: white;
+		li {
+			a, a:hover, a:active, a:focus {
+				text-decoration: underline;
+				color: white;
+			}
+		}
+		p {
+			font-size: 16px;
+		}
+	}
+	.btn-default {
+		background: #b39f5d;
+		border-bottom: 0;
+		border-color: #b39f5d;
+		font-size: 18px;
+		color: white;
+	}
+	.nav-collection {
+		margin: 1em -15px;
+		li > a, li > a:hover {
+			background: #b39f5d;
+			color: white;
+		}
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+  // /* Extra small devices (phones, up to 480px) */
+  // /* No media query since this is the default in Bootstrap */
+
+  // /* Small devices (tablets, 768px and up) */
+  // @media (min-width: @screen-sm) { ... }
+
+  // /* Medium devices (desktops, 992px and up) */
+  // @media (min-width: @screen-md) { ... }
+
+  // /* Large devices (large desktops, 1200px and up) */
+  // @media (min-width: @screen-lg) { ... }
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm) { 
+	.wrapper-ragamala {
+		.nav-collection {
+			margin-top: 3em;
+		}
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+// @media (min-width: $screen-md) {
+// }
+/* Large devices (desktops, 1200px and up) */
+// @media (min-width: $screen-lg) {
+// }

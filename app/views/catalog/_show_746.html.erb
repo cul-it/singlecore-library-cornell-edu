@@ -1,0 +1,160 @@
+<%# ragamala item view -%>
+
+<% params[:subject] = 'ragamala' %>
+
+<%= render 'image_viewer' %>
+
+<div class="col-md-4">
+  <%# show fields except image and kaltura ID %>
+  <dl class="metadata">
+    <% if (render_document_show_field_value :document => document, :field => "deity_tesim").present? %>
+      <dt>
+        Central Deity
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "deity_tesim" %>
+      </dd>
+    <% end %>
+
+     <% if (render_document_show_field_value :document => document, :field => "date_tesim").present? %>
+      <dt>
+        Date
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "date_tesim" %>
+      </dd>
+    <% end %>
+
+     <% if (render_document_show_field_value :document => document, :field => "earliest_date_isi").present? %>
+      <dt>
+        Earliest Date
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "earliest_date_isi" %>
+      </dd>
+    <% end %>
+
+
+
+         <% if (render_document_show_field_value :document => document, :field => "latest_date_isi").present? %>
+      <dt>
+        Latest Date
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "latest_date_isi" %>
+      </dd>
+    <% end %>
+
+
+     <% if (render_document_show_field_value :document => document, :field => "culture_tesim").present? %>
+      <dt>
+        Culture
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "culture_tesim" %>
+      </dd>
+    <% end %>
+
+    <% if (render_document_show_field_value :document => document, :field => "style_period_tesim").present? %>
+      <dt>
+        Style/Period
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "style_period_tesim" %>
+      </dd>
+    <% end %>
+
+        <% if (render_document_show_field_value :document => document, :field => "mat_tech_tesim").present? %>
+      <dt>
+        Materials/Techniques
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "mat_tech_tesim" %>
+      </dd>
+    <% end %>
+
+
+    <% if (render_document_show_field_value :document => document, :field => "location_country_tesim").present? %>
+      <dt>
+        Location (Country)
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "location_country_tesim" %>
+      </dd>
+    <%end%>
+
+
+        <% if (render_document_show_field_value :document => document, :field => "creation_site_location_tesim").present? %>
+      <dt>
+        Creation Site
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "creation_site_tesim" %>
+      </dd>
+    <%end%>
+
+
+
+
+    <% if (render_document_show_field_value :document => document, :field => "id_number_ssi").present? %>
+      <dt>
+        Identifier
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "id_number_ssi" %>
+      </dd>
+    <% end %>
+
+    <% if (render_document_show_field_value :document => document, :field => "inscription_tesim").present? %>
+      <dt>
+        Inscription
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "inscription_tesim" %>
+      </dd>
+    <% end %>
+
+    <% if (render_document_show_field_value :document => document, :field => "notes_tesim").present? %>
+      <dt>
+        Notes
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "notes_tesim" %>
+      </dd>
+    <% end %>
+
+
+    <% if (render_document_show_field_value :document => document, :field => "Collection_tesim").present? %>
+      <dt>
+        Collection
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "Collection_tesim" %>
+      </dd>
+    <%end%>
+
+
+        <% if (render_document_show_field_value :document => document, :field => "source_tesim").present? %>
+      <dt>
+        Source
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "source_tesim" %>
+      </dd>
+
+<% end %>
+
+
+        <% if (render_document_show_field_value :document => document, :field => "rights_tesim").present? %>
+      <dt>
+        Rights
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "rights_tesim" %>
+      </dd>
+
+<% end %>
+
+  </dl>
+  <%= render 'show_download' %>
+</div>

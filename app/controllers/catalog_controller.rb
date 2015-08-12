@@ -1,34 +1,112 @@
 # -*- encoding : utf-8 -*-
-require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
 
+
   include Blacklight::Catalog
-  # These before_filters apply the hydra access controls
-#  before_filter :enforce_show_permissions, :only=>:show
-  # This applies appropriate access controls to all solr queries
-#  CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
+
+before_action  do
+
+if params[:subject] == "ragamala"
+  blacklight_config.default_solr_params =
+  {:fq => 'Collection_tesim:"Ragamala Paintings" AND -notes_tesim:"Not for publication" AND -media_URL_size_2_tesim:"http://catalog.sharedshelf.artstor.org/images/ss_noimage-0.png"',
+      :qt => 'search',
+      :qf => 'deity_central_figure_tesim collection_tesim Title_tesim media_URL_size_2_tesim',
+      :rows => 10,
+      :fl => '*,score',
+      :defType => 'edismax',
+      :"q.alt" => '*:*',
+      :"facet.mincount" => 2}
+
+elsif params[:subject] == "aerialny"
+  blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_tesim}NYS Aerial Photographs",
+   :qt => 'search',
+      :qf => 'id founder_tesim title_tesim senechal_tesim date_tsi date_founded_tsi image_view_description_tesim market_square_details_tesim plan_site_details_tesim special_features_tesim deity_central_figure_tesim inscription_tesim',
+      :rows => 10,
+      :fl => '*,score',
+      :defType => 'edismax',
+      :"q.alt" => '*:*',
+    :"facet.mincount" => 1}
+
+
+
+
+
+elsif params[:subject] == "reps-bastides"
+  blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_tesim}Reps Photographs Collection",
+   :qt => 'search',
+      :qf => 'id founder_tesim title_tesim senechal_tesim date_tsi date_founded_tsi image_view_description_tesim market_square_details_tesim plan_site_details_tesim special_features_tesim deity_central_figure_tesim inscription_tesim',
+      :rows => 10,
+      :fl => '*,score',
+      :defType => 'edismax',
+      :"q.alt" => '*:*',
+    :"facet.mincount" => 1}
+
+
+end
+
+
+end
+
 
 
   configure_blacklight do |config|
+          config.view.gallery.partials = [:index_header, :index]
+          config.view.masonry.partials = [:index]
+          config.view.slideshow.partials = [:index]
+
+
+          config.view.gallery.partials = [:index_header, :index]
+          config.view.masonry.partials = [:index]
+          config.view.slideshow.partials = [:index]
+
+
+
+    ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
-     :defType => 'edismax', 
-     :qf => 'author_timv title_timv pubdate_timv subject_timv publisher_timv image_ocr_timv active_fedora_model_ssi', 
-     :qt => 'search',
-     :fl => '*,score',
-      :rows => 10
+      :qt => 'search',
+      :rows => 10,
+      :fl => '*,score',
+      :defType => 'edismax',
+      :"q.alt" => '*:*',
+      :fq => '-notes_tesim:"Not for publication" AND -media_URL_size_2_tesim:"http://catalog.sharedshelf.artstor.org/images/ss_noimage-0.png"',
+      :"facet.mincount" => 1
     }
 
+
+    # solr path which will be added to solr base url before the other solr params.
+    #config.solr_path = 'select'
+
+    # items to show per page, each number in the array represent another option to choose from.
+    #config.per_page = [10,20,50,100]
+
+    ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SearchHelper#solr_doc_params) or
+    ## parameters included in the Blacklight-jetty document requestHandler.
+    #
+
+
+    # geolocation settings
+
+    config.add_facet_field 'where_ssim', :limit => -2, :label => 'Coordinates', :show => false
+    config.show.partials << :show_maplet
+    config.view.maps.coordinates_field = "where_geocoordinates"
+    config.view.maps.coordinates_facet_field = 'where_ssim'
+    config.view.maps.facet_mode = "coordinates" # or "coordinates"    config.view.maps.search_mode = "coordinates"
+
+
+
     # solr field configuration for search results/index views
-    config.index.title_field = 'title_tesim'
-    config.index.display_type_field = 'has_model_ssim'
-    config.index.thumbnail_field = 'image_tesim'
-#    config.index.show_link = 'title_tesim'
-#    config.index.record_display_type = 'has_model_ssi'
+    config.index.title_field = 'Title_tesim','title_tesim'
+    config.index.thumbnail_field = 'media_URL_size_2_tesim'
 
-    config.show.title_field = 'book_title_tesim'
-#    config.show.display_type = 'has_model_ssi'
 
+
+
+    config.index.display_type_field = 'project_id_ssi'
+
+    # solr field configuration for document/show views
+    config.show.title_field = 'title_tesim','Title_tesim'
+    config.show.display_type_field = 'project_id_ssi'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -37,7 +115,7 @@ class CatalogController < ApplicationController
     # * If left unset, then all facet values returned by solr will be displayed.
     # * If set to an integer, then "f.somefield.facet.limit" will be added to
     # solr request, with actual solr request being +1 your configured limit --
-    # you configure the number of items you actually want _tsimed_ in a page.
+    # you configure the number of items you actually want _displayed_ in a page.
     # * If set to 'true', then no additional parameters will be sent to solr,
     # but any 'sniffed' request limit parameters will be used for paging, with
     # paging at requested limit -1. Can sniff from facet.limit or
@@ -49,74 +127,92 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
+    #config.add_facet_field 'Village_s', :label => 'Village', :limit => true
+    #config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
+    #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
+    config.add_facet_field 'Collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
+    config.add_facet_field 'author_tesim', :label => 'Creator', :sort => 'count', :limit => 5
+    config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
+    config.add_facet_field 'culture_tesim', :label => 'Culture', :limit => 5
+    config.add_facet_field 'mat_tech_tesim', :label => 'Materials/Techniques', :limit => 5
+    config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5
+    config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5
+    config.add_facet_field 'fd_27325_tsi', :label => 'Year of photo', :limit => 5
+    config.add_facet_field 'senechal_tesim', :label => 'Senechal', :limit => 5
+    config.add_facet_field 'village_tesim', :label => 'Village', :limit => 5
 
-    config.add_facet_field 'active_fedora_model_ssi', :label => 'Format'
-    config.add_facet_field 'author_tesim', :label => 'Author', :limit => 5
-    config.add_facet_field 'pubdate_tesim', :label => 'Date'
-    config.add_facet_field 'image_date_tesim', :label => 'Image Date', :limit => 5    
-    config.add_facet_field 'image_format_tesim', :label => 'Image Format', :limit => 5 , :show => true
-    config.add_facet_field 'image_keyword_tesim', :label => 'Image Keyword', :limit => 5
-    config.add_facet_field 'image_geo_tesim', :label => 'Image Geography', :limit => 5
-    config.add_facet_field 'keywords_tesim', :label => 'Keyword', :limit => 5
-    config.add_facet_field 'subject_tesim', :label => 'Subject/Collection', :limit => 5
-    config.add_facet_field 'lang_tesim', :label => 'Language', :limit => 5
-    config.add_facet_field 'witness_tesim', :label => 'Witness', :limit => 5
+
+    #config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
+    #config.add_facet_field 'country_tesim', :label => 'Country', :limit => 20
+
+
+    #config.add_facet_field 'language_facet', :label => 'Language', :limit => true
+    #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number'
+    #config.add_facet_field 'subject_geo_facet', :label => 'Region'
+    #config.add_facet_field 'subject_era_facet', :label => 'Era'
+
+    #config.add_facet_field 'example_pivot_field', :label => 'Pivot Field', :pivot => ['format', 'language_facet']
+
+    #config.add_facet_field 'example_query_facet_field', :label => 'Publish Date', :query => {
+     #  :years_5 => { :label => 'within 5 Years', :fq => "pub_date:[#{Time.now.year - 5 } TO *]" },
+      # :years_10 => { :label => 'within 10 Years', :fq => "pub_date:[#{Time.now.year - 10 } TO *]" },
+       #:years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
+    #}
 
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
-
-   config.default_solr_params[:'facet.field'] = config.facet_fields.keys
-    #use this instead if you don't want to query facets marked :show=>false
-    #config.default_solr_params[:'facet.field'] = config.facet_fields.select{ |k, v| v[:show] != false}.keys
-
+    config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-  #  config.add_index_field solr_name('title', :stored_searchable, type: :string), :label => 'Title:'
-    config.add_index_field 'title_tesim', :label => 'Title:'
-#    config.add_index_field solr_name('title_vern', :stored_searchable, type: :string), :label => 'Title:'
-#    config.add_index_field solr_name('author', :stored_searchable, type: :string), :label => 'Author:'
-    config.add_index_field 'author_tesim', :label => 'Author:'
-#    config.add_index_field solr_name('author_vern', :stored_searchable, type: :string), :label => 'Author:'
-#    config.add_index_field solr_name('format', :symbol), :label => 'Format:'
-#    config.add_index_field solr_name('language', :stored_searchable, type: :string), :label => 'Language:'
-#    config.add_index_field solr_name('published', :stored_searchable, type: :string), :label => 'Published:'
-#    config.add_index_field solr_name('published_vern', :stored_searchable, type: :string), :label => 'Published:'
-#    config.add_index_field solr_name('lc_callnum', :stored_searchable, type: :string), :label => 'Call number:'
+    config.add_index_field 'village_tesim', :label => 'Village'
+    config.add_index_field 'founder_tesim', :label => 'Founder'
+    config.add_index_field 'market_square_details_tesim', :label => 'Market Square Details'
+    config.add_index_field 'deity_central_figure_tesim', :label => 'Deity'
+    config.add_index_field 'Collection_tesim', :label => 'Collection', :link_to_search => true
 
-#    config.add_index_field solr_name('publisher', :stored_searchable, type: :string), :label => 'Publisher:'
-    config.add_index_field 'publisher', :label => 'Publisher:'
-#    config.add_index_field solr_name('book_publisher', :stored_searchable, type: :string), :label => 'Book Publisher:'
-    config.add_index_field 'book_publisher', :label => 'Book Publisher:'
-#    config.add_index_field solr_name('pubdate', :stored_searchable, type: :string), :label => 'Published:'
-    config.add_index_field 'pubdate', :label => 'Published:'
-#    config.add_index_field solr_name('image_ocr', :stored_searchable, type: :string), :label => ' ', :highlight => true
-    config.add_index_field 'image_ocr', :label => ' ', :highlight => true
-#    config.add_index_field solr_name('book_title', :stored_searchable, type: :string), :label => 'Book Title:'
-    config.add_index_field 'book_title', :label => 'Book Title:'
-#    config.add_index_field solr_name('book_author', :stored_searchable, type: :string), :label => 'Book Author:'
-    config.add_index_field 'book_author', :label => 'Book Author:'
 
+    #config.add_index_field 'language_facet', :label => 'Language'
+    #config.add_index_field 'published_display', :label => 'Published'
+    #config.add_index_field 'published_vern_display', :label => 'Published'
+    #config.add_index_field 'lc_callnum_display', :label => 'Call number'
 
     # solr fields to be displayed in the show (single result) view
-    #   The ordering of the field names is the order of the display 
-    config.add_show_field 'book_title_tesim', :label => 'Title'
+    #   The ordering of the field names is the order of the display
+    config.add_show_field 'deity_tesim', :label => 'Deity', :link_to_search => true
+    config.add_show_field 'author_tesim', :label => 'Creator(s)', :link_to_search => true
+    config.add_show_field 'content_type_tesim', :label => 'Work Type', :link_to_search => true
+    config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
+    config.add_show_field 'media_URL_tesim', :label => 'Download original image'
+    config.add_show_field 'Collection_tesim', :label => 'Collection', :link_to_search => true
+    config.add_show_field 'Image_Type_tesim', :label => 'Work Type', :link_to_search => true
+    config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
+    config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
+    config.add_show_field 'subject_tesim', :label => 'Materials', :link_to_search => true
+    config.add_show_field 'location_tesim', :label => 'Materials', :link_to_search => true
+    config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
+    config.add_show_field 'founder_tesim', :label => 'Founder', :link_to_search => true
+    config.add_show_field 'village_tesim', :label => 'Village', :link_to_search => true
+    config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true
+    config.add_show_field 'fd_43718_ssi', :label => 'Country', :link_to_search => true
+    config.add_show_field 'senechal_tesim', :label => 'Senechal', :link_to_search => true
 
-    config.add_show_field 'title_vern_display_tesim', :label => 'Title'
-    config.add_show_field 'subtitle_display_tesim', :label => 'Subtitle'
-    config.add_show_field 'subtitle_vern_display_tesim', :label => 'Subtitle'
-    config.add_show_field 'author_display_tesim', :label => 'Author'
-    config.add_show_field 'author_vern_display_tesim', :label => 'Author'
-    config.add_show_field 'format_tesim', :label => 'Format'
-    config.add_show_field 'url_fulltext_display_tesim', :label => 'URL'
-    config.add_show_field 'url_suppl_display_tesim', :label => 'More Information'
-    config.add_show_field 'language_facet_tesim', :label => 'Language'
-    config.add_show_field 'published_display_tesim', :label => 'Published'
-    config.add_show_field 'published_vern_display_tesim', :label => 'Published'
-    config.add_show_field 'lc_callnum_display_tesim', :label => 'Call number'
-    config.add_show_field 'isbn_t_tesim', :label => 'ISBN'
+
+    #config.add_show_field 'title_vern_display', :label => 'Title'
+    #config.add_show_field 'subtitle_display', :label => 'Subtitle'
+    #config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
+    #config.add_show_field 'author_display', :label => 'Author'
+    #config.add_show_field 'author_vern_display', :label => 'Author'
+    #config.add_show_field 'format', :label => 'Format'
+    #config.add_show_field 'url_fulltext_display', :label => 'URL'
+    #config.add_show_field 'url_suppl_display', :label => 'More Information'
+    #config.add_show_field 'language_facet', :label => 'Language'
+    #config.add_show_field 'published_display', :label => 'Published'
+    #config.add_show_field 'published_vern_display', :label => 'Published'
+    #config.add_show_field 'lc_callnum_display', :label => 'Call number'
+    #config.add_show_field 'isbn_t', :label => 'ISBN'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
@@ -137,15 +233,16 @@ class CatalogController < ApplicationController
     # since we aren't specifying it otherwise.
 
     config.add_search_field 'all_fields', :label => 'All Fields'
-#    config.add_search_field 'pubdate', :label => 'Pub Date'
 
 
     # Now we see how to over-ride Solr request handler defaults, in this
     # case for a BL "search field", which is really a dismax aggregate
     # of Solr search fields.
-    
 
     config.add_search_field('title') do |field|
+      # solr_parameters hash are sent to Solr as ordinary url query params.
+      field.solr_parameters = { :'spellcheck.dictionary' => 'title' }
+
       # :solr_local_parameters will be sent using Solr LocalParams
       # syntax, as eg {! qf=$title_qf }. This is neccesary to use
       # Solr parameter de-referencing like $title_qf.
@@ -157,24 +254,10 @@ class CatalogController < ApplicationController
     end
 
     config.add_search_field('author') do |field|
+      field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
       field.solr_local_parameters = {
         :qf => '$author_qf',
         :pf => '$author_pf'
-      }
-    end
-
-    config.add_search_field('publisher') do |field|
-      field.solr_local_parameters = {
-        :qf => '$publisher_qf',
-        :pf => '$publisher_pf'
-      }
-    end
-
-    config.add_search_field('pub date') do |field|
-      field.solr_local_parameters = {
-        :qf => '$pubdate_qf',
-        :pf => '$pubdate_pf',
-        :label => 'Pub Date'
       }
     end
 
@@ -182,6 +265,7 @@ class CatalogController < ApplicationController
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
     config.add_search_field('subject') do |field|
+      field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
       field.qt = 'search'
       field.solr_local_parameters = {
         :qf => '$subject_qf',
@@ -193,42 +277,12 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, pub_date_dtsi desc, title_tesi asc', :label => 'relevance'
-    config.add_sort_field 'pub_date_dtsi desc, title_tesi asc', :label => 'year'
-    config.add_sort_field 'book_author_tesi asc, title_tesi asc', :label => 'author'
-    config.add_sort_field 'title_tesi asc, pub_date_dtsi desc', :label => 'title'
-#    config.add_field_configuration_to_solr_request!
+
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
   end
 
-   def searchpages
-      if params[:q].nil? or params[:q] == ""
-        flash.now[:error] = "Please enter a query."
-        render "index"
-      end
-      if !params[:q].nil? and params[:q] != ""
-        Rails.logger.info("Petunia1 = #{params[:q]}")
-        #params[:q].gsub!(' ','%20')
-        Rails.logger.info("Petunia2 = #{params[:q]}")
-        dbclnt = HTTPClient.new
-        Rails.logger.info("es287_debug #{__FILE__} #{__LINE__}  = #{Blacklight.solr_config.inspect}")
-        solr = Blacklight.solr_config[:url]
-        p = {"q" =>params[:q] , "wt" => 'ruby',"indent"=>"true","defType" =>"dismax"}
-        Rails.logger.info("es287_debug #{__FILE__} #{__LINE__}  = " + "#{solr}/databases?"+p.to_param)
-        #@dbResultString = dbclnt.get_content("#{solr}/databases?q=" + params[:q] + "&wt=ruby&indent=true&defType=dismax")
-        @dbResultString = dbclnt.get_content("#{solr}/databases?" + p.to_param)
-        if !@dbResultString.nil?
-           @dbResponseFull = eval(@dbResultString)
-        else
-           @dbResponseFull = eval("Could not find")
-        end
-        @dbResponse = @dbResponseFull['response']['docs']
-        params[:q].gsub!('%20', ' ')
-        Rails.logger.info("Petunia3 = #{params[:q]}")
-      end
-    end
 
 end

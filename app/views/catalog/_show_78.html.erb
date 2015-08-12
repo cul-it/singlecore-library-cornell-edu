@@ -1,0 +1,108 @@
+<%# aerial item view -%>
+
+<% params[:subject] = 'aerialny' %>
+
+<%= render 'image_viewer' %>
+
+<div class="col-md-4">
+<%# show fields except image and kaltura ID %>
+  <dl class="metadata">
+    <% if (render_document_show_field_value :document => document, :field => "Collection_tesim").present? %>
+      <dt>
+        Collection
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "Collection_tesim" %>
+      </dd>
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "centerpoint_tesim").present? %>
+      <dt>
+        Centerpoint
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "centerpoint_tesim" %>
+      </dd>
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "location_tesim").present? %>
+      <dt>
+        Location
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "location_tesim" %>
+      </dd>
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "county_tesim").present? %>
+      <dt>
+        County
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "county_tesim" %>
+      </dd>
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "latest_date_tsi").present? %>
+      <dt>
+        Latest Date
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "latest_date_tsi" %>
+      </dd>
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "source_tsi").present? %>
+      <dt>
+        Source
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "source_tsi" %>
+      </dd>
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "repository_tsi").present? %>
+      <dt>
+        Repository
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "repository_tsi" %>
+      </dd>
+    <% end %>
+    <% if (render_document_show_field_value :document => document, :field => "country_tesim").present? %>
+      <dt>
+        Country
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "country_tesim" %>
+      </dd>
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "earliest_date_tsi").present? %>
+      <dt>
+        Earliest Date
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "earliest_date_tsi" %>
+      </dd>
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "materials_tesim").present? %>
+      <dt>
+        Materials
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "materials_tesim" %>
+      </dd>
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "culture_tesim").present? %>
+      <dt>
+        Culture
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "culture_tesim" %>
+      </dd>
+    <%end%>
+    <% if (render_document_show_field_value :document => document, :field => "subject_tesim").present? %>
+      <dt>
+        Subject
+      </dt>
+      <dd>
+        <%= render_document_show_field_value :document => document, :field => "subject_tesim" %>
+      </dd>
+    <% end %>
+  </dl>
+  <%= render 'show_download' %>
+</div>

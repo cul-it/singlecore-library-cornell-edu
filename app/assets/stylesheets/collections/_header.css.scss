@@ -1,0 +1,107 @@
+// Cornell brand
+// ------------------- //
+
+.cornell-identity {
+	.container {
+		background: $cornell-black;
+	}
+	button {
+		i {
+			color: white;
+		}
+	}
+	background: white;
+}
+
+// Library brand
+// ------------------- //
+.brand {
+	text-transform: uppercase;
+	font-size: 36px;
+	font-family: $font-family-cul;
+	color: $medium-gray;
+	line-height: 1em;
+}
+.brand:hover, .brand:active, .brand:focus {
+	color: $medium-gray;
+	text-decoration: none;
+}
+.cul-brand {
+	color: $cornell-black;
+	font-size: 24px;
+	font-family: $font-family-cul;
+	display: block;
+	margin-left: 4px;
+	color: $medium-gray;
+}
+.cul-brand:hover {
+	color: inherit;
+	text-decoration: none;
+}
+// Beta label
+.navbar-header {
+	.label-info {
+		font-size: 90%;
+		vertical-align: super;
+		font-weight: normal;
+		text-transform: uppercase;
+		border-radius: 0;
+		margin-left: .5em;
+	}
+}
+
+// Navbar
+// -------------------------
+#header-navbar {
+	background: white;
+}
+.navbar {
+	padding: .5em 0 1em 0;
+	margin-bottom: 0;
+}
+// .blacklight-catalog-index {
+// 	.navbar {
+// 		padding: 1.5em 0 2em 0;
+// 	}
+// }
+.nav.site-nav {
+	li > a {
+		color: $dark-gray;
+		text-transform: uppercase;
+	}
+	a:hover, a:active, a:focus {
+		background: inherit;
+	}
+}
+
+// Bootstrap override to get branding to line up nicely on mobile
+.container > .navbar-header {
+	margin-left: 0;
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+  // /* Extra small devices (phones, up to 480px) */
+  // /* No media query since this is the default in Bootstrap */
+
+  // /* Small devices (tablets, 768px and up) */
+  // @media (min-width: @screen-sm) { ... }
+
+  // /* Medium devices (desktops, 992px and up) */
+  // @media (min-width: @screen-md) { ... }
+
+  // /* Large devices (large desktops, 1200px and up) */
+  // @media (min-width: @screen-lg) { ... }
+
+
+/* Small devices (tablets, 768px and up) */
+// @media (min-width: $screen-sm) { 
+// }
+
+/* Medium devices (desktops, 992px and up) */
+// @media (min-width: $screen-md) {
+// }
+/* Large devices (desktops, 1200px and up) */
+// @media (min-width: $screen-lg) {
+// }

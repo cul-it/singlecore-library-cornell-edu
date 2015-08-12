@@ -1,0 +1,62 @@
+body {
+	font-family: $font-family-sans-serif;
+	background: $pale-gray; // footer color
+	color: $dark-gray;
+}
+
+// Links
+// ------------------- //
+
+a { 
+	color: $link-primary;
+}
+a:hover {
+	color: $link-primary-hover;
+	text-decoration: underline;
+}
+
+// Add underlines to some links for better usability/accessibility
+.page_links,
+.document,
+.facet_select,
+.home-text {
+	a {
+		border-bottom: 1px dotted $light-gray;
+	}
+	a:hover,
+	a:active,
+	a:focus {
+		border-bottom: 1px solid $light-gray;
+		text-decoration: none;
+	}
+}
+
+// Typography
+// ------------------- //
+
+p, li {
+	font-size: 16px;
+	line-height: 1.5em;
+}
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+	margin-bottom: .75em;
+}
+h1 {
+	margin-top: 0;
+	font-size: 30px;
+	font-weight: 300;
+	// color: $orange;
+}
+h2 {
+	font-weight: 300;
+	// font-size: 24px;
+}
+h4 {
+	// font-size: 20px;
+}
+h5 {
+	// font-size: 16px;
+}
+h2:first-child {
+	margin-top: 0;
+}
