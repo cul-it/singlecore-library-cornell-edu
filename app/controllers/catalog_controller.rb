@@ -132,10 +132,10 @@ end
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
     config.add_facet_field 'Collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
     config.add_facet_field 'author_tesim', :label => 'Creator', :sort => 'count', :limit => 5
-    config.add_facet_field 'content_type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
-    config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5
-    config.add_facet_field 'materials_tesim', :label => 'Materials', :limit => 5
-    config.add_facet_field 'deity_central_figure_tesim', :label => 'Central Deity', :limit => 5
+    config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
+    config.add_facet_field 'culture_tesim', :label => 'Culture', :limit => 5
+    config.add_facet_field 'mat_tech_tesim', :label => 'Materials/Techniques', :limit => 5
+    config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5
     config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5
     config.add_facet_field 'fd_27325_tsi', :label => 'Year of photo', :limit => 5
     config.add_facet_field 'senechal_tesim', :label => 'Senechal', :limit => 5
@@ -181,15 +181,15 @@ end
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field 'deity_central_figure_tesim', :label => 'Central Deity', :link_to_search => true
+    config.add_show_field 'deity_tesim', :label => 'Deity', :link_to_search => true
     config.add_show_field 'author_tesim', :label => 'Creator(s)', :link_to_search => true
     config.add_show_field 'content_type_tesim', :label => 'Work Type', :link_to_search => true
     config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
     config.add_show_field 'media_URL_tesim', :label => 'Download original image'
     config.add_show_field 'Collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'Image_Type_tesim', :label => 'Work Type', :link_to_search => true
-    config.add_show_field 'materials_tesim', :label => 'Materials', :link_to_search => true
-    config.add_show_field 'culture_tesim', :label => 'Materials', :link_to_search => true
+    config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
+    config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'subject_tesim', :label => 'Materials', :link_to_search => true
     config.add_show_field 'location_tesim', :label => 'Materials', :link_to_search => true
     config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
