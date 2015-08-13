@@ -181,23 +181,38 @@ end
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field 'deity_central_figure_tesim', :label => 'Central Deity', :link_to_search => true
-    config.add_show_field 'author_tesim', :label => 'Creator(s)', :link_to_search => true
-    config.add_show_field 'content_type_tesim', :label => 'Work Type', :link_to_search => true
-    config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
-    config.add_show_field 'media_URL_tesim', :label => 'Download original image'
+
+    #core fields
     config.add_show_field 'Collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_show_field 'Image_Type_tesim', :label => 'Work Type', :link_to_search => true
-    config.add_show_field 'materials_tesim', :label => 'Materials', :link_to_search => true
-    config.add_show_field 'culture_tesim', :label => 'Materials', :link_to_search => true
-    config.add_show_field 'subject_tesim', :label => 'Materials', :link_to_search => true
-    config.add_show_field 'location_tesim', :label => 'Materials', :link_to_search => true
+    config.add_show_field 'author_tesim', :label => 'Creator(s)', :link_to_search => true
+    config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
+    config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
+    config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
+    config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
+
+
+    #collection fields
+    #- ragamala
+    config.add_show_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
+    config.add_show_field 'inscription_tesim', :label => 'Inscription'
+
+    #- reps
     config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
     config.add_show_field 'founder_tesim', :label => 'Founder', :link_to_search => true
     config.add_show_field 'village_tesim', :label => 'Village', :link_to_search => true
-    config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true
-    config.add_show_field 'fd_43718_ssi', :label => 'Country', :link_to_search => true
     config.add_show_field 'senechal_tesim', :label => 'Senechal', :link_to_search => true
+
+
+    #boilerplate fields, commented out ones don't have needed helpers yet
+    config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
+    config.add_show_field 'work_type_tesim', :label => 'Work Type', :link_to_search => true
+    config.add_show_field 'id_number_ssi', :label => 'Identifier'
+
+    #config.add_show_field 'media_URL_tesim', :label => 'Download original image'
+    #config.add_show_field 'ssc_site_tesim', :label => 'View in SharedShelf Commons'
+    # config.add_show_field 'collection_website_ss', :label => 'Collection Web Site'
+
+
 
 
     #config.add_show_field 'title_vern_display', :label => 'Title'
