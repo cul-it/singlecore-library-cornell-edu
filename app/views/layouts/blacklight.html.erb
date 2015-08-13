@@ -51,21 +51,8 @@
 
     <div class="container">
       <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
-
-      <% if params[:subject] == "reps-bastides" %>
-        <h1 class="collection-title"><a href="/reps-bastides">Johns Reps Collection: Bastides</a></h1>
-      <% end %>
-      <% if params[:subject] == "ragamala" && (!params[:f].nil? || !params[:q].nil? || params[:action] == 'show')  %>
-        <h1 class="collection-title"><a href="/ragamala">Ragamala Paintings</a></h1>
-      <% end %>
-      <% if params[:subject] == "aerialny" && (!params[:f].nil? || !params[:q].nil? || params[:action] == 'show')  %>
-        <h1 class="collection-title"><a href="/aerialny">New York Aerial Photographs</a></h1>
-      <% end %>
       <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
-
-
       <div class="row">
-
         <%= yield %>
       </div>
     </div>
