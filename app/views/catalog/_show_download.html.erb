@@ -1,7 +1,5 @@
-<% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
 <% @download_url = render_document_show_field_value(:document => @document, :field => 'media_URL_tesim') %>
 
 <ul class="fa-ul download-list">
-	<li><i class="fa-li fa fa-download"></i><a href="<%= @download_url %>">Download image</a></li>
-	<li><i class="fa-li fa fa-external-link"></i><a href="#">View collection in Shared Shelf Commons</a></li>
+	<li><a href="<%= @download_url %>" class="btn btn-default btn-sm"><i class="fa fa-download"></i>Download</a></a></li>
 </ul>

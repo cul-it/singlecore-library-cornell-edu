@@ -15,12 +15,40 @@
 // Download links
 // ------------------------ //
 .download-list {
-	margin: 2em 0 0 2em;
+	margin: 1em 0 0 0;
 	li {
 		margin-bottom: .5em;
+		float: left;
+		font-size: 12px;
+		padding-right: 3em;
 	}
 	i {
-		color: $medium-gray;
+		margin-right: .5em;
+	}
+	a {
+		color: $dark-gray;
+		text-transform: uppercase;
+	}
+	.fa-li {
+		width: 2.4em;
+	}
+	.btn {
+		border-style: solid !important;
+		border-color: $border-color !important;
+	}
+}
+
+// Website links
+// ------------------------ //
+.website-links {
+	padding: 19px 10px 14px 10px;
+	background: $pale-blue;
+	li {
+		margin-bottom: .5em;
+		font-size: 16px;
+	}
+	i {
+		font-size: 90%;
 	}
 }
 
@@ -81,9 +109,6 @@
 @media (min-width: $screen-md) {
 	#openseadragon1 {
 		height: 600px;
-	}
-	.download-list {
-		margin-left: 1.85em;
 	}
 	.metadata {
 		margin-top: 0;

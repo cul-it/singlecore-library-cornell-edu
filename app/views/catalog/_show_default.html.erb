@@ -1,15 +1,18 @@
 <%# default partial to display solr document fields in catalog show view -%>
-
+<% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
 <%= render 'image_viewer' %>
 
 <%# default partial to display solr document fields in catalog show view -%>
 <%# default partial to display solr document fields in catalog show view -%>
 <div class="col-md-3">
-	<% if @collection_website.present? %>
-		<div class="collection-website">
-			<a href="<%= @collection_website %>"><i class="fa-li fa fa-desktop"></i>Collection website</a>
-		</div>
-	<% end %>
+	<div class="well website-links">
+		<ul class="fa-ul">
+		<% if @collection_website.present? %>
+			<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
+		<% end %>
+			<li><i class="fa-li fa fa-external-link"></i><a href="#" class="ss-link">View collection in Shared Shelf Commons</a></li>
+		</ul>
+	</div>
 	<dl class="metadata">
 	  <% document_show_fields(document).each do |field_name, field| -%>
 	    <% if should_render_show_field? document, field %>
