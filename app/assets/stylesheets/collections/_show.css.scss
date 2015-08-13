@@ -8,7 +8,6 @@
 	}
 	dd {
 		margin-bottom: 1em;
-		font-size: 16px;
 	}
 }
 
@@ -101,14 +100,14 @@
 		margin-right: -15px;
 	}
 	#openseadragon1 {
-		 height: 450px;
+		 height: 600px;
 	}
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md) {
 	#openseadragon1 {
-		height: 600px;
+		height: 670px;
 	}
 	.metadata {
 		margin-top: 0;
