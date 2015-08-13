@@ -135,7 +135,7 @@ end
     config.add_facet_field 'content_type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5
     config.add_facet_field 'materials_tesim', :label => 'Materials', :limit => 5
-    config.add_facet_field 'deity_central_figure_tesim', :label => 'Central Deity', :limit => 5
+    config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5
     config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5
     config.add_facet_field 'fd_27325_tsi', :label => 'Year of photo', :limit => 5
     config.add_facet_field 'senechal_tesim', :label => 'Senechal', :limit => 5
