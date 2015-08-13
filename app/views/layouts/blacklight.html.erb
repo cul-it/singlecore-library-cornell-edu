@@ -42,20 +42,26 @@
 
   <div id="main-container">
 
-    <%# home page featured image %>
-    <%# if is_home? %>
-      <!-- <div class="container-fluid hero-home">
-        <%= image_tag "hero/hero-ragamala-home.jpg" , alt: "Image from the Ragamala Collection" %>
-      </div> -->
-    <%# end %>
-
-    <div class="container">
-      <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
-      <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
-      <div class="row">
-        <%= yield %>
+    <%# if search results or item view, display a fluid layout %>
+    <% if !params[:f].nil? || !params[:q].nil? || params[:action] == 'show' %>
+      <div class="container-fluid">
+        <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
+        <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
+        <div class="row">
+          <%= yield %>
+        </div>
       </div>
-    </div>
+    <%# for anything but search results or item view, set the width with container %>
+    <% else %>
+      <div class="container">
+        <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
+        <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
+    <% end %>
+
   </div>
 
   <%= render :partial => 'shared/footer' %>

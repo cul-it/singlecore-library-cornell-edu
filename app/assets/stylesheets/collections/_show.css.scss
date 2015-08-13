@@ -45,7 +45,7 @@
 // Openseadragon viewer
 // ------------------------ //
 #openseadragon1 {
-	 width: 320px;
+	 width: 100%;
 	 height: 320px;
 	 background-color:#000;
 }
@@ -73,7 +73,6 @@
 		margin-right: -15px;
 	}
 	#openseadragon1 {
-		 width: 450px;
 		 height: 450px;
 	}
 }
@@ -81,7 +80,6 @@
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md) {
 	#openseadragon1 {
-		width: 600px;
 		height: 600px;
 	}
 	.download-list {
