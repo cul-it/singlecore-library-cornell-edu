@@ -7,43 +7,7 @@ class CatalogController < ApplicationController
 
 before_action  do
 
-if params[:subject] == "ragamala"
-  blacklight_config.default_solr_params =
-  {:fq => 'Collection_tesim:"Ragamala Paintings" AND -notes_tesim:"Not for publication" AND -media_URL_size_2_tesim:"http://catalog.sharedshelf.artstor.org/images/ss_noimage-0.png"',
-      :qt => 'search',
-      :qf => 'deity_central_figure_tesim collection_tesim Title_tesim media_URL_size_2_tesim',
-      :rows => 10,
-      :fl => '*,score',
-      :defType => 'edismax',
-      :"q.alt" => '*:*',
-      :"facet.mincount" => 2}
 
-elsif params[:subject] == "aerialny"
-  blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_tesim}NYS Aerial Photographs",
-   :qt => 'search',
-      :qf => 'id founder_tesim title_tesim senechal_tesim date_tsi date_founded_tsi image_view_description_tesim market_square_details_tesim plan_site_details_tesim special_features_tesim deity_central_figure_tesim inscription_tesim',
-      :rows => 10,
-      :fl => '*,score',
-      :defType => 'edismax',
-      :"q.alt" => '*:*',
-    :"facet.mincount" => 1}
-
-
-
-
-
-elsif params[:subject] == "reps-bastides"
-  blacklight_config.default_solr_params = {:fq => "{!raw f=Collection_tesim}Reps Photographs Collection",
-   :qt => 'search',
-      :qf => 'id founder_tesim title_tesim senechal_tesim date_tsi date_founded_tsi image_view_description_tesim market_square_details_tesim plan_site_details_tesim special_features_tesim deity_central_figure_tesim inscription_tesim',
-      :rows => 10,
-      :fl => '*,score',
-      :defType => 'edismax',
-      :"q.alt" => '*:*',
-    :"facet.mincount" => 1}
-
-
-end
 
 
 end
@@ -96,7 +60,7 @@ end
 
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'Title_tesim','title_tesim'
+    config.index.title_field = 'title_tesim'
     config.index.thumbnail_field = 'media_URL_size_2_tesim'
 
 
@@ -105,7 +69,7 @@ end
     config.index.display_type_field = 'project_id_ssi'
 
     # solr field configuration for document/show views
-    config.show.title_field = 'title_tesim','Title_tesim'
+    config.show.title_field = 'title_tesim'
     config.show.display_type_field = 'project_id_ssi'
 
     # solr fields that will be treated as facets by the blacklight application
@@ -130,7 +94,7 @@ end
     #config.add_facet_field 'Village_s', :label => 'Village', :limit => true
     #config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
-    config.add_facet_field 'Collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
+    config.add_facet_field 'collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
     config.add_facet_field 'author_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'culture_tesim', :label => 'Culture', :limit => 5
@@ -171,7 +135,7 @@ end
     config.add_index_field 'founder_tesim', :label => 'Founder'
     config.add_index_field 'market_square_details_tesim', :label => 'Market Square Details'
     config.add_index_field 'deity_central_figure_tesim', :label => 'Deity'
-    config.add_index_field 'Collection_tesim', :label => 'Collection', :link_to_search => true
+    config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
 
 
     #config.add_index_field 'language_facet', :label => 'Language'
@@ -184,8 +148,8 @@ end
 
 
     #core fields
-    config.add_show_field 'Collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_show_field 'author_tesim', :label => 'Creator(s)', :link_to_search => true
+    config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
+    config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
     config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
@@ -203,11 +167,17 @@ end
     config.add_show_field 'village_tesim', :label => 'Village', :link_to_search => true
     config.add_show_field 'senechal_tesim', :label => 'Senechal', :link_to_search => true
 
+    #- aerial
+    config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
+    config.add_show_field 'repository_tesim', :label => 'Repository'
+
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'work_type_tesim', :label => 'Work Type', :link_to_search => true
     config.add_show_field 'id_number_ssi', :label => 'Identifier'
+    config.add_show_field 'source_tesim', :label => 'Source'
+    config.add_show_field 'rights_tesim', :label => 'Rights'
 
     #config.add_show_field 'media_URL_tesim', :label => 'Download original image'
     #config.add_show_field 'ssc_site_tesim', :label => 'View in SharedShelf Commons'
@@ -257,7 +227,7 @@ end
 
     config.add_search_field('title') do |field|
       # solr_parameters hash are sent to Solr as ordinary url query params.
-      field.solr_parameters = { :'spellcheck.dictionary' => 'title' }
+      #field.solr_parameters = { :'spellcheck.dictionary' => 'title' }
 
       # :solr_local_parameters will be sent using Solr LocalParams
       # syntax, as eg {! qf=$title_qf }. This is neccesary to use
@@ -270,7 +240,7 @@ end
     end
 
     config.add_search_field('author') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
+      #field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
       field.solr_local_parameters = {
         :qf => '$author_qf',
         :pf => '$author_pf'
@@ -280,14 +250,14 @@ end
     # Specifying a :qt only to show it's possible, and so our internal automated
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
-    config.add_search_field('subject') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
-      field.qt = 'search'
-      field.solr_local_parameters = {
-        :qf => '$subject_qf',
-        :pf => '$subject_pf'
-      }
-    end
+   # config.add_search_field('subject') do |field|
+     # field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
+    #  field.qt = 'search'
+    #  field.solr_local_parameters = {
+     #   :qf => '$subject_qf',
+     #   :pf => '$subject_pf'
+    #  }
+    #end
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
