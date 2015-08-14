@@ -1,16 +1,24 @@
 <%# default partial to display solr document fields in catalog show view -%>
-
+<% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
 <%= render 'image_viewer' %>
 
 <%# default partial to display solr document fields in catalog show view -%>
 <%# default partial to display solr document fields in catalog show view -%>
-<div class="col-md-4">
-<dl class="metadata">
-  <% document_show_fields(document).each do |field_name, field| -%>
-    <% if should_render_show_field? document, field %>
-	    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
-	    <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
-    <% end -%>
-  <% end -%>
-</dl>
+<div class="col-md-3">
+	<div class="well website-links">
+		<ul class="fa-ul">
+		<% if @collection_website.present? %>
+			<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
+		<% end %>
+			<li><i class="fa-li fa fa-external-link"></i><a href="#" class="ss-link">View collection in Shared Shelf Commons</a></li>
+		</ul>
+	</div>
+	<dl class="metadata">
+	  <% document_show_fields(document).each do |field_name, field| -%>
+	    <% if should_render_show_field? document, field %>
+		    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
+		    <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
+	    <% end -%>
+	  <% end -%>
+	</dl>
 </div>
