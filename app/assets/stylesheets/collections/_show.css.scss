@@ -40,14 +40,18 @@
 // Website links
 // ------------------------ //
 .website-links {
-	padding: 12px 5px 5px 5px;
-	background: $pale-blue;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	border-bottom: 1px solid $border-color;
 	li {
 		margin-bottom: .5em;
 		font-size: 14px;
 	}
 	i {
 		font-size: 90%;
+	}
+	.fa-ul {
+		margin-left: 1.5em;
 	}
 }
 

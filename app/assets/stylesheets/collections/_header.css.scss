@@ -27,15 +27,14 @@
 	text-decoration: none;
 }
 .cul-brand {
-	color: $cornell-black;
 	font-size: 24px;
 	font-family: $font-family-cul;
 	display: block;
 	margin-left: 4px;
 	color: $medium-gray;
 }
-.cul-brand:hover {
-	color: inherit;
+.cul-brand:hover, .cul-brand:active, .cul-brand:focus {
+	color: $medium-gray;
 	text-decoration: none;
 }
 // Beta label
