@@ -95,15 +95,17 @@ end
     #config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
     config.add_facet_field 'collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
-    config.add_facet_field 'author_tesim', :label => 'Creator', :sort => 'count', :limit => 5
-    config.add_facet_field 'content_type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
+    config.add_facet_field 'creator_tesim', :label => 'Creator', :sort => 'count', :limit => 5
+    config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
+    config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :limit => 5
+    config.add_facet_field 'location_tesim', :label => 'Location', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5
-    config.add_facet_field 'materials_tesim', :label => 'Materials', :limit => 5
-    config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5
-    config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5
-    config.add_facet_field 'fd_27325_tsi', :label => 'Year of photo', :limit => 5
-    config.add_facet_field 'senechal_tesim', :label => 'Senechal', :limit => 5
-    config.add_facet_field 'village_tesim', :label => 'Village', :limit => 5
+    config.add_facet_field 'mat_tech_tesim', :label => 'Materials', :limit => 5
+    config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5, show: false
+    config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5, show:false
+    config.add_facet_field 'fd_27325_tsi', :label => 'Year of photo', :limit => 5, show: false
+    config.add_facet_field 'senechal_tesim', :label => 'Senechal', :limit => 5, show:false
+    config.add_facet_field 'village_tesim', :label => 'Village', :limit => 5, show: false
 
 
     #config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
@@ -134,7 +136,7 @@ end
     config.add_index_field 'village_tesim', :label => 'Village'
     config.add_index_field 'founder_tesim', :label => 'Founder'
     config.add_index_field 'market_square_details_tesim', :label => 'Market Square Details'
-    config.add_index_field 'deity_central_figure_tesim', :label => 'Deity'
+    config.add_index_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
 
 
