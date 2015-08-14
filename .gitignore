@@ -16,5 +16,8 @@
 !/log/.keep
 /tmp
 
+#ignore solr
+/config/blacklight.yml
+
 #Ignore mac junk
 *.DS_store
