@@ -1,10 +1,10 @@
 .hero-ragamala {
-	background: url("sets/ragamala/hero-ragamala.jpg") no-repeat;
+	background: url("sets/ragamala/hero-ragamala2.jpg") no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 600px;
+	min-height: 700px;
 	color: white;
 	padding-bottom: 4em;
 }
@@ -13,17 +13,15 @@
 	.well {
 		background: rgba(0,0,0,.8);
 		border: 0;
-		margin-top: 4em;
+		margin-top: -1em;
 		position:relative;
 		color: white;
+		padding: 3em 3em 2em 3em;
 		li {
 			a, a:hover, a:active, a:focus {
 				text-decoration: underline;
 				color: white;
 			}
-		}
-		p {
-			font-size: 16px;
 		}
 	}
 	.btn-browse {
@@ -32,12 +30,15 @@
 		border-color: #b39f5d;
 		font-size: 18px;
 		color: white;
+		text-transform: uppercase;
 	}
 	.nav-collection {
 		margin: 1em -15px;
 		li > a, li > a:hover {
-			background: #b39f5d;
-			color: white;
+			background: white;
+			color: $dark-gray;
+			text-transform: uppercase;
+			font-size: 16px;
 		}
 	}
 }
@@ -62,7 +63,7 @@
 @media (min-width: $screen-sm) { 
 	.wrapper-ragamala {
 		.nav-collection {
-			margin-top: 3em;
+			margin-top: 2em;
 		}
 	}
 }
