@@ -1,6 +1,10 @@
 footer {
 	padding: 2em 0;
+	color: $medium-gray;
 	p {
 		font-size: 14px;
+	}
+	a {
+		color: $dark-gray;
 	}
 }

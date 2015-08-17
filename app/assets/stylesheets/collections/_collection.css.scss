@@ -19,6 +19,10 @@
 	padding: 0 0 3em 0;
 	h1 {
 		margin-bottom: 0;
+		a, a:hover, a:active, a:focus {
+			color: $dark-gray;
+			text-decoration: none;
+		}
 	}
 	.navbar-collapse {
 		padding-left: 0;
@@ -36,18 +40,34 @@
 	float: none;
 	color: $dark-gray;
 }
+.nav-collection {
+	margin: 1em -10px;
+}
 .nav-pills.nav-collection > li {
 	float: none;
 }
 .nav-pills.nav-collection > li > a {
 	padding: 5px 10px;
-	font-size: 14px;
-	background: $pale-blue;
+	font-size: 16px;
+	background: white;
 	color: $dark-gray;
+	text-transform: uppercase;
 }
 .nav-pills.nav-collection > li > a:hover {
-	background: $footer-gray;
+	background: white;
 }
+.main-text {
+	padding-bottom: 3em;
+}
+// .nav-collection {
+// 	margin: 1em -15px;
+// 	li > a, li > a:hover {
+// 		background: white;
+// 		color: $dark-gray;
+// 		text-transform: uppercase;
+// 		font-size: 16px;
+// 	}
+// }
 
 
 // MEDIA QUERIES
@@ -72,9 +92,8 @@
 		float: left;
 	}
 	.nav-collection {
-		margin-top: 1em;
+		margin: 1em -10px;
 	}
-	
 }
 
 /* Medium devices (desktops, 992px and up) */
