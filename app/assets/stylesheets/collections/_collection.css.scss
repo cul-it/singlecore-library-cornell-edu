@@ -1,0 +1,89 @@
+// Hide search bar and DC brand
+// ----------------------------- //
+.blacklight-pages-show {
+	#header-navbar, #search-navbar {
+		display: none;
+	}
+}
+
+
+.top-link {
+	font-size: 14px;
+	text-align: right;
+	i {
+		margin-left: .25em;
+		font-size: 85%;
+	}
+}
+.header-collection {
+	padding: 0 0 3em 0;
+	h1 {
+		margin-bottom: 0;
+	}
+	.navbar-collapse {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+.btn-browse {
+	margin-bottom: 1.5em;
+	white-space: normal;
+}
+.btn-collection {
+	border: 1px solid $border-color;
+	font-size: 12px;
+	text-transform: uppercase;
+	float: none;
+	color: $dark-gray;
+}
+.nav-pills.nav-collection > li {
+	float: none;
+}
+.nav-pills.nav-collection > li > a {
+	padding: 5px 10px;
+	font-size: 14px;
+	background: $pale-blue;
+	color: $dark-gray;
+}
+.nav-pills.nav-collection > li > a:hover {
+	background: $footer-gray;
+}
+
+
+// MEDIA QUERIES
+// -------------------------
+
+  // /* Extra small devices (phones, up to 480px) */
+  // /* No media query since this is the default in Bootstrap */
+
+  // /* Small devices (tablets, 768px and up) */
+  // @media (min-width: @screen-sm) { ... }
+
+  // /* Medium devices (desktops, 992px and up) */
+  // @media (min-width: @screen-md) { ... }
+
+  // /* Large devices (large desktops, 1200px and up) */
+  // @media (min-width: @screen-lg) { ... }
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm) { 
+	.nav-pills.nav-collection > li {
+		float: left;
+	}
+	.nav-collection {
+		margin-top: 1em;
+	}
+	
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md) {
+	.nav-collection {
+		float: right;
+		margin-top: 0;
+	}
+}
+/* Large devices (desktops, 1200px and up) */
+// @media (min-width: $screen-lg) {
+// }
