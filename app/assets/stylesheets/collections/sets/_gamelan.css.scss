@@ -1,8 +1,7 @@
 // Variables
 // -------------- //
-$ragamala-orange: #d3591f;
 
-.hero-ragamala {
+.hero-gamelan {
 	background: url("sets/ragamala/hero-ragamala3.jpg") no-repeat 50% 70%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -11,7 +10,7 @@ $ragamala-orange: #d3591f;
 	color: white;
 	padding-bottom: 4em;
 }
-.hero-ragamala-sub {
+.hero-gamelan-sub {
 	background: url("sets/ragamala/banner.jpg") no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -19,7 +18,7 @@ $ragamala-orange: #d3591f;
 	background-size: cover;
 	height: 130px;
 }
-.wrapper-ragamala {
+.wrapper-gamelan {
 	padding-bottom: 0 !important;
 	.well {
 		background: rgba(0,0,0,.8);
@@ -44,7 +43,7 @@ $ragamala-orange: #d3591f;
 		text-transform: uppercase;
 	}
 	h1 {
-		color: $ragamala-orange;
+		// color: $ragamala-orange;
 		font-weight: 700;
 		margin-top: 170px;
 	}
@@ -58,7 +57,7 @@ $ragamala-orange: #d3591f;
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm) { 
-	.wrapper-ragamala {
+	.wrapper-gamelan {
 		.nav-collection {
 			margin-top: 2em;
 		}
@@ -69,7 +68,7 @@ $ragamala-orange: #d3591f;
 	.nav-pills.nav-collection > li > a {
 		font-size: 14px;
 	}
-	.hero-ragamala {
+	.hero-gamelan {
 		min-height: 700px;
 	}
 }
