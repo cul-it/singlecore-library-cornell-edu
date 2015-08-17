@@ -1,19 +1,30 @@
+// Variables
+// -------------- //
+$ragamala-orange: #d3591f;
+
 .hero-ragamala {
-	background: url("sets/ragamala/hero-ragamala2.jpg") no-repeat;
+	background: url("sets/ragamala/hero-ragamala3.jpg") no-repeat 50% 70%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 700px;
 	color: white;
 	padding-bottom: 4em;
+}
+.hero-ragamala-sub {
+	background: url("sets/ragamala/banner.jpg") no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 130px;
 }
 .wrapper-ragamala {
 	padding-bottom: 0 !important;
 	.well {
 		background: rgba(0,0,0,.8);
 		border: 0;
-		margin-top: -1em;
+		margin-top: 1em;
 		position:relative;
 		color: white;
 		padding: 3em 3em 2em 3em;
@@ -32,14 +43,22 @@
 		color: white;
 		text-transform: uppercase;
 	}
-	.nav-collection {
-		margin: 1em -15px;
-		li > a, li > a:hover {
-			background: white;
-			color: $dark-gray;
-			text-transform: uppercase;
-			font-size: 16px;
-		}
+	// .nav-collection {
+	// 	margin: 1em -15px;
+	// 	li > a, li > a:hover {
+	// 		background: white;
+	// 		color: $dark-gray;
+	// 		text-transform: uppercase;
+	// 		font-size: 16px;
+	// 	}
+	// }
+	h1 {
+		color: $ragamala-orange;
+		font-weight: 700;
+		margin-top: 170px;
+	}
+	.main-text {
+		margin-top: 100px;
 	}
 }
 
@@ -65,12 +84,24 @@
 		.nav-collection {
 			margin-top: 2em;
 		}
+		.well {
+			margin-top: -1em;
+		}
+	}
+	.nav-pills.nav-collection > li > a {
+		font-size: 14px;
+	}
+	.hero-ragamala {
+		min-height: 700px;
 	}
 }
 
 /* Medium devices (desktops, 992px and up) */
-// @media (min-width: $screen-md) {
-// }
+@media (min-width: $screen-md) {
+	.nav-pills.nav-collection > li > a {
+		font-size: 16px;
+	}
+}
 /* Large devices (desktops, 1200px and up) */
 // @media (min-width: $screen-lg) {
 // }

@@ -1,17 +1,20 @@
 <div class="header-ragamala">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-5">
-				<%= image_tag "sets/ragamala/logo-ragamala.png" , alt: "Ragamala", class: "img-responsive" %>
+			<div class="col-sm-4">
+				<a href="/ragamala"><%= image_tag "sets/ragamala/logo-ragamala.png" , alt: "Ragamala", class: "img-responsive" %></a>
 			</div>
-			<div class="col-sm-7">
-				<ul class="nav nav-pills nav-collection hidden-xs">
-					<li><a href="/ragamala">Home</a></li>
-					<li><a href="/ragamala/about">About</a></li>
-					<li><a href="/?f%5Bcollection_tesim%5D%5B%5D=Ragamala+Paintings&per_page=50&q=&search_field=all_fields&view=gallery">Browse collection</a></li>
-					<li><a href="/ragamala/resources">Resources</a></li>
-					<li><a href="/ragamala/contact">Contact</a></li>
-				</ul>
+			<div class="col-sm-8">
+				<a class="btn btn-collection navbar-toggle" role="button" data-toggle="collapse" href="#collection-menu" aria-expanded="false" aria-controls="collection-menu"><i class="fa fa-bars"> Menu</i></a>
+				<div class="collapse navbar-collapse" id="collection-menu">
+					<ul class="nav nav-pills nav-collection">
+						<li><a href="/ragamala">Home</a></li>
+						<li><a href="/ragamala/about">About</a></li>
+						<li><a href="/?f%5Bcollection_tesim%5D%5B%5D=Ragamala+Paintings&per_page=50&q=&search_field=all_fields&view=gallery">Browse collection</a></li>
+						<li><a href="/ragamala/resources">Resources</a></li>
+						<li><a href="/ragamala/contact">Contact</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
