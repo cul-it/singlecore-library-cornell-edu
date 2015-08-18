@@ -12,13 +12,12 @@ url(//fonts.googleapis.com/css?family=Rajdhani:400,700);
 	-o-background-size: cover;
 	background-size: cover;
 	color: white;
-	height: 1200px;
 	margin-bottom: 2em;
 }
 .header-indonesian {
 	.collection-brand {
 		font-family: $font-family-indonesian;
-		font-size: 43px;
+		font-size: 35px;
 		color: $indonesian-primary;
 		display: block;
 		margin-bottom: .25em;
@@ -39,7 +38,7 @@ url(//fonts.googleapis.com/css?family=Rajdhani:400,700);
 }
 .wrapper-indonesian {
 	.well {
-		margin: 400px 0 0 0;
+		margin: 9em 0 0 0;
 		a {
 			color: $indonesian-primary;
 		}
@@ -86,14 +85,43 @@ url(//fonts.googleapis.com/css?family=Rajdhani:400,700);
 
 // Small devices (tablets, 768px and up)
 @media (min-width: $screen-sm) { 
+	.wrapper-indonesian {
+		.well {
+			margin-top: 8em;
+		}
+		.nav-collection {
+			margin-top: .25em;
+		}
+	}
 }
 
 // Medium devices (desktops, 992px and up)
 @media (min-width: $screen-md) {
-	// .nav-pills.nav-collection > li > a {
-	// 	font-size: 16px;
-	// }
+	.hero-indonesian {
+		height: 1200px;
+	}
+	.wrapper-indonesian {
+		.well {
+			margin-top: 400px;
+		}
+		.nav-pills.nav-collection > li > a {
+			font-size: 16px;
+		}
+		.nav-collection {
+			margin-top: .5em;
+		}
+	}
 }
 // Large devices (desktops, 1200px and up)
-// @media (min-width: $screen-lg) {
-// }
+@media (min-width: $screen-lg) {
+	.header-indonesian {
+		.collection-brand {
+			font-size: 43px;
+		}
+	}
+	.wrapper-indonesian {
+		.nav-collection {
+			margin-top: 1em;
+		}
+	}
+}
