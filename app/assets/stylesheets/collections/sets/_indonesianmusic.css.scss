@@ -5,8 +5,8 @@ $font-family-indonesian:  'Rajdhani', Helvetica, Arials, sans-serif;        @imp
 url(//fonts.googleapis.com/css?family=Rajdhani:400,700);
 
 
-.hero-gamelan {
-	background: url("sets/gamelan/hero-gamelan.jpg") no-repeat;
+.hero-indonesian {
+	background: url("sets/indonesianmusic/hero-indonesian.jpg") no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -15,7 +15,7 @@ url(//fonts.googleapis.com/css?family=Rajdhani:400,700);
 	height: 1200px;
 	margin-bottom: 2em;
 }
-.header-gamelan {
+.header-indonesian {
 	.collection-brand {
 		font-family: $font-family-indonesian;
 		font-size: 43px;
@@ -29,15 +29,15 @@ url(//fonts.googleapis.com/css?family=Rajdhani:400,700);
 		text-decoration: none;
 	}
 }
-.hero-gamelan-sub {
-	background: url("sets/gamelan/banner.jpg") no-repeat;
+.hero-indonesian-sub {
+	background: url("sets/indonesianmusic/banner.jpg") no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	height: 120px;
 }
-.wrapper-gamelan {
+.wrapper-indonesian {
 	.well {
 		margin: 400px 0 0 0;
 		a {
@@ -71,7 +71,7 @@ url(//fonts.googleapis.com/css?family=Rajdhani:400,700);
 	.main-text {
 		margin-top: 104px;
 		.container {
-			background: url("sets/gamelan/gamelan-bg.jpg") no-repeat top right;
+			background: url("sets/indonesianmusic/indonesian-bg.jpg") no-repeat top right;
 		}
 		.col-sm-8 {
 			margin-top: 1.5em;
