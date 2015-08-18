@@ -23,6 +23,17 @@
 	margin-bottom: .25em; // this helps for wrapping pills on mobile interfaces
 }
 
+// Top link
+// ------------- //
+.top-link {
+  font-size: 14px;
+  text-align: right;
+  i {
+    margin-left: .25em;
+    font-size: 85%;
+  }
+}
+
 
 // MEDIA QUERIES
 // -------------------------
