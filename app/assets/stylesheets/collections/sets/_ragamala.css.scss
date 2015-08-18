@@ -20,66 +20,33 @@ $ragamala-orange: #d3591f;
 	height: 130px;
 }
 .wrapper-ragamala {
-	padding-bottom: 0 !important;
-	.well {
-		background: rgba(0,0,0,.8);
-		border: 0;
-		margin-top: 1em;
-		position:relative;
-		color: white;
-		padding: 3em 3em 2em 3em;
-		li {
-			a, a:hover, a:active, a:focus {
-				text-decoration: underline;
-				color: white;
-			}
-		}
-	}
 	.btn-browse {
 		background: #b39f5d;
-		border-bottom: 0;
 		border-color: #b39f5d;
-		font-size: 18px;
-		color: white;
-		text-transform: uppercase;
 	}
 	h1 {
 		color: $ragamala-orange;
-		font-weight: 700;
-		margin-top: 170px;
-	}
-	.main-text {
-		margin-top: 100px;
 	}
 }
 
 // MEDIA QUERIES
 // -------------------------
 
-/* Small devices (tablets, 768px and up) */
+// Small devices (tablets, 768px and up)
 @media (min-width: $screen-sm) { 
 	.wrapper-ragamala {
-		.nav-collection {
-			margin-top: 2em;
-		}
 		.well {
 			margin-top: -1em;
 		}
-	}
-	.nav-pills.nav-collection > li > a {
-		font-size: 14px;
 	}
 	.hero-ragamala {
 		min-height: 700px;
 	}
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: $screen-md) {
-	.nav-pills.nav-collection > li > a {
-		font-size: 16px;
-	}
-}
-/* Large devices (desktops, 1200px and up) */
+// Medium devices (desktops, 992px and up)
+// @media (min-width: $screen-md) {
+// }
+// Large devices (desktops, 1200px and up)
 // @media (min-width: $screen-lg) {
 // }

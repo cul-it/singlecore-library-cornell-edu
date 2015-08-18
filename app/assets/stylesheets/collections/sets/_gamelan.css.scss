@@ -1,84 +1,99 @@
 // Variables
 // -------------- //
+$indonesian-primary: #e9d94a; // yellow
+$font-family-indonesian:  'Rajdhani', Helvetica, Arials, sans-serif;        @import
+url(//fonts.googleapis.com/css?family=Rajdhani:400,700);
+
 
 .hero-gamelan {
-	background: url("sets/ragamala/hero-ragamala3.jpg") no-repeat 50% 70%;
+	background: url("sets/gamelan/hero-gamelan.jpg") no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	color: white;
-	padding-bottom: 4em;
+	height: 1200px;
+	margin-bottom: 2em;
+}
+.header-gamelan {
+	.collection-brand {
+		font-family: $font-family-indonesian;
+		font-size: 43px;
+		color: $indonesian-primary;
+		display: block;
+		margin-bottom: .25em;
+		font-weight: 700;
+	}
+	.collection-brand:hover, .collection-brand:focus, .collection-brand:active {
+		color: $indonesian-primary;
+		text-decoration: none;
+	}
 }
 .hero-gamelan-sub {
-	background: url("sets/ragamala/banner.jpg") no-repeat;
+	background: url("sets/gamelan/banner.jpg") no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	height: 130px;
+	height: 120px;
 }
 .wrapper-gamelan {
-	padding-bottom: 0 !important;
 	.well {
-		background: rgba(0,0,0,.8);
-		border: 0;
-		margin-top: 1em;
-		position:relative;
-		color: white;
-		padding: 3em 3em 2em 3em;
-		li {
-			a, a:hover, a:active, a:focus {
-				text-decoration: underline;
-				color: white;
-			}
+		margin: 400px 0 0 0;
+		a {
+			color: $indonesian-primary;
+		}
+		.btn-browse {
+			background: $indonesian-primary;
+			border-color: $indonesian-primary;
+			font-family: $font-family-indonesian;
+			font-size: 24px;
+			color: white;
+			font-weight: 700;
 		}
 	}
-	.btn-browse {
-		background: #b39f5d;
-		border-bottom: 0;
-		border-color: #b39f5d;
-		font-size: 18px;
-		color: white;
+	.nav-collection {
+		margin-top: 1em;
+	}
+	.read-more-link {
 		text-transform: uppercase;
+		i {
+			font-size: 80%;
+		}
 	}
 	h1 {
-		// color: $ragamala-orange;
-		font-weight: 700;
-		margin-top: 170px;
+		text-transform: uppercase;
+		font-weight: 400;
+		font-family: $font-family-indonesian;
+		border-bottom: 10px solid #f4eca6;
+		font-size: 40px;
 	}
 	.main-text {
-		margin-top: 100px;
+		margin-top: 104px;
+		.container {
+			background: url("sets/gamelan/gamelan-bg.jpg") no-repeat top right;
+		}
+		.col-sm-8 {
+			margin-top: 1.5em;
+			padding-left: 0;
+		}
 	}
 }
+
 
 // MEDIA QUERIES
 // -------------------------
 
-/* Small devices (tablets, 768px and up) */
+// Small devices (tablets, 768px and up)
 @media (min-width: $screen-sm) { 
-	.wrapper-gamelan {
-		.nav-collection {
-			margin-top: 2em;
-		}
-		.well {
-			margin-top: -1em;
-		}
-	}
-	.nav-pills.nav-collection > li > a {
-		font-size: 14px;
-	}
-	.hero-gamelan {
-		min-height: 700px;
-	}
 }
 
-/* Medium devices (desktops, 992px and up) */
+// Medium devices (desktops, 992px and up)
 @media (min-width: $screen-md) {
-	.nav-pills.nav-collection > li > a {
-		font-size: 16px;
-	}
+	// .nav-pills.nav-collection > li > a {
+	// 	font-size: 16px;
+	// }
 }
-/* Large devices (desktops, 1200px and up) */
+// Large devices (desktops, 1200px and up)
 // @media (min-width: $screen-lg) {
 // }
