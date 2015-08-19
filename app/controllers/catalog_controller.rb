@@ -33,7 +33,7 @@ end
       :fl => '*,score',
       :defType => 'edismax',
       :"q.alt" => '*:*',
-      :fq => '-notes_tesim:"Not for publication" AND -media_URL_size_2_tesim:"http://catalog.sharedshelf.artstor.org/images/ss_noimage-0.png"',
+      :fq => '-notes_tesim:"Not for publication"',
       :"facet.mincount" => 1
     }
 
@@ -171,6 +171,10 @@ end
     #- aerial
     config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
     config.add_show_field 'repository_tesim', :label => 'Repository'
+
+    #- indonesian music
+    config.add_show_field 'kaltura_id_s', :label => 'Kaltura'
+
 
 
     #boilerplate fields, commented out ones don't have needed helpers yet
