@@ -29,4 +29,23 @@ def link_to_document(doc, field_or_opts = nil, opts={:counter => nil})
   end
 end
 
+  PREFIXES = {
+    'huntington' => 'hunt',
+    'bolivian' => 'bol',
+
+  }
+
+
+  def pubstmt_to_id(pubstmt)
+    PREFIXES.each do |key,value|
+      if pubstmt.start_with?(value)
+        prefix = value
+        number = pubstmt.gsub(prefix,':')
+        return prefix + number
+      end
+    end
+  end
+
+
+
 end

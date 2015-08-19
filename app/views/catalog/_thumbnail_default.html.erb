@@ -1,7 +1,15 @@
-<%- if has_thumbnail?(document) && tn = render_thumbnail_tag(document, {}, :counter => document_counter_with_offset(document_counter)) %>
+<%- if (render_index_field_value :document => document, :field => "media_URL_size_3_tesim").present? && tn = render_thumbnail_tag(document, {}, :counter => document_counter_with_offset(document_counter)) %>
 <div class="document-thumbnail">
 <% thumb = render_index_field_value :document => document, :field => "media_URL_size_3_tesim"  %>
 <% thumb = "<img src='" + thumb + "' class='img-responsive' width='150'>" %>
 <%= thumb.html_safe %>
-</div>  
+</div> 
+
+<%- elsif (render_index_field_value :document => document, :field => "active_fedora_model_ssi").present? && tn = render_thumbnail_tag(document, {}, :counter => document_counter_with_offset(document_counter)) %>
+<div class="document-thumbnail">
+<% page_turner = pubstmt_to_id(render_index_field_value :document => document, :field => 'pubstmt_idno_tesim')%>
+<% thumb =  "http://hydrastg.library.cornell.edu/fedora/objects/" + page_turner + "/datastreams/thumbnailImage/content"  %>
+<% thumb = "<img src='" + thumb + "' class='img-responsive' width='150'>" %>
+<%= thumb.html_safe %>
+</div> 
 <%- end %>
