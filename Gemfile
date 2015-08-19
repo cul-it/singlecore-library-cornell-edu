@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem "blacklight"
 
+gem 'dotenv'
+gem 'dotenv-deployment'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
@@ -48,14 +51,27 @@ gem 'blacklight-maps'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'debugger' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false # Set require = false to get rid of a warning message
+  gem 'database_cleaner'
+  gem 'webrat'
+  gem 'guard-rspec'
+  gem 'poltergeist'
+end
+  
+group :test do
+  gem 'capybara'
+  # Following two gems are following the setup proposed in the RoR tutorial
+  # at http://ruby.railstutorial.org/chapters/static-pages#sec-advanced_setup
+  gem 'rb-inotify', :require => false
+  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
+  # Spork support
+  gem 'guard-spork', '0.3.2'
+  gem 'spork', '0.9.0'
+  gem 'webmock'
+  gem 'vcr'
+  gem 'capybara-email'
 end
 
 
