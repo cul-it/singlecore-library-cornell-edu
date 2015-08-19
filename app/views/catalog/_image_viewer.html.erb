@@ -1,4 +1,6 @@
+
 <% @project = render_document_show_field_value(:document => @document, :field => 'project_id_ssi') %>
+<% if !@project.blank? %>
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
 
 <div class="col-md-9">
@@ -20,3 +22,4 @@
   </script>
   <%= render 'show_download' %>
 </div>
+<% end %>
