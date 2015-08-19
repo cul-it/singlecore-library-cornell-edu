@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem "blacklight"
 
-gem 'dotenv'
-gem 'dotenv-deployment'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 gem "dotenv-rails"

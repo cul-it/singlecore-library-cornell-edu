@@ -98,11 +98,12 @@ GEM
     database_cleaner (1.4.1)
     deprecation (0.2.2)
       activesupport
+    diff-lcs (1.2.5)
     dotenv (1.0.2)
     dotenv-deployment (0.3.0)
       dotenv (~> 1.0)
     dotenv-rails (1.0.2)
-    dotenv (= 1.0.2)
+      dotenv (= 1.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
@@ -295,8 +296,8 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   cucumber-rails
   database_cleaner
-  dotenv
   dotenv-deployment
+  dotenv-rails
   font-awesome-sass (~> 4.3.0)
   guard-rspec
   guard-spork (= 0.3.2)
