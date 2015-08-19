@@ -33,18 +33,13 @@
 
   <body class="<%= render_body_class %>">
 
-<%# this is your full navbar %>
-  <%= render :partial => 'shared/cornell' %>
+    <%= render :partial => 'shared/cornell' %>
 
-<%# this comes from blacklight, you might not need it on pages? %>
+    <%# this comes from blacklight, you might not need it on pages? %>
+    <%= render partial: 'shared/ajax_modal' %>
 
-  <%= render partial: 'shared/ajax_modal' %>
-
-<%# this is where partials get spilled out %>
-  <%= yield %>
-      
-<%# this is your full footer %>
-
-  <%= render :partial => 'shared/footer' %>
+    <%= yield %>
+    
+    <%= render :partial => 'shared/footer' %>
   </body>
 </html>

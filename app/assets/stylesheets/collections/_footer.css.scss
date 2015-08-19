@@ -8,3 +8,19 @@ footer {
 		color: $dark-gray;
 	}
 }
+.dc-footer-brand {
+	display: none;
+	.cul-brand {
+		font-size: 16px;
+		margin-left: 0;
+		margin-bottom: .25em;
+	}
+	.brand {
+		font-size: 20px;
+	}
+}
+.blacklight-pages-show {
+	.dc-footer-brand {
+		display: block;
+	}
+}
