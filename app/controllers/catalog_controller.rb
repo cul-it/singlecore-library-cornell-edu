@@ -99,7 +99,8 @@ end
     config.add_facet_field 'creator_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :limit => 5
-    config.add_facet_field 'location_tesim', :label => 'Location', :sort => 'count', :limit => 5
+    config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
+    config.add_facet_field 'lang_tesim', :label => 'Language', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5
     config.add_facet_field 'mat_tech_tesim', :label => 'Materials', :limit => 5
     config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5, show: false
@@ -140,7 +141,7 @@ end
     config.add_index_field 'market_square_details_tesim', :label => 'Market Square Details'
     config.add_index_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
     config.add_index_field 'book_author', :label => 'Book Author:'
-    config.add_index_field 'author_tesim', :label => 'Author:'
+    config.add_index_field 'author_tesim', :label => 'Author:', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
 
     # these index fields are from the dlxs collections
@@ -169,7 +170,8 @@ end
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
-
+    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
+    config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
 
     #collection fields
     #- ragamala
