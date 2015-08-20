@@ -33,7 +33,7 @@ end
       :fl => '*,score',
       :defType => 'edismax',
       :"q.alt" => '*:*',
-      :fq => '-notes_tesim:"Not for publication"',
+      :fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page"',
       :"facet.mincount" => 1
     }
 
@@ -107,6 +107,7 @@ end
     config.add_facet_field 'fd_27325_tsi', :label => 'Year of photo', :limit => 5, show: false
     config.add_facet_field 'senechal_tesim', :label => 'Senechal', :limit => 5, show:false
     config.add_facet_field 'village_tesim', :label => 'Village', :limit => 5, show: false
+    config.add_facet_field 'keywords_tesim', :label => 'Keywords', :limit => 5, show: false
 
 
     #config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
@@ -140,6 +141,17 @@ end
     config.add_index_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
 
+    # these index fields are from the dlxs collections
+    config.add_index_field 'title_tesim', :label => 'Title:'
+    config.add_index_field 'author_tesim', :label => 'Author:'
+    config.add_index_field 'book_id_ts', :label => 'book id:'
+    config.add_index_field 'publisher', :label => 'Publisher:'
+    config.add_index_field 'book_publisher', :label => 'Book Publisher:'
+    config.add_index_field 'pubdate', :label => 'Published:'
+    config.add_index_field 'image_ocr_tesim',:label => 'text'
+    config.add_index_field 'book_title', :label => 'Book Title:'
+    config.add_index_field 'book_author', :label => 'Book Author:'
+
 
     #config.add_index_field 'language_facet', :label => 'Language'
     #config.add_index_field 'published_display', :label => 'Published'
@@ -153,6 +165,7 @@ end
     #core fields
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
+    config.add_show_field 'author_tesim', :label => 'Author', :link_to_search => true
     config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
@@ -176,6 +189,15 @@ end
 
     #- indonesian music
     config.add_show_field 'kaltura_id_s', :label => 'Kaltura'
+
+    #- huntington
+    config.add_show_field 'pubplace_tesim', :label => 'Print Publication Place'
+    config.add_show_field 'publisher_tesim', :label => 'Print Publisher'
+    config.add_show_field 'pubdate_tesim', :label => 'Print Publication Date'
+    config.add_show_field 'pubstmt_pubplace_tesim', :label => 'Publication Information'
+    config.add_show_field 'pubstmt_publisher_tesim', :label => 'Publisher'
+    config.add_show_field 'keywords_tesim', :label => 'Keywords', :link_to_search => true
+
 
 
 

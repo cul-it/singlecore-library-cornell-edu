@@ -11,7 +11,18 @@ module DisplayHelper
   end
 
   
+  def presenter_class
+    MultilineDisplayPresenterClass
+  end
+  class MultilineDisplayPresenterClass < Blacklight::DocumentPresenter
+    def field_value_separator
+      "<br />".html_safe
+    end
+  end
 
+  def field_value_separator
+    '<br />'
+  end
 
 
 end
