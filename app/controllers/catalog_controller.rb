@@ -139,18 +139,17 @@ end
     config.add_index_field 'founder_tesim', :label => 'Founder'
     config.add_index_field 'market_square_details_tesim', :label => 'Market Square Details'
     config.add_index_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
+    config.add_index_field 'book_author', :label => 'Book Author:'
+    config.add_index_field 'author_tesim', :label => 'Author:'
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
 
     # these index fields are from the dlxs collections
-    config.add_index_field 'title_tesim', :label => 'Title:'
-    config.add_index_field 'author_tesim', :label => 'Author:'
     config.add_index_field 'book_id_ts', :label => 'book id:'
-    config.add_index_field 'publisher', :label => 'Publisher:'
+    config.add_index_field 'publisher_tesim', :label => 'Publisher:'
     config.add_index_field 'book_publisher', :label => 'Book Publisher:'
-    config.add_index_field 'pubdate', :label => 'Published:'
+    config.add_index_field 'pubdate_tesim', :label => 'Published:'
     config.add_index_field 'image_ocr_tesim',:label => 'text'
     config.add_index_field 'book_title', :label => 'Book Title:'
-    config.add_index_field 'book_author', :label => 'Book Author:'
 
 
     #config.add_index_field 'language_facet', :label => 'Language'
