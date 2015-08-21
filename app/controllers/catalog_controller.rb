@@ -109,6 +109,7 @@ end
     config.add_facet_field 'senechal_tesim', :label => 'Senechal', :limit => 5, show:false
     config.add_facet_field 'village_tesim', :label => 'Village', :limit => 5, show: false
     config.add_facet_field 'keywords_tesim', :label => 'Keywords', :limit => 5, show: false
+    config.add_facet_field 'format_tesim', :label => 'Format', :limit => 5
 
 
     #config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
