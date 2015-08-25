@@ -1,6 +1,6 @@
 <% @project = render_document_show_field_value(:document => @document, :field => 'project_id_ssi') %>
 <% @kaltura = render_document_show_field_value(:document => @document, :field => 'kaltura_id_s') %>
-<% if !@project.blank? && @kaltura.nil? %>
+<% if !@project.blank? && @kaltura.blank? %>
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
 <div class="col-md-9">
   <div id="openseadragon1"></div>
@@ -21,7 +21,7 @@
   </script>
   <%= render 'show_download' %>
 </div>
-<% elsif !@kaltura.nil? %>
+<% elsif !@kaltura.blank? %>
 <% @identifier= render_document_show_field_value(:document => @document, :field => 'id_number_ssi') %>
 <div class="col-md-9">
   <div id="kaltura-player">
