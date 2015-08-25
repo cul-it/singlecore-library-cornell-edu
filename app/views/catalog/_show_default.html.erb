@@ -4,7 +4,11 @@
 <%= render 'image_viewer' %>
 
 <%# default partial to display solr document fields in catalog show view -%>
+<% if !@book_id.blank? %>
+<div class="col-md-9">
+<% else %>
 <div class="col-md-3">
+<% end %>
 	<div class="website-links">
 		<ul class="fa-ul">
 		<%= render_show_doc_actions @document do |config, inner| %>
