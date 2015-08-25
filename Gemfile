@@ -33,6 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'openseadragon'
 
+gem 'rubyzip'
+
 # Use font-awesome for icons 
 gem 'font-awesome-sass', '~> 4.3.0'
 

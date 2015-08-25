@@ -3,15 +3,13 @@
 
 <%= render 'image_viewer' %>
 
-
-<%# default partial to display solr document fields in catalog show view -%>
 <%# default partial to display solr document fields in catalog show view -%>
 <div class="col-md-3">
 	<div class="website-links">
 		<ul class="fa-ul">
 		<%= render_show_doc_actions @document do |config, inner| %>
 	      <% if inner.include? "bookmark" %>
-	        <li class="bookmark-toggle" style="margin-left:-20px;">
+	        <li class="bookmark-toggle">
 	          <%= inner %>
 	        </li>
 	       <% end %>

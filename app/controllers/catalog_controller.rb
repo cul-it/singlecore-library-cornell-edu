@@ -140,6 +140,7 @@ end
     config.add_index_field 'book_author', :label => 'Book Author:'
     config.add_index_field 'author_tesim', :label => 'Author:', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
+    config.add_index_field 'media_URL_tesim', helper_method: 'image_download', :label => 'Download'
 
     # these index fields are from the dlxs collections
     config.add_index_field 'book_id_ts', :label => 'book id:'
