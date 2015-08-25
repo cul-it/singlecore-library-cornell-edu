@@ -9,7 +9,7 @@
 		<ul class="fa-ul">
 		<%= render_show_doc_actions @document do |config, inner| %>
 	      <% if inner.include? "bookmark" %>
-	        <li class="bookmark-toggle" style="margin-left:-20px;">
+	        <li class="bookmark-toggle">
 	          <%= inner %>
 	        </li>
 	       <% end %>
