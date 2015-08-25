@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   get '/aerialny' => 'high_voltage/pages#show', id: 'aerialny/index'
   get '/reps-bastides' => 'high_voltage/pages#show', id: 'reps_bastides/index'
   get '/indonesianmusic' => 'high_voltage/pages#show', id: 'indonesianmusic/index'
-  get '/:subject/collection' => 'catalog#index'
-  get '/:subject/collection/catalog/:id' => 'catalog#show'  
   blacklight_for :catalog
 
 
