@@ -21,3 +21,5 @@
 
 #Ignore mac junk
 *.DS_store
+
+.env
