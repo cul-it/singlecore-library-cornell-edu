@@ -7,6 +7,13 @@
 <div class="col-md-3">
 	<div class="website-links">
 		<ul class="fa-ul">
+		<%= render_show_doc_actions @document do |config, inner| %>
+	      <% if inner.include? "bookmark" %>
+	        <li class="bookmark-toggle" style="margin-left:-20px;">
+	          <%= inner %>
+	        </li>
+	       <% end %>
+	      <% end %>
 		<% if @collection_website.present? %>
 			<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
 		<% end %>
