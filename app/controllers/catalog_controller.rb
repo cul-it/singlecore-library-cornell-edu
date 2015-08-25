@@ -30,12 +30,8 @@ end
     config.default_solr_params = {
       :qt => 'search',
       :rows => 10,
-      :fl => '*,score',
-      :defType => 'edismax',
-      :"q.alt" => '*:*',
-      :fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page"',
-      :"facet.mincount" => 1
-    }
+      :fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page"'
+          }
 
 
     # solr path which will be added to solr base url before the other solr params.
