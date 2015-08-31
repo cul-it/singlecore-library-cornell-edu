@@ -92,7 +92,7 @@ end
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
     config.add_facet_field 'collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
 
-    config.add_facet_field 'creator_tesim', :label => 'Creator', :sort => 'count', :limit => 5
+    config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :limit => 5
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
