@@ -164,7 +164,12 @@ end
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
     config.add_show_field 'author_tesim', :label => 'Author', :link_to_search => true
+    config.add_show_field 'ensemble_tesim', :label => 'Ensemble', :link_to_search => true
+    config.add_show_field 'principle_performer_tesim', :label => 'Principle Performer', :link_to_search => true
+    config.add_show_field 'performer_matrix_tesim', :label => 'Performers'
     config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
+    config.add_show_field 'occasion_tesim', :label => 'Occasion'
+    config.add_show_field 'track_tesim', :label => 'Track'
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
@@ -187,6 +192,10 @@ end
     config.add_show_field 'repository_tesim', :label => 'Repository'
 
     #- indonesian music
+
+    config.add_show_field 'full_text_date_tesim', :label => 'Date'
+    config.add_show_field 'collector_tesim', :label => 'Collector'
+
     config.add_show_field 'kaltura_id_s', :label => 'Kaltura'
 
     #- huntington
