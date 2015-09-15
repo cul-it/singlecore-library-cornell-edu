@@ -134,6 +134,8 @@ end
     # handler defaults, or have no facets.
     config.add_facet_fields_to_solr_request!
 
+    config.add_index_field 'date_tesim', :label => 'Date'
+
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     config.add_index_field 'village_tesim', :label => 'Village'
@@ -150,7 +152,6 @@ end
     config.add_index_field 'publisher_tesim', :label => 'Publisher'
     config.add_index_field 'book_publisher', :label => 'Book Publisher'
     config.add_index_field 'pubdate_tesim', :label => 'Published'
-    config.add_index_field 'date_tesim', :label => 'Date'
     config.add_index_field 'image_ocr_tesim',:label => 'text'
     config.add_index_field 'book_title', :label => 'Book Title'
 
