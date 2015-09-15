@@ -57,6 +57,36 @@
 	line-height: 1.4em;
 }
 
+// Constraints
+// ------------------------------ //
+
+.catalog_startOverLink {
+	background: $light-gray;
+	border-color: $light-gray;
+	color: white;
+}
+.constraint-value {
+	background: $light-blue;
+	border-color: $light-blue;
+	color: white;
+}
+.constraint-value:hover {
+	background: $light-blue !important;
+	border-color: $light-blue !important;
+	color: white !important;
+}
+.appliedFilter {
+	.remove {
+		background: $light-blue;
+		border-color: $light-blue;
+		border-color-left: white;
+		color: white;
+	}
+	// .remove:hover {
+	// 	background: $pale-blue;
+	// }
+}
+
 
 // MEDIA QUERIES
 // -------------------------
