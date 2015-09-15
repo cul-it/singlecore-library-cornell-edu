@@ -91,6 +91,8 @@ end
     #config.add_facet_field 'Date_i', :label => 'Year photographed', :sort => 'count', :limit => true
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
     config.add_facet_field 'collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
+    config.add_facet_field 'date_tesim', :label => 'Date', :limit => 5
+
 
     config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
@@ -164,7 +166,7 @@ end
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
     config.add_show_field 'author_tesim', :label => 'Author', :link_to_search => true
-    config.add_show_field 'ensemble_tesim', :label => 'Ensemble', :link_to_search => true
+    config.add_show_field 'ensemble_tesim', :label => 'Ensemble Notes'
     config.add_show_field 'principle_performer_tesim', :label => 'Principle Performer', :link_to_search => true
     config.add_show_field 'performer_matrix_tesim', :label => 'Performers'
     config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
