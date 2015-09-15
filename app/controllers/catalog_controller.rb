@@ -146,12 +146,13 @@ end
     config.add_index_field 'media_URL_tesim', helper_method: 'image_download', :label => 'Download'
 
     # these index fields are from the dlxs collections
-    config.add_index_field 'book_id_ts', :label => 'book id:'
-    config.add_index_field 'publisher_tesim', :label => 'Publisher:'
-    config.add_index_field 'book_publisher', :label => 'Book Publisher:'
-    config.add_index_field 'pubdate_tesim', :label => 'Published:'
+    config.add_index_field 'book_id_ts', :label => 'book id'
+    config.add_index_field 'publisher_tesim', :label => 'Publisher'
+    config.add_index_field 'book_publisher', :label => 'Book Publisher'
+    config.add_index_field 'pubdate_tesim', :label => 'Published'
+    config.add_index_field 'date_tesim', :label => 'Date'
     config.add_index_field 'image_ocr_tesim',:label => 'text'
-    config.add_index_field 'book_title', :label => 'Book Title:'
+    config.add_index_field 'book_title', :label => 'Book Title'
 
 
     #config.add_index_field 'language_facet', :label => 'Language'
