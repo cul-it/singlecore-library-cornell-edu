@@ -168,6 +168,7 @@ end
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
     config.add_show_field 'author_tesim', :label => 'Author', :link_to_search => true
+    config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
     config.add_show_field 'ensemble_tesim', :label => 'Ensemble Notes'
     config.add_show_field 'principle_performer_tesim', :label => 'Principle Performer', :link_to_search => true
     config.add_show_field 'performer_matrix_tesim', :label => 'Performers'
