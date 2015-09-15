@@ -47,6 +47,8 @@
     <%# if search results or item view, display a fluid layout %>
     <% if !params[:f].nil? || !params[:q].nil? || params[:action] == 'show' %>
       <div class="container-fluid">
+        <%= render 'constraints' %>
+
         <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
         <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
         <div class="row">
