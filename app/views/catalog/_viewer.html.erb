@@ -28,16 +28,18 @@ document.addEventListener("page:load", initOpenSeadragon); // Initialize when us
 <%# display av player %>
 <% elsif !@kaltura.blank? %>
 <% @identifier= render_document_show_field_value(:document => @document, :field => 'id_number_ssi') %>
-<div id="kaltura-player">
-  <div id="kaltura_player_1442239297" style="width: 500px; height: 35px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
-    <span itemprop="name" content="<%= @identifier %>"></span>
-    <span itemprop="description" content=""></span>
-    <span itemprop="duration" content="1913"></span>
-    <span itemprop="thumbnail" content="https://cdnsecakmi.kaltura.com/p/518251/sp/51825100/thumbnail/entry_id/<%= @kaltura %>/version/0/acv/51"></span>
-    <span itemprop="width" content="500"></span>
-    <span itemprop="height" content="35"></span>
+<div class="well">
+  <div id="kaltura-player">
+    <div id="kaltura_player_1442239297" style="width: 500px; height: 35px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+      <span itemprop="name" content="<%= @identifier %>"></span>
+      <span itemprop="description" content=""></span>
+      <span itemprop="duration" content="1913"></span>
+      <span itemprop="thumbnail" content="https://cdnsecakmi.kaltura.com/p/518251/sp/51825100/thumbnail/entry_id/<%= @kaltura %>/version/0/acv/51"></span>
+      <span itemprop="width" content="500"></span>
+      <span itemprop="height" content="35"></span>
+    </div>
+    <script src="https://cdnapisec.kaltura.com/p/518251/sp/51825100/embedIframeJs/uiconf_id/27313392/partner_id/518251?autoembed=true&entry_id=<%= @kaltura %>&playerId=kaltura_player_1442239297&cache_st=1442239297&width=500&height=35"></script>
   </div>
-  <script src="https://cdnapisec.kaltura.com/p/518251/sp/51825100/embedIframeJs/uiconf_id/27313392/partner_id/518251?autoembed=true&entry_id=<%= @kaltura %>&playerId=kaltura_player_1442239297&cache_st=1442239297&width=500&height=35"></script>
 </div>
 
 <%# display book reader %>
