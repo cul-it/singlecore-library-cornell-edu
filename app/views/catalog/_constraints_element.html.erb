@@ -1,33 +1,27 @@
-<%  # local params:
+<%- # local params:
     # label
     # value
     # options =>
     #   :remove => url for a remove constraint link
     #   :classes => array of classes to add to container span
     options ||= {}
-%>
+    options[:escape_label] = true unless options.has_key?(:escape_label)
+    options[:escape_value] = true unless options.has_key?(:escape_value)
+-%>
 
-<span class="btn-group appliedFilter constraint <%= options[:classes].join(" ") if options[:classes] %>">
-  <span class="constraint-value btn btn-default btn-disabled">
-    <% unless label.blank? %>
-      <span class="filterName"><%= label %></span>
-    <% end %>
-    <% unless value.blank? %>
-      <%= content_tag :span, value, class: 'filterValue', title: value %>
-    <% end %>
-  </span>
-  <% unless options[:remove].blank? %>
-    <% accessible_remove_label = content_tag :span, class: 'sr-only' do
-        if label.blank?
-          t('blacklight.search.filters.remove.value', value: value)
-        else
-          t('blacklight.search.filters.remove.label_value', label: label, value: value)
-        end
-      end
-    %>
-
-    <%= link_to(content_tag(:span, '', class: 'glyphicon glyphicon-remove') + accessible_remove_label,
-			options[:remove], class: 'btn btn-default remove dropdown-toggle'
-		) %>
-  <%- end -%>
-</span>
+<%- unless options[:remove].blank? -%>
+  <a href="<%= url_for(options[:remove]) %>" class="btn btn-info btn-small" title="Remove">
+<%- end -%>
+    <%- if label.blank? -%>
+      <span class="filter-label"><%= "All Fields" + raw(label) %></span><i class="fa fa-chevron-right"></i>
+    <%- else -%>
+      <span class="filter-label"><%= raw(label) %></span><i class="fa fa-chevron-right"></i>
+      
+    <%- end -%>
+    <%- unless value.blank? -%>
+      <span class="filter-value"><%= raw(value) %></span>
+    <%- end -%>
+    <i class="fa fa-times fa-inverse"></i>
+<%- unless options[:remove].blank? -%>
+  </a>
+<%- end -%>

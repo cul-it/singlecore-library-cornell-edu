@@ -1,0 +1,55 @@
+<% @project = render_document_show_field_value(:document => @document, :field => 'project_id_ssi') %>
+<% @kaltura = render_document_show_field_value(:document => @document, :field => 'kaltura_id_s') %>
+<% @book_id = pubstmt_to_id(render_document_show_field_value :document => @document, :field => 'pubstmt_idno_tesim') %>
+<% @download_url = render_document_show_field_value(:document => @document, :field => 'media_URL_tesim') %>
+<% @page = "1" %>
+
+<%# display image viewer %>
+<% if !@project.blank? && @kaltura.blank? %>
+<% @asset = request.original_url.split('ss')[1].split(':')[1] %>
+<a href="<%= @download_url %>" class="download-link">Download image<i class="fa fa-download"></i></a></a>
+<div id="openseadragon1"></div>
+<script>
+//<![CDATA[
+function initOpenSeadragon() {
+OpenSeadragon ({
+      id: "openseadragon1",
+      minZoomImageRatio: 1,
+      prefixUrl: "/images/",
+      showNavigator: true,
+      tileSources: "http://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= @project %>/<%= @asset %>/image/info.json"
+    });
+}
+window.onload = initOpenSeadragon;
+document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
+//]]>
+</script>
+
+<%# display av player %>
+<% elsif !@kaltura.blank? %>
+<% @identifier= render_document_show_field_value(:document => @document, :field => 'id_number_ssi') %>
+<div id="kaltura-player">
+  <div id="kaltura_player_1442239297" style="width: 500px; height: 35px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+    <span itemprop="name" content="<%= @identifier %>"></span>
+    <span itemprop="description" content=""></span>
+    <span itemprop="duration" content="1913"></span>
+    <span itemprop="thumbnail" content="https://cdnsecakmi.kaltura.com/p/518251/sp/51825100/thumbnail/entry_id/<%= @kaltura %>/version/0/acv/51"></span>
+    <span itemprop="width" content="500"></span>
+    <span itemprop="height" content="35"></span>
+  </div>
+  <script src="https://cdnapisec.kaltura.com/p/518251/sp/51825100/embedIframeJs/uiconf_id/27313392/partner_id/518251?autoembed=true&entry_id=<%= @kaltura %>&playerId=kaltura_player_1442239297&cache_st=1442239297&width=500&height=35"></script>
+</div>
+
+<%# display book reader %>
+<% elsif !@book_id.blank? %>
+<div class="col-md-3 book-thumbnail">
+  <div class="cover" data-no-turbolink>
+    <a href="/bookreader/<%= @book_id %>/#page/<%= @page %>/mode/1up"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+    <% bibid_display = render_document_show_field_value :document => @document, :field => 'bibid_tesim' %>
+    <div class="reader-link" data-no-turbolink>
+      <a class="btn btn-info" href="/bookreader/<%= @book_id %>/#page/<%= @page %>/mode/1up"><i class="fa fa-book-open"></i>Read book</a>
+    </div>
+  </div>
+</div>     
+
+<% end %>

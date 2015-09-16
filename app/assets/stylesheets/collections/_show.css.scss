@@ -11,30 +11,45 @@
 		word-wrap: break-word;
 	}
 }
+.item-info {
+	margin-top: 2em;
+}
+.col-md-9.item-info {
+	margin-top: 0;
+}
 
-// Download links
+// Download link
 // ------------------------ //
-.download-list {
-	margin: 1em 0 0 0;
-	li {
-		margin-bottom: .5em;
-		float: left;
-		font-size: 12px;
-		padding-right: 3em;
-	}
+// .download-list {
+// 	margin: 1em 0 0 0;
+// 	li {
+// 		margin-bottom: .5em;
+// 		float: left;
+// 		font-size: 12px;
+// 		padding-right: 3em;
+// 	}
+// 	i {
+// 		margin-right: .5em;
+// 	}
+// 	a {
+// 		color: $dark-gray;
+// 		text-transform: uppercase;
+// 	}
+// 	.fa-li {
+// 		width: 2.4em;
+// 	}
+// 	.btn {
+// 		border-style: solid !important;
+// 		border-color: $border-color !important;
+// 	}
+// }
+.download-link {
+	display: block;
+	text-align: right;
+	color: $dark-gray;
+	text-align: uppercase;
 	i {
-		margin-right: .5em;
-	}
-	a {
-		color: $dark-gray;
-		text-transform: uppercase;
-	}
-	.fa-li {
-		width: 2.4em;
-	}
-	.btn {
-		border-style: solid !important;
-		border-color: $border-color !important;
+		margin-left: .5em;
 	}
 }
 
@@ -42,8 +57,8 @@
 // ------------------------ //
 .website-links {
 	padding-bottom: 1em;
-	margin-bottom: 1em;
-	border-bottom: 1px solid $border-color;
+	// margin-bottom: 1em;
+	// border-bottom: 1px solid $border-color;
 	li {
 		margin-bottom: .5em;
 		font-size: 14px;
