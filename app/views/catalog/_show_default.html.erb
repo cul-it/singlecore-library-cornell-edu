@@ -1,27 +1,21 @@
 <%# default partial to display solr document fields in catalog show view -%>
 <% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
 
-<%= render 'image_viewer' %>
+<%= render 'viewer' %>
 
 <%# default partial to display solr document fields in catalog show view -%>
-<% if @book_id.blank? %>
-<div class="col-md-9">
+<% if !@project.blank? && @kaltura.blank? || !@kaltura.blank? %>
+<div class="item-info">
 <% else %>
-<div class="col-md-3">
+<div class="col-md-9 item-info">
 <% end %>
 	<div class="website-links">
 		<ul class="fa-ul">
-		<%= render_show_doc_actions @document do |config, inner| %>
-	      <% if inner.include? "bookmark" %>
-	        <li class="bookmark-toggle">
-	          <%= inner %>
-	        </li>
-	       <% end %>
-	      <% end %>
+		
 		<% if @collection_website.present? %>
 			<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
 		<% end %>
-			<li><i class="fa-li fa fa-external-link"></i><a href="#" class="ss-link">View collection in Shared Shelf Commons</a></li>
+			<li><i class="fa-li fa fa-external-link"></i><a href="#" class="ss-link">View collection in ARTstor/Shared Shelf Commons</a></li>
 		</ul>
 	</div>
 	<dl class="metadata">
