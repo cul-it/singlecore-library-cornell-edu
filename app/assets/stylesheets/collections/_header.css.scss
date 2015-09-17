@@ -5,11 +5,15 @@
 	background: $pale-gray;
 	.container {
 		background: $cornell-black;
+		padding: 0;
 	}
 	button {
 		i {
 			color: white;
 		}
+	}
+	.util-links {
+		padding-right: 0;
 	}
 }
 
@@ -17,7 +21,7 @@
 // ------------------- //
 .brand {
 	text-transform: uppercase;
-	font-size: 36px;
+	font-size: 21px;
 	font-family: $font-family-cul;
 	color: $medium-gray;
 	line-height: 1em;
@@ -27,10 +31,10 @@
 	text-decoration: none;
 }
 .cul-brand {
-	font-size: 24px;
+	font-size: 18px;
 	font-family: $font-family-cul;
 	display: block;
-	margin-left: 4px;
+	// margin-left: 4px;
 	color: $medium-gray;
 }
 .cul-brand:hover, .cul-brand:active, .cul-brand:focus {
@@ -48,6 +52,22 @@
 		margin-left: .5em;
 	}
 }
+
+// Mobile util links
+// ------------------- //
+.mobile-util-links {
+	float: right;
+	.btn {
+		float: left;
+		background: #444;
+		color: white;
+		border-radius: 0;
+		display: block;
+		padding: 12px 15px;
+		margin-left: 1px;
+	}
+}
+
 
 // Navbar
 // -------------------------
@@ -81,26 +101,28 @@
 // MEDIA QUERIES
 // -------------------------
 
-  // /* Extra small devices (phones, up to 480px) */
-  // /* No media query since this is the default in Bootstrap */
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) { 
+	.cul-brand {
+		font-size: 21px;
+	}
+	.brand {
+		font-size: 25px;
+	}
+}
 
-  // /* Small devices (tablets, 768px and up) */
-  // @media (min-width: @screen-sm) { ... }
-
-  // /* Medium devices (desktops, 992px and up) */
-  // @media (min-width: @screen-md) { ... }
-
-  // /* Large devices (large desktops, 1200px and up) */
-  // @media (min-width: @screen-lg) { ... }
-
-
-/* Small devices (tablets, 768px and up) */
-// @media (min-width: $screen-sm) { 
-// }
-
-/* Medium devices (desktops, 992px and up) */
-// @media (min-width: $screen-md) {
-// }
-/* Large devices (desktops, 1200px and up) */
-// @media (min-width: $screen-lg) {
-// }
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md) {
+	.cul-brand {
+		font-size: 24px;
+	}
+	.brand {
+		font-size: 34px;
+	}
+}
+// Large devices (desktops, 1200px and up)
+@media (min-width: $screen-lg) {
+	.brand {
+		font-size: 36px;
+	}
+}
