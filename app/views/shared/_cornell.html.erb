@@ -1,7 +1,10 @@
 <div class="cornell-identity">
     <div class="container">
-      <div class="cornell-logo">
+      <div class="cornell-logo col-sm-6">
         <a href="http://www.cornell.edu"><%= image_tag "cornell-black.gif" , alt: "Cornell University" %></a>
       </div>
+      <div class="util-links col-sm-6">
+          <%= render :partial=>'/user_util_links' %>
+        </div>
     </div>
 </div>
