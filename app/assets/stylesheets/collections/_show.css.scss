@@ -69,7 +69,6 @@
 #image-toolbar {
 	height: 35px;
 	background: $dark-gray;
-	padding: 4px 10px;
 }
 .image-controls {
 	text-align: right;
@@ -78,10 +77,26 @@
 		color: white;
 		font-size: 20px;
 		display: inline-block;
-		margin-left: 5px;
+		background: $medium-gray;
+		padding: 5px 8px;
+		height: 35px;	
 	}
 	a:hover {
 		border: 0;
+	}
+	.download-link {
+		border: 0;
+		color: white;
+		text-align: uppercase;
+		display: block;
+		font-size: 12px;
+		text-transform: uppercase;
+		float: left;
+		background-color: inherit;
+		padding-top: 8px;
+		i {
+			margin-left: .5em;
+		}
 	}
 }
 
@@ -91,20 +106,21 @@
 	background: $dark-gray;
 	padding: 5px 10px;
 }
-.download-link {
-	text-align: right;
-	a, a:hover {
-		border: 0;
-		color: white;
-		text-align: uppercase;
-		display: inline-block;
-		font-size: 12px;
-		text-transform: uppercase;
-	}
-	i {
-		margin-left: .5em;
-	}
-}
+// .download-link {
+// 	text-align: right;
+// 	a, a:hover {
+// 		border: 0;
+// 		color: white;
+// 		text-align: uppercase;
+// 		display: inline-block;
+// 		font-size: 12px;
+// 		text-transform: uppercase;
+// 	}
+// 	i {
+// 		margin-left: .5em;
+// 	}
+// }
+
 
 // Bookmark toggle
 // ------------------------ //
