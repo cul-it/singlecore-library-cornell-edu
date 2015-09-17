@@ -9,6 +9,7 @@
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
 <div id="image-toolbar">
   <div class="image-controls">
+    <a href="<%= @download_url %>" class="download-link">Download<i class="fa fa-download"></i></a></a>
     <a id="zoom-in" href="#zoom-in"><i class="fa fa-plus-circle"></i></a>
     <a id="zoom-out" href="#zoom-out"><i class="fa fa-minus-circle"></i></a>
     <a id="home" href="#home"><i class="fa fa-refresh"></i></a>
@@ -16,11 +17,6 @@
   </div>
 </div>
 <div id="openseadragon1"></div>
-<div class="download-toolbar">
-  <div class="download-link">
-    <a href="<%= @download_url %>">Download<i class="fa fa-download"></i></a></a>
-  </div>
-</div>
 
 <script>
 //<![CDATA[
