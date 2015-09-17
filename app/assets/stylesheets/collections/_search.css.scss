@@ -92,16 +92,16 @@
 // 	border-color: $light-gray;
 // 	color: white;
 // }
-.constraint-value {
-	background: $light-blue;
-	border-color: $light-blue;
-	color: white;
-}
-.constraint-value:hover {
-	background: $light-blue !important;
-	border-color: $light-blue !important;
-	color: white !important;
-}
+// .constraint-value {
+// 	background: $light-blue;
+// 	border-color: $light-blue;
+// 	color: white;
+// }
+// .constraint-value:hover {
+// 	background: $light-blue !important;
+// 	border-color: $light-blue !important;
+// 	color: white !important;
+// }
 .appliedFilter {
 	.remove {
 		background: $light-blue;
@@ -112,6 +112,13 @@
 	// .remove:hover {
 	// 	background: $pale-blue;
 	// }
+}
+.constraints-container {
+	.btn {
+		i {
+			margin-left: .4em;
+		}
+	}
 }
 
 
