@@ -115,6 +115,7 @@
 }
 .constraints-container {
 	.btn {
+		white-space: normal; // allows long labels to wrap on smaller screens
 		i {
 			margin-left: .4em;
 		}
