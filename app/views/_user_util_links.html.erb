@@ -1,5 +1,9 @@
-<ul class="nav navbar-nav">
+<ul class="nav navbar-nav hidden-xs">
   <%= render_nav_actions do |config, action|%>
     <li><%= action %></li>
   <% end %>
 </ul>
+<div class="mobile-util-links visible-xs">
+	<a href="/bookmarks" class="btn"><i class="fa fa-bookmark"><span class="sr-only">Bookmarks</span></i></a>
+	<a href="/search_history" class="btn"><i class="fa fa-history"><span class="sr-only">Search history</span></i></a>
+</div>
