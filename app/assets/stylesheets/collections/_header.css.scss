@@ -2,6 +2,7 @@
 // ------------------- //
 
 .cornell-identity {
+	background: $pale-gray;
 	.container {
 		background: $cornell-black;
 	}
@@ -10,7 +11,6 @@
 			color: white;
 		}
 	}
-	background: white;
 }
 
 // Library brand
@@ -38,7 +38,7 @@
 	text-decoration: none;
 }
 // Beta label
-.navbar-header {
+.cul {
 	.label-info {
 		font-size: 90%;
 		vertical-align: super;
@@ -52,7 +52,7 @@
 // Navbar
 // -------------------------
 #header-navbar {
-	background: white;
+	background: $pale-gray;
 }
 .navbar {
 	padding: .5em 0 1em 0;
