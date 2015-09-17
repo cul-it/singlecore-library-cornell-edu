@@ -35,8 +35,6 @@
 
 .search-box {
 	clear: both;
-	float: right;
-	width: 80%;
 	margin-top: 1.5em;
 	.search-query-form {
 		width: 100%;
@@ -92,16 +90,16 @@
 // 	border-color: $light-gray;
 // 	color: white;
 // }
-.constraint-value {
-	background: $light-blue;
-	border-color: $light-blue;
-	color: white;
-}
-.constraint-value:hover {
-	background: $light-blue !important;
-	border-color: $light-blue !important;
-	color: white !important;
-}
+// .constraint-value {
+// 	background: $light-blue;
+// 	border-color: $light-blue;
+// 	color: white;
+// }
+// .constraint-value:hover {
+// 	background: $light-blue !important;
+// 	border-color: $light-blue !important;
+// 	color: white !important;
+// }
 .appliedFilter {
 	.remove {
 		background: $light-blue;
@@ -113,29 +111,34 @@
 	// 	background: $pale-blue;
 	// }
 }
+.constraints-container {
+	.btn {
+		white-space: normal; // allows long labels to wrap on smaller screens
+		i {
+			margin-left: .4em;
+		}
+	}
+}
 
 
 // MEDIA QUERIES
 // -------------------------
 
-  // /* Extra small devices (phones, up to 480px) */
-  // /* No media query since this is the default in Bootstrap */
-
-  // /* Small devices (tablets, 768px and up) */
-  // @media (min-width: @screen-sm) { ... }
-
-  // /* Medium devices (desktops, 992px and up) */
-  // @media (min-width: @screen-md) { ... }
-
-  // /* Large devices (large desktops, 1200px and up) */
-  // @media (min-width: @screen-lg) { ... }
-
-
-/* Small devices (tablets, 768px and up) */
+// Small devices (tablets, 768px and up)
 @media (min-width: $screen-sm) { 
 	.util-links {
 		.nav > li > a {
 			padding: 10px 15px;
 		}
+	}
+	.search-box {
+		float: right;
+		width: 90%;
+	}
+}
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md) {
+	.search-box {
+		width: 80%;
 	}
 }
