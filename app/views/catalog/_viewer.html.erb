@@ -1,4 +1,4 @@
-<% @project = render_document_show_field_value(:document => @document, :field => 'project_id_ssi') %>
+plo<% @project = render_document_show_field_value(:document => @document, :field => 'project_id_ssi') %>
 <% @kaltura = render_document_show_field_value(:document => @document, :field => 'kaltura_id_s') %>
 <% @book_id = pubstmt_to_id(render_document_show_field_value :document => @document, :field => 'pubstmt_idno_tesim') %>
 <% @download_url = render_document_show_field_value(:document => @document, :field => 'media_URL_tesim') %>
@@ -30,7 +30,6 @@ OpenSeadragon ({
       fullPageButton: "full-page",
       minZoomImageRatio: 1,
       prefixUrl: "/images/",
-      showNavigator: true,
       tileSources: "http://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= @project %>/<%= @asset %>/image/info.json"
     });
 }
