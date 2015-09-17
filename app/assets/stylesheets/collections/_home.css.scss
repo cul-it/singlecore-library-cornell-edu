@@ -25,6 +25,20 @@
 	text-align: center;
 }
 
+// Featured collections
+// ----------------------- //
+
+.featured-collections {
+	h3 {
+		font-size: 16px;
+		line-height: 1.5em;
+		margin-top: .5em;
+		text-align: center;
+	}
+}
+.featured {
+	@include make-sm-column(4);
+}
 
 // MEDIA QUERIES
 // -------------------------
