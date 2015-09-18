@@ -89,6 +89,18 @@
 	margin: 0 0 2em 0;
 }
 
+// Floated image
+// ------------------------- //
+
+.img-right {
+	text-align: center;
+	margin: 0 0 1.5em 1.5em;
+	width: 150px;
+	.caption {
+		font-size: 14px;
+		margin: 1em 0;
+	}
+}
 
 
 // Global rules for design-y collection pages - see overrides in /stylesheets/collections/sets/[collection-name].css.scss
@@ -148,6 +160,9 @@
 	}
 	.collection-title {
 		font-size: 30px;
+	}
+	.img-right {
+		width: auto;
 	}
 }
 

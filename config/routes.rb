@@ -3,10 +3,15 @@ Rails.application.routes.draw do
   root to: "catalog#index"
   devise_for :users
   get '/contact' => 'high_voltage/pages#show', id: 'contact'
-  get '/ragamala' => 'high_voltage/pages#show', id: 'ragamala/index'
+
+  # collections
+  
   get '/aerialny' => 'high_voltage/pages#show', id: 'aerialny/index'
-  get '/reps-bastides' => 'high_voltage/pages#show', id: 'reps_bastides/index'
+  get '/bolivian' => 'high_voltage/pages#show', id: 'bolivian/index'
   get '/indonesianmusic' => 'high_voltage/pages#show', id: 'indonesianmusic/index'
+  get '/ragamala' => 'high_voltage/pages#show', id: 'ragamala/index'
+  get '/reps-bastides' => 'high_voltage/pages#show', id: 'reps_bastides/index'
+  
   blacklight_for :catalog
 
 
