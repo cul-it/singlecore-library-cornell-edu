@@ -13,20 +13,20 @@ url(//fonts.googleapis.com/css?family=Rajdhani:400,700);
 	background-size: cover;
 	color: white;
 }
-.header-indonesian {
-	.collection-brand {
-		font-family: $font-family-indonesian;
-		font-size: 35px;
-		color: $indonesian-primary;
-		display: block;
-		margin-bottom: .25em;
-		font-weight: 700;
-	}
-	.collection-brand:hover, .collection-brand:focus, .collection-brand:active {
-		color: $indonesian-primary;
-		text-decoration: none;
-	}
+
+.indonesia-brand {
+	font-family: $font-family-indonesian;
+	font-size: 35px;
+	color: $indonesian-primary;
+	display: block;
+	margin-bottom: .25em;
+	font-weight: 700;
 }
+.indonesia-brand:hover, .indonesia-brand:focus, .indonesia-brand:active {
+	color: $indonesian-primary;
+	text-decoration: none;
+}
+
 .hero-indonesian-sub {
 	background: url("sets/indonesianmusic/banner.jpg") no-repeat;
 	-webkit-background-size: cover;
