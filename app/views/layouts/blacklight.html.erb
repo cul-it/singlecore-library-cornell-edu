@@ -18,7 +18,7 @@
 
     <title><%= render_page_title %></title>
     <% if params[:action] == "show" &&  if (render_index_field_value :document => @document, :field => 'media_URL_tesim').present? %>
-    <meta property=”og:image” content=”<%= render_index_field_value :document => @document, :field => 'media_URL_size_4_tesim' %>” />
+    <meta property=”og:image” content=”<%= render_index_field_value :document => @document, :field => 'media_URL_size_3_tesim' %>” />
     <% end %><%end%>
     <%= opensearch_description_tag application_name, opensearch_catalog_url(:format => 'xml') %>
     <%= favicon_link_tag 'favicon.png' %>
