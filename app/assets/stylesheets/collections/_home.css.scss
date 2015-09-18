@@ -37,7 +37,7 @@
 	}
 }
 .featured {
-	@include make-sm-column(4);
+	@include make-sm-column(3);
 }
 
 // MEDIA QUERIES
