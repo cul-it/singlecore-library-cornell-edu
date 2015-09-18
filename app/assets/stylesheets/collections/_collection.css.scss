@@ -2,8 +2,10 @@
 // ----------------------------- //
 
 // Header
+// ------------------------- //
+
 .header-collection {
-	padding: 0 0 3em 0;
+	padding: .5em 0 1em 0;
 	h1 {
 		margin-bottom: 0;
 		a, a:hover, a:active, a:focus {
@@ -15,6 +17,29 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
+}
+.collection-brand {
+	@include make-xs-column(8);
+}
+.collection-menu {
+	@include make-xs-column(4);
+	.dropdown {
+		float: right;
+	}
+	.btn {
+		border-radius: 0;
+		background: $dark-gray;
+		border-color: $dark-gray;
+		color: white;
+		text-transform: uppercase;
+		i {
+			margin-right: .25em;
+		}
+	}
+}
+.collection-title {
+	font-family: $font-family-cul;
+	font-size: 24px;
 }
 
 // Browse button
@@ -31,6 +56,8 @@
 	float: none;
 	color: $dark-gray;
 }
+
+
 
 // Collection nav
 .nav-collection {
@@ -49,11 +76,20 @@
 .nav-pills.nav-collection > li > a:hover {
 	background: white;
 }
-
-// Sub page text area
-.main-text {
-	padding-bottom: 3em;
+// Default collection text
+// ------------------------- //
+.collection-text {
+	padding-top: 2em;
+	border-top: 1px solid $border-color;
 }
+
+// Banner images
+// ------------------------- //
+.banner {
+	margin: 0 0 2em 0;
+}
+
+
 
 // Global rules for design-y collection pages - see overrides in /stylesheets/collections/sets/[collection-name].css.scss
 // -----------------------------------------------------------------------------------------------------------------------
@@ -90,6 +126,7 @@
 }
 .main-text {
 	margin-top: 100px;
+	padding-bottom: 3em;
 }
 
 
@@ -108,6 +145,9 @@
 	}
 	.nav-pills.nav-collection > li > a {
 		font-size: 14px;
+	}
+	.collection-title {
+		font-size: 30px;
 	}
 }
 
