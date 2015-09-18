@@ -48,7 +48,7 @@ end
     # geolocation settings
 
     config.add_facet_field 'where_ssim', :limit => -2, :label => 'Coordinates', :show => false
-    config.show.partials << :show_maplet
+    #config.show.partials << :show_maplet
     config.view.maps.coordinates_field = "where_geocoordinates"
     config.view.maps.coordinates_facet_field = 'where_ssim'
     config.view.maps.facet_mode = "coordinates" # or "coordinates"    config.view.maps.search_mode = "coordinates"
