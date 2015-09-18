@@ -5,19 +5,10 @@
 
 <%# default partial to display solr document fields in catalog show view -%>
 <% if !@project.blank? && @kaltura.blank? || !@kaltura.blank? %>
-<div class="item-info">
+<div class="col-sm-8 item-info">
 <% else %>
 <div class="col-md-9 item-info">
 <% end %>
-	<div class="website-links">
-		<ul class="fa-ul">
-		
-		<% if @collection_website.present? %>
-			<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
-		<% end %>
-			<li><i class="fa-li fa fa-external-link"></i><a href="#" class="ss-link">View collection in ARTstor/Shared Shelf Commons</a></li>
-		</ul>
-	</div>
 	<dl class="metadata">
 	  <% document_show_fields(document).each do |field_name, field| -%>
 	    <% if should_render_show_field? document, field %>
@@ -26,4 +17,15 @@
 	    <% end -%>
 	  <% end -%>
 	</dl>
+</div>
+<div class="col-sm-4 more-item-info">
+	<div class="website-links well">
+		<ul class="fa-ul">		
+		<% if @collection_website.present? %>
+			<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
+		<% end %>
+			<li><i class="fa-li fa fa-external-link"></i><a href="#" class="ss-link">View collection in ARTstor/Shared Shelf Commons</a></li>
+		</ul>
+	</div>
+	<%= render partial: 'catalog/show_maplet_default' %>
 </div>
