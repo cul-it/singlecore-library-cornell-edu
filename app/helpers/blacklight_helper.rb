@@ -13,17 +13,7 @@ def image_download options={}
 
   end
 
-def collection_link options={}
-    options[:document] # the original document
-    options[:field] # the field to render
-    options[:value] # the value of the field
-    site_link = render_index_field_value options[:document], field: :collection_website_ss
-    if !site_link.nil?
-      link_to content_tag(:span, options[:value][0]), site_link
-    else
-      options[:value]
-    end
-end
+
 
   PREFIXES = {
     'huntington' => 'hunt',
