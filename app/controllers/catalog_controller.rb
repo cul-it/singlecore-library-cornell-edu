@@ -92,8 +92,6 @@ end
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
     config.add_facet_field 'collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
     config.add_facet_field 'date_tesim', :label => 'Date', :limit => 5
-
-
     config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :limit => 5
@@ -142,8 +140,9 @@ end
     config.add_index_field 'founder_tesim', :label => 'Founder'
     config.add_index_field 'market_square_details_tesim', :label => 'Market Square Details'
     config.add_index_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
-    config.add_index_field 'book_author', :label => 'Book Author:'
-    config.add_index_field 'author_tesim', :label => 'Author:', :link_to_search => true
+    config.add_index_field 'author_tesim', :label => 'Author', :link_to_search => true
+    config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', helper_method: 'collection_link'
     config.add_index_field 'media_URL_tesim', helper_method: 'image_download', :label => 'Download'
     # these index fields are from the dlxs collections
@@ -170,7 +169,7 @@ end
     config.add_show_field 'author_tesim', :label => 'Author', :link_to_search => true
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
     config.add_show_field 'ensemble_tesim', :label => 'Ensemble Notes'
-    config.add_show_field 'principle_performer_tesim', :label => 'Principle Performer', :link_to_search => true
+    config.add_show_field 'principle_performer_creator_tesim', :label => 'Principle Performer', :link_to_search => true
     config.add_show_field 'performer_matrix_tesim', :label => 'Performers'
     config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
