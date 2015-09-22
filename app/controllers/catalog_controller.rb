@@ -169,7 +169,7 @@ end
     config.add_show_field 'author_tesim', :label => 'Author', :link_to_search => true
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
     config.add_show_field 'ensemble_tesim', :label => 'Ensemble Notes'
-    config.add_show_field 'principle_performer_creator_tesim', :label => 'Principle Performer', :link_to_search => true
+    config.add_show_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_show_field 'performer_matrix_tesim', :label => 'Performers'
     config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
