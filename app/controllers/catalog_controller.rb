@@ -143,7 +143,7 @@ end
     config.add_index_field 'author_tesim', :label => 'Author', :link_to_search => true
     config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
-    config.add_index_field 'collection_tesim', :label => 'Collection', helper_method: 'collection_link'
+    config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_index_field 'media_URL_tesim', helper_method: 'image_download', :label => 'Download'
     # these index fields are from the dlxs collections
     config.add_index_field 'book_id_ts', :label => 'book id'
@@ -164,7 +164,7 @@ end
 
 
     #core fields
-    config.add_show_field 'collection_tesim', :label => 'Collection'
+    config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
     config.add_show_field 'author_tesim', :label => 'Author', :link_to_search => true
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
