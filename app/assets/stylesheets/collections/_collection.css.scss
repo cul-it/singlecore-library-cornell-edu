@@ -9,7 +9,7 @@
 	h1 {
 		margin-bottom: 0;
 		a, a:hover, a:active, a:focus {
-			color: $dark-gray;
+			color: $gray-dark;
 			text-decoration: none;
 		}
 	}
@@ -28,8 +28,8 @@
 	}
 	.btn {
 		border-radius: 0;
-		background: $dark-gray;
-		border-color: $dark-gray;
+		background: $gray-dark;
+		border-color: $gray-dark;
 		color: white;
 		text-transform: uppercase;
 		i {
@@ -54,7 +54,7 @@
 	font-size: 12px;
 	text-transform: uppercase;
 	float: none;
-	color: $dark-gray;
+	color: $gray-dark;
 }
 
 
@@ -70,7 +70,7 @@
 	padding: 5px 10px;
 	font-size: 16px;
 	background: white;
-	color: $dark-gray;
+	color: $text-color;
 	text-transform: uppercase;
 }
 .nav-pills.nav-collection > li > a:hover {
@@ -124,9 +124,9 @@
 		}
 	}
 	.btn-browse {
-		background: $light-gray;
+		background: $gray-light;
 		border-bottom: 0;
-		border-color: $light-gray;
+		border-color: $gray-light;
 		font-size: 18px;
 		color: white;
 		text-transform: uppercase;
