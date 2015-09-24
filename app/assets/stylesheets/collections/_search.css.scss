@@ -88,35 +88,33 @@
 	}
 }
 
+// Gallery
+.thumbnail {
+	border: 0;
+	padding: 0;
+	.caption {
+		padding: 0;
+	}
+}
+.thumbnail > img, .thumbnail a > img {
+	margin-left: 0;
+}
 
 // Constraints
 // ------------------------------ //
 
 .catalog_startOverLink {
-	background: $light-gray;
-	border-color: $light-gray;
+	background: $gray;
+	border-color: $gray;
 	color: white;
 }
-// .constraint-value {
-// 	background: $light-blue;
-// 	border-color: $light-blue;
-// 	color: white;
-// }
-// .constraint-value:hover {
-// 	background: $light-blue !important;
-// 	border-color: $light-blue !important;
-// 	color: white !important;
-// }
 .appliedFilter {
 	.remove {
-		background: $light-blue;
-		border-color: $light-blue;
+		background: $brand-info;
+		border-color: $brand-info;
 		border-color-left: white;
 		color: white;
 	}
-	// .remove:hover {
-	// 	background: $pale-blue;
-	// }
 }
 .constraints-container {
 	.btn {
