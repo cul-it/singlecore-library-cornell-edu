@@ -88,6 +88,17 @@
 	}
 }
 
+// Gallery
+.thumbnail {
+	border: 0;
+	padding: 0;
+	.caption {
+		padding: 0;
+	}
+}
+.thumbnail > img, .thumbnail a > img {
+	margin-left: 0;
+}
 
 // Constraints
 // ------------------------------ //

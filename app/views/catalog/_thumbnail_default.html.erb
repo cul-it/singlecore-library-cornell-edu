@@ -5,7 +5,7 @@
 	<a class="cover-image-wrapper" href="<%= catalog_path document %>">
 		<%= thumb.html_safe %>
 	</a>
-	<a href="<%= @download_url %>" class="download-link btn btn-xs btn-default" title="Download"><span class="sr-only">Download</span><i class="fa fa-download"></i></a>
+	<!-- <a href="<%= @download_url %>" class="download-link btn btn-xs btn-default" title="Download"><span class="sr-only">Download</span><i class="fa fa-download"></i></a> -->
 </div> 
 
 <%- elsif (render_index_field_value :document => document, :field => "active_fedora_model_ssi").present? && tn = render_thumbnail_tag(document, {}, :counter => document_counter_with_offset(document_counter)) %>
@@ -16,6 +16,6 @@
 	<a class="cover-image-wrapper" href="<%= catalog_path document %>">
 		<%= thumb.html_safe %>
 	</a>
-	<a href="<%= @download_url %>" class="download-link btn btn-xs btn-default" title="Download"><span class="sr-only">Download</span><i class="fa fa-download"></i></a>
+	<!-- <a href="<%= @download_url %>" class="download-link btn btn-xs btn-default" title="Download"><span class="sr-only">Download</span><i class="fa fa-download"></i></a> -->
 </div> 
 <%- end %>

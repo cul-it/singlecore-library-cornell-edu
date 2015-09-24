@@ -20,7 +20,7 @@ end
           config.view.slideshow.partials = [:index]
 
 
-          config.view.gallery.partials = [:index_header, :index]
+          config.view.gallery.partials = [:index_header]
           config.view.masonry.partials = [:index]
           config.view.slideshow.partials = [:index]
 

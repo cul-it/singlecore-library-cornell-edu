@@ -21,12 +21,12 @@ a:hover {
 .facet_select,
 .home-text {
 	a {
-		border-bottom: 1px dotted $gray-light;
+		border-bottom: 1px dotted $gray;
 	}
 	a:hover,
 	a:active,
 	a:focus {
-		border-bottom: 1px solid $gray-light;
+		border-bottom: 1px solid $gray;
 		text-decoration: none;
 	}
 }
