@@ -183,6 +183,7 @@ end
     #collection fields
     #- ragamala
     config.add_show_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
+    config.add_show_field 'notes_tesim', :label => 'Notes'
     config.add_show_field 'inscription_tesim', :label => 'Inscription'
 
     #- reps
