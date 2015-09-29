@@ -2,7 +2,10 @@
   <div class="thumbnail">
     <%= render_thumbnail_tag(document, {}, :class => "img-thumbnail", :counter => document_counter_with_offset(document_counter)) %>
     <div class="caption">
-      <%= render_document_partials document, blacklight_config.view_config(:gallery).partials, :document_counter => document_counter %>
+      	<%= render_document_partials document, blacklight_config.view_config(:gallery).partials, :document_counter => document_counter %>
+      	<div class="blacklight-date"><%= render_index_field_value document, :field => 'date_tesim' %></div>
+      	<div class="blacklight-pubdate"><%= render_index_field_value document, :field => 'pubdate_tesim' %></div>
+      	<div class="blacklight-collection"><%= render_index_field_value document, :field => 'collection_tesim' %></div>
     </div>
   </div>
 </div>
