@@ -46,6 +46,16 @@
 	}
 }
 
+// Fix word breaks for Windows - IE and FF
+.facet-values .facet-label {
+	-ms-word-break: normal;
+	-ms-hyphens: none;
+	-moz-hyphens: none;
+	-webkit-hyphens: none;
+	word-break: normal;
+	hyphens: none;
+}
+
 // MEDIA QUERIES
 // -------------------------
 
