@@ -100,6 +100,22 @@
 	margin-left: 0;
 }
 
+.gallery {
+	.documentHeader {
+		margin-bottom: .5em;
+	}
+	h5 {
+		margin-bottom: .25em;
+	}
+	.blacklight-collection,
+	.blacklight-date,
+	.blacklight-pubdate {
+		font-size: 13px;
+		margin-bottom: .25em;
+	}
+}
+
+
 // Constraints
 // ------------------------------ //
 
