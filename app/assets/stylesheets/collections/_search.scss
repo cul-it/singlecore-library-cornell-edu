@@ -115,6 +115,16 @@
 	}
 }
 
+// Override default gallery gem styles to even out spacing and fix bootstrap col sizing
+#documents.gallery .document {
+	-webkit-box-flex: none !important;
+	-moz-box-flex: none !important;
+	-webkit-flex: none !important;
+	-ms-flex: none !important;
+	flex: none !important;
+	min-width: auto !important;
+	min-height: auto !important;
+}
 
 // Constraints
 // ------------------------------ //
