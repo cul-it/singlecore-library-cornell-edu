@@ -52,14 +52,6 @@
 	margin-bottom: 2.5em;
 }
 
-// #main-container {
-// 	.search-widgets {
-// 		.btn {
-// 			border-bottom: 1px solid #ccc;
-// 		}
-// 	}
-// }
-
 // Openseadragon viewer
 // ------------------------ //
 #openseadragon1 {
@@ -110,20 +102,13 @@
 	background: $gray-dark;
 	padding: 5px 10px;
 }
-// .download-link {
-// 	text-align: right;
-// 	a, a:hover {
-// 		border: 0;
-// 		color: white;
-// 		text-align: uppercase;
-// 		display: inline-block;
-// 		font-size: 12px;
-// 		text-transform: uppercase;
-// 	}
-// 	i {
-// 		margin-left: .5em;
-// 	}
-// }
+
+// Kaltura player
+// ------------------------ //
+// set width for mobile devices
+.kWidgetIframeContainer {
+	width: 320px !important;
+}
 
 
 // Bookmark toggle
@@ -155,6 +140,9 @@ label.toggle_bookmark {
 	}
 	#openseadragon1 {
 		 height: 600px;
+	}
+	.kWidgetIframeContainer {
+		width: 500px !important;
 	}
 }
 
