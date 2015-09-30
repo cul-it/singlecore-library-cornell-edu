@@ -1,0 +1,38 @@
+@media print {
+	// Don't print URLs
+	// ------------------------
+	a[href]:after {
+	    content: ""
+	  }
+	abbr[title]:after {
+	    content: "";
+	}
+	// Don't print this stuff
+	// ------------------------
+	.cornell-logo,
+	.util-links,
+	#facets,
+	.catalog_startOverLink,
+	.search-widgets,
+	.bookmark_toggle,
+	.pagination,
+	footer,
+	#previousNextDocument,
+	.image-controls,
+	.bookmarksTools,
+	.blacklight-search_history-index .btn-danger,
+	.search_history .button_to
+	 {
+		display: none;
+	}
+	// Remove bottom border from IIIF viewer
+	// -----------------------------------------
+	#openseadragon1 {
+		border-bottom: 0;
+	}
+	// Show Cornell logo for print
+	// -----------------------------
+	.cul-print-logo {
+		display: block;
+	}
+}	
