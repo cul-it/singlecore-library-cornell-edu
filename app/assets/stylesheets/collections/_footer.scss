@@ -8,19 +8,8 @@ footer {
 		color: $gray-dark;
 	}
 }
-.dc-footer-brand {
-	display: none;
-	.cul-brand {
-		font-size: 16px;
-		margin-left: 0;
-		margin-bottom: .25em;
-	}
-	.brand {
-		font-size: 20px;
-	}
-}
-.blacklight-pages-show {
-	.dc-footer-brand {
-		display: block;
-	}
+.btn-feedback, .btn-feedback:hover, .btn-feedback:active, .btn-feedback:focus {
+	border-radius: 0;
+	background: $cornell-medium-blue;
+	color: white;
 }
