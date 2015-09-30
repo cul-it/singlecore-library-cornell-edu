@@ -113,7 +113,9 @@
 		.nav > li > a {
 			padding: 10px 15px;
 		}
-		.nav > li > a:hover {
+		.nav > li > a:hover,
+		.nav > li > a:active,
+		.nav > li > a:focus {
 			background: inherit;
 		}
 	}
