@@ -109,6 +109,14 @@
 	.brand {
 		font-size: 25px;
 	}
+	.util-links {
+		.nav > li > a {
+			padding: 10px 15px;
+		}
+		.nav > li > a:hover {
+			background: inherit;
+		}
+	}
 }
 
 // Medium devices (desktops, 992px and up)
