@@ -9,6 +9,7 @@
 	}
 	// Don't print this stuff
 	// ------------------------
+	.cornell-logo,
 	.util-links,
 	#facets,
 	.catalog_startOverLink,
@@ -28,5 +29,10 @@
 	// -----------------------------------------
 	#openseadragon1 {
 		border-bottom: 0;
+	}
+	// Show Cornell logo for print
+	// -----------------------------
+	.cul-print-logo {
+		display: block;
 	}
 }	
