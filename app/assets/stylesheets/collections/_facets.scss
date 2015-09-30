@@ -19,6 +19,7 @@
 }
 
 // Limit your search panel heading
+// ----------------------------------
 #facets {
 	padding-bottom: 0;
 	.top-panel-heading {
@@ -54,6 +55,24 @@
 	-webkit-hyphens: none;
 	word-break: normal;
 	hyphens: none;
+}
+
+// Override color of select facets
+// ----------------------------------
+.panel-success, .facet_limit-active,
+.panel-success > .panel-heading, .facet_limit-active > .panel-heading,
+.panel-success > .panel-heading + .panel-collapse > .panel-body, .facet_limit-active > .panel-heading + .panel-collapse > .panel-body {
+	border-color: $border-color;
+}
+.panel-success > .panel-heading, .facet_limit-active > .panel-heading,
+.text-success, .facet-values li .selected {
+	color: $text-color;
+}
+.text-muted, .appliedFilter .filterName:after, .facet-values .remove, .search_history .filterName, .search_history .filterSeparator {
+	color: $link-color;
+}
+.facet-values .remove:hover {
+	color: $link-color-hover;
 }
 
 // MEDIA QUERIES
