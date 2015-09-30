@@ -87,6 +87,11 @@
 		float: right;
 	}
 }
+.documentHeader {
+	.bookmark_toggle {
+		font-size: 12px;
+	}
+}
 
 // Gallery
 .thumbnail {
@@ -114,6 +119,14 @@
 		margin-bottom: .25em;
 	}
 }
+// override .document border for gallery img link
+.document {
+	.thumbnail {
+		.img-thumbnail, .img-thumbnail:hover {
+			border-bottom: 1px solid #ddd;
+		}
+	}	
+}
 
 // Override default gallery gem styles to even out spacing and fix bootstrap col sizing
 #documents.gallery .document {
@@ -132,6 +145,9 @@
 .catalog_startOverLink {
 	background: $gray;
 	border-color: $gray;
+	color: white;
+}
+.catalog_startOverLink:hover {
 	color: white;
 }
 .appliedFilter {
