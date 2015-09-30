@@ -18,7 +18,8 @@ a:hover {
 // Add underlines to some links for better usability/accessibility
 .page_links,
 .document,
-.home-text {
+.home-text,
+.search-widgets {
 	a {
 		border-bottom: 1px dotted $gray;
 	}
@@ -29,6 +30,29 @@ a:hover {
 		text-decoration: none;
 	}
 }
+
+// remove underlines for buttons in these areas
+.search-widgets {
+	.btn, .btn:hover {
+		border-bottom: 1px solid #ddd;
+	}
+	.btn:hover, .btn.active {
+		border-bottom-color: #adadad;
+	}
+	.btn-danger {
+		border-bottom-color: #d43f3a;
+	}
+}
+.document {
+	.img-thumbnail, .img-thumbnail:hover,
+	.btn, .btn:hover {
+		border-bottom: 1px solid #ddd;
+	}
+	.btn-info {
+		border-bottom-color: $btn-info-border;
+	}
+}
+
 
 // Typography
 // ------------------- //
