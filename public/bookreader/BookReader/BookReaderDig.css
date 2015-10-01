@@ -1,5 +1,5 @@
 /*
- * Digital COllections custom overrides for Simple BookReader
+ * Digital Collections custom overrides for Simple BookReader
  */
 
 /* Hide print and embed functionality */
@@ -22,15 +22,15 @@ div#BRnav {
 	width: auto;
 	height: auto;
 	margin: 10px;
-	font-family: 'Montserrat', Helvetica, sans-serif; @import url(//fonts.googleapis.com/css?family=Montserrat:400,700);;
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic);
 }
 
 
-/* Digital link color */
+/* link color */
 #BRreturn a,
 .BRfloat a.title,
 .BRfloat a {
-	color: #129792;
+	color: #0068ac;
 }
 
 .BRnavCntl {
@@ -51,8 +51,7 @@ div#BRnav {
 .BRfloatHead,
 h3,
 .BRfloat {
-	font-family: 'Montserrat', Helvetica, sans-serif; 		@import
-url(//fonts.googleapis.com/css?family=Montserrat:400,700);;
+	font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic);
 }
 
 
