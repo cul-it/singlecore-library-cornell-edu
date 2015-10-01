@@ -23,3 +23,10 @@
 *.DS_store
 
 .env
+
+# Ignore all of the reader files except the BookReader directory with the custom CSS
+/public/bookreader/BookReaderDemo
+/public/bookreader/BookReaderIA
+/public/bookreader/bees*
+/public/bookreader/bol*
+/public/bookreader/hunt*
