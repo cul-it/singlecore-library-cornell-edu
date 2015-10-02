@@ -44,7 +44,7 @@ a:hover {
 	}
 }
 .document {
-	.img-thumbnail, .img-thumbnail:hover,
+	.img-thumbnail, .img-thumbnail:hover, .img-thumbnail:active, .img-thumbnail:focus,
 	.btn, .btn:hover {
 		border-bottom: 1px solid #ddd;
 	}
