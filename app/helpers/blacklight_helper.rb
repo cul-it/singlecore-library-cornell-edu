@@ -28,8 +28,6 @@ def image_download options={}
         prefix = value
         number = pubstmt.gsub(prefix,':')
         return prefix + number
-      else 
-        return 'bees:' + pubstmt
       end
     end
   end
