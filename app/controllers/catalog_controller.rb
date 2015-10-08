@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 
 class CatalogController < ApplicationController
+  include BlacklightGoogleAnalytics::ControllerExtraHead
+
 
 
   include Blacklight::Catalog
