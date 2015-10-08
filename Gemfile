@@ -45,8 +45,6 @@ gem 'blacklight-gallery'
 
 gem 'blacklight-maps'
 
-gem 'blacklight_google_analytics'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

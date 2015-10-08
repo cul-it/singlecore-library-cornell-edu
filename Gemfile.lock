@@ -60,7 +60,6 @@ GEM
       leaflet-markercluster-rails
       leaflet-rails
       rails
-    blacklight_google_analytics (0.0.1.pre3)
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
@@ -308,7 +307,6 @@ DEPENDENCIES
   blacklight
   blacklight-gallery
   blacklight-maps
-  blacklight_google_analytics
   capybara
   capybara-email
   coffee-rails (~> 4.1.0)
