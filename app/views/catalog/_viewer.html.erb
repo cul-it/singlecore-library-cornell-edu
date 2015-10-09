@@ -1,6 +1,7 @@
 <% @project = render_document_show_field_value(:document => @document, :field => 'project_id_ssi') %>
 <% @kaltura = render_document_show_field_value(:document => @document, :field => 'kaltura_id_s') %>
 <% @book_id = render_document_show_field_value :document => @document, :field => 'id' %>
+<% @book_prefix = (render_document_show_field_value :document => @document, :field => 'id').split(':')[0] %>
 <% @download_url = render_document_show_field_value(:document => @document, :field => 'media_URL_tesim') %>
 <% @page = "1" %>
 
@@ -62,7 +63,7 @@
       <a href="/bookreader/<%= @book_id %>/#page/<%= @page %>/mode/2up"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
       <% bibid_display = render_document_show_field_value :document => @document, :field => 'bibid_tesim' %>
       <div class="reader-link" data-no-turbolink>
-        <a class="btn btn-info" href="/bookreader/<%= @book_id %>/#page/<%= @page %>/mode/2up"><i class="fa fa-book-open"></i>Read book</a>
+        <a class="btn btn-info" href="/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/2up"><i class="fa fa-book-open"></i>Read book</a>
       </div>
     </div>
   </div>     
