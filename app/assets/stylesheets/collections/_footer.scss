@@ -1,19 +1,93 @@
 footer {
 	padding: 2em 0;
 	color: $gray;
+	background: $gray-light;
 	p {
 		font-size: 14px;
 	}
 	a {
 		color: $gray-dark;
 	}
+	h2 {
+		font-family: $font-family-cul;
+		text-transform: uppercase;
+		margin: 0 0 1em 0;
+		font-size: 20px;
+	}
 }
 .btn-feedback, .btn-feedback:hover, .btn-feedback:active, .btn-feedback:focus {
 	border-radius: 0;
-	background: $cornell-medium-blue;
+	background: $cornell-red;
 	color: white;
+	font-family: $font-family-cul;
+	text-transform: uppercase;
+	font-size: 14px;
 }
 .release-notes {
 	display: block;
 	margin-top: 1em;
+	margin-bottom: 1em;
 }
+.cornell-footer {
+	padding: 2em 0;
+	h3 {
+		font-family: $font-family-cul;
+		text-transform: uppercase;
+		margin: 0 0 1em 0;
+		font-size: 14px;
+	}
+	p {
+		font-size: 14px;
+	}
+}
+.btn-give {
+	background: #666666;
+	font-family: $font-family-cul;
+	color: white;
+	font-size: 12px;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 5px 10px;
+	border: 0;
+	border-radius: 0;
+	margin-bottom: 1.5em;
+}
+.btn-give:hover,
+.btn-give:active,
+.btn-give:focus {
+	border: 0;
+	background: $gray-dark;
+	color: white;
+}
+footer, .cornell-footer {
+	.pull-right {
+		float: none !important;
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) { 
+	footer, .cornell-footer {
+		.pull-right {
+			float: right !important;
+		}
+	}
+	.release-notes {
+		text-align: right;
+		margin-bottom: 0;
+	}
+	.btn-give {
+		margin-bottom: .5em;
+	}
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md) {
+	.btn-give {
+		margin-bottom: 0;
+	}
+}
+
