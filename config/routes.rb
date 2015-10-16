@@ -4,13 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   get '/contact' => 'high_voltage/pages#show', id: 'contact'
 
-  # collections
-  
-  get '/aerialny' => 'high_voltage/pages#show', id: 'aerialny/index'
-  get '/bolivian' => 'high_voltage/pages#show', id: 'bolivian/index'
-  get '/indonesianmusic' => 'high_voltage/pages#show', id: 'indonesianmusic/index'
-  get '/ragamala' => 'high_voltage/pages#show', id: 'ragamala/index'
-  get '/reps-bastides' => 'high_voltage/pages#show', id: 'reps_bastides/index'
   
   blacklight_for :catalog
 
