@@ -2,6 +2,7 @@ footer {
 	padding: 2em 0;
 	color: $gray;
 	background: $gray-light;
+	border-top: 1px solid #d1d1d1;
 	p {
 		font-size: 14px;
 	}
@@ -30,6 +31,7 @@ footer {
 }
 .cornell-footer {
 	padding: 2em 0;
+	// border-top: 1px solid #d1d1d1;
 	h3 {
 		font-family: $font-family-cul;
 		text-transform: uppercase;

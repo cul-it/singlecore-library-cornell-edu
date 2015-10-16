@@ -76,6 +76,7 @@
 // -------------------------
 #header-navbar {
 	background: $gray-light;
+	border-bottom: 1px solid #d1d1d1;
 }
 .navbar {
 	padding: .5em 0 1em 0;
@@ -121,6 +122,9 @@
 		.nav > li > a:focus {
 			background: inherit;
 		}
+	}
+	.navbar {
+		padding: 1em 0 1.5em 0;
 	}
 }
 
