@@ -1,0 +1,50 @@
+// This is a copy of the gem from blacklight-c
+
+
+// .view-icon-gallery {
+//   &:before { content: "\e011"; } 
+// }
+
+#documents.gallery {
+
+  display: block !important;
+  // flex-flow: row wrap;
+
+
+  .document {
+    // border-bottom: none;
+
+    // -webkit-box-flex: 1;
+    // -moz-box-flex: 1;
+    // -webkit-flex: 1;
+    // -ms-flex: 1;
+    // flex: 1;
+
+    // min-width: 200px !important;
+    // min-height: 200px !important;
+  }
+
+  // .index_title {
+  //   width: 100%;s
+  // }
+
+  // .document-counter {
+  //   display: none;
+  // }
+
+  // .index-document-functions {
+  //   clear: left;
+  // }
+
+  // .document-metadata { 
+  //   dt, dd {
+  //     float: none;
+  //     width: auto;
+  //     clear: none;
+  //     text-align: left;
+  //     margin: 0;
+  //     padding: 0;
+  //   }
+
+  // }
+}
