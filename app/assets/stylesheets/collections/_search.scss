@@ -1,19 +1,5 @@
 // Search box
 // ------------------------- //
-
-// #search-navbar {
-// 	background: $pale-gray;
-// 	padding: .5em 0 .15em 0;
-// 	.search-query-form {
-// 		width: 100%;
-// 	}
-// 	.form-group.col-xs-3 {
-// 		padding-right: 10px;
-// 	}
-// 	.form-group {
-// 		margin-bottom: 0;
-// 	}
-// }
 .btn-search {
 	background: inherit;
 	padding: .25em 0;
@@ -23,11 +9,7 @@
 	}
 }
 .search-group {
-	// width: 70%;
 	padding-right: 0;
-	// .search_q {
-	// 	width: 100%;
-	// }
 }
 #search_field {
 	width: 100%;
@@ -93,7 +75,8 @@
 	}
 }
 
-// Gallery
+// Gallery view
+// ------------------------------ //
 .thumbnail {
 	border: 0;
 	padding: 0;
@@ -121,15 +104,15 @@
 }
 
 // Override default gallery gem styles to even out spacing and fix bootstrap col sizing
-#documents.gallery .document {
-	-webkit-box-flex: none !important;
-	-moz-box-flex: none !important;
-	-webkit-flex: none !important;
-	-ms-flex: none !important;
-	flex: none !important;
-	min-width: auto !important;
-	min-height: auto !important;
-}
+// #documents.gallery .document {
+// 	-webkit-box-flex: none !important;
+// 	-moz-box-flex: none !important;
+// 	-webkit-flex: none !important;
+// 	-ms-flex: none !important;
+// 	flex: none !important;
+// 	min-width: auto !important;
+// 	min-height: auto !important;
+// }
 
 // Constraints
 // ------------------------------ //
