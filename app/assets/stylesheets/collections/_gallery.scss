@@ -1,4 +1,5 @@
-// This is a copy of the gem from blacklight-c
+// This is a copy of the CSS from the blacklight-maps gem; need to override the flex-box stuff so that the gallery displays rows correctly in Safari
+// See DIGCOLL-70
 
 
 // .view-icon-gallery {
@@ -8,6 +9,11 @@
 #documents.gallery {
 
   display: block !important;
+  // display: -webkit-box;
+  // display: -moz-box;
+  // display: -ms-flexbox;
+  // display: -webkit-flex;
+  // display: flex;
   // flex-flow: row wrap;
 
 
@@ -20,8 +26,9 @@
     // -ms-flex: 1;
     // flex: 1;
 
-    // min-width: 200px !important;
-    // min-height: 200px !important;
+    min-width: inherit !important;
+    min-height: inherit !important;
+    height: 450px;
   }
 
   // .index_title {
