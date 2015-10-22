@@ -28,6 +28,7 @@
 	font-family: $font-family-cul;
 	color: $gray;
 	line-height: 1em;
+	display: inline-block;
 }
 .brand:hover, .brand:active, .brand:focus {
 	color: $gray;
@@ -36,8 +37,7 @@
 .cul-brand {
 	font-size: 18px;
 	font-family: $font-family-cul;
-	display: block;
-	// margin-left: 4px;
+	display: inline-block;
 	color: $gray;
 }
 .cul-brand:hover, .cul-brand:active, .cul-brand:focus {
@@ -122,9 +122,6 @@
 		.nav > li > a:focus {
 			background: inherit;
 		}
-	}
-	.navbar {
-		padding: 1em 0 1.5em 0;
 	}
 }
 

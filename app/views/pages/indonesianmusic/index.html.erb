@@ -1,12 +1,19 @@
-<div id="main-container" class="wrapper wrapper-indonesian">
+<div id="main-container">
 	<%= render partial: 'pages/indonesianmusic/header' %>
-	<div class="hero hero-indonesian">
-		<div class="container">
-			<div class="col-sm-8 col-sm-offset-4 col-md-6 col-md-offset-6">
-			    <div class="well">
-			    	<p class="lead">Sed feugiat, erat non feugiat sodales, nisi nulla varius velit, sit amet condimentum sapien risus interdum turpis. Sed tempus sapien eget quam vulputate interdum. Morbi mattis metus a neque convallis...  <a href="/indonesianmusic/about" class="read-more-link">Read more <i class="fa fa-chevron-right"></i></a></p>
-			    	<a href="/?f%5Bcollection_tesim%5D%5B%5D=Indonesian+Music+Archive&per_page=50&q=&search_field=all_fields" class="btn btn-browse btn-lg">Browse collection</a>
-			    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div id="sidebar">
+					<%#= render 'catalog/facets' %>
+					[Facets go here]
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<h2>About the collection</h2>
+				<div class="pull-right col-sm-5 img-right">
+					<%= image_tag "sets/indonesianmusic/thumb.jpg" , alt: "Map illustration of New York state", class: "img-thumbnail img-responsive" %>
+				</div>
+				<p>Sed feugiat, erat non feugiat sodales, nisi nulla varius velit, sit amet condimentum sapien risus interdum turpis. Sed tempus sapien eget quam vulputate interdum. Morbi mattis metus a neque convallis...</p>			
 			</div>
 		</div>
 	</div>
