@@ -1,6 +1,6 @@
 <%# default partial to display solr document fields in catalog show view -%>
 <% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
-
+<% @ssc_site  = render_document_show_field_value(:document => @document, :field => 'ssc_site_tesim') %>
 <%= render 'viewer' %>
 
 <%# default partial to display solr document fields in catalog show view -%>
@@ -19,12 +19,13 @@
 	</div>
 	<div class="col-sm-4 more-item-info">
 		<div class="website-links well">
-			<ul class="fa-ul">		
+			<ul class="fa-ul">
 			<% if @collection_website.present? %>
 				<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
 			<% end %>
-				<li><i class="fa-li fa fa-external-link"></i><a href="#" class="ss-link">View collection in ARTstor/Shared Shelf Commons</a></li>
-			</ul>
+			<% if !@ssc_site.blank? %>
+				<li><i class="fa-li fa fa-external-link"></i><a href="<%= @ssc_site %>" class="ss-link">View collection in ARTstor/Shared Shelf Commons</a></li>
+			<% end %>			</ul>
 		</div>
 		<%= render partial: 'catalog/show_maplet_default' %>
 		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
@@ -43,11 +44,10 @@
 		</dl>
 		<div class="more-item-info">
 			<div class="website-links well">
-				<ul class="fa-ul">		
+				<ul class="fa-ul">
 				<% if @collection_website.present? %>
 					<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
 				<% end %>
-					<li><i class="fa-li fa fa-external-link"></i><a href="#" class="ss-link">View collection in ARTstor/Shared Shelf Commons</a></li>
 				</ul>
 			</div>
 			<%= render partial: 'catalog/show_maplet_default' %>
