@@ -1,10 +1,6 @@
 <div id="main-container">
 	<%= render partial: 'pages/aerialny/header' %>
 	<div class="container">
-		<%# this could also be a carousel if the people want it %>
-		<a href="/catalog/ss:200735" title="View image">
-			<%= image_tag "sets/aerialny/banner.jpg" , alt: "Image from the New York Aerial Photographs collection", class: "img-thumbnail img-responsive banner" %>
-		</a>
 		<div class="row">
 			<div class="col-sm-3">
 				<div id="sidebar">
@@ -13,16 +9,17 @@
 				</div>
 			</div>
 			<div class="col-sm-9">
-				<%#= image_tag "sets/aerialny/nycounty.jpg" , alt: "", class: "img-thumbnail img-responsive pull-right col-sm-3" %>
+				<%# this could also be a carousel if the people want it %>
+				<a href="/catalog/ss:200735" title="View image">
+					<%= image_tag "sets/aerialny/banner.jpg" , alt: "Image from the New York Aerial Photographs collection", class: "img-thumbnail img-responsive banner" %>
+				</a>
 				<p>This collection presents a series of historical aerial photographs of the state of New York. It was produced under a Cornell University Library Faculty Grant to Eugenia M. Barnaba, Program Leader, Resource Inventory <a href="http://www.css.cornell.edu/iris/">Cornell Institute for Resource Information Sciences</a>.</p>
 				<ul>
 					<li><a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs">Browse the collection</a></li>
 					<li><a href="/aerialny/using">Using the collection</a></li>
 					<li><a href="/aerialny/about">About the project</a></li>
 					<li><a href="/aerialny/contact">Contact</a></li>
-				</ul>
-					<!-- <a class="btn btn-info btn-lg btn-browse" href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs">Browse the New York Aerial Photographs Collection</a> -->
-				
+				</ul>				
 			</div>
 		</div>
 	</div>
