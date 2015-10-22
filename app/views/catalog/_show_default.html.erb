@@ -18,6 +18,7 @@
 		</dl>
 	</div>
 	<div class="col-sm-4 more-item-info">
+		<% if !@collection_website.blank? || !@ssc_site.blank? %>
 		<div class="website-links well">
 			<ul class="fa-ul">
 			<% if @collection_website.present? %>
@@ -27,6 +28,7 @@
 				<li><i class="fa-li fa fa-external-link"></i><a href="<%= @ssc_site %>" class="ss-link">View collection in ARTstor/Shared Shelf Commons</a></li>
 			<% end %>			</ul>
 		</div>
+		<% end %>
 		<%= render partial: 'catalog/show_maplet_default' %>
 		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
 </div>
@@ -43,13 +45,13 @@
 		  <% end -%>
 		</dl>
 		<div class="more-item-info">
+			<% if @collection_website.present? %>
 			<div class="website-links well">
 				<ul class="fa-ul">
-				<% if @collection_website.present? %>
 					<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
-				<% end %>
 				</ul>
 			</div>
+			<% end %>
 			<%= render partial: 'catalog/show_maplet_default' %>
 			</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
 		</div>
