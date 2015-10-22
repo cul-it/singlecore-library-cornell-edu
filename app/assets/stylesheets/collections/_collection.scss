@@ -5,13 +5,14 @@
 // ------------------------- //
 
 .header-collection {
-	padding: .5em 0 1em 0;
+	padding: 0 0 2em 0;
 	h1 {
 		margin-bottom: 0;
 		a, a:hover, a:active, a:focus {
 			color: $gray-dark;
 			text-decoration: none;
 		}
+		float: left;
 	}
 	.navbar-collapse {
 		padding-left: 0;
@@ -19,10 +20,7 @@
 	}
 }
 .collection-brand {
-	@include make-xs-column(8);
-}
-.collection-menu {
-	@include make-xs-column(4);
+	// @include make-xs-column(8);
 	.dropdown {
 		float: right;
 	}
@@ -37,25 +35,41 @@
 		}
 	}
 }
+// .collection-menu {
+// 	@include make-xs-column(4);
+// 	.dropdown {
+// 		float: right;
+// 	}
+// 	.btn {
+// 		border-radius: 0;
+// 		background: $gray-dark;
+// 		border-color: $gray-dark;
+// 		color: white;
+// 		text-transform: uppercase;
+// 		i {
+// 			margin-right: .25em;
+// 		}
+// 	}
+// }
 .collection-title {
 	font-family: $font-family-cul;
 	font-size: 24px;
 }
 
 // Browse button
-.btn-browse {
-	margin-bottom: 1.5em;
-	white-space: normal;
-}
+// .btn-browse {
+// 	margin-bottom: 1.5em;
+// 	white-space: normal;
+// }
 
 // Mobile collection menu button
-.btn-collection {
-	border: 1px solid $border-color;
-	font-size: 12px;
-	text-transform: uppercase;
-	float: none;
-	color: $gray-dark;
-}
+// .btn-collection {
+// 	border: 1px solid $border-color;
+// 	font-size: 12px;
+// 	text-transform: uppercase;
+// 	float: none;
+// 	color: $gray-dark;
+// }
 
 
 
@@ -75,12 +89,6 @@
 }
 .nav-pills.nav-collection > li > a:hover {
 	background: white;
-}
-// Default collection text
-// ------------------------- //
-.collection-text {
-	padding-top: 2em;
-	border-top: 1px solid $border-color;
 }
 
 // Banner images
@@ -159,7 +167,7 @@
 		font-size: 14px;
 	}
 	.collection-title {
-		font-size: 30px;
+		font-size: 26px;
 	}
 	.img-right {
 		width: auto;
