@@ -197,7 +197,7 @@ end
 
     #- aerial
     config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
-    config.add_show_field 'repository_tesim', :label => 'Repository'
+    config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
 
     #- indonesian music
 
