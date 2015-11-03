@@ -200,10 +200,8 @@ end
     config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
 
     #- indonesian music
-
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
-
     config.add_show_field 'kaltura_id_s', :label => 'Kaltura'
 
     #- huntington
@@ -213,6 +211,14 @@ end
     config.add_show_field 'pubstmt_pubplace_tesim', :label => 'Publication Information'
     config.add_show_field 'pubstmt_publisher_tesim', :label => 'Publisher'
     config.add_show_field 'keywords_tesim', :label => 'Keywords', :link_to_search => true
+
+    #- persuasive maps
+    config.add_show_field 'title_tesim', :label => 'Full Title'
+    config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
+    config.add_show_field 'extent_tesim', :label => 'Measurements'
+    config.add_show_field 'reference_tesim', :label => 'References'
+    config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes'
+
 
 
 
