@@ -217,6 +217,7 @@ end
     config.add_show_field 'title_tesim', :label => 'Full Title'
     config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
     config.add_show_field 'extent_tesim', :label => 'Measurements'
+    config.add_show_field 'id_number_tesim', :label => 'ID Number'
     config.add_show_field 'reference_tesim', :label => 'References'
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes'
 
