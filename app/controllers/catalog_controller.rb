@@ -4,19 +4,12 @@ class CatalogController < ApplicationController
 
   include Blacklight::Catalog
 
-before_action  do
 
 
 
 
-end
+configure_blacklight do |config|
 
-
-
-  configure_blacklight do |config|
-          config.view.gallery.partials = [:index_header, :index]
-          config.view.masonry.partials = [:index]
-          config.view.slideshow.partials = [:index]
 
 
           config.view.gallery.partials = [:index_header]
@@ -29,7 +22,7 @@ end
     config.default_solr_params = {
       :qt => 'search',
       :rows => 10,
-      :fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page"'
+      :fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'
           }
 
 
