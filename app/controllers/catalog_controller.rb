@@ -6,7 +6,18 @@ class CatalogController < ApplicationController
 
 
 
+    before_action  do
 
+
+      if params[:subject] == "ragamala"
+        blacklight_config.default_solr_params = {:fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"Ragamala Paintings"'}
+      else
+        blacklight_config.default_solr_params = {:fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
+
+
+      
+        end
+end
 
 configure_blacklight do |config|
 
@@ -21,9 +32,7 @@ configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
       :qt => 'search',
-      :rows => 10,
-      :fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'
-          }
+      :rows => 10          }
 
 
     # solr path which will be added to solr base url before the other solr params.
