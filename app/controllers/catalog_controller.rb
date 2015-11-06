@@ -216,7 +216,7 @@ configure_blacklight do |config|
     config.add_show_field 'keywords_tesim', :label => 'Keywords', :link_to_search => true
 
     #- persuasive maps
-    config.add_show_field 'title_tesim', :label => 'Full Title'
+    config.add_show_field 'pj_full_title_tesim', :label => 'Full Title'
     config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
     config.add_show_field 'extent_tesim', :label => 'Measurements'
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
