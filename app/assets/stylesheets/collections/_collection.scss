@@ -16,8 +16,7 @@
 		padding-right: 0;
 	}
 }
-.collection-brand {
-	// @include make-xs-column(8);
+.collection-menu {
 	.dropdown {
 		float: right;
 	}
@@ -32,32 +31,10 @@
 		}
 	}
 }
-// .collection-menu {
-// 	@include make-xs-column(4);
-// 	.dropdown {
-// 		float: right;
-// 	}
-// 	.btn {
-// 		border-radius: 0;
-// 		background: $gray-dark;
-// 		border-color: $gray-dark;
-// 		color: white;
-// 		text-transform: uppercase;
-// 		i {
-// 			margin-right: .25em;
-// 		}
-// 	}
-// }
 .collection-title {
 	font-family: $font-family-cul;
 	font-size: 24px;
 }
-
-// Banner images
-// ------------------------- //
-// .banner {
-// 	margin: 0 0 2em 0;
-// }
 
 // Floated image
 // ------------------------- //
