@@ -9,13 +9,14 @@ class CatalogController < ApplicationController
     before_action  do
 
 
-      if params[:subject] == "ragamala"
-        blacklight_config.default_solr_params = {:fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"Ragamala Paintings"'}
-      else
-        blacklight_config.default_solr_params = {:fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
+        if params[:subject] == "ragamala"
+            blacklight_config.default_solr_params = {:fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"Ragamala Paintings"'}
+        elsif params[:subject] == "aerialny"
+            blacklight_config.default_solr_params = {:fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"New York State Aerial Photographs"'}
+        else
+            blacklight_config.default_solr_params = {:fq => '-notes_tesim:"Not for publication" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
 
 
-      
         end
 end
 
