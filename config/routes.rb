@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   blacklight_for :catalog
    # collections
    get '/:subject' => 'catalog#index'
+   get '/:subject/:page' => 'catalog#index'
    get '/:subject/catalog/:id' => 'catalog#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
