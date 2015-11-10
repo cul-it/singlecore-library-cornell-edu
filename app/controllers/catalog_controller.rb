@@ -113,6 +113,7 @@ configure_blacklight do |config|
     config.add_facet_field 'creation_site_location_tesim', :label => 'Creation Site', show: false
     config.add_facet_field 'set_title_tesim', :label => 'Set', :show => false
     config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
+    config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
 
 
     #config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
@@ -177,7 +178,7 @@ configure_blacklight do |config|
     config.add_show_field 'ensemble_tesim', :label => 'Ensemble Notes'
     config.add_show_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_show_field 'performer_matrix_tesim', :label => 'Performers'
-    config.add_show_field 'description_tesim', :label => 'Description',:link_to_search => true
+    config.add_show_field 'description_tesim', :label => 'Description'
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
     config.add_show_field 'track_tesim', :label => 'Track'
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
