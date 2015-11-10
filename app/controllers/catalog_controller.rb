@@ -115,16 +115,6 @@ configure_blacklight do |config|
     config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
 
-
-    #config.add_facet_field 'county_tesim', :label => 'County', :limit => 20
-    #config.add_facet_field 'country_tesim', :label => 'Country', :limit => 20
-
-
-    #config.add_facet_field 'language_facet', :label => 'Language', :limit => true
-    #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number'
-    #config.add_facet_field 'subject_geo_facet', :label => 'Region'
-    #config.add_facet_field 'subject_era_facet', :label => 'Era'
-
     #config.add_facet_field 'example_pivot_field', :label => 'Pivot Field', :pivot => ['format', 'language_facet']
 
     #config.add_facet_field 'example_query_facet_field', :label => 'Publish Date', :query => {
@@ -153,7 +143,7 @@ configure_blacklight do |config|
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_index_field 'media_URL_tesim', helper_method: 'image_download', :label => 'Download'
     # these index fields are from the dlxs collections
-    config.add_index_field 'book_id_ts', :label => 'book id'
+    #config.add_index_field 'book_id_ts', :label => 'book id'
     config.add_index_field 'publisher_tesim', :label => 'Publisher'
     config.add_index_field 'book_publisher', :label => 'Book Publisher'
     config.add_index_field 'pubdate_tesim', :label => 'Published'
