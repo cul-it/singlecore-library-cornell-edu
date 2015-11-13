@@ -1,21 +1,5 @@
-<%- if (render_index_field_value :document => document, :field => "media_URL_size_3_tesim").present? && tn = render_thumbnail_tag(document, {}, :counter => document_counter_with_offset(document_counter)) %>
+<%- if has_thumbnail?(document) && tn = render_thumbnail_tag(document, {}, :counter => document_counter_with_offset(document_counter)) %>
 <div class="document-thumbnail">
-	<% thumb = render_index_field_value :document => document, :field => "media_URL_size_3_tesim"  %>
-	<% thumb = "<img src='" + thumb + "' class='img-responsive' width='150'>" %>
-	<a class="cover-image-wrapper" href="<%= catalog_path document %>">
-		<%= thumb.html_safe %>
-	</a>
-	<!-- <a href="<%= @download_url %>" class="download-link btn btn-xs btn-default" title="Download"><span class="sr-only">Download</span><i class="fa fa-download"></i></a> -->
-</div> 
-
-<%- elsif (render_index_field_value :document => document, :field => "active_fedora_model_ssi").present? && tn = render_thumbnail_tag(document, {}, :counter => document_counter_with_offset(document_counter)) %>
-<div class="document-thumbnail">
-	<% page_turner = render_index_field_value :document => document, :field => 'id'%>
-	<% thumb =  "http://hydrastg.library.cornell.edu/fedora/objects/" + page_turner + "/datastreams/thumbnailImage/content"  %>
-	<% thumb = "<img src='" + thumb + "' class='img-responsive' width='150'>" %>
-	<a class="cover-image-wrapper" href="<%= catalog_path document %>">
-		<%= thumb.html_safe %>
-	</a>
-	<!-- <a href="<%= @download_url %>" class="download-link btn btn-xs btn-default" title="Download"><span class="sr-only">Download</span><i class="fa fa-download"></i></a> -->
-</div> 
-<%- end %>
+	<%= render_thumbnail_tag(document, {}, :class => "img-responsive" ,:counter => document_counter_with_offset(document_counter)) %>
+</div>
+<% end %>
