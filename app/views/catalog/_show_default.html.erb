@@ -22,10 +22,10 @@
 		<div class="website-links well">
 			<ul class="fa-ul">
 			<% if @collection_website.present? %>
-				<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
+				<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
 			<% end %>
 			<% if !@ssc_site.blank? %>
-				<li><i class="fa-li fa fa-external-link"></i><a href="<%= @ssc_site %>" class="ss-link">View collection in ARTstor/Shared Shelf Commons</a></li>
+				<li><i class="fa-li fa fa-external-link"></i><a href="<%= @ssc_site %>" class="ss-link"  onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'SharedShelf']);">View collection in ARTstor/Shared Shelf Commons</a></li>
 			<% end %>			</ul>
 		</div>
 		<% end %>
@@ -48,7 +48,7 @@
 			<% if @collection_website.present? %>
 			<div class="website-links well">
 				<ul class="fa-ul">
-					<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>">Collection website</a></li>
+					<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
 				</ul>
 			</div>
 			<% end %>
