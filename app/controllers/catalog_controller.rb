@@ -59,7 +59,7 @@ configure_blacklight do |config|
 
     # solr field configuration for search results/index views
     config.index.title_field = 'title_tesim'
-    config.index.thumbnail_field = 'media_URL_size_2_tesim'
+    config.index.thumbnail_method = :render_thumbnail
 
 
 
@@ -149,7 +149,6 @@ configure_blacklight do |config|
     config.add_index_field 'pubdate_tesim', :label => 'Published'
     config.add_index_field 'image_ocr_tesim',:label => 'text'
     config.add_index_field 'book_title', :label => 'Book Title'
-
 
     #config.add_index_field 'language_facet', :label => 'Language'
     #config.add_index_field 'published_display', :label => 'Published'
