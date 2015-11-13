@@ -10,11 +10,11 @@ class CatalogController < ApplicationController
 
 
         if params[:subject] == "ragamala"
-            blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"Ragamala Paintings"'}
+            blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Supressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"Ragamala Paintings"'}
         elsif params[:subject] == "aerialny"
-            blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"New York State Aerial Photographs"'}
+            blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Supressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"New York State Aerial Photographs"'}
         else
-            blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
+            blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Supressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
 
 
         end
