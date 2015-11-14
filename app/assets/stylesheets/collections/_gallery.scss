@@ -8,7 +8,7 @@
 
 #documents.gallery {
 
-  display: block !important;
+  // display: block !important;
   // display: -webkit-box;
   // display: -moz-box;
   // display: -ms-flexbox;
@@ -25,10 +25,14 @@
     // -webkit-flex: 1;
     // -ms-flex: 1;
     // flex: 1;
-
+    -webkit-box-flex: none !important;
+    -moz-box-flex: none !important;
+    -webkit-flex: none !important;
+    -ms-flex: none !important;
+    flex: none !important;
     min-width: inherit !important;
     min-height: inherit !important;
-    height: 450px;
+    // height: 450px;
   }
 
   // .index_title {
