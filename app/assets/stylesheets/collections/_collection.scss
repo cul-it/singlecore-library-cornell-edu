@@ -48,31 +48,17 @@
 	}
 }
 
-
-// Global rules for design-y collection pages - use a wrapper when there is a background image
-// --------------------------------------------------------------------------------------------
-
-// .wrapper {
-// 	.wrapper-container {
-// 		padding: 2em 2em 3em 2em;
-// 		background: white;
-// 	}
-// 	.header-collection {
-// 		h1 {
-// 			a {
-// 				color: white;
-// 				text-shadow: 2px 2px #222222;
-// 			}
-// 		}
-// 	}
-// }
-// .blacklight-pages {
-// 	#main-container {
-// 		padding-top: 2em;
-// 		padding-bottom: 0;
-// 	}
-// }
-
+// Sets
+// ------------------------- //
+.set-item {
+	@include make-xs-column(4);
+	@include make-sm-column(2);
+}
+.sets {
+	.row {
+		margin-bottom: 2em;
+	}
+}
 
 // MEDIA QUERIES
 // -------------------------
