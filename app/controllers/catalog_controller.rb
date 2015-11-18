@@ -33,7 +33,9 @@ configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
       :qt => 'search',
-      :rows => 10          }
+      :rows => 10,
+      :fl => '*,score',
+          }
 
 
     # solr path which will be added to solr base url before the other solr params.
@@ -309,6 +311,10 @@ configure_blacklight do |config|
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
+    config.add_sort_field 'score desc, latest_date_isi desc', :label => 'relevance'
+    config.add_sort_field 'latest_date_isi desc, title_tesi asc', :label => 'year'
+    #config.add_sort_field 'book_author_tesi asc, title_tesi asc', :label => 'author'
+    #config.add_sort_field 'title_tesim asc, pub_date_dtsi desc', :label => 'title'
 
 
     # If there are more than this many search results, no spelling ("did you
