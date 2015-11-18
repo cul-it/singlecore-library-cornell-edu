@@ -30,6 +30,12 @@ a:hover {
 		text-decoration: none;
 	}
 }
+// remove underlines
+.document-thumbnail {
+	a, a:hover {
+		border: 0;
+	}
+}
 
 // remove underlines for buttons in these areas
 .search-widgets {

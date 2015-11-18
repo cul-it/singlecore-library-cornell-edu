@@ -107,6 +107,15 @@
 	}
 }
 
+// Format thumbnails
+// --------------------
+.format-icon {
+	i {
+		font-size: 3em;
+		color: #d8d2c9;
+	}
+}
+
 // Override default gallery gem styles to even out spacing and fix bootstrap col sizing
 // #documents.gallery .document {
 // 	-webkit-box-flex: none !important;
