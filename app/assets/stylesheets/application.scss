@@ -14,7 +14,12 @@
  *= require blacklight_gallery
  *= require blacklight_maps
  *= require openseadragon
- */
+ 
+ *
+ * Used by blacklight_range_limit
+ *= require  'blacklight_range_limit'
+ *
+*/
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
