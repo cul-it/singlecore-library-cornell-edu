@@ -35,7 +35,7 @@ gem 'openseadragon'
 
 gem 'rubyzip'
 
-# Use font-awesome for icons 
+# Use font-awesome for icons
 gem 'font-awesome-sass', '~> 4.3.0'
 
 #static pages gem
@@ -44,6 +44,8 @@ gem 'high_voltage', '~> 2.3.0'
 gem 'blacklight-gallery'
 
 gem 'blacklight-maps'
+
+gem "blacklight_range_limit"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -63,7 +65,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'poltergeist'
 end
-  
+
 group :test do
   gem 'capybara'
   # Following two gems are following the setup proposed in the RoR tutorial

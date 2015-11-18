@@ -96,6 +96,7 @@ configure_blacklight do |config|
     #config.add_facet_field 'Founder_s', :label => 'Founder', :sort => 'count', :limit => true
     config.add_facet_field 'collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
     config.add_facet_field 'date_tesim', :label => 'Date', :limit => 5
+    config.add_facet_field 'latest_date_isi', :label => 'Date Range', :range => true
     config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
