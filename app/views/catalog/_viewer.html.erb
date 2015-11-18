@@ -31,7 +31,7 @@
         fullPageButton: "full-page",
         minZoomImageRatio: 1,
         prefixUrl: "/images/",
-        tileSources: "http://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= @project %>/<%= @asset %>/image/info.json"
+        tileSources: "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= @project %>/<%= @asset %>/image/info.json"
       });
   }
   window.onload = initOpenSeadragon;
@@ -66,6 +66,6 @@
         <a class="btn btn-info" href="/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up"><i class="fa fa-book-open"></i>Read book</a>
       </div>
     </div>
-  </div>     
+  </div>
 
 <% end %>
