@@ -9,9 +9,21 @@ class CatalogController < ApplicationController
           elsif params[:subject] == "aerialny"
               blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"New York State Aerial Photographs"'}
           else
+            if ENV["COLLECTIONS"] == "development"
               blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
-          end
-        end
+            elsif ENV["COLLECTIONS"] == "production"
+                blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" 
+                    AND -collection_tesim:"Core Historical Library of Agriculture"
+                    AND -collection_tesim:"Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia"
+                    AND -collection_tesim:"Cornell Modern Indonesia Collection"
+                    AND -collection_tesim:"History of the Left in Latin America"
+                    AND -collection_tesim:"Hive and Honeybee Collection"
+                    AND -collection_tesim:"Indonesian Music Archive"
+                    AND -collection_tesim:"Persuasive Maps: PJ Mode Collection"
+                    AND -collection_tesim:"Regmi Research Series"'}
+              end
+            end
+            end
 
       configure_blacklight do |config|
           config.view.gallery.partials = [:index_header]
