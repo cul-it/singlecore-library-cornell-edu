@@ -313,7 +313,9 @@ configure_blacklight do |config|
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
     config.add_sort_field 'score desc, latest_date_isi desc', :label => 'relevance'
-    config.add_sort_field 'latest_date_isi desc, title_tesi asc', :label => 'year'
+    config.add_sort_field 'latest_date_isi desc, title_tesi asc', :label => 'year (descending)'
+    config.add_sort_field 'latest_date_isi asc, title_tesi asc', :label => 'year (ascending)'
+
     #config.add_sort_field 'book_author_tesi asc, title_tesi asc', :label => 'author'
     #config.add_sort_field 'title_tesim asc, pub_date_dtsi desc', :label => 'title'
 
