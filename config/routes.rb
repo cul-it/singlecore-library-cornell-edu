@@ -2,7 +2,6 @@
 Rails.application.routes.draw do
   root to: "catalog#index"
   devise_for :users
-  get '/contact' => 'high_voltage/pages#show', id: 'contact'
 
 
   blacklight_for :catalog
