@@ -18,7 +18,7 @@
 		</dl>
 	</div>
 	<div class="col-sm-4 more-item-info">
-		<% if !@collection_website.blank? || !@ssc_site.blank? %>
+		<% if !@collection_website.blank? || !@ssc_site.blank? || (!@project.blank? && @kaltura.blank?) %>
 		<div class="website-links well">
 			<ul class="fa-ul">
 			<% if @collection_website.present? %>

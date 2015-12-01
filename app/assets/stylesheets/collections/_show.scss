@@ -87,11 +87,12 @@
 		display: block;
 		font-size: 12px;
 		text-transform: uppercase;
-		float: left;
+		// float: left;
 		background-color: inherit;
-		padding-top: 8px;
+		padding: 2px 0 0 10px;
+		height: 29px; // specify height to fix DIGCOLL-380, probably due to padding
 		i {
-			margin-left: .5em;
+			margin-left: .25em;
 		}
 	}
 }
