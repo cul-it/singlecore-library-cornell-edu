@@ -12,7 +12,7 @@ class CatalogController < ApplicationController
             if ENV["COLLECTIONS"] == "development"
               blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
             elsif ENV["COLLECTIONS"] == "production"
-                blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" 
+                blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
                     AND -collection_tesim:"Core Historical Library of Agriculture"
                     AND -collection_tesim:"Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia"
                     AND -collection_tesim:"Cornell Modern Indonesia Collection"
@@ -124,6 +124,7 @@ class CatalogController < ApplicationController
     #- ragamala
     config.add_show_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
     config.add_show_field 'set_title_tesim', :label => 'Set', :link_to_search => true
+    config.add_show_field 'system_tesim', :label => 'System', :link_to_search => true
     config.add_show_field 'notes_tesim', :label => 'Notes'
     config.add_show_field 'inscription_tesim', :label => 'Inscription'
 
