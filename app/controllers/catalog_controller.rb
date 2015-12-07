@@ -19,7 +19,6 @@ class CatalogController < ApplicationController
                     AND -collection_tesim:"History of the Left in Latin America"
                     AND -collection_tesim:"Hive and Honeybee Collection"
                     AND -collection_tesim:"Indonesian Music Archive"
-                    AND -collection_tesim:"Persuasive Maps: PJ Mode Collection"
                     AND -collection_tesim:"Regmi Research Series"'}
               end
             end
