@@ -86,7 +86,6 @@ class CatalogController < ApplicationController
     config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
-    config.add_index_field 'date_tesim', :label => 'Date'
     config.add_index_field 'village_tesim', :label => 'Village'
     config.add_index_field 'founder_tesim', :label => 'Founder'
     config.add_index_field 'market_square_details_tesim', :label => 'Market Square Details'
@@ -98,11 +97,12 @@ class CatalogController < ApplicationController
     config.add_index_field 'media_URL_tesim', helper_method: 'image_download', :label => 'Download'
     # these index fields are from the dlxs collections
     #config.add_index_field 'book_id_ts', :label => 'book id'
-    config.add_index_field 'publisher_tesim', :label => 'Publisher'
-    config.add_index_field 'book_publisher', :label => 'Book Publisher'
-    config.add_index_field 'pubdate_tesim', :label => 'Published'
+    
+    config.add_index_field 'publisher_tesim', :label => 'Published', helper_method: 'publication'
     config.add_index_field 'image_ocr_tesim',:label => 'text'
     config.add_index_field 'book_title', :label => 'Book Title'
+    config.add_index_field 'date_tesim', :label => 'Date'
+
 
     # solr fields to be displayed in the show (single result) view
 
@@ -147,11 +147,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'kaltura_id_s', :label => 'Kaltura'
 
     #- huntington
-    config.add_show_field 'pubplace_tesim', :label => 'Print Publication Place'
-    config.add_show_field 'publisher_tesim', :label => 'Print Publisher'
-    config.add_show_field 'pubdate_tesim', :label => 'Print Publication Date'
-    config.add_show_field 'pubstmt_pubplace_tesim', :label => 'Publication Information'
-    config.add_show_field 'pubstmt_publisher_tesim', :label => 'Publisher'
+    config.add_show_field 'publisher_tesim', :label => 'Published', helper_method: 'publication' 
+    config.add_show_field 'pubstmt_publisher_tesim', :label => 'Repository'
+    config.add_show_field 'pubstmt_pubplace_tesim', :label => 'Repository Location'
     config.add_show_field 'keywords_tesim', :label => 'Keywords', :link_to_search => true
 
     #- persuasive maps
