@@ -21,6 +21,17 @@ def image_download options={}
     'bees' => 'bees'
   }
 
+def publication options={}
+options[:document] # the original document
+options[:field] # the field to render
+options[:value] # the value of the field
+if !options[:value].blank?
+  return "#{options[:value][0]}, #{options[:document]["pubplace_tesim"][0]}, #{options[:document]["pubdate_tesim"][0]} "
+end
+end
+   
+
+
 
   def pubstmt_to_id(pubstmt)
     PREFIXES.each do |key,value|
