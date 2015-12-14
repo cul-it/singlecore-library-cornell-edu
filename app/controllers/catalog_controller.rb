@@ -148,8 +148,6 @@ class CatalogController < ApplicationController
 
     #- huntington
     config.add_show_field 'publisher_tesim', :label => 'Published', helper_method: 'publication' 
-    config.add_show_field 'pubstmt_publisher_tesim', :label => 'Repository'
-    config.add_show_field 'pubstmt_pubplace_tesim', :label => 'Repository Location'
     config.add_show_field 'keywords_tesim', :label => 'Keywords', :link_to_search => true
 
     #- persuasive maps
