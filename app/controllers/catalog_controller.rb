@@ -4,11 +4,16 @@ class CatalogController < ApplicationController
 
     include Blacklight::Catalog
       before_action  do
-          if params[:subject] == "ragamala"
-              blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"Ragamala Paintings"'}
-          elsif params[:subject] == "aerialny"
-              blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND collection_tesim:"New York State Aerial Photographs"'}
-          else
+          if params[:sbjct].present? && params[:f].nil?
+            redirect_to catalog_index_path
+          end
+          if params[:subject] == "ragamala" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Ragamala Paintings'] } }
+            redirect_to catalog_index_path(facet_params) + "&sbjct=ragamala"
+          elsif params[:subject] == "aerialny" && params[:f].nil? && params[:pageid].nil?
+            facet_params = { f: { collection_tesim: ['New York State Aerial Photographs'] } }
+            redirect_to catalog_index_path(facet_params) + "&sbjct=aerialny"
+          end
             if ENV["COLLECTIONS"] == "development"
               blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
             elsif ENV["COLLECTIONS"] == "production"
@@ -20,14 +25,14 @@ class CatalogController < ApplicationController
                     AND -collection_tesim:"Hive and Honeybee Collection"
                     AND -collection_tesim:"Indonesian Music Archive"
                     AND -collection_tesim:"Regmi Research Series"'}
-              end
             end
             end
 
       configure_blacklight do |config|
-          config.view.gallery.partials = [:index_header]
+          config.view.gallery.partials = [:index_header, :index]
           config.view.masonry.partials = [:index]
           config.view.slideshow.partials = [:index]
+
 
 
 
