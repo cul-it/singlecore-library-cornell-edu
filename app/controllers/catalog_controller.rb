@@ -18,13 +18,12 @@ class CatalogController < ApplicationController
               blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
             elsif ENV["COLLECTIONS"] == "production"
                 blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
-                    AND -collection_tesim:"Core Historical Library of Agriculture"
-                    AND -collection_tesim:"Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia"
-                    AND -collection_tesim:"Cornell Modern Indonesia Collection"
-                    AND -collection_tesim:"History of the Left in Latin America"
-                    AND -collection_tesim:"Hive and Honeybee Collection"
-                    AND -collection_tesim:"Indonesian Music Archive"
-                    AND -collection_tesim:"Regmi Research Series"'}
+                    AND (collection_tesim:"New York State Aerial Photographs"
+                    OR collection_tesim:"Huntington Free Library Native American Collection"
+                    OR collection_tesim:"John Reps Collection - Bastides"
+                    OR collection_tesim:"Persuasive Maps: PJ Mode Collection"
+                    OR collection_tesim:"Ragamala Paintings"
+                    OR collection_tesim:"Alfred Montalvo Bolivian Digital Pamphlets Collection")'}
             end
             end
 
