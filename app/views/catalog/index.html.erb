@@ -3,11 +3,15 @@
 	</div>
 
 <div id="content" class="<%= main_content_classes %>">
-  <% unless has_search_parameters?%>
+  <% unless has_search_parameters? && (params[:sbjct].nil? || params[:f].count > 1) %>
     <%# if there are no input/search related params, display the "home" partial -%>
-		<% if params[:subject].present? %>
+		<% if params[:sbjct].present? && params[:f].present? && params[:f].count == 1 %>
 			<% id = request.path %>
-			<%= render "/pages#{id}"%>
+			<% if id.include?('catalog') %>
+			<%= render "pages/#{params[:sbjct]}"%>
+			<% elsif params[:sbjct].present? && !params[:pageid].present?%>
+			<%= render "/pages/#{params[:sbjct]}"%>
+			<% end %>
 		<% else %>
 		<%= render 'home' %>
 		<% end %>
