@@ -64,8 +64,10 @@
 
     <div class="container">
 
-      <% if !current_page?('/search_history') && !params[:controller] == "high_voltage"  %>
+      <% unless current_page?('/search_history') %>
+      <% unless params[:controller] == "high_voltage"  %>
         <%= render 'constraints' %>
+      <% end %>
       <% end %>
       <%= content_tag :h1, application_name, class: 'sr-only application-heading' %>
       <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
