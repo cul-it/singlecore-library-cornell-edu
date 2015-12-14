@@ -18,7 +18,7 @@ class CatalogController < ApplicationController
               blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
             elsif ENV["COLLECTIONS"] == "production"
                 blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
-                    AND (collection_tesim:"New York State Aerial Photographs"
+                    AND +(collection_tesim:"New York State Aerial Photographs"
                     OR collection_tesim:"Huntington Free Library Native American Collection"
                     OR collection_tesim:"John Reps Collection - Bastides"
                     OR collection_tesim:"Persuasive Maps: PJ Mode Collection"
