@@ -65,7 +65,7 @@
     <div class="container">
 
       <% unless current_page?('/search_history') %>
-      <% unless params[:controller] == "high_voltage"  %>
+      <% unless params[:controller] == "high_voltage/pages"  %>
         <%= render 'constraints' %>
       <% end %>
       <% end %>
