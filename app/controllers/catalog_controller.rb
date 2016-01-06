@@ -98,7 +98,10 @@ class CatalogController < ApplicationController
     # these index fields are from the dlxs collections
     #config.add_index_field 'book_id_ts', :label => 'book id'
     
-    config.add_index_field 'publisher_tesim', :label => 'Published', helper_method: 'publication'
+    config.add_index_field 'publisher_tesim', :label => 'Publisher'
+    config.add_index_field 'pubplace_tesim', :label => 'Print Publication Place'
+    config.add_index_field 'pubdate_tesim', :label => 'Print Publication Date'
+
     config.add_index_field 'image_ocr_tesim',:label => 'text'
     config.add_index_field 'book_title', :label => 'Book Title'
     config.add_index_field 'date_tesim', :label => 'Date'
@@ -147,7 +150,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'kaltura_id_s', :label => 'Kaltura'
 
     #- huntington
-    config.add_show_field 'publisher_tesim', :label => 'Published', helper_method: 'publication' 
+    config.add_show_field 'publisher_tesim', :label => 'Publisher'
+    config.add_show_field 'pubplace_tesim', :label => 'Print Publication Place'
+    config.add_show_field 'pubdate_tesim', :label => 'Print Publication Date'
     config.add_show_field 'keywords_tesim', :label => 'Keywords', :link_to_search => true
 
     #- persuasive maps
