@@ -30,7 +30,6 @@ class CatalogController < ApplicationController
       configure_blacklight do |config|
           config.view.gallery.partials = [:index_header]
           config.view.masonry.partials = [:index]
-          config.view.slideshow.partials = [:index]
 
 
 
@@ -99,8 +98,8 @@ class CatalogController < ApplicationController
     #config.add_index_field 'book_id_ts', :label => 'book id'
     
     config.add_index_field 'publisher_tesim', :label => 'Publisher'
-    config.add_index_field 'pubplace_tesim', :label => 'Print Publication Place'
-    config.add_index_field 'pubdate_tesim', :label => 'Print Publication Date'
+    config.add_index_field 'pubplace_tesim', :label => 'Publication Place'
+    config.add_index_field 'pubdate_tesim', :label => 'Date'
 
     config.add_index_field 'image_ocr_tesim',:label => 'text'
     config.add_index_field 'book_title', :label => 'Book Title'
@@ -112,7 +111,7 @@ class CatalogController < ApplicationController
     #core fields
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
-    config.add_show_field 'author_tesim', :label => 'Author', :link_to_search => true
+    config.add_show_field 'author_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
     config.add_show_field 'ensemble_tesim', :label => 'Ensemble Notes'
     config.add_show_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
@@ -151,14 +150,14 @@ class CatalogController < ApplicationController
 
     #- huntington
     config.add_show_field 'publisher_tesim', :label => 'Publisher'
-    config.add_show_field 'pubplace_tesim', :label => 'Print Publication Place'
-    config.add_show_field 'pubdate_tesim', :label => 'Print Publication Date'
+    config.add_show_field 'pubplace_tesim', :label => 'Publication Place'
+    config.add_show_field 'pubdate_tesim', :label => 'Date'
     config.add_show_field 'keywords_tesim', :label => 'Keywords', :link_to_search => true
 
     #- persuasive maps
     config.add_show_field 'pj_full_title_tesim', :label => 'Full Title'
     config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
-    config.add_show_field 'extent_tesim', :label => 'Measurements'
+    config.add_show_field 'extent_tesim', :label => 'Extent'
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
     config.add_show_field 'reference_tesim', :label => 'References'
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes'
