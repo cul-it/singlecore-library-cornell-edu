@@ -11,10 +11,18 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia'] } }
             redirect_to catalog_index_path(facet_params)
           end
+          if params[:subject] == "bolivianpamphlets" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Alfred Montalvo Bolivian Digital Pamphlets Collection'] } }
+            redirect_to catalog_index_path(facet_params)
+          end
+          if params[:subject] == "huntingtonfreelibrary" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Huntington Free Library Native American Collection'] } }
+            redirect_to catalog_index_path(facet_params)
+          end  
           if params[:subject] == "persuasivemaps" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
             redirect_to catalog_index_path(facet_params)
-          end          
+          end        
           if params[:subject] == "ragamala" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Ragamala Paintings'] } }
             redirect_to catalog_index_path(facet_params) + "&sbjct=ragamala"
