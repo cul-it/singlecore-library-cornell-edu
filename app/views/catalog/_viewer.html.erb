@@ -10,11 +10,11 @@
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
   <div id="image-toolbar">
     <div class="image-controls">
-      <a href="<%= @download_url %>" class="download-link" title="Download">Download<i class="fa fa-download"></i></a>
+      <a href="<%= @download_url %>" class="download-link" title="Download" onclick="javascript:_paq.push(['trackEvent', 'DownloadLink', 'viewer']);">Download<i class="fa fa-download"></i></a>
       <a id="zoom-in" href="#zoom-in"><i class="fa fa-plus-circle"></i></a>
       <a id="zoom-out" href="#zoom-out"><i class="fa fa-minus-circle"></i></a>
       <a id="home" href="#home"><i class="fa fa-refresh"></i></a>
-      <a id="full-page" href="#full-page"><i class="fa fa-expand"></i></a>
+      <a id="full-page" href="#full-page" onclick="javascript:_paq.push(['trackEvent', 'ImageViewer', 'fullscreen']);"><i class="fa fa-expand"></i></a>
     </div>
   </div>
   <div id="openseadragon1"></div>
