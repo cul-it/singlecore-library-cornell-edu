@@ -30,7 +30,7 @@
 				<li><i class="fa-li fa fa-external-link"></i><a href="<%= @ssc_site %>" class="ss-link"  onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'SharedShelf']);">View collection in ARTstor/Shared Shelf Commons</a></li>
 			<% end %>			
 			<% if !@project.blank? && @kaltura.blank? %>
-        		<li><i class="fa-li fa fa-download"></i><a href="<%= @download_url %>" title="Download">Download image</a></li>
+        		<li><i class="fa-li fa fa-download"></i><a href="<%= @download_url %>" title="Download" onclick="javascript:_paq.push(['trackEvent', 'DownloadLink', 'metadata']);">Download image</a></li>
         	<% end %>
         	</ul>
 		</div>
