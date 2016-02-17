@@ -2,7 +2,7 @@
 <% @kaltura = render_document_show_field_value(:document => @document, :field => 'kaltura_id_s') %>
 <% @book_id = render_document_show_field_value :document => @document, :field => 'id' %>
 <% @book_prefix = (render_document_show_field_value :document => @document, :field => 'id').split(':')[0] %>
-<% @download_url = render_document_show_field_value(:document => @document, :field => 'media_URL_size_4_tesim') %>
+<% @download_url = render_document_show_field_value(:document => @document, :field => 'download_link_tesim') %>
 <% @page = "1" %>
 
 <%# display image viewer %>
