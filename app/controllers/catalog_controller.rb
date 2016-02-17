@@ -110,7 +110,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_index_field 'media_URL_size_4_tesim', helper_method: 'image_download', :label => 'Download'
+    config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
     # these index fields are from the dlxs collections
     #config.add_index_field 'book_id_ts', :label => 'book id'
     
