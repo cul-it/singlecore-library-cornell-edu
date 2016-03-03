@@ -128,6 +128,7 @@ class CatalogController < ApplicationController
     #core fields
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
+    config.add_show_field 'photographer_creator_tesim', :label => 'Photographer', :link_to_search => true
     config.add_show_field 'author_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
     config.add_show_field 'ensemble_tesim', :label => 'Ensemble Notes'
@@ -181,7 +182,7 @@ class CatalogController < ApplicationController
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
-    config.add_show_field 'work_type_tesim', :label => 'Work Type', :link_to_search => true
+    config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
     config.add_show_field 'id_number_ssi', :label => 'Identifier'
     config.add_show_field 'source_tesim', :label => 'Source'
     config.add_show_field 'rights_tesim', :label => 'Rights'
