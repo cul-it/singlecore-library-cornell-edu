@@ -24,5 +24,12 @@ class SolrDocument
     "http://hydrastg.library.cornell.edu/fedora/objects/#{id}/datastreams/thumbnailImage/content"
 end
 
+def creator_labels
+  if !first(:creator_tesim).present?
+    return nil
+  elsif first(:creator_tesim).present? && first(:creator_tesim).include?("|")
+    first(:creator_tesim).gsub("|",", ")
+  end
+end
 
 end

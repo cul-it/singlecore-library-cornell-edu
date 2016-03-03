@@ -44,5 +44,13 @@ end
   end
 
 
+ def document_has_value? document, field_config
+    document.has?(field_config.field) ||
+      (document.has_highlight_field? field_config.field if field_config.highlight) 
+  end
+
+
+
+
 
 end
