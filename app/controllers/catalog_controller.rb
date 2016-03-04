@@ -106,7 +106,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'founder_tesim', :label => 'Founder'
     config.add_index_field 'market_square_details_tesim', :label => 'Market Square Details'
     config.add_index_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
-    config.add_index_field 'author_tesim', :label => 'Author', :link_to_search => true
+    config.add_index_field 'author_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true, accessor: :creator_labels
     config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true

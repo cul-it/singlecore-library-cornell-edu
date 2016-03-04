@@ -25,10 +25,10 @@ class SolrDocument
 end
 
 def creator_labels
-  if !first(:creator_tesim).present?
-    return nil
-  elsif first(:creator_tesim).present? && first(:creator_tesim).include?("|")
-    first(:creator_tesim).gsub("|",", ")
+  if first(:creator_tesim).present? && first(:creator_tesim).include?("|")
+    "#{first(:creator_tesim).gsub("|",", ")}"
+  else
+    "#{first(:creator_tesim)}"
   end
 end
 
