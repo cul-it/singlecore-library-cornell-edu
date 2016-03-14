@@ -6,9 +6,14 @@ Rails.application.routes.draw do
   get '/contact' => 'high_voltage/pages#show', :id => 'contact'
   blacklight_for :catalog
    # collections
-   get '/catalog' => 'catalog#index'
-   get '/collection/:subject' => 'catalog#index'
-   get '/:subject' => 'catalog#index'
+   #get '/catalog' => 'catalog#index'
+   #get '/collection/:subject' => 'catalog#index'
+   #get '/:subject' => 'catalog#index'
+
+  # no facets on high voltage
+  get '/aerialny' => 'high_voltage/pages#show', :id => 'aerialny/index'
+  get '/indonesianmusic' => 'high_voltage/pages#show', :id => 'indonesianmusic/index'
+  get '/ragamala' => 'high_voltage/pages#show', :id => 'ragamala/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
