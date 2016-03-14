@@ -48,16 +48,26 @@
 	}
 }
 
+// Collection nav
+// ------------------------- //
+.nav-collection {
+	float: right;
+}
+
 // Sets
 // ------------------------- //
 .set-item {
 	@include make-xs-column(4);
 	@include make-sm-column(2);
+	text-align: center;
 }
 .sets {
 	.row {
 		margin-bottom: 2em;
 	}
+}
+.set-link {
+	margin-top: .5em;
 }
 
 // MEDIA QUERIES

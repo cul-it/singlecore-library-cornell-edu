@@ -11,9 +11,9 @@ Rails.application.routes.draw do
    #get '/:subject' => 'catalog#index'
 
   # no facets on high voltage
-  get '/aerialny' => 'high_voltage/pages#show', :id => 'aerialny/index'
-  get '/indonesianmusic' => 'high_voltage/pages#show', :id => 'indonesianmusic/index'
-  get '/ragamala' => 'high_voltage/pages#show', :id => 'ragamala/index'
+  get '/collection/aerialny' => 'high_voltage/pages#show', :id => 'collection/aerialny/index'
+  get '/collection/indonesianmusic' => 'high_voltage/pages#show', :id => 'collection/indonesianmusic/index'
+  get '/collection/ragamala' => 'high_voltage/pages#show', :id => 'collection/ragamala/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
