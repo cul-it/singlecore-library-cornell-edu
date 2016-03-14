@@ -1,51 +1,50 @@
-<div id="main-container">
-	<%= render partial: 'pages/aerialny/menu' %>
-	<div class="pull-right col-sm-5 img-right">
-		<%= image_tag "sets/aerialny/nycounty.jpg" , alt: "Map illustration of New York state", class: "img-thumbnail img-responsive" %>
-	</div>
+<%= render partial: 'pages/collection/aerialny/menu' %>
+<!-- <div class="pull-right col-sm-5 img-right">
+	<%= image_tag "sets/aerialny/nycounty.jpg" , alt: "Map illustration of New York state", class: "img-thumbnail img-responsive" %>
+</div> -->
+<div class="well">
 	<p>This collection presents a series of historical aerial photographs of the state of New York. It was produced under a Cornell University Library Faculty Grant to Eugenia M. Barnaba, Program Leader, Resource Inventory <a href="http://www.css.cornell.edu/iris/">Cornell Institute for Resource Information Sciences</a>.</p>
-	<p>Explore the collection by using the filters on the side, such as Location or Date, or <a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&view=maps">browse the collection by map</a>.</p>
-	<h4>More about the collection</h4>
-	<ul>
-		<li><a href="/aerialny/using">Using the collection</a></li>
-		<li><a href="/aerialny/about">About the project</a></li>
-		<li><a href="/aerialny/contact">Contact</a></li>
-	</ul>
-
-	<h4>Available counties and years</h4>
-	<table class="table table-striped table-responsive">
-		<thead>
-			<tr>
-				<th>County</th>
-				<th>Year</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td><a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Cayuga+County+%28N.Y.%29&sbjct=aerialny&view=maps">Cayuga</a></td>
-				<td><a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1938&f%5Blocation_facet_tesim%5D%5B%5D=Cayuga+County+%28N.Y.%29&sbjct=aerialny&view=maps">1938</a>, <a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1954&f%5Blocation_facet_tesim%5D%5B%5D=Cayuga+County+%28N.Y.%29&sbjct=aerialny&view=maps">1954</a>, <a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1963&f%5Blocation_facet_tesim%5D%5B%5D=Cayuga+County+%28N.Y.%29&sbjct=aerialny&view=maps">1963</a></td>
-			</tr>
-			<tr>
-				<td><a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Cortland+County+%28N.Y.%29&sbjct=aerialny&view=maps">Cortland</a></td>
-				<td><a href="/catalog?utf8=✓&_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Cortland+County+%28N.Y.%29&sbjct=aerialny&view=maps&search_field=dummy_range&range%5Blatest_date_isi%5D%5Bbegin%5D=1936&range%5Blatest_date_isi%5D%5Bend%5D=1937&commit=Limit">1936-1937</a>, <a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1955&f%5Blocation_facet_tesim%5D%5B%5D=Cortland+County+%28N.Y.%29&sbjct=aerialny&search_field=dummy_range&view=maps">1955</a>, <a href="/catalog?utf8=✓&_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Cortland+County+%28N.Y.%29&sbjct=aerialny&search_field=dummy_range&view=maps&range%5Blatest_date_isi%5D%5Bbegin%5D=1965&range%5Blatest_date_isi%5D%5Bend%5D=1966&commit=Limit">1965-1966</a></td>
-			</tr>
-			<tr>
-				<td><a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Onondaga+County+%28N.Y.%29&sbjct=aerialny&search_field=dummy_range&view=maps">Onondaga</a></td>
-				<td><a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1938&f%5Blocation_facet_tesim%5D%5B%5D=Onondaga+County+%28N.Y.%29&sbjct=aerialny&search_field=dummy_range&view=maps">1938</a>, <a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1951&f%5Blocation_facet_tesim%5D%5B%5D=Onondaga+County+%28N.Y.%29&sbjct=aerialny&search_field=dummy_range&view=maps">1951</a>, <a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1966&f%5Blocation_facet_tesim%5D%5B%5D=Onondaga+County+%28N.Y.%29&search_field=dummy_range&view=maps">1966</a></td>
-			</tr>
-			<tr>
-				<td><a href="/?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Seneca+County+%28N.Y.%29&search_field=dummy_range&view=maps">Seneca</a></td>
-				<td><a href="/?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1954&f%5Blocation_facet_tesim%5D%5B%5D=Seneca+County+%28N.Y.%29&search_field=dummy_range&view=maps">1954</a>, <a href="?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1963&f%5Blocation_facet_tesim%5D%5B%5D=Seneca+County+%28N.Y.%29&search_field=dummy_range&view=maps">1963</a></td>
-			</tr>
-			<tr>
-				<td><a href="/?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps">Tompkins</a></td>
-				<td><a href="/catalog?utf8=✓&_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps&range%5Blatest_date_isi%5D%5Bbegin%5D=1936&range%5Blatest_date_isi%5D%5Bend%5D=1938&commit=Limit">1936-1938</a>, <a href="/?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1954&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps">1954</a>, <a href="/?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1964&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps">1964</a>, <a href="/?collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1980&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps">1980</a>, <a href="/?_=1454617479103&collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1991&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps">1991</a></td>
-			</tr>
-			<tr>
-				<td><a href="/?collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Wayne+County+%28N.Y.%29&search_field=dummy_range&view=maps">Wayne</a></td>
-				<td><a href="/?collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1938&f%5Blocation_facet_tesim%5D%5B%5D=Wayne+County+%28N.Y.%29&search_field=dummy_range&view=maps">1938</a>, <a href="/?collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1954&f%5Blocation_facet_tesim%5D%5B%5D=Wayne+County+%28N.Y.%29&search_field=dummy_range&view=maps">1954</a>, <a href="/?collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1963&f%5Blocation_facet_tesim%5D%5B%5D=Wayne+County+%28N.Y.%29&search_field=dummy_range&view=maps">1963</a></td>
-			</tr>
-		</tbody>
-	</table>
-
 </div>
+<!-- <p>Explore the collection by using the filters on the side, such as Location or Date, or <a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&view=maps">browse the collection by map</a>.</p> -->
+<!-- <h3>More about the collection</h4>
+<ul>
+	<li><a href="/aerialny/using">Using the collection</a></li>
+	<li><a href="/aerialny/about">About the project</a></li>
+	<li><a href="/aerialny/contact">Contact</a></li>
+</ul> -->
+
+<h3>Available counties and years</h4>
+<table class="table table-striped table-responsive">
+	<thead>
+		<tr>
+			<th>County</th>
+			<th>Year</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Cayuga+County+%28N.Y.%29&sbjct=aerialny&view=maps">Cayuga</a></td>
+			<td><a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1938&f%5Blocation_facet_tesim%5D%5B%5D=Cayuga+County+%28N.Y.%29&sbjct=aerialny&view=maps">1938</a>, <a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1954&f%5Blocation_facet_tesim%5D%5B%5D=Cayuga+County+%28N.Y.%29&sbjct=aerialny&view=maps">1954</a>, <a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1963&f%5Blocation_facet_tesim%5D%5B%5D=Cayuga+County+%28N.Y.%29&sbjct=aerialny&view=maps">1963</a></td>
+		</tr>
+		<tr>
+			<td><a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Cortland+County+%28N.Y.%29&sbjct=aerialny&view=maps">Cortland</a></td>
+			<td><a href="/catalog?utf8=✓&_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Cortland+County+%28N.Y.%29&sbjct=aerialny&view=maps&search_field=dummy_range&range%5Blatest_date_isi%5D%5Bbegin%5D=1936&range%5Blatest_date_isi%5D%5Bend%5D=1937&commit=Limit">1936-1937</a>, <a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1955&f%5Blocation_facet_tesim%5D%5B%5D=Cortland+County+%28N.Y.%29&sbjct=aerialny&search_field=dummy_range&view=maps">1955</a>, <a href="/catalog?utf8=✓&_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Cortland+County+%28N.Y.%29&sbjct=aerialny&search_field=dummy_range&view=maps&range%5Blatest_date_isi%5D%5Bbegin%5D=1965&range%5Blatest_date_isi%5D%5Bend%5D=1966&commit=Limit">1965-1966</a></td>
+		</tr>
+		<tr>
+			<td><a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Onondaga+County+%28N.Y.%29&sbjct=aerialny&search_field=dummy_range&view=maps">Onondaga</a></td>
+			<td><a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1938&f%5Blocation_facet_tesim%5D%5B%5D=Onondaga+County+%28N.Y.%29&sbjct=aerialny&search_field=dummy_range&view=maps">1938</a>, <a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1951&f%5Blocation_facet_tesim%5D%5B%5D=Onondaga+County+%28N.Y.%29&sbjct=aerialny&search_field=dummy_range&view=maps">1951</a>, <a href="/?_=1454616235287&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1966&f%5Blocation_facet_tesim%5D%5B%5D=Onondaga+County+%28N.Y.%29&search_field=dummy_range&view=maps">1966</a></td>
+		</tr>
+		<tr>
+			<td><a href="/?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Seneca+County+%28N.Y.%29&search_field=dummy_range&view=maps">Seneca</a></td>
+			<td><a href="/?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1954&f%5Blocation_facet_tesim%5D%5B%5D=Seneca+County+%28N.Y.%29&search_field=dummy_range&view=maps">1954</a>, <a href="?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1963&f%5Blocation_facet_tesim%5D%5B%5D=Seneca+County+%28N.Y.%29&search_field=dummy_range&view=maps">1963</a></td>
+		</tr>
+		<tr>
+			<td><a href="/?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps">Tompkins</a></td>
+			<td><a href="/catalog?utf8=✓&_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps&range%5Blatest_date_isi%5D%5Bbegin%5D=1936&range%5Blatest_date_isi%5D%5Bend%5D=1938&commit=Limit">1936-1938</a>, <a href="/?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1954&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps">1954</a>, <a href="/?_=1454616907697&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1964&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps">1964</a>, <a href="/?collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1980&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps">1980</a>, <a href="/?_=1454617479103&collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1991&f%5Blocation_facet_tesim%5D%5B%5D=Tompkins+County+%28N.Y.%29&search_field=dummy_range&view=maps">1991</a></td>
+		</tr>
+		<tr>
+			<td><a href="/?collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Blocation_facet_tesim%5D%5B%5D=Wayne+County+%28N.Y.%29&search_field=dummy_range&view=maps">Wayne</a></td>
+			<td><a href="/?collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1938&f%5Blocation_facet_tesim%5D%5B%5D=Wayne+County+%28N.Y.%29&search_field=dummy_range&view=maps">1938</a>, <a href="/?collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1954&f%5Blocation_facet_tesim%5D%5B%5D=Wayne+County+%28N.Y.%29&search_field=dummy_range&view=maps">1954</a>, <a href="/?collection_tesim%5B%5D=New+York+State+Aerial+Photographs&f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&f%5Bdate_tesim%5D%5B%5D=1963&f%5Blocation_facet_tesim%5D%5B%5D=Wayne+County+%28N.Y.%29&search_field=dummy_range&view=maps">1963</a></td>
+		</tr>
+	</tbody>
+</table>
