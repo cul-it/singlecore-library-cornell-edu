@@ -46,7 +46,7 @@ class CatalogController < ApplicationController
 
       configure_blacklight do |config|
           config.view.gallery.partials = [:index_header]
-          config.view.masonry.partials = [:index]
+          # config.view.masonry.partials = [:index]
 
 
 
