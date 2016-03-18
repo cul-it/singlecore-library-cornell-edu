@@ -58,8 +58,8 @@
 		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
 		<div class="more-item-info">
 			<% if @collection_website.present? %>
-			<div class="website-links well">
-				<ul class="fa-ul">
+			<div class="well">
+				<ul class="fa-ul collection-links">
 					<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
 				</ul>
 			</div>
