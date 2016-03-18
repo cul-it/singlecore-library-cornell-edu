@@ -13,7 +13,10 @@ def image_download options={}
 
   end
 
-
+def catalog_info(bibid)
+  response = JSON.parse(HTTPClient.get_content("http://da-stg-ssolr.library.cornell.edu/solr/blacklight/select?qt=document&id=#{bibid}&wt=json&fl=id,fulltitle_display,summary_display,notes")).with_indifferent_access
+  @response = response['response']['docs']
+end
 
   PREFIXES = {
     'huntington' => 'hunt',
