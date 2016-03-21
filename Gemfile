@@ -6,6 +6,7 @@ gem "blacklight"
 gem 'rails', '4.2.0'
 gem "dotenv-rails"
 gem "dotenv-deployment"
+gem 'httpclient'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

@@ -1,9 +1,9 @@
 <%# default partial to display solr document fields in catalog show view -%>
 <% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
 <% @ssc_site  = render_document_show_field_value(:document => @document, :field => 'ssc_site_tesim') %>
-<%= render 'viewer' %>
+<% @bibid  = render_document_show_field_value(:document => @document, :field => 'bibid_ssi') %>
 
-<%# default partial to display solr document fields in catalog show view -%>
+<%= render 'viewer' %>
 
 <%# for images and audio - TODO: DRY this up if possible; repeating markup -%>
 	<% if !@project.blank? && @kaltura.blank? || !@kaltura.blank? %>
@@ -20,22 +20,28 @@
 		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
 	</div>
 	<div class="col-sm-4 more-item-info">
-		<% if !@collection_website.blank? || !@ssc_site.blank? || (!@project.blank? && @kaltura.blank?) %>
-		<div class="website-links well">
-			<ul class="fa-ul">
-			<% if @collection_website.present? %>
-				<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);"><strong>About the Collection</strong></a></li>
-			<% end %>
-			<% if !@ssc_site.blank? %>
-				<li><i class="fa-li fa fa-external-link"></i><a href="<%= @ssc_site %>" class="ss-link"  onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'SharedShelf']);">View collection in ARTstor/Shared Shelf Commons</a></li>
-			<% end %>			
-			<% if !@project.blank? && @kaltura.blank? %>
-        		<li><i class="fa-li fa fa-download"></i><a href="<%= @download_url %>" title="Download" onclick="javascript:_paq.push(['trackEvent', 'DownloadLink', 'metadata']);">Download image</a></li>
-        	<% end %>
-        	</ul>
+		<% if !@collection_website.blank? || !@ssc_site.blank? || @bibid.present? %>
+		<div class="well">
+			<h2>About the collection</h2>
+			<% if @bibid.present? %>
+	 			<%= render partial: 'cataloginfo'%>
+	 		<% end %>
+	 		<ul class="fa-ul collection-links">
+		 		<% if @collection_website.present? %>
+					<li><i class="fa-li fa fa-external-link"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
+				<% end %>
+				<% if @bibid.present? %>
+					<li><i class="fa-li fa fa-external-link"></i>
+						<%= link_to "Catalog record","https://newcatalog.library.cornell.edu/catalog/#{@bibid}" %>
+					</li>
+				<% end %>
+		 		<% if !@ssc_site.blank? %>
+					<li><i class="fa-li fa fa-external-link"></i><a href="<%= @ssc_site %>" class="ss-link"  onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'SharedShelf']);">View collection in ARTstor/Shared Shelf Commons</a></li>
+				<% end %>
+			</ul>
 		</div>
 		<% end %>
-</div>
+	</div>
 
 <%# for books -%>
 <% else %>
@@ -52,8 +58,8 @@
 		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
 		<div class="more-item-info">
 			<% if @collection_website.present? %>
-			<div class="website-links well">
-				<ul class="fa-ul">
+			<div class="well">
+				<ul class="fa-ul collection-links">
 					<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
 				</ul>
 			</div>

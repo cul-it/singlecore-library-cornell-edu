@@ -116,17 +116,6 @@
 	}
 }
 
-// Override default gallery gem styles to even out spacing and fix bootstrap col sizing
-// #documents.gallery .document {
-// 	-webkit-box-flex: none !important;
-// 	-moz-box-flex: none !important;
-// 	-webkit-flex: none !important;
-// 	-ms-flex: none !important;
-// 	flex: none !important;
-// 	min-width: auto !important;
-// 	min-height: auto !important;
-// }
-
 // Constraints
 // ------------------------------ //
 
@@ -153,6 +142,19 @@
 		i {
 			margin-left: .4em;
 		}
+	}
+}
+
+// Display labels on view buttons
+// --------------------------------
+.view-type .caption {
+	position: relative;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+.view-type-group {
+	.glyphicon {
+		margin-right: 2px;
 	}
 }
 
