@@ -8,16 +8,24 @@ Rails.application.routes.draw do
    # collections
    #get '/catalog' => 'catalog#index'
    #get '/collection/:subject' => 'catalog#index'
-   #get '/:subject' => 'catalog#index'
 
-  # no facets on high voltage
-  get '/collection/aerialny' => 'high_voltage/pages#show', :id => 'collection/aerialny/index'
-  get '/collection/indonesianmusic' => 'high_voltage/pages#show', :id => 'collection/indonesianmusic/index'
-  get '/collection/ragamala' => 'high_voltage/pages#show', :id => 'collection/ragamala/index'
 
   # redirect older aerial and ragamala urls
   get '/ragamala', to: redirect('/collection/ragamala')
   get '/aerialny', to: redirect('/collection/aerialny')
+  get '/huntingtonfreelibrary', to: redirect('/collection/huntingtonfreelibrary')
+  get '/bolivianpamphlets', to: redirect('/collection/bolivianpamphlets')
+
+  
+  # no facets on high voltage
+  get '/collection/aerialny' => 'high_voltage/pages#show', :id => 'collection/aerialny/index'
+  get '/collection/indonesianmusic' => 'high_voltage/pages#show', :id => 'collection/indonesianmusic/index'
+  get '/collection/ragamala' => 'high_voltage/pages#show', :id => 'collection/ragamala/index'
+  get '/collection/:subject' => 'catalog#index'
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
