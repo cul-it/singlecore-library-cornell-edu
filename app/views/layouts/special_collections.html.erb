@@ -39,7 +39,9 @@
     <%# this comes from blacklight, you might not need it on pages? %>
     <%= render partial: 'shared/ajax_modal' %>
 
-    <%= yield %>
+    <div class="container special-collections">
+        <%= yield %>
+    </div>
     
     <%= render :partial => 'shared/footer' %>
   </body>

@@ -23,13 +23,13 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
             redirect_to catalog_index_path(facet_params)
           end        
-          if params[:subject] == "ragamala" && params[:f].nil?
-            facet_params = { f: { collection_tesim: ['Ragamala Paintings'] } }
-            redirect_to catalog_index_path(facet_params) + "&sbjct=ragamala"
-          elsif params[:subject] == "aerialny" && params[:f].nil? && params[:pageid].nil?
-            facet_params = { f: { collection_tesim: ['New York State Aerial Photographs'] } }
-            redirect_to catalog_index_path(facet_params) + "&sbjct=aerialny"
-          end
+          # if params[:subject] == "ragamala" && params[:f].nil?
+          #   facet_params = { f: { collection_tesim: ['Ragamala Paintings'] } }
+          #   redirect_to catalog_index_path(facet_params) + "&sbjct=ragamala"
+          # elsif params[:subject] == "aerialny" && params[:f].nil? && params[:pageid].nil?
+          #   facet_params = { f: { collection_tesim: ['New York State Aerial Photographs'] } }
+          #   redirect_to catalog_index_path(facet_params) + "&sbjct=aerialny"
+          # end
             if ENV["COLLECTIONS"] == "development"
               blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
             elsif ENV["COLLECTIONS"] == "production"
