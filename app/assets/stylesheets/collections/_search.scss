@@ -158,6 +158,19 @@
 	}
 }
 
+// Collection search
+// --------------------------------
+.collection-search {
+	h3 {
+		margin-top: 0;
+	}
+	.form-inline {
+		.form-control {
+			width: 100%;
+		}
+	}
+}
+
 
 // MEDIA QUERIES
 // -------------------------
@@ -178,5 +191,10 @@
 @media (min-width: $screen-md) {
 	.search-box {
 		width: 80%;
+	}
+	.collection-search {
+		.search-query-form {
+			width: 50%;
+		}
 	}
 }
