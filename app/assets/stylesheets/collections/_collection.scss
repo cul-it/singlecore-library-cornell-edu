@@ -57,8 +57,8 @@
 	float: right;
 }
 
-// Sets
-// ------------------------- //
+// Sets - as used in Ragamala
+// ---------------------------- //
 .set-item {
 	@include make-xs-column(4);
 	@include make-sm-column(2);
@@ -71,6 +71,15 @@
 }
 .set-link {
 	margin-top: .5em;
+}
+
+// Collection browse
+// ------------------------- //
+.collection-browse {
+	margin-top: 2em;
+	.btn-primary {
+		font-size: 16px;
+	}
 }
 
 // MEDIA QUERIES
