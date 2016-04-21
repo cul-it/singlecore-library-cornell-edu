@@ -1,3 +1,5 @@
 en:
   blacklight:
     application_name: 'Cornell University Library Digital Collections'
+    range_limit:
+      submit_limit: 'Enter'
