@@ -17,7 +17,7 @@
 </div>
 <div class="collection-search well">
 	<h3>Search Ragamala Paintings</h3>
-	<%= render_search_bar  %>
+	<%= render '/catalog/search_form', { :@collection_search => "Ragamala Paintings"}  %>
 </div>
 <%= render partial: 'pages/collection/ragamala/sets' %>
 <%= render partial: 'pages/top' %>
