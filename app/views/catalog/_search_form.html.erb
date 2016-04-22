@@ -1,5 +1,5 @@
   <%= form_tag search_action_url, :method => :get, :class => 'search-query-form form-inline clearfix' do %>
-    <%= render_hash_as_hidden_fields(params_for_search().except(:q, :search_field, :qt, :page, :utf8, :sbjct)) %>
+    <%= render_hash_as_hidden_fields(params_for_search().except(:q, :f, :search_field, :qt, :page, :utf8, :sbjct)) %>
 
     <div class="row">
       <div class="form-group search-group col-xs-7 col-md-8">
@@ -13,11 +13,18 @@
           <label for="search_field" class="sr-only"><%= t('blacklight.search.form.search_field.label') %></label>
           <%= select_tag(:search_field, options_for_select(search_fields, h(params[:search_field])), :title => t('blacklight.search.form.search_field.title'), :class=>"search_field form-control") %>
           <span class="sr-only"><%= t('blacklight.search.form.search_field.post_label') %></span>
+
         </div>
       <% end %>
+      <% if @collection_search.present? %>
+      <% collection_search = @collection_search %>
+       <input type="hidden" name="f[collection_tesim][]" value="<%= collection_search %>">
+       <% end %>
+
       <button type="submit" class="btn btn-search" id="search">
         <span class="submit-search-text sr-only"><%=t('blacklight.search.form.submit')%></span>
         <span class="glyphicon glyphicon-search"></span>
       </button>
     </div>
 <% end %>
+
