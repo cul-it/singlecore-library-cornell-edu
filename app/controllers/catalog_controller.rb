@@ -189,7 +189,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes'
 
     #- artifacts
-    config.add_show_field 'acq_date_isi', :label => 'Acquisition Date'
+    config.add_show_field 'acq_date_tesim', :label => 'Acquisition Date'
     config.add_show_field 'acq_note_tesim', :label => 'Acquisition Note'
     config.add_show_field 'art_bio_tesim', :label => 'Artist Biography'
     config.add_show_field 'creation_site_tesim', :label => 'Creation Site'
