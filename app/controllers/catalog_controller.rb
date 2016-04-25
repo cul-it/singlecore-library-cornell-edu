@@ -180,6 +180,23 @@ class CatalogController < ApplicationController
     config.add_show_field 'reference_tesim', :label => 'References'
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes'
 
+    #- artifacts
+    config.add_show_field 'acq_date_isi', :label => 'Acquisition Date'
+    config.add_show_field 'acq_note_tesim', :label => 'Acquisition Note'
+    config.add_show_field 'art_bio_tesim', :label => 'Artist Biography'
+    config.add_show_field 'creation_site_tesim', :label => 'Creation Site'
+    config.add_show_field 'note_tesim', :label => 'Note'
+    config.add_show_field 'donor_tesim', :label => 'Donor'
+    config.add_show_field 'identifier_tesim', :label => 'Identifier'
+    config.add_show_field 'img_view_desc_tesim', :label => 'Image View Description'
+    config.add_show_field 'img_view_type_tesim', :label => 'Image View Type'
+    config.add_show_field 'latitude_tsi', :label => 'Latitude'
+    config.add_show_field 'longitude_tsi', :label => 'Longitude'
+    config.add_show_field 'relation_tesim', :label => 'Relation'
+    config.add_show_field 'repo_location_tesim', :label => 'Repository Location'
+    config.add_show_field 'bibliography_tesim', :label => 'Bibliography'
+    config.add_show_field 'style_period_tesim', :label => 'Style/Period'
+
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
