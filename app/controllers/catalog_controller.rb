@@ -23,6 +23,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Alfred Montalvo Bolivian Digital Pamphlets Collection'] } }
             redirect_to catalog_index_path(facet_params)
           end
+          if params[:subject] == "hiphopflyers" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Hip Hop Party and Event Flyers'] } }
+            redirect_to catalog_index_path(facet_params)
+          end
           if params[:subject] == "huntingtonfreelibrary" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Huntington Free Library Native American Collection'] } }
             redirect_to catalog_index_path(facet_params)
@@ -204,6 +208,17 @@ class CatalogController < ApplicationController
     config.add_show_field 'repo_location_tesim', :label => 'Repository Location'
     config.add_show_field 'bibliography_tesim', :label => 'Bibliography'
     config.add_show_field 'style_period_tesim', :label => 'Style/Period'
+
+    #- hip hop flyers
+    config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection'
+    config.add_show_field 'admission_cost_tesim', :label => 'Cost of Admission'
+    config.add_show_field 'directions_tesim', :label => 'Directions'
+    config.add_show_field 'dress_code_tesim', :label => 'Dress Code'
+    config.add_show_field 'event_name_tesim', :label => 'Event Name'
+    config.add_show_field 'guests_tesim', :label => 'Guests'
+    config.add_show_field 'promoter_tesim', :label => 'Promoter'
+    config.add_show_field 'provenance_tesim', :label => 'Provenance'
+    config.add_show_field 'address_tesim', :label => 'Address'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
