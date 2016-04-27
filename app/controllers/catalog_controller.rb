@@ -219,6 +219,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'promoter_tesim', :label => 'Promoter'
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
     config.add_show_field 'address_tesim', :label => 'Address'
+    config.add_show_field 'city_location_tesim', :label => 'Location'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
