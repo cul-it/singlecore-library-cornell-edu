@@ -32,6 +32,20 @@ if !options[:value].blank?
   return "#{options[:value][0]}, #{options[:document]["pubplace_tesim"][0]}, #{options[:document]["pubdate_tesim"][0]} "
 end
 end
+
+def references_link_for_pj options={}
+options[:document] # the original document
+options[:field] # the field to render
+options[:value] # the value of the field
+collection = options[:document]["collection_tesim"][0]
+if collection != "Persuasive Maps: PJ Mode Collection"
+  options[:value]
+else
+  return "For full details on references, see <a href='http://persuasivemaps.library.cornell.edu/content/references'>
+  http://persuasivemaps.library.cornell.edu/content/references</a>".html_safe
+end
+end
+
    
 
 

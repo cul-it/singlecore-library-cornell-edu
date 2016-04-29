@@ -189,7 +189,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
     config.add_show_field 'extent_tesim', :label => 'Extent'
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
-    config.add_show_field 'reference_tesim', :label => 'References'
+    config.add_show_field 'reference_tesim', :label => 'References', helper_method: :references_link_for_pj
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes'
 
     #- artifacts
