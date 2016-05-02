@@ -8,7 +8,7 @@ class CatalogController < ApplicationController
             redirect_to catalog_index_path
           end
           if params[:subject] == "artifactsandart" && params[:f].nil?
-            facet_params = { f: { collection_tesim: ['Campus Artifacts and Art'] } }
+            facet_params = { f: { collection_tesim: ['Campus Artifacts, Art & Memorabilia'] } }
             redirect_to catalog_index_path(facet_params)
           end 
           if params[:subject] == "bastides" && params[:f].nil?
