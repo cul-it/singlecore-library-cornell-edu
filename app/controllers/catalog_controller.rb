@@ -189,8 +189,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
     config.add_show_field 'extent_tesim', :label => 'Extent'
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
-    config.add_show_field 'reference_tesim', :label => 'References', helper_method: :references_link_for_pj
-    config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes'
+    config.add_show_field 'reference_tesim', :label => 'References', helper_method: :autolink_field
+    config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes', helper_method: :autolink_field
 
     #- artifacts
     config.add_show_field 'acq_date_tesim', :label => 'Acquisition Date'
@@ -226,7 +226,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
     config.add_show_field 'id_number_ssi', :label => 'Identifier'
     config.add_show_field 'source_tesim', :label => 'Source'
-    config.add_show_field 'rights_tesim', :label => 'Rights'
+    config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
 
     # "fielded" search configuration. Used by pulldown among other places.
 

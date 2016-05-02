@@ -216,6 +216,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails_autolink (1.1.6)
+      rails (> 3.1)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -327,6 +329,7 @@ DEPENDENCIES
   openseadragon
   poltergeist
   rails (= 4.2.0)
+  rails_autolink
   rb-inotify
   rsolr (~> 1.0.6)
   rspec
@@ -342,3 +345,6 @@ DEPENDENCIES
   vcr
   webmock
   webrat
+
+BUNDLED WITH
+   1.10.6
