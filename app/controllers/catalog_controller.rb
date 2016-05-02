@@ -189,8 +189,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
     config.add_show_field 'extent_tesim', :label => 'Extent'
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
-    config.add_show_field 'reference_tesim', :label => 'References', helper_method: :autolink_field
+    config.add_show_field 'source_tesim', :label => 'Source'
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes', helper_method: :autolink_field
+    config.add_show_field 'reference_tesim', :label => 'References', helper_method: :autolink_field
 
     #- artifacts
     config.add_show_field 'acq_date_tesim', :label => 'Acquisition Date'
@@ -199,7 +200,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'creation_site_tesim', :label => 'Creation Site'
     config.add_show_field 'note_tesim', :label => 'Note'
     config.add_show_field 'donor_tesim', :label => 'Donor'
-    config.add_show_field 'identifier_tesim', :label => 'Identifier'
     config.add_show_field 'img_view_desc_tesim', :label => 'Image View Description'
     config.add_show_field 'img_view_type_tesim', :label => 'Image View Type'
     config.add_show_field 'latitude_tsi', :label => 'Latitude'
@@ -224,9 +224,8 @@ class CatalogController < ApplicationController
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
-    config.add_show_field 'id_number_ssi', :label => 'Identifier'
-    config.add_show_field 'source_tesim', :label => 'Source'
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
+    config.add_show_field 'identifier_tesim', :label => 'Identifier'
 
     # "fielded" search configuration. Used by pulldown among other places.
 
