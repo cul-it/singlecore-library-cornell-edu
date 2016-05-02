@@ -52,7 +52,8 @@ class CatalogController < ApplicationController
                     OR collection_tesim:"Persuasive Maps: PJ Mode Collection"
                     OR collection_tesim:"Ragamala Paintings"
                     OR collection_tesim:"Alfred Montalvo Bolivian Digital Pamphlets Collection"
-                    OR collection_tesim:"Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia")'}
+                    OR collection_tesim:"Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia"
+                    OR collection_tesim:"Campus Artifacts, Art & Memorabilia")'}
             end
             end
 
