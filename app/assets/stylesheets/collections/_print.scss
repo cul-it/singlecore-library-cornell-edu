@@ -28,7 +28,11 @@
 	// Remove bottom border from IIIF viewer
 	// -----------------------------------------
 	#openseadragon1 {
-		border-bottom: 0;
+		display:none;
+	}
+
+	.print-image {
+		display:block
 	}
 	// Show Cornell logo for print
 	// -----------------------------
