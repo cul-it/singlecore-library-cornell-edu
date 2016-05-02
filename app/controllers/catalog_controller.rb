@@ -95,7 +95,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
     config.add_facet_field 'lang_tesim', :label => 'Language', :sort => 'count', :limit => 5
-    config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5
+    config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5, :sort => 'index'
     config.add_facet_field 'mat_tech_tesim', :label => 'Materials', :show => false
     config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5, show: false
     config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5, show:false
