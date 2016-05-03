@@ -23,6 +23,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Alfred Montalvo Bolivian Digital Pamphlets Collection'] } }
             redirect_to catalog_index_path(facet_params)
           end
+          if params[:subject] == "cornellcastcollection" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Cornell Cast Collection'] } }
+            redirect_to catalog_index_path(facet_params)
+          end
           if params[:subject] == "hiphopflyers" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Hip Hop Party and Event Flyers'] } }
             redirect_to catalog_index_path(facet_params)
@@ -220,6 +224,19 @@ class CatalogController < ApplicationController
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
     config.add_show_field 'address_tesim', :label => 'Address'
     config.add_show_field 'city_location_tesim', :label => 'Location'
+
+    #- cornell cast collection
+    config.add_show_field 'condition_tesim', :label => 'Condition'
+    config.add_show_field 'creator_orig_tesim', :label => 'Original Creator'
+    config.add_show_field 'date_orig_tesim', :label => 'Original Date'
+    config.add_show_field 'extent_orig_tesim', :label => 'Original Extent'
+    config.add_show_field 'creation_site_orig_tesim', :label => 'Original Creation Site'
+    config.add_show_field 'culture_orig_tesim', :label => 'Original Culture'
+    config.add_show_field 'mat_tech_orig_tesim', :label => 'Original Materials and Techniques'
+    config.add_show_field 'repo_orig_tesim', :label => 'Original Repository'
+    config.add_show_field 'style_orig_tesim', :label => 'Original Style'
+    config.add_show_field 'accession_tesim', :label => 'Accession'
+    config.add_show_field 'disclaimer_tesim', :label => 'Disclaimer'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
