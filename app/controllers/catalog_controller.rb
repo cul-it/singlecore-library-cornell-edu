@@ -38,6 +38,10 @@ class CatalogController < ApplicationController
           if params[:subject] == "huntingtonfreelibrary" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Huntington Free Library Native American Collection'] } }
             redirect_to catalog_index_path(facet_params)
+          end 
+          if params[:subject] == "joeconzo" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Joe Conzo Jr. Archive'] } }
+            redirect_to catalog_index_path(facet_params)
           end  
           if params[:subject] == "persuasivemaps" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
@@ -226,6 +230,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'guests_tesim', :label => 'Guests'
     config.add_show_field 'promoter_tesim', :label => 'Promoter'
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
+    config.add_show_field 'venue_tesim', :label => 'Venue', :link_to_search => true
     config.add_show_field 'address_tesim', :label => 'Address'
     config.add_show_field 'city_location_tesim', :label => 'Location'
 
