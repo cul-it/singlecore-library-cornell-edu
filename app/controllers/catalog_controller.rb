@@ -230,8 +230,13 @@ class CatalogController < ApplicationController
     config.add_show_field 'guests_tesim', :label => 'Guests'
     config.add_show_field 'promoter_tesim', :label => 'Promoter'
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
-    config.add_show_field 'venue_tesim', :label => 'Venue', :link_to_search => true
-    config.add_show_field 'address_tesim', :label => 'Address'
+    config.add_show_field 'venue1_tesim', :label => 'Venue'
+    config.add_show_field 'venue1_address_tesim', :label => 'Address'
+    config.add_show_field 'venue2_tesim', :label => 'Venue'
+    config.add_show_field 'venue2_adddress_tesim', :label => 'Address'
+    config.add_show_field 'venue3_tesim', :label => 'Venue'
+    config.add_show_field 'venue3_address_tesim', :label => 'Address'
+
     config.add_show_field 'city_location_tesim', :label => 'Location'
 
     #- cornell cast collection
