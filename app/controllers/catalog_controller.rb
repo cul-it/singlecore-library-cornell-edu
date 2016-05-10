@@ -257,6 +257,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
     config.add_show_field 'identifier_tesim', :label => 'Identifier'
+    config.add_show_field 'identifier_tesim', :label => 'Identifier'
 
     # "fielded" search configuration. Used by pulldown among other places.
 
