@@ -230,12 +230,12 @@ class CatalogController < ApplicationController
     config.add_show_field 'guests_tesim', :label => 'Guests'
     config.add_show_field 'promoter_tesim', :label => 'Promoter'
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
-    config.add_show_field 'venue1_tesim', :label => 'Venue'
-    config.add_show_field 'venue1_address_tesim', :label => 'Address'
-    config.add_show_field 'venue2_tesim', :label => 'Venue'
-    config.add_show_field 'venue2_address_tesim', :label => 'Address'
-    config.add_show_field 'venue3_tesim', :label => 'Venue'
-    config.add_show_field 'venue3_address_tesim', :label => 'Address'
+    config.add_show_field 'venue1_tesim', :label => 'Venue 1'
+    config.add_show_field 'venue1_address_tesim', :label => 'Address 1'
+    config.add_show_field 'venue2_tesim', :label => 'Venue 2'
+    config.add_show_field 'venue2_address_tesim', :label => 'Address 2'
+    config.add_show_field 'venue3_tesim', :label => 'Venue 3'
+    config.add_show_field 'venue3_address_tesim', :label => 'Address 3'
 
     config.add_show_field 'city_location_tesim', :label => 'Location'
 
