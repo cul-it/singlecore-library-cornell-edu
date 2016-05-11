@@ -233,7 +233,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'venue1_tesim', :label => 'Venue'
     config.add_show_field 'venue1_address_tesim', :label => 'Address'
     config.add_show_field 'venue2_tesim', :label => 'Venue'
-    config.add_show_field 'venue2_adddress_tesim', :label => 'Address'
+    config.add_show_field 'venue2_address_tesim', :label => 'Address'
     config.add_show_field 'venue3_tesim', :label => 'Venue'
     config.add_show_field 'venue3_address_tesim', :label => 'Address'
 
