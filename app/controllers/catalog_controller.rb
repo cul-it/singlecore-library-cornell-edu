@@ -46,7 +46,11 @@ class CatalogController < ApplicationController
           if params[:subject] == "persuasivemaps" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
             redirect_to catalog_index_path(facet_params)
-          end        
+          end
+          if params[:subject] == "tarr" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Historic Glacial Images of Alaska and Greenland'] } }
+            redirect_to catalog_index_path(facet_params)
+          end     
           # if params[:subject] == "ragamala" && params[:f].nil?
           #   facet_params = { f: { collection_tesim: ['Ragamala Paintings'] } }
           #   redirect_to catalog_index_path(facet_params) + "&sbjct=ragamala"
