@@ -66,7 +66,8 @@ class CatalogController < ApplicationController
                     OR collection_tesim:"Alfred Montalvo Bolivian Digital Pamphlets Collection"
                     OR collection_tesim:"Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia"
                     OR collection_tesim:"Campus Artifacts, Art & Memorabilia"
-                    OR collection_tesim:"Hip Hop Party and Event Flyers")'}
+                    OR collection_tesim:"Hip Hop Party and Event Flyers"
+                    OR collection_tesim:"Andrew Dickson White Architectural Photographs Collection")'}
             end
             end
 
@@ -237,8 +238,12 @@ class CatalogController < ApplicationController
     config.add_show_field 'venue2_address_tesim', :label => 'Address 2'
     config.add_show_field 'venue3_tesim', :label => 'Venue 3'
     config.add_show_field 'venue3_address_tesim', :label => 'Address 3'
-
     config.add_show_field 'city_location_tesim', :label => 'Location'
+
+    #- historic glacial images
+    config.add_show_field 'state_location_tesim', :label => 'State'
+    config.add_show_field 'expedition_tesim', :label => 'Expedition'
+    config.add_show_field 'glacier_tesim', :label => 'Glacier'
 
     #- cornell cast collection
     config.add_show_field 'condition_tesim', :label => 'Condition'
