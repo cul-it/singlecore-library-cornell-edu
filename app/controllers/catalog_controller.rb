@@ -43,6 +43,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Joe Conzo Jr. Archive'] } }
             redirect_to catalog_index_path(facet_params)
           end  
+          if params[:subject] == "johnclairmiller" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['John Clair Miller'] } }
+            redirect_to catalog_index_path(facet_params)
+          end  
           if params[:subject] == "persuasivemaps" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
             redirect_to catalog_index_path(facet_params)
@@ -261,6 +265,12 @@ class CatalogController < ApplicationController
     config.add_show_field 'style_orig_tesim', :label => 'Original Style'
     config.add_show_field 'accession_tesim', :label => 'Accession'
     config.add_show_field 'disclaimer_tesim', :label => 'Disclaimer'
+
+    # - john clair miller
+    config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
+    config.add_show_field 'site_location_tesim', :label => 'Location'
+    config.add_show_field 'project_location_tesim', :label => 'Location'
+    config.add_show_field 'project_owner_tesim', :label => 'Project Owner'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
