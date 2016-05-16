@@ -31,8 +31,16 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Cornell Cast Collection'] } }
             redirect_to catalog_index_path(facet_params)
           end
+          if params[:subject] == "eleusis" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Mysteries at Eleusis: Images of Inscriptions'] } }
+            redirect_to catalog_index_path(facet_params)
+          end
           if params[:subject] == "hiphopflyers" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Hip Hop Party and Event Flyers'] } }
+            redirect_to catalog_index_path(facet_params)
+          end
+          if params[:subject] == "howell" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Icelandic and Faroese Photographs of Frederick W.W. Howell'] } }
             redirect_to catalog_index_path(facet_params)
           end
           if params[:subject] == "huntingtonfreelibrary" && params[:f].nil?
@@ -41,6 +49,10 @@ class CatalogController < ApplicationController
           end 
           if params[:subject] == "joeconzo" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Joe Conzo Jr. Archive'] } }
+            redirect_to catalog_index_path(facet_params)
+          end  
+          if params[:subject] == "johnclairmiller" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['John Clair Miller'] } }
             redirect_to catalog_index_path(facet_params)
           end  
           if params[:subject] == "persuasivemaps" && params[:f].nil?
@@ -261,6 +273,16 @@ class CatalogController < ApplicationController
     config.add_show_field 'style_orig_tesim', :label => 'Original Style'
     config.add_show_field 'accession_tesim', :label => 'Accession'
     config.add_show_field 'disclaimer_tesim', :label => 'Disclaimer'
+
+    # - john clair miller
+    config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
+    config.add_show_field 'site_location_tesim', :label => 'Location'
+    config.add_show_field 'project_location_tesim', :label => 'Location'
+    config.add_show_field 'project_owner_tesim', :label => 'Project Owner'
+
+    # - eleusis
+    config.add_show_field 'letter_height_tesim', :label => 'Letter Height'
+    config.add_show_field 'reference_id_tesim', :label => 'Reference Identifier'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
