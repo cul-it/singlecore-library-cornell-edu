@@ -288,7 +288,7 @@ class CatalogController < ApplicationController
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
-    config.add_show_field 'type_tesim', :label => 'Type', :link_to_search => true
+    config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
     config.add_show_field 'identifier_tesim', :label => 'Identifier'
 
