@@ -83,7 +83,9 @@ class CatalogController < ApplicationController
                     OR collection_tesim:"Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia"
                     OR collection_tesim:"Campus Artifacts, Art & Memorabilia"
                     OR collection_tesim:"Hip Hop Party and Event Flyers"
-                    OR collection_tesim:"Andrew Dickson White Architectural Photographs Collection")'}
+                    OR collection_tesim:"Andrew Dickson White Architectural Photographs Collection"
+                    OR collection_tesim:"Historic Glacial Images of Alaska and Greenland"
+                    OR collection_tesim:"Mysteries at Eleusis: Images of Inscriptions")'}
             end
             end
 
@@ -286,7 +288,7 @@ class CatalogController < ApplicationController
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
-    config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
+    config.add_show_field 'type_tesim', :label => 'Type', :link_to_search => true
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
     config.add_show_field 'identifier_tesim', :label => 'Identifier'
 
