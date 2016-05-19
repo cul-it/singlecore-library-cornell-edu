@@ -85,7 +85,8 @@ class CatalogController < ApplicationController
                     OR collection_tesim:"Hip Hop Party and Event Flyers"
                     OR collection_tesim:"Andrew Dickson White Architectural Photographs Collection"
                     OR collection_tesim:"Historic Glacial Images of Alaska and Greenland"
-                    OR collection_tesim:"Mysteries at Eleusis: Images of Inscriptions")'}
+                    OR collection_tesim:"Mysteries at Eleusis: Images of Inscriptions"
+                    OR collection_tesim:"Icelandic and Faroese Photographs of Frederick W.W. Howell")'}
             end
             end
 
