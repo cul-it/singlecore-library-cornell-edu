@@ -11,6 +11,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Andrew Dickson White Architectural Photographs Collection'] } }
             redirect_to catalog_index_path(facet_params)
           end 
+          if params[:subject] == "alisonmasonkingsbury" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Alison Mason Kingsbury: Life and Art'] } }
+            redirect_to catalog_index_path(facet_params)
+          end 
           if params[:subject] == "artifactsandart" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Campus Artifacts, Art & Memorabilia'] } }
             redirect_to catalog_index_path(facet_params)
@@ -53,6 +57,10 @@ class CatalogController < ApplicationController
           end  
           if params[:subject] == "johnclairmiller" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['John Clair Miller'] } }
+            redirect_to catalog_index_path(facet_params)
+          end  
+          if params[:subject] == "johnreps" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['John Reps Collection'] } }
             redirect_to catalog_index_path(facet_params)
           end  
           if params[:subject] == "persuasivemaps" && params[:f].nil?
@@ -286,6 +294,9 @@ class CatalogController < ApplicationController
     # - eleusis
     config.add_show_field 'letter_height_tesim', :label => 'Letter Height'
     config.add_show_field 'reference_id_tesim', :label => 'Reference Identifier'
+
+    # - reps slides
+    config.add_show_field 'subject_reps_tesim', :label => 'Reps Subject'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
