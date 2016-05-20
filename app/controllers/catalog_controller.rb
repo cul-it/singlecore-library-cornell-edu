@@ -54,6 +54,10 @@ class CatalogController < ApplicationController
           if params[:subject] == "huntingtonfreelibrary" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Huntington Free Library Native American Collection'] } }
             redirect_to catalog_index_path(facet_params)
+          end
+          if params[:subject] == "isbellandes" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Billie Jean Isbell Andean Collection'] } }
+            redirect_to catalog_index_path(facet_params)
           end 
           if params[:subject] == "joeconzo" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Joe Conzo Jr. Archive'] } }
@@ -301,6 +305,9 @@ class CatalogController < ApplicationController
 
     # - reps slides
     config.add_show_field 'subject_reps_tesim', :label => 'Reps Subject'
+
+    # - billie jean isbell
+    config.add_show_field 'other_location_tesim', :label => 'Location'
 
     # - cornell coins collection
     config.add_show_field 'denomination_tesim', :label => 'Denomination'
