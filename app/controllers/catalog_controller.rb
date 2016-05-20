@@ -31,10 +31,14 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Alfred Montalvo Bolivian Digital Pamphlets Collection'] } }
             redirect_to catalog_index_path(facet_params)
           end
-          if params[:subject] == "cornellcastcollection" && params[:f].nil?
+          if params[:subject] == "cast" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Cornell Cast Collection'] } }
             redirect_to catalog_index_path(facet_params)
           end
+          if params[:subject] == "coins" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Cornell Coins Collection'] } }
+            redirect_to catalog_index_path(facet_params)
+          end  
           if params[:subject] == "eleusis" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Mysteries at Eleusis: Images of Inscriptions'] } }
             redirect_to catalog_index_path(facet_params)
@@ -297,6 +301,13 @@ class CatalogController < ApplicationController
 
     # - reps slides
     config.add_show_field 'subject_reps_tesim', :label => 'Reps Subject'
+
+    # - cornell coins collection
+    config.add_show_field 'denomination_tesim', :label => 'Denomination'
+    config.add_show_field 'mint_location_tesim', :label => 'Mint Location'
+    config.add_show_field 'obverse_tesim', :label => 'Obverse'
+    config.add_show_field 'reverse_tesim', :label => 'Reverse'
+    config.add_show_field 'metal_abbrev_tesim', :label => 'Metal Abbrev.'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
