@@ -11,6 +11,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Andrew Dickson White Architectural Photographs Collection'] } }
             redirect_to catalog_index_path(facet_params)
           end 
+          if params[:subject] == "alisonmasonkingsbury" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Alison Mason Kingsbury: Life and Art'] } }
+            redirect_to catalog_index_path(facet_params)
+          end 
           if params[:subject] == "artifactsandart" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Campus Artifacts, Art & Memorabilia'] } }
             redirect_to catalog_index_path(facet_params)
