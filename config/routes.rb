@@ -3,12 +3,31 @@ Rails.application.routes.draw do
   root to: "catalog#index"
   devise_for :users
 
-  get '/contact' => 'high_voltage/pages#show', :id => 'contact'
-  blacklight_for :catalog
+  mount Blacklight::Engine => '/'
+
+  concern :searchable, Blacklight::Routes::Searchable.new
+  concern :exportable, Blacklight::Routes::Exportable.new
+
+  resource :catalog, only: [:index], controller: 'catalog' do
+    concerns :searchable
+  end
+
+  resources :solr_documents, only: [:show], controller: 'catalog' do
+    concerns :exportable
+  end
+
+  resources :bookmarks do
+    concerns :exportable
+
+    collection do
+      delete 'clear'
+    end
+  end
    # collections
    #get '/catalog' => 'catalog#index'
    #get '/collection/:subject' => 'catalog#index'
 
+  get '/contact' => 'high_voltage/pages#show', :id => 'contact'
 
   # redirect older aerial and ragamala urls
   get '/ragamala', to: redirect('/collection/ragamala')
