@@ -5,86 +5,86 @@ class CatalogController < ApplicationController
     include Blacklight::Catalog
       before_action  do
           if params[:sbjct].present? && params[:f].nil?
-            redirect_to catalog_index_path
+            redirect_to search_catalog_path
           end
           if params[:subject] == "adwhite" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Andrew Dickson White Architectural Photographs Collection'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end 
           if params[:subject] == "alisonmasonkingsbury" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Alison Mason Kingsbury: Life and Art'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end 
           if params[:subject] == "artifactsandart" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Campus Artifacts, Art & Memorabilia'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end 
           if params[:subject] == "bastides" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['John Reps Collection - Bastides'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end 
           if params[:subject] == "beyondthetaj" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "bolivianpamphlets" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Alfred Montalvo Bolivian Digital Pamphlets Collection'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "cast" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Cornell Cast Collection'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "coins" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Cornell Coins Collection'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end  
           if params[:subject] == "eleusis" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Mysteries at Eleusis: Images of Inscriptions'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "hiphopflyers" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Hip Hop Party and Event Flyers'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "howell" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Icelandic and Faroese Photographs of Frederick W.W. Howell'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "huntingtonfreelibrary" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Huntington Free Library Native American Collection'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "isbellandes" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Billie Jean Isbell Andean Collection'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end 
           if params[:subject] == "joeconzo" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Joe Conzo Jr. Archive'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end  
           if params[:subject] == "johnclairmiller" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['John Clair Miller'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end  
           if params[:subject] == "johnreps" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['John Reps Collection'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end  
           if params[:subject] == "persuasivemaps" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "tarr" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Historic Glacial Images of Alaska and Greenland'] } }
-            redirect_to catalog_index_path(facet_params)
+            redirect_to search_catalog_path(facet_params)
           end     
           # if params[:subject] == "ragamala" && params[:f].nil?
           #   facet_params = { f: { collection_tesim: ['Ragamala Paintings'] } }
-          #   redirect_to catalog_index_path(facet_params) + "&sbjct=ragamala"
+          #   redirect_to search_catalog_path(facet_params) + "&sbjct=ragamala"
           # elsif params[:subject] == "aerialny" && params[:f].nil? && params[:pageid].nil?
           #   facet_params = { f: { collection_tesim: ['New York State Aerial Photographs'] } }
-          #   redirect_to catalog_index_path(facet_params) + "&sbjct=aerialny"
+          #   redirect_to search_catalog_path(facet_params) + "&sbjct=aerialny"
           # end
             if ENV["COLLECTIONS"] == "development"
               blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
