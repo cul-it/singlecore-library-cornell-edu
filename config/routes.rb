@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   resource :catalog, only: [:index], controller: 'catalog' do
     concerns :searchable
   end
-
-  resources :solr_documents, only: [:show], controller: 'catalog' do
-    concerns :exportable
-  end
+  
+resources :solr_documents, except: [:index], path: '/catalog', controller: 'catalog' do
+      concerns :exportable
+end
 
   resources :bookmarks do
     concerns :exportable
@@ -26,7 +26,6 @@ Rails.application.routes.draw do
    # collections
    #get '/catalog' => 'catalog#index'
    #get '/collection/:subject' => 'catalog#index'
-
   get '/contact' => 'high_voltage/pages#show', :id => 'contact'
 
   # redirect older aerial and ragamala urls
