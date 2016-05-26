@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   root to: "catalog#index"
   devise_for :users
 
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
 
   resource :catalog, only: [:index], controller: 'catalog' do
     concerns :searchable
+    concerns :range_searchable
+
   end
   
 resources :solr_documents, except: [:index], path: '/catalog', controller: 'catalog' do

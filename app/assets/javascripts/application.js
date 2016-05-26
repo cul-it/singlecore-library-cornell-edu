@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //
+//= require 'blacklight_range_limit'
 // Required by Blacklight-Maps
 //= require blacklight-maps
 //= require blacklight_gallery
@@ -21,7 +22,5 @@
 //= require blacklight/blacklight
 //= require_tree .
 
-// For blacklight_range_limit built-in JS, if you don't want it you don't need
-// this:
-//= require 'blacklight_range_limit'
+
 
