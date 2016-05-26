@@ -3,3 +3,8 @@ en:
     application_name: 'Cornell University Library Digital Collections'
     range_limit:
       submit_limit: 'Enter'
+  support:
+    array:
+      words_connector: " <br /> "
+      two_words_connector: " <br /> "
+      last_word_connector: "<br />"
