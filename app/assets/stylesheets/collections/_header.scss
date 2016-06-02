@@ -102,6 +102,18 @@
 	margin-left: 0;
 }
 
+// Alert/announcements
+// -------------------------
+.announcement {
+	background: $state-warning-bg;
+	color: $state-warning-text;
+	padding: 12px 0 5px;
+	margin-bottom: 1em;
+	p {
+		font-size: 14px;
+	}
+}
+
 // MEDIA QUERIES
 // -------------------------
 
