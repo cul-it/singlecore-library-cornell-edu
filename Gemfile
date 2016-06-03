@@ -75,8 +75,7 @@ group :test do
   gem 'rb-inotify', :require => false
   gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
   # Spork support
-  gem 'guard-spork', '0.3.2'
-  gem 'spork', '0.9.0'
+
   gem 'webmock'
   gem 'vcr'
   gem 'capybara-email'
