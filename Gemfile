@@ -66,6 +66,7 @@ group :development, :test do
   gem 'webrat'
   gem 'guard-rspec'
   gem 'poltergeist'
+  gem 'rake'
 end
 
 group :test do

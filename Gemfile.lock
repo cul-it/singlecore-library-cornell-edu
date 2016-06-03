@@ -350,6 +350,7 @@ DEPENDENCIES
   poltergeist
   rails (= 4.2.0)
   rails_autolink
+  rake
   rb-inotify
   rsolr (~> 1.0.6)
   rspec
