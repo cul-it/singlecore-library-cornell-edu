@@ -74,7 +74,7 @@ group :test do
   # Following two gems are following the setup proposed in the RoR tutorial
   # at http://ruby.railstutorial.org/chapters/static-pages#sec-advanced_setup
   gem 'rb-inotify', :require => false
-  #gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
+  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
   # Spork support
   gem 'webmock'
   gem 'vcr'
