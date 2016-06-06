@@ -78,6 +78,7 @@ group :test do
   gem 'webmock'
   gem 'vcr'
   gem 'capybara-email'
+  gem 'simplecov'
 end
 
 

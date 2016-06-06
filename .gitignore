@@ -30,3 +30,6 @@
 /public/bookreader/bees*
 /public/bookreader/bol*
 /public/bookreader/hunt*
+
+# Ignore coverage directory
+coverage
