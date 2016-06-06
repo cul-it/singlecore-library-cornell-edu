@@ -79,6 +79,7 @@ group :test do
   gem 'vcr'
   gem 'capybara-email'
   gem 'simplecov'
+  gem 'simplecov-rcov'
 end
 
 
