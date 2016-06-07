@@ -72,7 +72,7 @@ footer, .cornell-footer {
   background: white;
   margin-top: -2em;
   padding: 2em;
-  margin-bottom: -2em;
+  margin-bottom: 2em;
   border: 1px solid $border-color;
   border-top: 0;
   h4 {
@@ -100,6 +100,9 @@ footer, .cornell-footer {
 	}
 	.btn-give {
 		margin-bottom: .5em;
+	}
+	.survey {
+		margin-bottom: -1em;
 	}
 }
 
