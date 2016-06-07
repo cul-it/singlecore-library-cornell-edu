@@ -10,7 +10,10 @@ module DisplayHelper
       link_to(content_tag(:i, '', :class => "fa fa-times") + content_tag(:span, '[remove]', :class => 'hide-text'), remove_facet_params(facet_solr_field, item, params.except('sbjct')), :class=>"remove")
   end
 
-
-
+def render_collection_title
+	if params[:action] == "show" && render_document_show_field_value(:document => @document, :field => 'collection_tesim').present?
+	return ": "+ strip_links(render_document_show_field_value(:document => @document, :field => 'collection_tesim'))
+end
+end
 
 end
