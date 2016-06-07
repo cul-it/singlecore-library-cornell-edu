@@ -66,6 +66,23 @@ footer, .cornell-footer {
 		float: none !important;
 	}
 }
+// Survey 
+// ------------- //
+.survey {
+  background: white;
+  margin-top: -2em;
+  padding: 2em;
+  margin-bottom: -2em;
+  border: 1px solid $border-color;
+  border-top: 0;
+  h4 {
+  	margin-top: 0;
+  	font-size: 16px;
+  }
+  .btn-feedback {
+  	background: black;
+  }
+ }
 
 // MEDIA QUERIES
 // -------------------------
