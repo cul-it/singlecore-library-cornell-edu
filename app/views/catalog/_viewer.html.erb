@@ -5,7 +5,6 @@
 <% @download_url = render_document_show_field_value(:document => @document, :field => 'download_link_tesim') %>
 <% @page = "1" %>
 <% @artstor_iiif = render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>
-<%= @artstor_iiif %>
 <%# display image viewer %>
 <% if !@project.blank? && @kaltura.blank? %>
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
