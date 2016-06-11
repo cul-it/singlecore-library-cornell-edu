@@ -15,8 +15,4 @@ RSpec.feature 'Item' do
     expect(title).to have_content 'Persuasive Maps: PJ Mode Collection'
   end
 
-  scenario 'visit an item view for an image' do
-  	visit solr_document_path('ss:3293947')
-  	expect(body).to have_content 'http://tsprod.artstor.org/rosa-iiif-endpoint-1.0-SNAPSHOT/fpx%2Fsslps%2Fc7730456%2F3293947.fpx/info.json'
-  end
 end
