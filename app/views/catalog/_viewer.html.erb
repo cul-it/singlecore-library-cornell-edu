@@ -4,7 +4,7 @@
 <% @book_prefix = (render_document_show_field_value :document => @document, :field => 'id').split(':')[0] %>
 <% @download_url = render_document_show_field_value(:document => @document, :field => 'download_link_tesim') %>
 <% @page = "1" %>
-<% @artstor_iiif = render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>
+
 <%# display image viewer %>
 <% if !@project.blank? && @kaltura.blank? %>
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
@@ -23,30 +23,6 @@
   <img src="<%= render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim') %>">
   <% end %>
   </div>
-<% if @artstor_iiif.present? %>
-<script>
-  //<![CDATA[
-  function initOpenSeadragon() {
-  OpenSeadragon ({
-        id: "openseadragon1",
-        toolbar: "image-toolbar",
-        zoomInButton:   "zoom-in",
-        zoomOutButton:  "zoom-out",
-        homeButton:     "home",
-        fullPageButton: "full-page",
-        minZoomImageRatio: 1,
-        visibilityRatio: 1.0,
-        constrainDuringPan: true,
-        prefixUrl: "/images/",
-        tileSources: "<%= @artstor_iiif %>"
-      });
-  }
-  window.onload = initOpenSeadragon;
-  document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
-  //]]>
-</script>
-
-<% else %> 
 
 <script>
   //<![CDATA[
@@ -68,7 +44,6 @@
   //]]>
 </script>
 
-<% end %>
 <%# display av player %>
 <% elsif !@kaltura.blank? %>
 <% @identifier= render_document_show_field_value(:document => @document, :field => 'id_number_ssi') %>
