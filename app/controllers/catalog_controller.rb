@@ -320,6 +320,7 @@ class CatalogController < ApplicationController
 
     # - billie jean isbell
     config.add_show_field 'other_location_tesim', :label => 'Location'
+    config.add_show_field 'series_relation_tesim', :label => 'Series'
 
     # - cornell coins collection
     config.add_show_field 'denomination_tesim', :label => 'Denomination'
