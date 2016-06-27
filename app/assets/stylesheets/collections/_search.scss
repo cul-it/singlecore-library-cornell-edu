@@ -55,9 +55,8 @@
 		padding: 0;
 	}
 }
-.document-title-heading {
-	font-size: 18px;
-	line-height: 1.4em;
+#documents .document .document-title-heading {
+	line-height: 1.6em;
 }
 #sortAndPerPage, .pagination-search-widgets {
 	padding-bottom: .4em;
@@ -88,7 +87,7 @@
 	margin-left: 0;
 }
 
-.gallery {
+#documents.gallery {
 	.documentHeader {
 		margin-bottom: .5em;
 	}
@@ -101,7 +100,7 @@
 		font-size: 13px;
 		margin-bottom: .25em;
 	}
-	.document-title-heading {
+	.document .document-title-heading {
 		font-size: 16px;
 		margin-top: .25em;
 	}
