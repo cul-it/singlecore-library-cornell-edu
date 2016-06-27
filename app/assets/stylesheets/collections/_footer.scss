@@ -74,7 +74,7 @@ footer, .cornell-footer {
   padding: 2em;
   margin-bottom: 2em;
   border: 1px solid $border-color;
-  border-top: 0;
+  border-top: 3px solid $border-color;
   h4 {
   	margin-top: 0;
   	font-size: 16px;
@@ -103,6 +103,7 @@ footer, .cornell-footer {
 	}
 	.survey {
 		margin-bottom: -1em;
+		margin-top: -3em;
 	}
 }
 
