@@ -35,9 +35,15 @@
 .special-collections {
 	padding-top: 1em;
 	padding-bottom: 3em;
-	// h2 {
-	// 	font-family: $font-family-cul;
-	// }
+	h2 {
+		font-family: $font-family-cul;
+	}
+}
+.basic-header {
+	margin: 1em 0;
+	h2 {
+		margin-left: -15px;
+	}
 }
 
 // Floated image
@@ -76,6 +82,31 @@
 		font-size: 16px;
 	}
 }
+
+// Default collection nav (e.g. Aerial)
+// ------------------------------------- //
+.nav-collection {
+	margin-bottom: .5em;
+	li {
+		border-left: 1px solid $border-color;
+	}
+	li:first-child {
+		border: 0;
+	}
+	li > a {
+		padding: 5px 10px;
+		color: black;
+		text-transform: uppercase;
+		font-size: 14px;
+		display: inline-block;
+	}
+	li > a:hover {
+		background: inherit;
+		color: $cornell-red;
+	}
+}
+
+
 
 // MEDIA QUERIES
 // -------------------------
