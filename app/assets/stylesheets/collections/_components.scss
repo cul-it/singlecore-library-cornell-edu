@@ -23,8 +23,8 @@
 	margin-bottom: .25em; // this helps for wrapping pills on mobile interfaces
 }
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
-  background: $brand-info;
-  border-color: $brand-info;
+  background: $portal-red;
+  border-color: $portal-red;
 }
 
 // Top link

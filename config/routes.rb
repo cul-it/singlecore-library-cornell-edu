@@ -39,6 +39,7 @@ end
 
   
   # no facets on high voltage
+  get '/collection' => 'high_voltage/pages#show', :id => 'collection/index'
   get '/collection/aerialny' => 'high_voltage/pages#show', :id => 'collection/aerialny/index'
   get '/collection/indonesianmusic' => 'high_voltage/pages#show', :id => 'collection/indonesianmusic/index'
   get '/collection/ragamala' => 'high_voltage/pages#show', :id => 'collection/ragamala/index'

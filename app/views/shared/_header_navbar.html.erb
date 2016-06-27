@@ -4,13 +4,14 @@
       <div class="col-sm-6 cul">
         <a class="cul-brand" href="http://www.library.cornell.edu">Cornell University Library</a>
         <%= link_to "Digital Collections", root_path, class: "brand" %>
-        <span class="label label-info">Beta</span>
       </div>
-      <div class="col-sm-6">
-        <div class="search-box">
-          <%= render_search_bar  %>
+      <% unless params[:f].nil?  %>
+        <div class="col-sm-6">
+          <div class="search-box">
+            <%= render_search_bar  %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

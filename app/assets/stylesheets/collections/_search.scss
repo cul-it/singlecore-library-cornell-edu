@@ -122,16 +122,16 @@
 	.remove {
 		font-size: 14px;
 	}
-	.remove:hover {
-		background: white;
-		border-color: #ccc;
-		.glyphicon {
-			color: $gray-dark;
-		}
-	}
-	.glyphicon {
-		color: $cornell-red;
-	}
+	// .remove:hover {
+	// 	background: white;
+	// 	border-color: #ccc;
+	// 	.glyphicon {
+	// 		color: $gray-dark;
+	// 	}
+	// }
+	// .glyphicon {
+	// 	color: $cornell-red;
+	// }
 }
 .constraints-container {
 	.btn {
@@ -142,12 +142,23 @@
 		}
 	}
 }
-.constraint-value {
-	font-size: 14px;
+.btn-constraint {
+	background: $portal-red;
+	border-color: $portal-red;
+	border-radius: 0;
+	color: white;
 }
-.text-muted, .appliedFilter .filterName:after, .facet-values .remove, .search_history .filterName, .search_history .filterSeparator, .appliedFilter .filterName:after, .facet-values .remove, .search_history .filterName, .search_history .filterSeparator {
-	color: $gray !important;
+.btn-constraint:hover {
+	background: $portal-red;
+	border-color: $portal-red;
+	color: white;
 }
+// .constraint-value {
+// 	font-size: 14px;
+// }
+// .text-muted, .appliedFilter .filterName:after, .facet-values .remove, .search_history .filterName, .search_history .filterSeparator, .appliedFilter .filterName:after, .facet-values .remove, .search_history .filterName, .search_history .filterSeparator {
+// 	color: $gray !important;
+// }
 
 // Display labels on view buttons
 // --------------------------------

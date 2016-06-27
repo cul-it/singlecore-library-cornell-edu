@@ -106,6 +106,21 @@
 	}
 }
 
+// Collections list
+// -------------------
+.special-collections {
+	.browse-list {
+		h2 {
+			font-family: $font-family-sans-serif;
+			font-size: 20px;
+			font-weight: 400;
+		}
+	}
+}
+.collection {
+	@include make-row();
+	margin-bottom: 3em;
+}
 
 
 // MEDIA QUERIES
