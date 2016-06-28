@@ -1,7 +1,6 @@
 footer {
 	padding: 2em 0;
-	color: $gray;
-	background: $gray-light;
+	background: $warm-gray url("white_carbon.png");
 	border-top: 1px solid $border-color;
 	p {
 		font-size: 14px;
@@ -70,11 +69,10 @@ footer, .cornell-footer {
 // ------------- //
 .survey {
   background: white;
-  margin-top: -2em;
-  padding: 2em;
   margin-bottom: 2em;
+  padding: 2em;
   border: 1px solid $border-color;
-  border-top: 3px solid $border-color;
+  border-top: 3px solid $warm-gray;
   h4 {
   	margin-top: 0;
   	font-size: 16px;
@@ -102,8 +100,7 @@ footer, .cornell-footer {
 		margin-bottom: .5em;
 	}
 	.survey {
-		margin-bottom: -1em;
-		margin-top: -3em;
+		margin-top: -2em;
 	}
 }
 
@@ -111,6 +108,9 @@ footer, .cornell-footer {
 @media (min-width: $screen-md) {
 	.btn-give {
 		margin-bottom: 0;
+	}
+	.survey {
+		margin-left: 10px;
 	}
 }
 

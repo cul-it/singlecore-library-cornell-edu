@@ -58,9 +58,13 @@
 #documents .document .document-title-heading {
 	line-height: 1.6em;
 }
-#sortAndPerPage, .pagination-search-widgets {
-	padding-bottom: .4em;
-	margin-bottom: 1.5em;
+// no longer needed?
+// #sortAndPerPage, .pagination-search-widgets {
+// 	padding-bottom: .4em;
+// 	margin-bottom: 1.5em;
+// }
+#sort-dropdown, #per_page-dropdown {
+	margin-bottom: .5em;
 }
 .document-thumbnail {
 	.download-link {
@@ -210,6 +214,9 @@
 	.search-box {
 		float: right;
 		width: 90%;
+	}
+	#sort-dropdown, #per_page-dropdown {
+		margin-bottom: 0;
 	}
 }
 // Medium devices (desktops, 992px and up)

@@ -68,7 +68,7 @@
       <a href="http://reader.library.cornell.edu/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
       <% bibid_display = render_document_show_field_value :document => @document, :field => 'bibid_tesim' %>
       <div class="reader-link" data-no-turbolink>
-        <a class="btn btn-info" href="http://reader.library.cornell.edu/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerbutton']);"><i class="fa fa-book-open"></i>Read item</a>
+        <a class="btn btn-portal" href="http://reader.library.cornell.edu/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerbutton']);"><i class="fa fa-book-open"></i>Read item</a>
       </div>
     </div>
   </div>

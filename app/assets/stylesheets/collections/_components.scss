@@ -15,6 +15,15 @@
 .btn:active, .btn:focus {
 	box-shadow: none;
 }
+.btn-portal, .btn-portal:hover, .btn-portal:active, .btn-portal:focus {
+  border-radius: 0;
+  background: $portal-red;
+  color: white;
+  font-family: $font-family-cul;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 0;
+}
 
 
 // Bootstrap overrides
