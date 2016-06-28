@@ -20,8 +20,10 @@
 .more-item-info {
 	margin-top: 2em;
 	h2 {
-		font-size: 22px;
+		font-size: 18px;
 		margin: 0 0 1em;
+		text-transform: uppercase;
+		font-family: $font-family-cul;
 	}
 }
 
@@ -49,6 +51,12 @@
 	.summary-field {
 		margin-top: .5em;
 		display: block;
+	}
+}
+
+#document {
+	h1 {
+		text-transform: none;
 	}
 }
 

@@ -21,12 +21,12 @@ a:hover {
 .home-text,
 .search-widgets {
 	a {
-		border-bottom: 1px dotted $gray;
+		border-bottom: 1px dotted #999;
 	}
 	a:hover,
 	a:active,
 	a:focus {
-		border-bottom: 1px solid $gray;
+		border-bottom: 1px solid #999;
 		text-decoration: none;
 	}
 }

@@ -73,6 +73,10 @@
 		font-size: 12px;
 	}
 }
+#sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-toggle {
+	border-radius: 0;
+	color: $gray-dark;
+}
 
 // Gallery view
 // ------------------------------ //
@@ -97,11 +101,11 @@
 	.blacklight-collection,
 	.blacklight-date,
 	.blacklight-pubdate {
-		font-size: 13px;
+		font-size: 12px;
 		margin-bottom: .25em;
 	}
 	.document .document-title-heading {
-		font-size: 16px;
+		font-size: 14px;
 		margin-top: .25em;
 	}
 }
@@ -162,10 +166,16 @@
 
 // Display labels on view buttons
 // --------------------------------
-.view-type .caption {
-	position: relative;
-	font-size: 12px;
-	text-transform: uppercase;
+.view-type {
+	.caption {
+		position: relative;
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+	.btn {
+		border-radius: 0;
+	}
+	
 }
 .view-type-group {
 	.glyphicon {

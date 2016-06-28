@@ -26,6 +26,9 @@
   background: $portal-red;
   border-color: $portal-red;
 }
+.pagination > li > a, .pagination > li > span, .pagination > li > a:hover, .pagination > li > span:hover {
+  color: $gray-dark;
+}
 
 // Top link
 // ------------- //
