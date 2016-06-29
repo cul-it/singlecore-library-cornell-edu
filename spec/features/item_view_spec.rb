@@ -13,6 +13,12 @@ RSpec.feature 'Item' do
   scenario 'visit an item view' do
     visit solr_document_path('ss:3293947')
     expect(title).to have_content 'Persuasive Maps: PJ Mode Collection'
+    expect(body).to have_content 'Date added:'
   end
 
+  scenario 'date added click to search' do 
+  	visit solr_document_path('ss:8435794')
+  	click_link '2015-02-06'
+  	expect(page).to have_content "Date added"
+  end
 end
