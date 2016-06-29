@@ -46,8 +46,9 @@
   <p class="pull-right"><a href="/collection" class="btn btn-lg btn-portal">View all collections <i class="fa fa-arrow-right"></i></a></p>
 </div>
 
-<script>
-  $(".owl-carousel").owlCarousel({
-    singleItem:true
-  });
+<script type="text/javascript">
+  jQuery(document).ready(function() { 
+  var randomImages = ['adwhite','amk','taj','artifacts']; 
+  var rndNum = Math.floor(Math.random() * randomImages.length); 
+  jQuery(".hero").css({ background: "url('assets/hero/" + randomImages[rndNum] + ".jpg') no-repeat" }); });
 </script>

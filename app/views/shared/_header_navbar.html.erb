@@ -5,8 +5,7 @@
         <a class="cul-brand" href="http://www.library.cornell.edu">Cornell University Library</a>
         <%= link_to "Digital Collections", root_path, class: "brand" %>
       </div>
-      <% unless params[:f].nil?  %>
-        <div class="col-sm-6">
+      <% if has_search_parameters? %>
           <div class="search-box">
             <%= render_search_bar  %>
           </div>
