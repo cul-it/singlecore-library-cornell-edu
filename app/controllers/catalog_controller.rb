@@ -174,6 +174,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'set_title_tesim', :label => 'Set', :show => false
     config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
+    config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
 
     # Have BL send all facet field names to Solr
     config.add_facet_fields_to_solr_request!
@@ -337,6 +338,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
     config.add_show_field 'identifier_tesim', :label => 'Identifier'
+    config.add_show_field 'date_created_on_ssi', :label => 'Date posted', :link_to_search => true
 
     # "fielded" search configuration. Used by pulldown among other places.
 
