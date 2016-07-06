@@ -49,18 +49,14 @@
 
   </head>
 
-  <% if params[:f].nil?  %>
-    <body class="<%= render_body_class %> blacklight-<%= params[:subject] %>home blacklight-<%= params[:subject] %>">
-  <% else %>
-    <body class="<%= render_body_class %> blacklight-<%= params[:subject] %>">
-  <% end %>
-
+    <body class="<%= render_body_class %>">
+  
   <%= render :partial => 'shared/cornell' %>
 
   <%= render :partial => 'shared/header_navbar' %>
   <%= render partial: 'shared/ajax_modal' %>
 
-  <% unless has_search_parameters? %>
+  <% if !has_search_parameters?  && params[:action] !=  "show" %>
     <%= render 'home' %>
   <% end %>
 
