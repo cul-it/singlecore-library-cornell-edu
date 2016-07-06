@@ -30,6 +30,7 @@ end
    #get '/catalog' => 'catalog#index'
    #get '/collection/:subject' => 'catalog#index'
   get '/contact' => 'high_voltage/pages#show', :id => 'contact'
+  get '/image-credits' => 'high_voltage/pages#show', :id => 'image_credits'
 
   # redirect older aerial and ragamala urls
   get '/ragamala', to: redirect('/collection/ragamala')
