@@ -19,7 +19,8 @@ a:hover {
 .page_links,
 .document,
 .home-text,
-.search-widgets {
+.search-widgets,
+.blacklight-pages-show .special-collections {
 	a {
 		border-bottom: 1px dotted #999;
 	}
@@ -31,7 +32,8 @@ a:hover {
 	}
 }
 // remove underlines
-.document-thumbnail {
+.document-thumbnail,
+.blacklight-pages-show .special-collections .basic-header {
 	a, a:hover {
 		border: 0;
 	}
