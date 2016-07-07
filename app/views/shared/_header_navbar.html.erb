@@ -5,13 +5,11 @@
         <a class="cul-brand" href="http://www.library.cornell.edu">Cornell University Library</a>
         <%= link_to "Digital Collections", root_path, class: "brand" %>
       </div>
-      <% unless !has_search_parameters?  %>
         <div class="col-sm-6">
           <div class="search-box">
-            <%= render_search_bar  %>
+            <%= render 'catalog/search_form'  %>
           </div>
         </div>
-      <% end %>
     </div>
   </div>
 </div>
