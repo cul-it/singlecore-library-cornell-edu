@@ -2,21 +2,42 @@
 // ------------------- //
 
 .cornell-identity {
-	// .container {
-	// 	background: $cornell-black;
-	// 	padding: 0;
-	// }
 	button {
 		i {
 			color: white;
 		}
 	}
 	.util-links {
-		padding-right: 0;
+		padding: 0;
+	}
+	.navbar-toggle {
+		background: $warm-gray;
+		margin: 0;
+		padding: 9px 12px;
+		border-radius: 0;
+		i {
+			color: $portal-red;
+		}
+	}
+	.navbar-collapse {
+		width: 100%;
+		padding: 0;
+	}
+	.navbar-nav {
+		border-bottom: 1px solid $gray-dark;
+		padding-left: 15px;
+		padding-right: 15px;
 	}
 }
 .cul-print-logo {
 	display: none;
+}
+.util-links {
+	.nav > li > a {
+		background: $gray-dark;
+		color: white;
+		font-size: 14px;
+	}
 }
 
 // Library brand
@@ -55,25 +76,6 @@
 		margin-left: .5em;
 	}
 }
-
-// Mobile util links
-// ------------------- //
-.mobile-util-links {
-	float: right;
-	.btn {
-		float: left;
-		background: $warm-gray;
-		// color: white;
-		border-radius: 0;
-		display: block;
-		padding: 12px 15px;
-		margin-left: 1px;
-	}
-	i {
-		color: $portal-red;
-	}
-}
-
 
 // Navbar
 // -------------------------
@@ -124,6 +126,9 @@
 		font-size: 28px;
 	}
 	.util-links {
+		#navbar {
+			float: right;
+		}
 		.nav > li > a {
 			padding: 10px 15px;
 			background: $warm-gray;
@@ -134,6 +139,21 @@
 		.nav > li > a:active,
 		.nav > li > a:focus {
 			background: $warm-gray;
+		}
+		.nav > li.browse-tab > a,
+		.nav > li.browse-tab > a:hover,
+		.nav > li.browse-tab > a:active,
+		.nav > li.browse-tab > a:focus {
+			background: $gray-dark;
+			color: white !important;
+		}
+	}
+	.cornell-identity {
+		.navbar-collapse {
+			width: auto;
+		}
+		.navbar-nav {
+			border-bottom: 0;
 		}
 	}
 }

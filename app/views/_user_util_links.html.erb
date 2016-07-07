@@ -1,9 +1,17 @@
-<ul class="nav navbar-nav hidden-xs">
-  <%= render_nav_actions do |config, action|%>
-    <li><%= action %></li>
-  <% end %>
-</ul>
-<div class="mobile-util-links visible-xs">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	<span class="sr-only">Menu</span>
+	<i class="fa fa-bars"></i>
+</button>
+<div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+	  <%= render_nav_actions do |config, action|%>
+	    <li><%= action %></li>
+	  <% end %>
+	  	<li class="browse-tab"><a href="/collections">Browse collections</a></li>
+	</ul>
+</div><!--/.nav-collapse -->
+
+<!-- <div class="mobile-util-links visible-xs">
 	<a href="/bookmarks" class="btn"><i class="fa fa-bookmark"><span class="sr-only">Bookmarks</span></i></a>
 	<a href="/search_history" class="btn"><i class="fa fa-history"><span class="sr-only">Search history</span></i></a>
-</div>
+</div> -->
