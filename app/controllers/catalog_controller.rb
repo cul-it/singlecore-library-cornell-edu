@@ -73,6 +73,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['John Reps Collection - Slides'] } }
             redirect_to search_catalog_path(facet_params)
           end  
+          if params[:subject] == "loewentheil" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Loewentheil Collection of African-American Photographs'] } }
+            redirect_to search_catalog_path(facet_params)
+          end  
           if params[:subject] == "persuasivemaps" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
             redirect_to search_catalog_path(facet_params)
@@ -81,6 +85,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Efraim Racker Art Albums'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "squeeze" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Cornell Squeeze Collection'] } }
+            redirect_to search_catalog_path(facet_params)
+          end   
           if params[:subject] == "tarr" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Historic Glacial Images of Alaska and Greenland'] } }
             redirect_to search_catalog_path(facet_params)
@@ -332,6 +340,15 @@ class CatalogController < ApplicationController
     config.add_show_field 'obverse_tesim', :label => 'Obverse'
     config.add_show_field 'reverse_tesim', :label => 'Reverse'
     config.add_show_field 'metal_abbrev_tesim', :label => 'Metal Abbrev.'
+
+    # - loewentheil african american photographs
+    config.add_show_field 'box_folder_tesim', :label => 'Box/Folder Number'
+
+    # - cornell squeeze collection
+    config.add_show_field 'column_no_tesim', :label => 'Column Number'
+    config.add_show_field 'first_line_no_tesim', :label => 'First Line Number'
+    config.add_show_field 'last_line_no_tesim', :label => 'Last Line Number'
+    config.add_show_field 'lines_tesim', :label => 'Lines'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
