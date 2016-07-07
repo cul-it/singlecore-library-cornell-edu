@@ -56,7 +56,7 @@
   <%= render :partial => 'shared/header_navbar' %>
   <%= render partial: 'shared/ajax_modal' %>
 
-  <% if !has_search_parameters?  && params[:action] !=  "show" %>
+  <% if !has_search_parameters?  && params[:action] !=  "show" && !current_page?('/search_history') && !current_page?('/bookmarks')%>
     <%= render 'catalog/home' %>
   <% end %>
 
