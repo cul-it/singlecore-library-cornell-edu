@@ -228,6 +228,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
     config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
     config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
+    config.add_show_field 'lang_tesim', :label => 'Language'
 
     #collection fields
     #- ragamala
