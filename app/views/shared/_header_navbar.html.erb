@@ -1,15 +1,17 @@
 <div id="header-navbar" class="navbar" role="navigation">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 cul">
-        <a class="cul-brand" href="http://www.library.cornell.edu">Cornell University Library</a>
-        <%= link_to "Digital Collections", root_path, class: "brand" %>
-      </div>
-        <div class="col-sm-6">
-          <div class="search-box">
-            <%= render 'catalog/search_form'  %>
-          </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 cul">
+                <a class="cul-brand" href="http://www.library.cornell.edu">Cornell University Library</a>
+                <%= link_to "Digital Collections", root_path, class: "brand" %>
+            </div>
+            <div class="col-sm-6">
+                <% unless !has_search_parameters? && current_page?('/') %>
+                  <div class="search-box">
+                      <%= render 'catalog/search_form'  %>
+                  </div>
+                <% end %>
+            </div>
         </div>
     </div>
-  </div>
 </div>
