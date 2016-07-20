@@ -12,19 +12,19 @@ class CatalogController < ApplicationController
           if params[:subject] == "adwhite" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Andrew Dickson White Architectural Photographs Collection'] } }
             redirect_to search_catalog_path(facet_params)
-          end 
+          end
           if params[:subject] == "alisonmasonkingsbury" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Alison Mason Kingsbury: Life and Art'] } }
             redirect_to search_catalog_path(facet_params)
-          end 
+          end
           if params[:subject] == "artifactsandart" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Campus Artifacts, Art & Memorabilia'] } }
             redirect_to search_catalog_path(facet_params)
-          end 
+          end
           if params[:subject] == "bastides" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['John Reps Collection - Bastides'] } }
             redirect_to search_catalog_path(facet_params)
-          end 
+          end
           if params[:subject] == "beyondthetaj" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia'] } }
             redirect_to search_catalog_path(facet_params)
@@ -40,7 +40,7 @@ class CatalogController < ApplicationController
           if params[:subject] == "coins" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Cornell Coins Collection'] } }
             redirect_to search_catalog_path(facet_params)
-          end  
+          end
           if params[:subject] == "efraimracker" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Efraim Racker Art Albums'] } }
             redirect_to search_catalog_path(facet_params)
@@ -64,23 +64,23 @@ class CatalogController < ApplicationController
           if params[:subject] == "isbellandes" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Billie Jean Isbell Andean Collection'] } }
             redirect_to search_catalog_path(facet_params)
-          end 
+          end
           if params[:subject] == "joeconzo" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Joe Conzo Jr. Archive'] } }
             redirect_to search_catalog_path(facet_params)
-          end  
+          end
           if params[:subject] == "johnclairmiller" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['John Clair Miller'] } }
             redirect_to search_catalog_path(facet_params)
-          end  
+          end
           if params[:subject] == "johnreps" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['John Reps Collection - Slides'] } }
             redirect_to search_catalog_path(facet_params)
-          end  
+          end
           if params[:subject] == "loewentheil" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Loewentheil Collection of African-American Photographs'] } }
             redirect_to search_catalog_path(facet_params)
-          end  
+          end
           if params[:subject] == "persuasivemaps" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
             redirect_to search_catalog_path(facet_params)
@@ -88,11 +88,11 @@ class CatalogController < ApplicationController
           if params[:subject] == "squeeze" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Cornell Squeeze Collection'] } }
             redirect_to search_catalog_path(facet_params)
-          end   
+          end
           if params[:subject] == "tarr" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Historic Glacial Images of Alaska and Greenland'] } }
             redirect_to search_catalog_path(facet_params)
-          end     
+          end
           # if params[:subject] == "ragamala" && params[:f].nil?
           #   facet_params = { f: { collection_tesim: ['Ragamala Paintings'] } }
           #   redirect_to search_catalog_path(facet_params) + "&sbjct=ragamala"
@@ -160,8 +160,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'latest_date_isi', :label => 'Date Range',  range: {
                          num_segments: 6,
                          segments: true,
-                         maxlength: 6    
-                       } 
+                         maxlength: 6
+                       }
     config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
@@ -199,7 +199,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
     # these index fields are from the dlxs collections
     #config.add_index_field 'book_id_ts', :label => 'book id'
-    
+
     config.add_index_field 'publisher_tesim', :label => 'Publisher'
     config.add_index_field 'pubplace_tesim', :label => 'Publication Place'
     config.add_index_field 'pubdate_tesim', :label => 'Date'

@@ -1,2 +1,0 @@
-class RepsBastidesController < ApplicationController
-end
