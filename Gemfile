@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
+ruby "2.2.5"
 
 gem "blacklight"
 gem 'appsignal'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.5.1'
 gem "dotenv-rails"
 gem "dotenv-deployment"
 gem 'httpclient'
