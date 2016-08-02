@@ -100,29 +100,11 @@ class CatalogController < ApplicationController
           #   facet_params = { f: { collection_tesim: ['New York State Aerial Photographs'] } }
           #   redirect_to search_catalog_path(facet_params) + "&sbjct=aerialny"
           # end
-            if ENV["COLLECTIONS"] == "development"
-              blacklight_config.default_solr_params = {:fq => '-status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'}
-            elsif ENV["COLLECTIONS"] == "production"
-                blacklight_config.default_solr_params = {:fq => '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
-                    AND +(collection_tesim:"New York State Aerial Photographs"
-                    OR collection_tesim:"Huntington Free Library Native American Collection"
-                    OR collection_tesim:"John Reps Collection - Bastides"
-                    OR collection_tesim:"Persuasive Maps: PJ Mode Collection"
-                    OR collection_tesim:"Ragamala Paintings"
-                    OR collection_tesim:"Alfred Montalvo Bolivian Digital Pamphlets Collection"
-                    OR collection_tesim:"Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia"
-                    OR collection_tesim:"Campus Artifacts, Art & Memorabilia"
-                    OR collection_tesim:"Hip Hop Party and Event Flyers"
-                    OR collection_tesim:"Andrew Dickson White Architectural Photographs Collection"
-                    OR collection_tesim:"Historic Glacial Images of Alaska and Greenland"
-                    OR collection_tesim:"Mysteries at Eleusis: Images of Inscriptions"
-                    OR collection_tesim:"Icelandic and Faroese Photographs of Frederick W.W. Howell"
-                    OR collection_tesim:"Alison Mason Kingsbury: Life and Art"
-                    OR collection_tesim:"John Reps Collection - Slides"
-                    OR collection_tesim:"John Clair Miller"
-                    OR collection_tesim:"Cornell Coins Collection"
-                    )'}
-            end
+
+            @fq = set_fq(ENV["COLLECTIONS"])
+
+            blacklight_config.default_solr_params = {:fq => @fq }
+
             end
 
       configure_blacklight do |config|

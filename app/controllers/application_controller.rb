@@ -8,15 +8,33 @@ class ApplicationController < ActionController::Base
   include Blacklight::Controller
   layout 'blacklight'
 
-  def bastides
-  base_solr = Blacklight.solr_config[:url].gsub(/\/solr\/.*/,'/solr')
-  dbclnt = HTTPClient.new
-  @bastidesResponse = dbclnt.get_content("http://jrc88.solr.library.cornell.edu/solr/digitalcollections/select?q=*&fq=collection_tesim%3A%22John+Reps+Collection+-+Bastides%22&rows=0&df=location_facet_tesim&wt=json&indent=true&facet=true&facet.limit=1000&facet.query=*&facet.field=location_facet_tesim&facet.sort=index"  )
-    if !@bastidesResponse.nil?
-        @bastides = JSON.parse(@bastidesResponse)
-        @bastides = @bastides['facet_counts']['facet_fields']['location_facet_tesim']
+  def set_fq(environment)
+    if environment == 'development'
+      fq = '-status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'
+
+    elsif environment == 'production'
+      fq = '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
+      AND +(collection_tesim:"New York State Aerial Photographs"
+      OR collection_tesim:"Huntington Free Library Native American Collection"
+      OR collection_tesim:"John Reps Collection - Bastides"
+      OR collection_tesim:"Persuasive Maps: PJ Mode Collection"
+      OR collection_tesim:"Ragamala Paintings"
+      OR collection_tesim:"Alfred Montalvo Bolivian Digital Pamphlets Collection"
+      OR collection_tesim:"Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia"
+      OR collection_tesim:"Campus Artifacts, Art & Memorabilia"
+      OR collection_tesim:"Hip Hop Party and Event Flyers"
+      OR collection_tesim:"Andrew Dickson White Architectural Photographs Collection"
+      OR collection_tesim:"Historic Glacial Images of Alaska and Greenland"
+      OR collection_tesim:"Mysteries at Eleusis: Images of Inscriptions"
+      OR collection_tesim:"Icelandic and Faroese Photographs of Frederick W.W. Howell"
+      OR collection_tesim:"Alison Mason Kingsbury: Life and Art"
+      OR collection_tesim:"John Reps Collection - Slides"
+      OR collection_tesim:"John Clair Miller"
+      OR collection_tesim:"Cornell Coins Collection"
+      )'
     end
   end
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     concerns :range_searchable
 
   end
-  
+
 resources :solr_documents, except: [:index], path: '/catalog', controller: 'catalog' do
       concerns :exportable
 end
@@ -30,7 +30,7 @@ end
    #get '/catalog' => 'catalog#index'
    #get '/collection/:subject' => 'catalog#index'
 
-   
+
   get '/contact' => 'high_voltage/pages#show', :id => 'contact'
   get '/image-credits' => 'high_voltage/pages#show', :id => 'image_credits'
 
@@ -61,9 +61,10 @@ end
   get '/collection/ragamala', to: redirect('/collections/ragamala')
   get '/collection/squeeze', to: redirect('/collections/squeeze')
   get '/collection/tarr', to: redirect('/collections/tarr')
-  
+
   # no facets on high voltage
-  get '/collections' => 'high_voltage/pages#show', :id => 'collections/index'
+
+  get '/collections' => 'catalog#facet', :id => 'collection_tesim'
   get '/collections/aerialny' => 'high_voltage/pages#show', :id => 'collections/aerialny/index'
   get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
   get '/collections/ragamala' => 'high_voltage/pages#show', :id => 'collections/ragamala/index'

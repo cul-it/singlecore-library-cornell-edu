@@ -50,13 +50,13 @@
   </head>
 
     <body class="<%= render_body_class %>">
-  
+
   <%= render :partial => 'shared/cornell' %>
 
   <%= render :partial => 'shared/header_navbar' %>
   <%= render partial: 'shared/ajax_modal' %>
 
-  <% if !has_search_parameters?  && params[:action] !=  "show" && !current_page?('/search_history') && !current_page?('/bookmarks')%>
+  <% if !has_search_parameters?  && params[:action] !=  "show" && params[:action] !="facet" && !current_page?('/search_history') && !current_page?('/bookmarks')%>
     <%= render 'catalog/home' %>
   <% end %>
 
