@@ -108,23 +108,22 @@
 
 // Collections list
 // -------------------
-.special-collections {
-	.browse-list {
-		h2 {
-			font-family: $font-family-sans-serif;
-			font-size: 20px;
-			font-weight: 400;
-		}
-		img {
-			margin-bottom: 1em;
-		}
-	}
-}
-.collection {
-	@include make-row();
-	margin-bottom: 2em;
-}
-
+// .special-collections {
+// 	.browse-list {
+// 		h2 {
+// 			font-family: $font-family-sans-serif;
+// 			font-size: 20px;
+// 			font-weight: 400;
+// 		}
+// 		img {
+// 			margin-bottom: 1em;
+// 		}
+// 	}
+// }
+// .collection {
+// 	@include make-row();
+// 	margin-bottom: 2em;
+// }
 
 // MEDIA QUERIES
 // -------------------------
