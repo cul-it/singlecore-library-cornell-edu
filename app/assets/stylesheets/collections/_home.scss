@@ -101,6 +101,13 @@
 		margin-top: .5em;
 		a {
 			color: $gray-dark;
+			border-bottom: 1px dotted #999;
+		}
+		a:hover,
+		a:active,
+		a:focus {
+			border-bottom: 1px solid #999;
+			text-decoration: none;
 		}
 	}
 }
@@ -130,7 +137,7 @@
 		margin-top: 0;
 	}
 	.hero {
-		height: 475px;
+		height: 500px;
 	}
 }
 // Large devices (desktops, 1200px and up)
