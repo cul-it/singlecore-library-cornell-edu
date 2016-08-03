@@ -15,6 +15,12 @@
 <% end %>
 
 <div class="modal-body">
+  <% if !request.xhr? %>
+    <h3>Collections</h3>
+    <p>Below is a list of collections available on this site.
+      Visit our <a href="https://newcatalog.library.cornell.edu/digitalcollections">library catalog</a>
+      for a complete list of digital collections.</p>
+  <% end %>
   <div class="facet_extended_list">
   <%= render_facet_limit(@display_facet, layout: false) %>
   </div>
