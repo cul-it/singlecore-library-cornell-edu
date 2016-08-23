@@ -11,12 +11,12 @@
 		padding: 0;
 	}
 	.navbar-toggle {
-		background: $warm-gray;
+		background: $gray-dark;
 		margin: 0;
 		padding: 9px 12px;
 		border-radius: 0;
 		i {
-			color: $portal-red;
+			color: white;
 		}
 	}
 	.navbar-collapse {
@@ -130,7 +130,7 @@
 			float: right;
 		}
 		.nav > li > a {
-			padding: 10px 15px;
+			padding: 10px 10px !important;
 			background: $warm-gray;
 			margin-left: 5px;
 			color: $gray-dark !important;
@@ -162,6 +162,11 @@
 @media (min-width: $screen-md) {
 	.brand {
 		font-size: 30px;
+	}
+	.util-links {
+		.nav > li > a {
+			padding: 10px 15px !important;
+		}
 	}
 }
 // Large devices (desktops, 1200px and up)

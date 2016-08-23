@@ -125,6 +125,9 @@
 	.home-browse {
 		font-size: 20px;
 		margin-top: .25em;
+		a {
+			font-size: 95%;
+		}
 	}
 	.hero {
 		height: 450px;
@@ -135,6 +138,9 @@
 	.home-browse {
 		font-size: 26px;
 		margin-top: 0;
+		a {
+			font-size: 100%;
+		}
 	}
 	.hero {
 		height: 500px;
