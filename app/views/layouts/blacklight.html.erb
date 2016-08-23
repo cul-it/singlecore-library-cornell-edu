@@ -49,16 +49,17 @@
 
   </head>
 
-  <% if current_page?('/ragamala') && params[:f].nil?  %>
-    <body class="<%= render_body_class %> blacklight-<%= params[:subject] %>-home blacklight-<%= params[:subject] %>">
-  <% else %>
-    <body class="<%= render_body_class %> blacklight-<%= params[:subject] %>">
-  <% end %>
+    <body class="<%= render_body_class %>">
 
   <%= render :partial => 'shared/cornell' %>
 
   <%= render :partial => 'shared/header_navbar' %>
   <%= render partial: 'shared/ajax_modal' %>
+
+  <% if !has_search_parameters?  && params[:action] !=  "show" && params[:action] !="facet" && !current_page?('/search_history') && !current_page?('/bookmarks')%>
+    <%= render 'catalog/home' %>
+  <% end %>
+
 
   <div id="main-container">
 

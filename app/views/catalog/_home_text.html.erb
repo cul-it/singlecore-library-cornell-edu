@@ -1,36 +1,55 @@
-<div class="home-text">
-  <div class="well">
-    <h1><%= t('blacklight.welcome') %></h1>
-    <p>We're transitioning to a new, more integrated search platform for our digital collections. In the meantime you can search this site, or <a href="http://newcatalog.library.cornell.edu/digitalcollections">view a complete list of our digital collections</a>.</p>
-    <p>Your feedback is valuable to us as we continue to develop this resource. Please <a href="/contact">contact us</a> and let us know what you think of this site, or <a href="https://cornell.qualtrics.com/SE/?SID=SV_6xJYx0iSrV5pDE1" target="_blank">take a brief survey</a>.</p>
-  </div>
-  <h2>Recently added</h2>
-  <div class="featured-collections">
+<div class="hero">
+  <div class="container home-text">
+    <div class="home-search">
+      <div class="row">
+        <div class="col-sm-8">
+          <%= render_search_bar  %>
+        </div>
+        <div class="col-sm-4 home-browse">
+          or <a href="/collections">browse collections <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
     <div class="row">
-      <div class="featured">
-        <a href="/collection/hiphopflyers" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'FlyersThumbnail']);">
-          <%= image_tag "sets/hiphopflyers/thumb.jpg" , alt: "Hip Hop Party and Event Flyers", class: "img-responsive img-thumbnail" %>
-        </a>
-        <h3><a href="/collection/hiphopflyers" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'FlyersLink']);">Hip Hop Party and Event Flyers</a></h3>
-      </div>
-      <div class="featured">
-        <a href="/?f%5Bcollection_tesim%5D%5B%5D=Huntington+Free+Library+Native+American+Collection" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'HFLThumbnail']);">
-          <%= image_tag "sets/huntington/thumb.jpg" , alt: "Huntington Free Library Native American Collection", class: "img-responsive img-thumbnail" %>
-        </a>
-        <h3><a href="/?f%5Bcollection_tesim%5D%5B%5D=Huntington+Free+Library+Native+American+Collection" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'HFLLink']);">Huntington Free Library Native American Collection</a></h3>
-      </div>
-      <div class="featured">
-        <a href="/collection/bastides" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'BastidesThumbnail']);">
-          <%= image_tag "sets/reps-bastides/thumb.jpg" , alt: "John Reps Collection - Bastides", class: "img-responsive img-thumbnail" %>
-        </a>
-        <h3><a href="/collection/bastides" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'BastidesLink']);">John Reps Collection - Bastides</a></h3>
-      </div>
-      <div class="featured">
-        <a href="/collection/persuasivemaps" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'PersuasiveMapsThumbnail']);">
-          <%= image_tag "sets/persuasivemaps/thumb.jpg" , alt: "Persuasive Maps: PJ Mode Collection", class: "img-responsive img-thumbnail" %>
-        </a>
-        <h3><a href="/collection/persuasivemaps" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'PersuasiveMapsLink']);">Persuasive Maps: PJ Mode Collection</a></h3>
+      <div class="col-sm-6 col-sm-offset-6 col-md-4 col-md-offset-8">
+        <div class="well">
+          <h1><%= t('blacklight.welcome') %></h1>
+          <p>We're transitioning to a new, more integrated search platform for our digital collections. In the meantime you can search this site, or <a href="http://newcatalog.library.cornell.edu/digitalcollections">view a complete list of our digital collections</a>.</p>
+          <p>Your feedback is valuable to us as we continue to develop this resource. Please <a href="/contact">contact us</a> and let us know what you think of this site, or <a href="https://cornell.qualtrics.com/SE/?SID=SV_6xJYx0iSrV5pDE1" target="_blank">take a brief survey</a>.</p>
+        </div>
+        <a class="image-credits" href="/image-credits">Image credits</a>
       </div>
     </div>
   </div>
 </div>
+<div class="container featured-collections">
+  <h2>Recently added</h2>
+  <div class="row">
+    <div class="featured">
+      <a href="/?f%5Bcollection_tesim%5D%5B%5D=Huntington+Free+Library+Native+American+Collection" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'HFLThumbnail']);">
+        <%= image_tag "thumbs/6790930.jpg" , alt: "Huntington Free Library Native American Collection", class: "img-responsive" %>
+      </a>
+      <h3><a href="/?f%5Bcollection_tesim%5D%5B%5D=Huntington+Free+Library+Native+American+Collection" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'HFLLink']);">Huntington Free Library Native American Collection</a></h3>
+    </div>
+    <div class="featured">
+      <a href="/collections/bastides" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'BastidesThumbnail']);">
+        <%= image_tag "thumbs/9225346.jpg" , alt: "John Reps Collection - Bastides", class: "img-responsive" %>
+      </a>
+      <h3><a href="/collections/bastides" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'BastidesLink']);">John Reps Collection - Bastides</a></h3>
+    </div>
+    <div class="featured">
+      <a href="/collections/persuasivemaps" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'PersuasiveMapsThumbnail']);">
+        <%= image_tag "thumbs/8890000.jpg" , alt: "Persuasive Maps: PJ Mode Collection", class: "img-responsive" %>
+      </a>
+      <h3><a href="/collections/persuasivemaps" onclick="javascript:_paq.push(['trackEvent', 'FeaturedCollection', 'PersuasiveMapsLink']);">Persuasive Maps: PJ Mode Collection</a></h3>
+    </div>
+  </div>
+  <p class="pull-right"><a href="/collections" class="btn btn-lg btn-portal">View all collections <i class="fa fa-arrow-right"></i></a></p>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function() { 
+  var randomImages = ['adwhite','amk','taj','artifacts','coins', 'tarr','howell','pj']; 
+  var rndNum = Math.floor(Math.random() * randomImages.length); 
+  jQuery(".hero").css({ background: "url('assets/hero/" + randomImages[rndNum] + ".jpg') no-repeat" }); });
+</script>

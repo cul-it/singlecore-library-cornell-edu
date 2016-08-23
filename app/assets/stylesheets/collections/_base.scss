@@ -19,19 +19,22 @@ a:hover {
 .page_links,
 .document,
 .home-text,
-.search-widgets {
+.search-widgets,
+.blacklight-pages-show .special-collections,
+.blacklight-catalog-facet #main-container {
 	a {
-		border-bottom: 1px dotted $gray;
+		border-bottom: 1px dotted #999;
 	}
 	a:hover,
 	a:active,
 	a:focus {
-		border-bottom: 1px solid $gray;
+		border-bottom: 1px solid #999;
 		text-decoration: none;
 	}
 }
 // remove underlines
-.document-thumbnail {
+.document-thumbnail,
+.blacklight-pages-show .special-collections .basic-header {
 	a, a:hover {
 		border: 0;
 	}
@@ -71,9 +74,11 @@ h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
 	margin-bottom: .75em;
 }
 h1 {
-	margin-top: 0;
+	margin: 1em 0 1.5em 0;
 	font-size: 30px;
 	font-weight: 300;
+	font-family: $font-family-cul;
+	text-transform: uppercase;
 	// color: $orange;
 }
 h2 {

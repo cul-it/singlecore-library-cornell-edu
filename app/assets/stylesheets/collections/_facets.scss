@@ -2,11 +2,11 @@
 // --------------- //
 .panel-group .panel {
 	border-radius: 0;
-
 }
 
 .panel-default > .panel-heading {
-	background: inherit;
+	background: white;
+	border-radius: 0;
 }
 .panel {
 	box-shadow: none;
@@ -55,6 +55,33 @@
 	-webkit-hyphens: none;
 	word-break: normal;
 	hyphens: none;
+}
+
+
+// Facet-style collection list
+// ------------------------------
+.blacklight-catalog-facet {
+	.facet-values {
+		li {
+			font-size: 16px;
+			display: block;
+			margin-bottom: 1em;
+		}
+		.facet-label {
+			display: inline;
+			padding-left: 0;
+		}
+		.facet-count {
+			background: $light-tan;
+			padding: .2em .5em;
+			border-radius: 3px;
+			font-size: 12px;
+			display: inline;
+		}
+	}
+	.facet_extended_list {
+		margin-top: 2em;
+	}
 }
 
 // Override color of select facets

@@ -1,32 +1,119 @@
 .home-text {
-	margin-top: 1em;
-	h2 {
-		padding-bottom: .1em;
-		border-bottom: 1px solid $border-color;
-		margin-top: 1em;
+	.well {
+		background: rgba(0, 0, 0, .85);
+		color: white;
+		border-color: black;
+		margin-bottom: 0;
+		h1 {
+			font-family: $font-family-cul;
+			font-size: 24px;
+			margin: 1em 0 .5em 0;
+		}
+		a {
+			color: white;
+			border-color: white;
+		}
+	}
+	.image-credits, .image-credits:hover, .image-credits:active, .image-credits:focus {
+		border: 0;
+		color: white;
+	}
+}
+.image-credits {
+	float: right;
+	padding: 5px 10px;
+	background: rgba(0,0,0,.7);
+	border: 0;
+	font-size: 12px;
+}
+.image-credits:hover {
+	background: rgba(0,0,0,1);
+}
+// special look for search form when on home page
+.home-search {
+	background: $portal-red;
+	opacity: .9;
+	padding: 1em;
+	.search-query-form {
+		.search_q {
+			width: 100%;
+			height: 44px;
+			padding: 10px;
+			font-size: 18px;
+		}
+		.search_field {
+			height: 44px;
+			font-size: 18px;
+			font-weight: 300;
+		}
+	}
+	.btn-search .glyphicon {
+		color: white;
+		font-size: 30px;
+	}
+}
+
+.home-browse {
+	font-size: 24px;
+	color: white;
+	font-weight: 300;
+	a {
+		color: white;
+		text-decoration: underline;
+		border: 0;
+		i {
+			margin-left: .5em;
+		}
+	}
+	a:hover {
+		border: 0;
+		text-decoration: underline;
 	}
 }
 
 // Home page hero
 // ------------------ //
-.hero-home {
-	text-align: center;
+.hero {
+	background: url("/assets/hero/1.jpg") no-repeat 50% 50%;
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
+	background-position: 50% 50% !important;
 }
 
 // Featured collections
 // ----------------------- //
 
 .featured-collections {
+	margin-top: 2em;
+	h2 {
+		padding-bottom: .25em;
+		border-bottom: 1px solid $border-color;
+		margin-top: 0;
+		font-family: $font-family-cul;
+		text-transform: uppercase;
+		font-size: 28px;
+	}
 	h3 {
-		font-size: 16px;
-		line-height: 1.5em;
+		font-size: 18px;
+		line-height: 1.4em;
 		margin-top: .5em;
-		text-align: center;
+		a {
+			color: $gray-dark;
+			border-bottom: 1px dotted #999;
+		}
+		a:hover,
+		a:active,
+		a:focus {
+			border-bottom: 1px solid #999;
+			text-decoration: none;
+		}
 	}
 }
 .featured {
-	@include make-xs-column(6);
-	@include make-sm-column(3);
+	@include make-xs-column(12);
+	@include make-sm-column(4);
 	margin-bottom: 1.5em;
 }
 
@@ -35,8 +122,29 @@
 
 // Small devices (tablets, 768px and up)
 @media (min-width: $screen-sm) { 
-	.home-text {
-		margin-top: 2.75em;
+	.home-browse {
+		font-size: 20px;
+		margin-top: .25em;
+	}
+	.hero {
+		height: 450px;
 	}
 }
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md) {
+	.home-browse {
+		font-size: 26px;
+		margin-top: 0;
+	}
+	.hero {
+		height: 500px;
+	}
+}
+// Large devices (desktops, 1200px and up)
+@media (min-width: $screen-lg) {
+	.hero {
+		height: 450px;
+	}
+}
+
 

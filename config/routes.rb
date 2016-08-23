@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     concerns :range_searchable
 
   end
-  
+
 resources :solr_documents, except: [:index], path: '/catalog', controller: 'catalog' do
       concerns :exportable
 end
@@ -29,22 +29,47 @@ end
    # collections
    #get '/catalog' => 'catalog#index'
    #get '/collection/:subject' => 'catalog#index'
+
+
   get '/contact' => 'high_voltage/pages#show', :id => 'contact'
+  get '/image-credits' => 'high_voltage/pages#show', :id => 'image_credits'
 
-  # redirect older aerial and ragamala urls
-  get '/ragamala', to: redirect('/collection/ragamala')
-  get '/aerialny', to: redirect('/collection/aerialny')
-  get '/huntingtonfreelibrary', to: redirect('/collection/huntingtonfreelibrary')
-  get '/bolivianpamphlets', to: redirect('/collection/bolivianpamphlets')
+  # redirect older urls
+  get '/ragamala', to: redirect('/collections/ragamala')
+  get '/aerialny', to: redirect('/collections/aerialny')
+  get '/huntingtonfreelibrary', to: redirect('/collections/huntingtonfreelibrary')
+  get '/bolivianpamphlets', to: redirect('/collections/bolivianpamphlets')
+  get '/collection/adwhite', to: redirect('/collections/adwhite')
+  get '/collection/aerialny', to: redirect('/collections/aerialny')
+  get '/collection/alisonmasonkingsbury', to: redirect('/collections/alisonmasonkingsbury')
+  get '/collection/artifactsandart', to: redirect('/collections/artifactsandart')
+  get '/collection/bastides', to: redirect('/collections/bastides')
+  get '/collection/beyondthetaj', to: redirect('/collections/beyondthetaj')
+  get '/collection/bolivianpamphlets', to: redirect('/collections/bolivianpamphlets')
+  get '/collection/cast', to: redirect('/collections/cast')
+  get '/collection/coins', to: redirect('/collections/coins')
+  get '/collection/eleusis', to: redirect('/collections/eleusis')
+  get '/collection/hiphopflyers', to: redirect('/collections/hiphopflyers')
+  get '/collection/huntingtonfreelibrary', to: redirect('/collections/huntingtonfreelibrary')
+  get '/collection/isbellandes', to: redirect('/collections/isbellandes')
+  get '/collection/joeconzo', to: redirect('/collections/joeconzo')
+  get '/collection/johnclairmiller', to: redirect('/collections/johnclairmiller')
+  get '/collection/johnreps', to: redirect('/collections/johnreps')
+  get '/collection/loewentheil', to: redirect('/collections/loewentheil')
+  get '/collection/persuasivemaps', to: redirect('/collections/persuasivemaps')
+  get '/collection/racker', to: redirect('/collections/efraimracker')
+  get '/collection/ragamala', to: redirect('/collections/ragamala')
+  get '/collection/squeeze', to: redirect('/collections/squeeze')
+  get '/collection/tarr', to: redirect('/collections/tarr')
 
-  
   # no facets on high voltage
-  get '/collection/aerialny' => 'high_voltage/pages#show', :id => 'collection/aerialny/index'
-  get '/collection/indonesianmusic' => 'high_voltage/pages#show', :id => 'collection/indonesianmusic/index'
-  get '/collection/ragamala' => 'high_voltage/pages#show', :id => 'collection/ragamala/index'
-  get '/collection/:subject' => 'catalog#index'
 
-
+  get '/collections' => 'catalog#facet', :id => 'collection_tesim'
+  get '/collections/aerialny' => 'high_voltage/pages#show', :id => 'collections/aerialny/index'
+  get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
+  get '/collections/ragamala' => 'high_voltage/pages#show', :id => 'collections/ragamala/index'
+  get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
+  get '/collections/:subject' => 'catalog#index'
 
 
 

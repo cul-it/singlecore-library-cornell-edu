@@ -15,6 +15,15 @@
 .btn:active, .btn:focus {
 	box-shadow: none;
 }
+.btn-portal, .btn-portal:hover, .btn-portal:active, .btn-portal:focus {
+  border-radius: 0;
+  background: $portal-red;
+  color: white;
+  font-family: $font-family-cul;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 0;
+}
 
 
 // Bootstrap overrides
@@ -23,8 +32,11 @@
 	margin-bottom: .25em; // this helps for wrapping pills on mobile interfaces
 }
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
-  background: $brand-info;
-  border-color: $brand-info;
+  background: $portal-red;
+  border-color: $portal-red;
+}
+.pagination > li > a, .pagination > li > span, .pagination > li > a:hover, .pagination > li > span:hover {
+  color: $gray-dark;
 }
 
 // Top link
@@ -38,6 +50,31 @@
   }
 }
 
+// Image credits
+// ------------------- //
+.image-credit {
+  @include make-sm-column(3);
+  margin-bottom: 2em;
+  a {
+    border-bottom: 1px dotted #999;
+  }
+  a:hover,
+  a:active,
+  a:focus {
+    border-bottom: 1px solid #999;
+    text-decoration: none;
+  }
+  p {
+    color: $gray;
+    font-size: 12px;
+    a {
+      font-size: 14px;
+    }
+  }
+  img {
+    margin-bottom: .5em;
+  }
+}
 
 // MEDIA QUERIES
 // -------------------------
