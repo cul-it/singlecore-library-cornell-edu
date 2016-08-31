@@ -27,8 +27,10 @@
 </div>
 
 <div class="modal-footer">
+<% if request.xhr? %>
 
   <div class="facet_pagination bottom">
     <%= render :partial=>'facet_pagination' %>
   </div>
+  <% end %>
 </div>
