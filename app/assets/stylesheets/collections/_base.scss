@@ -34,7 +34,8 @@ a:hover {
 }
 // remove underlines
 .document-thumbnail,
-.blacklight-pages-show .special-collections .basic-header {
+.blacklight-pages-show .special-collections .basic-header,
+.blacklight-pages-show .special-collections .sidebar {
 	a, a:hover {
 		border: 0;
 	}

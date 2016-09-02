@@ -46,6 +46,20 @@
 	}
 }
 
+// Two column pages
+// ------------------------- //
+.sidebar {
+	@include make-sm-column(4);
+	margin-top: 2.5em;
+	.nav-header {
+		text-transform: uppercase;
+		margin-bottom: .5em;
+	}
+}
+.main-text {
+	@include make-sm-column(8);
+}
+
 // Floated image
 // ------------------------- //
 

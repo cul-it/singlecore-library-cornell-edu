@@ -12,18 +12,23 @@ $chla-dark-brown: #493829;
 
 .chla-header {
 	margin-top: -1em;
-	.hero {
-		background: url("/assets/collections/chla/00000007.tifl.png") no-repeat 50% 50%;
-		height: 300px;
-	}
 	h2 {
 		color: $chla-orange;
 		font-family: $font-family-sans-serif;
 		font-weight: 700;
-		margin-top: 1em;
-		background: rgba(255,255,255,.8);
+		margin-top: 1em;	
 		display: inline-block;
-		padding: 5px;
+	}
+	.hero {
+		background: url("/assets/collections/chla/00000007.tifl.png") no-repeat 50% 50%;
+		height: 150px;
+		h2 {
+			background: rgba(255,255,255,.8);
+			padding: 5px;
+		}
+	}
+	.hero.home {
+		height: 300px;
 	}
 	.navbar {
 		background: $chla-dark-brown;
@@ -60,5 +65,23 @@ $chla-dark-brown: #493829;
 			padding: 10px 12px;
 			margin-top: -.25em;
 		}
+	}
+}
+.chla-layout {
+	margin-top: 4em;
+	.well {
+		background: url("/assets/collections/chla/upfeathers.png");
+		border: 0;
+		padding: 30px;
+	}
+	.lead {
+		strong {
+			color: $chla-brown;
+		}
+	}
+}
+.sidebar {
+	.nav-header {
+		color: $chla-brown;
 	}
 }
