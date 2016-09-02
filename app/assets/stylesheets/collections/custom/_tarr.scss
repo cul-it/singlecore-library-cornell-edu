@@ -1,0 +1,52 @@
+// Variables
+// ------------
+
+$ice-blue: #05b7c7;
+$light-ice-blue: #abe4e9;
+$dark-ice-blue: #049dab;
+$font-family-tarr-serif: 'Cinzel';        @import
+url(//fonts.googleapis.com/css?family=Cinzel);
+
+// Custom styles
+// --------------
+
+.tarr-layout {
+	// margin-top: -1em;
+	.hero {
+		background: url("/assets/collections/tarr/2891668.jpg") no-repeat 50% 50%;
+		min-height: 600px;
+		.well {
+			background: rgba(255,255,255,.3);
+			margin-top: 5em;
+			padding: 30px;
+			border: 0;
+			i {
+				font-size: 80%;
+				margin-left: .5em;
+			}
+		}
+		.form-inline {
+			.form-control {
+				width: 100%;
+			}
+		}
+	}
+	
+}
+
+.tarr-header {
+	h2 {
+		font-family: $font-family-tarr-serif;
+		margin-bottom: 0;
+	}
+	.nav-pills {
+		a:hover {
+			background: $light-ice-blue;
+		}
+	}
+	.subtitle {
+		font-family: $font-family-tarr-serif;
+		margin: 0 0 25px 0;
+		font-size: 16px;
+	}
+}
