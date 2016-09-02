@@ -42,6 +42,9 @@
         <% if current_page?('/collections/chla') %>
             <%= render partial: 'pages/collections/chla/header' %>
         <% end %>
+        <% if current_page?('/collections/tarr') %>
+            <%= render partial: 'pages/collections/tarr/home' %>
+        <% end %>
         <div class="container">
             <%= yield %>
         </div>

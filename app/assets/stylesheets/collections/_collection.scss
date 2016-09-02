@@ -106,6 +106,18 @@
 	}
 }
 
+// Pill-style nav, e.g. Tarr
+.nav-pills {
+	float: right;
+	text-transform: uppercase;
+	a {
+		font-size: 14px;
+	}
+	li > a {
+		border-radius: 0;
+	}
+}
+
 // Collections list
 // -------------------
 // .special-collections {
