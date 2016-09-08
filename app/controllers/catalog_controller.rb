@@ -202,7 +202,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'ensemble_tesim', :label => 'Ensemble Notes'
     config.add_show_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_show_field 'performer_matrix_tesim', :label => 'Performers'
-    config.add_show_field 'description_tesim', :label => 'Description'
+    config.add_show_field 'description_tesim', :label => 'Description', helper_method: :autolink_field
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
     config.add_show_field 'track_tesim', :label => 'Track'
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
@@ -252,7 +252,7 @@ class CatalogController < ApplicationController
     #- artifacts
     config.add_show_field 'acq_date_tesim', :label => 'Acquisition Date'
     config.add_show_field 'acq_note_tesim', :label => 'Acquisition Note'
-    config.add_show_field 'art_bio_tesim', :label => 'Artist Biography'
+    config.add_show_field 'art_bio_tesim', :label => 'Artist Biography', helper_method: :autolink_field
     config.add_show_field 'creation_site_tesim', :label => 'Creation Site'
     config.add_show_field 'note_tesim', :label => 'Note'
     config.add_show_field 'donor_tesim', :label => 'Donor'
@@ -262,7 +262,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'longitude_tsi', :label => 'Longitude'
     config.add_show_field 'relation_tesim', :label => 'Relation'
     config.add_show_field 'repo_location_tesim', :label => 'Repository Location'
-    config.add_show_field 'bibliography_tesim', :label => 'Bibliography'
+    config.add_show_field 'bibliography_tesim', :label => 'Bibliography', helper_method: :autolink_field
     config.add_show_field 'style_period_tesim', :label => 'Style/Period'
 
     #- hip hop flyers

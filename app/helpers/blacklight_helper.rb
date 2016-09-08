@@ -76,22 +76,9 @@ if !options[:value].blank?
 end
 end
 
-def autolink_field options={}
-options[:document] # the original document
-options[:field] # the field to render
-options[:value] # the value of the field
-collection = options[:document]["collection_tesim"][0]
-if collection != "Persuasive Maps: PJ Mode Collection"
-  options[:value]
-else
-  options[:value].map do |value|
-  auto_link(value)
+def autolink_field args
+   return auto_link(args[:document][args[:field]].join("<br>")).html_safe
 end
-end
-end
-
-   
-
 
 
   def pubstmt_to_id(pubstmt)
