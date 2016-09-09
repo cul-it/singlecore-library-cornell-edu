@@ -60,7 +60,6 @@ end
   get '/collection/racker', to: redirect('/collections/efraimracker')
   get '/collection/ragamala', to: redirect('/collections/ragamala')
   get '/collection/squeeze', to: redirect('/collections/squeeze')
-  get '/collection/tarr', to: redirect('/collections/tarr')
 
   # no facets on high voltage
 
@@ -68,8 +67,8 @@ end
   get '/collections/aerialny' => 'high_voltage/pages#show', :id => 'collections/aerialny/index'
   get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
   get '/collections/ragamala' => 'high_voltage/pages#show', :id => 'collections/ragamala/index'
-  get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
-  get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
+  #get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
+  #get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
   get '/collections/:subject' => 'catalog#index'
 
 
