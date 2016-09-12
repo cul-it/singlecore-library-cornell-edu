@@ -77,7 +77,12 @@ end
 end
 
 def autolink_field args
+  collection = args[:document]["collection_tesim"][0]
+  if collection == "Persuasive Maps: PJ Mode Collection"
    return auto_link(args[:document][args[:field]].join("<br>")).html_safe
+   else
+  return args[:document][args[:field]].join("<br>")
+  end
 end
 
 
