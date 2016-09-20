@@ -204,7 +204,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'performer_matrix_tesim', :label => 'Performers'
     config.add_show_field 'description_tesim', :label => 'Description', helper_method: :autolink_field
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
-    config.add_show_field 'track_tesim', :label => 'Track'
+    config.add_show_field 'track_ssi', :label => 'Track'
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
