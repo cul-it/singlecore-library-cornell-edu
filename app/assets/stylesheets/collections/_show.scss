@@ -122,6 +122,26 @@
 // set width for mobile devices
 .kWidgetIframeContainer {
 	width: 300px !important;
+	height: 189px !important;
+}
+
+// Track list
+// ------------------------ //
+.track-list {
+	h2 {
+		font-size: 18px;
+		margin: 0 0 1em;
+		text-transform: uppercase;
+		font-family: $font-family-cul;
+	}
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+	li {
+		font-size: 14px;
+		margin-bottom: .5em;
+	}
 }
 
 
@@ -195,7 +215,8 @@ label.toggle_bookmark {
 		 height: 600px;
 	}
 	.kWidgetIframeContainer {
-		width: 500px !important;
+		width: 560px !important;
+		height: 315px !important;
 	}
 }
 
