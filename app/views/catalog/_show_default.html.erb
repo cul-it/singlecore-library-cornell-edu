@@ -5,6 +5,8 @@
 
 <%= render 'viewer' %>
 
+
+
 <%# for images and audio - TODO: DRY this up if possible; repeating markup -%>
 	<% if !@project.blank? && @kaltura.blank? || !@kaltura.blank? %>
 	<div class="col-sm-8 item-info">
@@ -20,7 +22,11 @@
 		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
 	</div>
 	<div class="col-sm-4 more-item-info">
-		<% if !@collection_website.blank? || !@ssc_site.blank? || @bibid.present? %>
+	<% if @project == "616" %>
+		<%= render 'track_list', :document => document%>
+	<% end %>
+	
+	<% if !@collection_website.blank? || !@ssc_site.blank? || @bibid.present? %>
 		<div class="well">
 			<h2>About the collection</h2>
 			<% if @bibid.present? %>
@@ -42,6 +48,8 @@
 		</div>
 		<% end %>
 	</div>
+
+
 
 <%# for books -%>
 <% else %>

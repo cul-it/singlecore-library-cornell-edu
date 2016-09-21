@@ -153,6 +153,7 @@ class CatalogController < ApplicationController
                          maxlength: 6
                        }
     config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
+    config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
