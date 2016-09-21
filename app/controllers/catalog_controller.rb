@@ -41,8 +41,16 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Cornell Cast Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "claireholt" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Claire Holt Papers: Images of Indonesian Art, Architecture, and Culture'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "coins" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Cornell Coins Collection'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
+          if params[:subject] == "divinecomedy" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Divine Comedy Image Archive'] } }
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "efraimracker" && params[:f].nil?
@@ -153,6 +161,8 @@ class CatalogController < ApplicationController
                          maxlength: 6
                        }
     config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
+    config.add_facet_field 'illustrator_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
+    config.add_facet_field 'second_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
@@ -207,6 +217,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
     config.add_show_field 'photographer_creator_tesim', :label => 'Photographer', :link_to_search => true
     config.add_show_field 'author_tesim', :label => 'Creator', :link_to_search => true
+    config.add_show_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
+    config.add_show_field 'second_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
     config.add_show_field 'ensemble_tesim', :label => 'Ensemble Notes'
     config.add_show_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
@@ -346,6 +358,14 @@ class CatalogController < ApplicationController
     config.add_show_field 'berlin_catalog_tesim', :label => 'Berlin Catalog'
     config.add_show_field 'stosch_cat_tesim', :label => 'Stosch Catalog Number'
     config.add_show_field 'winckelmann_no_tesim', :label => 'Winckelmann Number'
+
+    # - divine comedy image archive
+    config.add_show_field 'bibid_tesim', :label => 'Bibid'
+    config.add_show_field 'call_number_tesim', :label => 'Call Number'
+    config.add_show_field 'canto_tesim', :label => 'Canto'
+    config.add_show_field 'canticle_tesim', :label => 'Canticle'
+    config.add_show_field 'dig_coll_tesim', :label => 'Digital Collection'
+    config.add_show_field 'publication_location_tesim', :label => 'Location of Publication'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
