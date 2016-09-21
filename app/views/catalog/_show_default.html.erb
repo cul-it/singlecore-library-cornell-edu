@@ -21,11 +21,7 @@
 		<%= render partial: 'catalog/show_maplet_default' %>
 		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
 	</div>
-	<div class="col-sm-4 more-item-info">
-	<% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'occasion_tesim').present? %>
-		<%= render 'track_list', :document => document%>
-	<% end %>
-	
+	<div class="col-sm-4 more-item-info">	
 	<% if !@collection_website.blank? || !@ssc_site.blank? || @bibid.present? %>
 		<div class="well">
 			<h2>About the collection</h2>

@@ -253,7 +253,6 @@ class CatalogController < ApplicationController
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
-    config.add_show_field 'kaltura_id_s', :label => 'Kaltura'
 
     #- huntington
     config.add_show_field 'publisher_tesim', :label => 'Publisher'
