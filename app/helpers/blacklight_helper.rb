@@ -61,6 +61,17 @@ def catalog_info(bibid)
   @response = response['response']['docs']
 end
 
+def get_tracks args
+   # http://jrc88.solr.library.cornell.edu/solr/digitalcollections/select?q=date_tesim%3A%221977+April+23%22+AND+occasion_tesim%3A%22Latihan+Setu%22&sort=track_ssi+asc&wt=json&indent=true
+    date = args['date_tesim'][0].gsub(" ","+")
+    collection = args['collection_tesim'][0].gsub(" ","+")
+    occasion = args['occasion_tesim'][0].gsub(" ","+")
+    response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=collection_tesim:\"Indonesian+Music+Archive\"+AND+occasion_tesim:\"#{occasion}\"+AND+date_tesim:\"#{date}\"&wt=json&indent=true&sort=track_isi%20asc&rows=100")).with_indifferent_access
+    @response = response['response']['docs']
+    return @response
+  end
+
+
   PREFIXES = {
     'huntington' => 'hunt',
     'bolivian' => 'bol',

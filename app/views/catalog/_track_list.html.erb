@@ -1,0 +1,14 @@
+<div class="well">
+	Track list
+	<ul>
+	<% get_tracks(document).each do |track| %>
+		<% if track["id"] == document[:id] %>
+            <li class="active">
+        <% else %>
+            <li>
+        <% end %>
+			    <%= link_to track["title_tesim"][0],"/catalog/"+track["id"] %>, Track: <%= track["track_isi"] %>
+		    </li>
+	<% end %>
+	</ul>
+	</div>
