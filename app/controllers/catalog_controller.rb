@@ -17,6 +17,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Alison Mason Kingsbury: Life and Art'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "anthrocollections" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Selections from the Cornell Anthropology Collections'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "artifactsandart" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Campus Artifacts, Art & Memorabilia'] } }
             redirect_to search_catalog_path(facet_params)
@@ -47,6 +51,10 @@ class CatalogController < ApplicationController
           end
           if params[:subject] == "eleusis" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Mysteries at Eleusis: Images of Inscriptions'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
+          if params[:subject] == "gems" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Cornell Gem Impressions Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "hiphopflyers" && params[:f].nil?
@@ -145,6 +153,7 @@ class CatalogController < ApplicationController
                          maxlength: 6
                        }
     config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
+    config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
@@ -204,7 +213,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'performer_matrix_tesim', :label => 'Performers'
     config.add_show_field 'description_tesim', :label => 'Description', helper_method: :autolink_field
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
-    config.add_show_field 'track_tesim', :label => 'Track'
+    config.add_show_field 'track_ssi', :label => 'Track'
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
@@ -332,6 +341,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'first_line_no_tesim', :label => 'First Line Number'
     config.add_show_field 'last_line_no_tesim', :label => 'Last Line Number'
     config.add_show_field 'lines_tesim', :label => 'Lines'
+
+    # - cornell gem impressions collection
+    config.add_show_field 'berlin_catalog_tesim', :label => 'Berlin Catalog'
+    config.add_show_field 'stosch_cat_tesim', :label => 'Stosch Catalog Number'
+    config.add_show_field 'winckelmann_no_tesim', :label => 'Winckelmann Number'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
