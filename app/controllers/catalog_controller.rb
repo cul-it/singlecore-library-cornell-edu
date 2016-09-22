@@ -180,6 +180,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'archival_collection_tesim', :label => 'Archival Collection', :limit => 5
     config.add_facet_field 'format_tesim', :label => 'Format', :limit => 5
     config.add_facet_field 'creation_site_location_tesim', :label => 'Creation Site', show: false
+    config.add_facet_field 'region_location_tesim', :label => 'Creation Site', show: false
     config.add_facet_field 'set_title_tesim', :label => 'Set', :show => false
     config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
@@ -198,6 +199,11 @@ class CatalogController < ApplicationController
     config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
+    config.add_index_field 'occasion_tesim', :label => 'Occasion'
+    config.add_index_field 'creation_site_location_tesim', :label => 'Creation Site'
+    config.add_index_field 'region_location_tesim', :label => 'Creation Site'
+    config.add_index_field 'other_location_tesim', :label => 'Creation Site'
+
     # these index fields are from the dlxs collections
     #config.add_index_field 'book_id_ts', :label => 'book id'
 
@@ -220,9 +226,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'second_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
-    config.add_show_field 'ensemble_tesim', :label => 'Ensemble Notes'
+    config.add_show_field 'ensemble_note_tesim', :label => 'Ensemble Note'
     config.add_show_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
-    config.add_show_field 'performer_matrix_tesim', :label => 'Performers'
+    config.add_show_field 'performer_matrix_tesim', :label => 'Performer'
     config.add_show_field 'description_tesim', :label => 'Description', helper_method: :autolink_field
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
     config.add_show_field 'track_ssi', :label => 'Track'
@@ -230,6 +236,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
     config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
+    config.add_show_field 'region_location_tesim', :label => 'Creation Site', :link_to_search => true
     config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
     config.add_show_field 'lang_tesim', :label => 'Language'
 
@@ -253,6 +260,8 @@ class CatalogController < ApplicationController
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
+    config.add_show_field 'sub_coll_tesim', :label => 'Subcollection'
+    config.add_show_field 'track_isi', :label => 'Track'
 
     #- huntington
     config.add_show_field 'publisher_tesim', :label => 'Publisher'
