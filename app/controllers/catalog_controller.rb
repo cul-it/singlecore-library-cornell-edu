@@ -185,6 +185,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
     config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
+    config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
 
     # Have BL send all facet field names to Solr
     config.add_facet_fields_to_solr_request!
@@ -200,9 +201,9 @@ class CatalogController < ApplicationController
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
     config.add_index_field 'occasion_tesim', :label => 'Occasion'
-    config.add_index_field 'creation_site_location_tesim', :label => 'Creation Site'
-    config.add_index_field 'region_location_tesim', :label => 'Creation Site'
-    config.add_index_field 'other_location_tesim', :label => 'Creation Site'
+    # config.add_index_field 'creation_site_location_tesim', :label => 'Creation Site'
+    # config.add_index_field 'region_location_tesim', :label => 'Creation Site'
+    # config.add_index_field 'other_location_tesim', :label => 'Creation Site'
 
     # these index fields are from the dlxs collections
     #config.add_index_field 'book_id_ts', :label => 'book id'
@@ -235,9 +236,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
-    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
-    config.add_show_field 'region_location_tesim', :label => 'Creation Site', :link_to_search => true
-    config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
+    # config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
+    # config.add_show_field 'region_location_tesim', :label => 'Creation Site', :link_to_search => true
+    # config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
     config.add_show_field 'lang_tesim', :label => 'Language'
 
     #collection fields
@@ -260,7 +261,7 @@ class CatalogController < ApplicationController
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
-    config.add_show_field 'sub_coll_tesim', :label => 'Subcollection'
+    config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'track_isi', :label => 'Track'
 
     #- huntington
