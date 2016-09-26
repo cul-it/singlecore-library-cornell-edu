@@ -65,10 +65,10 @@ end
 
   get '/collections' => 'catalog#facet', :id => 'collection_tesim'
   get '/collections/aerialny' => 'high_voltage/pages#show', :id => 'collections/aerialny/index'
-  get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
+  #get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
   get '/collections/ragamala' => 'high_voltage/pages#show', :id => 'collections/ragamala/index'
-  get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
-  get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
+  #get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
+  #get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
   get '/collections/:subject' => 'catalog#index'
 
 
