@@ -1,0 +1,16 @@
+<div class="srilanka-header">
+	<div class="container">
+		<h2>Depicting the Sri Lankan Vernacular</h2>
+	</div>
+
+	<%# stick the hero image on the home page only %>
+	<% if current_page?('/collections/srilanka') %>
+		<div class="background">
+			<div class="container">
+				<%= image_tag "collections/srilanka/banner.jpg" , alt: "", class: "img-responsive" %>
+				<div class="caption">
+					<p><a href="/catalog/ss:11087020">Householders rethatching Dwelling #33 after the paddy harvest</a>; <a href="/catalog/ss:14160990">Dwelling #33 Plan</a></p>
+			</div>
+		</div>
+	<% end %>
+</div>
