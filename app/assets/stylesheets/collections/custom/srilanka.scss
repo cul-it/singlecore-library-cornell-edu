@@ -1,0 +1,130 @@
+// Variables
+// ------------
+
+$chla-orange: #eb8f0c;
+$chla-green: #668d3c;
+$chla-brown: #613318;
+$chla-dark-brown: #493829;
+
+$srilanka-red: #9c0e05;
+$srilanka-pink: #fbeee6;
+$font-family-srilanka-display: 'Macondo Swash Caps', cursive;
+@import url(/fonts.googleapis.com/css?family=Macondo+Swash+Caps);
+
+
+// Custom styles
+// --------------
+
+.srilanka-header {
+	h2 {
+		color: $srilanka-red;
+		font-family: $font-family-srilanka-display;
+		margin: .25em 0;
+		display: inline-block;
+		font-size: 48px;
+	}
+	.background {
+		background: url("/assets/collections/srilanka/arabesque.png");
+		img {
+			margin: 3em 0 .5em;
+		}
+		.caption p {
+			text-align: right;
+			font-size: 12px;
+			color: $gray;
+			font-style: italic;
+			margin-bottom: 4em;
+		}
+	}
+}
+.srilanka-layout {
+	margin: 0 0 4em 0;
+	.navbar-toggle {
+		float: none;
+		text-transform: uppercase;
+		background: $srilanka-red;
+		color: white;
+		border-radius: 0;
+		i {
+			margin-left: .25em;
+			color: white;
+		}
+	}
+	.nav {
+		border: 1px solid $gray-light;
+	}
+	.navbar-collapse {
+		padding: 0;
+	}
+	.well {
+		background: $srilanka-pink;
+		border: 0;
+		padding: 30px;
+		p {
+			margin-bottom: 0;
+		}
+	}
+	.nav > li {
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+	.nav > li > a,
+	.nav > li > a:hover,
+	.nav > li > a:active,
+	.nav > li > a:focus {
+		border: 0;
+		background: inherit;
+	}
+	.nav > li > a:hover {
+		color: $srilanka-red;
+	}
+	.sidebar {
+		margin-top: 0;
+	}
+	.main-text {
+		h3 {
+			font-family: $font-family-srilanka-display;
+			color: $srilanka-red;
+			margin-top: 10px;
+			font-size: 30px;
+		}
+	}
+	.main-text {
+		.collection-search,
+		.browse-links {
+			h3 {
+				font-size: 16px;
+				color: $srilanka-red;
+				font-weight: 700;
+				font-family: $font-family-sans-serif;
+			}
+		}
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) { 
+	.srilanka-layout {
+		margin-top: 4em;
+		.nav > li {
+			text-align: right;
+		}
+		.nav {
+			border: 0;
+		}
+	}
+}
+
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md) {
+
+}
+// Large devices (desktops, 1200px and up)
+// @media (min-width: $screen-lg) {
+// 	// .brand {
+// 	// 	font-size: 36px;
+// 	// }
+// }

@@ -50,6 +50,11 @@
             <%= render partial: 'pages/collections/tarr/home' %>
         <% end %>
 
+        <%# TODO: change this to if url contains /collections/srilanka so it loads on all sri lanka pages %>
+        <% if current_page?('/collections/srilanka') %>
+            <%= render partial: 'pages/collections/srilanka/header' %>
+        <% end %>
+
         <div class="container">
             <%= yield %>
         </div>

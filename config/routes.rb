@@ -69,6 +69,7 @@ end
   get '/collections/ragamala' => 'high_voltage/pages#show', :id => 'collections/ragamala/index'
   get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
   get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
+  get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
   get '/collections/:subject' => 'catalog#index'
 
 
