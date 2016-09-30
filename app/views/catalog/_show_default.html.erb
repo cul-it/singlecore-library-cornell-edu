@@ -3,8 +3,10 @@
 <% @ssc_site  = render_document_show_field_value(:document => @document, :field => 'ssc_site_tesim') %>
 <% @bibid  = render_document_show_field_value(:document => @document, :field => 'bibid_ssi') %>
 
-<%= render 'viewer' %>
 
+<%= render 'pub_status', :document => @document %>
+
+<%= render 'viewer' %>
 
 
 <%# for images and audio - TODO: DRY this up if possible; repeating markup -%>

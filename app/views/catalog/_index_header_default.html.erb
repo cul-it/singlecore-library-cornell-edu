@@ -10,11 +10,8 @@
   <% end %>
 
   <h5 class="index_title document-title-heading <%= document_actions.present? ? "col-sm-9 col-lg-10" : "col-md-12" %>">
-   <% if document["status_ssi"]!= "Published" && ENV["COLLECTIONS"] == "development" %>
-   <% if document["status_ssi"].present? %>
-   <span class = "btn btn-info pull-right">Unpublished</span>
-   <% end %>
-   <% end %>
+   <%= render 'pub_status', :document => document %>
+ 
 
     <% if counter = document_counter_with_offset(document_counter) %>
       <span class="document-counter">
