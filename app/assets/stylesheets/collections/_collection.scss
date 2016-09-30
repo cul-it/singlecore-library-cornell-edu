@@ -132,6 +132,37 @@
 	}
 }
 
+// Default mobile nav button - aerial, sri lanka, etc.
+
+.blacklight-pages-show {
+	.navbar-toggle {
+		float: none;
+		text-transform: uppercase;
+		background: black;
+		color: white;
+		border-radius: 0;
+		i {
+			margin-left: .25em;
+			color: white;
+		}
+	}
+	.navbar-collapse {
+		.nav {
+			border: 1px solid $gray;
+		}
+	}
+	.util-links {
+		.navbar-toggle {
+			float: right;
+		}
+		.navbar-collapse {
+			.nav {
+				border: 0;
+			}
+		}
+	}
+}
+	
 // Collections list - original mockup style, not implemented due to lack of thumbnails
 // -------------------
 // .special-collections {
@@ -158,6 +189,13 @@
 @media (min-width: $screen-sm) { 
 	.collection-title {
 		font-size: 30px;
+	}
+	.blacklight-pages-show {
+		.navbar-collapse {
+			.nav {
+				border: 0;
+			}
+		}
 	}
 }
 
