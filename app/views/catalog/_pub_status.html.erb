@@ -1,0 +1,5 @@
+  <% if document["status_ssi"]!= "Published" && ENV["COLLECTIONS"] == "development" %>
+   <% if document["status_ssi"].present? %>
+   <span class = "btn btn-info">Unpublished</span>
+   <% end %>
+   <% end %>
