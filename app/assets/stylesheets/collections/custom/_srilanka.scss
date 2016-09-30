@@ -76,6 +76,12 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 	.nav > li > a:hover {
 		color: $srilanka-red;
 	}
+	.nav > .active > a, 
+	.nav > .active > a:hover,
+	.nav > .active > a:active,
+	.nav > .active > a:focus  {
+		color: $srilanka-red
+	}
 	.sidebar {
 		margin-top: 0;
 	}
@@ -110,6 +116,12 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 		margin-top: 4em;
 		.nav > li {
 			text-align: right;
+		}
+		.nav > li > a {
+			display: inline-block;
+		}
+		.navbar {
+			padding-top: 0;
 		}
 	}
 }
