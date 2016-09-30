@@ -118,6 +118,9 @@
 		background: inherit;
 		color: $cornell-red;
 	}
+	.active > a{
+		color: $cornell-red;
+	}
 }
 
 // Pill-style nav, e.g. Tarr
