@@ -51,20 +51,6 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 }
 .srilanka-layout {
 	margin: 0 0 4em 0;
-	.navbar-toggle {
-		float: none;
-		text-transform: uppercase;
-		background: $srilanka-red;
-		color: white;
-		border-radius: 0;
-		i {
-			margin-left: .25em;
-			color: white;
-		}
-	}
-	.nav {
-		border: 1px solid $gray;
-	}
 	.navbar-collapse {
 		padding: 0;
 	}
@@ -124,9 +110,6 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 		margin-top: 4em;
 		.nav > li {
 			text-align: right;
-		}
-		.nav {
-			border: 0;
 		}
 	}
 }
