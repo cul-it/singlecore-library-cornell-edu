@@ -15,13 +15,25 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 // Custom styles
 // --------------
 
+.blacklight-pages-show {
+	.special-collections {
+		h2 {
+			a, a:hover, a:active, a:focus {
+				border: 0;
+			}
+		}
+	}
+}
+
 .srilanka-header {
 	h2 {
-		color: $srilanka-red;
 		font-family: $font-family-srilanka-display;
 		margin: .25em 0;
 		display: inline-block;
 		font-size: 48px;
+		a, a:hover, a:active, a:focus {
+			color: $srilanka-red;
+		}
 	}
 	.background {
 		background: url("/assets/collections/srilanka/arabesque.png");
@@ -51,7 +63,7 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 		}
 	}
 	.nav {
-		border: 1px solid $gray-light;
+		border: 1px solid $gray;
 	}
 	.navbar-collapse {
 		padding: 0;
@@ -92,9 +104,10 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 	.main-text {
 		.collection-search,
 		.browse-links {
+			margin-bottom: 2em;
 			h3 {
 				font-size: 16px;
-				color: $srilanka-red;
+				// color: $srilanka-red;
 				font-weight: 700;
 				font-family: $font-family-sans-serif;
 			}
