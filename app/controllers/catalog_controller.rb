@@ -101,6 +101,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "punkflyers" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Punk Flyers'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "squeeze" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Cornell Squeeze Collection'] } }
             redirect_to search_catalog_path(facet_params)
@@ -357,7 +361,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'metal_abbrev_tesim', :label => 'Metal Abbrev.'
 
     # - loewentheil african american photographs
-    config.add_show_field 'box_folder_tesim', :label => 'Box/Folder Number'
+    config.add_show_field 'box_box_folder_tesim', :label => 'Box Number'
+    config.add_show_field 'folder_box_folder_tesim', :label => 'Folder Number'
 
     # - cornell squeeze collection
     config.add_show_field 'column_no_tesim', :label => 'Column Number'
