@@ -101,6 +101,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "punkflyers" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Punk Flyers'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "squeeze" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Cornell Squeeze Collection'] } }
             redirect_to search_catalog_path(facet_params)
@@ -164,7 +168,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'illustrator_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'second_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
-    config.add_facet_field 'performers_subject_tesim', :label => 'Performers', :show => false
+    #config.add_facet_field 'performers_subject_tesim', :label => 'Performers', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
@@ -297,7 +301,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'style_period_tesim', :label => 'Style/Period'
 
     #- hip hop flyers
-    config.add_show_field 'performers_subject_tesim', :label => 'Performers', :link_to_search => true
+    # config.add_show_field 'performers_subject_tesim', :label => 'Performers', :link_to_search => true
     config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection'
     config.add_show_field 'admission_cost_tesim', :label => 'Cost of Admission'
     config.add_show_field 'directions_tesim', :label => 'Directions'
@@ -357,7 +361,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'metal_abbrev_tesim', :label => 'Metal Abbrev.'
 
     # - loewentheil african american photographs
-    config.add_show_field 'box_folder_tesim', :label => 'Box/Folder Number'
+    config.add_show_field 'box_box_folder_tesim', :label => 'Box Number'
+    config.add_show_field 'folder_box_folder_tesim', :label => 'Folder Number'
 
     # - cornell squeeze collection
     config.add_show_field 'column_no_tesim', :label => 'Column Number'
