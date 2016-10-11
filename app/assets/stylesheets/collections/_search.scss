@@ -142,7 +142,7 @@
 	border-radius: 0;
 	color: white;
 }
-.btn-constraint:hover {
+.btn-constraint:hover, .btn-constraint:active, .btn-constraint:focus {
 	background: $portal-red;
 	border-color: $portal-red;
 	color: white;
