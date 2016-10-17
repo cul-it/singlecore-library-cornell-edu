@@ -267,6 +267,7 @@ class CatalogController < ApplicationController
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
+    config.add_show_field 'creation_site_location_tesim', :label => 'Creation site', :link_to_search => true
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'track_isi', :label => 'Track'
 
