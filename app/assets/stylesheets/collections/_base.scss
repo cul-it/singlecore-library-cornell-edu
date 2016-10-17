@@ -7,62 +7,26 @@ body {
 // Links
 // ------------------- //
 
-a { 
+a,
+a:active,
+a:focus { 
 	color: $link-color;
+	text-decoration: underline;
+	-webkit-text-decoration-skip: ink;
 }
 a:hover {
 	color: $link-color-hover;
-	text-decoration: underline;
 }
 
-// Add underlines to some links for better usability/accessibility
-.page_links,
-.document,
-.home-text,
-.search-widgets,
-.blacklight-pages-show .special-collections,
-.blacklight-catalog-facet #main-container {
-	a {
-		border-bottom: 1px dotted #999;
-	}
-	a:hover,
-	a:active,
-	a:focus {
-		border-bottom: 1px solid #999;
+// Remove underlines from buttons and dropdown menus
+a.btn {
+	text-decoration: none;
+}
+.dropdown-menu {
+	a, a:hover {
 		text-decoration: none;
 	}
 }
-// remove underlines
-.document-thumbnail,
-.blacklight-pages-show .special-collections .basic-header,
-.blacklight-pages-show .special-collections .sidebar {
-	a, a:hover {
-		border: 0;
-	}
-}
-
-// remove underlines for buttons in these areas
-.search-widgets {
-	.btn, .btn:hover {
-		border-bottom: 1px solid #ddd;
-	}
-	.btn:hover, .btn.active {
-		border-bottom-color: #adadad;
-	}
-	.btn-danger {
-		border-bottom-color: #d43f3a;
-	}
-}
-.document {
-	.img-thumbnail, .img-thumbnail:hover, .img-thumbnail:active, .img-thumbnail:focus,
-	.btn, .btn:hover {
-		border-bottom: 1px solid #ddd;
-	}
-	.btn-info {
-		border-bottom-color: $btn-info-border;
-	}
-}
-
 
 // Typography
 // ------------------- //
@@ -80,17 +44,14 @@ h1 {
 	font-weight: 300;
 	font-family: $font-family-cul;
 	text-transform: uppercase;
-	// color: $orange;
 }
 h2 {
 	font-weight: 300;
-	// font-size: 24px;
 }
 h3 {
 	margin-top: 1.5em;
 }
 h4 {
-	// font-size: 20px;
 	margin-top: 1.5em;
 }
 h5 {
