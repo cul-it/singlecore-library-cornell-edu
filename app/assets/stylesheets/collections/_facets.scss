@@ -17,6 +17,11 @@
 .facets .facets-heading {
 	margin: 0;
 }
+.panel-title {
+	a, a:hover {
+		text-decoration: none;
+	}
+}
 
 // Limit your search panel heading
 // ----------------------------------

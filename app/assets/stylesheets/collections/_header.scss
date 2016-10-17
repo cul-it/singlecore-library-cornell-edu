@@ -49,6 +49,7 @@
 	color: $gray-dark;
 	line-height: 1em;
 	display: inline-block;
+	text-decoration: none;
 }
 .brand:hover, .brand:active, .brand:focus {
 	color: $gray-dark;
@@ -60,6 +61,7 @@
 	display: block;
 	color: $gray-dark;
 	margin-bottom: .1em;
+	text-decoration: none;
 }
 .cul-brand:hover, .cul-brand:active, .cul-brand:focus {
 	color: $gray;
@@ -134,11 +136,13 @@
 			background: $warm-gray;
 			margin-left: 5px;
 			color: $gray-dark !important;
+			text-decoration: none;
 		}
 		.nav > li > a:hover,
 		.nav > li > a:active,
 		.nav > li > a:focus {
 			background: $warm-gray;
+			text-decoration: none;
 		}
 		.nav > li.browse-tab > a,
 		.nav > li.browse-tab > a:hover,
@@ -171,7 +175,4 @@
 }
 // Large devices (desktops, 1200px and up)
 // @media (min-width: $screen-lg) {
-// 	// .brand {
-// 	// 	font-size: 36px;
-// 	// }
 // }
