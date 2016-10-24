@@ -4,6 +4,8 @@
 <% @book_prefix = (render_document_show_field_value :document => @document, :field => 'id').split(':')[0] %>
 <% @download_url = render_document_show_field_value(:document => @document, :field => 'download_link_tesim') %>
 <% @page = "1" %>
+<% @artstor_iiif = render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>
+
 
 <%# display image viewer %>
 <% if !@project.blank? && (@kaltura.blank? && @project != '616')%>
@@ -17,12 +19,37 @@
       <a id="full-page" href="#full-page" onclick="javascript:_paq.push(['trackEvent', 'ImageViewer', 'fullscreen']);"><i class="fa fa-expand"></i></a>
     </div>
   </div>
-  <div id="openseadragon1"></div>
+<div id="openseadragon1"></div>
   <div id="print-image">
   <% if render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim').present? %>
   <img src="<%= render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim') %>">
   <% end %>
   </div>
+<% if @artstor_iiif.present? %>
+<script>
+  //<![CDATA[
+  function initOpenSeadragon() {
+  OpenSeadragon ({
+        id: "openseadragon1",
+        toolbar: "image-toolbar",
+        zoomInButton:   "zoom-in",
+        zoomOutButton:  "zoom-out",
+        homeButton:     "home",
+        fullPageButton: "full-page",
+        preserveViewport: true,
+    visibilityRatio:    1,
+    minZoomLevel:       1,
+    defaultZoomLevel:   1,
+        prefixUrl: "/images/",
+        tileSources: "<%= @artstor_iiif %>"
+      });
+  }
+  window.onload = initOpenSeadragon;
+  document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
+  //]]>
+</script>
+
+<% else %> 
 
 <script>
   //<![CDATA[
@@ -43,6 +70,8 @@
   document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
   //]]>
 </script>
+
+<% end %>
 
 <%# display av player %>
 <% elsif !@kaltura.blank? %>
