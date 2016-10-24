@@ -5,6 +5,8 @@ class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
 
     include Blacklight::Catalog
+  include BlacklightMaps::ControllerOverride
+
       before_action  do
           if params[:sbjct].present? && params[:f].nil?
             redirect_to search_catalog_path
