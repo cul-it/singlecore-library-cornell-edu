@@ -34,6 +34,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim:"Cornell Squeeze Collection"
       OR collection_tesim:"Billie Jean Isbell Andean Collection"
       OR collection_tesim:"Cornell Gem Impressions Collection"
+      OR collection_tesim:"Punk Flyers"
       )'
     end
   end
