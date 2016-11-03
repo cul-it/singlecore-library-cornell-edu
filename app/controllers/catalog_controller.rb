@@ -188,7 +188,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'archival_collection_tesim', :label => 'Archival Collection', :limit => 5
     config.add_facet_field 'format_tesim', :label => 'Format', :limit => 5
     config.add_facet_field 'creation_site_location_tesim', :label => 'Creation Site', show: false
-    config.add_facet_field 'region_location_tesim', :label => 'Creation Site', show: false
+    config.add_facet_field 'region_location_tesim', :label => 'Region', show: false
     config.add_facet_field 'set_title_tesim', :label => 'Set', :show => false
     config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
@@ -245,7 +245,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
     # config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
-    # config.add_show_field 'region_location_tesim', :label => 'Creation Site', :link_to_search => true
+    config.add_show_field 'region_location_tesim', :label => 'Region', :link_to_search => true
     # config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
     config.add_show_field 'lang_tesim', :label => 'Language'
 
