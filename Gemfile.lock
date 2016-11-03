@@ -193,7 +193,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    openseadragon (0.3.0)
+    openseadragon (0.2.1)
       rails (> 3.2.0)
     orm_adapter (0.5.0)
     poltergeist (1.11.0)
