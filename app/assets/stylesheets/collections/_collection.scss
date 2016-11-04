@@ -38,6 +38,10 @@
 	h2 {
 		font-family: $font-family-cul;
 	}
+	.btn-primary {
+		background: $gray;
+		border: 0;
+	}
 }
 .basic-header {
 	margin: 0 0 10px 0;

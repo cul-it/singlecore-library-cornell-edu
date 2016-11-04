@@ -35,7 +35,9 @@ url(//fonts.googleapis.com/css?family=Cinzel);
 			color: $dark-ice-blue;
 		}
 	}
-	
+	.btn-primary {
+		background: $ice-blue;
+	}
 }
 
 .basic-header.tarr-header {
