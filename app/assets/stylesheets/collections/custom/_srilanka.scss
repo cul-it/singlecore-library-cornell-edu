@@ -9,7 +9,7 @@ $chla-dark-brown: #493829;
 $srilanka-red: #9c0e05;
 $srilanka-pink: #fbeee6;
 $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
-@import url(/fonts.googleapis.com/css?family=Macondo+Swash+Caps);
+@import url(//fonts.googleapis.com/css?family=Macondo+Swash+Caps);
 
 
 // Custom styles
@@ -20,6 +20,7 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 		h2 {
 			a, a:hover, a:active, a:focus {
 				border: 0;
+				text-decoration: none;
 			}
 		}
 	}
