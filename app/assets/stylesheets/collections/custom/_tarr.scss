@@ -55,6 +55,9 @@ url(//fonts.googleapis.com/css?family=Cinzel);
 		font-size: 16px;
 	}
 	.nav-collection {
+		li > a {
+			text-decoration: none;
+		}
 		li > a:hover {
 			background: $light-ice-blue;
 			color: $gray-dark;
@@ -65,16 +68,28 @@ url(//fonts.googleapis.com/css?family=Cinzel);
 		.active > a:active {
 			background: $ice-blue;
 			color: white;
+			text-decoration: none;
 		}
 	}
+}
+.tarr-rights {
+	background: white;
+	font-size: 12px;
+	padding: 20px;
+	margin: 3em 0;
 }
 
 // MEDIA QUERIES
 // -------------------------
 
 // Small devices (tablets, 768px and up) 
-// @media (min-width: $screen-sm) { 	
-// }
+@media (min-width: $screen-sm) { 	
+	.tarr-layout {
+		.hero {
+			min-height: 650px;
+		}
+	}
+}
 
 // Medium devices (desktops, 992px and up)
 @media (min-width: $screen-md) {
