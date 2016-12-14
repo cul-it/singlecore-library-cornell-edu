@@ -72,14 +72,24 @@ url(//fonts.googleapis.com/css?family=Cinzel);
 		}
 	}
 }
-.tarr-rights {
-	background: white;
+.tarr-info {
+	background: rgba(255,255,255,.7);
 	font-size: 12px;
 	padding: 20px;
 	margin: 3em 0 1em;
+	p {
+		font-size: 14px;
+	}
+	p:last {
+		font-size: 12px;
+	}
 }
-.rmc-info {
-	margin: 2em 0;
+.doi {
+	clear: both;
+	margin-top: 3em;
+	h4 {
+		margin-top: 0;
+	}
 }
 
 // MEDIA QUERIES
@@ -89,7 +99,7 @@ url(//fonts.googleapis.com/css?family=Cinzel);
 @media (min-width: $screen-sm) { 	
 	.tarr-layout {
 		.hero {
-			min-height: 650px;
+			min-height: 700px;
 		}
 	}
 }
