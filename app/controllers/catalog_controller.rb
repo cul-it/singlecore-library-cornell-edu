@@ -351,6 +351,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
     config.add_show_field 'site_location_tesim', :label => 'Location'
     config.add_show_field 'project_location_tesim', :label => 'Location'
+    config.add_show_field 'project_title_tesim', :label => 'Project Title'
     config.add_show_field 'project_owner_tesim', :label => 'Project Owner'
 
     # - eleusis
