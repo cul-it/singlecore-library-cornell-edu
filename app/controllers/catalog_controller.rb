@@ -200,6 +200,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
     config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
+    config.add_facet_field 'other_location_tesim', :label => 'Creation Site', :show => false
 
     # Have BL send all facet field names to Solr
     config.add_facet_fields_to_solr_request!
@@ -217,6 +218,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'occasion_tesim', :label => 'Occasion'
     # config.add_index_field 'creation_site_location_tesim', :label => 'Creation Site'
     # config.add_index_field 'region_location_tesim', :label => 'Creation Site'
+    # this field is already listed under isbell:
     # config.add_index_field 'other_location_tesim', :label => 'Creation Site'
 
     # these index fields are from the dlxs collections
@@ -298,7 +300,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'acq_date_tesim', :label => 'Acquisition Date'
     config.add_show_field 'acq_note_tesim', :label => 'Acquisition Note'
     config.add_show_field 'art_bio_tesim', :label => 'Artist Biography', helper_method: :autolink_field
-    config.add_show_field 'creation_site_tesim', :label => 'Creation Site'
     config.add_show_field 'note_tesim', :label => 'Note'
     config.add_show_field 'donor_tesim', :label => 'Donor'
     config.add_show_field 'img_view_desc_tesim', :label => 'Image View Description'
@@ -360,7 +361,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_reps_tesim', :label => 'Reps Subject'
 
     # - billie jean isbell
-    config.add_show_field 'other_location_tesim', :label => 'Location'
+    config.add_show_field 'other_location_tesim', :label => 'Creation Site', :link_to_search => true
     config.add_show_field 'series_relation_tesim', :label => 'Series'
 
     # - cornell coins collection
