@@ -174,6 +174,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'illustrator_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'second_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
+    config.add_facet_field 'location_tesim', :label => 'Location', :show => false
     #config.add_facet_field 'performers_subject_tesim', :label => 'Performers', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'system_tesim', :label => 'System', :sort => 'count', :show => false
