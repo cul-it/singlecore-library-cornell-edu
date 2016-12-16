@@ -3,11 +3,17 @@
 <% @book_id = render_document_show_field_value :document => @document, :field => 'id' %>
 <% @book_prefix = (render_document_show_field_value :document => @document, :field => 'id').split(':')[0] %>
 <% @download_url = render_document_show_field_value(:document => @document, :field => 'download_link_tesim') %>
+<% @media = render_document_show_field_value(:document => @document, :field => 'media_URL_tesim')  %>
+
+<% if @media.present? && @media.include?('pdf') %>
+<% @pdf = true %>
+<% end %>
+
+
 <% @page = "1" %>
 
-
 <%# display image viewer %>
-<% if !@project.blank? && (@kaltura.blank? && @project != '616')%>
+<% if !@project.blank? && (@kaltura.blank? && @project != '616' && @pdf != true)%>
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
   <div id="image-toolbar">
     <div class="image-controls">
@@ -70,8 +76,20 @@
     </div>
   </div>
 
+<%# display thumbnail with pdf link like for Adler %>
+<% elsif @pdf == true %>
+  <div class="col-md-3 book-thumbnail">
+    <div class="cover" data-no-turbolink>
+      <a href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="<%= render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim') %>" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+      <div class="reader-link" data-no-turbolink>
+        <a class="btn btn-portal" href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerbutton']);"><i class="fa fa-book-open"></i>View pdf</a>
+      </div>
+    </div>
+  </div>
+
+
 <%# display book reader %>
-<% elsif !@book_id.blank? && @project != "616" %>
+<% elsif !@book_id.blank? && @project != "616" && @pdf != true %>
   <div class="col-md-3 book-thumbnail">
     <div class="cover" data-no-turbolink>
       <a href="http://reader.library.cornell.edu/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
