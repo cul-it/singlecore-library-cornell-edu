@@ -199,6 +199,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
     config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
+    config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
 
     # Have BL send all facet field names to Solr
     config.add_facet_fields_to_solr_request!
