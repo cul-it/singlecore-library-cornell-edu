@@ -54,35 +54,43 @@
 <%# display av player %>
 <% elsif !@kaltura.blank? %>
 <% @identifier= render_document_show_field_value(:document => @document, :field => 'id_number_ssi') %>
-  <div class="row">
-    <div class="col-sm-8">
-      <div id="kaltura-player">
-        <%# using Kaltura "Portal player" %>
-        <div id="kaltura_player_1474482853" style="width: 560px; height: 315px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
-          <span itemprop="name" content="<%= @title %>"></span>
-          <span itemprop="description" content=""></span>
-          <span itemprop="duration" content=""></span>
-          <span itemprop="thumbnail" content="https://cdnsecakmi.kaltura.com/p/518251/sp/51825100/thumbnail/entry_id/<%= @kaltura %>/version/0/acv/51"></span>
-          <span itemprop="width" content="560"></span>
-          <span itemprop="height" content="315"></span>
+  <div class="other-viewer well">
+    <div class="row">
+      <div class="col-sm-8">
+        <div id="kaltura-player">
+          <%# using Kaltura "Portal player" %>
+          <div id="kaltura_player_1474482853" style="width: 560px; height: 315px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+            <span itemprop="name" content="<%= @title %>"></span>
+            <span itemprop="description" content=""></span>
+            <span itemprop="duration" content=""></span>
+            <span itemprop="thumbnail" content="https://cdnsecakmi.kaltura.com/p/518251/sp/51825100/thumbnail/entry_id/<%= @kaltura %>/version/0/acv/51"></span>
+            <span itemprop="width" content="560"></span>
+            <span itemprop="height" content="315"></span>
+          </div>
+          <script src="https://cdnapisec.kaltura.com/p/518251/sp/51825100/embedIframeJs/uiconf_id/36571211/partner_id/518251?autoembed=true&entry_id=<%= @kaltura %>&playerId=kaltura_player_1474482853&cache_st=1474482853&width=550&height=412&flashvars[streamerType]=auto"></script>
         </div>
-        <script src="https://cdnapisec.kaltura.com/p/518251/sp/51825100/embedIframeJs/uiconf_id/36571211/partner_id/518251?autoembed=true&entry_id=<%= @kaltura %>&playerId=kaltura_player_1474482853&cache_st=1474482853&width=550&height=412&flashvars[streamerType]=auto"></script>
       </div>
-    </div>
-    <div class="col-sm-4 track-list">
-      <% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'occasion_tesim').present? %>
-        <%= render 'track_list', :document => @document %>
-      <% end %>
+      <div class="col-sm-4 track-list">
+        <% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'occasion_tesim').present? %>
+          <%= render 'track_list', :document => @document %>
+        <% end %>
+      </div>
     </div>
   </div>
 
 <%# display thumbnail with pdf link like for Adler %>
 <% elsif @pdf == true %>
-  <div class="col-md-3 book-thumbnail">
-    <div class="cover" data-no-turbolink>
-      <a href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="<%= render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim') %>" class="img-responsive img-thumbnail" alt="Book or page image"></a>
-      <div class="reader-link" data-no-turbolink>
-        <a class="btn btn-portal" href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerbutton']);"><i class="fa fa-book-open"></i>View pdf</a>
+  <div class="other-viewer well">
+    <div class="row">
+      <div class="col-sm-8 text-center">
+        <div class="cover" data-no-turbolink>
+          <a href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="<%= render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim') %>" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="reader-link" data-no-turbolink>
+          <a class="btn btn-portal btn-lg" href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerbutton']);"><i class="fa fa-book-open"></i>View PDF<i class="fa fa-file-pdf-o"></i></a>
+        </div>
       </div>
     </div>
   </div>
@@ -90,12 +98,18 @@
 
 <%# display book reader %>
 <% elsif !@book_id.blank? && @project != "616" && @pdf != true %>
-  <div class="col-md-3 book-thumbnail">
-    <div class="cover" data-no-turbolink>
-      <a href="http://reader.library.cornell.edu/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
-      <% bibid_display = render_document_show_field_value :document => @document, :field => 'bibid_tesim' %>
-      <div class="reader-link" data-no-turbolink>
-        <a class="btn btn-portal" href="http://reader.library.cornell.edu/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerbutton']);"><i class="fa fa-book-open"></i>Read item</a>
+  <div class="other-viewer well">
+    <div class="row">
+      <div class="col-sm-8 text-center">
+        <div class="cover" data-no-turbolink>
+          <a href="http://reader.library.cornell.edu/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+          <% bibid_display = render_document_show_field_value :document => @document, :field => 'bibid_tesim' %>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="reader-link" data-no-turbolink>
+          <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerbutton']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+        </div>
       </div>
     </div>
   </div>
