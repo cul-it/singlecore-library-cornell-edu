@@ -174,6 +174,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'illustrator_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'second_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
+    config.add_facet_field 'location_tesim', :label => 'Location', :show => false
     #config.add_facet_field 'performers_subject_tesim', :label => 'Performers', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'system_tesim', :label => 'System', :sort => 'count', :show => false
@@ -273,7 +274,7 @@ class CatalogController < ApplicationController
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
-    config.add_show_field 'creation_site_location_tesim', :label => 'Creation site', :link_to_search => true
+    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'track_isi', :label => 'Track'
 
@@ -390,6 +391,10 @@ class CatalogController < ApplicationController
     config.add_show_field 'canticle_tesim', :label => 'Canticle'
     config.add_show_field 'dig_coll_tesim', :label => 'Digital Collection'
     config.add_show_field 'publication_location_tesim', :label => 'Location of Publication'
+
+    # - bill adler archive
+    config.add_show_field 'adler_transcription_tesim', :label => 'Transcription'
+    config.add_show_field 'ocr_transcription_tesim', :label => 'Transcription'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
