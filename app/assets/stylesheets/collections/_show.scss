@@ -180,7 +180,16 @@ label.toggle_bookmark {
 }
 .reader-link {
 	margin-top: 1em;
+	i {
+		margin-left: .5em;
+	}
 }
+
+// Well for non-IIIF viewer stuff
+// ------------------------------- //
+// .other-viewer.well {
+// 	background: $gray-darker;
+// }
 
 // Catalog info
 // ------------------------------ //
