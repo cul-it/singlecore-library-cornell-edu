@@ -24,6 +24,7 @@
 		margin: 0 0 1em;
 		text-transform: uppercase;
 		font-family: $font-family-cul;
+		color: $cornell-red;
 	}
 }
 
@@ -51,6 +52,9 @@
 	.summary-field {
 		margin-top: .5em;
 		display: block;
+	}
+	i {
+		margin-left: .25em;
 	}
 }
 
