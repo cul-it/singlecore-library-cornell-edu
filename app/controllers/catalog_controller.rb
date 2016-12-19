@@ -174,6 +174,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'illustrator_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'second_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
+    config.add_facet_field 'location_tesim', :label => 'Location', :show => false
     #config.add_facet_field 'performers_subject_tesim', :label => 'Performers', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'system_tesim', :label => 'System', :sort => 'count', :show => false
@@ -198,6 +199,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
     config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
+    config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
+    config.add_facet_field 'other_location_tesim', :label => 'Creation Site', :show => false
 
     # Have BL send all facet field names to Solr
     config.add_facet_fields_to_solr_request!
@@ -215,6 +218,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'occasion_tesim', :label => 'Occasion'
     # config.add_index_field 'creation_site_location_tesim', :label => 'Creation Site'
     # config.add_index_field 'region_location_tesim', :label => 'Creation Site'
+    # this field is already listed under isbell:
     # config.add_index_field 'other_location_tesim', :label => 'Creation Site'
 
     # these index fields are from the dlxs collections
@@ -273,7 +277,7 @@ class CatalogController < ApplicationController
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
-    config.add_show_field 'creation_site_location_tesim', :label => 'Creation site', :link_to_search => true
+    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'track_isi', :label => 'Track'
 
@@ -296,7 +300,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'acq_date_tesim', :label => 'Acquisition Date'
     config.add_show_field 'acq_note_tesim', :label => 'Acquisition Note'
     config.add_show_field 'art_bio_tesim', :label => 'Artist Biography', helper_method: :autolink_field
-    config.add_show_field 'creation_site_tesim', :label => 'Creation Site'
     config.add_show_field 'note_tesim', :label => 'Note'
     config.add_show_field 'donor_tesim', :label => 'Donor'
     config.add_show_field 'img_view_desc_tesim', :label => 'Image View Description'
@@ -348,6 +351,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
     config.add_show_field 'site_location_tesim', :label => 'Location'
     config.add_show_field 'project_location_tesim', :label => 'Location'
+    config.add_show_field 'project_title_tesim', :label => 'Project Title'
     config.add_show_field 'project_owner_tesim', :label => 'Project Owner'
 
     # - eleusis
@@ -358,7 +362,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_reps_tesim', :label => 'Reps Subject'
 
     # - billie jean isbell
-    config.add_show_field 'other_location_tesim', :label => 'Location'
+    config.add_show_field 'other_location_tesim', :label => 'Creation Site', :link_to_search => true
     config.add_show_field 'series_relation_tesim', :label => 'Series'
 
     # - cornell coins collection
