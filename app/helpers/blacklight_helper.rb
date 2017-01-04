@@ -62,7 +62,6 @@ def catalog_info(bibid)
 end
 
 def get_tracks args
-   # http://jrc88.solr.library.cornell.edu/solr/digitalcollections/select?q=date_tesim%3A%221977+April+23%22+AND+occasion_tesim%3A%22Latihan+Setu%22&sort=track_ssi+asc&wt=json&indent=true
     date = args['date_tesim'][0].gsub(" ","+")
     collection = args['collection_tesim'][0].gsub(" ","+")
     occasion = args['occasion_tesim'][0].gsub(" ","+")
@@ -92,7 +91,16 @@ def autolink_field args
   if collection == "Persuasive Maps: PJ Mode Collection"
    return auto_link(args[:document][args[:field]].join("<br>")).html_safe
    else
-  return args[:document][args[:field]].join("<br>")
+  return args[:document][args[:field]].join("<br>").html_safe
+  end
+end
+
+def extent_units args
+  collection = args[:document]["collection_tesim"][0]
+  if collection == "Persuasive Maps: PJ Mode Collection" && !args[:document]["extent_tesim"].nil?
+   return ("(cm, H x W) " + args[:document]["extent_tesim"][0]).html_safe
+   else
+  return args[:document][args[:field]].join("<br>").html_safe
   end
 end
 

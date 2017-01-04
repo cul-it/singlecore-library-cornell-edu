@@ -302,7 +302,7 @@ class CatalogController < ApplicationController
     #- persuasive maps
     config.add_show_field 'pj_full_title_tesim', :label => 'Full Title'
     config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
-    config.add_show_field 'extent_tesim', :label => 'Extent'
+    config.add_show_field 'extent_tesim', :label => 'Extent', helper_method: :extent_units
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
     config.add_show_field 'source_tesim', :label => 'Source'
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes', helper_method: :autolink_field
