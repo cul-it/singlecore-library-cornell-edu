@@ -411,6 +411,9 @@ class CatalogController < ApplicationController
     #config.add_show_field 'adler_transcription_tesim', :label => 'Transcription'
     #config.add_show_field 'ocr_transcription_tesim', :label => 'Transcription'
 
+    # - images from the rare and manuscript collections
+    config.add_show_field 'exhibition_tesim', :label => 'Exhibition'
+
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
