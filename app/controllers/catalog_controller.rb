@@ -319,7 +319,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'latitude_tsi', :label => 'Latitude'
     config.add_show_field 'longitude_tsi', :label => 'Longitude'
     config.add_show_field 'relation_tesim', :label => 'Relation'
-    config.add_show_field 'repo_location_tesim', :label => 'Repository Location'
+    config.add_show_field 'location_repo_tesim', :label => 'Repository Location'
     config.add_show_field 'bibliography_tesim', :label => 'Bibliography', helper_method: :autolink_field
     config.add_show_field 'style_period_tesim', :label => 'Style/Period'
 
