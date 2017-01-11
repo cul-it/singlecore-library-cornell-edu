@@ -214,6 +214,10 @@ class CatalogController < ApplicationController
     config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
     config.add_facet_field 'other_location_tesim', :label => 'Creation Site', :show => false
 
+    if ENV["COLLECTIONS"] == "development"
+      config.add_facet_field 'status_ssi', :label => 'Status'
+    end
+
     # Have BL send all facet field names to Solr
     config.add_facet_fields_to_solr_request!
 
