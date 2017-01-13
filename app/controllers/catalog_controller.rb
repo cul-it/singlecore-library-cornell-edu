@@ -222,16 +222,15 @@ class CatalogController < ApplicationController
     config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
-    config.add_index_field 'village_tesim', :label => 'Village'
-    config.add_index_field 'founder_tesim', :label => 'Founder'
-    config.add_index_field 'market_square_details_tesim', :label => 'Market Square Details'
-    config.add_index_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
     config.add_index_field 'author_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
-    config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
+    config.add_index_field 'photographer_creator_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true    
     config.add_index_field 'occasion_tesim', :label => 'Occasion'
+    config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
+    config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
     # config.add_index_field 'creation_site_location_tesim', :label => 'Creation Site'
     # config.add_index_field 'region_location_tesim', :label => 'Creation Site'
     # this field is already listed under isbell:
