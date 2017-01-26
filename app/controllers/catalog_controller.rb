@@ -51,8 +51,12 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Claire Holt Papers: Images of Indonesian Art, Architecture, and Culture'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "coin" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Cornell Coin Collection'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "coins" && params[:f].nil?
-            facet_params = { f: { collection_tesim: ['Cornell Coins Collection'] } }
+            facet_params = { f: { collection_tesim: ['Cornell Coin Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "divinecomedy" && params[:f].nil?
@@ -380,7 +384,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'other_location_tesim', :label => 'Creation Site', :link_to_search => true
     config.add_show_field 'series_relation_tesim', :label => 'Series'
 
-    # - cornell coins collection
+    # - cornell coin collection
     config.add_show_field 'denomination_tesim', :label => 'Denomination'
     config.add_show_field 'mint_location_tesim', :label => 'Mint Location'
     config.add_show_field 'obverse_tesim', :label => 'Obverse'
