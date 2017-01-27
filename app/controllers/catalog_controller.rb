@@ -163,6 +163,9 @@ class CatalogController < ApplicationController
       :fl => '*,score',
           }
 
+    config.default_per_page = 20
+
+
     # geolocation settings
     config.add_facet_field 'where_ssim', :limit => -2, :label => 'Coordinates', :show => false
     config.view.maps.coordinates_field = "where_geocoordinates"
