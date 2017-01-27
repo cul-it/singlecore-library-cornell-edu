@@ -52,7 +52,7 @@ def image_download options={}
     options[:document] # the original document
     options[:field] # the field to render
     options[:value] # the value of the field
-    if !options[:document]['media_URL_tesim'][0].include?('pdf') 
+    if options[:document]['collection_tesim'][0] !='Bill Adler Archive' 
     link_to content_tag(:span, 'Original Image'), options[:value][0]
     else
       return "Not available for download"
