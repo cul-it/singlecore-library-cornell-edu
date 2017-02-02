@@ -44,11 +44,6 @@
 #documents .document .document-title-heading {
 	line-height: 1.6em;
 }
-// no longer needed?
-// #sortAndPerPage, .pagination-search-widgets {
-// 	padding-bottom: .4em;
-// 	margin-bottom: 1.5em;
-// }
 #sort-dropdown, #per_page-dropdown {
 	margin-bottom: .5em;
 }
@@ -66,6 +61,12 @@
 #sort-dropdown .dropdown-toggle, #per_page-dropdown .dropdown-toggle {
 	border-radius: 0;
 	color: $gray-dark;
+}
+// Override thumbnail float for mobile
+#documents .document .document-thumbnail {
+	float: none;
+	margin-top: 10px;
+	padding-left: 0;
 }
 
 // Gallery view
@@ -213,6 +214,12 @@
 	}
 	#sort-dropdown, #per_page-dropdown {
 		margin-bottom: 0;
+	}
+	// Put back thumbnail float
+	#documents .document .document-thumbnail {
+		float: right;
+		margin-top: 0;
+		padding-left: 20px;
 	}
 }
 // Medium devices (desktops, 992px and up)
