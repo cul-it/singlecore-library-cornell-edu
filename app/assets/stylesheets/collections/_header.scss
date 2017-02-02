@@ -33,6 +33,9 @@
 	display: none;
 }
 .util-links {
+	li {
+		margin-bottom: 0;
+	}
 	.nav > li > a {
 		background: $gray-dark;
 		color: white;
