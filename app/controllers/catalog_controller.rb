@@ -36,7 +36,7 @@ class CatalogController < ApplicationController
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "adler" && params[:f].nil?
-            facet_params = { f: { collection_tesim: ['Bill Adler Archive'] } }
+            facet_params = { f: { collection_tesim: ['Adler Hip Hop Archive'] } }
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "bolivianpamphlets" && params[:f].nil?
@@ -220,6 +220,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
     config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
     config.add_facet_field 'other_location_tesim', :label => 'Creation Site', :show => false
+    config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
@@ -418,8 +419,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'publication_location_tesim', :label => 'Location of Publication'
 
     # - bill adler archive
-    #config.add_show_field 'adler_transcription_tesim', :label => 'Transcription'
-    #config.add_show_field 'ocr_transcription_tesim', :label => 'Transcription'
+    config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true
+    config.add_show_field 'collection_number_tesim', :label => 'Collection Number'
 
     # - images from the rare and manuscript collections
     config.add_show_field 'exhibition_tesim', :label => 'Exhibition'
