@@ -91,6 +91,14 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Billie Jean Isbell Andean Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "japanesetheater" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Theatre Prints and Books from Early Modern Japan'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
+          if params[:subject] == "japaneseworld" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Knowledge of the World in Early Modern Japan'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "joeconzo" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Joe Conzo Jr. Archive'] } }
             redirect_to search_catalog_path(facet_params)
