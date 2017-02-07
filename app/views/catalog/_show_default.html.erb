@@ -1,4 +1,20 @@
 <%# default partial to display solr document fields in catalog show view -%>
+
+<% if 
+render_document_show_field_value(:document => @document, :field => 'adler_status') != 'Suppress for portal' && render_document_show_field_value(:document => @document, :field => 'collection_tesim' == "Adler Hip Hop Archive")  
+  %> 
+
+	<% @show = "yes" %>
+<% end %>
+	<% if render_document_show_field_value(:document => @document, :field => 'status_ssi') == "Published"  || 
+render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" %>
+<% @show = "yes" %>
+
+<% end %>
+
+<%if @show == "yes" %>
+
+
 <% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
 <% @ssc_site  = render_document_show_field_value(:document => @document, :field => 'ssc_site_tesim') %>
 <% @bibid  = render_document_show_field_value(:document => @document, :field => 'bibid_ssi') %>
@@ -72,4 +88,6 @@
 			<% end %>
 		</div>
 	</div>
+<% end %>
+
 <% end %>
