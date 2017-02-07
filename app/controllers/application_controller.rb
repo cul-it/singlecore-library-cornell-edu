@@ -11,10 +11,10 @@ class ApplicationController < ActionController::Base
   def set_fq(environment)
     if environment == 'development'
       fq = '-status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'
-
+#(collection_tesim:"Adler Hip Hop Archive" AND -adler_status:"Suppress for portal")
+      OR
     elsif environment == 'production'
-      fq = '(collection_tesim:"Adler Hip Hop Archive" AND -adler_status:"Suppress for portal")
-      OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
+      fq = ' (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
       AND +(collection_tesim:"New York State Aerial Photographs"
       OR collection_tesim:"Huntington Free Library Native American Collection"
       OR collection_tesim:"John Reps Collection - Bastides"
