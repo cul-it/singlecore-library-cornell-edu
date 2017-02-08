@@ -1,4 +1,20 @@
 <div id="content" class="col-sm-12">
+<% if 
+render_document_show_field_value(:document => @document, :field => 'adler_status') != 'Suppress for portal' && render_document_show_field_value(:document => @document, :field => 'collection_tesim' == "Adler Hip Hop Archive")  
+  %> 
 
+	<% @show = "yes" %>
+<% end %>
+	<% if render_document_show_field_value(:document => @document, :field => 'status_ssi') == "Published"  || 
+render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" %>
+<% @show = "yes" %>
+
+<% end %>
+
+<%if @show == "yes" %>
   	<%= render_document_main_content_partial %>
+
+<% else %>
+<h1>Item restricted</h1>
+<% end %>
 </div>
