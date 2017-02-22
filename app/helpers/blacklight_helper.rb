@@ -52,7 +52,7 @@ def image_download options={}
     options[:document] # the original document
     options[:field] # the field to render
     options[:value] # the value of the field
-    if options[:document]['collection_tesim'][0] !='Bill Adler Archive' 
+    if options[:document]['collection_tesim'][0] !='Adler Hip Hop Archive' 
     link_to content_tag(:span, 'Original Image'), options[:value][0],title:"Download", 
     onclick:"javascript:_paq.push(['trackEvent', 'DownloadLink', 
     'viewer-" + options[:document]['project_id_ssi'] + "-" + options[:document]['id'] +"'" + '])'
