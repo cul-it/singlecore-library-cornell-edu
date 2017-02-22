@@ -239,6 +239,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     config.add_index_field 'author_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
     config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_index_field 'photographer_creator_tesim', :label => 'Creator', :link_to_search => true
@@ -269,6 +270,7 @@ class CatalogController < ApplicationController
     #core fields
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
+    config.add_show_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
     config.add_show_field 'photographer_creator_tesim', :label => 'Photographer', :link_to_search => true
     config.add_show_field 'author_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
