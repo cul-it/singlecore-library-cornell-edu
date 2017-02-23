@@ -66,13 +66,13 @@ end
   get '/collections' => 'catalog#facet', :id => 'collection_tesim'
   get '/collections/aerialny' => 'high_voltage/pages#show', :id => 'collections/aerialny/index'
   get '/collections/ragamala' => 'high_voltage/pages#show', :id => 'collections/ragamala/index'
+  get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
 
   # dev pages
   if ENV['COLLECTIONS'] == "development" 
   get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
   get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
   get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
-  get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
   end
 
   get '/collections/:subject' => 'catalog#index'
