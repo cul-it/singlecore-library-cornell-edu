@@ -26,7 +26,7 @@ gem 'devise'
 
 gem 'rails_autolink'
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails','4.2.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -47,6 +47,7 @@ gem 'high_voltage', '~> 2.3.0'
 gem 'blacklight-gallery'
 
 gem 'blacklight-maps'
+gem 'leaflet-rails','0.7.7'
 
 gem "blacklight_range_limit"
 
