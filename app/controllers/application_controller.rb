@@ -13,8 +13,7 @@ class ApplicationController < ActionController::Base
       fq = '-status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'
 
     elsif environment == 'production'
-      fq = '(collection_tesim:"Adler Hip Hop Archive" AND -adler_status:"Suppress for portal")
-      OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
+      fq = '(-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
       AND +(collection_tesim:"New York State Aerial Photographs"
       OR collection_tesim:"Huntington Free Library Native American Collection"
       OR collection_tesim:"John Reps Collection - Bastides"
@@ -39,7 +38,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim:"Cornell Cast Collection"
       OR collection_tesim:"Obama Visual Iconography"
       OR collection_tesim:"Loewentheil Collection of African-American Photographs"
-      ))'
+      )'
     end
   end
 
