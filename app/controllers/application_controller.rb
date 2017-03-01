@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def set_fq(environment)
     if environment == 'development'
-      fq = '-status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'
+      fq = '-status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture" AND -adler_status:"Suppress for portal"'
 
     elsif environment == 'production'
       fq = '(-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
