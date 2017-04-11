@@ -143,6 +143,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Willard D. Straight in Korea'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "tell-en-nasbeh" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           # if params[:subject] == "ragamala" && params[:f].nil?
           #   facet_params = { f: { collection_tesim: ['Ragamala Paintings'] } }
           #   redirect_to search_catalog_path(facet_params) + "&sbjct=ragamala"
@@ -439,6 +443,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'metric_width_tesim', :label => 'Exhibition'
     config.add_show_field 'metric_depth_tesim', :label => 'Exhibition'
     config.add_show_field 'metric_diameter_tesim', :label => 'Exhibition'
+
+    # - sri lankan vernacular
+    config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
