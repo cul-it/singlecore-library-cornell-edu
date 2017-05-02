@@ -127,6 +127,9 @@
 	width: 300px !important;
 	height: 189px !important;
 }
+.av-player {
+	margin-bottom: 2em;
+}
 
 // Track list
 // ------------------------ //
@@ -245,6 +248,9 @@ label.toggle_bookmark {
 	}
 	.metadata {
 		margin-top: 0;
+	}
+	.av-player {
+		margin-bottom: 0;
 	}
 }
 // Large devices (desktops, 1200px and up)
