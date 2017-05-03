@@ -99,6 +99,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Knowledge of the World in Early Modern Japan'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "jcmiceland" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['John Clair Miller Image Collection of Twentieth-Century Architecture in Iceland'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "joeconzo" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Joe Conzo Jr. Archive'] } }
             redirect_to search_catalog_path(facet_params)
@@ -209,6 +213,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'illustrator_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'second_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
+    config.add_facet_field 'architect_creator_tesim', :label => 'Architect', :show => false
     config.add_facet_field 'location_tesim', :label => 'Location', :show => false
     #config.add_facet_field 'performers_subject_tesim', :label => 'Performers', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
@@ -251,6 +256,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_index_field 'photographer_creator_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'architect_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true    
     config.add_index_field 'occasion_tesim', :label => 'Occasion'
@@ -450,6 +456,10 @@ class CatalogController < ApplicationController
 
     # - sri lankan vernacular
     config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title'
+
+    # - john clair miller iceland
+    config.add_show_field 'architect_creator_tesim', :label => 'Architect', :link_to_search => true
+    config.add_show_field 'architectural_firm_creator_tesim', :label => 'Architectural Firm', :link_to_search => true
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
