@@ -11,6 +11,10 @@ class CatalogController < ApplicationController
           if params[:sbjct].present? && params[:f].nil?
             redirect_to search_catalog_path
           end
+          if params[:subject] == "adler" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Adler Hip Hop Archive'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "adwhite" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Andrew Dickson White Architectural Photographs Collection'] } }
             redirect_to search_catalog_path(facet_params)
@@ -35,12 +39,12 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia'] } }
             redirect_to search_catalog_path(facet_params)
           end
-          if params[:subject] == "adler" && params[:f].nil?
-            facet_params = { f: { collection_tesim: ['Adler Hip Hop Archive'] } }
-            redirect_to search_catalog_path(facet_params)
-          end
           if params[:subject] == "bolivianpamphlets" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Alfred Montalvo Bolivian Digital Pamphlets Collection'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
+          if params[:subject] == "blaschka" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Blaschka Glass Invertebrate Models'] } }
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "cast" && params[:f].nil?
