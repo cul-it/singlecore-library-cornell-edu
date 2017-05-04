@@ -461,6 +461,15 @@ class CatalogController < ApplicationController
     config.add_show_field 'architect_creator_tesim', :label => 'Architect', :link_to_search => true
     config.add_show_field 'architectural_firm_creator_tesim', :label => 'Architectural Firm', :link_to_search => true
 
+    # - blaschka
+    config.add_show_field 'identifier_blaschka_tesim', :label => 'Blaschka Number'
+    config.add_show_field 'identifier_cornell_tesim', :label => 'Cornell Number'
+    config.add_show_field 'old_genus_tesim', :label => 'Old Genus'
+    config.add_show_field 'old_species_tesim', :label => 'Old Species'
+    config.add_show_field 'genus_tesim', :label => 'Current Genus'
+    config.add_show_field 'species_tesim', :label => 'Current Species'
+    config.add_show_field 'fpu_tesim', :label => 'F/P/U'
+
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
