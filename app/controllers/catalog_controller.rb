@@ -265,6 +265,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true    
     config.add_index_field 'occasion_tesim', :label => 'Occasion'
     config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
+    config.add_index_field 'identifier_blaschka_tesim', :label => 'Blaschka Number'
     config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
     # config.add_index_field 'creation_site_location_tesim', :label => 'Creation Site'
     # config.add_index_field 'region_location_tesim', :label => 'Creation Site'
