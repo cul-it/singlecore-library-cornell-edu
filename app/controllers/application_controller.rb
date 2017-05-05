@@ -10,10 +10,14 @@ class ApplicationController < ActionController::Base
 
   def set_fq(environment)
     if environment == 'development'
-      fq = '-status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -collection_tesim:"Core Historical Library of Agriculture"'
+      fq = '-active_fedora_model_ssi:"Page" 
+      AND -collection_tesim:"Core Historical Library of Agriculture" 
+      AND -adler_status:"Suppress for portal"'
+
 
     elsif environment == 'production'
-      fq = '-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
+      fq = '(collection_tesim:"Adler Hip Hop Archive" OR collection_tesim:"Indonesian Music Archive" AND -adler_status:"Suppress for portal")
+      OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
       AND +(collection_tesim:"New York State Aerial Photographs"
       OR collection_tesim:"Huntington Free Library Native American Collection"
       OR collection_tesim:"John Reps Collection - Bastides"
@@ -30,12 +34,16 @@ class ApplicationController < ActionController::Base
       OR collection_tesim:"Alison Mason Kingsbury: Life and Art"
       OR collection_tesim:"John Reps Collection - Slides"
       OR collection_tesim:"John Clair Miller"
-      OR collection_tesim:"Cornell Coins Collection"
+      OR collection_tesim:"Cornell Coin Collection"
       OR collection_tesim:"Cornell Squeeze Collection"
       OR collection_tesim:"Billie Jean Isbell Andean Collection"
       OR collection_tesim:"Cornell Gem Impressions Collection"
       OR collection_tesim:"Punk Flyers"
-      )'
+      OR collection_tesim:"Cornell Cast Collection"
+      OR collection_tesim:"Obama Visual Iconography"
+      OR collection_tesim:"Loewentheil Collection of African-American Photographs"
+      OR collection_tesim:"The J. R. Sitlington Sterrett Collection of Archaeological Photographs"
+      ))'
     end
   end
 
