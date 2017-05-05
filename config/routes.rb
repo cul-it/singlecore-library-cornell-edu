@@ -60,6 +60,7 @@ end
   get '/collection/racker', to: redirect('/collections/efraimracker')
   get '/collection/ragamala', to: redirect('/collections/ragamala')
   get '/collection/squeeze', to: redirect('/collections/squeeze')
+  get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
 
   # no facets on high voltage
   # prod pages
@@ -71,7 +72,6 @@ end
   # dev pages
   if ENV['COLLECTIONS'] == "development" 
   get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
-  get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
   get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
   end
 
