@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
 
 
     elsif environment == 'production'
-      fq = '(collection_tesim:"Adler Hip Hop Archive" OR collection_tesim:"Indonesian Music Archive" AND -adler_status:"Suppress for portal")
+      fq = '(collection_tesim:"Adler Hip Hop Archive"  AND -adler_status:"Suppress for portal")
+      OR collection_tesim:"Indonesian Music Archive"
       OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
       AND +(collection_tesim:"New York State Aerial Photographs"
       OR collection_tesim:"Huntington Free Library Native American Collection"
