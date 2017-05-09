@@ -324,7 +324,7 @@ class CatalogController < ApplicationController
 
     #- aerial
     config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
-    config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
+    
 
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
@@ -469,11 +469,9 @@ class CatalogController < ApplicationController
     # - blaschka
     config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
     config.add_show_field 'identifier_cornell_tesim', :label => 'Cornell Number'
-    config.add_show_field 'old_genus_tesim', :label => 'Old Genus'
-    config.add_show_field 'old_species_tesim', :label => 'Old Species'
-    config.add_show_field 'genus_tesim', :label => 'Current Genus'
-    config.add_show_field 'species_tesim', :label => 'Current Species'
+    config.add_show_field 'original_blaschka_species_tesim', :label => 'Original Blaschka Species Name'
     config.add_show_field 'fpu_tesim', :label => 'F/P/U'
+    config.add_show_field 'photographer_tesim', :label => 'Photographer'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
@@ -481,6 +479,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
     config.add_show_field 'identifier_tesim', :label => 'Identifier'
     config.add_show_field 'date_created_on_ssi', :label => 'Date posted', :link_to_search => true
+    config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
 
     # "fielded" search configuration. Used by pulldown among other places.
 
