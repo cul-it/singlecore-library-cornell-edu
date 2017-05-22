@@ -115,12 +115,25 @@ $chla-dark-brown: #493829;
 			background: $chla-orange;
 		}
 	}
-}
-.sidebar {
-	.nav-header {
-		color: $chla-brown;
+	.sidebar {
+		.nav-header {
+			color: $chla-brown;
+			font-weight: 700;
+		}
+		li {
+			margin-bottom: .25em;
+		}
+		a {
+			background: rgba(255,255,255,.75);
+			text-decoration: none;
+		}
+		a:hover {
+			background-color: $chla-orange;
+			color: white;
+		}
 	}
 }
+
 
 // Mobile menu
 .blacklight-pages-show {
