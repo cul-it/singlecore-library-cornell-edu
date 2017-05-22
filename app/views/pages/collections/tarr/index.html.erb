@@ -1,0 +1,31 @@
+<div class="tarr-layout">
+	<div class="container">
+		<%= render partial: 'pages/collections/tarr/menu' %>
+	</div>
+	<div class="hero">
+		<div class="container">
+			<div class="col-sm-10 col-sm-offset-1">
+				<div class="well">
+					<p class="lead">Cornell professor Ralph Stockman Tarr (1864-1912) and his students and collaborators organized several expeditions to glaciated areas in Greenland and Alaska. About 2,000 of their photographs are being digitized for study of glacier change over time. <small><a href="/collections/tarr/about">Learn more<i class="fa fa-chevron-right"></i></small></a></p>
+					<h3>Search the collection</h3>
+					<%= render '/catalog/search_form', { :@collection_search => "Historic Glacial Images of Alaska and Greenland"}  %>
+					<h3>Browse by region</h3>
+					<div class="collection-browse"> 
+						<a href="/?f%5Bcollection_tesim%5D%5B%5D=Historic+Glacial+Images+of+Alaska+and+Greenland&f%5Bregion_location_tesim%5D%5B%5D=Alaska" class="btn btn-primary">Alaska</a> 
+						<a href="/?f%5Bcollection_tesim%5D%5B%5D=Historic+Glacial+Images+of+Alaska+and+Greenland&f%5Bregion_location_tesim%5D%5B%5D=Canada" class="btn btn-primary">Canada</a> 
+						<a href="/?f%5Bcollection_tesim%5D%5B%5D=Historic+Glacial+Images+of+Alaska+and+Greenland&f%5Bregion_location_tesim%5D%5B%5D=Greenland" class="btn btn-primary">Greenland</a> 
+						<%# Maine | - Maine doesn't have any published items%>
+						<%# Massachusetts | - Massachusetts doesn't have any published items%>
+						<a href="/?f%5Bcollection_tesim%5D%5B%5D=Historic+Glacial+Images+of+Alaska+and+Greenland&f%5Bregion_location_tesim%5D%5B%5D=New+York" class="btn btn-primary">New York</a>
+						<%# Norway - Norway doesn't have any published items%>
+					</div>
+					<div class="tarr-info">
+						<p>This collection is part of the <a href="http://rare.library.cornell.edu">Division of Rare and Manuscript Collections</a>.</p>
+						<p>Persistent Identifier: http://doi.org/10.7298/X4M61H5R</p>
+						<p><a href="https://www.library.cornell.edu/about/inside/policies/public-domain">Guidelines for using public domain text, images, audio and video reproduced from Cornell University Library Collections</a></p>
+					</div>					
+				</div>
+			</div>		
+		</div>
+	</div>
+</div>
