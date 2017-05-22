@@ -23,7 +23,7 @@ $chla-dark-brown: #493829;
 		color: $chla-orange;
 		font-family: $font-family-sans-serif;
 		font-weight: 700;
-		margin: .5em 0 0 0;
+		margin: .5em 0;
 		display: inline-block;
 		a {
 			color: $chla-orange;
@@ -94,7 +94,7 @@ $chla-dark-brown: #493829;
 	}
 }
 .chla-layout {
-	margin-top: 4em;
+	margin-top: 2em;
 	.well {
 		background: url("/assets/collections/chla/upfeathers.png");
 		border: 0;
@@ -141,9 +141,6 @@ $chla-dark-brown: #493829;
 // Small devices (tablets, 768px and up)
 @media (min-width: $screen-sm) { 
 	.chla-header {
-		h2 {
-			margin-bottom: .5em;
-		}
 		.search-bar-home {
 			background: rgba(238,238,238,.75);
 			position: relative;
@@ -157,13 +154,8 @@ $chla-dark-brown: #493829;
 	}
 }
 // Medium devices (desktops, 992px and up)
-@media (min-width: $screen-md) {
-	.chla-header {
-		h2 {
-			margin-bottom: 0;
-		}
-	}
-}
+// @media (min-width: $screen-md) {
+// }
 // Large devices (desktops, 1200px and up)
 // @media (min-width: $screen-lg) {
 // }
