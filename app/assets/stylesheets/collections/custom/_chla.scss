@@ -41,12 +41,13 @@ $chla-dark-brown: #493829;
 		float: none;
 		border: 0;
 		margin-left: 0;
+		margin-bottom: 0;
 	}
 	.navbar-nav > li > a {
 		background: $chla-brown;
 		color: white;
 		border-bottom: 0;
-		margin-left: 1px;
+		margin-left: 2px;
 		margin-bottom: 2px;
 		text-decoration: none;
 	}
@@ -150,6 +151,12 @@ $chla-dark-brown: #493829;
 			background: url("/assets/collections/chla/taschenbuch3-banner.jpg") no-repeat;
 			background-position: 50% 0 !important;
 			height: 350px;
+		}
+		.navbar-nav > li > a {
+			margin-bottom: 0;
+		}
+		h2 {
+			font-size: 36px;
 		}
 	}
 }
