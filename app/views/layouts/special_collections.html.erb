@@ -39,25 +39,7 @@
     <%# this comes from blacklight, you might not need it on pages? %>
     <%= render partial: 'shared/ajax_modal' %>
     <div class="special-collections">
-
-        <%# TODO: change this to if url contains /collections/chla so it loads on all chla pages %>
-        <% if current_page?('/collections/chla') %>
-            <%= render partial: 'pages/collections/chla/header' %>
-        <% end %>
-
-        <%# Tarr home page %>
-        <% if current_page?('/collections/tarr') %>
-            <%= render partial: 'pages/collections/tarr/home' %>
-        <% end %>
-
-        <%# Sri Lanka home page %>
-        <% if current_page?('/collections/srilanka') %>
-            <%= render partial: 'pages/collections/srilanka/header' %>
-        <% end %>
-
-        <div class="container">
-            <%= yield %>
-        </div>
+        <%= yield %>
     </div>
     
     <%= render :partial => 'shared/footer' %>

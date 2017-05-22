@@ -20,7 +20,8 @@ $chla-dark-brown: #493829;
 		display: inline-block;
 	}
 	.hero {
-		background: url("/assets/collections/chla/00000007.tifl.png") no-repeat 50% 50%;
+		background: url("/assets/collections/chla/taschenbuch3-banner.jpg") no-repeat;
+		background-position: 50% 0 !important;
 		height: 150px;
 		h2 {
 			background: rgba(255,255,255,.8);
@@ -28,7 +29,7 @@ $chla-dark-brown: #493829;
 		}
 	}
 	.hero.home {
-		height: 300px;
+		height: 350px;
 	}
 	.navbar {
 		background: $chla-dark-brown;

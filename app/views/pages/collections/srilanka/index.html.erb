@@ -1,19 +1,22 @@
+<%= render partial: 'pages/collections/srilanka/header' %>
 <div class="srilanka-layout">
-	<div class="row">
-		<div class="sidebar">
-			<%= render partial: 'pages/collections/srilanka/menu' %>
-		</div>
-		<div class="main-text">
-			<div class="well">
-				<p>This collection is part of Bonnie MacDougall’s larger retrospective project on vernacular traditions in a Sri Lankan forest community (“Rangama”) which has become an important locale for cross disciplinary study of vernacular architecture, tradition and change. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum enim felis, sodales dapibus nisl pulvinar et. Donec velit elit, mollis sed scelerisque a, vestibulum eu sem. Nunc tellus leo, tincidunt vel felis vel, varius condimentum eros. <a href="/collections/srilanka/about">Learn more about the collection »</a></p>
+	<div class="container">
+		<div class="row">
+			<div class="sidebar">
+				<%= render partial: 'pages/collections/srilanka/menu' %>
 			</div>
-			<div class="collection-search">
-				<h3>Search Depicting the Sri Lankan Vernacular</h3>
-				<%= render '/catalog/search_form', { :@collection_search => "Sri Lankan Vernacular"}  %>
-			</div>
-			<div class="browse-links">
-				<h3>Featured image sets</h3>
-				<a href="#">Featured sets</a> | <a href="#">Of images</a> | <a href="#">Could be listed</a> | <a href="#">Here</a>
+			<div class="main-text">
+				<div class="well">
+					<p>This collection is part of Bonnie MacDougall’s larger retrospective project on vernacular traditions in a Sri Lankan forest community (“Rangama”) which has become an important locale for cross disciplinary study of vernacular architecture, tradition and change. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis bibendum enim felis, sodales dapibus nisl pulvinar et. Donec velit elit, mollis sed scelerisque a, vestibulum eu sem. Nunc tellus leo, tincidunt vel felis vel, varius condimentum eros. <a href="/collections/srilanka/about">Learn more about the collection »</a></p>
+				</div>
+				<div class="collection-search">
+					<h3>Search Depicting the Sri Lankan Vernacular</h3>
+					<%= render '/catalog/search_form', { :@collection_search => "Sri Lankan Vernacular"}  %>
+				</div>
+				<div class="browse-links">
+					<h3>Featured image sets</h3>
+					<a href="#">Featured sets</a> | <a href="#">Of images</a> | <a href="#">Could be listed</a> | <a href="#">Here</a>
+				</div>
 			</div>
 		</div>
 	</div>
