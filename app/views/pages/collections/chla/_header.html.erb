@@ -1,20 +1,23 @@
 <div class="chla-header">
+	<%= render partial: 'pages/collections/chla/menu' %>
 	<%# stick the hero image on the home page only %>
 	<% if current_page?('/collections/chla') %>
-		<div class="hero home">
-	<% else %>
 		<div class="hero">
-	<% end %>
 			<div class="container">
-				<%= render partial: 'pages/collections/chla/title' %>
+				<div class="search-bar search-bar-home row">
+					<div class="col-md-8">
+						<%= render '/catalog/search_form', { :@collection_search => "Core Historical Literature of Agriculture"}  %>
+					</div>
+				</div>
 			</div>
 		</div>
-	<%= render partial: 'pages/collections/chla/menu' %>
-	<div class="search-bar">
-		<div class="container">
-			<div class="col-md-8">
-				<%= render '/catalog/search_form', { :@collection_search => "Core Historical Literature of Agriculture"}  %>
+	<% else %>
+		<div class="search-bar">
+			<div class="container">
+				<div class="col-md-8">
+					<%= render '/catalog/search_form', { :@collection_search => "Core Historical Literature of Agriculture"}  %>
+				</div>
 			</div>
 		</div>
-	</div>
+	<% end %>	
 </div>
