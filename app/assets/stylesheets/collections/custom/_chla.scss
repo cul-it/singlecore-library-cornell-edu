@@ -10,38 +10,45 @@ $chla-dark-brown: #493829;
 // Custom styles
 // --------------
 
+
 .chla-header {
 	margin-top: -1em;
+	.hero {
+		background-image: none;
+	}
+	.col-md-6 {
+		padding-left: 0;
+	}
 	h2 {
 		color: $chla-orange;
 		font-family: $font-family-sans-serif;
 		font-weight: 700;
-		margin-top: 1em;	
+		margin: .5em 0 0 0;
 		display: inline-block;
-	}
-	.hero {
-		background: url("/assets/collections/chla/taschenbuch3-banner.jpg") no-repeat;
-		background-position: 50% 0 !important;
-		height: 150px;
-		h2 {
-			background: rgba(255,255,255,.8);
-			padding: 5px;
+		a {
+			color: $chla-orange;
 		}
 	}
-	.hero.home {
-		height: 350px;
+	.navbar-toggle {
+		background: $chla-green;
 	}
 	.navbar {
 		background: $chla-dark-brown;
 		border-radius: 0;
 		padding: 0;
 	}
+	.navbar-nav {
+		float: none;
+		border: 0;
+		margin-left: 0;
+	}
 	.navbar-nav > li > a {
 		background: $chla-brown;
 		color: white;
 		border-bottom: 0;
 		margin-left: 1px;
-		text-transform: uppercase;
+		margin-bottom: 2px;
+		text-decoration: none;
 	}
 	.navbar-nav > li > a:hover {
 		border: 0;
@@ -49,6 +56,24 @@ $chla-dark-brown: #493829;
 	}
 	.navbar-nav > li:first-child > a {
 		margin-left: 0;
+	}
+	ul {
+		list-style: none;
+	}
+	li {
+		float: left;
+		color: $gray-light;
+		margin-bottom: 0;
+	}
+	.chla-browse-nav {
+		span {
+			display: inline-block;
+			color: white;
+			float: left;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			padding-right: 5px;
+		}
 	}
 	.navbar-collapse {
 		padding-left: 0;
@@ -80,9 +105,65 @@ $chla-dark-brown: #493829;
 			color: $chla-brown;
 		}
 	}
+	.collection-browse {
+		margin-bottom: 1em;
+		a {
+			background: $chla-green;
+		}
+		a:hover {
+			background: $chla-orange;
+		}
+	}
 }
 .sidebar {
 	.nav-header {
 		color: $chla-brown;
 	}
 }
+
+// Mobile menu
+.blacklight-pages-show {
+	.chla-header {
+		.navbar-collapse {
+			border-top: 0;
+			box-shadow: none;
+			.nav {
+				border: 0;
+			}
+		}
+	}
+}
+
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) { 
+	.chla-header {
+		h2 {
+			margin-bottom: .5em;
+		}
+		.search-bar-home {
+			background: rgba(238,238,238,.75);
+			position: relative;
+			top: 273px;
+		}
+		.hero {
+			background: url("/assets/collections/chla/taschenbuch3-banner.jpg") no-repeat;
+			background-position: 50% 0 !important;
+			height: 350px;
+		}
+	}
+}
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md) {
+	.chla-header {
+		h2 {
+			margin-bottom: 0;
+		}
+	}
+}
+// Large devices (desktops, 1200px and up)
+// @media (min-width: $screen-lg) {
+// }
