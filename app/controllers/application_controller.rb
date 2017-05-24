@@ -44,6 +44,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim:"Obama Visual Iconography"
       OR collection_tesim:"Loewentheil Collection of African-American Photographs"
       OR collection_tesim:"The J. R. Sitlington Sterrett Collection of Archaeological Photographs"
+      OR collection_tesim:"Selections from the Cornell Anthropology Collections"
       ))'
     end
   end
