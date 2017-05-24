@@ -1,0 +1,123 @@
+// Global styles for Mann collections
+// -------------------------------------
+
+.mann-header {
+	margin-top: -1em;
+	.hero {
+		background-image: none;
+	}
+	.col-md-6 {
+		padding-left: 0;
+	}
+	h2 {
+		margin: .75em 0;
+		display: inline-block;
+	}
+	.navbar {
+		border-radius: 0;
+		padding: 0;
+	}
+	.navbar-nav {
+		float: none;
+		border: 0;
+		margin-left: 0;
+		margin-bottom: 0;
+	}
+	.navbar-nav > li > a {
+		color: white;
+		border-bottom: 0;
+		margin-left: 2px;
+		margin-bottom: 2px;
+		text-decoration: none;
+	}
+	.navbar-nav > li > a:hover {
+		border: 0;
+	}
+	.navbar-nav > li:first-child > a {
+		margin-left: 0;
+	}
+	ul {
+		list-style: none;
+	}
+	li {
+		float: left;
+		color: $gray-light;
+		margin-bottom: 0;
+	}
+	.navbar-collapse {
+		padding-left: 0;
+	}
+	.search-bar {
+		background: $gray-light;
+		padding: 15px 0;
+		.form-control {
+			width: 100%;
+			height: 45px;
+		}
+		.glyphicon {
+			padding: 10px 12px;
+			margin-top: -.25em;
+		}
+	}
+}
+.mann-layout {
+	margin-top: 2em;
+	.well {
+		border: 0;
+		padding: 30px;
+	}
+	.sidebar {
+		.nav-header {
+			font-weight: 700;
+		}
+		li {
+			margin-bottom: .25em;
+		}
+		a {
+			background: rgba(255,255,255,.75);
+			text-decoration: none;
+		}
+	}
+}
+
+
+// Mobile menu
+// .blacklight-pages-show {
+// 	.mann-header {
+// 		.navbar-collapse {
+// 			border-top: 0;
+// 			box-shadow: none;
+// 			.nav {
+// 				border: 0;
+// 			}
+// 		}
+// 	}
+// }
+
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) { 
+	.mann-header {
+		.search-bar-home {
+			background: rgba(238,238,238,.75);
+			position: relative;
+			top: 273px;
+		}
+		.hero {
+			background-position: 50% 0 !important;
+			height: 350px;
+		}
+		.navbar-nav > li > a {
+			margin-bottom: 0;
+		}
+	}
+}
+// Medium devices (desktops, 992px and up)
+// @media (min-width: $screen-md) {
+// }
+// Large devices (desktops, 1200px and up)
+// @media (min-width: $screen-lg) {
+// }
