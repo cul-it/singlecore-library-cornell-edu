@@ -1,35 +1,43 @@
 // Variables
 // ------------
 
-$chla-orange: #eb8f0c;
-$chla-green: #668d3c;
-$chla-brown: #613318;
-$chla-dark-brown: #493829;
+$hearth-black: #1c1f33;
+$hearth-gray: #666370;
+$hearth-mauve: #9b7874;
+$hearth-pink: #d33e43;
+$hearth-red: #ff220c;
+
+//
+
+$bees-green: #bbd8b3;
+$bees-yellow: #f3b61f;
+$bees-chartreuse: #a29f15;
+$bees-maroon: #510d0a;
+$bees-brown: #191102;
 
 
 // Custom styles
 // --------------
 
 
-.mann-header--chla {
+.mann-header--bees {
 	h2 {
-		color: $chla-orange;
 		a {
-			color: $chla-orange;
+			color: white;
 		}
 	}
 	.navbar-toggle {
-		background: $chla-green;
+		background: $hearth-pink;
 	}
 	.navbar {
-		background: $chla-dark-brown;
+		background: $bees-maroon;
 	}
 	.navbar-nav > li > a {
-		background: $chla-brown;
+		background: #7c1612;
 	}
 	.navbar-nav > li > a:hover {
 		border: 0;
-		background: $chla-orange;
+		background: $bees-yellow;
 	}
 	.navbar-collapse {
 		padding-left: 0;
@@ -37,41 +45,35 @@ $chla-dark-brown: #493829;
 	.search-bar {
 		.glyphicon {
 			color: white;
-			background: $chla-green;
+			background: $hearth-pink;
 		}
 	}
 }
-.mann-layout--chla {
-	.well.highlight {
-		background: url("/assets/collections/chla/upfeathers.png");
+.mann-layout--bees {
+	.well {
+		background: url("/assets/collections/hearth/contemporary_china_2.png");
 	}
 	.lead {
 		strong {
-			color: $chla-brown;
+			color: $hearth-pink;
 		}
 	}
 	.collection-browse {
 		margin-bottom: 1em;
 		a {
-			background: $chla-green;
+			background: $hearth-pink;
 		}
 		a:hover {
-			background: $chla-orange;
+			background: $hearth-red;
 		}
 	}
 	.sidebar {
 		.nav-header {
-			color: $chla-brown;
+			color: $hearth-pink;
 		}
 		a:hover {
-			background-color: $chla-orange;
+			background-color: $hearth-gray;
 			color: white;
-		}
-	}
-	.jumplinks {
-		padding-left: 15px;
-		li {
-			margin-bottom: .5em;
 		}
 	}
 }
@@ -81,9 +83,9 @@ $chla-dark-brown: #493829;
 
 // Small devices (tablets, 768px and up)
 @media (min-width: $screen-sm) { 
-	.mann-header--chla {
+	.mann-header--bees {
 		.hero {
-			background: url("/assets/collections/chla/taschenbuch3-banner.jpg") no-repeat;
+			background: url("/assets/collections/bees/bluebee-banner.jpg") no-repeat;
 		}
 	}
 }
