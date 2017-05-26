@@ -42,7 +42,7 @@ $chla-dark-brown: #493829;
 	}
 }
 .mann-layout--chla {
-	.well {
+	.well.highlight {
 		background: url("/assets/collections/chla/upfeathers.png");
 	}
 	.lead {
@@ -66,6 +66,12 @@ $chla-dark-brown: #493829;
 		a:hover {
 			background-color: $chla-orange;
 			color: white;
+		}
+	}
+	.jumplinks {
+		padding-left: 15px;
+		li {
+			margin-bottom: .5em;
 		}
 	}
 }
