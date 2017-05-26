@@ -1,19 +1,11 @@
 // Variables
 // ------------
 
-$hearth-black: #1c1f33;
-$hearth-gray: #666370;
-$hearth-mauve: #9b7874;
-$hearth-pink: #d33e43;
-$hearth-red: #ff220c;
-
-//
-
-$bees-green: #bbd8b3;
+$bees-dark-blue: #006e90;
 $bees-yellow: #f3b61f;
-$bees-chartreuse: #a29f15;
-$bees-maroon: #510d0a;
-$bees-brown: #191102;
+$bees-gray: #adcad6;
+$bees-green: #99c24d;
+$bees-blue: #41bbd9;
 
 
 // Custom styles
@@ -22,22 +14,26 @@ $bees-brown: #191102;
 
 .mann-header--bees {
 	h2 {
+		margin-bottom: .25em;
 		a {
 			color: white;
 		}
 	}
+	h3 {
+		color: white;
+	}
 	.navbar-toggle {
-		background: $hearth-pink;
+		background: $bees-blue;
 	}
 	.navbar {
-		background: $bees-maroon;
+		background: $bees-dark-blue;
 	}
 	.navbar-nav > li > a {
-		background: #7c1612;
+		background: $bees-yellow;
 	}
 	.navbar-nav > li > a:hover {
 		border: 0;
-		background: $bees-yellow;
+		background: $bees-blue;
 	}
 	.navbar-collapse {
 		padding-left: 0;
@@ -45,34 +41,34 @@ $bees-brown: #191102;
 	.search-bar {
 		.glyphicon {
 			color: white;
-			background: $hearth-pink;
+			background: $bees-yellow;
 		}
 	}
 }
 .mann-layout--bees {
 	.well {
-		background: url("/assets/collections/hearth/contemporary_china_2.png");
+		background: #fff url("/assets/collections/bees/light_honeycomb.png");
 	}
 	.lead {
 		strong {
-			color: $hearth-pink;
+			color: $gray-dark;
 		}
 	}
 	.collection-browse {
 		margin-bottom: 1em;
 		a {
-			background: $hearth-pink;
+			background: $bees-blue;
 		}
 		a:hover {
-			background: $hearth-red;
+			background: $bees-dark-blue;
 		}
 	}
 	.sidebar {
 		.nav-header {
-			color: $hearth-pink;
+			color: $bees-dark-blue;
 		}
 		a:hover {
-			background-color: $hearth-gray;
+			background-color: $bees-yellow;
 			color: white;
 		}
 	}
@@ -85,7 +81,7 @@ $bees-brown: #191102;
 @media (min-width: $screen-sm) { 
 	.mann-header--bees {
 		.hero {
-			background: url("/assets/collections/bees/bluebee-banner.jpg") no-repeat;
+			background: url("/assets/collections/bees/bluebee-banner2.jpg") no-repeat;
 		}
 	}
 }
