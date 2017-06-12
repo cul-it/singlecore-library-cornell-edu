@@ -473,6 +473,13 @@ class CatalogController < ApplicationController
     config.add_show_field 'fpu_tesim', :label => 'F/P/U'
     config.add_show_field 'photographer_tesim', :label => 'Photographer'
 
+    # - digitizing tell-en-nasbeh
+    config.add_show_field 'excavation_date_tesim', :label => 'Excavation Date'
+    config.add_show_field 'plan_number_isi', :label => 'Plan Number'
+    config.add_show_field 'archaeological_style_period_tesim', :label => 'Archaeological Period'
+    config.add_show_field 'archaeological_date_tesim', :label => 'Archaeological Date'
+    config.add_show_field 'israel_grid_tesim', :label => 'Israel Grid'
+
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
