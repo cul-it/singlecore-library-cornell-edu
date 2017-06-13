@@ -246,6 +246,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
     config.add_facet_field 'other_location_tesim', :label => 'Creation Site', :show => false
     config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
+    config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
+    config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
@@ -474,10 +476,10 @@ class CatalogController < ApplicationController
     config.add_show_field 'photographer_tesim', :label => 'Photographer'
 
     # - digitizing tell-en-nasbeh
-    config.add_show_field 'excavation_date_tesim', :label => 'Excavation Date'
+    config.add_show_field 'excavation_date_tesim', :label => 'Excavation Date', :link_to_search => true
     config.add_show_field 'plan_number_isi', :label => 'Plan Number'
     config.add_show_field 'archaeological_style_period_tesim', :label => 'Archaeological Period'
-    config.add_show_field 'archaeological_date_tesim', :label => 'Archaeological Date'
+    config.add_show_field 'archaeological_date_tesim', :label => 'Archaeological Date', :link_to_search => true
     config.add_show_field 'israel_grid_tesim', :label => 'Israel Grid'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
