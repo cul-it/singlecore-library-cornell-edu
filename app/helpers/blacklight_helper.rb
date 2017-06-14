@@ -52,9 +52,9 @@ def image_download options={}
     options[:document] # the original document
     options[:field] # the field to render
     options[:value] # the value of the field
-    if options[:document]['collection_tesim'][0] !='Adler Hip Hop Archive' 
-    link_to content_tag(:span, 'Original Image'), options[:value][0],title:"Download", 
-    onclick:"javascript:_paq.push(['trackEvent', 'DownloadLink', 
+    if options[:document]['collection_tesim'][0] !='Adler Hip Hop Archive'
+    link_to content_tag(:span, 'Original Image'), options[:value][0],title:"Download",
+    onclick:"javascript:_paq.push(['trackEvent', 'DownloadLink',
     'viewer-" + options[:document]['project_id_ssi'] + "-" + options[:document]['id'] +"'" + '])'
     else
       return "Not available for download"
@@ -77,10 +77,37 @@ def get_tracks args
   end
 
 
+
+def get_zorn_multiviews args
+  collection = args['collection_tesim'][0]
+  if args['plan_number_tesim'].present?
+  parentid = args['plan_number_tesim'][0]
+end
+  sequence = args['portal_sequence_isi']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=plan_number_tesim:\"#{parentid}\"&wt=json&indent=true&sort=portal_sequence_isi%20asc&rows=100"))
+  @response = response['response']['docs']
+  return @response
+
+end
+
   PREFIXES = {
     'huntington' => 'hunt',
     'bolivian' => 'bol',
     'bees' => 'bees'
+  }
+
+def is_multi_image? args
+  if MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1
+    return true
+  end
+end
+
+
+
+  MULTI_IMAGE_COLLECTIONS = {
+    '3686' => 'zorn',
+    '3786' => 'blaschka',
+    '2849' => 'costume'
   }
 
 def publication options={}
@@ -124,7 +151,7 @@ end
 
  def document_has_value? document, field_config
     document.has?(field_config.field) ||
-      (document.has_highlight_field? field_config.field if field_config.highlight) 
+      (document.has_highlight_field? field_config.field if field_config.highlight)
   end
 
 

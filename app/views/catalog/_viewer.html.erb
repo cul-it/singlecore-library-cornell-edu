@@ -14,8 +14,14 @@
 
 <% @page = "1" %>
 
-<%# display image viewer %>
+<%# display iiif image viewer if it is artstor not pdf and not gamelan %>
 <% if !@project.blank? && (@kaltura.blank? && @project != '616' && @pdf != true)%>
+
+<%# set up separate div for main and secondary images if this is zorn, blaschka or costumes %>
+<% if is_multi_image?(@document) == true %>
+  <div class="col-sm-10">
+  <% end %>
+
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
   <div id="image-toolbar">
     <div class="image-controls">
@@ -29,11 +35,14 @@
     </div>
   </div>
   <div id="openseadragon1"></div>
+
   <div id="print-image">
   <% if render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim').present? %>
   <img src="<%= render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim') %>">
   <% end %>
   </div>
+
+<%# display artstor iiif if we have it %>
 <% if render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm').present? %>
 <script>
   //<![CDATA[
@@ -54,6 +63,8 @@
   document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
   //]]>
 </script>
+
+<%# display our own iiif if we did not have artstor %>
 <% else %>
 <script>
   //<![CDATA[
@@ -74,9 +85,18 @@
   document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
   //]]>
 </script>
+
 <% end %>
 
+<%# close up previous div and open the next then display the multiple views %>
+<% if is_multi_image?(@document) == true %>
+</div>
+  <div class="col-sm-2">
+    <%= render 'multi_images' %>
+  </div>
 
+  <% end %>
+<%# done with iiif stuff %>
 
 <%# display av player %>
 <% elsif !@kaltura.blank? %>
@@ -112,7 +132,7 @@
       <div class="col-sm-12 text-center">
         <div data-no-turbolink>
           <% if (render_document_show_field_value(:document => @document, :field => 'filename_tesim')).present? %>
-            <iframe src = "/ViewerJS/?zoom=page-width#https://s3.amazonaws.com/adler.library.cornell.edu/<%= render_document_show_field_value(:document => @document, :field => 'filename_tesim') %>" width='100%' height="600" 
+            <iframe src = "/ViewerJS/?zoom=page-width#https://s3.amazonaws.com/adler.library.cornell.edu/<%= render_document_show_field_value(:document => @document, :field => 'filename_tesim') %>" width='100%' height="600"
             name="<%= render_document_show_field_value(:document => @document, :field => 'title_tesim') %>"
             allowfullscreen webkitallowfullscreen></iframe>
           <% end %>
