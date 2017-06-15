@@ -23,3 +23,5 @@
 //= require_tree .
 //
 //= require accessibility
+//= require jquery.rwdImageMaps.min
+//= require rwd-image-map
