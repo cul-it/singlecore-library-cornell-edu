@@ -156,6 +156,23 @@
 	}
 }
 
+// Multi-images
+// ------------------------ //
+.multi-images {
+	margin-top: 1em;
+	h2 {
+		font-size: 14px;
+		font-family: $font-family-cul;
+		text-transform: uppercase;
+		color: $cornell-red;
+	}
+}
+.multi-image {
+	margin-bottom: 1.25em;
+	img {
+		margin-bottom: .5em;
+	}
+}
 
 // Bookmark toggle
 // ------------------------ //
@@ -251,6 +268,9 @@ label.toggle_bookmark {
 	}
 	.av-player {
 		margin-bottom: 0;
+	}
+	.multi-images {
+		margin-top: 0;
 	}
 }
 // Large devices (desktops, 1200px and up)
