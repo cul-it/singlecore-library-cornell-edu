@@ -1,0 +1,15 @@
+<% if get_zorn_multiviews(@document).length > 1 %>
+	<h2>Additional views</h2>
+	<% get_zorn_multiviews(@document).each do |image| %>
+		<% if image["id"] != @document["id"] %>
+			<div class="multi-image">
+				<a href="/catalog/<%= image['id'] %>" data-turbolinks="false">
+				    <img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" />
+					<span class="caption">
+						<%= image['title_tesim'][0] %>
+					</span
+				</a>
+			</div>
+		<% end %>
+	<% end %>
+<% end %>
