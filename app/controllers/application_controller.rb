@@ -46,6 +46,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim:"The J. R. Sitlington Sterrett Collection of Archaeological Photographs"
       OR collection_tesim:"Selections from the Cornell Anthropology Collections"
       OR collection_tesim:"Willard D. Straight in Korea"
+      OR collection_tesim:"Images from the Rare Book and Manuscript Collections"
       ))'
     end
   end
