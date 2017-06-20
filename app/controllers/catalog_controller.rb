@@ -455,11 +455,11 @@ class CatalogController < ApplicationController
 
     # - images from the rare and manuscript collections
     config.add_show_field 'exhibition_tesim', :label => 'Exhibition'
-    config.add_show_field 'metric_unit_tesim', :label => 'Exhibition'
-    config.add_show_field 'metric_height_tesim', :label => 'Exhibition'
-    config.add_show_field 'metric_width_tesim', :label => 'Exhibition'
-    config.add_show_field 'metric_depth_tesim', :label => 'Exhibition'
-    config.add_show_field 'metric_diameter_tesim', :label => 'Exhibition'
+    config.add_show_field 'metric_unit_tesim', :label => 'Metric Unit'
+    config.add_show_field 'metric_height_tesim', :label => 'Metric Height'
+    config.add_show_field 'metric_width_tesim', :label => 'Metric Width'
+    config.add_show_field 'metric_depth_tesim', :label => 'Metric Depth'
+    config.add_show_field 'metric_diameter_tesim', :label => 'Metric Diameter'
 
     # - sri lankan vernacular
     config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title'
