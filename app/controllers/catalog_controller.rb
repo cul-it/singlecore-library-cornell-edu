@@ -59,8 +59,8 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Cornell Coin Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
-          if params[:subject] == "coins" && params[:f].nil?
-            facet_params = { f: { collection_tesim: ['Cornell Coin Collection'] } }
+          if params[:subject] == "costume" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Cornell Costume and Textile Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "divinecomedy" && params[:f].nil?
@@ -252,6 +252,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
     config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
     config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
+    config.add_facet_field 'designer_creator_tesim', :label => 'Designer', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
@@ -485,6 +486,22 @@ class CatalogController < ApplicationController
     config.add_show_field 'archaeological_style_period_tesim', :label => 'Archaeological Period'
     config.add_show_field 'archaeological_date_tesim', :label => 'Archaeological Date', :link_to_search => true
     config.add_show_field 'israel_grid_tesim', :label => 'Israel Grid'
+
+    # - cornell costume and textile collection
+    config.add_show_field 'designer_creator_tesim', :label => 'Designer', :link_to_search => true
+    config.add_show_field 'image_note_tesim', :label => 'Image Note'
+    config.add_show_field 'accession_identifier_tesim', :label => 'Accession Number'
+    config.add_show_field 'worn_by_tesim', :label => 'Worn or Used By'
+    config.add_show_field 'cross_reference_tesim', :label => 'Cross Reference'
+    config.add_show_field 'material_mat_tech_tesim', :label => 'Material'
+    config.add_show_field 'multigenerational_tesim', :label => 'Multigenerational'
+    config.add_show_field 'demographic_tesim', :label => 'Demographic'
+    config.add_show_field 'street_style_tesim', :label => 'Street Style'
+    config.add_show_field 'pattern_description_tesim', :label => 'Pattern and Texture'
+    config.add_show_field 'trim_description_tesim', :label => 'Trim'
+    config.add_show_field 'short_description', :label => 'Short Description'
+    config.add_show_field 'exhibition_history_tesim', :label => 'Exhibition History'
+    config.add_show_field 'country_freetext_location_tesim', :label => 'Country (free-text)'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
