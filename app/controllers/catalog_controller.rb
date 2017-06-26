@@ -503,6 +503,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'exhibition_history_tesim', :label => 'Exhibition History'
     config.add_show_field 'country_freetext_location_tesim', :label => 'Country (free-text)'
 
+    # - hill ornithology
+    config.add_show_field 'publication_tesim', :label => 'Publication'
+
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
