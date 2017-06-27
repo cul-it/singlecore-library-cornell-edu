@@ -76,6 +76,7 @@ end
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
     get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
     get '/collections/tell-en-nasbeh' => 'high_voltage/pages#show', :id => 'collections/tell-en-nasbeh/index'
+    get '/collections/wordsworth' => 'high_voltage/pages#show', :id => 'collections/wordsworth/index'
   end
 
   get '/collections/:subject' => 'catalog#index'
