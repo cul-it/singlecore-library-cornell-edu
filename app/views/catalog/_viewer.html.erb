@@ -141,7 +141,14 @@
     </div>
   </div>
 
+<% elsif (render_document_show_field_value :document => @document, :field => 'id').include?('words') %>
 
+  <div class="well">
+
+<iframe src="<%= render_document_show_field_value(:document => @document, :field => 'archive_link_tesim') %>?ui=embed" width="100%" height="600" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+
+</div>
+  
 <%# display book reader %>
 <% elsif !@book_id.blank? && @project != "616" && @pdf != true %>
   <div class="other-viewer well">
