@@ -48,15 +48,10 @@
 		</div>
 	</div>
 	<p>The plans were drawn primarily by Sorial on canvas backed vellum and cover most of the architectural remains found at the site. Each square is 10 m on a side. A few features were not included on these plans, or on the 1:400 plan published in the 1947 report. Those appeared only in two figures in that report (42 and 57). In addition, the plan which shows the site’s outer two-chamber gate (93) contained a variety of later walls which made the full form of the gate difficult to discern. A plan showing the gate alone, as prepared by Badè’s team, is also made available here. The Plan of Plans shows how the individual squares were laid out on the 1:100 sheets. These plans are mostly in arrangements of three squares by three squares. It is unknown why Plans 106–110 only contain two rows of squares, instead of the usual three. It is clear from the breaks in the numbering of the plans that this original scheme extended off the site to both east and west. In 1991 a good number of the plans were damaged by water from a leaking pipe. These were redrawn by John Berg on vellum to completely match the originals. The damaged plans include: 124, 125, 126, 127, 141. 142, 144, 160, 176, 177. The Plan of Plans shows spaces for Plans 108 and 161; however, these areas were never excavated and, as a consequence, 1:100 plans were never prepared. Plan 128 could not be found and so was not digitized.</p>
-	<div class="row">
-		<div class="col-sm-8">
-			<%= render partial: 'pages/collections/tell-en-nasbeh/image_map' %>
-		</div>
-		<div class="col-sm-4">
-			<h4>Search Digitizing Tell en-Naṣbeh</h4>
-			<%= render '/catalog/search_form', { :@collection_search => "Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin"}  %>
-		</div>
-	</div>
+	<%= render partial: 'pages/top' %>
+	<h3 id="plan">Browse images</h3>
+	<p>Click on the grid to see corresponding images. Plans with an "x" are unavailable at this time.</p>
+	<%= render partial: 'pages/collections/tell-en-nasbeh/image_map' %>
 	<%= render partial: 'pages/top' %>
 	<h3 id="bibliography">Bibliography</h3> 
 	<ul>
