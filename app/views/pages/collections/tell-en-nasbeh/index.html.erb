@@ -1,5 +1,5 @@
 <% content_for :page_title, 'Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin' %>
-<div class="container">
+<div class="container nasbeh-layout">
 	<%= render partial: 'pages/collections/tell-en-nasbeh/menu' %>
 	
 	<p>Tell en-Naṣbeh is an archaeological site about 12 km (eight miles) north of the Old City of Jerusalem and south of the modern Palestinian city of Ramallah (31°53'07"N, 35°13'00"E; New Israel Grid 220559.86E - 643543.35N; Old Israel Grid 1706.1144) at 848 m (2762’) above sea level (Fig 1). The site sits on the trunk road running along the spine of the central hill country, connecting Hebron and Jerusalem on the south with important sites to the north, such as Samaria and Shechem. Tell en-Naṣbeh also sits near to the northern border of the tribe of Benjamin. Its location made it an important border fortress, protecting Jerusalem from attacks from the north (in Isaiah 10:27b–32 an imagined attacker diverts his approach on Jerusalem by taking the more roundabout eastern Michmash pass, rather than take the main road past Mizpah). The site, excluding surrounding cemeteries, is about 250 m north to south and 160 m east to west (Fig.2 and Plan of Plans below). It covers an area of 3.2 hectares (ca. 8 acres), though the area inside the fortifications only amounts to about 2.4 hectares and the actual area occupied by houses is only a bit over 1.7 hectares.</p>
@@ -51,7 +51,36 @@
 	<%= render partial: 'pages/top' %>
 	<h3 id="plan">Browse images</h3>
 	<p>Click on the grid to see corresponding images. Plans with an "x" are unavailable at this time.</p>
-	<%= render partial: 'pages/collections/tell-en-nasbeh/image_map' %>
+	
+	<div class="row">
+		<div class="col-sm-6">
+			<%= render partial: 'pages/collections/tell-en-nasbeh/image_map' %>
+		</div>
+		<div class="col-sm-6">
+			<h4>Additional plans</h3>
+			<div class="sets">
+				<div class="row">
+					<div class="set-item">
+						<a href="/catalog/ss:19102674">
+							<img src="http://stor.artstor.org/stor/7f478d16-7d32-4455-b632-4e2695e669b3_size2" class="img-thumbnail" alt="Figure 42">
+						</a>
+						<div class="set-link">
+							<a href="/catalog/ss:19102674">Figure 42</a>
+						</div>
+					</div>
+					<div class="set-item">
+						<a href="/catalog/ss:19102676">
+							<img src="http://stor.artstor.org/stor/609baf61-a68d-43ca-8e98-fb60511bf7ee_size2" class="img-thumbnail" alt="Figure 57">
+						</a>
+						<div class="set-link">
+							<a href="/catalog/ss:19102676">Figure 57</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<%= render partial: 'pages/top' %>
 	<h3 id="bibliography">Bibliography</h3> 
 	<ul>

@@ -12,6 +12,11 @@
 		margin-top: 2em;
 	}
 }
+.nasbeh-layout {
+	.set-item {
+		@include make-sm-column(4);
+	}
+}
 
 // MEDIA QUERIES
 // -------------------------
