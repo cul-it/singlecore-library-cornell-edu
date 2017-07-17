@@ -128,6 +128,16 @@ def autolink_field args
   end
 end
 
+def title_translate args
+  if args[:document]["translation_title_tesim"].present?
+    return args[:document]["title_tesim"][0] + "/" + args[:document]["translation_title_tesim"][0]
+  else
+    return args[:document]["title_tesim"][0]
+  end
+end
+
+
+
 def extent_units args
   collection = args[:document]["collection_tesim"][0]
   if collection == "Persuasive Maps: PJ Mode Collection" && !args[:document]["extent_tesim"].nil?
