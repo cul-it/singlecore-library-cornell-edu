@@ -128,13 +128,6 @@ def autolink_field args
   end
 end
 
-def title_translate args
-  if args[:document]["translation_title_tesim"].present?
-    return args[:document]["title_tesim"][0] + "/" + args[:document]["translation_title_tesim"][0]
-  else
-    return args[:document]["title_tesim"][0]
-  end
-end
 
 
 
