@@ -128,6 +128,9 @@ def autolink_field args
   end
 end
 
+
+
+
 def extent_units args
   collection = args[:document]["collection_tesim"][0]
   if collection == "Persuasive Maps: PJ Mode Collection" && !args[:document]["extent_tesim"].nil?

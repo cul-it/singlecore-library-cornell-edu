@@ -1,0 +1,8 @@
+<% # bookmark/folder functions -%>
+<% if document["translation_title_tesim"].present? %>
+  <h1>
+    <%= document["title_tesim"][0] %> / <%= document["translation_title_tesim"][0] %>
+  </h1>
+<% else %>
+  <%= render_document_heading(document, :tag => :h1) %>
+<% end %>
