@@ -269,7 +269,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'photographer_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'architect_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true    
+    config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_index_field 'occasion_tesim', :label => 'Occasion'
     config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
     config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
@@ -331,7 +331,7 @@ class CatalogController < ApplicationController
 
     #- aerial
     config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
-    
+
 
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
@@ -533,7 +533,7 @@ class CatalogController < ApplicationController
     end
 
     # "sort results by" select (pulldown)
-    config.add_sort_field 'score desc, latest_date_isi asc', :label => 'relevance'
+    config.add_sort_field 'identifier_blaschka_isi asc, score desc, latest_date_isi asc', :label => 'relevance'
     config.add_sort_field 'latest_date_isi desc, title_tesi asc', :label => 'year (descending)'
     config.add_sort_field 'latest_date_isi asc, title_tesi asc', :label => 'year (ascending)'
     config.add_sort_field 'title_ssi asc, latest_date_isi asc', :label => 'title (a to z)'
