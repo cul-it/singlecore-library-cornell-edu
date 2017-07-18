@@ -87,7 +87,17 @@ end
   response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=plan_number_tesim:\"#{parentid}\"&wt=json&indent=true&sort=portal_sequence_isi%20asc&rows=100"))
   @response = response['response']['docs']
   return @response
+end
 
+def get_blaschka_multiviews args
+  collection = args['collection_tesim'][0]
+  if args['identifier_blaschka_isi'].present?
+  parentid = args['identifier_blaschka_isi']
+end
+  sequence = args['portal_sequence_isi']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=identifier_blaschka_isi:\"#{parentid}\"&wt=json&indent=true&sort=portal_sequence_isi%20asc&rows=100"))
+  @response = response['response']['docs']
+  return @response
 end
 
   PREFIXES = {
@@ -97,7 +107,7 @@ end
   }
 
 def is_multi_image? args
-  if MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1
+  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_blaschka_multiviews(args).length > 1)
     return true
   end
 end
