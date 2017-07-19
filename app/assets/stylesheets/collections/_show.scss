@@ -261,6 +261,10 @@ label.toggle_bookmark {
 		width: 560px !important;
 		height: 315px !important;
 	}
+	.multi-images {
+		height: 600px;
+		overflow: scroll;
+	}
 }
 
 // Medium devices (desktops, 992px and up)
@@ -276,6 +280,7 @@ label.toggle_bookmark {
 	}
 	.multi-images {
 		margin-top: 0;
+		height: 670px;
 	}
 }
 // Large devices (desktops, 1200px and up)
