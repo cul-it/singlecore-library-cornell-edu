@@ -4,7 +4,7 @@
 		<% if image["id"] != @document["id"] %>
 			<div class="multi-image">
 				<a href="/catalog/<%= image['id'] %>" data-turbolinks="false">
-				    <img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" />
+				    <img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" alt="" />
 					<span class="caption">
 						<%= image['title_tesim'][0] %>
 					</span
@@ -18,7 +18,7 @@
 	<% if image["id"] != @document["id"] %>
 		<div class="multi-image">
 			<a href="/catalog/<%= image['id'] %>" data-turbolinks="false">
-					<img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" />
+					<img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" alt="" />
 				<span class="caption">
 					<%= image['title_tesim'][0] %>
 				</span
