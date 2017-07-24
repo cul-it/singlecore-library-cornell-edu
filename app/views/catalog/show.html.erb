@@ -6,8 +6,11 @@
     <% show = "yes" %>
     <% end %>
   <% end %>
-  <% if render_document_show_field_value(:document => @document, :field => 'status_ssi') == "Published" %>
-    <% show == "yes" %>
+  <% if render_document_show_field_value(:document => @document, :field => 'status_ssi')  == "Published"%>
+    <% show = "yes" %>
+  <% end %>
+  <% if render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" %>
+    <% show = "yes" %>
   <% end %>
 <% end %>
 
