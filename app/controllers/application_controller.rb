@@ -47,6 +47,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim:"Selections from the Cornell Anthropology Collections"
       OR collection_tesim:"Willard D. Straight in Korea"
       OR collection_tesim:"Images from the Rare Book and Manuscript Collections"
+      OR collection_tesim:"John Clair Miller Image Collection of Twentieth-Century Architecture in Iceland"
       ))'
     end
   end
