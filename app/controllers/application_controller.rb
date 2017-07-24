@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
 
   def set_fq(environment)
     if environment == 'development'
-      fq = '-active_fedora_model_ssi:"Page" 
-      AND -collection_tesim:"Core Historical Library of Agriculture" 
+      fq = '-active_fedora_model_ssi:"Page"
+      AND -collection_tesim:"Core Historical Library of Agriculture"
       AND -adler_status:"Suppress for portal"'
 
 
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim:"John Reps Collection - Bastides"
       OR collection_tesim:"Persuasive Maps: PJ Mode Collection"
       OR collection_tesim:"Ragamala Paintings"
-      OR collection_tesim:"Alfred Montalvo Bolivian Digital Pamphlets Collection"
+      OR collection_tesim:"Alfredo Montalvo Bolivian Digital Pamphlets Collection"
       OR collection_tesim:"Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia"
       OR collection_tesim:"Campus Artifacts, Art & Memorabilia"
       OR collection_tesim:"Hip Hop Party and Event Flyers"

@@ -10,7 +10,9 @@
     <% show = "yes" %>
   <% end %>
   <% if render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" %>
-    <% show = "yes" %>
+    <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Huntington") || render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Alfredo") %>
+      <% show = "yes" %>
+    <% end %>
   <% end %>
 <% end %>
 
