@@ -1,17 +1,32 @@
 <div id="content" class="col-sm-12">
-<% if 
-render_document_show_field_value(:document => @document, :field => 'adler_status') != 'Suppress for portal' && render_document_show_field_value(:document => @document, :field => 'collection_tesim' == "Adler Hip Hop Archive")  
-  %> 
-
-	<% @show = "yes" %>
+  <% show = "no" %>
+<% if ENV["COLLECTIONS"] == "production" %>
+<% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Adler Hip Hop Archive")%>
+  <% if !render_document_show_field_value(:document => @document, :field => 'adler_status').present?%>
+    <% show = "yes" %>
+    <% end %>
+  <% end %>
+  <% if render_document_show_field_value(:document => @document, :field => 'status_ssi')  == "Published"%>
+    <% show = "yes" %>
+  <% end %>
+  <% if render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" %>
+    <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Huntington") || render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Alfredo") %>
+      <% show = "yes" %>
+    <% end %>
+  <% end %>
 <% end %>
-	<% if render_document_show_field_value(:document => @document, :field => 'status_ssi') == "Published"  || 
-render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" %>
-<% @show = "yes" %>
 
+
+<% if ENV["COLLECTIONS"] == "development" %>
+<% if render_document_show_field_value(:document => @document, :field => 'adler_status') == 'Suppress for portal'%>
+  <% show = "no" %>
+<% else %>
+<% show = "yes" %>
+<% end %>
 <% end %>
 
-<%if @show == "yes" %>
+<%if show == "yes" %>
+
   	<%= render_document_main_content_partial %>
 
 <% else %>
