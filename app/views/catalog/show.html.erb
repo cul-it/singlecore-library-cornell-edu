@@ -14,6 +14,9 @@
       <% show = "yes" %>
     <% end %>
   <% end %>
+  <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Indonesian") %>
+    <% show = "yes" %>
+  <% end %>
 <% end %>
 
 
