@@ -477,7 +477,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
     config.add_show_field 'identifier_cornell_tesim', :label => 'Cornell Number'
     config.add_show_field 'original_blaschka_species_tesim', :label => 'Original Blaschka Species Name'
-    config.add_show_field 'fpu_tesim', :label => 'F/P/U'
     config.add_show_field 'photographer_tesim', :label => 'Photographer'
 
     # - digitizing tell-en-nasbeh
