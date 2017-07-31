@@ -505,6 +505,13 @@ class CatalogController < ApplicationController
     # - hill ornithology
     config.add_show_field 'publication_tesim', :label => 'Publication'
 
+    # - digital tamang
+    config.add_show_field 'local_name_location_tesim', :label => 'Place Name (Local)'
+    config.add_show_field 'national_name_location_tesim', :label => 'Place Name (National)'
+    config.add_show_field 'translation_tesim', :label => 'Translation'
+    config.add_show_field 'devanagari_hamlet_tesim', :label => 'Hamlet (Devanagari)'
+    config.add_show_field 'roman_hamlet_tesim', :label => 'Hamlet (Roman Characters)'
+
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
