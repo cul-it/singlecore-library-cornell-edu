@@ -485,6 +485,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'archaeological_style_period_tesim', :label => 'Archaeological Period'
     config.add_show_field 'archaeological_date_tesim', :label => 'Archaeological Date', :link_to_search => true
     config.add_show_field 'israel_grid_tesim', :label => 'Israel Grid'
+    config.add_show_field 'analysis_plan_tesim', :label => 'Analysis of Plan', helper_method: :autolink_field
 
     # - cornell costume and textile collection
     config.add_show_field 'designer_creator_tesim', :label => 'Designer', :link_to_search => true
