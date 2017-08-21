@@ -61,6 +61,7 @@ end
   get '/collection/ragamala', to: redirect('/collections/ragamala')
   get '/collection/squeeze', to: redirect('/collections/squeeze')
   get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
+  get '/collections/tell-en-nasbeh' => 'high_voltage/pages#show', :id => 'collections/tell-en-nasbeh/index'
 
   # no facets on high voltage
   # prod pages
@@ -70,12 +71,11 @@ end
   get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
 
   # dev pages
-  if ENV['COLLECTIONS'] == "development" 
+  if ENV['COLLECTIONS'] == "development"
     get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
     get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
     get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
-    get '/collections/tell-en-nasbeh' => 'high_voltage/pages#show', :id => 'collections/tell-en-nasbeh/index'
     get '/collections/wordsworth' => 'high_voltage/pages#show', :id => 'collections/wordsworth/index'
   end
 
