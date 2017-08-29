@@ -1,0 +1,113 @@
+// Variables
+// ------------
+
+// TODO: DELETE:
+$chla-orange: #eb8f0c;
+$chla-green: #668d3c;
+$chla-brown: #613318;
+$chla-dark-brown: #493829;
+
+// Blaschka
+$blaschka-black: #000000;
+$blaschka-almost-black: #1E1F1F;
+$blaschka-red: #C52A2A;
+$blaschka-red-hover: #9D2121;
+
+
+// Custom styles
+// --------------
+
+.blaschka-header {
+	background: $blaschka-black;
+	color: white;
+	padding: 1em 0 0 0;
+	h2 {
+		line-height: 1.3em;
+		a {
+			color: white;
+		}
+	}
+}
+.blaschka-nav {
+	background: $blaschka-almost-black;
+	a {
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+	.nav > li > a {
+		padding: 10px 20px;
+	}
+	.nav > li > a:hover {
+		background: $blaschka-red;
+	}
+	.collection-link {
+		a {
+			background: $blaschka-red;
+		}
+	}
+}
+.blaschka-layout {
+	color: white;
+	background: $blaschka-black;
+	.text {
+		padding: 3em 0;
+		p {
+			line-height: 2em;
+			font-weight: 300;
+			margin-bottom: 1.5em;
+		}
+	}
+	.well {
+		background: $blaschka-almost-black;
+		border-color: $blaschka-almost-black;
+		margin-top: 3em;
+	}
+	a {
+		color: white;
+	}
+	.note {
+		line-height: 1.4em;
+		font-size: 13px;
+	}
+	.callout {
+		margin-bottom: 3em;
+		img {
+			float: left;
+			margin-right: 10px;
+			max-height: 200px;
+			width: auto;
+		}
+	}
+	.collection-search {
+		.search-query-form,
+		.form-inline .form-control {
+			width: 100%;
+		}
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) { 
+	.blaschka-layout {
+		.container {
+			background: url(/assets/collections/blaschka/background.jpg) no-repeat left 40px;
+			background-size: 400px auto;
+		}
+	}
+}
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md) {
+	.blaschka-layout {
+		.container {
+			background-size: 517px auto;
+		}
+	}
+}
+// Large devices (desktops, 1200px and up)
+// @media (min-width: $screen-lg) {
+// }
