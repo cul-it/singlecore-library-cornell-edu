@@ -41,6 +41,20 @@ $blaschka-red-hover: #9D2121;
 			background: $blaschka-red;
 		}
 	}
+
+}
+// Overrides for mobile nav and toggle
+.blacklight-pages-show {
+	.blaschka-nav {
+		.navbar-toggle {
+			background: $blaschka-almost-black;
+		}
+		.navbar-collapse {
+			.nav {
+				border: 0;
+			}
+		}
+	}
 }
 .blaschka-layout {
 	color: white;
@@ -50,7 +64,8 @@ $blaschka-red-hover: #9D2121;
 		font-weight: 300;
 	}
 	.text {
-		padding: 3em 0;
+		padding-top: 3em;
+		padding-bottom: 3em;
 		p {
 			line-height: 2em;
 			margin-bottom: 1.5em;
@@ -75,6 +90,7 @@ $blaschka-red-hover: #9D2121;
 			margin-right: 10px;
 			max-height: 200px;
 			width: auto;
+			margin-bottom: 1em;
 		}
 	}
 	.collection-search {
