@@ -133,8 +133,8 @@ $blaschka-red-hover: #9D2121;
 @media (min-width: $screen-sm) { 
 	.blaschka-layout--home {
 		.container {
-			background: url(/assets/collections/blaschka/background.jpg) no-repeat left 40px;
-			background-size: 400px auto;
+			background: url(/assets/collections/blaschka/20107972.jpg) no-repeat left top;
+			background-size: 350px auto;
 		}
 	}
 }
@@ -142,10 +142,15 @@ $blaschka-red-hover: #9D2121;
 @media (min-width: $screen-md) {
 	.blaschka-layout--home {
 		.container {
-			background-size: 517px auto;
+			background-size: 425px auto;
 		}
 	}
 }
 // Large devices (desktops, 1200px and up)
-// @media (min-width: $screen-lg) {
-// }
+@media (min-width: $screen-lg) {
+	.blaschka-layout--home {
+		.container {
+			background-size: 500px auto;
+		}
+	}
+}
