@@ -146,20 +146,32 @@
   <div class="well">
 <iframe width="100%" height="550" src="https://hdl.handle.net/2027/coo1.ark:/13960/t2k651h35?urlappend=%3Bui=embed"></iframe>
 </div>
-  
+
 <%# display book reader %>
 <% elsif !@book_id.blank? && @project != "616" && @pdf != true %>
   <div class="other-viewer well">
     <div class="row">
       <div class="col-sm-8 text-center">
         <div class="cover" data-no-turbolink>
-          <a href="http://reader.library.cornell.edu/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+          <% unless @book_id.include?('chla') %>
+          <a href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+          <% else %>
+          <a href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+          <% end %>
           <% bibid_display = render_document_show_field_value :document => @document, :field => 'bibid_tesim' %>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="reader-link" data-no-turbolink>
-          <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/bookreader/<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerbutton']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+
+          <% unless @book_id.include?('chla') %>
+          <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+          <% else %>
+          <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+          <% end %>
+
+
+
         </div>
       </div>
     </div>
