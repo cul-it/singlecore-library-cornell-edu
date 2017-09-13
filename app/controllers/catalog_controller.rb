@@ -163,6 +163,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "vicos" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Vicos Collection'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           # if params[:subject] == "ragamala" && params[:f].nil?
           #   facet_params = { f: { collection_tesim: ['Ragamala Paintings'] } }
           #   redirect_to search_catalog_path(facet_params) + "&sbjct=ragamala"
@@ -540,7 +544,7 @@ class CatalogController < ApplicationController
     end
 
     # "sort results by" select (pulldown)
-    config.add_sort_field 'identifier_blaschka_isi asc, score desc, latest_date_isi asc', :label => 'relevance'
+    config.add_sort_field 'collection_sequence_isi asc, identifier_blaschka_isi asc, score desc, latest_date_isi asc', :label => 'relevance'
     config.add_sort_field 'latest_date_isi desc, title_tesi asc', :label => 'year (descending)'
     config.add_sort_field 'latest_date_isi asc, title_tesi asc', :label => 'year (ascending)'
     config.add_sort_field 'title_ssi asc, latest_date_isi asc', :label => 'title (a to z)'

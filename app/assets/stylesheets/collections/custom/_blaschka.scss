@@ -1,0 +1,156 @@
+// Variables
+// ------------
+
+$blaschka-black: #000000;
+$blaschka-almost-black: #1E1F1F;
+$blaschka-red: #C52A2A;
+$blaschka-red-hover: #9D2121;
+
+
+// Custom styles
+// --------------
+
+.blaschka-header {
+	background: $blaschka-black;
+	color: white;
+	padding: 1em 0 0 0;
+	h2 {
+		line-height: 1.3em;
+		a {
+			color: white;
+		}
+	}
+}
+.blaschka-nav {
+	background: $blaschka-almost-black;
+	a {
+		color: white;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+	.nav > li > a {
+		padding: 10px 20px;
+	}
+	.nav > li > a:hover,
+	.nav > li > a:active {
+		background: $blaschka-black;
+	}
+	.nav > .collection-link {
+		a, a:hover {
+			background: $blaschka-red;
+		}
+	}
+
+}
+// Overrides for mobile nav and toggle
+.blacklight-pages-show {
+	.blaschka-nav {
+		.navbar-toggle {
+			background: $blaschka-almost-black;
+		}
+		.navbar-collapse {
+			.nav {
+				border: 0;
+			}
+		}
+	}
+}
+.blaschka-layout {
+	color: white;
+	background: $blaschka-black;
+	padding-bottom: 3em;
+	p {
+		font-weight: 300;
+	}
+	.text {
+		padding-top: 3em;
+		padding-bottom: 3em;
+		p {
+			line-height: 2em;
+			margin-bottom: 1.5em;
+		}
+	}
+	.well {
+		background: $blaschka-almost-black;
+		border-color: $blaschka-almost-black;
+		margin-top: 3em;
+	}
+	a {
+		color: white;
+	}
+	.note {
+		line-height: 1.4em;
+		font-size: 13px;
+	}
+	.callout {
+		margin-bottom: 3em;
+		img {
+			float: left;
+			margin-right: 10px;
+			max-height: 200px;
+			width: auto;
+			margin-bottom: 1em;
+		}
+	}
+	.collection-search {
+		.search-query-form,
+		.form-inline .form-control {
+			width: 100%;
+		}
+		p {
+			font-size: 20px;
+			margin-bottom: .5em;
+		}
+	}
+	.nav-header {
+		color: #999;
+		font-size: 12px;
+		font-weight: 700;
+	}
+	.sidebar {
+		.nav {
+			margin-bottom: 2em;
+		}
+		.nav > li > a {
+			padding: 0;
+			margin-bottom: .5em;
+			color: $warm-gray;
+		}
+		.nav > li > a:hover,
+		.nav > li > a:active {
+			background: inherit;
+			text-decoration: underline;
+			color: $blaschka-red;
+		}
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) { 
+	.blaschka-layout--home {
+		.container {
+			background: url(/assets/collections/blaschka/20107972.jpg) no-repeat left top;
+			background-size: 350px auto;
+		}
+	}
+}
+// Medium devices (desktops, 992px and up)
+@media (min-width: $screen-md) {
+	.blaschka-layout--home {
+		.container {
+			background-size: 425px auto;
+		}
+	}
+}
+// Large devices (desktops, 1200px and up)
+@media (min-width: $screen-lg) {
+	.blaschka-layout--home {
+		.container {
+			background-size: 500px auto;
+		}
+	}
+}
