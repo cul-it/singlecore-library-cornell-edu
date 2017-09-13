@@ -50,6 +50,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim:"John Clair Miller Image Collection of Twentieth-Century Architecture in Iceland"
       OR collection_tesim:"Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin"
       OR collection_tesim:"Hill Ornithology Collection"
+      OR collection_tesim:"Vicos Collection"
       ))'
     end
   end
