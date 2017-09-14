@@ -100,7 +100,20 @@ end
   return @response
 end
 
-  PREFIXES = {
+def get_chla_issues args
+  journal = args['id']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{journal}*+AND+has_model_ssim:\"Issue\"&wt=json&indent=true&sort=id%20asc&rows=100"))
+  @response = response['response']['docs']
+  return @response
+end
+
+def chla_thumbnail args
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{args['id']}_fs_1&wt=json&indent=true"))
+  @response = response['response']['docs']
+  return args['id']
+end
+
+    PREFIXES = {
     'huntington' => 'hunt',
     'bolivian' => 'bol',
     'bees' => 'bees'
@@ -138,16 +151,28 @@ def autolink_field args
   end
 end
 
+def chla args
+  if args[:document]["collection_tesim"].present?
+  collection = args[:document]["collection_tesim"][0]
+  if collection == "The core historical literature of agriculture" || "Hive and Honeybee (needs editing)"
+    return args[:document][args[:field]][0]
+  else
+    return args[:document][args[:field]]
+  end
+end
+end
 
 
 
 def extent_units args
+  if args[:document]["collection_tesim"].present?
   collection = args[:document]["collection_tesim"][0]
   if collection == "Persuasive Maps: PJ Mode Collection" && !args[:document]["extent_tesim"].nil?
    return ("(cm, H x W) " + args[:document]["extent_tesim"][0]).html_safe
    else
   return args[:document][args[:field]].join("<br>").html_safe
   end
+end
 end
 
 
