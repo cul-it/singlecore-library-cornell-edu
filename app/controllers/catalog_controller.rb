@@ -344,7 +344,7 @@ class CatalogController < ApplicationController
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
-    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
+    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true, helper_method: :chla
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'track_isi', :label => 'Track'
 
@@ -525,7 +525,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
-    config.add_show_field 'identifier_tesim', :label => 'Identifier'
+    config.add_show_field 'identifier_tesim', :label => 'Identifier', helper_method: :chla
     config.add_show_field 'date_created_on_ssi', :label => 'Date posted', :link_to_search => true
     config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
 
