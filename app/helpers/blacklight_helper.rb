@@ -108,9 +108,10 @@ def get_chla_issues args
 end
 
 def chla_thumbnail args
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{args['id']}_fs_1&wt=json&indent=true"))
+  thumb = args['id']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}_1_fs&wt=json&indent=true"))
   @response = response['response']['docs']
-  return args['id']
+  return @response[0]['awsthumbnail_tesim'][0].to_s
 end
 
     PREFIXES = {
