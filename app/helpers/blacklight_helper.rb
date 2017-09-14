@@ -155,7 +155,7 @@ end
 def chla args
   if args[:document]["collection_tesim"].present?
   collection = args[:document]["collection_tesim"][0]
-  if collection == "The core historical literature of agriculture" || "Hive and Honeybee (needs editing)"
+  if collection == "The core historical literature of agriculture" || collection ==  "Hive and Honeybee (needs editing)"
     return args[:document][args[:field]][0]
   else
     return args[:document][args[:field]]
