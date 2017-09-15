@@ -139,6 +139,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Persuasive Maps: PJ Mode Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "political-americana" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Political Americana'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "punkflyers" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Punk Flyers'] } }
             redirect_to search_catalog_path(facet_params)
@@ -520,6 +524,16 @@ class CatalogController < ApplicationController
     config.add_show_field 'translation_tesim', :label => 'Translation'
     config.add_show_field 'devanagari_hamlet_tesim', :label => 'Hamlet (Devanagari)'
     config.add_show_field 'roman_hamlet_tesim', :label => 'Hamlet (Roman Characters)'
+
+    # - political americana
+    config.add_show_field 'role_tesim', :label => 'Creator Role'
+    config.add_show_field 'date_creator_birth_tesim', :label => 'Creator Birth Date'
+    config.add_show_field 'date_creator_death_tesim', :label => 'Creator Death Date'
+    config.add_show_field 'creator_bio_tesim', :label => 'Creator Biography'
+    config.add_show_field 'century_date_tesim', :label => 'Century'
+    config.add_show_field 'election_date_tesim', :label => 'Election'
+    config.add_show_field 'figure_subject_tesim', :label => 'Political Figure'
+    config.add_show_field 'party_subject_tesim', :label => 'Political Party'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
