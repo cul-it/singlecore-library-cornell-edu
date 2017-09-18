@@ -530,8 +530,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'date_creator_birth_tesim', :label => 'Creator Birth Date'
     config.add_show_field 'date_creator_death_tesim', :label => 'Creator Death Date'
     config.add_show_field 'creator_bio_tesim', :label => 'Creator Biography'
-    config.add_show_field 'century_date_tesim', :label => 'Century'
-    config.add_show_field 'election_date_tesim', :label => 'Election'
+    config.add_show_field 'century_tesim', :label => 'Century'
+    config.add_show_field 'election_tesim', :label => 'Election'
     config.add_show_field 'figure_subject_tesim', :label => 'Political Figure'
     config.add_show_field 'party_subject_tesim', :label => 'Political Party'
 
