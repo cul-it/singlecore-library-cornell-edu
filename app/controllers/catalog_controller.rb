@@ -362,6 +362,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'pj_full_title_tesim', :label => 'Full Title'
     config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
     config.add_show_field 'extent_tesim', :label => 'Extent', helper_method: :extent_units
+    #- u.s. railroad - placing measurement_units_tesim here so that it's after extent
+    config.add_show_field 'measurement_units_tesim', :label => 'Measurement Units'
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
     config.add_show_field 'source_tesim', :label => 'Source'
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes', helper_method: :autolink_field
@@ -492,7 +494,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'original_blaschka_species_tesim', :label => 'Original Blaschka Species Name'
     config.add_show_field 'photographer_tesim', :label => 'Photographer'
 
-
     # - digitizing tell-en-nasbeh
     config.add_show_field 'excavation_date_tesim', :label => 'Excavation Date', :link_to_search => true
     config.add_show_field 'plan_number_isi', :label => 'Plan Number'
@@ -536,6 +537,14 @@ class CatalogController < ApplicationController
     config.add_show_field 'election_tesim', :label => 'Election'
     config.add_show_field 'figure_subject_tesim', :label => 'Political Figure'
     config.add_show_field 'party_subject_tesim', :label => 'Political Party'
+
+    # - u.s. railroad photos
+    config.add_show_field 'original_extent_tesim', :label => 'Original Dimensions'
+    config.add_show_field 'internal_number_tesim', :label => 'Internal Number'
+    config.add_show_field 'exhibit_number_tesim', :label => 'Exhibit Number'
+    config.add_show_field 'railroad_reporting_mark_tesim', :label => 'Railroad Reporting Mark'
+    config.add_show_field 'station_yard_tesim', :label => 'Station/Yard'
+    config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
