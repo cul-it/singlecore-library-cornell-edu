@@ -486,10 +486,12 @@ class CatalogController < ApplicationController
     config.add_show_field 'architectural_firm_creator_tesim', :label => 'Architectural Firm', :link_to_search => true
 
     # - blaschka
+    config.add_show_field 'common_name_tesim', :label => 'Common Name'
     config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
     config.add_show_field 'identifier_cornell_tesim', :label => 'Cornell Number'
     config.add_show_field 'original_blaschka_species_tesim', :label => 'Original Blaschka Species Name'
     config.add_show_field 'photographer_tesim', :label => 'Photographer'
+
 
     # - digitizing tell-en-nasbeh
     config.add_show_field 'excavation_date_tesim', :label => 'Excavation Date', :link_to_search => true
