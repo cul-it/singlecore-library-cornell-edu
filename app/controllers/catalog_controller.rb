@@ -349,7 +349,7 @@ class CatalogController < ApplicationController
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
-    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true, helper_method: :chla
+    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'track_isi', :label => 'Track'
 
@@ -492,7 +492,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'common_name_tesim', :label => 'Common Name'
     config.add_show_field 'original_blaschka_species_tesim', :label => 'Original Blaschka Species Name'
     config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
-    config.add_show_field 'identifier_cornell_tesim', :label => 'Cornell Number'
+    config.add_show_field 'identifier_cornell_isi', :label => 'Cornell Number'
     config.add_show_field 'photographer_tesim', :label => 'Photographer'
 
     # - digitizing tell-en-nasbeh
@@ -546,6 +546,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'railroad_reporting_mark_tesim', :label => 'Railroad Reporting Mark'
     config.add_show_field 'station_yard_tesim', :label => 'Station/Yard'
     config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid'
+
+    # - IWO-JPFO (Boyarin)
+    config.add_show_field 'recipient_tesim', :label => 'Recipient'
+    config.add_show_field 'organization_tesim', :label => 'Organization'
+    config.add_show_field 'transcription_tesim', :label => 'Handwritten Transcription'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
