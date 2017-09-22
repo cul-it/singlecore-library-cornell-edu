@@ -284,6 +284,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_index_field 'occasion_tesim', :label => 'Occasion'
     config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
+    config.add_index_field 'common_name_tesim', :label => 'Common Name'
     config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
     config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
     # config.add_index_field 'creation_site_location_tesim', :label => 'Creation Site'
@@ -489,9 +490,9 @@ class CatalogController < ApplicationController
 
     # - blaschka
     config.add_show_field 'common_name_tesim', :label => 'Common Name'
+    config.add_show_field 'original_blaschka_species_tesim', :label => 'Original Blaschka Species Name'
     config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
     config.add_show_field 'identifier_cornell_tesim', :label => 'Cornell Number'
-    config.add_show_field 'original_blaschka_species_tesim', :label => 'Original Blaschka Species Name'
     config.add_show_field 'photographer_tesim', :label => 'Photographer'
 
     # - digitizing tell-en-nasbeh
