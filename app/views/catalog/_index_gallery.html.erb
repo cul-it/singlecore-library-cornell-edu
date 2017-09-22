@@ -7,10 +7,13 @@
       	<% if !(render_index_field_value document, :field => 'pubdate_tesim').nil? %>
       	 <div class="blacklight-pubdate"><%= render_index_field_value document, :field => 'pubdate_tesim' %></div>
       	<% end %>
-      	<div class="blacklight-collection"><%= render_index_field_value document, :field => 'collection_tesim' %></div>
+        <% if (render_index_field_value document, :field => 'common_name_tesim').present? %>
+          <div class="blaschka-common-name"><%= render_index_field_label document, :field => 'common_name_tesim' %> <%= render_index_field_value document, :field => 'common_name_tesim' %></div>
+        <% end %>
         <% if (render_index_field_value document, :field => 'identifier_blaschka_isi').present? %>
           <div class="blaschka-number"><%= render_index_field_label document, :field => 'identifier_blaschka_isi' %> <%= render_index_field_value document, :field => 'identifier_blaschka_isi' %></div>
         <% end %>
+        <div class="blacklight-collection"><%= render_index_field_value document, :field => 'collection_tesim' %></div>
     </div>
   </div>
 </div>
