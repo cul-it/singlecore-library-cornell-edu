@@ -325,7 +325,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
     # config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
     config.add_show_field 'region_location_tesim', :label => 'Region', :link_to_search => true
-    # config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
+    config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
     config.add_show_field 'lang_tesim', :label => 'Language'
 
     #collection fields
@@ -348,7 +348,7 @@ class CatalogController < ApplicationController
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
-    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true, helper_method: :chla
+    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true, helper_method: w
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'track_isi', :label => 'Track'
 
@@ -545,6 +545,12 @@ class CatalogController < ApplicationController
     config.add_show_field 'railroad_reporting_mark_tesim', :label => 'Railroad Reporting Mark'
     config.add_show_field 'station_yard_tesim', :label => 'Station/Yard'
     config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid'
+
+    # - IWO-JPFO (Boyarin)
+    config.add_show_field 'recipient_tesim', :label => 'Handwritten Transcription'
+    config.add_show_field 'organization_tesim', :label => 'Handwritten Transcription'
+    config.add_show_field 'relation_tesim', :label => 'Relation'
+    config.add_show_field 'transcription_tesim', :label => 'Handwritten Transcription'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
