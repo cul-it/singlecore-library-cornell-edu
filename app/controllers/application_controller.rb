@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
     if environment == 'development'
       fq = '-active_fedora_model_ssi:"Page"
       AND -collection_tesim:"Core Historical Library of Agriculture"
-      AND -adler_status:"Suppress for portal"'
+      AND -adler_status:"Suppress for portal"
+      AND -(collection_tesim:"Cornell Collection of Blaschka Invertebrate Models" AND portal_sequence_isi:[2 TO *])'
 
 
     elsif environment == 'production'
