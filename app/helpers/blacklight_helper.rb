@@ -158,7 +158,7 @@ def chla args
   if collection == "The core historical literature of agriculture" || collection ==  "Hive and Honeybee (needs editing)"
     return args[:document][args[:field]][0]
   else
-    return args[:document][args[:field]]
+    return args[:value].join
   end
 end
 end
