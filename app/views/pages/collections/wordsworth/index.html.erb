@@ -1,33 +1,17 @@
 <% content_for :page_title, 'The Cornell Wordsworth Collection' %>
 <div class="container">
-	<h2>The Cornell Wordsworth Collection<%#= image_tag "collections/ragamala/logo-ragamala.png", alt: "Ragamala Paintings" %></h2>
-	<div class="well clearfix">
-		<div class="pull-right img-right">
-			<a href="/catalog/ss:3796595">
-			<%= image_tag "collections/wordsworth/wordsworthportrait.jpg" , alt: "", class: "img-thumbnail img-responsive" %>
-			</a>
-			<p class="caption">
-				Cornell’s famed Wordsworth Collection includes the earliest known portrait of the poet, painted by William Shuter in 1798 when Wordsworth was only 28 years old.
-			</p>
-		</div>
-		<p>Cornell Library's William Wordsworth Collection is an internationally prominent collection, second in size only to that of Dove Cottage in England. The Cornell Wordsworth Collection offers nearly comprehensive book holdings on Wordsworth, Coleridge, and related authors. The collection also includes letters, manuscripts, broadsides, pictures, documents, and objects by, to, belonging to, or about Wordsworth and his family. The collection preserves all editions of his published works, along with many books that once belonged to Wordsworth’s own library. The collection also features a strong concentration of works about the Lake District. Of major importance among the manuscripts are 243 letters of Wordsworth and 79 letters of Coleridge, a substantial number of literary manuscripts of both poets, a large number of letters written to and about them by their friends and acquaintances, and several albums of miscellanies, most notably that kept by Joseph Cottle of Bristol from 1796. Also included are manuscripts by Sara Hutchinson, Dorothy Wordsworth, Mary Wordsworth, Thomas De Quincey, Robert Southey, Lord Byron, and John Keats.</p>
-		<p>The Cornell Wordsworth Collection had its beginning in the St. John Wordsworth Collection, which was acquired in 1925 and represents forty years of devoted collecting by Mrs. Cynthia Morgan St. John of Ithaca, New York. Mrs. St. John built on broad foundations, seeking any anthology that contained some of Wordsworth’s poems, any volume that contained even a few significant comments on the poet, any that contained a tribute or parody of him, any book of near or remote association, any work on the English Lake Country, and any work by or about Coleridge or members of his family. Since 1925, Cornell has added steadily to St. John's thousand or so books and manuscripts.</p>
-		<p>Cornell University is the editorial home of the Cornell Wordsworth Edition. Under the general direction of Cornell Professor Emeritus Stephen M. Parrish, the Cornell Wordsworth is a series of more than 20 published volumes that provide, for the first time, a complete and accurate record of variant readings, from Wordsworth's earliest drafts to his final lifetime (or posthumous) publication.</p>
-		<p>Ongoing acquisitions to the William Wordsworth collection are supported by the M.H. and Ruth Abrams Wordsworth Endowment.</p>
-		<div class="collection-browse">
-			<a href="/?f%5Bcollection_tesim%5D%5B%5D=Wordsworth+Collection" class="btn btn-primary">Browse the collection</a> 
-		</div>
+	<h2>The Cornell Wordsworth Collection</h2>
+	<div class="pull-right img-right">
+		<%= image_tag "collections/wordsworth/wordsworthportrait.jpg" , alt: "", class: "img-thumbnail img-responsive" %>
+		<p class="caption">
+			Cornell’s famed Wordsworth Collection includes the earliest known portrait of the poet, painted by William Shuter in 1798 when Wordsworth was only 28 years old.
+		</p>
 	</div>
+	<p>Cornell Library's William Wordsworth Collection is an internationally prominent collection, second in size only to that of Dove Cottage in England. The Cornell Wordsworth Collection offers nearly comprehensive book holdings on Wordsworth, Coleridge, and related authors. The collection also includes letters, manuscripts, broadsides, pictures, documents, and objects by, to, belonging to, or about Wordsworth and his family. The collection preserves all editions of his published works, along with many books that once belonged to Wordsworth’s own library. The collection also features a strong concentration of works about the Lake District. Of major importance among the manuscripts are 243 letters of Wordsworth and 79 letters of Coleridge, a substantial number of literary manuscripts of both poets, a large number of letters written to and about them by their friends and acquaintances, and several albums of miscellanies, most notably that kept by Joseph Cottle of Bristol from 1796. Also included are manuscripts by Sara Hutchinson, Dorothy Wordsworth, Mary Wordsworth, Thomas De Quincey, Robert Southey, Lord Byron, and John Keats.</p>
+	<p>The Cornell Wordsworth Collection had its beginning in the St. John Wordsworth Collection, which was acquired in 1925 and represents forty years of devoted collecting by Mrs. Cynthia Morgan St. John of Ithaca, New York. Mrs. St. John built on broad foundations, seeking any anthology that contained some of Wordsworth’s poems, any volume that contained even a few significant comments on the poet, any that contained a tribute or parody of him, any book of near or remote association, any work on the English Lake Country, and any work by or about Coleridge or members of his family. Since 1925, Cornell has added steadily to St. John's thousand or so books and manuscripts.</p>
+	<p>Cornell University is the editorial home of the Cornell Wordsworth Edition. Under the general direction of Cornell Professor Emeritus Stephen M. Parrish, the Cornell Wordsworth is a series of more than 20 published volumes that provide, for the first time, a complete and accurate record of variant readings, from Wordsworth's earliest drafts to his final lifetime (or posthumous) publication.</p>
+	<p>Ongoing acquisitions to the William Wordsworth collection are supported by the M.H. and Ruth Abrams Wordsworth Endowment.</p>
 	<div class="collection-search well">
-		<h3>Search the Cornell Wordsworth Collection</h3>
+		<h3>Search the Cornell Wordsworth Collection or <a href="/?f%5Bcollection_tesim%5D%5B%5D=Wordsworth+Collection">browse the collection</a></h3>
 		<%= render '/catalog/search_form', { :@collection_search => "Wordsworth Collection"}  %>
-	</div>
-	<%#= render partial: 'pages/top' %>
-	<h3 id="resources">Resources</h3>
-	<ul>
-		<!-- <li><a href="http://www.metmuseum.org/exhibitions/listings/2014/ragamala">Ragamala: Picturing Sound</a></li>
-		<li><a href="http://en.wikipedia.org/wiki/Ragamala_paintings">Ragamala paintings</a></li>
-		<li><a href="http://dulwichonview.org.uk/2012/01/20/what-is-ragamala/">What is Ragamala?</a></li> -->
-	</ul>
-	<%#= render partial: 'pages/top' %>
 </div>
