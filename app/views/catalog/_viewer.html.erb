@@ -156,7 +156,7 @@
       <div class="col-sm-8 text-center">
         <div class="cover" data-no-turbolink>
           <% unless @book_id.include?('chla') %>
-          <a href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+          <a href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
           <% else %>
           <a href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);">
             <img src="<%= chla_thumbnail(@document) %>" class="img-responsive img-thumbnail" alt="Book or page image"></a>
