@@ -168,7 +168,7 @@
         <div class="reader-link" data-no-turbolink>
 
           <% unless @book_id.include?('chla') %>
-          <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_prefix %>/<%= @book_id %>/#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+          <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
           <% else %>
           <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
           <% end %>
