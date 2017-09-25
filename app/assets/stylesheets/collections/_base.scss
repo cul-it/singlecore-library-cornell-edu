@@ -41,12 +41,12 @@ li {
 }
 h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
 	margin-bottom: .75em;
+	font-weight: 300;
 }
 h1 {
 	margin: 1em 0 1.5em 0;
 	font-size: 30px;
 	font-weight: 300;
-	font-family: $font-family-cul;
 	text-transform: uppercase;
 }
 h2 {
