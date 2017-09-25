@@ -1,6 +1,6 @@
 <% content_for :page_title, 'The Cornell Wordsworth Collection' %>
 <div class="container">
-	<h2>The Cornell Wordsworth Collection</h2>
+	<%= render partial: 'pages/collections/wordsworth/menu' %>
 	<div class="pull-right img-right">
 		<%= image_tag "collections/wordsworth/wordsworthportrait.jpg" , alt: "", class: "img-thumbnail img-responsive" %>
 		<p class="caption">
@@ -14,4 +14,27 @@
 	<div class="collection-search well">
 		<h3>Search the Cornell Wordsworth Collection or <a href="/?f%5Bcollection_tesim%5D%5B%5D=Wordsworth+Collection">browse the collection</a></h3>
 		<%= render '/catalog/search_form', { :@collection_search => "Wordsworth Collection"}  %>
+	</div>
+	<h3 id="resources">Resources</h3>
+	<ul>
+		<li>The Cornell Wordsworth Collection; a catalogue of books and manuscripts presented to the University by Mr. Victor Emanuel, Cornell 1919. Compiled by George Harris Healey. Ithaca, N.Y., Cornell University Press, 1957.</li>
+		<li><a href="http://www.wordsworthcentre.co.uk/Cornell/index.html">The Cornell Wordsworth edition</a></li>
+	</ul>
+	<%= render partial: 'pages/top' %>
+	<h3 id="about">About the project</h3>
+	<h4>Our Partners</h4>
+	<p>These digital volumes from the Division of Rare & Manuscript Collections at Cornell University Library were scanned from the print editions on an APT BookScan and converted to the jpeg2000 format by Kirtas Technologies, Inc., Victor, New York. Color images were scanned as 300 dpi (uninterpolated), 24-bit image capture; grayscale/bitonal images were scanned as 300 dpi 24-bit color images and converted to 300 dpi (uninterpolated), 8 bit image capture. All titles were scanned cover to cover; pages may include marks, notations and other marginalia present in the original volumes. The generous support of the Microsoft Corporation made the digitization possible.</p>
+
+	<p>The access copies available on this site are being served from the Internet Archive , where the various viewing formats were derived from the jpeg2000 page images, in the spirit of the Internet Archive's mission to provide universal access to all knowledge.</p>
+	<h4>Coding</h4>
+	<p>This Web site was coded using Drupal 6, XHTML 1.1, and CSS2. It is best viewed at a screen resolution of 1024x768 or higher, using the latest available version of Firefox, Google Chrome, Internet Explorer, or Safari.</p>
+	<h4>Credits</h4>
+	<ul>
+		<li>Bill Kehoe, Team Lead</li>
+		<li>Steve Rokitka, Technical &amp; Creative Advisor and Programmer</li>
+		<li>Rick Silterra, Lead Programmer</li>
+		<li>Ken Williams, Web Site Designer and Programmer</li>
+	</ul>
+	<p>For feedback about this Web site, contact rmcweb@cornell.edu</p>.
+	<%= render partial: 'pages/top' %>
 </div>
