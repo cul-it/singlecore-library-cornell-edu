@@ -18,6 +18,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 	<% @bibid  = render_document_show_field_value(:document => @document, :field => 'bibid_ssi') %>
 	<% @url_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'url_related_link_tesim') %>
 	<% @title_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'title_related_link_tesim') %>
+	<% @finding_aid  = render_document_show_field_value(:document => @document, :field => 'finding_aid_tesim') %>
 
 
 	<%= render 'pub_status', :document => @document %>
@@ -52,6 +53,9 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 					<% end %>
 			 		<% if @collection_website.present? %>
 						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
+					<% end %>
+					<% if @finding_aid.present? %>
+						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @finding_aid %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'FindingAid']);">Finding aid</a></li>
 					<% end %>
 					<% if @bibid.present? %>
 						<li><i class="fa-li fa fa-external-link"></i>
