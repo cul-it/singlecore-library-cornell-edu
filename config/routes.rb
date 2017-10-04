@@ -60,20 +60,22 @@ end
   get '/collection/racker', to: redirect('/collections/efraimracker')
   get '/collection/ragamala', to: redirect('/collections/ragamala')
   get '/collection/squeeze', to: redirect('/collections/squeeze')
-  get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
-  get '/collections/tell-en-nasbeh' => 'high_voltage/pages#show', :id => 'collections/tell-en-nasbeh/index'
 
   # no facets on high voltage
   # prod pages
   get '/collections' => 'catalog#facet', :id => 'collection_tesim'
+
+  # prod pages
   get '/collections/aerialny' => 'high_voltage/pages#show', :id => 'collections/aerialny/index'
+  get '/collections/blaschka' => 'high_voltage/pages#show', :id => 'collections/blaschka/index'
+  get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
   get '/collections/ragamala' => 'high_voltage/pages#show', :id => 'collections/ragamala/index'
   get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
+  get '/collections/tell-en-nasbeh' => 'high_voltage/pages#show', :id => 'collections/tell-en-nasbeh/index'
 
   # dev pages
   if ENV['COLLECTIONS'] == "development"
     get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
-    get '/collections/blaschka' => 'high_voltage/pages#show', :id => 'collections/blaschka/index'
     get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
     get '/collections/railroad' => 'high_voltage/pages#show', :id => 'collections/railroad/index'
