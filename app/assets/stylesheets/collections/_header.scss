@@ -7,9 +7,6 @@
 			color: white;
 		}
 	}
-	.util-links {
-		padding: 0;
-	}
 	.navbar-toggle {
 		background: $gray-dark;
 		margin: 0;
@@ -33,6 +30,7 @@
 	display: none;
 }
 .util-links {
+	padding-right: 0;
 	li {
 		margin-bottom: 0;
 	}
@@ -59,29 +57,20 @@
 	text-decoration: none;
 }
 .cul-brand {
-	font-size: 18px;
+	font-size: 16px;
 	font-family: $font-family-cul;
 	display: block;
 	color: $gray-dark;
-	margin-bottom: .1em;
 	text-decoration: none;
 }
 .cul-brand:hover, .cul-brand:active, .cul-brand:focus {
 	color: $gray;
 	text-decoration: none;
 }
-// Beta label
 .cul {
-	.label-info {
-		font-size: 90%;
-		vertical-align: super;
-		font-weight: normal;
-		text-transform: uppercase;
-		border-radius: 0;
-		margin-left: .5em;
-	}
 	h1 {
 		margin: 0;
+		line-height: 1;
 	}
 }
 
@@ -134,28 +123,15 @@
 		font-size: 28px;
 	}
 	.util-links {
+		padding-right: 15px;
 		#navbar {
 			float: right;
 		}
-		.nav > li > a {
-			padding: 10px 10px !important;
-			background: $warm-gray;
-			margin-left: 5px;
-			color: $gray-dark !important;
-			text-decoration: none;
+		ul {
+			margin-top: .5em;
 		}
-		.nav > li > a:hover,
-		.nav > li > a:active,
-		.nav > li > a:focus {
-			background: $warm-gray;
-			text-decoration: none;
-		}
-		.nav > li.browse-tab > a,
-		.nav > li.browse-tab > a:hover,
-		.nav > li.browse-tab > a:active,
-		.nav > li.browse-tab > a:focus {
-			background: $gray-dark;
-			color: white !important;
+		li {
+			font-size: 14px;
 		}
 	}
 	.cornell-identity {
@@ -170,9 +146,9 @@
 
 // Medium devices (desktops, 992px and up)
 @media (min-width: $screen-md) {
-	.brand {
-		font-size: 30px;
-	}
+	// .brand {
+	// 	font-size: 30px;
+	// }
 	.util-links {
 		.nav > li > a {
 			padding: 10px 15px !important;
