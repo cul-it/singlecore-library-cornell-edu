@@ -181,24 +181,13 @@
 	}
 }
 	
-// Collections list - original mockup style, not implemented due to lack of thumbnails
-// -------------------
-// .special-collections {
-// 	.browse-list {
-// 		h2 {
-// 			font-family: $font-family-sans-serif;
-// 			font-size: 20px;
-// 			font-weight: 400;
-// 		}
-// 		img {
-// 			margin-bottom: 1em;
-// 		}
-// 	}
-// }
-// .collection {
-// 	@include make-row();
-// 	margin-bottom: 2em;
-// }
+// Finding aid link on landing page
+// -----------------------------------
+.finding-aid-link {
+	i {
+		margin-left: .25em;
+	}
+}
 
 // MEDIA QUERIES
 // -------------------------
