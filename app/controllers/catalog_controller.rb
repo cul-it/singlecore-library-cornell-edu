@@ -120,7 +120,7 @@ class CatalogController < ApplicationController
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "johnreps" && params[:f].nil?
-            facet_params = { f: { collection_tesim: ['John Reps Collection - Slides'] } }
+            facet_params = { f: { collection_tesim: ['John Reps Collection - Urban Explorer'] } }
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "loewentheil" && params[:f].nil?
@@ -546,7 +546,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'exhibit_number_tesim', :label => 'Exhibit Number'
     config.add_show_field 'railroad_reporting_mark_tesim', :label => 'Railroad Reporting Mark'
     config.add_show_field 'station_yard_tesim', :label => 'Station/Yard'
-    config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid'
 
     # - IWO-JPFO (Boyarin)
     config.add_show_field 'recipient_tesim', :label => 'Recipient'
