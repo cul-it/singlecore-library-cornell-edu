@@ -95,10 +95,13 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			<div class="col-sm-4 more-item-info">
 				<% if @collection_website.present? %>
 				<div class="well">
-          <h2>About the collection</h2>
+          <h2>About the Collection</h2>
 					<ul class="fa-ul collection-links">
 						<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
-					</ul>
+            <% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
+              <li><i class="fa-li fa fa-book"></i><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View in Hathi Trust</a></li>
+              <% end %>
+          </ul>
 				</div>
 				<% end %>
 			</div>
