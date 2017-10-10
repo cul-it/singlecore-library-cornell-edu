@@ -78,7 +78,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 
 	<%# for books -%>
 	<% else %>
-		<div class="col-md-9 item-info">
+		<div class="col-sm-8 item-info">
 			<dl class="metadata dl-horizontal">
 			  <% document_show_fields(document).each do |field_name, field| -%>
 			    <% if should_render_show_field? document, field %>
@@ -92,9 +92,10 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
       <% end %>
 			<%= render partial: 'catalog/show_maplet_default' %>
 			</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
-			<div class="more-item-info">
+			<div class="col-sm-4 more-item-info">
 				<% if @collection_website.present? %>
 				<div class="well">
+          <h2>About the collection</h2>
 					<ul class="fa-ul collection-links">
 						<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
 					</ul>

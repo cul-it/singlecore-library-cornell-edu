@@ -294,6 +294,7 @@ class CatalogController < ApplicationController
 
     # these index fields are from the dlxs collections
     #config.add_index_field 'book_id_ts', :label => 'book id'
+    config.add_index_field 'publication_tesim', :label => 'Publication'
 
     config.add_index_field 'publisher_tesim', :label => 'Publisher'
     config.add_index_field 'pubplace_tesim', :label => 'Publication Place'
