@@ -128,7 +128,7 @@
   </div>
 
 <%# display thumbnail with pdf link like for Adler %>
-<% elsif @pdf == true %>
+<% elsif @pdf == true && @project == '893' %>
   <div class="other-viewer well pdf">
     <div class="row">
       <div class="col-sm-12 text-center">
@@ -222,5 +222,28 @@ Hathi Trust</h2>
       </div>
     </div>
   </div>
+
+  <%# iwo pdf links %>
+  <% elsif  @project == "3450"  %>
+    <div class="other-viewer well">
+      <div class="row">
+        <div class="col-sm-8 text-center">
+          <div class="cover" data-no-turbolink>
+            <a href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);">
+              <img src="<%= @document['media_URL_size_3_tesim'][0] %>" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="reader-link" data-no-turbolink>
+
+            <a class="btn btn-portal btn-lg" href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Download item<i class="fa fa-book"></i></a>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
 
 <% end %>
