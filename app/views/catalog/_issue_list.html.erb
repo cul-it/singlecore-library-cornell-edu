@@ -3,7 +3,8 @@
 <% get_chla_issues(document).each do |issue| %>
 
         <li>
-		     <%= link_to issue["title_tesim"][0],"http://reader.library.cornell.edu/docviewer/digital?id="+issue["id"] %>
+          <%= issue["title_tesim"][0] %>:
+		     <%= link_to "Read Issue","http://reader.library.cornell.edu/docviewer/digital?id="+issue["id"] %> |  <%= link_to "View Table of Contents","/catalog/"+issue["id"] %>
 	    </li>
 <% end %>
 </ul>
