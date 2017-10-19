@@ -115,11 +115,20 @@ def get_chla_issues args
   return @response
 end
 
+def get_chla_tocs args
+  journal = args['id']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{journal}"))
+  @response = response['response']['docs']
+  return @response
+end
+
 def chla_thumbnail args
+  if !args['id'].include?('articles')
   thumb = args['id']
   response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}_1_fs&wt=json&indent=true"))
   @response = response['response']['docs']
   return @response[0]['awsthumbnail_tesim'][0].to_s
+end
 end
 
     PREFIXES = {
