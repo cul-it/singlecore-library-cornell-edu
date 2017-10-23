@@ -27,7 +27,7 @@
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
   <div id="image-toolbar">
     <div class="image-controls">
-      <% if @project != "893" %>
+      <% if @project != "893" && !@document["creator_tesim"].include?("Adler, Ernst")%>
       <a href="<%= @download_url %>" class="download-link" title="Download" onclick="javascript:_paq.push(['trackEvent', 'DownloadLink', 'viewer-<%= @project %>-<%= @book_id %>']);">Download<i class="fa fa-download"></i></a>
       <% end %>
       <a id="zoom-in" href="#zoom-in"><i class="fa fa-plus-circle"></i></a>
@@ -215,6 +215,7 @@ Hathi Trust</h2>
           <% else %>
           <% if @document['format_tesim'][0] != "Issue" && @document['format_tesim'][0] != "Article"%>
           <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+          <% elsif @document['format_tesim'][0] == "Article" %>
           <% else %>
           <h3> Table of Contents </h3>
 
