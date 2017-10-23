@@ -27,7 +27,7 @@
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
   <div id="image-toolbar">
     <div class="image-controls">
-      <% if @project != "893" && !@document["creator_tesim"].include?("Adler, Ernst")%>
+      <% if @project != "893" && (@document["creator_tesim"].present? && !@document["creator_tesim"].include?("Adler, Ernst"))%>
       <a href="<%= @download_url %>" class="download-link" title="Download" onclick="javascript:_paq.push(['trackEvent', 'DownloadLink', 'viewer-<%= @project %>-<%= @book_id %>']);">Download<i class="fa fa-download"></i></a>
       <% end %>
       <a id="zoom-in" href="#zoom-in"><i class="fa fa-plus-circle"></i></a>
