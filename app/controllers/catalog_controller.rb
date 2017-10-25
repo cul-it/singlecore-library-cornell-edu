@@ -123,8 +123,20 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['John Reps Collection - Urban Explorer'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "karma" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Kroch Asia Rare Materials Archive'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
+          if params[:subject] == "kmoddl" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Reuleaux Kinematic Mechanisms Collection'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "loewentheil" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Loewentheil Collection of African-American Photographs'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
+          if params[:subject] == "maps" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Cornell University Library Map Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "obama" && params[:f].nil?
@@ -551,6 +563,17 @@ class CatalogController < ApplicationController
     config.add_show_field 'recipient_tesim', :label => 'Recipient'
     config.add_show_field 'organization_tesim', :label => 'Organization'
     config.add_show_field 'transcription_tesim', :label => 'Handwritten Transcription'
+
+    # - CUL Map Collection
+    config.add_show_field 'edition_tesim', :label => 'Edition'
+    config.add_show_field 'map_scale_tesim', :label => 'Scale'
+    config.add_show_field 'map_sheet_tesim', :label => 'Sheet'
+    config.add_show_field 'coordinates_tesim', :label => 'Coordinates'
+
+    # - KMODDL
+    config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
+    config.add_show_field 'manufacturer_tesim', :label => 'Manufacturer'
+    config.add_show_field 'voigt_cat_no_tesim', :label => 'Voigt Catalog Number'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
