@@ -37,21 +37,24 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 		}
 	}
 	.background {
-		background: url("/assets/collections/srilanka/arabesque.png");
+		background: url("/collections/srilanka/arabesque.png");
 		img {
-			margin: 3em 0 .5em;
+			margin: 2em 0 0;
 		}
 		.caption p {
 			text-align: right;
 			font-size: 12px;
 			color: $gray;
 			font-style: italic;
-			margin-bottom: 4em;
 		}
 	}
 }
+.srilanka-header--subpage {
+	background: url("/collections/srilanka/arabesque-short.png") repeat-x bottom;
+	padding-bottom: 30px;
+}
 .srilanka-layout {
-	margin: 0 0 4em 0;
+	margin: 0 0 3em 0;
 	.navbar-collapse {
 		padding: 0;
 	}
@@ -59,9 +62,6 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 		background: $srilanka-pink;
 		border: 0;
 		padding: 30px;
-		p {
-			margin-bottom: 0;
-		}
 	}
 	.nav > li {
 		font-size: 14px;
@@ -74,6 +74,8 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 	.nav > li > a:focus {
 		border: 0;
 		background: inherit;
+		padding: 5px 0;
+		text-decoration: underline;
 	}
 	.nav > li > a:hover {
 		color: $srilanka-red;
@@ -94,19 +96,31 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 			margin-top: 10px;
 			font-size: 30px;
 		}
-	}
-	.main-text {
 		.collection-search,
-		.browse-links {
-			margin-bottom: 2em;
-			h3 {
-				font-size: 16px;
-				// color: $srilanka-red;
-				font-weight: 700;
-				font-family: $font-family-sans-serif;
+			.browse-links {
+				margin-bottom: 2em;
+				h3 {
+					font-size: 16px;
+					color: $gray-dark;
+					font-weight: 700;
+					font-family: $font-family-sans-serif;
+				}
+			}
+		.main-text-images {
+			margin-top: 2em;
+			.caption {
+				margin-top: .5em;
+				p {
+					font-size: 12px;
+					color: $gray;
+					font-style: italic;
+				}
 			}
 		}
 	}
+}
+.blacklight-pages-show .srilanka-layout .navbar-collapse .nav {
+	border: 0;
 }
 
 // MEDIA QUERIES
@@ -115,7 +129,7 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 // Small devices (tablets, 768px and up)
 @media (min-width: $screen-sm) { 
 	.srilanka-layout {
-		margin-top: 4em;
+		margin-top: 3em;
 		.nav > li {
 			text-align: right;
 		}
