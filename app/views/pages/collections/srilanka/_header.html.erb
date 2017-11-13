@@ -1,6 +1,6 @@
-<div class="srilanka-header">
-	<%# stick the hero image on the home page only %>
-	<% if current_page?('/collections/srilanka') %>
+<%# stick the hero image on the home page only %>
+<% if current_page?('/collections/srilanka') %>
+	<div class="srilanka-header">
 		<div class="container">
 			<h2><a href="/collections/srilanka">Depicting the Sri Lankan Vernacular</a></h2>
 		</div>
@@ -12,8 +12,10 @@
 				</div>
 			</div>
 		</div>
-	<%# or just display the header %>
-	<% else %>
+	</div>
+<%# or just display the header %>
+<% else %>
+	<div class="srilanka-header srilanka-header--subpage">
 		<div class="container">
 			<h2><a href="/collections/srilanka">Depicting the Sri Lankan Vernacular</a></h2>
 		</div>
