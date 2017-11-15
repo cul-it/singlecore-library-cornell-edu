@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //
 //= require 'blacklight_range_limit'
 // Required by Blacklight-Maps
