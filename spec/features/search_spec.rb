@@ -56,7 +56,7 @@ describe "Search Page" do
       end
     end
     within "#documents" do
-      expect(page).to have_selector(".document", count: 10)
+      expect(page).to have_selector(".document", count: 20)
     end
   end
 
