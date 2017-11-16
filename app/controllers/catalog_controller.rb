@@ -187,6 +187,10 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Willard D. Straight in Korea'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "tamang" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Digital Tamang'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "tell-en-nasbeh" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin'] } }
             redirect_to search_catalog_path(facet_params)
@@ -285,6 +289,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
     config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
     config.add_facet_field 'designer_creator_tesim', :label => 'Designer', :show => false
+    config.add_facet_field 'contributors_creator_tesim', :label => 'Contributors', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
@@ -544,11 +549,13 @@ class CatalogController < ApplicationController
     config.add_show_field 'publication_tesim', :label => 'Publication'
 
     # - digital tamang
+    config.add_show_field 'elevation_tesim', :label => 'Elevation'
     config.add_show_field 'local_name_location_tesim', :label => 'Place Name (Local)'
     config.add_show_field 'national_name_location_tesim', :label => 'Place Name (National)'
     config.add_show_field 'translation_tesim', :label => 'Translation'
     config.add_show_field 'devanagari_hamlet_tesim', :label => 'Hamlet (Devanagari)'
     config.add_show_field 'roman_hamlet_tesim', :label => 'Hamlet (Roman Characters)'
+    config.add_show_field 'devanagari_description_tesim', :label => 'Description (Devanagari)'
 
     # - political americana
     config.add_show_field 'role_tesim', :label => 'Creator Role'
@@ -582,6 +589,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
     config.add_show_field 'manufacturer_tesim', :label => 'Manufacturer'
     config.add_show_field 'voigt_cat_no_tesim', :label => 'Voigt Catalog Number'
+
+    # - Lindsay Cooper
+    config.add_show_field 'contributors_creator_tesim', :label => 'Contributors'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
