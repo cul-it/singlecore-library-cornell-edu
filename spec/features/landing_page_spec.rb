@@ -29,6 +29,11 @@ RSpec.feature 'Landing page' do
     expect(page).to have_content 'Rāgamālā is a unique form of Indian painting'
   end
 
+  scenario 'visit railroad landing page' do
+    visit '/collections/railroad'
+    expect(page).to have_content 'The U.S. Presidential Railroad Commission was established by Executive Order'
+  end
+
   scenario 'visit tarr landing page' do
     visit '/collections/tarr'
     expect(page).to have_content 'Ralph Stockman Tarr (1864-1912)'
