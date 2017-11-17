@@ -1,0 +1,19 @@
+require 'spec_helper'
+require 'rails_helper'
+RSpec.feature 'Item download' do
+
+  scenario 'visit a Persuasive Maps Ernst Adler item view' do
+    visit solr_document_path('ss:19343284')
+    expect(body).not_to have_content 'Download'
+  end
+
+  scenario 'visit another Persuasive Maps item view' do
+    visit solr_document_path('ss:3293712')
+    expect(body).to have_content 'Download'
+  end
+
+  scenario 'visit an item view without creator' do
+    visit solr_document_path('ss:3875086')
+    expect(body).to have_content 'Download'
+  end
+end
