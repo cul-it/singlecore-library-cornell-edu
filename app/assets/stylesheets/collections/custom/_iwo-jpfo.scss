@@ -1,0 +1,27 @@
+// Variables
+// ------------
+
+
+// Custom styles
+// --------------
+.iwo-layout {
+	.set-item {
+		@include make-sm-column(4);
+	}
+	.nav-collection {
+		float: none;
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up)
+// @media (min-width: $screen-sm) { 
+// }
+// Medium devices (desktops, 992px and up)
+// @media (min-width: $screen-md) {
+// }
+// Large devices (desktops, 1200px and up)
+// @media (min-width: $screen-lg) {
+// }
