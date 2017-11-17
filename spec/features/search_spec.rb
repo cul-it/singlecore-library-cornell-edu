@@ -12,7 +12,7 @@ describe "Search Page" do
     end
     expect(page).to have_selector("button[type='submit'] .submit-search-text")
     expect(page).to_not have_selector("#startOverLink")
-   
+
     expect(page).to have_content "Welcome!"
     tmp_value = Capybara.ignore_hidden_elements
     Capybara.ignore_hidden_elements = false
@@ -25,7 +25,7 @@ describe "Search Page" do
     fill_in "q", with: 'history'
     select 'All Fields', from: 'search_field'
     click_button 'search'
-   
+
     tmp_value = Capybara.ignore_hidden_elements
     Capybara.ignore_hidden_elements = false
     expect(page).to have_selector("link[rel=alternate][type='application/rss+xml']")
@@ -47,7 +47,7 @@ describe "Search Page" do
 
     within ("#sortAndPerPage") do
       expect(page).to have_content "Sort by"
-      expect(page).to have_content "1 - 10 of"
+      expect(page).to have_content "1 - 20 of"
       within '#sort-dropdown' do
         expect(page).to have_link('relevance')
         expect(page).to have_link('year (descending)')
@@ -56,7 +56,7 @@ describe "Search Page" do
       end
     end
     within "#documents" do
-      expect(page).to have_selector(".document", count: 10)
+      expect(page).to have_selector(".document", count: 20)
     end
   end
 
