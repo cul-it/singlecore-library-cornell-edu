@@ -4,15 +4,7 @@
 
 // Custom styles
 // --------------
-.site-plan {
-	margin-top: 3em;
-}
-.more-item-info {
-	.site-plan {
-		margin-top: 2em;
-	}
-}
-.nasbeh-layout {
+.iwo-layout {
 	.set-item {
 		@include make-sm-column(4);
 	}

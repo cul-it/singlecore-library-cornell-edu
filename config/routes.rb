@@ -79,6 +79,7 @@ end
     get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
     get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
+    get '/collections/iwo-jpfo' => 'high_voltage/pages#show', :id => 'collections/iwo-jpfo/index'
     get '/collections/railroad' => 'high_voltage/pages#show', :id => 'collections/railroad/index'
     get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
     get '/collections/wordsworth' => 'high_voltage/pages#show', :id => 'collections/wordsworth/index'
