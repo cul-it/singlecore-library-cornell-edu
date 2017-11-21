@@ -593,6 +593,10 @@ class CatalogController < ApplicationController
     # - Lindsay Cooper
     config.add_show_field 'contributors_creator_tesim', :label => 'Contributors'
 
+    # - KARMA
+    config.add_show_field 'volume_tesim', :label => 'Volume'
+    config.add_show_field 'page_tesim', :label => 'Page'
+
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
