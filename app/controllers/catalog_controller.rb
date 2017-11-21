@@ -312,6 +312,8 @@ class CatalogController < ApplicationController
     config.add_index_field 'common_name_tesim', :label => 'Common Name'
     config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
     config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
+    config.add_index_field 'volume_tesim', :label => 'Volume'
+    config.add_index_field 'page_tesim', :label => 'Page'
     # config.add_index_field 'creation_site_location_tesim', :label => 'Creation Site'
     # config.add_index_field 'region_location_tesim', :label => 'Creation Site'
     # this field is already listed under isbell:
