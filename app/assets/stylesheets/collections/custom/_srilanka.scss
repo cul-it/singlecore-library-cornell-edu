@@ -118,6 +118,10 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 			}
 		}
 	}
+	.set-item {
+		@include make-xs-column(4);
+		@include make-sm-column(3);
+	}
 }
 .blacklight-pages-show .srilanka-layout .navbar-collapse .nav {
 	border: 0;
