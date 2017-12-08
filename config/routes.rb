@@ -82,6 +82,7 @@ end
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
     get '/collections/iwo-jpfo' => 'high_voltage/pages#show', :id => 'collections/iwo-jpfo/index'
     get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
+    get '/collections/tamang' => 'high_voltage/pages#show', :id => 'collections/tamang/index'
     get '/collections/wordsworth' => 'high_voltage/pages#show', :id => 'collections/wordsworth/index'
   end
 
