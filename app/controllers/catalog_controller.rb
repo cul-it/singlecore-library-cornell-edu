@@ -289,7 +289,11 @@ class CatalogController < ApplicationController
     config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
     config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
     config.add_facet_field 'designer_creator_tesim', :label => 'Designer', :show => false
-    config.add_facet_field 'contributors_creator_tesim', :label => 'Contributors', :show => false
+    config.add_facet_field 'writer_creator_tesim', :label => 'Writer', :show => false
+    config.add_facet_field 'composer_creator_tesim', :label => 'Composer', :show => false
+    config.add_facet_field 'musician_creator_tesim', :label => 'Musician', :show => false
+    config.add_facet_field 'lyricist_creator_tesim', :label => 'Lyricist', :show => false
+    config.add_facet_field 'arranger_creator_tesim', :label => 'Arranger', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
@@ -593,7 +597,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'voigt_cat_no_tesim', :label => 'Voigt Catalog Number'
 
     # - Lindsay Cooper
-    config.add_show_field 'contributors_creator_tesim', :label => 'Contributors'
+    config.add_show_field 'writer_creator_tesim', :label => 'Writer', :link_to_search => true
+    config.add_show_field 'composer_creator_tesim', :label => 'Composer', :link_to_search => true
+    config.add_show_field 'musician_creator_tesim', :label => 'Musician', :link_to_search => true
+    config.add_show_field 'lyricist_creator_tesim', :label => 'Lyricist', :link_to_search => true
+    config.add_show_field 'arranger_creator_tesim', :label => 'Arranger', :link_to_search => true
 
     # - KARMA
     config.add_show_field 'volume_tesim', :label => 'Volume'
