@@ -1,6 +1,4 @@
 .wordsworth-header {
-	background: image-url("collections/wordsworth/masthead.jpg") no-repeat;
-	height: 150px;
 	margin-bottom: 2em;
 }
 
@@ -14,3 +12,25 @@
 		font-size: 14px;
 	}
 }
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up) 
+@media (min-width: $screen-sm) { 
+	.wordsworth-header {
+		background: image-url("collections/wordsworth/masthead.jpg") no-repeat;
+		height: 150px;
+	}
+	h2 {
+		text-indent: -9999em;
+	}
+}
+
+// Medium devices (desktops, 992px and up)
+// @media (min-width: $screen-md) {
+// }
+
+// Large devices (desktops, 1200px and up)
+// @media (min-width: $screen-lg) {
+// }

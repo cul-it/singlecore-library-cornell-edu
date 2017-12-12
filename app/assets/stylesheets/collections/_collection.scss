@@ -220,6 +220,15 @@
 			padding: 5px 10px;
 		}
 	}
+	.sidebar {
+		margin-top: 0;
+		.collection-search {
+			h3 {
+				font-size: 18px;
+				line-height: 1.4em;
+			}
+		}
+	}
 }
 
 // Medium devices (desktops, 992px and up)
