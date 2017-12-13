@@ -6,7 +6,7 @@ render_document_show_field_value(:document => @document, :field => 'adler_status
 	<% @show = "yes" %>
 <% end %>
 <% if render_document_show_field_value(:document => @document, :field => 'status_ssi') == "Published"  ||
-render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" %>
+render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" || render_document_show_field_value(:document => @document, :field => 'collection_tesim') == "Wordsworth Collection" %>
 	<% @show = "yes" %>
 <% end %>
 
