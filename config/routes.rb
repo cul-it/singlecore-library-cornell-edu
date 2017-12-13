@@ -74,6 +74,7 @@ end
   get '/collections/railroad' => 'high_voltage/pages#show', :id => 'collections/railroad/index'
   get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
   get '/collections/tell-en-nasbeh' => 'high_voltage/pages#show', :id => 'collections/tell-en-nasbeh/index'
+  get '/collections/wordsworth' => 'high_voltage/pages#show', :id => 'collections/wordsworth/index'
 
   # dev pages
   if ENV['COLLECTIONS'] == "development"
@@ -84,7 +85,6 @@ end
     get '/collections/lindsaycooper' => 'high_voltage/pages#show', :id => 'collections/lindsaycooper/index'
     get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
     get '/collections/tamang' => 'high_voltage/pages#show', :id => 'collections/tamang/index'
-    get '/collections/wordsworth' => 'high_voltage/pages#show', :id => 'collections/wordsworth/index'
   end
 
   get '/collections/:subject' => 'catalog#index'

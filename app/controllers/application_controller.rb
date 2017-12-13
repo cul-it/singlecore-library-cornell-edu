@@ -52,6 +52,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim:"Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin"
       OR collection_tesim:"Hill Ornithology Collection"
       OR collection_tesim:"Vicos Collection"
+      OR collection_tesim:"Wordsworth Collection"
       OR (collection_tesim:"Cornell Collection of Blaschka Invertebrate Models" AND portal_sequence_isi:1)
       OR collection_tesim: "U.S. President\'s Railroad Commission Photographs"
       ))'
