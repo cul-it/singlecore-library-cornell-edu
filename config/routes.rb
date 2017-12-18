@@ -33,6 +33,7 @@ end
 
   get '/contact' => 'high_voltage/pages#show', :id => 'contact'
   get '/image-credits' => 'high_voltage/pages#show', :id => 'image_credits'
+  get '/about' => 'high_voltage/pages#show', :id => 'about'
 
   # redirect older urls
   get '/ragamala', to: redirect('/collections/ragamala')
