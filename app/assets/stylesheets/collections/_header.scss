@@ -110,6 +110,12 @@
 		font-size: 14px;
 	}
 }
+.stg-message {
+	background: $state-danger-bg;
+	color: $state-danger-text;
+	padding: .5em 0;
+	text-align: center;
+}
 
 // MEDIA QUERIES
 // -------------------------
