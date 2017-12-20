@@ -32,6 +32,9 @@
   </head>
 
   <body class="<%= render_body_class %>">
+    <% if ENV["COLLECTIONS"] == "development" %>
+    <%= render :partial => 'shared/stg_message' %>
+    <% end %>
 
     <%= render :partial => 'shared/cornell' %>
     <%= render :partial => 'shared/header_navbar' %>
