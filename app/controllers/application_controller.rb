@@ -56,6 +56,7 @@ class ApplicationController < ActionController::Base
       OR (collection_tesim:"Cornell Collection of Blaschka Invertebrate Models" AND portal_sequence_isi:1)
       OR collection_tesim: "U.S. President\'s Railroad Commission Photographs"
       OR collection_tesim: "Political Americana"
+      OR collection_tesim: "Digital Tamang"
       ))'
     end
   end
