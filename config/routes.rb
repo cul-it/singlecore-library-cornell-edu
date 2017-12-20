@@ -85,6 +85,8 @@ end
     get '/collections/lindsaycooper' => 'high_voltage/pages#show', :id => 'collections/lindsaycooper/index'
     get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
     get '/collections/tamang' => 'high_voltage/pages#show', :id => 'collections/tamang/index'
+    get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
+
   end
 
   get '/collections/:subject' => 'catalog#index'

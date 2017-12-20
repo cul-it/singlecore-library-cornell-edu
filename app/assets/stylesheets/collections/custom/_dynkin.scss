@@ -1,0 +1,36 @@
+.dynkin-header {
+	margin-bottom: 2em;
+}
+
+.multi-hathi-wrapper ul {
+	padding-left: 0;
+	margin-left: 0;
+	list-style: none;
+
+	li {
+		line-height: .75em;
+		font-size: 14px;
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) {
+	.dynkin-header {
+		background: image-url("collections/dynkin/dynkin.png") no-repeat;
+		height: 150px;
+		h2 {
+			text-indent: -9999em;
+		}
+	}
+}
+
+// Medium devices (desktops, 992px and up)
+// @media (min-width: $screen-md) {
+// }
+
+// Large devices (desktops, 1200px and up)
+// @media (min-width: $screen-lg) {
+// }
