@@ -56,6 +56,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "U.S. President\'s Railroad Commission Photographs"
       OR collection_tesim: "Political Americana"
       OR collection_tesim: "Digital Tamang"
+      OR collection_tesim: "Kroch Asia Rare Materials Archive"
       ))'
     end
   end
