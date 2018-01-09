@@ -19,12 +19,20 @@ class CatalogController < ApplicationController
             facet_params = { f: { collection_tesim: ['Andrew Dickson White Architectural Photographs Collection'] } }
             redirect_to search_catalog_path(facet_params)
           end
+          if params[:subject] == "ahearn" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Charlie Ahearn Archive'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
           if params[:subject] == "alisonmasonkingsbury" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Alison Mason Kingsbury: Life and Art'] } }
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "anthrocollections" && params[:f].nil?
             facet_params = { f: { collection_tesim: ['Selections from the Cornell Anthropology Collections'] } }
+            redirect_to search_catalog_path(facet_params)
+          end
+          if params[:subject] == "art2301" && params[:f].nil?
+            facet_params = { f: { collection_tesim: ['Art 2301 Printmaking Student Portfolios'] } }
             redirect_to search_catalog_path(facet_params)
           end
           if params[:subject] == "artifactsandart" && params[:f].nil?
@@ -266,7 +274,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
     config.add_facet_field 'lang_tesim', :label => 'Language', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5, :sort => 'index'
-    config.add_facet_field 'mat_tech_tesim', :label => 'Materials', :show => false
+    config.add_facet_field 'mat_tech_tesim', :label => 'Materials/Techniques', :show => true, :limit => 5
     config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5, show: false
     config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5, show:false
     config.add_facet_field 'fd_27325_tsi', :label => 'Year of photo', :limit => 5, show: false
