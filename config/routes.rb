@@ -80,6 +80,7 @@ end
 
   # dev pages
   if ENV['COLLECTIONS'] == "development"
+    get '/collections/art2301' => 'high_voltage/pages#show', :id => 'collections/art2301/index'
     get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
     get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
