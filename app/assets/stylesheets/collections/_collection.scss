@@ -196,6 +196,9 @@
 	margin-bottom: 2em;
 }
 
+
+
+
 // MEDIA QUERIES
 // -------------------------
 
@@ -228,6 +231,14 @@
 				line-height: 1.4em;
 			}
 		}
+	}
+	.column-list {
+	    -moz-column-count: 3;
+	    -moz-column-gap: 20px;
+	    -webkit-column-count: 3;
+	    -webkit-column-gap: 20px;
+	    column-count: 3;
+	    column-gap: 20px;
 	}
 }
 
