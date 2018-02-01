@@ -68,6 +68,7 @@ end
 
   # prod pages
   get '/collections/aerialny' => 'high_voltage/pages#show', :id => 'collections/aerialny/index'
+  get '/collections/art2301' => 'high_voltage/pages#show', :id => 'collections/art2301/index'
   get '/collections/blaschka' => 'high_voltage/pages#show', :id => 'collections/blaschka/index'
   get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
   get '/collections/punkflyers' => 'high_voltage/pages#show', :id => 'collections/punkflyers/index'
@@ -80,7 +81,6 @@ end
 
   # dev pages
   if ENV['COLLECTIONS'] == "development"
-    get '/collections/art2301' => 'high_voltage/pages#show', :id => 'collections/art2301/index'
     get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
     get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
