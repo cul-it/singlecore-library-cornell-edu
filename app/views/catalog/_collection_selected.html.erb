@@ -1,0 +1,69 @@
+<% @link_label = "About" %>
+<% @external_link_icon = '<i class="fa fa-external-link" aria-hidden="true"></i>'.html_safe %>
+<!-- TODO: try using collection_website_tesim field -->
+<%# @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
+
+
+<div class="well well-collection">  
+    <h2><%= @collection_selected %></h2>
+    <% if @collection_selected == "Adler Hip Hop Archive" %>
+        <a href="http://rmc.library.cornell.edu/hiphop/adler.html"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Alison Mason Kingsbury: Life and Art" %>
+        <a href="http://rmc.library.cornell.edu/alisonmasonkingsbury/"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Andrew Dickson White Architectural Photographs Collection" %>
+        <a href="http://resolver.library.cornell.edu/misc/4077228"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Art 2301 Printmaking Student Portfolios" %>
+        <a href="/collections/art2301"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia" %>
+        <a href="http://beyondthetaj.library.cornell.edu/"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Billie Jean Isbell Andean Collection" %>
+        <a href="http://isbellandes.library.cornell.edu"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Campus Artifacts, Art & Memorabilia" %>
+        <a href="http://artifactsandart.library.cornell.edu"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Charlie Ahearn Archive" %>
+        <a href="http://rmc.library.cornell.edu/hiphop/"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Claire Holt Papers: Images of Indonesian Art, Architecture, and Culture" %>
+        <a href="http://resolver.library.cornell.edu/misc/5597787"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Cornell Cast Collection" %>
+        <a href="http://hdl.handle.net/1813.001/8946675e"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Cornell Coin Collection" %>
+        <a href="http://hdl.handle.net/1813.001/8946679a"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Cornell Collection of Blaschka Invertebrate Models" %>
+        <a href="/collections/blaschka"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Cornell Gem Impressions Collection" %>
+        <a href="http://hdl.handle.net/1813.001/8788389a"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Cornell Squeeze Collection" %>
+        <a href="http://hdl.handle.net/1813.001/8946690d"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Cornell University Library Map Collection" %>
+        <a href="https://olinuris.library.cornell.edu/collections/maps/sections/digital-images"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Digital Tamang" %>
+        <a href="/collections/tamang"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin" %>
+        <a href="/collections/tell-en-nasbeh"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Divine Comedy Image Archive" %>
+        <a href="http://resolver.library.cornell.edu/misc/7889273"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Efraim Racker Art Albums" %>
+        <a href="http://hdl.handle.net/1813.001/8293942"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Ernie Paniccioli" %>
+        <a href="http://rmc.library.cornell.edu/hiphop/"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+</div>
