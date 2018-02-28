@@ -212,6 +212,14 @@ end
       (document.has_highlight_field? field_config.field if field_config.highlight)
   end
 
+def has_collection_selected?
+  collection_param = params[:f][:collection_tesim]
+  if collection_param.present?
+  @collection_selected = collection_param[0]
+  render "collection_selected"
+  end
+end
+
 
 
 
