@@ -8,7 +8,8 @@ describe "Search Page" do
     within ("select#search_field") do
       expect(page).to have_selector('option', text: 'All Fields')
       expect(page).to have_selector('option', text: 'Title')
-      expect(page).to have_selector('option', text: 'Author')
+      expect(page).to have_selector('option', text: 'Creator')
+      expect(page).to have_selector('option', text: 'Subject')
     end
     expect(page).to have_selector("button[type='submit'] .submit-search-text")
     expect(page).to_not have_selector("#startOverLink")
