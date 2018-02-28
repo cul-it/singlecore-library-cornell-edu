@@ -19,7 +19,7 @@
         <a href="/collections/art2301"><%= @link_label %></a>
     <% end %>
     <% if @collection_selected == "Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia" %>
-        <a href="http://beyondthetaj.library.cornell.edu/"><%= @link_label %></a>
+        <a href="http://beyondthetaj.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
     <% end %>
     <% if @collection_selected == "Billie Jean Isbell Andean Collection" %>
         <a href="http://isbellandes.library.cornell.edu"><%= @link_label %><%= @external_link_icon %></a>
@@ -65,5 +65,101 @@
     <% end %>
     <% if @collection_selected == "Ernie Paniccioli" %>
         <a href="http://rmc.library.cornell.edu/hiphop/"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Hip Hop Party and Event Flyers" %>
+        <a href="http://rmc.library.cornell.edu/hiphop/flyers.html"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Historic Glacial Images of Alaska and Greenland" %>
+        <a href="/collections/tarr"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Hive and Honeybee Collection" %>
+        <a href="/collections/bees"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Icelandic and Faroese Photographs of Frederick W.W. Howell" %>
+        <a href="http://resolver.library.cornell.edu/misc/5618018"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Images from the Rare Book and Manuscript Collections" %>
+        <a href="http://rmc-images.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Indonesian Music Archive" %>
+        <a href="/collections/indonesianmusic"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "International Workers’ Order (IWO) and Jewish People's Fraternal Order (JPFO)" %>
+        <a href="/collections/iwo-jpfo"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Joe Conzo Jr. Archive" %>
+        <a href="http://rmc.library.cornell.edu/hiphop/conzo.html"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "John Clair Miller" %>
+        <a href="https://johnclairmiller.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "John Clair Miller Image Collection of Twentieth-Century Architecture in Iceland" %>
+        <a href="https://johnclairmiller.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "John Reps Collection - Bastides" %>
+        <a href="http://hdl.handle.net/1813.001/9225346a"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "John Reps Collection - Urban Explorer" %>
+        <a href="http://hdl.handle.net/1813.001/8268684"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Knowledge of the World in Early Modern Japan" %>
+        <a href="http://hdl.handle.net/1813.001/7927747"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Lindsay Cooper Digital Archive" %>
+        <a href="/collections/lindsaycooper"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Loewentheil Collection of African-American Photographs" %>
+        <a href="https://rare.library.cornell.edu/collections/photography"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Mysteries at Eleusis: Images of Inscriptions" %>
+        <a href="http://resolver.library.cornell.edu/misc/5696261"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "New York State Aerial Photographs" %>
+        <a href="/collections/aerialny"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Obama Visual Iconography" %>
+        <a href="http://rmc.library.cornell.edu/obama/"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Persuasive Maps: PJ Mode Collection" %>
+        <a href="http://persuasivemaps.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Political Americana" %>
+        <a href="http://resolver.library.cornell.edu/misc/5458453"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Punk Flyers" %>
+        <a href="/collections/punkflyers"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Ragamala Paintings" %>
+        <a href="/collections/ragamala"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Reuleaux Kinematic Mechanisms Collection" %>
+        <a href="http://resolver.library.cornell.edu/misc/5146902"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Selections from the Cornell Anthropology Collections" %>
+        <a href="https://anthrocollections.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Sri Lankan Vernacular" %>
+        <a href="/collections/srilanka"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "The J. R. Sitlington Sterrett Collection of Archaeological Photographs" %>
+        <a href="http://hdl.handle.net/1813.001/9861575a"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "The core historical literature of agriculture" %>
+        <a href="/collections/chla"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Theatre Prints and Books from Early Modern Japan" %>
+        <a href="http://hdl.handle.net/1813.001/7927766"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "U.S. President's Railroad Commission Photographs" %>
+        <a href="/collections/railroad"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Vicos Collection" %>
+        <a href="http://resolver.library.cornell.edu/misc/6802783"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Willard D. Straight in Korea" %>
+        <a href="http://resolver.library.cornell.edu/misc/5861081"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Wordsworth Collection" %>
+        <a href="/collections/wordsworth"><%= @link_label %></a>
     <% end %>
 </div>
