@@ -51,9 +51,9 @@
 
   <body class="<%= render_body_class %>">
 
-    <% if ENV["COLLECTIONS"] == "development" %>
+  <% if ENV["COLLECTIONS"] == "development" %>
     <%= render :partial => 'shared/stg_message' %>
-    <% end %>
+  <% end %>
 
   <%= render :partial => 'shared/cornell' %>
 
@@ -65,7 +65,7 @@
   <% end %>
 
 
-  <div id="main-container">
+  <div id="main-container" role="main">
 
     <div class="container">
       <% unless current_page?('/search_history') %>
