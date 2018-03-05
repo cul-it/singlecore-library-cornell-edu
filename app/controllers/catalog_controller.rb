@@ -634,12 +634,21 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('author') do |field|
+    config.add_search_field('creator') do |field|
       field.solr_local_parameters = {
         :qf => '$author_qf',
-        :pf => '$author_pf'
+        :pf => '$author_pf',
       }
     end
+
+    config.add_search_field('subject') do |field|
+      field.solr_local_parameters = {
+        :qf => '$subject_qf',
+        :pf => '$aubject_pf',
+      }
+    end
+
+  
 
     # "sort results by" select (pulldown)
     config.add_sort_field 'collection_sequence_isi asc, portfolio_creator_ssi asc, identifier_blaschka_isi asc, score desc, latest_date_isi asc', :label => 'relevance'

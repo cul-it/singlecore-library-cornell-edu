@@ -1,9 +1,13 @@
 <% if has_search_parameters? %>
 	<div id="sidebar" class="<%= sidebar_classes %>">
-	  <%= render 'search_sidebar' %>
+		<% if params[:f].present? %>
+	        <%= has_collection_selected? %>
+	    <% end %>
+	  	<%= render 'search_sidebar' %>
 	</div>
-
 	<div id="content" class="<%= main_content_classes %>">
-	   <%= render 'search_results' %>
+		<div id="searchresults">
+	   		<%= render 'search_results' %>
+	   	</div>
 	</div>
 <% end %>
