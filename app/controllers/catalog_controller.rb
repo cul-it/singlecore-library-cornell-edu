@@ -587,6 +587,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'exhibit_number_tesim', :label => 'Exhibit Number'
     config.add_show_field 'railroad_reporting_mark_tesim', :label => 'Railroad Reporting Mark'
     config.add_show_field 'station_yard_tesim', :label => 'Station/Yard'
+    config.add_show_field 'cite_as_tesim', :label => 'Cite As'
 
     # - IWO-JPFO (Boyarin)
     config.add_show_field 'recipient_tesim', :label => 'Recipient'
