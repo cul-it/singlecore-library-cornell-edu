@@ -9,14 +9,19 @@ class ApplicationController < ActionController::Base
   layout 'blacklight'
 
   def set_fq(environment)
+
+
     if environment == 'development'
+
       fq = '-active_fedora_model_ssi:"Page"
       AND -collection_tesim:"Core Historical Library of Agriculture"
+      AND -adler_status:"Suppress for portal"
       AND -solr_loader_tesim:"eCommons"
       AND -(collection_tesim:"Cornell Collection of Blaschka Invertebrate Models" AND portal_sequence_isi:[2 TO *])'
 
 
     elsif environment == 'production'
+      ecommons = 'OR solr_loader_tesim:"eCommons"'
       fq = '(collection_tesim:"Adler Hip Hop Archive"  AND -adler_status:"Suppress for portal")
       OR collection_tesim:"Indonesian Music Archive"
       OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page"
@@ -58,9 +63,17 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "Political Americana"
       OR collection_tesim: "Digital Tamang"
       OR collection_tesim: "Kroch Asia Rare Materials Archive"
-      OR collection_tesim: "Art 2301 Printmaking Student Portfolios"
-      ))'
+      OR collection_tesim: "Art 2301 Printmaking Student Portfolios"'
+
+      if request.original_fullpath.include?('json')
+        fq = fq + ecommons + '))'
+      else
+        fq = fq + '))'
+      end
+
+
     end
+
   end
 
   # Prevent CSRF attacks by raising an exception.
