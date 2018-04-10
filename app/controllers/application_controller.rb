@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
 
       fq = '-active_fedora_model_ssi:"Page"
       AND -collection_tesim:"Core Historical Library of Agriculture"
-      AND -adler_status:"Suppress for portal"
       AND -solr_loader_tesim:"eCommons"
+      AND -adler_status:"Suppress for portal"
       AND -(collection_tesim:"Cornell Collection of Blaschka Invertebrate Models" AND portal_sequence_isi:[2 TO *])'
 
 
