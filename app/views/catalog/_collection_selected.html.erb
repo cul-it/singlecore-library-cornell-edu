@@ -72,8 +72,11 @@
     <% if @collection_selected == "Historic Glacial Images of Alaska and Greenland" %>
         <a href="/collections/tarr"><%= @link_label %></a>
     <% end %>
-    <% if @collection_selected == "Hive and Honeybee Collection" %>
+    <% if @collection_selected == "Hive and Honeybee (needs editing)" %>
         <a href="/collections/bees"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Home Economics Archive: Research, Tradition and History" %>
+        <a href="/collections/hearth"><%= @link_label %></a>
     <% end %>
     <% if @collection_selected == "Icelandic and Faroese Photographs of Frederick W.W. Howell" %>
         <a href="http://resolver.library.cornell.edu/misc/5618018"><%= @link_label %><%= @external_link_icon %></a>
