@@ -71,6 +71,7 @@ end
   get '/collections/art2301' => 'high_voltage/pages#show', :id => 'collections/art2301/index'
   get '/collections/blaschka' => 'high_voltage/pages#show', :id => 'collections/blaschka/index'
   get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
+  get '/collections/lindsaycooper' => 'high_voltage/pages#show', :id => 'collections/lindsaycooper/index'
   get '/collections/punkflyers' => 'high_voltage/pages#show', :id => 'collections/punkflyers/index'
   get '/collections/ragamala' => 'high_voltage/pages#show', :id => 'collections/ragamala/index'
   get '/collections/railroad' => 'high_voltage/pages#show', :id => 'collections/railroad/index'
@@ -85,7 +86,6 @@ end
     get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
     get '/collections/iwo-jpfo' => 'high_voltage/pages#show', :id => 'collections/iwo-jpfo/index'
-    get '/collections/lindsaycooper' => 'high_voltage/pages#show', :id => 'collections/lindsaycooper/index'
     get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
   end
 

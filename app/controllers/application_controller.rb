@@ -59,6 +59,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "Digital Tamang"
       OR collection_tesim: "Kroch Asia Rare Materials Archive"
       OR collection_tesim: "Art 2301 Printmaking Student Portfolios"
+      OR collection_tesim: "Lindsay Cooper Digital Archive"
       ))'
     end
   end
