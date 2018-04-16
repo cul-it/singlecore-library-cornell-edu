@@ -75,7 +75,7 @@ describe "Search Page" do
       expect(page).to have_selector("option[selected]", text: "Title")
     end
     within(".index_title") do
-      expect(page).to have_content "1."
+      expect(page).to have_content "no. 2"
     end
     within ("#sortAndPerPage") do
       expect(page).to have_content "1 entry found"
