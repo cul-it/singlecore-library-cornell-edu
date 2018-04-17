@@ -21,4 +21,17 @@ RSpec.feature 'Item' do
   	click_link '2015-08-25'
   	expect(page).to have_content "Date posted"
   end
+
+  scenario 'bolivian read item link displays' do
+    visit solr_document_path('bol:0001')
+    expect(page).to have_content "Read item"
+  end
+
+  scenario 'IIIF viewer displays and with download link' do
+    visit solr_document_path('ss:157518')
+    within ("#openseadragon") do
+      expect(page).to have_content "Download"
+    end
+  end
+
 end

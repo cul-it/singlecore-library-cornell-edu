@@ -1,5 +1,6 @@
 <% @project = render_document_show_field_value(:document => @document, :field => 'project_id_ssi') %>
 <% @kaltura = render_document_show_field_value(:document => @document, :field => 'kaltura_id_s') %>
+<% @kaltura_playlist = render_document_show_field_value(:document => @document, :field => 'kaltura_playlist_s') %>
 <% @book_id = render_document_show_field_value :document => @document, :field => 'id' %>
 <% @book_prefix = (render_document_show_field_value :document => @document, :field => 'id').split(':')[0] %>
 <% @download_url = render_document_show_field_value(:document => @document, :field => 'download_link_tesim') %>
@@ -101,14 +102,14 @@
 <%# done with iiif stuff %>
 
 <%# display av player %>
-<% elsif !@kaltura.blank? %>
+<% elsif !@kaltura.blank? && @kaltura_playlist.blank? %>
 <% @identifier= render_document_show_field_value(:document => @document, :field => 'id_number_ssi') %>
   <div class="other-viewer well">
     <div class="row">
       <div class="col-md-8">
         <div id="kaltura-player" class="av-player">
           <%# using Kaltura "Portal player" %>
-          <div id="kaltura_player_1474482853" style="width: 560px; height: 315px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+          <div id="kaltura_player_1474482853" style="width: 560px; height: 315px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject" class="video-player">
             <span itemprop="name" content="<%= @title %>"></span>
             <span itemprop="description" content=""></span>
             <span itemprop="duration" content=""></span>
@@ -124,6 +125,26 @@
           <%= render 'track_list', :document => @document %>
         <% end %>
       </div>
+    </div>
+  </div>
+
+<%# display av playlist %>
+<% elsif !@kaltura_playlist.blank? %>
+<%# @identifier= render_document_show_field_value(:document => @document, :field => 'id_number_ssi') %>
+  <div class="other-viewer well">
+    <div class="row">
+      <div class="col-md-8">
+        <%# using Kaltura "Standard playlist" %>
+        <div id="kaltura_player_1523988361" style="width: 800px; height: 450px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject" class="playlist-player"> 
+          <span itemprop="name" content=""></span> 
+          <span itemprop="description" content=""></span> 
+          <span itemprop="duration" content=""></span> 
+          <span itemprop="thumbnailUrl" content=""></span> 
+          <span itemprop="uploadDate" content=""></span> 
+          <span itemprop="width" content="800"></span> 
+          <span itemprop="height" content="450"></span> 
+        </div> 
+        <script src="https://cdnapisec.kaltura.com/p/518251/sp/51825100/embedIframeJs/uiconf_id/42328781/partner_id/518251?autoembed=true&playerId=kaltura_player_1523988361&cache_st=1523988361&width=800&height=450&flashvars[streamerType]=auto&flashvars[playlistAPI.kpl0Id]=<%= @kaltura_playlist %>"></script>  
     </div>
   </div>
 
