@@ -592,7 +592,7 @@ class CatalogController < ApplicationController
     # - IWO-JPFO (Boyarin)
     config.add_show_field 'recipient_tesim', :label => 'Recipient'
     config.add_show_field 'organization_tesim', :label => 'Organization'
-    config.add_show_field 'transcription_tesim', :label => 'Transcription'
+    config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :autolink_field
 
     # - CUL Map Collection
     config.add_show_field 'edition_tesim', :label => 'Edition'

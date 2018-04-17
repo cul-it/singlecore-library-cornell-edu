@@ -44,4 +44,9 @@ RSpec.feature 'Landing page' do
     expect(page).to have_content 'Tell en-Naṣbeh is an archaeological site'
   end
 
+  scenario 'visit lindsay cooper landing page' do
+    visit '/collections/lindsaycooper'
+    expect(page).to have_content 'Lindsay Cooper Digital Archive'
+  end
+
 end
