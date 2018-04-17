@@ -29,7 +29,7 @@ RSpec.feature 'Item' do
 
   scenario 'IIIF viewer displays and with download link' do
     visit solr_document_path('ss:157518')
-    within ("#openseadragon") do
+    within ("#openseadragon1") do
       expect(page).to have_content "Download"
     end
   end
