@@ -86,8 +86,8 @@ h2:first-child {
     transition: top 1s ease-out, background 1s linear;
     z-index: 100;
 }
-#skiptocontent {
-	#searchresults {
+#skiptocontent.skipfilters {
+	a {
 		top: -400px;
 	}
 }
