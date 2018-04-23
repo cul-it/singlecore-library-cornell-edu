@@ -52,7 +52,8 @@
 		margin-top: .5em;
 	}
 }
-.special-collections > .container {
+.special-collections > .container,
+.special-collections > .row > .container {
 	padding-top: 1em;
 	padding-bottom: 3em;
 }

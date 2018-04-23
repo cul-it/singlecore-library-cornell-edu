@@ -8,9 +8,45 @@
 		font-size: 26px;
 	}
 }
-.search-group {
-	padding-right: 0;
+
+// Search form in both header and on collection landing pages
+.search-query-form {
+	.search-group {
+		@include make-xs-column(6);
+		@include make-md-column(8);
+		padding-left: 0;
+	}
+	.search-select {
+		@include make-xs-column(4);
+		@include make-md-column(3);
+		padding-left: 0;
+	}
 }
+// Some tweaks just for search box on collection landing pages
+.special-collections {
+	.search-query-form {
+		.search-group {
+			padding-left: 15px;
+		}
+	}
+}
+.special-collections {
+	.sidebar {
+		.search-query-form {
+			width: 100%;
+			.search-group {
+				@include make-xs-column(6);
+				@include make-md-column(6);
+			}
+			.search-select {
+				@include make-xs-column(4);
+				@include make-md-column(4);
+				padding-left: 0;
+			}
+		}
+	}
+}
+
 #search_field {
 	width: 100%;
 }
@@ -21,9 +57,9 @@
 	.search-query-form {
 		width: 100%;
 	}
-	.form-group.col-xs-3 {
-		padding-right: 10px;
-	}
+	// .form-group.col-xs-3 {
+	// 	padding-right: 10px;
+	// }
 	.form-group {
 		margin-bottom: 0;
 	}
