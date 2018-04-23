@@ -2,14 +2,14 @@
     <%= render_hash_as_hidden_fields(params_for_search().except(:q, :search_field, :qt, :page, :utf8, :sbjct)) %>
 
     <div class="row">
-      <div class="form-group search-group col-xs-6 col-md-8">
+      <div class="form-group search-group">
         <div class="search-input">
           <label for="q" class="sr-only"><%= t('blacklight.search.form.search.label') %></label>
            <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.search.placeholder'), :class => "search_q q form-control", :id => "q", :autofocus => should_autofocus_on_search_box? %>
         </div>
       </div>
       <% unless search_fields.empty? %>
-        <div class="form-group col-xs-4 col-md-3">
+        <div class="form-group search-select">
           <label for="search_field" class="sr-only"><%= t('blacklight.search.form.search_field.label') %></label>
           <%= select_tag(:search_field, options_for_select(search_fields, h(params[:search_field])), :title => t('blacklight.search.form.search_field.title'), :class=>"search_field form-control") %>
           <span class="sr-only"><%= t('blacklight.search.form.search_field.post_label') %></span>
@@ -17,8 +17,8 @@
         </div>
       <% end %>
       <% if @collection_search.present? %>
-      <% collection_search = @collection_search %>
-       <input type="hidden" name="f[collection_tesim][]" value="<%= collection_search %>">
+        <% collection_search = @collection_search %>
+        <input type="hidden" name="f[collection_tesim][]" value="<%= collection_search %>">
        <% end %>
 
       <button type="submit" class="btn btn-search" id="search">
