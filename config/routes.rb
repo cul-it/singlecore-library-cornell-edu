@@ -84,6 +84,7 @@ end
   if ENV['COLLECTIONS'] == "development"
     get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
     get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
+    get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
     get '/collections/iwo-jpfo' => 'high_voltage/pages#show', :id => 'collections/iwo-jpfo/index'
     get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'

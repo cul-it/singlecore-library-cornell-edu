@@ -1,0 +1,21 @@
+<% content_for :page_title, 'Eugene B. Dynkin Collection of Mathematics Interviews' %>
+<div class="container iwo-layout">
+	<h2>Eugene B. Dynkin Collection of Mathematics Interviews</h2>
+	<div class="row">
+		<div class="col-sm-4 col-sm-push-8 sidebar">
+			<div class="collection-search well">
+				<h3>Search or <a href="/?f%5Bcollection_tesim%5D%5B%5D=Eugene+B.+Dynkin+Collection+of+Mathematics+Interviews">browse the collection</a></h3>
+				<%= render '/catalog/search_form', { :@collection_search => "Eugene B. Dynkin Collection of Mathematics Interviews"}  %>
+			</div>
+			<%= image_tag "collections/dynkin/dynkin.png" , alt: "", class: "img-thumbnail img-responsive" %></a>
+			<p class="caption">Eugene Dynkin</p>
+		</div>
+		<div class="col-sm-8 col-sm-pull-4">
+
+			<p>This collection contains digitized copies of audio and video interviews conducted with mathematicians by Eugene Dynkin. It also contains biographical information and photos of these prominent mathematicians. Read the Introduction and Help sections  linked on the left of this page for more history and tips on using the collection.</p>
+
+			<p>Professor Dynkin died on November 14, 2014, read his obituary here. His wonderful foresight enabled this mathematics history to preserved before his passing.</p>
+			<%#= render partial: 'pages/top' %>
+		</div>
+	</div>
+</div>
