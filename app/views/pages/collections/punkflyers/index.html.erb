@@ -1,20 +1,19 @@
 <% content_for :page_title, 'Punk Flyers' %>
 <div class="container">
 	<h2>Punk Flyers</h2>
-	<!-- <div class="clearfix"> -->
-		<!-- <div class="pull-right img-right">
-			<a href="/catalog/ss:20987567">
-			<%= image_tag "http://stor.artstor.org/stor/fe2189ae-57e2-4867-9fad-51059bc1476b_size3" , alt: "", class: "img-thumbnail img-responsive" %>
-			</a>
-			<p class="caption">
-				<a href="/catalog/ss:20987567">Advertisement for unnamed punk rock band seeking drummer</a>
-			</p>
-		</div> -->
-		
 
-		<p>This digital collection offers <a href="/?f%5Bcollection_tesim%5D%5B%5D=Punk+Flyers&view=gallery">2,091 images of punk flyers</a> held by Cornell University Library’s <a href="https://rare.library.cornell.edu">Division of Rare and Manuscript Collections</a>.</p>
-		<p>Cornell’s Rare and Manuscript Division offers deep <a href="https://rare.library.cornell.edu/collections/music">collections on modern music</a>, including a growing number of archives on punk and post-punk music and culture.  The show and event advertising flyers in this digital archive are drawn from two of Cornell’s prominent punk collections:  <a href="http://rmc.library.cornell.edu/EAD/htmldocs/RMM08060.html#s2">The Johan Kugelberg punk collection</a>, which includes hundreds of fliers, posters, zines, original art and more, and <a href="http://rmc.library.cornell.edu/EAD/htmldocs/RMM08107.html">the Aaron Cometbus Punk and Underground Press Collection</a>, which includes punk, new wave, and hardcore flyers and other ephemera from the San Francisco Bay area and beyond.</p>
-		<p>Not all of Cornell Library’s punk flyers have been digitized. The flyers in this digital collection represent only a portion of the punk flyers held across multiple archives within Cornell’s Rare and Manuscript Division. These collections are open for public research.  Inquiries about research visits or other access can be sent to <a href="mailto:rareref@cornell.edu">rareref@cornell.edu</a>.</p>
+	<div class="row">
+		<div class="col-sm-4 col-sm-push-8 sidebar">
+			<div class="collection-search well">
+				<h3>Search or <a href="/?f%5Bcollection_tesim%5D%5B%5D=Punk+Flyers">browse the collection</a></h3>
+				<%= render '/catalog/search_form', { :@collection_search => "Punk Flyers"}  %>
+			</div>
+		</div>
+		<div class="col-sm-8 col-sm-pull-4">
+			<p>This digital collection offers <a href="/?f%5Bcollection_tesim%5D%5B%5D=Punk+Flyers&view=gallery">2,091 images of punk flyers</a> held by Cornell University Library’s <a href="https://rare.library.cornell.edu">Division of Rare and Manuscript Collections</a>.</p>
+			<p>Cornell’s Rare and Manuscript Division offers deep <a href="https://rare.library.cornell.edu/collections/music">collections on modern music</a>, including a growing number of archives on punk and post-punk music and culture.  The show and event advertising flyers in this digital archive are drawn from two of Cornell’s prominent punk collections:  <a href="http://rmc.library.cornell.edu/EAD/htmldocs/RMM08060.html#s2">The Johan Kugelberg punk collection</a>, which includes hundreds of fliers, posters, zines, original art and more, and <a href="http://rmc.library.cornell.edu/EAD/htmldocs/RMM08107.html">the Aaron Cometbus Punk and Underground Press Collection</a>, which includes punk, new wave, and hardcore flyers and other ephemera from the San Francisco Bay area and beyond.</p>
+			<p>Not all of Cornell Library’s punk flyers have been digitized. The flyers in this digital collection represent only a portion of the punk flyers held across multiple archives within Cornell’s Rare and Manuscript Division. These collections are open for public research.  Inquiries about research visits or other access can be sent to <a href="mailto:rareref@cornell.edu">rareref@cornell.edu</a>.</p>
+		</div>
 		<div class="row image-row">
 			<div class="col-sm-4">
 				<a href="/catalog/ss:20987567"><%= image_tag "http://stor.artstor.org/stor/fe2189ae-57e2-4867-9fad-51059bc1476b_size3" , alt: "Punk drummer advertisement", class: "img-thumbnail img-responsive" %></a>
@@ -26,9 +25,5 @@
 				<a href="/catalog/ss:21494397"><%= image_tag "http://stor.artstor.org/stor/dc16050b-b751-4cfd-b05e-1f92aeb4475e_size3" , alt: "Bad Brains flyer", class: "img-thumbnail img-responsive" %></a>
 			</div>
 		</div>
- 	<!-- </div> -->
-	<div class="collection-search well">
-		<h3>Search Punk Flyers or <a href="/?f%5Bcollection_tesim%5D%5B%5D=Punk+Flyers">browse the collection</a></h3>
-		<%= render '/catalog/search_form', { :@collection_search => "Punk Flyers"}  %>
 	</div>
 </div>

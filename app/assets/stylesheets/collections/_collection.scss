@@ -62,10 +62,16 @@
 // ------------------------- //
 .sidebar {
 	@include make-sm-column(4);
-	margin-top: 2.5em;
+	margin-top: 1.5em;
 	.nav-header {
 		text-transform: uppercase;
 		margin-bottom: .5em;
+	}
+	.collection-search {
+		h3 {
+			font-size: 18px;
+			line-height: 1.4em;
+		}
 	}
 }
 .main-text {
@@ -250,12 +256,6 @@
 	}
 	.sidebar {
 		margin-top: 0;
-		.collection-search {
-			h3 {
-				font-size: 18px;
-				line-height: 1.4em;
-			}
-		}
 	}
 	.column-list {
 	    -moz-column-count: 3;
