@@ -590,6 +590,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'cite_as_tesim', :label => 'Cite As'
 
     # - IWO-JPFO (Boyarin)
+    config.add_show_field 'yiddish_creator_tesim', :label => 'Creator (Yiddish)'
+    config.add_show_field 'yiddish_title_tesim', :label => 'Title (Yiddish)'
+    config.add_show_field 'romanized_yiddish_title_tesim', :label => 'Romanized Title (Yiddish)'
     config.add_show_field 'recipient_tesim', :label => 'Recipient'
     config.add_show_field 'organization_tesim', :label => 'Organization'
     config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :autolink_field
