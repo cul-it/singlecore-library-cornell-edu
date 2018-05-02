@@ -82,6 +82,7 @@ end
 
   # dev pages
   if ENV['COLLECTIONS'] == "development"
+    get '/collections/artifactsandart' => 'high_voltage/pages#show', :id => 'collections/artifactsandart/index'
     get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
     get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
