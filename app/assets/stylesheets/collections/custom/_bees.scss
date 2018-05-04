@@ -1,11 +1,11 @@
 // Variables
 // ------------
 
-$bees-dark-blue: #006e90;
+$bees-dark-blue: #015068;
 $bees-yellow: #f3b61f;
 $bees-gray: #adcad6;
 $bees-green: #99c24d;
-$bees-blue: #41bbd9;
+$bees-blue: #0080a0;
 
 
 // Custom styles
@@ -15,12 +15,12 @@ $bees-blue: #41bbd9;
 .mann-header--bees {
 	h2 {
 		margin-bottom: .25em;
-		a {
-			color: white;
-		}
+		color: white;
 	}
 	h3 {
-		color: white;
+		color: $bees-yellow;
+		font-style: italic;
+		margin-bottom: 1.3em;
 	}
 	.navbar-toggle {
 		background: $bees-blue;
@@ -29,11 +29,11 @@ $bees-blue: #41bbd9;
 		background: $bees-dark-blue;
 	}
 	.navbar-nav > li > a {
-		background: $bees-yellow;
+		background: $bees-blue;
 	}
 	.navbar-nav > li > a:hover {
 		border: 0;
-		background: $bees-blue;
+		background: black;
 	}
 	.navbar-collapse {
 		padding-left: 0;
@@ -41,7 +41,7 @@ $bees-blue: #41bbd9;
 	.search-bar {
 		.glyphicon {
 			color: white;
-			background: $bees-yellow;
+			background: $bees-blue;
 		}
 	}
 }
@@ -57,10 +57,10 @@ $bees-blue: #41bbd9;
 	.collection-browse {
 		margin-bottom: 1em;
 		a {
-			background: $bees-blue;
+			background: $bees-dark-blue;
 		}
 		a:hover {
-			background: $bees-dark-blue;
+			background: black;
 		}
 	}
 	.sidebar {
@@ -68,7 +68,7 @@ $bees-blue: #41bbd9;
 			color: $bees-dark-blue;
 		}
 		a:hover {
-			background-color: $bees-yellow;
+			background-color: $bees-blue;
 			color: white;
 		}
 	}
