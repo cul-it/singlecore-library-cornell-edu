@@ -85,7 +85,6 @@ end
     get '/collections/artifactsandart' => 'high_voltage/pages#show', :id => 'collections/artifactsandart/index'
     get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
     get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
-    get '/collections/chla2' => 'high_voltage/pages#show', :id => 'collections/chla2/index'
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
     get '/collections/iwo-jpfo' => 'high_voltage/pages#show', :id => 'collections/iwo-jpfo/index'

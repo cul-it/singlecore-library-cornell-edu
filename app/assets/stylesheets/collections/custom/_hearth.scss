@@ -2,12 +2,8 @@
 // ------------
 
 $hearth-black: #1c1f33;
-$hearth-gray: #666370;
-$hearth-mauve: #9b7874;
 $hearth-pink: #d33e43;
-$hearth-red: #ff220c;
-
-
+$hearth-red: #a30307;
 
 // Custom styles
 // --------------
@@ -15,9 +11,7 @@ $hearth-red: #ff220c;
 
 .mann-header--hearth {
 	h2 {
-		a {
-			color: white;
-		}
+		color: white;
 	}
 	.navbar-toggle {
 		background: $hearth-pink;
@@ -26,11 +20,11 @@ $hearth-red: #ff220c;
 		background: $hearth-black;
 	}
 	.navbar-nav > li > a {
-		background: $hearth-mauve;
+		background: $hearth-pink;
 	}
 	.navbar-nav > li > a:hover {
 		border: 0;
-		background: $hearth-pink;
+		background: $hearth-red;
 	}
 	.navbar-collapse {
 		padding-left: 0;
@@ -65,7 +59,7 @@ $hearth-red: #ff220c;
 			color: $hearth-pink;
 		}
 		a:hover {
-			background-color: $hearth-gray;
+			background-color: $hearth-pink;
 			color: white;
 		}
 	}
