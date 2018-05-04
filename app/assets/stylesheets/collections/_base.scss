@@ -50,6 +50,9 @@ h1 {
 h3 {
 	margin-top: 1.5em;
 }
+h3:first-child {
+	margin-top: 0;
+}
 h4 {
 	margin-top: 1.5em;
 	font-size: 20px;
@@ -60,6 +63,13 @@ h5 {
 }
 h2:first-child {
 	margin-top: 0;
+}
+
+.jumplinks {
+	padding-left: 15px;
+	li {
+		margin-bottom: .5em;
+	}
 }
 
 // Layout
