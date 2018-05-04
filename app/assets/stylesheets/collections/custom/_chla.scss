@@ -76,6 +76,37 @@ $chla-dark-brown: #493829;
 	}
 }
 
+
+// NEW STYLES FOR UPDATED LAYOUT
+.well.highlight.chla {
+	background: url("/assets/collections/chla/upfeathers.png");
+	.nav-header {
+		color: $chla-brown;
+		font-weight: 700;
+	}
+	li {
+		margin-bottom: .5em;
+		a {
+			background: rgba(255,255,255,.75);
+			text-decoration: none;
+		}
+		a:hover {
+			background: $chla-green;
+			color: white;
+		}
+	}
+}
+.navbar-chla {
+	border-bottom: 1px solid $border-color;
+	border-radius: 0;
+	margin-bottom: 3em;
+	padding: 0;
+	li > a:hover {
+		background: $chla-green;
+		color: white;
+	}
+}
+
 // MEDIA QUERIES
 // -------------------------
 
