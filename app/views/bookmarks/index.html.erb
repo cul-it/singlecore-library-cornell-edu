@@ -1,13 +1,13 @@
 <div id="content" class="col-md-12">
-<h1 class='page-heading'><%= t('blacklight.bookmarks.title') %></h1>
+<h2 class='page-heading'><%= t('blacklight.bookmarks.title') %></h2>
 
 <%- if current_or_guest_user.blank? -%>
 
-  <h2 class='section-heading'><%= t('blacklight.bookmarks.need_login') %></h2>
+  <p class='section-heading'><%= t('blacklight.bookmarks.need_login') %></p>
 
 <%- elsif @document_list.blank? -%>
 
-  <h3 class='section-heading'><%= t('blacklight.bookmarks.no_bookmarks') %></h3>
+  <p class='section-heading'><%= t('blacklight.bookmarks.no_bookmarks') %></p>
 <% else %>
   <%= render 'sort_and_per_page' %>
   <%#= render partial: 'tools', locals: { document_list: @document_list } %>

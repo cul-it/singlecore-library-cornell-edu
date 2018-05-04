@@ -252,14 +252,14 @@ Hathi Trust</h2>
     </div>
   </div>
 
-  <%# iwo pdf links %>
+  <%# pdf links from shared shelf %>
   <% elsif  @project == "3450" || "49"  %>
     <div class="other-viewer well">
       <div class="row">
         <div class="col-sm-8 text-center">
           <div class="cover" data-no-turbolink>
-            <a href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);">
-              <img src="<%= @document['media_URL_size_3_tesim'][0] %>" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+            <a href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'download_pdf_thumbnail']);">
+              <img src="<%= @document['media_URL_size_3_tesim'][0] %>" class="img-responsive img-thumbnail" alt="Download item"></a>
           </div>
         </div>
         <div class="col-sm-4">
