@@ -592,6 +592,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'recipient_tesim', :label => 'Recipient'
     config.add_show_field 'organization_tesim', :label => 'Organization'
     config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :autolink_field
+    config.add_show_field 'addresscreator_tesim', :label => 'Address (Creator)'
+    config.add_show_field 'translation_of_tesim', :label => 'Translation of'
+    config.add_show_field 'translation_as_tesim', :label => 'Translated as'    
 
     # - CUL Map Collection
     config.add_show_field 'edition_tesim', :label => 'Edition'
