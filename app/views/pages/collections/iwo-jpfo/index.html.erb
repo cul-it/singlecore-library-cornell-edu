@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col-sm-4 col-sm-push-8 sidebar">
 			<div class="collection-search well">
-				<h3>Search or <a href="/?f%5Bcollection_tesim%5D%5B%5D=International+Workers’+Order+%28IWO%29+and+Jewish+People%27s+Fraternal+Order+%28JPFO%29">browse the collection</a></h3>
+				<h3><a href="#sets">Browse by set</a> | <a href="/?f%5Bcollection_tesim%5D%5B%5D=International+Workers’+Order+%28IWO%29+and+Jewish+People%27s+Fraternal+Order+%28JPFO%29">browse full collection</a></h3>
 				<%= render '/catalog/search_form', { :@collection_search => "International Workers’ Order (IWO) and Jewish People's Fraternal Order (JPFO)"}  %>
 			</div>
 			<a href="/catalog/ss:19043106"><%= image_tag "collections/iwo-jpfo/marcantonio.png" , alt: "", class: "img-thumbnail img-responsive" %></a>
@@ -148,6 +148,9 @@
 			<p><small>* Scholars and others have long debated whether Paul Robeson at any point actually became a member of the Communist Party; most think not. He visited Moscow on a number of occasions starting in the 1930s. Robeson worked extensively with the IWO / JPFO who introduced him to Itzik Feffer of the Jewish Anti-Fascist Committee of the U.S.S.R. (JAFC) when Feffer visited New York in 1943. Robeson kept up the connection in Moscow and was one of the last people to see Feffer before he was murdered. The IWO and JPFO were active organizers and promoters of the 1949 concert in Peekskill, New York where Robeson was prevented from performing due to physical threats by an organized mob that objected to his politics and presence.</small></p>
 
 			<p><small>** Making these materials electronically available may also help alert researchers as to significant archives on related topics at the Kheel Center, such as the 200 linear feet of archives of the remarkable Foner family, a multigenerational heritage of radical organizing (particularly in the Furriers’ Union), musicianship, and scholarship (the historians Nancy and Eric).</small></p>
+			<%= render partial: 'pages/top' %>
+			<h3 id="sets">Browse by set</h3>
+			<%= render partial: 'pages/collections/iwo-jpfo/sets' %>
 			<%= render partial: 'pages/top' %>
 		</div>
 	</div>

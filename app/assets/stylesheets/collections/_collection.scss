@@ -119,6 +119,11 @@
 .set-link {
 	margin-top: .5em;
 }
+.sets--3col {
+	.set-item {
+		@include make-sm-column(4); 
+	}
+}
 
 // Collection browse
 // ------------------------- //
