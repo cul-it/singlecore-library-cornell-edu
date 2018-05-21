@@ -45,6 +45,9 @@
     <% if @collection_selected == "Cornell Gem Impressions Collection" %>
         <a href="http://hdl.handle.net/1813.001/8788389a"><%= @link_label %><%= @external_link_icon %></a>
     <% end %>
+    <% if @collection_selected == "Core Historical Literature of Agriculture" %>
+        <a href="/collections/chla"><%= @link_label %></a>
+    <% end %>
     <% if @collection_selected == "Cornell Squeeze Collection" %>
         <a href="http://hdl.handle.net/1813.001/8946690d"><%= @link_label %><%= @external_link_icon %></a>
     <% end %>
@@ -72,7 +75,7 @@
     <% if @collection_selected == "Historic Glacial Images of Alaska and Greenland" %>
         <a href="/collections/tarr"><%= @link_label %></a>
     <% end %>
-    <% if @collection_selected == "Hive and Honeybee" %>
+    <% if @collection_selected == "Hive & the Honeybee" %>
         <a href="/collections/bees"><%= @link_label %></a>
     <% end %>
     <% if @collection_selected == "Home Economics Archive: Research, Tradition and History" %>
@@ -146,9 +149,6 @@
     <% end %>
     <% if @collection_selected == "The J. R. Sitlington Sterrett Collection of Archaeological Photographs" %>
         <a href="http://hdl.handle.net/1813.001/9861575a"><%= @link_label %><%= @external_link_icon %></a>
-    <% end %>
-    <% if @collection_selected == "The core historical literature of agriculture" %>
-        <a href="/collections/chla"><%= @link_label %></a>
     <% end %>
     <% if @collection_selected == "Theatre Prints and Books from Early Modern Japan" %>
         <a href="http://hdl.handle.net/1813.001/7927766"><%= @link_label %><%= @external_link_icon %></a>
