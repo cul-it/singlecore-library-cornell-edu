@@ -52,7 +52,8 @@ def image_download options={}
     options[:document] # the original document
     options[:field] # the field to render
     options[:value] # the value of the field
-    if options[:document]['creator_tesim'].present? && options[:document]['creator_tesim'].include?("Adler, Ernst")
+    if options[:document]['disable_download_tesim'].present?
+    # if options[:document]['creator_tesim'].present? && options[:document]['creator_tesim'].include?("Adler, Ernst")
       return 'Not available'
     elsif options[:document]['project_id_ssi'] == "3450"
       link_to content_tag(:span, 'PDF Document'), options[:document]['media_URL_tesim'][0],title:"Download"
