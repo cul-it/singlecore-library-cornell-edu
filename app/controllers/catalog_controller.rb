@@ -620,6 +620,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'volume_tesim', :label => 'Volume'
     config.add_show_field 'page_tesim', :label => 'Page'
 
+    # - Paniccioli
+    config.add_show_field 'annotation_tesim', :label => 'Annotation'   
+
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
