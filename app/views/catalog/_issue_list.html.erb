@@ -1,4 +1,9 @@
-<h2>Issue list</h2>
+<% @members_ids = render_document_show_field_value(:document => @document, :field => 'member_ids_ssim') %>
+
+
+<% if @members_ids.present? %>
+	<h2>Issue list</h2>
+<% end %> 
 <ul>
 <% get_chla_issues(document).each do |issue| %>
 
