@@ -223,10 +223,10 @@ Hathi Trust</h2>
     <div class="row">
       <div class="col-sm-8 text-center">
         <div class="cover" data-no-turbolink>
-          <% unless @book_id.include?('chla') %>
-          <a href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
+          <% unless @book_id.include?('chla') || @book_id.include?('hivebees') %>
+            <a href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="Book or page image"></a>
           <% else %>
-          <a href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id.split('_articles')[0] %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);">
+            <a href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id.split('_articles')[0] %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);">
             <img src="<%= chla_thumbnail(@document) %>" class="img-responsive img-thumbnail" alt="Book or page image"></a>
           <% end %>
           <% bibid_display = render_document_show_field_value :document => @document, :field => 'bibid_tesim' %>
