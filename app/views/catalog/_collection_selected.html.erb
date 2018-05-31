@@ -118,7 +118,7 @@
         <a href="https://rare.library.cornell.edu/collections/photography"><%= @link_label %><%= @external_link_icon %></a>
     <% end %>
     <% if @collection_selected == "Mysteries at Eleusis: Images of Inscriptions" %>
-        <a href="http://resolver.library.cornell.edu/misc/5696261"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="/collections/eleusis"><%= @link_label %></a>
     <% end %>
     <% if @collection_selected == "New York State Aerial Photographs" %>
         <a href="/collections/aerialny"><%= @link_label %></a>
@@ -140,6 +140,9 @@
     <% end %>
     <% if @collection_selected == "Reuleaux Kinematic Mechanisms Collection" %>
         <a href="http://resolver.library.cornell.edu/misc/5146902"><%= @link_label %><%= @external_link_icon %></a>
+    <% end %>
+    <% if @collection_selected == "Rudin Slavery Collection" %>
+        <a href="/collections/rudin"><%= @link_label %></a>
     <% end %>
     <% if @collection_selected == "Selections from the Cornell Anthropology Collections" %>
         <a href="https://anthrocollections.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
