@@ -58,6 +58,20 @@
 	padding-bottom: 3em;
 }
 
+// Collection banner image - e.g. Rudin
+// ------------------------------------- //
+.collection-banner {
+	background: $gray-dark;
+	margin-bottom: 2em;
+}
+.collection-banner > .container {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.container.collection-title {
+	padding-bottom: 0;
+}
+
 // Two column pages
 // ------------------------- //
 .sidebar {
@@ -240,9 +254,6 @@
 
 // Small devices (tablets, 768px and up) 
 @media (min-width: $screen-sm) { 
-	.collection-title {
-		font-size: 30px;
-	}
 	.blacklight-pages-show {
 		.navbar-collapse {
 			.nav {
