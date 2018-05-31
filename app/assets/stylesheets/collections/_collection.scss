@@ -52,25 +52,25 @@
 		margin-top: .5em;
 	}
 }
-.special-collections > .container,
-.special-collections > .row > .container {
-	padding-top: 1em;
-	padding-bottom: 3em;
-}
+// .special-collections > .container,
+// .special-collections > .row > .container {
+// 	padding-top: 1em;
+// 	padding-bottom: 3em;
+// }
 
 // Collection banner image - e.g. Rudin
 // ------------------------------------- //
 .collection-banner {
-	background: $gray-dark;
+	background: $gray-light;
 	margin-bottom: 2em;
 }
-.collection-banner > .container {
-	padding-top: 0;
-	padding-bottom: 0;
-}
-.container.collection-title {
-	padding-bottom: 0;
-}
+// .collection-banner > .container {
+// 	padding-top: 0;
+// 	padding-bottom: 0;
+// }
+// .container.collection-title {
+// 	padding-bottom: 0;
+// }
 
 // Two column pages
 // ------------------------- //
@@ -90,7 +90,6 @@
 }
 .main-text {
 	@include make-sm-column(8);
-	padding-bottom: 3em;
 }
 
 // Floated image
