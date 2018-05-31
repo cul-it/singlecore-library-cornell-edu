@@ -34,7 +34,6 @@
 }
 .special-collections {
 	h2 {
-		// font-weight: 400;
 		margin-top: .5em;
 	}
 	.btn-primary {
@@ -45,6 +44,7 @@
 		margin-bottom: 1em;
 	}
 }
+// TODO: can this be removed?
 .basic-header {
 	margin: 0 0 10px 0;
 	h2 {
@@ -52,11 +52,6 @@
 		margin-top: .5em;
 	}
 }
-// .special-collections > .container,
-// .special-collections > .row > .container {
-// 	padding-top: 1em;
-// 	padding-bottom: 3em;
-// }
 
 // Collection banner image - e.g. Rudin
 // ------------------------------------- //
@@ -64,13 +59,6 @@
 	background: $gray-light;
 	margin-bottom: 2em;
 }
-// .collection-banner > .container {
-// 	padding-top: 0;
-// 	padding-bottom: 0;
-// }
-// .container.collection-title {
-// 	padding-bottom: 0;
-// }
 
 // Two column pages
 // ------------------------- //
