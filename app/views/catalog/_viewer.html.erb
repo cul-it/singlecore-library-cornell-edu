@@ -236,15 +236,17 @@ Hathi Trust</h2>
         <div class="reader-link" data-no-turbolink>
 
           <% unless @book_id.include?('chla') %>
-          <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+            <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
           <% else %>
-          <% if @document['format_tesim'][0] != "Issue" && @document['format_tesim'][0] != "Article"%>
-          <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
-          <% elsif @document['format_tesim'][0] == "Article" %>
-          <% else %>
-          <h3> Table of Contents </h3>
+            <% if @document['format_tesim'][0] != "Issue" && @document['format_tesim'][0] != "Article"%>
+              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+            <%# elsif @document['format_tesim'][0] == "Article" %>
+            <% else @document['format_tesim'][0] == "Issue" && @document['format_tesim'][0] != "Article"%>
+              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+            <%# else %>
+              <!-- <h3> Table of Contents </h3> -->
 
-          <% end %>
+            <% end %>
           <% end %>
 
 
