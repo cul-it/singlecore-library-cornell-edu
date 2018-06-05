@@ -1,4 +1,4 @@
-<% @link_label = "About" %>
+<% @link_label = "About the collection" %>
 <% @external_link_icon = '<i class="fa fa-external-link" aria-hidden="true"></i>'.html_safe %>
 <!-- TODO: try using collection_website_tesim field -->
 <%# @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
@@ -25,7 +25,7 @@
         <a href="http://isbellandes.library.cornell.edu"><%= @link_label %><%= @external_link_icon %></a>
     <% end %>
     <% if @collection_selected == "Campus Artifacts, Art & Memorabilia" %>
-        <a href="http://artifactsandart.library.cornell.edu"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="/collections/artifactsandart"><%= @link_label %></a>
     <% end %>
     <% if @collection_selected == "Charlie Ahearn Archive" %>
         <a href="http://rmc.library.cornell.edu/hiphop/"><%= @link_label %><%= @external_link_icon %></a>
