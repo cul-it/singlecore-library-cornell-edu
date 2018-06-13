@@ -88,13 +88,19 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 	}
 	.sidebar {
 		margin-top: 0;
+		.caption {
+			margin-bottom: 2em;
+		}
 	}
 	.main-text {
 		h3 {
 			font-family: $font-family-srilanka-display;
 			color: $srilanka-red;
-			margin-top: 10px;
+			margin-top: 1em;
 			font-size: 30px;
+		}
+		h3:first-child {
+			margin-top: 5px;
 		}
 		.collection-search,
 			.browse-links {
@@ -116,6 +122,9 @@ $font-family-srilanka-display: 'Macondo Swash Caps', cursive;
 					font-style: italic;
 				}
 			}
+		}
+		li {
+			padding-bottom: .25em;
 		}
 	}
 	.set-item {
