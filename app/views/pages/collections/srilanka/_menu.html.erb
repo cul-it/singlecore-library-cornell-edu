@@ -6,8 +6,11 @@
     <div id="srilanka-navbar" class="collapse navbar-collapse">
       <ul class="nav">
         <%= link_to_in_li "Home", "/collections/srilanka" %>
-        <%= link_to_in_li "Browse the Collection", "/collections/srilanka/browse" %>
         <%= link_to_in_li "Resources", "/collections/srilanka/resources" %>
       </ul>
     </div>
+</div>
+<div class="collection-search well">
+    <h3>Search or <a href="/collections/srilanka/browse">browse the collection</a></h3>
+    <%= render '/catalog/search_form', { :@collection_search => "Sri Lankan Vernacular"}  %>
 </div>
