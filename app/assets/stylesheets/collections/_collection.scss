@@ -79,7 +79,14 @@
 .main-text {
 	@include make-sm-column(8);
 }
-
+.sidebar-btn {
+	text-align: center;
+	margin-bottom: 1em;
+	.btn {
+		width: 100%;
+		white-space: normal;
+	}
+}
 // Floated image
 // ------------------------- //
 
