@@ -89,6 +89,7 @@ end
     get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
+    get '/collections/prison-reform' => 'high_voltage/pages#show', :id => 'collections/prison-reform/index'
     get '/collections/rudin' => 'high_voltage/pages#show', :id => 'collections/rudin/index'
     get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
   end
