@@ -282,7 +282,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'format_tesim', :label => 'Format', :limit => 5
     config.add_facet_field 'creation_site_location_tesim', :label => 'Creation Site', show: false
     config.add_facet_field 'region_location_tesim', :label => 'Region', show: false
-    config.add_facet_field 'set_title_tesim', :label => 'Set', :show => false
+    config.add_facet_field 'set_title_tesim', :label => 'Set', :show => true, :limit => 5
     config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
     config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
