@@ -280,15 +280,15 @@ class CatalogController < ApplicationController
     config.add_facet_field 'repository_tesim', :label => 'Repository', :limit => 5
     config.add_facet_field 'archival_collection_tesim', :label => 'Archival Collection', :limit => 5
     config.add_facet_field 'format_tesim', :label => 'Format', :limit => 5
-    config.add_facet_field 'creation_site_location_tesim', :label => 'Creation Site', show: false
+    config.add_facet_field 'creation_site_location_tesim', :label => 'Site', show: false
     config.add_facet_field 'region_location_tesim', :label => 'Region', show: false
-    config.add_facet_field 'set_title_tesim', :label => 'Set', :show => false
+    config.add_facet_field 'set_title_tesim', :label => 'Set', :show => true, :limit => 5
     config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
     config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
     config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
-    config.add_facet_field 'other_location_tesim', :label => 'Creation Site', :show => false
+    config.add_facet_field 'other_location_tesim', :label => 'Site', :show => false
     config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
     config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
     config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
@@ -385,7 +385,7 @@ class CatalogController < ApplicationController
     #- indonesian music
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
     config.add_show_field 'collector_tesim', :label => 'Collector'
-    config.add_show_field 'creation_site_location_tesim', :label => 'Creation Site', :link_to_search => true
+    config.add_show_field 'creation_site_location_tesim', :label => 'Site', :link_to_search => true
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'track_isi', :label => 'Track'
 
@@ -451,7 +451,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'creator_orig_tesim', :label => 'Original Creator'
     config.add_show_field 'date_orig_tesim', :label => 'Original Date'
     config.add_show_field 'extent_orig_tesim', :label => 'Original Extent'
-    config.add_show_field 'creation_site_orig_tesim', :label => 'Original Creation Site'
+    config.add_show_field 'creation_site_orig_tesim', :label => 'Original Site'
     config.add_show_field 'culture_orig_tesim', :label => 'Original Culture'
     config.add_show_field 'mat_tech_orig_tesim', :label => 'Original Materials and Techniques'
     config.add_show_field 'repo_orig_tesim', :label => 'Original Repository'
@@ -474,7 +474,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_reps_tesim', :label => 'Reps Subject'
 
     # - billie jean isbell
-    config.add_show_field 'other_location_tesim', :label => 'Creation Site', :link_to_search => true
+    config.add_show_field 'other_location_tesim', :label => 'Site', :link_to_search => true
     config.add_show_field 'series_relation_tesim', :label => 'Series'
 
     # - cornell coin collection
