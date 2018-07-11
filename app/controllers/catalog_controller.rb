@@ -410,7 +410,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'acq_date_tesim', :label => 'Acquisition Date'
     config.add_show_field 'acq_note_tesim', :label => 'Acquisition Note'
     config.add_show_field 'art_bio_tesim', :label => 'Artist Biography', helper_method: :autolink_field
-    config.add_show_field 'note_tesim', :label => 'Note'
+    config.add_show_field 'note_tesim', :label => 'Note', helper_method: :autolink_field
     # second Note field for IWO, put here so it comes after the first Note field
     config.add_show_field 'notes_2_tesim', :label => 'Note'
     config.add_show_field 'donor_tesim', :label => 'Donor'
