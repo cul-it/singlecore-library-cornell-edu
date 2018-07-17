@@ -61,6 +61,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "Art 2301 Printmaking Student Portfolios"
       OR collection_tesim: "Lindsay Cooper Digital Archive"
       OR collection_tesim: "International Workers’ Order (IWO) and Jewish People\'s Fraternal Order (JPFO)"
+      OR collection_tesim: "Sri Lankan Vernacular"
       ))'
     end
   end

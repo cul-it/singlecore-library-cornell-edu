@@ -78,6 +78,7 @@ end
   get '/collections/punkflyers' => 'high_voltage/pages#show', :id => 'collections/punkflyers/index'
   get '/collections/ragamala' => 'high_voltage/pages#show', :id => 'collections/ragamala/index'
   get '/collections/railroad' => 'high_voltage/pages#show', :id => 'collections/railroad/index'
+  get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
   get '/collections/tamang' => 'high_voltage/pages#show', :id => 'collections/tamang/index'
   get '/collections/tarr' => 'high_voltage/pages#show', :id => 'collections/tarr/index'
   get '/collections/tell-en-nasbeh' => 'high_voltage/pages#show', :id => 'collections/tell-en-nasbeh/index'
@@ -91,7 +92,6 @@ end
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
     get '/collections/prison-reform' => 'high_voltage/pages#show', :id => 'collections/prison-reform/index'
     get '/collections/rudin' => 'high_voltage/pages#show', :id => 'collections/rudin/index'
-    get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
   end
 
   get '/collections/:subject' => 'catalog#index'
