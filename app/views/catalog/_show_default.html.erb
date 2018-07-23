@@ -1,5 +1,6 @@
 <%# default partial to display solr document fields in catalog show view -%>
 
+<%# show Adler Adler items that are not suppressed for portal %>
 <% if render_document_show_field_value(:document => @document, :field => 'adler_status') != 'Suppress for portal' && render_document_show_field_value(:document => @document, :field => 'collection_tesim' == "Adler Hip Hop Archive") %>
 	<% @show = "yes" %>
 <% end %>
@@ -9,6 +10,7 @@
 	<% @show = "yes" %>
 <% end %>
 
+<%# show Wordsworth items %>
 <% if render_document_show_field_value(:document => @document, :field => 'status_ssi') == "Published"  ||
 render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" || render_document_show_field_value(:document => @document, :field => 'collection_tesim') == "Wordsworth Collection" %>
 	<% @show = "yes" %>
@@ -24,11 +26,13 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 	<% @finding_aid  = render_document_show_field_value(:document => @document, :field => 'finding_aid_tesim') %>
 
 	<%= render 'pub_status', :document => @document %>
-<% unless render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal" %>
-	<%= render 'viewer' %>
-<% end %>
 
-	<%# for images and audio - TODO: DRY this up if possible; repeating markup -%>
+	<%# show viewer unless it's a journal %>
+	<% unless render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal" %>
+		<%= render 'viewer' %>
+	<% end %>
+
+	<%# for images and audio - TODO: DRY this up -%>
 		<% if !@project.blank? && @kaltura.blank? || !@kaltura.blank? %>
 		<div class="col-sm-8 item-info">
 			<dl class="metadata dl-horizontal">
@@ -89,24 +93,30 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			    <% end -%>
 			  <% end -%>
 			</dl>
-      <% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal"  %>
-      <%= render 'issue_list', :document => @document %>
-      <% end %>
+      		<% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal"  %>
+      			<%= render 'issue_list', :document => @document %>
+      		<% end %>
 			<%= render partial: 'catalog/show_maplet_default' %>
-			</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
-			<div class="col-sm-4 more-item-info">
-				<% if @collection_website.present? %>
+		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
+		<div class="col-sm-4 more-item-info">
+			<% if @collection_website.present? %>
 				<div class="well">
-          <h2>About the Collection</h2>
+          			<h2>About the Collection</h2>
 					<ul class="fa-ul collection-links">
 						<li><i class="fa-li fa fa-desktop"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
-            <% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
-              <li><i class="fa-li fa fa-book"></i><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View in Hathi Trust</a></li>
-              <% end %>
-          </ul>
+            			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
+              				<li><i class="fa-li fa fa-book"></i><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View in Hathi Trust</a></li>
+              			<% end %>
+          			</ul>
 				</div>
-				<% end %>
-			</div>
+			<% end %>
+
+			<%# if CHLA show collection box %>
+			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') %>
+				<%= render partial: 'about_chla' %>
+			<% end %>
+
+		</div>
 		</div>
 	<% end %>
 <% end %>
