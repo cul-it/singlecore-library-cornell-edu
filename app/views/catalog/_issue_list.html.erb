@@ -9,7 +9,7 @@
 
         <li>
           <%= issue["title_tesim"][0] %>:
-		     <%= link_to "Read Issue","http://reader.library.cornell.edu/docviewer/digital?id="+issue["id"], "aria-label" => issue["id"] %> |  <%= link_to "View Table of Contents","/catalog/"+issue["id"], "aria-label" => issue["id"] %>
+		     <%= link_to "Read issue","http://reader.library.cornell.edu/docviewer/digital?id="+issue["id"], "aria-label" => issue["id"] %> |  <%= link_to "More information","/catalog/"+issue["id"], "aria-label" => issue["id"] %>
 	    </li>
 <% end %>
 </ul>
