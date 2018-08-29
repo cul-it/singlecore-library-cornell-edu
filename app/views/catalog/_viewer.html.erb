@@ -9,13 +9,9 @@
 
 <% @chlaid = render_document_show_field_value(:document => @document, :field => 'identifier_tesim') %>
 
-<%# TODO: add or statement if filename_tesim includes pdf - see DIGCOLL-1333 %>
 <% if @media.present? && @media.include?('pdf') %>
   <% @pdf = true %>
 <% end %>
-
-
-
 
 <% @page = "1" %>
 
@@ -263,12 +259,12 @@ Hathi Trust</h2>
         <div class="col-sm-8 text-center">
           <div class="cover" data-no-turbolink>
             <a href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'download_pdf_thumbnail']);">
-              <img src="<%= @document['media_URL_size_3_tesim'][0] %>" class="img-responsive img-thumbnail" alt="Download item"></a>
+              <img src="<%= @document['media_URL_size_3_tesim'][0] %>" class="img-responsive img-thumbnail" alt="Download PDF" title="Download PDF"></a>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="reader-link" data-no-turbolink>
-            <a class="btn btn-portal btn-lg" href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);">Download item<i class="fa fa-download" aria-hidden="true"></i></a>
+            <a class="btn btn-portal btn-lg" href="<%= @media %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);">Download PDF<i class="fa fa-download" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
