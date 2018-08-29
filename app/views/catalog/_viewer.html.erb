@@ -6,12 +6,14 @@
 <% @download_url = render_document_show_field_value(:document => @document, :field => 'download_link_tesim') %>
 <% @media = render_document_show_field_value(:document => @document, :field => 'media_URL_tesim')  %>
 <% @disable_download = render_document_show_field_value(:document => @document, :field => 'disable_download_tesim')  %>
+<% @filename = render_document_show_field_value(:document => @document, :field => 'filename_tesim')  %>
 
 
 <% @chlaid = render_document_show_field_value(:document => @document, :field => 'identifier_tesim') %>
 
-<% if @media.present? && @media.include?('pdf') %>
-<% @pdf = true %>
+<%# TODO: add or statement if filename_tesim includes pdf - see DIGCOLL-1333 %>
+<% if @media.present? && (@media.include?('pdf') || @filename.include?('pdf')) %>
+  <% @pdf = true %>
 <% end %>
 
 
