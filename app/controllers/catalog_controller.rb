@@ -343,6 +343,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
 
     #core fields
+    config.add_show_field 'title_tesim', :label => 'Title'
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
     config.add_show_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
