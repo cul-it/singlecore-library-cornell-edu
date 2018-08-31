@@ -62,6 +62,16 @@
 	background: $gray-light;
 	margin-bottom: 2em;
 }
+.collection-banner.banner-caption {
+	background: white;
+	margin-top: -1.75em;
+	margin-bottom: 1em;
+	.caption {
+		margin-top: .25em;
+		text-align: right;
+		font-size: 10px;
+	}
+}
 
 // Two column pages
 // ------------------------- //
