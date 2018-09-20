@@ -17,9 +17,10 @@ class ApplicationController < ActionController::Base
 
 
     elsif environment == 'production'
+      ecommons = 'OR solr_loader_tesim:"eCommons"'
       fq = '(collection_tesim:"Adler Hip Hop Archive"  AND -adler_status:"Suppress for portal")
       OR collection_tesim:"Indonesian Music Archive"
-      OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -solr_loader_tesim:"eCommons"
+      OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" 
       AND +(collection_tesim:"New York State Aerial Photographs"
       OR collection_tesim:"Huntington Free Library Native American Collection"
       OR collection_tesim:"John Reps Collection - Bastides"
@@ -62,8 +63,14 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "Lindsay Cooper Digital Archive"
       OR collection_tesim: "International Workers’ Order (IWO) and Jewish People\'s Fraternal Order (JPFO)"
       OR collection_tesim: "Depicting the Sri Lankan Vernacular"
-      OR collection_tesim: "Gail and Stephen Rudin Slavery Collection, 1728-1973"
-      ))'
+      OR collection_tesim: "Gail and Stephen Rudin Slavery Collection, 1728-1973"'
+      
+      if request.original_fullpath.include?('json')
+        fq = fq + ecommons + '))'
+      else
+        fq = fq + '))'
+      end
+
     end
   end
 
