@@ -123,6 +123,16 @@
 // centered images, floated
 .center-image-block {
 	margin: 2em 0 1.5em 0;
+	h3 {
+		margin: .5em 0 0;
+		font-size: 18px;
+	}
+}
+.center-image-block.centered {
+	text-align: center;
+	h3 {
+		margin-top: .75em;
+	}
 }
 
 // Sets - as used in Ragamala

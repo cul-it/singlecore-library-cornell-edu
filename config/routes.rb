@@ -92,6 +92,7 @@ end
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
     get '/collections/prison-reform' => 'high_voltage/pages#show', :id => 'collections/prison-reform/index'
+    get '/collections/seneca' => 'high_voltage/pages#show', :id => 'collections/seneca/index'
   end
 
   get '/collections/:subject' => 'catalog#index'
