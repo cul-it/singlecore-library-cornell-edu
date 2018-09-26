@@ -1,0 +1,31 @@
+.seneca-header {
+	background: url("/assets/collections/seneca/seneca-banner.png");
+	.nav-collection {
+		float: none;
+		margin-bottom: 0;
+	}
+	.navbar {
+		padding: 0;
+	}
+}
+.seneca-layout {
+	margin-top: 3em;
+	.center-image-block {
+		text-align: center;
+	}
+	.image {
+		margin-bottom: 1.5em;
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) { 
+	.seneca-header {
+		.navbar-collapse {
+			padding-left: 0;
+		}
+	}
+}
