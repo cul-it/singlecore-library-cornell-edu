@@ -4,6 +4,9 @@
 	border-radius: 0;
 	box-shadow: none;
 	background: $well-bg;
+  h4:first-child {
+    margin-top: 0;
+  }
 }
 .constraints-container {
 	background: inherit;
