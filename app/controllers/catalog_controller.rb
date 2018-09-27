@@ -344,6 +344,9 @@ class CatalogController < ApplicationController
 
     #core fields
     config.add_show_field 'title_tesim', :label => 'Title'
+    config.add_show_field 'map_title_language_tesim', :label => 'Title Language'
+    config.add_show_field 'translation_title_tesim', :label => 'Translated Title'
+    config.add_show_field 'map_title2_language_tesim', :label => 'Title2 Language'
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
     config.add_show_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
@@ -622,7 +625,31 @@ class CatalogController < ApplicationController
     config.add_show_field 'page_tesim', :label => 'Page'
 
     # - Paniccioli
-    config.add_show_field 'annotation_tesim', :label => 'Annotation'   
+    config.add_show_field 'annotation_tesim', :label => 'Annotation'
+
+    # - Seneca, with new MAP fields
+    config.add_show_field 'map_species_tesim', :label => 'Species'
+    config.add_show_field 'map_site_tesim', :label => 'Site', :link_to_search => true
+    config.add_show_field 'map_identifier2_tesim', :label => 'Context'
+    config.add_show_field 'map_relationships_tesim', :label => 'Relationships'
+    config.add_show_field 'catalog_tesim', :label => 'Cataloger', :link_to_search => true
+    config.add_show_field 'map_identifier3_tesim', :label => 'Identifier 3'
+    config.add_show_field 'map_source_tesim', :label => 'Source'
+    config.add_show_field 'map_measurement_tesim', :label => 'Measurement'
+    config.add_show_field 'map_measurement_unit_tesim', :label => 'Unit'
+    config.add_show_field 'map_measurement_dimension_tesim', :label => 'Dimension'
+    config.add_show_field 'map_measurement2_tesim', :label => 'Measurement 2'
+    config.add_show_field 'map_measurement2_unit_tesim', :label => 'Unit 2'
+    config.add_show_field 'map_measurement2_dimension_tesim', :label => 'Dimension 2'
+    config.add_show_field 'map_measurement3_tesim', :label => 'Measurement 3'
+    config.add_show_field 'map_measurement3_unit_tesim', :label => 'Unit 3'
+    config.add_show_field 'map_measurement3_dimension_tesim', :label => 'Dimension 3'
+    config.add_show_field 'map_measurement4_tesim', :label => 'Measurement 4'
+    config.add_show_field 'map_measurement4_unit_tesim', :label => 'Unit 4'
+    config.add_show_field 'map_measurement4_dimension_tesim', :label => 'Dimension 4'
+    config.add_show_field 'map_measurement5_tesim', :label => 'Measurement 5'
+    config.add_show_field 'map_measurement5_unit_tesim', :label => 'Unit 5'
+    config.add_show_field 'map_measurement5_dimension_tesim', :label => 'Dimension 5'
 
     #boilerplate fields, commented out ones don't have needed helpers yet
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
