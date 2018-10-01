@@ -346,7 +346,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'title_tesim', :label => 'Title'
     config.add_show_field 'map_title_language_tesim', :label => 'Title Language'
     config.add_show_field 'translation_title_tesim', :label => 'Translated Title'
-    config.add_show_field 'map_title2_language_tesim', :label => 'Title2 Language'
+    config.add_show_field 'map_title_language2_tesim', :label => 'Translated Title Language'
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
     config.add_show_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
@@ -632,7 +632,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'map_site_tesim', :label => 'Site', :link_to_search => true
     config.add_show_field 'map_identifier2_tesim', :label => 'Context'
     config.add_show_field 'map_relationships_tesim', :label => 'Relationships'
-    config.add_show_field 'catalog_tesim', :label => 'Cataloger', :link_to_search => true
+    config.add_show_field 'cataloger_tesim', :label => 'Cataloger'
     config.add_show_field 'map_identifier3_tesim', :label => 'Identifier 3'
     config.add_show_field 'map_source_tesim', :label => 'Source'
     config.add_show_field 'map_measurement_tesim', :label => 'Measurement'
