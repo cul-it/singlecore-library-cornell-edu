@@ -267,6 +267,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'system_tesim', :label => 'System', :sort => 'count', :show => false
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
+    config.add_facet_field 'loci_location_tesim', :label => 'Location', :sort => 'count', :limit => 5
     config.add_facet_field 'lang_tesim', :label => 'Language', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5, :sort => 'index'
     config.add_facet_field 'mat_tech_tesim', :label => 'Materials/Techniques', :show => true, :limit => 5
@@ -297,6 +298,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'musician_creator_tesim', :label => 'Musician', :show => false
     config.add_facet_field 'lyricist_creator_tesim', :label => 'Lyricist', :show => false
     config.add_facet_field 'arranger_creator_tesim', :label => 'Arranger', :show => false
+    config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
