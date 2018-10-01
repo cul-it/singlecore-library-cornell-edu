@@ -263,11 +263,11 @@ class CatalogController < ApplicationController
     config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
     config.add_facet_field 'architect_creator_tesim', :label => 'Architect', :show => false
     config.add_facet_field 'location_tesim', :label => 'Location', :show => false
-    #config.add_facet_field 'performers_subject_tesim', :label => 'Performers', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'system_tesim', :label => 'System', :sort => 'count', :show => false
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
+    config.add_facet_field 'loci_location_tesim', :label => 'Location', :sort => 'count', :limit => 5
     config.add_facet_field 'lang_tesim', :label => 'Language', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5, :sort => 'index'
     config.add_facet_field 'mat_tech_tesim', :label => 'Materials/Techniques', :show => true, :limit => 5
@@ -298,6 +298,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'musician_creator_tesim', :label => 'Musician', :show => false
     config.add_facet_field 'lyricist_creator_tesim', :label => 'Lyricist', :show => false
     config.add_facet_field 'arranger_creator_tesim', :label => 'Arranger', :show => false
+    config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
@@ -319,16 +320,11 @@ class CatalogController < ApplicationController
     config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
     config.add_index_field 'common_name_tesim', :label => 'Common Name'
     config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
-    config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
     config.add_index_field 'volume_tesim', :label => 'Volume'
     config.add_index_field 'page_tesim', :label => 'Page'
-    # config.add_index_field 'creation_site_location_tesim', :label => 'Creation Site'
-    # config.add_index_field 'region_location_tesim', :label => 'Creation Site'
-    # this field is already listed under isbell:
-    # config.add_index_field 'other_location_tesim', :label => 'Creation Site'
+    config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
 
     # these index fields are from the dlxs collections
-    #config.add_index_field 'book_id_ts', :label => 'book id'
     config.add_index_field 'publication_tesim', :label => 'Publication'
 
     config.add_index_field 'publisher_tesim', :label => 'Publisher'
@@ -386,7 +382,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'musician_creator_tesim', :label => 'Musician', :link_to_search => true
     config.add_show_field 'lyricist_creator_tesim', :label => 'Lyricist', :link_to_search => true
     config.add_show_field 'arranger_creator_tesim', :label => 'Arranger', :link_to_search => true
-
     # date
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
     config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
@@ -428,7 +423,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'venue3_address_tesim', :label => 'Address 3'
     config.add_show_field 'elevation_tesim', :label => 'Elevation'
     config.add_show_field 'addresscreator_tesim', :label => 'Address (Creator)'
-
     # identifier
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
     config.add_show_field 'identifier_tesim', :label => 'Identifier', helper_method: :chla
@@ -452,7 +446,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'voigt_cat_no_tesim', :label => 'Voigt Catalog Number'
     config.add_show_field 'map_identifier2_tesim', :label => 'Context'
     config.add_show_field 'map_identifier3_tesim', :label => 'Identifier 3'
-
     # collection- and item-specific
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
     config.add_show_field 'track_ssi', :label => 'Track'
@@ -489,7 +482,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'map_sheet_tesim', :label => 'Sheet'
     config.add_show_field 'map_species_tesim', :label => 'Species'
     config.add_show_field 'original_blaschka_species_tesim', :label => 'Original Blaschka Species Name'
-
     # translation, transcription, etc.
     config.add_show_field 'translation_tesim', :label => 'Translation'
     config.add_show_field 'inscription_tesim', :label => 'Inscription'
@@ -498,7 +490,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'roman_hamlet_tesim', :label => 'Hamlet (Roman Characters)'
     config.add_show_field 'translation_of_tesim', :label => 'Translation of'
     config.add_show_field 'translation_as_tesim', :label => 'Translated as', helper_method: :autolink_field
-
     # work type, subject, etc.
     config.add_show_field 'lang_tesim', :label => 'Language'
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
@@ -541,7 +532,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'map_measurement5_tesim', :label => 'Measurement 5'
     config.add_show_field 'map_measurement5_unit_tesim', :label => 'Unit 5'
     config.add_show_field 'map_measurement5_dimension_tesim', :label => 'Dimension 5'
-
     # description, notes
     config.add_show_field 'description_tesim', :label => 'Description', helper_method: :autolink_field
     config.add_show_field 'devanagari_description_tesim', :label => 'Description (Devanagari)'
@@ -550,7 +540,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'notes_2_tesim', :label => 'Note'
     config.add_show_field 'annotation_tesim', :label => 'Annotation'
     config.add_show_field 'condition_tesim', :label => 'Condition'
-
     # references, publishing info
     config.add_show_field 'map_relationships_tesim', :label => 'Relationships'
     config.add_show_field 'publication_tesim', :label => 'Publication'
@@ -579,7 +568,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
     config.add_show_field 'box_box_folder_tesim', :label => 'Box Number'
     config.add_show_field 'folder_box_folder_tesim', :label => 'Folder Number'
-    # display at end'
+    # display at end
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
     config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
     config.add_show_field 'disclaimer_tesim', :label => 'Disclaimer'
