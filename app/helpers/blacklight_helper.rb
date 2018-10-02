@@ -65,6 +65,17 @@ def image_download options={}
 
   end
 
+# Link Relationships field (map_relationships_tesim) to other items
+def link_relationships options={}
+  options[:document] # the original document
+  options[:field] # the field to render
+  options[:value] # the value of the field
+  if options[:document]['map_relationships_tesim'].present?
+    options[:document]['map_relationships_tesim'].each
+      link_to options[:document]['map_relationships_tesim'][0], '/catalog/ss:' + options[:document]['map_relationships_tesim'][0]
+  end
+end
+
 def catalog_info(bibid)
   response = JSON.parse(HTTPClient.get_content("#{ENV['CATALOG']}/select?qt=document&id=#{bibid}&wt=json&fl=id,fulltitle_display,summary_display,notes")).with_indifferent_access
   @response = response['response']['docs']

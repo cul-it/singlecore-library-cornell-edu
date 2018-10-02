@@ -541,7 +541,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'annotation_tesim', :label => 'Annotation'
     config.add_show_field 'condition_tesim', :label => 'Condition'
     # references, publishing info
-    config.add_show_field 'map_relationships_tesim', :label => 'Relationships'
+    config.add_show_field 'map_relationships_tesim', :label => 'Relationships', helper_method: :link_relationships
     config.add_show_field 'publication_tesim', :label => 'Publication'
     config.add_show_field 'publisher_tesim', :label => 'Publisher'
     config.add_show_field 'pubplace_tesim', :label => 'Publication Place'
