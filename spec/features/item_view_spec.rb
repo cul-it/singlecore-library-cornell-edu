@@ -34,4 +34,11 @@ RSpec.feature 'Item' do
     end
   end
 
+  scenario 'Relationships field should link to another item' do
+    visit solr_document_path('ss:22376768')
+    within ("dd.blacklight-map_relationships_tesim") do
+      have_link '22536137'
+    end
+  end
+
 end

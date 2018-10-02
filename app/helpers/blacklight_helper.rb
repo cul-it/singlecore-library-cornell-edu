@@ -65,15 +65,17 @@ def image_download options={}
 
   end
 
-# Link Relationships field (map_relationships_tesim) to other items
-def link_relationships options={}
-  options[:document] # the original document
-  options[:field] # the field to render
-  options[:value] # the value of the field
+
+# Link Relationships field (map_relationships_tesim) to it's related item
+def relationships options={}
   if options[:document]['map_relationships_tesim'].present?
-    options[:document]['map_relationships_tesim'].each
-      link_to options[:document]['map_relationships_tesim'][0], '/catalog/ss:' + options[:document]['map_relationships_tesim'][0]
+    relationships = []
+    options[:document]['map_relationships_tesim'].each do |relationship|
+      r = link_to relationship, '/catalog/ss:' + relationship
+      relationships << r
+    end
   end
+  return relationships.join("<br>").html_safe
 end
 
 def catalog_info(bibid)
