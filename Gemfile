@@ -89,3 +89,5 @@ gem 'coveralls', require: false
 
 gem 'rsolr', '~> 1.0.6'
 gem 'devise-guests', '~> 0.3'
+
+gem 'google-analytics-rails', '1.1.1'
