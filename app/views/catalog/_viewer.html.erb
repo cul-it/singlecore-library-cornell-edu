@@ -27,7 +27,7 @@
   <div id="image-toolbar">
     <div class="image-controls">
       <% unless @project == "893" || @disable_download == "1" %>
-        <a href="<%= @download_url %>" class="download-link" title="Download" onclick="ga('send', 'event', 'Download', 'Click', 'viewer-<%= @project %>-<%= @book_id %>'">Download<i class="fa fa-download"></i></a>
+        <a href="<%= @download_url %>" class="download-link" title="Download" onclick="ga('send', 'event', 'Download', 'Click', 'viewer-<%= @project %>-<%= @book_id %>')">Download<i class="fa fa-download"></i></a>
       <% end %>
       <a id="zoom-in" href="#zoom-in"><i class="fa fa-plus-circle"></i></a>
       <a id="zoom-out" href="#zoom-out"><i class="fa fa-minus-circle"></i></a>
