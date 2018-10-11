@@ -64,6 +64,203 @@ def image_download options={}
     end
 
   end
+# Link Relationships field (map_relationships_tesim) to it's related item
+def relationships options={}
+  if options[:document]['map_relationships_tesim'].present?
+    relationships = []
+    options[:document]['map_relationships_tesim'].each do |relationship|
+      r = link_to relationship, '/catalog/ss:' + relationship
+      relationships << r
+    end
+  end
+  return relationships.join("<br>").html_safe
+end
+# TODO: DRY up measurement helpers
+# Combine measurement1 fields
+def measurements options={}
+  if options[:document]['map_measurement_tesim'].present? && options[:document]['map_measurement_unit_tesim'].present? && options[:document]['map_measurement_dimension_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+    options[:document]['map_measurement_unit_tesim'].each do |measurement_unit|
+      m_unit = measurement_unit + ', '
+      measurements << m_unit
+    end
+    options[:document]['map_measurement_dimension_tesim'].each do |measurement_dimension|
+      m_dimension = measurement_dimension + ')'
+      measurements << m_dimension
+    end
+  elsif options[:document]['map_measurement_tesim'].present? && options[:document]['map_measurement_unit_tesim'].present?
+    options[:document]['map_measurement_dimension_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+    options[:document]['map_measurement_unit_tesim'].each do |measurement_unit|
+      m_unit = measurement_unit + ', '
+      measurements << m_unit
+    end
+  else
+    options[:document]['map_measurement_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+  end
+  return measurements.join.html_safe
+end
+# Combine measurement2 fields
+def measurements2 options={}
+  if options[:document]['map_measurement2_tesim'].present? && options[:document]['map_measurement2_unit_tesim'].present? && options[:document]['map_measurement2_dimension_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement2_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+    options[:document]['map_measurement2_unit_tesim'].each do |measurement_unit|
+      m_unit = measurement_unit + ', '
+      measurements << m_unit
+    end
+    options[:document]['map_measurement2_dimension_tesim'].each do |measurement_dimension|
+      m_dimension = measurement_dimension + ')'
+      measurements << m_dimension
+    end
+  elsif options[:document]['map_measurement2_tesim'].present? && options[:document]['map_measurement2_unit_tesim'].present?
+    options[:document]['map_measurement2_dimension_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement2_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+    options[:document]['map_measurement2_unit_tesim'].each do |measurement_unit|
+      m_unit = measurement_unit + ', '
+      measurements << m_unit
+    end
+  else
+    options[:document]['map_measurement2_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement2_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+  end
+  return measurements.join.html_safe
+end
+# Combine measurement3 fields
+def measurements3 options={}
+  if options[:document]['map_measurement3_tesim'].present? && options[:document]['map_measurement3_unit_tesim'].present? && options[:document]['map_measurement3_dimension_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement3_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+    options[:document]['map_measurement3_unit_tesim'].each do |measurement_unit|
+      m_unit = measurement_unit + ', '
+      measurements << m_unit
+    end
+    options[:document]['map_measurement3_dimension_tesim'].each do |measurement_dimension|
+      m_dimension = measurement_dimension + ')'
+      measurements << m_dimension
+    end
+  elsif options[:document]['map_measurement3_tesim'].present? && options[:document]['map_measurement3_unit_tesim'].present?
+    options[:document]['map_measurement3_dimension_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement3_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+    options[:document]['map_measurement3_unit_tesim'].each do |measurement_unit|
+      m_unit = measurement_unit + ', '
+      measurements << m_unit
+    end
+  else
+    options[:document]['map_measurement3_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement3_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+  end
+  return measurements.join.html_safe
+end
+# Combine measurement4 fields
+def measurements4 options={}
+  if options[:document]['map_measurement4_tesim'].present? && options[:document]['map_measurement4_unit_tesim'].present? && options[:document]['map_measurement4_dimension_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement4_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+    options[:document]['map_measurement4_unit_tesim'].each do |measurement_unit|
+      m_unit = measurement_unit + ', '
+      measurements << m_unit
+    end
+    options[:document]['map_measurement4_dimension_tesim'].each do |measurement_dimension|
+      m_dimension = measurement_dimension + ')'
+      measurements << m_dimension
+    end
+  elsif options[:document]['map_measurement4_tesim'].present? && options[:document]['map_measurement4_unit_tesim'].present?
+    options[:document]['map_measurement4_dimension_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement4_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+    options[:document]['map_measurement4_unit_tesim'].each do |measurement_unit|
+      m_unit = measurement_unit + ', '
+      measurements << m_unit
+    end
+  else
+    options[:document]['map_measurement4_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement4_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+  end
+  return measurements.join.html_safe
+end
+# Combine measurement5 fields
+def measurements5 options={}
+  if options[:document]['map_measurement5_tesim'].present? && options[:document]['map_measurement5_unit_tesim'].present? && options[:document]['map_measurement5_dimension_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement5_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+    options[:document]['map_measurement5_unit_tesim'].each do |measurement_unit|
+      m_unit = measurement_unit + ', '
+      measurements << m_unit
+    end
+    options[:document]['map_measurement5_dimension_tesim'].each do |measurement_dimension|
+      m_dimension = measurement_dimension + ')'
+      measurements << m_dimension
+    end
+  elsif options[:document]['map_measurement5_tesim'].present? && options[:document]['map_measurement5_unit_tesim'].present?
+    options[:document]['map_measurement5_dimension_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement5_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+    options[:document]['map_measurement5_unit_tesim'].each do |measurement_unit|
+      m_unit = measurement_unit + ', '
+      measurements << m_unit
+    end
+  else
+    options[:document]['map_measurement5_tesim'].present?
+    measurements = []
+    options[:document]['map_measurement5_tesim'].each do |measurement|
+      m = measurement  + ' ('
+      measurements << m
+    end
+  end
+  return measurements.join.html_safe
+end
 
 def catalog_info(bibid)
   response = JSON.parse(HTTPClient.get_content("#{ENV['CATALOG']}/select?qt=document&id=#{bibid}&wt=json&fl=id,fulltitle_display,summary_display,notes")).with_indifferent_access
@@ -128,7 +325,6 @@ def chla_thumbnail args
   if !args['id'].include?('articles')
    thumb = args['id']
    typeResponse = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
-   Rails.logger.info("FREAK #{typeResponse['response']['docs'][0]['format_tesim'][0].to_s}")  
    if typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Page"  
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
    else
