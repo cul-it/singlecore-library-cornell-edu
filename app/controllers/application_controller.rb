@@ -64,6 +64,8 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "Depicting the Sri Lankan Vernacular"
       OR collection_tesim: "Gail and Stephen Rudin Slavery Collection, 1728-1973"
       OR collection_tesim: "19th Century Prison Reform Collection"
+      OR collection_tesim: "Core Historical Literature of Agriculture"
+      OR collection_tesim: "Hive & the Honeybee"
       ))'
     end
   end
