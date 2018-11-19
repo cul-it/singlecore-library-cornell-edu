@@ -221,6 +221,24 @@ class CatalogController < ApplicationController
           config.view.gallery.partials = [:index_header]
           # config.view.masonry.partials = [:index]
 
+          ## blacklight-maps configuration default values
+          # see https://github.com/projectblacklight/blacklight-maps
+          config.view.maps.geojson_field = "geojson_ssim"
+          config.view.maps.placename_property = "title_tesim"
+          config.view.maps.coordinates_field = "where_geocoordinates"
+          config.view.maps.search_mode = "coordinates" # "placename" or "coordinates"
+          config.view.maps.spatial_query_dist = 0.5
+          #config.view.maps.placename_field = "placename_field"
+          #config.view.maps.coordinates_facet_field = "coordinates_facet_field"
+          config.view.maps.facet_mode = "geojson" # or "coordinates"
+          #config.view.maps.tileurl = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          #config.view.maps.mapattribution = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+          #config.view.maps.maxzoom = 18
+          #config.view.maps.show_initial_zoom = 5
+
+          config.add_facet_field 'geojson_ssim', :limit => -2, :label => 'Coordinates', :show => false
+
+
 
 
 
