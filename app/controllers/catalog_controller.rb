@@ -255,7 +255,7 @@ class CatalogController < ApplicationController
     #config.view.maps.maxzoom = 18
     #config.view.maps.show_initial_zoom = 5
 
-    config.add_facet_field 'where_geocoordinates', :limit => -2, :label => 'Coordinates', :show => false
+    config.add_facet_field 'geojson_ssim', :limit => -2, :label => 'Coordinates', :show => false
 
 
 
