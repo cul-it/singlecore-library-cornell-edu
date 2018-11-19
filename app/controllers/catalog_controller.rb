@@ -248,7 +248,7 @@ class CatalogController < ApplicationController
     config.view.maps.search_mode = "coordinates" # "placename" or "coordinates"
     config.view.maps.spatial_query_dist = 0.5
     #config.view.maps.placename_field = "placename_field"
-    #config.view.maps.coordinates_facet_field = "coordinates_facet_field"
+    config.view.maps.coordinates_facet_field = "geojson_ssim"
     config.view.maps.facet_mode = "geojson" # or "coordinates"
     #config.view.maps.tileurl = "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     #config.view.maps.mapattribution = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
