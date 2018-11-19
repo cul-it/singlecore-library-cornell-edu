@@ -246,7 +246,7 @@ class CatalogController < ApplicationController
     config.view.maps.placename_property = "title_tesim"
     config.view.maps.coordinates_field = "where_geocoordinates"
     config.view.maps.search_mode = "coordinates" # "placename" or "coordinates"
-    config.view.maps.spatial_query_dist = 0.5
+    config.view.maps.spatial_query_dist = 0.005
     config.view.maps.placename_field = "title_tesim"
     config.view.maps.coordinates_facet_field = "geojson_ssim"
     config.view.maps.facet_mode = "geojson" # "geojson" or "coordinates"
