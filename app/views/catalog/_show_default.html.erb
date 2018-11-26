@@ -132,6 +132,12 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 				<%= render partial: 'about_hive' %>
 			<% end %>
 
+			<%# if HEARTH collection box %>
+			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Home Economics Archive')%>
+				<%= render partial: 'about_hearth' %>
+			<% end %>
+
+
 		</div>
 		</div>
 	<% end %>
