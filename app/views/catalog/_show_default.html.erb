@@ -123,8 +123,13 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			<% end %>
 
 			<%# if CHLA show collection box %>
-			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') %>
+			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') && !(render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Hive')%>
 				<%= render partial: 'about_chla' %>
+			<% end %>
+
+			<%# if Hive and Honeybee show collection box %>
+			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') && (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Hive')%>
+				<%= render partial: 'about_hive' %>
 			<% end %>
 
 		</div>
