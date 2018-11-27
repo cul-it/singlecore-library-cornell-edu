@@ -1,7 +1,11 @@
 <div class="well">
 	<h2>About the Collection</h2>
 	<ul class="fa-ul collection-links">
-		<li><i class="fa-li fa fa-external-link" aria-hidden="true"></i><!--<a href="/collections/bees">Hive and the Honeybee website</a> | --><a href="https://newcatalog.library.cornell.edu/catalog/5042155" aria-label="Hive and the Honeybee catalog record">Hive and the Honeybee catalog record</a></li>
+		<% if ENV["COLLECTIONS"] == "development" %>
+			<li><i class="fa-li fa fa-external-link" aria-hidden="true"></i><a href="/collections/bees">Hive and the Honeybee website</a> | <a href="https://newcatalog.library.cornell.edu/catalog/5042155" aria-label="Hive and the Honeybee catalog record">Catalog record</a></li>
+		<% else %>
+			<li><i class="fa-li fa fa-external-link" aria-hidden="true"></i><a href="https://newcatalog.library.cornell.edu/catalog/5042155" aria-label="Hive and the Honeybee catalog record">Hive and the Honeybee catalog record</a></li>
+		<% end %>
 		<li><i class="fa-li fa fa-external-link" aria-hidden="true"></i><a href="/collections/chla">CHLA website</a> | <a href="https://newcatalog.library.cornell.edu/catalog/3304935" aria-label="CHLA catalog record">Catalog record</a></li>
 	</ul>
 </div>
