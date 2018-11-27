@@ -622,10 +622,10 @@ class CatalogController < ApplicationController
   
 
     # "sort results by" select (pulldown)
-    config.add_sort_field 'title_ssi asc, latest_date_isi asc', :label => 'title (a to z)'
     config.add_sort_field 'collection_sequence_isi asc, portfolio_creator_ssi asc, identifier_blaschka_isi asc, score desc, latest_date_isi asc', :label => 'relevance'
     config.add_sort_field 'latest_date_isi desc, title_tesi asc', :label => 'year (descending)'
     config.add_sort_field 'latest_date_isi asc, title_tesi asc', :label => 'year (ascending)'
+    config.add_sort_field 'title_ssi asc, latest_date_isi asc', :label => 'title (a to z)'
     config.add_sort_field 'author_t asc, latest_date_isi asc', :label => 'author (a to z)'
 
     # If there are more than this many search results, no spelling ("did you
