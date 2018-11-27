@@ -92,19 +92,20 @@ def measurements options={}
       m_dimension = measurement_dimension + ')'
       measurements << m_dimension
     end
-  elsif options[:document]['map_measurement_tesim'].present? && options[:document]['map_measurement_unit_tesim'].present?
-    options[:document]['map_measurement_dimension_tesim'].present?
+  elsif options[:document]['map_measurement_tesim'].present? && options[:document]['map_measurement_unit_tesim'].present? && 
+    !options[:document]['map_measurement_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement_tesim'].each do |measurement|
       m = measurement  + ' ('
       measurements << m
     end
     options[:document]['map_measurement_unit_tesim'].each do |measurement_unit|
-      m_unit = measurement_unit + ', '
+      m_unit = measurement_unit + ')'
       measurements << m_unit
     end
   else
-    options[:document]['map_measurement_tesim'].present?
+    options[:document]['map_measurement_tesim'].present? && !options[:document]['map_measurement_unit_tesim'].present? && 
+    !options[:document]['map_measurement_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement_tesim'].each do |measurement|
       m = measurement  + ' ('
@@ -129,22 +130,23 @@ def measurements2 options={}
       m_dimension = measurement_dimension + ')'
       measurements << m_dimension
     end
-  elsif options[:document]['map_measurement2_tesim'].present? && options[:document]['map_measurement2_unit_tesim'].present?
-    options[:document]['map_measurement2_dimension_tesim'].present?
+  elsif options[:document]['map_measurement2_tesim'].present? && options[:document]['map_measurement2_unit_tesim'].present? &&
+    !options[:document]['map_measurement2_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement2_tesim'].each do |measurement|
       m = measurement  + ' ('
       measurements << m
     end
     options[:document]['map_measurement2_unit_tesim'].each do |measurement_unit|
-      m_unit = measurement_unit + ', '
+      m_unit = measurement_unit + ')'
       measurements << m_unit
     end
   else
-    options[:document]['map_measurement2_tesim'].present?
+    options[:document]['map_measurement2_tesim'].present? && !options[:document]['map_measurement2_unit_tesim'].present? &&
+    !options[:document]['map_measurement2_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement2_tesim'].each do |measurement|
-      m = measurement  + ' ('
+      m = measurement
       measurements << m
     end
   end
@@ -166,22 +168,23 @@ def measurements3 options={}
       m_dimension = measurement_dimension + ')'
       measurements << m_dimension
     end
-  elsif options[:document]['map_measurement3_tesim'].present? && options[:document]['map_measurement3_unit_tesim'].present?
-    options[:document]['map_measurement3_dimension_tesim'].present?
+  elsif options[:document]['map_measurement3_tesim'].present? && options[:document]['map_measurement3_unit_tesim'].present? &&
+    !options[:document]['map_measurement3_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement3_tesim'].each do |measurement|
       m = measurement  + ' ('
       measurements << m
     end
     options[:document]['map_measurement3_unit_tesim'].each do |measurement_unit|
-      m_unit = measurement_unit + ', '
+      m_unit = measurement_unit + ')'
       measurements << m_unit
     end
   else
-    options[:document]['map_measurement3_tesim'].present?
+    options[:document]['map_measurement3_tesim'].present? && !options[:document]['map_measurement3_unit_tesim'].present? &&
+    !options[:document]['map_measurement3_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement3_tesim'].each do |measurement|
-      m = measurement  + ' ('
+      m = measurement
       measurements << m
     end
   end
@@ -203,22 +206,23 @@ def measurements4 options={}
       m_dimension = measurement_dimension + ')'
       measurements << m_dimension
     end
-  elsif options[:document]['map_measurement4_tesim'].present? && options[:document]['map_measurement4_unit_tesim'].present?
-    options[:document]['map_measurement4_dimension_tesim'].present?
+  elsif options[:document]['map_measurement4_tesim'].present? && options[:document]['map_measurement4_unit_tesim'].present? &&
+    !options[:document]['map_measurement4_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement4_tesim'].each do |measurement|
       m = measurement  + ' ('
       measurements << m
     end
     options[:document]['map_measurement4_unit_tesim'].each do |measurement_unit|
-      m_unit = measurement_unit + ', '
+      m_unit = measurement_unit + ')'
       measurements << m_unit
     end
   else
-    options[:document]['map_measurement4_tesim'].present?
+    options[:document]['map_measurement4_tesim'].present? && !options[:document]['map_measurement4_unit_tesim'].present? &&
+    !options[:document]['map_measurement4_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement4_tesim'].each do |measurement|
-      m = measurement  + ' ('
+      m = measurement
       measurements << m
     end
   end
@@ -240,22 +244,23 @@ def measurements5 options={}
       m_dimension = measurement_dimension + ')'
       measurements << m_dimension
     end
-  elsif options[:document]['map_measurement5_tesim'].present? && options[:document]['map_measurement5_unit_tesim'].present?
-    options[:document]['map_measurement5_dimension_tesim'].present?
+  elsif options[:document]['map_measurement5_tesim'].present? && options[:document]['map_measurement5_unit_tesim'].present? &&
+    !options[:document]['map_measurement5_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement5_tesim'].each do |measurement|
       m = measurement  + ' ('
       measurements << m
     end
     options[:document]['map_measurement5_unit_tesim'].each do |measurement_unit|
-      m_unit = measurement_unit + ', '
+      m_unit = measurement_unit + ')'
       measurements << m_unit
     end
   else
-    options[:document]['map_measurement5_tesim'].present?
+    options[:document]['map_measurement5_tesim'].present? && !options[:document]['map_measurement5_unit_tesim'].present? &&
+    !options[:document]['map_measurement5_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement5_tesim'].each do |measurement|
-      m = measurement  + ' ('
+      m = measurement
       measurements << m
     end
   end
