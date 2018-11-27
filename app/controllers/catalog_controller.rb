@@ -446,6 +446,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'voigt_cat_no_tesim', :label => 'Voigt Catalog Number'
     config.add_show_field 'map_identifier2_tesim', :label => 'Context'
     config.add_show_field 'map_identifier3_tesim', :label => 'Identifier 3'
+    config.add_show_field 'old_catalog_number_tesim', :label => 'Old Catalog Number'
     # collection- and item-specific
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
     config.add_show_field 'track_ssi', :label => 'Track'
@@ -564,7 +565,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'location_repo_tesim', :label => 'Repository Location'
     config.add_show_field 'repo_orig_tesim', :label => 'Original Repository'
     config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true
-    config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection'
+    config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
     config.add_show_field 'box_box_folder_tesim', :label => 'Box Number'
     config.add_show_field 'folder_box_folder_tesim', :label => 'Folder Number'
