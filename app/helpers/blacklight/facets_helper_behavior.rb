@@ -46,7 +46,7 @@ module Blacklight::FacetsHelperBehavior
     options[:locals][:solr_field] ||= display_facet.name # deprecated
     options[:locals][:facet_field] ||= facet_configuration_for_field(display_facet.name)
     options[:locals][:display_facet] ||= display_facet 
-
+    Rails.logger.info("OPTIONS = #{options.inspect}")
     render(options)
   end
 
@@ -125,7 +125,11 @@ module Blacklight::FacetsHelperBehavior
   def render_facet_value(facet_field, item, options ={})
     path = path_for_facet(facet_field, item)
     content_tag(:span, :class => "facet-label") do
-      link_to_unless(options[:suppress_link], facet_display_value(facet_field, item), path, :class=>"facet_select")
+      if item.value == "Core Historical Literature of Agriculture" or item.value == "Hive and the Honeybee" or item.value == "Home Economics Archive: Research, Tradition and History"
+        link_to_unless(options[:sort => 'title_ssi'], facet_display_value(facet_field, item), path + "&sort=title_ssi asc", :class=>"facet_select")
+      else
+        link_to_unless(options[:suppress_link], facet_display_value(facet_field, item), path, :class=>"facet_select")
+      end
     end + render_facet_count(item.hits)
   end
 
