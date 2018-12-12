@@ -326,7 +326,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'image_ocr_tesim',:label => 'text'
     config.add_index_field 'book_title', :label => 'Book Title'
     config.add_index_field 'date_tesim', :label => 'Date'
-
+    config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
 
     # solr fields to be displayed in the show (single result) view
 
@@ -565,7 +565,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
     config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
     config.add_show_field 'disclaimer_tesim', :label => 'Disclaimer'
-
+    config.add_show_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
 
     # "fielded" search configuration. Used by pulldown among other places.
 
