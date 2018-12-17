@@ -46,7 +46,7 @@ $bees-blue: #0080a0;
 }
 .mann-layout--bees {
 	.well {
-		background: #fff url("/assets/collections/bees/light_honeycomb.png");
+		background: #fff url("/collections/bees/light_honeycomb.png");
 	}
 	.lead {
 		strong {
@@ -80,7 +80,7 @@ $bees-blue: #0080a0;
 @media (min-width: $screen-sm) { 
 	.mann-header--bees {
 		.hero {
-			background: url("/assets/collections/bees/bluebee-banner2.jpg") no-repeat;
+			background: url("/collections/bees/bluebee-banner2.jpg") no-repeat;
 		}
 	}
 }
