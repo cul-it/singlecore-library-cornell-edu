@@ -1,0 +1,23 @@
+<%# stick the hero image on the home page only %>
+<% if current_page?('/collections/anthrocollections') %>
+	<div class="srilanka-header">
+		<div class="container">
+			<h2><a href="/collections/srilanka">Selections from the Cornell Anthropology Collections</a></h2>
+		</div>
+		<div class="background">
+			<div class="container">
+				<%= image_tag "collections/anthrocollections/1334138.jpg" , alt: "", class: "img-responsive" %>
+				<div class="caption">
+					<p><a href="/catalog/ss:1334138">Cloth with brocaded birds</a><!--; <a href="/catalog/ss:14160990">Plan showing dwelling contents</a>--></p>
+				</div>
+			</div>
+		</div>
+	</div>
+<%# or just display the header %>
+<% else %>
+	<div class="srilanka-header srilanka-header--subpage">
+		<div class="container">
+			<h2><a href="/collections/srilanka">Selections from the Cornell Anthropology Collections</a></h2>
+		</div>
+	<% end %>
+</div>
