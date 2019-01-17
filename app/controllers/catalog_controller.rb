@@ -437,7 +437,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'railroad_reporting_mark_tesim', :label => 'Railroad Reporting Mark'
     config.add_show_field 'voigt_cat_no_tesim', :label => 'Voigt Catalog Number'
     config.add_show_field 'map_identifier2_tesim', :label => 'Context'
-    config.add_show_field 'map_identifier3_tesim', :label => 'Identifier 3'
+    config.add_show_field 'identifier2_tesim', :label => 'Topographic Map'
+    config.add_show_field 'map_identifier3_tesim', :label => 'Identifier3'
     config.add_show_field 'old_catalog_number_tesim', :label => 'Old Catalog Number'
     # collection- and item-specific
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
