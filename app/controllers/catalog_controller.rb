@@ -298,6 +298,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'musician_creator_tesim', :label => 'Musician', :show => false
     config.add_facet_field 'lyricist_creator_tesim', :label => 'Lyricist', :show => false
     config.add_facet_field 'arranger_creator_tesim', :label => 'Arranger', :show => false
+    config.add_facet_field 'performer_creator_tesim', :label => 'Performer', :show => false
     config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
 
     if ENV["COLLECTIONS"] == "development"
@@ -366,6 +367,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'second_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'cataloger_tesim', :label => 'Cataloger'
+    config.add_show_field 'performer_creator_tesim', :label => 'Performer', :link_to_search => true
     config.add_show_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_show_field 'performer_matrix_tesim', :label => 'Performer'
     config.add_show_field 'ensemble_note_tesim', :label => 'Ensemble Note'
