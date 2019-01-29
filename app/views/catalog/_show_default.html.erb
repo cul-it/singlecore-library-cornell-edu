@@ -47,7 +47,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
 		</div>
 		<div class="col-sm-4 more-item-info">
-		<% if !@collection_website.blank? || !@ssc_site.blank? || @bibid.present? %>
+		<% if !@collection_website.blank? || !@ssc_site.blank? || @bibid.present? || @finding_aid.present? %>
 			<div class="well">
 				<h2>About the collection</h2>
 				<% if @bibid.present? %>
