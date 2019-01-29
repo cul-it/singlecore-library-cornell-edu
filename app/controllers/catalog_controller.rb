@@ -79,7 +79,7 @@ class CatalogController < ApplicationController
       redirect_to search_catalog_path(facet_params)
     end
     if params[:subject] == "fallout" && params[:f].nil?
-      facet_params = { f: { collection_tesim: ['Fallout Pamphlet Collection'] } }
+      facet_params = { f: { collection_tesim: ['Nuclear Fallout Shelter Collection'] } }
       redirect_to search_catalog_path(facet_params)
     end
     if params[:subject] == "gems" && params[:f].nil?
@@ -437,6 +437,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'stosch_cat_tesim', :label => 'Stosch Catalog Number'
     config.add_show_field 'winckelmann_no_tesim', :label => 'Winckelmann Number'
     config.add_show_field 'collection_number_tesim', :label => 'Collection Number'
+    config.add_show_field 'card_number_tesim', :label => 'Card Number'
     config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
     config.add_show_field 'identifier_cornell_isi', :label => 'Cornell Number'
     config.add_show_field 'plan_number_isi', :label => 'Plan Number'
