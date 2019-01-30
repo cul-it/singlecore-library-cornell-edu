@@ -440,6 +440,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'winckelmann_no_tesim', :label => 'Winckelmann Number'
     config.add_show_field 'collection_number_tesim', :label => 'Collection Number'
     config.add_show_field 'card_number_tesim', :label => 'Card Number'
+    config.add_show_field 'catalog_number_tesim', :label => 'Catalog Number'
     config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
     config.add_show_field 'identifier_cornell_isi', :label => 'Cornell Number'
     config.add_show_field 'plan_number_isi', :label => 'Plan Number'
@@ -449,7 +450,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'voigt_cat_no_tesim', :label => 'Voigt Catalog Number'
     config.add_show_field 'map_identifier2_tesim', :label => 'Context'
     config.add_show_field 'identifier2_tesim', :label => 'Topographic Map'
-    config.add_show_field 'map_identifier3_tesim', :label => 'Identifier3'
+    config.add_show_field 'map_identifier3_tesim', :label => 'Original File Name'
     config.add_show_field 'old_catalog_number_tesim', :label => 'Old Catalog Number'
     # collection- and item-specific
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
