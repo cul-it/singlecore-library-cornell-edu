@@ -284,10 +284,21 @@ def get_tracks args
 def get_seneca_multiviews args
   collection = args['collection_tesim'][0]
   if args['catalog_number_tesim'].present? && args['work_sequence_isi'].present?
-  parentid = args['catalog_number_tesim'][0]
-end
+    parentid = args['catalog_number_tesim'][0]
+  end
   sequence = args['work_sequence_isi']
   response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=catalog_number_tesim:\"#{parentid}\"&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
+  @response = response['response']['docs']
+  return @response
+end
+
+def get_impersonator_multiviews args
+  collection = args['collection_tesim'][0]
+  if args['card_number_tesim'].present? && args['work_sequence_isi'].present?
+    parentid = args['card_number_tesim'][0]
+  end
+  sequence = args['work_sequence_isi']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=card_number_tesim:\"#{parentid}\"&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
   @response = response['response']['docs']
   return @response
 end
@@ -356,7 +367,7 @@ end
   }
 
 def is_multi_image? args
-  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_blaschka_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1)
+  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_blaschka_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_impersonator_multiviews(args).length > 1)
     return true
   end
 end
@@ -364,6 +375,7 @@ end
 
 
   MULTI_IMAGE_COLLECTIONS = {
+    '20019' => 'impersonator',
     '4803' => 'seneca',
     '3686' => 'zorn',
     '3786' => 'blaschka',
