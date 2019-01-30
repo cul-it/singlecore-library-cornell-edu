@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
       fq = '-active_fedora_model_ssi:"Page"
       AND -collection_tesim:"Core Historical Library of Agriculture"
       AND -solr_loader_tesim:"eCommons"
-      AND -(collection_tesim:"Cornell Collection of Blaschka Invertebrate Models" AND portal_sequence_isi:[2 TO *])'
+      AND -(collection_tesim:"Cornell Collection of Blaschka Invertebrate Models" AND portal_sequence_isi:[2 TO *])
+      AND -(collection_tesim:"Seneca Haudenosaunee Archaeological Materials, circa 1688-1754" AND work_sequence_isi:[2 TO *])'
 
 
     elsif environment == 'production'
