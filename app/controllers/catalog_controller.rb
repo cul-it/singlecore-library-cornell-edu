@@ -103,7 +103,7 @@ class CatalogController < ApplicationController
       redirect_to search_catalog_path(facet_params)
     end
     if params[:subject] == "impersonator" && params[:f].nil?
-      facet_params = { f: { collection_tesim: ['Impersonator Cards'] } }
+      facet_params = { f: { collection_tesim: ['Postcards of female and male impersonators and cross-dressing in Europe and the United States, 1900-1930'] } }
       redirect_to search_catalog_path(facet_params)
     end
     if params[:subject] == "isbellandes" && params[:f].nil?
@@ -452,6 +452,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'identifier2_tesim', :label => 'Topographic Map'
     config.add_show_field 'map_identifier3_tesim', :label => 'Original File Name'
     config.add_show_field 'old_catalog_number_tesim', :label => 'Old Catalog Number'
+
     # collection- and item-specific
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
     config.add_show_field 'track_ssi', :label => 'Track'
@@ -579,6 +580,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
     config.add_show_field 'disclaimer_tesim', :label => 'Disclaimer'
     config.add_show_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
+    if ENV["COLLECTIONS"] == "development"
+      config.add_show_field 'work_sequence_isi', :label => 'Work Sequence'
+    end
 
     # "fielded" search configuration. Used by pulldown among other places.
 
