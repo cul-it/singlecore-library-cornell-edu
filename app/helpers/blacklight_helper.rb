@@ -367,7 +367,7 @@ end
   }
 
 def is_multi_image? args
-  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_blaschka_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_impersonator_multiviews(args).length > 1)
+  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_blaschka_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_impersonator_multiviews(args).length > 1 && args['work_sequence_isi'].present?)
     return true
   end
 end
