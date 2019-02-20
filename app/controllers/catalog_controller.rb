@@ -190,6 +190,10 @@ class CatalogController < ApplicationController
       facet_params = { f: { collection_tesim: ['Cornell Squeeze Collection'] } }
       redirect_to search_catalog_path(facet_params)
     end
+    if params[:subject] == "stereoscopes" && params[:f].nil?
+      facet_params = { f: { collection_tesim: ['Icelandic Stereoscopes'] } }
+      redirect_to search_catalog_path(facet_params)
+    end
     if params[:subject] == "sterrett" && params[:f].nil?
       facet_params = { f: { collection_tesim: ['The J. R. Sitlington Sterrett Collection of Archaeological Photographs'] } }
       redirect_to search_catalog_path(facet_params)
@@ -493,6 +497,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'translation_tesim', :label => 'Translation'
     config.add_show_field 'inscription_tesim', :label => 'Inscription'
     config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :autolink_field
+    config.add_show_field 'r2_transcription_tesim', :label => 'Transcription 2', helper_method: :autolink_field
     config.add_show_field 'devanagari_hamlet_tesim', :label => 'Hamlet (Devanagari)'
     config.add_show_field 'roman_hamlet_tesim', :label => 'Hamlet (Roman Characters)'
     config.add_show_field 'translation_of_tesim', :label => 'Translation of'
