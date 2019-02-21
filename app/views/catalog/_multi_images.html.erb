@@ -68,3 +68,21 @@
 		<% end %>
 	</div>
 <% end %>
+<% if get_stereoscopes_multiviews(@document).length > 1 %>
+	<h2>Additional views</h2>
+	<div class="multi-image-wrapper">
+		<% get_stereoscopes_multiviews(@document).each do |image| %>
+			<% if image["id"] != @document["id"] %>
+				<div class="multi-image">
+					<a href="/catalog/<%= image['id'] %>" data-turbolinks="false" aria-label="<%= image['id'] %>">
+						<img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" alt="" />
+						<%# hiding titles for now because many lack them %>
+						<!-- <span class="caption"> -->
+							<%#= image['@title'][0] %>
+						<!-- </span> -->
+					</a>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+<% end %>
