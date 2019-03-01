@@ -108,7 +108,7 @@ def measurements options={}
     !options[:document]['map_measurement_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement_tesim'].each do |measurement|
-      m = measurement  + ' ('
+      m = measurement
       measurements << m
     end
   end
