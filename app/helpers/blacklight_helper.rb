@@ -84,8 +84,8 @@ def catalog_record options={}
       r = link_to bibid, 'https://newcatalog.library.cornell.edu/catalog/' + bibid
       catalog_record << r
     end
+    return catalog_record.join("<br>").html_safe
   end
-  return catalog_record.join("<br>").html_safe
 end
 
 # TODO: DRY up measurement helpers
