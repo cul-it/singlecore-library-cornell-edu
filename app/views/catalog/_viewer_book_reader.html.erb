@@ -13,17 +13,24 @@
       <div class="col-sm-4">
         <div class="reader-link" data-no-turbolink>
 
-          <% unless @book_id.include?('chla') %>
-            <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>#page/<%= @page %>/mode/1up" onclick="ga('send', 'event', 'reader', 'click', 'button-<%= @book_id %>')"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+          <% unless @book_id.include?('chla') && @document['format_tesim'][0] == "Page" %>
+            <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
           <% else %>
-            <% if @document['format_tesim'][0] != "Issue" && @document['format_tesim'][0] != "Article"%>
-              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" oonclick="ga('send', 'event', 'reader', 'click', 'button-<%= @book_id %>')"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+            <% if @document['format_tesim'][0] == "Page" %>
+              <% endstring = @document['id'].rindex('_') %>
+              <% bookID = @document['id'][0..endstring - 1] %>
+              <% readerPage = @document['id'][endstring + 1..-1] %>
+              <%#= readerPage.inspect %>
+              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= bookID %>#page/<%= readerPage %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+            <% else %>           
+            <% if @document['format_tesim'][0] != "Issue" && @document['format_tesim'][0] != "Article" && @document['format_tesim'][0] != "Page" %>
+              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
             <%# elsif @document['format_tesim'][0] == "Article" %>
-            <% else @document['format_tesim'][0] == "Issue" && @document['format_tesim'][0] != "Article"%>
-              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="ga('send', 'event', 'reader', 'click', 'button-<%= @book_id %>')"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+            <% else @document['format_tesim'][0] == "Issue" && @document['format_tesim'][0] != "Article" && @document['format_tesim'][0] != "Page" %>
+              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
             <%# else %>
               <!-- <h3> Table of Contents </h3> -->
-
+             <% end %>
             <% end %>
           <% end %>
 
