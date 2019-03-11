@@ -75,6 +75,19 @@ def relationships options={}
   end
   return relationships.join("<br>").html_safe
 end
+
+# Link bibid field (bibid_tesim) to catalog record
+def catalog_record options={}
+  if options[:document]['bibid_tesim'].present?
+    catalog_record = []
+    options[:document]['bibid_tesim'].each do |bibid|
+      r = link_to bibid, 'https://newcatalog.library.cornell.edu/catalog/' + bibid
+      catalog_record << r
+    end
+    return catalog_record.join("<br>").html_safe
+  end
+end
+
 # TODO: DRY up measurement helpers
 # Combine measurement1 fields
 def measurements options={}
