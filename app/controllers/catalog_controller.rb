@@ -433,7 +433,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
     config.add_show_field 'identifier_tesim', :label => 'Identifier', helper_method: :chla
     config.add_show_field 'accession_tesim', :label => 'Accession'
-    config.add_show_field 'bibid_tesim', :label => 'Bibid'
+    config.add_show_field 'bibid_tesim', :label => 'Bibid', helper_method: :catalog_record
     config.add_show_field 'call_number_tesim', :label => 'Call Number'
     config.add_show_field 'reference_id_tesim', :label => 'Reference Identifier'
     config.add_show_field 'column_no_tesim', :label => 'Column Number'
