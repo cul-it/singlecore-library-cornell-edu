@@ -327,7 +327,6 @@ class CatalogController < ApplicationController
     config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
     config.add_index_field 'volume_tesim', :label => 'Volume'
     config.add_index_field 'page_tesim', :label => 'Page'
-    config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
 
     # these index fields are from the dlxs collections
     config.add_index_field 'publication_tesim', :label => 'Publication'
@@ -340,6 +339,12 @@ class CatalogController < ApplicationController
     config.add_index_field 'book_title', :label => 'Book Title'
     config.add_index_field 'date_tesim', :label => 'Date'
     config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
+
+    config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
+
+    if ENV["COLLECTIONS"] == "development"
+      config.add_index_field 'collection_sequence_isi', :label => 'Collection Sequence'
+    end
 
     # solr fields to be displayed in the show (single result) view
 
