@@ -68,6 +68,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "19th Century Prison Reform Collection"
       OR collection_tesim: "Core Historical Literature of Agriculture"
       OR collection_tesim: "Hive & the Honeybee"
+      OR collection_tesim: "Joe Conzo Jr. Archive"
       ))'
     end
   end
