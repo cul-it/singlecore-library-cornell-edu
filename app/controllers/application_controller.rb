@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def set_fq(environment)
     if environment == 'development'
       fq = 'display_target_tesim:"bento"
-      AND collection_tesim:"Core Historical Library of Agriculture"
+      AND collection_tesim:"Core Historical Literature of Agriculture"
       AND -solr_loader_tesim:"eCommons"
       AND -(collection_tesim:"Cornell Collection of Blaschka Invertebrate Models" AND portal_sequence_isi:[2 TO *])
       AND -(collection_tesim:"Seneca Haudenosaunee Archaeological Materials, circa 1688-1754" AND work_sequence_isi:[2 TO *])
