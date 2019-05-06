@@ -87,6 +87,9 @@
     <% if @collection_selected == "Icelandic and Faroese Photographs of Frederick W.W. Howell" %>
         <a href="http://resolver.library.cornell.edu/misc/5618018"><%= @link_label %><%= @external_link_icon %></a>
     <% end %>
+    <% if @collection_selected == "Icelandic Stereoscopes" %>
+        <a href="/collections/stereoscopes"><%= @link_label %></a>
+    <% end %>
     <% if @collection_selected == "Images from the Rare Book and Manuscript Collections" %>
         <a href="http://rmc-images.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
     <% end %>
