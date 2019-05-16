@@ -4,6 +4,7 @@ ruby "2.5.5"
 gem "blacklight"
 gem 'appsignal'
 gem 'sprockets', '>= 3.7.2'
+gem 'nokogiri', '>= 1.8.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
 gem "dotenv-rails"
