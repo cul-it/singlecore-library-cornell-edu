@@ -6,7 +6,8 @@ gem 'appsignal'
 gem 'sprockets', '>= 3.7.2'
 gem 'nokogiri', '>= 1.8.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '4.2.11.1'
+gem 'actionview', '>= 4.2.11.1'
 gem "dotenv-rails"
 gem "dotenv-deployment"
 gem 'httpclient'
