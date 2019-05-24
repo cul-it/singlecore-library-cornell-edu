@@ -5,14 +5,19 @@
 <% @book_prefix = (render_document_show_field_value :document => @document, :field => 'id').split(':')[0] %>
 <% @download_url = render_document_show_field_value(:document => @document, :field => 'download_link_tesim') %>
 <% @media = render_document_show_field_value(:document => @document, :field => 'media_URL_tesim')  %>
+<% @filename = render_document_show_field_value(:document => @document, :field => 'filename_s')  %>
 <% @disable_download = render_document_show_field_value(:document => @document, :field => 'disable_download_tesim')  %>
 
 <% @chlaid = render_document_show_field_value(:document => @document, :field => 'identifier_tesim') %>
 
 <% @archival_collection = render_document_show_field_value(:document => @document, :field => 'archival_collection_tesim') %>
 
-<% if @media.present? && @media.include?('pdf') %>
+<% if @filename.present? && @filename.include?('pdf') %>
   <% @pdf = true %>
+<% else %>
+  <% if @media.present? && @media.include?('pdf') %>
+    <% @pdf = true %>
+  <% end %>
 <% end %>
 
 <% @page = "1" %>
