@@ -12,8 +12,10 @@
 
 <% @archival_collection = render_document_show_field_value(:document => @document, :field => 'archival_collection_tesim') %>
 
-<% if @filename.present? && @filename.include?('pdf') %>
-  <% @pdf = true %>
+<% if @filename.present? %>
+  <% if @filename.include?('pdf') %>
+    <% @pdf = true %>
+  <% end %>
 <% else %>
   <% if @media.present? && @media.include?('pdf') %>
     <% @pdf = true %>
