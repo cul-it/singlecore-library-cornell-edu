@@ -362,7 +362,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'dig_coll_tesim', :label => 'Digital Collection'
     config.add_show_field 'set_title_tesim', :label => 'Set', :link_to_search => true
     # creator
-    config.add_show_field 'creator_tesim', :label => 'Creator(s)', :link_to_search => true
+    config.add_show_field 'creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'role_tesim', :label => 'Creator Role'
     config.add_show_field 'yiddish_creator_tesim', :label => 'Creator (Yiddish)'
     config.add_show_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
@@ -579,8 +579,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true
     config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
-    config.add_show_field 'box_box_folder_tesim', :label => 'Box Number'
-    config.add_show_field 'folder_box_folder_tesim', :label => 'Folder Number'
+    config.add_show_field 'box_box_folder_tesim', :label => 'Box'
+    config.add_show_field 'folder_box_folder_tesim', :label => 'Folder'
     # display at end
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
     config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
