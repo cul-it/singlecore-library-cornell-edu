@@ -102,10 +102,6 @@ class CatalogController < ApplicationController
       facet_params = { f: { collection_tesim: ['Huntington Free Library Native American Collection'] } }
       redirect_to search_catalog_path(facet_params)
     end
-    if params[:subject] == "impersonator" && params[:f].nil?
-      facet_params = { f: { collection_tesim: ['Postcards of female and male impersonators and cross-dressing in Europe and the United States, 1900-1930'] } }
-      redirect_to search_catalog_path(facet_params)
-    end
     if params[:subject] == "isbellandes" && params[:f].nil?
       facet_params = { f: { collection_tesim: ['Billie Jean Isbell Andean Collection'] } }
       redirect_to search_catalog_path(facet_params)
