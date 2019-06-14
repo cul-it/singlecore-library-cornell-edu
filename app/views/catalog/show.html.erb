@@ -16,9 +16,11 @@
         <% show = "yes" %>
       <% end %>
     <% end %>
-    <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Indonesian") || render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Wordsworth") ||
+    <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Indonesian") || 
+      render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Wordsworth") ||
       render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Core Historical") ||
-      render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Honeybees")
+      render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Honeybees") ||
+      render_document_show_field_value(:document => @document, :field => 'display_target_tesim').include?("portal-prod")
        %>
 
       <% show = "yes" %>
