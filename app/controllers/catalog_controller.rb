@@ -217,7 +217,6 @@ class CatalogController < ApplicationController
 
     configure_blacklight do |config|
     config.view.gallery.partials = [:index_header]
-
     ## Default parameters to send to solr for all search-like requests. See also SearchBuilder#processed_parameters
     config.default_solr_params = {
       :qt => 'search',
@@ -244,7 +243,9 @@ class CatalogController < ApplicationController
     config.index.title_field = 'title_tesim'
     config.index.thumbnail_method = :render_thumbnail
     config.index.display_type_field = 'project_id_ssi'
-
+    config.index.document_actions.delete(:bookmark)
+    config.show.document_actions.delete(:bookmark)
+    config.navbar.partials.delete(:bookmark)
     # solr field configuration for document/show views
     config.show.title_field = 'title_tesim'
     config.show.display_type_field = 'project_id_ssi'
