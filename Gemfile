@@ -12,7 +12,7 @@ gem "dotenv-rails"
 gem "dotenv-deployment"
 gem 'httpclient'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '1.3.13'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
