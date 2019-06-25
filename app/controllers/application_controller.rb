@@ -71,6 +71,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "Core Historical Literature of Agriculture"
       OR collection_tesim: "Hive & the Honeybee"
       OR collection_tesim: "Joe Conzo Jr. Archive"
+      OR collection_tesim: "Postcards of female and male impersonators and cross-dressing in Europe and the United States, 1900-1931, 1955"
       ))'
     end
   end
