@@ -1,9 +1,11 @@
 <div class="other-viewer well">
   <div class="row">
     <div class="col-sm-8 text-center">
-      <div class="cover" data-no-turbolink>
-          <img src="<%= @document['media_URL_size_3_tesim'][0] %>" class="img-responsive img-thumbnail" alt="">
-      </div>
+      <% if render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim').present? %>
+        <div class="cover" data-no-turbolink>
+            <img src="<%= @document['media_URL_size_3_tesim'][0] %>" class="img-responsive img-thumbnail" alt="">
+        </div>
+      <% end %>
     </div>
     <div class="col-sm-4">
       <div class="reader-link" data-no-turbolink>
