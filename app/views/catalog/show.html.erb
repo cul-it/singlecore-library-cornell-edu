@@ -25,6 +25,9 @@
 
       <% show = "yes" %>
     <% end %>
+    <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Samuel J. May")%>
+      <% show = "no" %>
+    <% end %>
   <% end %>
 
   <% if ENV["COLLECTIONS"] == "development" %>
