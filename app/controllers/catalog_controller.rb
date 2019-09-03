@@ -183,7 +183,7 @@ class CatalogController < ApplicationController
       redirect_to search_catalog_path(facet_params)
     end
     if params[:subject] == "stereoscopes" && params[:f].nil?
-      facet_params = { f: { collection_tesim: ['Icelandic Stereoscopes'] } }
+      facet_params = { f: { collection_tesim: ['Stereoscope Pictures From Iceland'] } }
       redirect_to search_catalog_path(facet_params)
     end
     if params[:subject] == "sterrett" && params[:f].nil?
