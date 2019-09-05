@@ -1,7 +1,12 @@
-  <% if document["status_ssi"]!= "Published" && ENV["COLLECTIONS"] == "development" %>
-   <% if document["status_ssi"].present? %>
+<% if document["status_ssi"]!= "Published" && ENV["COLLECTIONS"] == "development" %>
+   	<% if document["status_ssi"].present? && document["status_ssi"]== "Unpublished" %>
 	   <div class="unpublished">
 	   		<span class="label label-primary">Unpublished</span>
 	   </div>
-   <% end %>
-   <% end %>
+   	<% end %>
+   	<% if document["status_ssi"].present? && document["status_ssi"]== "Suppressed" %>
+	   <div class="unpublished">
+	   		<span class="label label-primary">Suppressed</span>
+	   </div>
+   	<% end %>
+<% end %>
