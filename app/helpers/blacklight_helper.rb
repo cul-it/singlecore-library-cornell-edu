@@ -403,7 +403,6 @@ end
     '4803' => 'seneca',
     '3686' => 'zorn',
     '3786' => 'blaschka',
-    '2849' => 'costume',
     '962' => 'stereoscopes'
   }
 
