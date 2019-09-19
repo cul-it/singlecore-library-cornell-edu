@@ -34,6 +34,10 @@ class CatalogController < ApplicationController
       facet_params = { f: { collection_tesim: ['Art 2301 Printmaking Student Portfolios'] } }
       redirect_to search_catalog_path(facet_params)
     end
+    if params[:subject] == "afrika-bambaataa" && params[:f].nil?
+      facet_params = { f: { collection_tesim: ['Afrika Bambaataa Hip Hop Archive'] } }
+      redirect_to search_catalog_path(facet_params)
+    end
     if params[:subject] == "bastides" && params[:f].nil?
       facet_params = { f: { collection_tesim: ['John Reps Collection - Bastides'] } }
       redirect_to search_catalog_path(facet_params)
@@ -446,6 +450,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'identifier2_tesim', :label => 'Topographic Map'
     config.add_show_field 'map_identifier3_tesim', :label => 'Original File Name'
     config.add_show_field 'old_catalog_number_tesim', :label => 'Old Catalog Number'
+    config.add_show_field 'bam_number_tesim', :label => 'Bam Number'
+    config.add_show_field 'item_number_tesim', :label => 'Item Number'
 
     # collection- and item-specific
     config.add_show_field 'occasion_tesim', :label => 'Occasion'
