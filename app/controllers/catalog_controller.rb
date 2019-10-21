@@ -217,7 +217,7 @@ class CatalogController < ApplicationController
           }
 
     config.default_per_page = 20
-    
+
     ## blacklight-maps configuration default values
     # see https://github.com/projectblacklight/blacklight-maps
     config.view.maps.geojson_field = "geojson_ssim"
@@ -610,7 +610,7 @@ class CatalogController < ApplicationController
       }
     end
 
-  
+
 
     # "sort results by" select (pulldown)
     config.add_sort_field 'collection_sequence_isi asc, portfolio_creator_ssi asc, identifier_blaschka_isi asc, score desc, latest_date_isi asc', :label => 'relevance'
