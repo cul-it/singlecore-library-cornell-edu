@@ -87,3 +87,6 @@ Then("I click on {string}") do |string|
    page.click_link("#{string}")
 end
 
+Then("the page title should contain {string}") do |string|
+    find(:xpath, '//title', visible: false).native.text.should have_content("#{string}")
+end
