@@ -82,3 +82,8 @@ end
 Then("I should see a {string} tag with url containing {string}") do |string, string2|
 expect(page).to have_xpath("//#{string}[contains(@src,'#{string2}')]")
   end
+
+Then("I click on {string}") do |string|
+   page.click_link("#{string}")
+end
+
