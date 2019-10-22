@@ -7,19 +7,25 @@ Feature: Asset regular fields
     @fields-regular
     Scenario Outline: View regular field labels across assets
         Given I go to asset id '<id>'
-            Then I should see the field labeled '<label>'
-            And the field labeled '<label>' should begin with '<starting>'
+            Then I should see the field labeled '<new_label>'
+            And the field labeled '<new_label>' should begin with '<starting>'
 
     Examples:
-    | id | label | starting |
-    | 26303879 | Title | Beastie Boys: Hello |
-    | 26303879 | Collection | Adler Hip Hop Archive |
-    | 26303879 | Date | 1998-08-01 |
-    | 26303879 | Work Type | Article |
-    | 9372038 | Subject | Public Enemy |
-    | 26303879 | Source | Insite |
-    | 26303879 | Repository | Division of Rare and Manuscript Collections, Cornell University Library |
-    | 26303879 | Collecting Program | Cornell University Hip Hop Collection |
-    | 26303879 | Rights | This image was created by Cornell University Library |
-
+    | label | new_label | id | starting |
+    | Collecting Program  | Collecting Program  | 26303879| Cornell University Hip Hop Collection |
+    | Collection  | Collection  | 26303879 | Adler Hip Hop Archive |
+    | Date  | Date  | 26303879 | 1998-08-01 |
+    | Description | Description | 595408 | "George and Priscilla Slocum Galleries Given |
+    | Identifier | ID Number | 595408 | 100_1398 |
+    | Image View Description | Image View Description | 595408 | Front View |
+    | Image View Type | Image View Type | 595408 | General |
+    | Repository  | Repository  | 26303879 | Division of Rare and Manuscript Collections, Cornell University Library |
+    | Repository Location | Repository Location | 595408 | Shoellkopf House |
+    | Rights  | Rights  | 26303879 | This image was created by Cornell University Library |
+    | Rights | Rights | 595408 | The content in the Campus Artifacts, Art & Memorabilia Collection |
+    | Source  | Source  | 26303879 | Insite |
+    | Subject  | Subject  | 3851177 | Bastides |
+    | Subject | Subject | 595408 | Slocum, George W. |
+    | Title  | Title  | 26303879 | Beastie Boys: Hello |
+    | Work Type  | Work Type  | 26303879 | Article |
 
