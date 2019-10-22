@@ -425,7 +425,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'addresscreator_tesim', :label => 'Address (Creator)'
     # identifier
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
-    config.add_show_field 'identifier_tesim', :label => 'Identifier', helper_method: :chla
+    #config.add_show_field 'id_number_tesim', :label => 'Identifier', helper_method: :chla
     #config.add_show_field 'identifier_tesim', :label => 'Identifier', helper_method: :chla
     config.add_show_field 'accession_tesim', :label => 'Accession'
     config.add_show_field 'bibid_tesim', :label => 'Catalog Record', helper_method: :catalog_record
