@@ -512,7 +512,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true
     config.add_show_field 'mat_tech_orig_tesim', :label => 'Original Materials and Techniques'
-    config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
+    # config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'subject_reps_tesim', :label => 'Reps Subject'
     config.add_show_field 'keywords_tesim', :label => 'Keywords', :link_to_search => true
     # config.add_show_field 'img_view_desc_tesim', :label => 'Image View Description'
