@@ -499,6 +499,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'translation_of_tesim', :label => 'Translation of'
     config.add_show_field 'translation_as_tesim', :label => 'Translated as', helper_method: :autolink_field
     # work type, subject, etc.
+    config.add_show_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'lang_tesim', :label => 'Language'
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'culture_orig_tesim', :label => 'Original Culture'
