@@ -22,7 +22,7 @@ Feature: Asset regular fields
     | Repository  | Repository  | 26303879 | Division of Rare and Manuscript Collections, Cornell University Library |
     | Repository Location | Repository Location | 595408 | Shoellkopf House |
     | Rights  | Rights  | 26303879 | This image was created by Cornell University Library |
-    | Rights | Rights | 595408 | The content in the Campus Artifacts, Art & Memorabilia Collection |
+    | Rights | Rights | 595408 | The content in |
     | Source  | Source  | 26303879 | Insite |
     | Subject  | Subject  | 3851177 | Bastides |
     | Subject | Subject | 595408 | Slocum, George W. |
