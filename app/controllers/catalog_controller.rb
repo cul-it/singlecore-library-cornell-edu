@@ -501,6 +501,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'translation_as_tesim', :label => 'Translated as', helper_method: :autolink_field
     # work type, subject, etc.
     config.add_show_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true
+    config.add_show_field 'r1_image_view_desc_tesim', :label => 'Image View Description'
+    config.add_show_field 'r1_image_view_type_tesim', :label => 'Image View Type'
     config.add_show_field 'lang_tesim', :label => 'Language'
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'culture_orig_tesim', :label => 'Original Culture'
@@ -513,9 +515,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'subject_reps_tesim', :label => 'Reps Subject'
     config.add_show_field 'keywords_tesim', :label => 'Keywords', :link_to_search => true
-    config.add_show_field 'img_view_desc_tesim', :label => 'Image View Description'
-    config.add_show_field 'img_view_type_tesim', :label => 'Image View Type'
-    config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
+    # config.add_show_field 'img_view_desc_tesim', :label => 'Image View Description'
+    #config.add_show_field 'img_view_type_tesim', :label => 'Image View Type'
+    #config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
     # item size
     config.add_show_field 'extent_tesim', :label => 'Extent', helper_method: :extent_units
     config.add_show_field 'measurement_units_tesim', :label => 'Measurement Units'
