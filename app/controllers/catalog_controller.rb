@@ -560,8 +560,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'pubplace_tesim', :label => 'Publication Place'
     config.add_show_field 'publication_location_tesim', :label => 'Location of Publication'
     config.add_show_field 'pubdate_tesim', :label => 'Publication Date'
-    config.add_show_field 'source_tesim', :label => 'Source'
-    config.add_show_field 'map_source_tesim', :label => 'Source'
+    # config.add_show_field 'source_tesim', :label => 'Source'
+    # config.add_show_field 'map_source_tesim', :label => 'Source'
     config.add_show_field 'volume_tesim', :label => 'Volume'
     config.add_show_field 'page_tesim', :label => 'Page'
     config.add_show_field 'reference_tesim', :label => 'References', helper_method: :autolink_field
