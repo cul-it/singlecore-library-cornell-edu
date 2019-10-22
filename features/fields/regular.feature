@@ -28,4 +28,13 @@ Feature: Asset regular fields
     | Subject | Subject | 595408 | Slocum, George W. |
     | Title  | Title  | 26303879 | Beastie Boys: Hello |
     | Work Type  | Work Type  | 26303879 | Article |
-
+    | Photographer | Photographer | 3851180 | Reps, John William (American urban planning historian) |
+    | Founder | Founder | 3851180 | Louis IX |
+    | Site | Site | 3851180 | Aigues-Mortes |
+    | Location | Location | 3851180 | Gard, Languedoc-Roussillon, France |
+    | Country | Country | 3851180 | France |
+    | Coordinates | Coordinates | 3851180 | 43.564966,4.189368 |
+    | Latitude | Latitude | 3851180 | 43.564966 |
+    | Longitude | Longitude | 3851180 | 4.189368 |
+    | Identifier | ID Number | 3851180 | AiguesMortes1966SouthWallFacingChannel.jpg |
+    | Work Type | Work Type | 3851180 | color photographs |
