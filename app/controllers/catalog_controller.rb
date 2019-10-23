@@ -355,7 +355,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid' # 26
     config.add_show_field 'folder_tesim', :label => 'Folder' # 17
     config.add_show_field 'id', :label => 'id' # 63
-    config.add_show_field 'id_number_tesim', :label => 'ID Number' # 61
+    config.add_show_field 'id_number_tesim', :label => 'ID Number', helper_method: :chla # 61
     config.add_show_field 'latest_date_isi', :label => 'Latest Date' # 60
     config.add_show_field 'latitude_tsi', :label => 'Latitude' # 21
     config.add_show_field 'linked_data_updated_on_tesim', :label => 'Linked Data Updated On' # 63
@@ -581,7 +581,6 @@ class CatalogController < ApplicationController
     #config.add_show_field 'elevation_tesim', :label => 'Elevation'
     config.add_show_field 'addresscreator_tesim', :label => 'Address (Creator)'
     # identifier
-    config.add_show_field 'id_number_tesim', :label => 'ID Number'
     #config.add_show_field 'id_number_tesim', :label => 'Identifier', helper_method: :chla
     #config.add_show_field 'identifier_tesim', :label => 'Identifier', helper_method: :chla
     config.add_show_field 'accession_tesim', :label => 'Accession'
