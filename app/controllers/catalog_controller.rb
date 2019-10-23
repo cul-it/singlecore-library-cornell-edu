@@ -436,7 +436,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'r2_subject_tesim', :label => 'Subject' # 4
     config.add_show_field 'r2_title_language_tesim', :label => 'Title_Language' # 6
     config.add_show_field 'r2_title_tesim', :label => 'Title' # 7
-    config.add_show_field 'r2_transcription_tesim', :label => 'Transcription' # 2
+    config.add_show_field 'r2_transcription_tesim', :label => 'Transcription', helper_method: :autolink_field # 2
     config.add_show_field 'r2_venue_tesim', :label => 'Venue' # 2
     config.add_show_field 'r3_agent_role_tesim', :label => 'Agent_Role' # 9
     config.add_show_field 'r3_agent_tesim', :label => 'Agent' # 9
@@ -650,7 +650,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'translation_tesim', :label => 'Translation'
     config.add_show_field 'inscription_tesim', :label => 'Inscription'
     config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :autolink_field
-    config.add_show_field 'r2_transcription_tesim', :label => 'Transcription 2', helper_method: :autolink_field
+    #config.add_show_field 'r2_transcription_tesim', :label => 'Transcription 2', helper_method: :autolink_field
     config.add_show_field 'devanagari_hamlet_tesim', :label => 'Hamlet (Devanagari)'
     config.add_show_field 'roman_hamlet_tesim', :label => 'Hamlet (Roman Characters)'
     config.add_show_field 'translation_of_tesim', :label => 'Translation of'
