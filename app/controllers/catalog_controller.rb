@@ -336,6 +336,7 @@ class CatalogController < ApplicationController
     end
 
     # solr fields to be displayed in the show (single result) view
+    # these are generated from the digcoll-ingest collections and the MAP spreadsheet
     config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
     config.add_show_field 'artstor_classification_display_tesim', :label => 'Artstor Classification Display' # 42
     config.add_show_field 'bibid_tesim', :label => 'BibID', helper_method: :catalog_record # 3
