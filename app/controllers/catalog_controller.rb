@@ -398,21 +398,24 @@ class CatalogController < ApplicationController
     config.add_show_field 'century_tesim', :label => 'Century'
     config.add_show_field 'date_created_on_ssi', :label => 'Date posted', :link_to_search => true
     # location
-    config.add_show_field 'creation_site_location_tesim', :label => 'Site', :link_to_search => true
-    config.add_show_field 'other_location_tesim', :label => 'Site', :link_to_search => true
-    config.add_show_field 'map_site_tesim', :label => 'Site', :link_to_search => true
+    config.add_show_field 'r1_site_tesim', :label => 'Site', :link_to_search => true
+    config.add_show_field 'r1_location_tesim', :label => 'Location', :link_to_search => true
+    config.add_show_field 'r1_country_tesim', :label => 'Country', :link_to_search => true
+    # config.add_show_field 'creation_site_location_tesim', :label => 'Site', :link_to_search => true
+    # config.add_show_field 'other_location_tesim', :label => 'Site', :link_to_search => true
+    # config.add_show_field 'map_site_tesim', :label => 'Site', :link_to_search => true
     config.add_show_field 'creation_site_orig_tesim', :label => 'Original Site'
-    config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
-    config.add_show_field 'site_location_tesim', :label => 'Location'
+    #config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true
+    #config.add_show_field 'site_location_tesim', :label => 'Location'
     config.add_show_field 'local_name_location_tesim', :label => 'Place Name (Local)'
     config.add_show_field 'national_name_location_tesim', :label => 'Place Name (National)'
-    config.add_show_field 'project_location_tesim', :label => 'Location'
-    config.add_show_field 'city_location_tesim', :label => 'Location'
+    #config.add_show_field 'project_location_tesim', :label => 'Location'
+    #config.add_show_field 'city_location_tesim', :label => 'Location'
     config.add_show_field 'state_location_tesim', :label => 'State'
     config.add_show_field 'village_tesim', :label => 'Village', :link_to_search => true
     config.add_show_field 'senechal_tesim', :label => 'Senechal', :link_to_search => true
     config.add_show_field 'region_location_tesim', :label => 'Region', :link_to_search => true
-    config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
+    #config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
     config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
     config.add_show_field 'coordinates_tesim', :label => 'Coordinates'
     config.add_show_field 'latitude_tsi', :label => 'Latitude'
