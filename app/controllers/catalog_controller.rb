@@ -345,7 +345,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'collection_level_bib_tesim', :label => 'Collection Level Bib' # 1
     config.add_show_field 'collection_sequence_isi', :label => 'Collection Sequence' # 6
     config.add_show_field 'created_on_tsi', :label => 'Created On' # 63
-    config.add_show_field 'creator_tesim', :label => 'Created By' # 63
+    config.add_show_field 'creator_tesim', :label => 'Created By', :link_to_search => true # 63
     config.add_show_field 'dcmi_type_tesim', :label => 'DCMI Type' # 2
     config.add_show_field 'disable_download_tesim', :label => 'Disable Download' # 4
     config.add_show_field 'earliest_date_isi', :label => 'Earliest Date' # 60
@@ -512,7 +512,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'dig_coll_tesim', :label => 'Digital Collection'
     #config.add_show_field 'set_title_tesim', :label => 'Set', :link_to_search => true
     # creator
-    config.add_show_field 'creator_tesim', :label => 'Creator', :link_to_search => true
+    #config.add_show_field 'creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'role_tesim', :label => 'Creator Role'
     config.add_show_field 'yiddish_creator_tesim', :label => 'Creator (Yiddish)'
     config.add_show_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
