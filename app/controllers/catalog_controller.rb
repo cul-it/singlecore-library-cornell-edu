@@ -388,7 +388,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'r1_language_tesim', :label => 'Language' # 12
     config.add_show_field 'r1_legacy_label_tesim', :label => 'Legacy_Label' # 10
     config.add_show_field 'r1_legacy_value_tesim', :label => 'Legacy_Value' # 10
-    config.add_show_field 'r1_location_tesim', :label => 'Location' # 46
+    config.add_show_field 'r1_location_tesim', :label => 'Location', :link_to_search => true # 46
     config.add_show_field 'r1_mat_tech_tesim', :label => 'Materials/Techniques' # 36
     config.add_show_field 'r1_measurement_dimension_tesim', :label => 'Measurement_Dimension' # 14
     config.add_show_field 'r1_measurement_tesim', :label => 'Measurement' # 34
@@ -553,7 +553,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'century_tesim', :label => 'Century'
     config.add_show_field 'date_created_on_ssi', :label => 'Date posted', :link_to_search => true
     # location
-    config.add_show_field 'r1_location_tesim', :label => 'Location', :link_to_search => true
     config.add_show_field 'r1_country_tesim', :label => 'Country', :link_to_search => true
     # config.add_show_field 'creation_site_location_tesim', :label => 'Site', :link_to_search => true
     # config.add_show_field 'other_location_tesim', :label => 'Site', :link_to_search => true
@@ -732,7 +731,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'bibliography_tesim', :label => 'Bibliography', helper_method: :autolink_field
     config.add_show_field 'cite_as_tesim', :label => 'Cite As'
     # archival collection info
-    #config.add_show_field 'r1_location_tesim', :label => 'Repository Location'
     config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
     #config.add_show_field 'location_repo_tesim', :label => 'Repository Location'
     config.add_show_field 'repo_orig_tesim', :label => 'Original Repository'
