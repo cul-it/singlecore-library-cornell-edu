@@ -484,7 +484,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'r5_measurement_units_tesim', :label => 'Measurement_Unit' # 1
     config.add_show_field 'r6_legacy_label_tesim', :label => 'Legacy_Label' # 1
     config.add_show_field 'r6_legacy_value_tesim', :label => 'Legacy_Value' # 1
-    config.add_show_field 'repository_tesim', :label => 'Repository' # 58
+    config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
     config.add_show_field 'set_title_tesim', :label => 'Set Title', :link_to_search => true # 8
     config.add_show_field 'style_period_tesim', :label => 'Style/Period' # 21
     config.add_show_field 'thumbnail_tesim', :label => 'Thumbnail' # 63
@@ -726,7 +726,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'bibliography_tesim', :label => 'Bibliography', helper_method: :autolink_field
     #config.add_show_field 'cite_as_tesim', :label => 'Cite As'
     # archival collection info
-    config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
+    #config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
     #config.add_show_field 'location_repo_tesim', :label => 'Repository Location'
     config.add_show_field 'repo_orig_tesim', :label => 'Original Repository'
     config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true
