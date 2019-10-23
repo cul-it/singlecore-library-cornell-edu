@@ -338,7 +338,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection' # 37
     config.add_show_field 'artstor_classification_display_tesim', :label => 'Artstor Classification Display' # 42
-    config.add_show_field 'bibid_tesim', :label => 'BibID' # 3
+    config.add_show_field 'bibid_tesim', :label => 'BibID', helper_method: :catalog_record # 3
     config.add_show_field 'box_tesim', :label => 'Box' # 20
     config.add_show_field 'cite_as_tesim', :label => 'Cite As' # 31
     config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program' # 7
@@ -584,7 +584,7 @@ class CatalogController < ApplicationController
     #config.add_show_field 'id_number_tesim', :label => 'Identifier', helper_method: :chla
     #config.add_show_field 'identifier_tesim', :label => 'Identifier', helper_method: :chla
     config.add_show_field 'accession_tesim', :label => 'Accession'
-    config.add_show_field 'bibid_tesim', :label => 'Catalog Record', helper_method: :catalog_record
+    #config.add_show_field 'bibid_tesim', :label => 'Catalog Record', helper_method: :catalog_record
     config.add_show_field 'call_number_tesim', :label => 'Call Number'
     config.add_show_field 'reference_id_tesim', :label => 'Reference Identifier'
     config.add_show_field 'column_no_tesim', :label => 'Column Number'
