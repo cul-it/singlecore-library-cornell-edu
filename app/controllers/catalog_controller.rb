@@ -500,6 +500,7 @@ class CatalogController < ApplicationController
     # special case fields that were not in the MAP spreadsheet
     config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
 
+=begin
     # updated order for Metadata Application Profile
     # title
     config.add_show_field 'title_tesim', :label => 'Title'
@@ -745,7 +746,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
     config.add_show_field 'disclaimer_tesim', :label => 'Disclaimer'
     config.add_show_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
-
+=end
     # "fielded" search configuration. Used by pulldown among other places.
 
 
