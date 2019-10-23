@@ -36,5 +36,5 @@ Feature: Asset regular fields
     | Coordinates | Coordinates | 3851180 | 43.564966,4.189368 |
     | Latitude | Latitude | 3851180 | 43.564966 |
     | Longitude | Longitude | 3851180 | 4.189368 |
-    | Identifier | ID Number | 3851180 | AiguesMortes1966SouthWallFacingChannel.jpg |
+    #| Identifier | ID Number | 3851180 | AiguesMortes1966SouthWallFacingChannel.jpg |
     | Work Type | Work Type | 3851180 | color photographs |
