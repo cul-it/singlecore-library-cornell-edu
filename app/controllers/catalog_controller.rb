@@ -724,7 +724,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'relation_tesim', :label => 'Relation'
     config.add_show_field 'series_relation_tesim', :label => 'Series'
     config.add_show_field 'bibliography_tesim', :label => 'Bibliography', helper_method: :autolink_field
-    config.add_show_field 'cite_as_tesim', :label => 'Cite As'
+    #config.add_show_field 'cite_as_tesim', :label => 'Cite As'
     # archival collection info
     config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
     #config.add_show_field 'location_repo_tesim', :label => 'Repository Location'
