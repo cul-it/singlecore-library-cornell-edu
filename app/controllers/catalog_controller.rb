@@ -578,7 +578,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'venue2_address_tesim', :label => 'Address 2'
     config.add_show_field 'venue3_tesim', :label => 'Venue 3'
     config.add_show_field 'venue3_address_tesim', :label => 'Address 3'
-    config.add_show_field 'elevation_tesim', :label => 'Elevation'
+    #config.add_show_field 'elevation_tesim', :label => 'Elevation'
     config.add_show_field 'addresscreator_tesim', :label => 'Address (Creator)'
     # identifier
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
