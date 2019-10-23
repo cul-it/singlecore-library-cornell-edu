@@ -660,7 +660,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'lang_tesim', :label => 'Language'
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'culture_orig_tesim', :label => 'Original Culture'
-    config.add_show_field 'style_period_tesim', :label => 'Style/Period'
+    #config.add_show_field 'style_period_tesim', :label => 'Style/Period'
     config.add_show_field 'archaeological_style_period_tesim', :label => 'Archaeological Period'
     config.add_show_field 'style_orig_tesim', :label => 'Original Style'
     config.add_show_field 'type_tesim', :label => 'Work Type', :link_to_search => true
