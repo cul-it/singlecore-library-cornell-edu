@@ -364,7 +364,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'preservation_item_id_tesim', :label => 'PreservationItemID' # 10
     config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
     config.add_show_field 'r1_agent_role_tesim', :label => 'Agent_Role' # 55
-    config.add_show_field 'r1_agent_tesim', :label => 'Agent' # 55
+    config.add_show_field 'r1_agent_tesim', :label => 'Agent', :link_to_search => true # 55
     config.add_show_field 'r1_alternate_title_tesim', :label => 'Alternate Title' # 5
     config.add_show_field 'r1_annotation_tesim', :label => 'Annotation' # 3
     config.add_show_field 'r1_bibliography_tesim', :label => 'Bibliography' # 7
@@ -512,7 +512,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'dig_coll_tesim', :label => 'Digital Collection'
     #config.add_show_field 'set_title_tesim', :label => 'Set', :link_to_search => true
     # creator
-    config.add_show_field 'r1_agent_tesim', :label => 'Agent', :link_to_search => true
     config.add_show_field 'r1_agent_role_tesim', :label => 'Agent Role', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'role_tesim', :label => 'Creator Role'
