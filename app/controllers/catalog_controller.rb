@@ -401,7 +401,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'r1_relationships_tesim', :label => 'Relationships' # 9
     config.add_show_field 'r1_rights_tesim', :label => 'Rights' # 61
     config.add_show_field 'r1_series_tesim', :label => 'Series' # 7
-    config.add_show_field 'r1_site_tesim', :label => 'Site' # 22
+    config.add_show_field 'r1_site_tesim', :label => 'Site', :link_to_search => true # 22
     config.add_show_field 'r1_source_tesim', :label => 'Source' # 21
     config.add_show_field 'r1_species_tesim', :label => 'Species' # 2
     config.add_show_field 'r1_subject_tesim', :label => 'Subject' # 50
@@ -553,7 +553,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'century_tesim', :label => 'Century'
     config.add_show_field 'date_created_on_ssi', :label => 'Date posted', :link_to_search => true
     # location
-    config.add_show_field 'r1_site_tesim', :label => 'Site', :link_to_search => true
     config.add_show_field 'r1_location_tesim', :label => 'Location', :link_to_search => true
     config.add_show_field 'r1_country_tesim', :label => 'Country', :link_to_search => true
     # config.add_show_field 'creation_site_location_tesim', :label => 'Site', :link_to_search => true
