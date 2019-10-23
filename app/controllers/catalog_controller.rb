@@ -336,7 +336,7 @@ class CatalogController < ApplicationController
     end
 
     # solr fields to be displayed in the show (single result) view
-    config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection' # 37
+    config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
     config.add_show_field 'artstor_classification_display_tesim', :label => 'Artstor Classification Display' # 42
     config.add_show_field 'bibid_tesim', :label => 'BibID', helper_method: :catalog_record # 3
     config.add_show_field 'box_tesim', :label => 'Box' # 20
@@ -730,7 +730,7 @@ class CatalogController < ApplicationController
     #config.add_show_field 'location_repo_tesim', :label => 'Repository Location'
     config.add_show_field 'repo_orig_tesim', :label => 'Original Repository'
     #config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true
-    config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true
+    #config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
     config.add_show_field 'box_box_folder_tesim', :label => 'Box'
     config.add_show_field 'folder_box_folder_tesim', :label => 'Folder'
