@@ -570,8 +570,8 @@ class CatalogController < ApplicationController
     #config.add_show_field 'country_location_tesim', :label => 'Country', :link_to_search => true
     config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
     config.add_show_field 'coordinates_tesim', :label => 'Coordinates'
-    config.add_show_field 'latitude_tsi', :label => 'Latitude'
-    config.add_show_field 'longitude_tsi', :label => 'Longitude'
+    #config.add_show_field 'latitude_tsi', :label => 'Latitude'
+    #config.add_show_field 'longitude_tsi', :label => 'Longitude'
     config.add_show_field 'venue1_tesim', :label => 'Venue 1'
     config.add_show_field 'venue1_address_tesim', :label => 'Address 1'
     config.add_show_field 'venue2_tesim', :label => 'Venue 2'
