@@ -497,6 +497,9 @@ class CatalogController < ApplicationController
     end
     config.add_show_field 'work_type_tesim', :label => 'Work Type' # 56
 
+    # special case fields that were not in the MAP spreadsheet
+    config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
+
     # updated order for Metadata Application Profile
     # title
     config.add_show_field 'title_tesim', :label => 'Title'
