@@ -20,7 +20,7 @@ Feature: Asset regular fields
     | Image View Description | Image View Description | 595408 | Front View |
     | Image View Type | Image View Type | 595408 | General |
     | Repository  | Repository  | 26303879 | Division of Rare and Manuscript Collections, Cornell University Library |
-    | Repository Location | Repository Location | 595408 | Shoellkopf House |
+    | Repository Location | Location | 595408 | Shoellkopf House |
     | Rights  | Rights  | 26303879 | This image was created by Cornell University Library |
     | Rights | Rights | 595408 | The content in |
     | Source  | Source  | 26303879 | Insite |
