@@ -491,7 +491,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'updated_by_tesim', :label => 'Updated By' # 63
     config.add_show_field 'updated_on_ss', :label => 'Updated On' # 63
     config.add_show_field 'vol_issue_no_tesim', :label => 'Volume/Issue' # 3
-    config.add_show_field 'work_sequence_isi', :label => 'Work Sequence' # 5
+    if ENV["COLLECTIONS"] == "development"
+      config.add_show_field 'work_sequence_isi', :label => 'Work Sequence' # 5
+    end
     config.add_show_field 'work_type_tesim', :label => 'Work Type' # 56
 
     # updated order for Metadata Application Profile
@@ -739,9 +741,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
     config.add_show_field 'disclaimer_tesim', :label => 'Disclaimer'
     config.add_show_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
-    if ENV["COLLECTIONS"] == "development"
-      config.add_show_field 'work_sequence_isi', :label => 'Work Sequence'
-    end
 
     # "fielded" search configuration. Used by pulldown among other places.
 
