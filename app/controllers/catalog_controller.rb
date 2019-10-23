@@ -404,7 +404,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'r1_site_tesim', :label => 'Site', :link_to_search => true # 22
     config.add_show_field 'r1_source_tesim', :label => 'Source' # 21
     config.add_show_field 'r1_species_tesim', :label => 'Species' # 2
-    config.add_show_field 'r1_subject_tesim', :label => 'Subject' # 50
+    config.add_show_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true # 50
     config.add_show_field 'r1_title_language_tesim', :label => 'Title_Language' # 6
     config.add_show_field 'r1_title_tesim', :label => 'Title' # 63
     config.add_show_field 'r1_transcription_tesim', :label => 'Transcription' # 10
@@ -656,7 +656,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'translation_of_tesim', :label => 'Translation of'
     config.add_show_field 'translation_as_tesim', :label => 'Translated as', helper_method: :autolink_field
     # work type, subject, etc.
-    config.add_show_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true
+    #config.add_show_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true
     config.add_show_field 'r1_image_view_desc_tesim', :label => 'Image View Description'
     config.add_show_field 'r1_image_view_type_tesim', :label => 'Image View Type'
     config.add_show_field 'lang_tesim', :label => 'Language'
