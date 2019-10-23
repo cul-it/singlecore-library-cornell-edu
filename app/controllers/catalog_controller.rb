@@ -353,7 +353,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'dig_coll_tesim', :label => 'Digital Collection'
-    config.add_show_field 'set_title_tesim', :label => 'Set', :link_to_search => true
+    #config.add_show_field 'set_title_tesim', :label => 'Set', :link_to_search => true
     # creator
     config.add_show_field 'r1_agent_tesim', :label => 'Agent', :link_to_search => true
     config.add_show_field 'r1_agent_role_tesim', :label => 'Agent Role', :link_to_search => true
