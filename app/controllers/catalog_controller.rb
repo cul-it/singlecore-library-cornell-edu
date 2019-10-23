@@ -355,6 +355,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'dig_coll_tesim', :label => 'Digital Collection'
     config.add_show_field 'set_title_tesim', :label => 'Set', :link_to_search => true
     # creator
+    config.add_show_field 'r1_agent_tesim', :label => 'Agent', :link_to_search => true
+    config.add_show_field 'r1_agent_role_tesim', :label => 'Agent Role', :link_to_search => true
     config.add_show_field 'creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'role_tesim', :label => 'Creator Role'
     config.add_show_field 'yiddish_creator_tesim', :label => 'Creator (Yiddish)'
@@ -369,7 +371,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
     config.add_show_field 'performer_matrix_tesim', :label => 'Performer'
     config.add_show_field 'ensemble_note_tesim', :label => 'Ensemble Note'
-    config.add_show_field 'founder_tesim', :label => 'Founder', :link_to_search => true
+    #config.add_show_field 'founder_tesim', :label => 'Founder', :link_to_search => true
     config.add_show_field 'collector_tesim', :label => 'Collector'
     config.add_show_field 'creator_orig_tesim', :label => 'Original Creator'
     config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
