@@ -345,6 +345,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true # 7
     config.add_show_field 'collection_level_bib_tesim', :label => 'Collection Level Bib' # 1
     config.add_show_field 'collection_sequence_isi', :label => 'Collection Sequence' # 6
+    config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'created_on_tsi', :label => 'Created On' # 63
     config.add_show_field 'creator_tesim', :label => 'Created By', :link_to_search => true # 63
     config.add_show_field 'dcmi_type_tesim', :label => 'DCMI Type' # 2
