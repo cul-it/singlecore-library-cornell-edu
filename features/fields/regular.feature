@@ -13,7 +13,7 @@ Feature: Asset regular fields
     Examples:
     | label | new_label | id | starting |
     | Collecting Program  | Collecting Program  | 26303879| Cornell University Hip Hop Collection |
-    | Collection  | Archival Collection  | 26303879 | Adler Hip Hop Archive |
+    | Archival Collection  | Archival Collection  | 26303757 | Adler Hip Hop Archive |
     | Date  | Date  | 26303879 | 1998-08-01 |
     | Description | Description | 595408 | "George and Priscilla Slocum Galleries Given |
     | Identifier | ID Number | 595408 | 100_1398 |
@@ -38,3 +38,4 @@ Feature: Asset regular fields
     | Longitude | Longitude | 3851180 | 4.189368 |
     #| Identifier | ID Number | 3851180 | AiguesMortes1966SouthWallFacingChannel.jpg |
     | Work Type | Work Type | 3851180 | color photographs |
+    | Collection | Collection | 926992 | Joe Conzo Jr. Archive |
