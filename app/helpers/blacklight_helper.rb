@@ -478,8 +478,91 @@ def has_collection_selected?
   end
 end
 
+def compound_agent args
+  Rails.logger.level = 0
+  if args[:document]["compound_agent_tesim"].present?
+    compound = JSON.parse(args[:document]["compound_agent_tesim"][0])
+    parts = []
+    compound.each do | part |
+      row = part['agent']
+      row += ' (' + part['agent_role'] + ')' if part['agent_role'].present?
+      parts << row
+    end
+    return parts.join('<br />').html_safe
+  end
+end
+
+def compound_date args
+  Rails.logger.level = 0
+  if args[:document]["compound_date_tesim"].present?
+    compound = JSON.parse(args[:document]["compound_date_tesim"][0])
+    parts = []
+    compound.each do | part |
+      row = part['date']
+      row += ' (' + part['date_type'] + ')' if part['date_type'].present?
+      parts << row
+    end
+    return parts.join('<br />').html_safe
+  end
+end
+
+def compound_identifier args
+  Rails.logger.level = 0
+  if args[:document]["compound_identifier_tesim"].present?
+    compound = JSON.parse(args[:document]["compound_identifier_tesim"][0])
+    parts = []
+    compound.each do | part |
+      row = part['identifier']
+      row += ' (' + part['identifier_type'] + ')' if part['identifier_type'].present?
+      parts << row
+    end
+    return parts.join('<br />').html_safe
+  end
+end
+
+def compound_legacy_label args
+  Rails.logger.level = 0
+  if args[:document]["compound_legacy_label_tesim"].present?
+    compound = JSON.parse(args[:document]["compound_legacy_label_tesim"][0])
+    parts = []
+    compound.each do | part |
+      row = part['legacy_label']
+      row += ': ' + part['legacy_value'] if part['legacy_value'].present?
+      parts << row
+    end
+    return parts.join('<br />').html_safe
+  end
+end
+
+def compound_measurement args
+  Rails.logger.level = 0
+  if args[:document]["compound_measurement_tesim"].present?
+    compound = JSON.parse(args[:document]["compound_measurement_tesim"][0])
+    parts = []
+    compound.each do | part |
+      row = part['measurement_dimension']
+      row += ': ' + part['measurement'] if part['measurement'].present?
+      row += ' ' + part['measurement_units'] if part['measurement_units'].present?
+      parts << row
+    end
+    return parts.join('<br />').html_safe
+  end
+end
 
 
+def compound_title args
+  Rails.logger.level = 0
+  if args[:document]["compound_title_tesim"].present?
+    compound = JSON.parse(args[:document]["compound_title_tesim"][0])
+    parts = []
+    compound.each do | part |
+      row = part['title']
+      row += ' (' + part['language'] + ')' if part['language'].present?
+      parts << row
+    end
+    return parts.join('<br />').html_safe
+  end
+end
 
 
 end
