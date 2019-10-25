@@ -385,8 +385,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'r5_bibliography_tesim', :label => 'Bibliography' # 1
     config.add_show_field 'r1_cataloger_tesim', :label => 'Cataloger' # 4
     config.add_show_field 'r1_condition_tesim', :label => 'Condition' # 3
-    config.add_show_field 'r1_culture_tesim', :label => 'Culture' # 34
     # config.add_show_field 'r1_country_tesim', :label => 'Country', :link_to_search => true # 38
+    config.add_show_field 'r1_culture_tesim', :label => 'Culture', :link_to_search => true # 34
     config.add_show_field 'compound_date_tesim', :label => 'Date', helper_method: :compound_date
     # config.add_show_field 'r1_date_tesim', :label => 'Date' # 62
     # config.add_show_field 'r2_date_tesim', :label => 'Date' # 12
