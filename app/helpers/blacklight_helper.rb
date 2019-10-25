@@ -105,7 +105,7 @@ def measurements options={}
       m_dimension = measurement_dimension + ')'
       measurements << m_dimension
     end
-  elsif options[:document]['map_measurement_tesim'].present? && options[:document]['map_measurement_unit_tesim'].present? && 
+  elsif options[:document]['map_measurement_tesim'].present? && options[:document]['map_measurement_unit_tesim'].present? &&
     !options[:document]['map_measurement_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement_tesim'].each do |measurement|
@@ -117,7 +117,7 @@ def measurements options={}
       measurements << m_unit
     end
   else
-    options[:document]['map_measurement_tesim'].present? && !options[:document]['map_measurement_unit_tesim'].present? && 
+    options[:document]['map_measurement_tesim'].present? && !options[:document]['map_measurement_unit_tesim'].present? &&
     !options[:document]['map_measurement_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement_tesim'].each do |measurement|
@@ -374,7 +374,7 @@ def chla_thumbnail args
   if !args['id'].include?('articles')
    thumb = args['id']
    typeResponse = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
-   if typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Page"  
+   if typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Page"
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
    else
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}_1&wt=json&indent=true"))
@@ -425,7 +425,7 @@ def autolink_field args
     return args[:document][args[:field]].join("<br>").html_safe
    end
   else
-   return args[:document][args[:field]].join("<br>").html_safe    
+   return args[:document][args[:field]].join("<br>").html_safe
   end
 end
 
