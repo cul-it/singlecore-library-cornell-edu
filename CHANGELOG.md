@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### changed
+- replaced the config.add_show_field section of catalog_controller.rb with
 - added copyfields to managed-schema on [dev solr](http://digcoll-dev.internal.library.cornell.edu:8983/solr/#/digitalcollections2)
 
 ```
