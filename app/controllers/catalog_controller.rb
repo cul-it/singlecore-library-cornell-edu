@@ -385,8 +385,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'r5_bibliography_tesim', :label => 'Bibliography' # 1
     config.add_show_field 'r1_cataloger_tesim', :label => 'Cataloger' # 4
     config.add_show_field 'r1_condition_tesim', :label => 'Condition' # 3
-    config.add_show_field 'r1_country_tesim', :label => 'Country', :link_to_search => true # 38
     config.add_show_field 'r1_culture_tesim', :label => 'Culture' # 34
+    # config.add_show_field 'r1_country_tesim', :label => 'Country', :link_to_search => true # 38
     config.add_show_field 'compound_date_tesim', :label => 'Date', helper_method: :compound_date
     # config.add_show_field 'r1_date_tesim', :label => 'Date' # 62
     # config.add_show_field 'r2_date_tesim', :label => 'Date' # 12
@@ -410,8 +410,8 @@ class CatalogController < ApplicationController
     # config.add_show_field 'r3_identifier_type_tesim', :label => 'Identifier_Type' # 7
     # config.add_show_field 'r4_identifier_type_tesim', :label => 'Identifier_Type' # 3
     # config.add_show_field 'r5_identifier_type_tesim', :label => 'Identifier_Type' # 1
-    config.add_show_field 'r1_image_view_desc_tesim', :label => 'Image View Description' # 16
-    config.add_show_field 'r1_image_view_type_tesim', :label => 'Image View Type' # 14
+    # config.add_show_field 'r1_image_view_desc_tesim', :label => 'Image View Description' # 16
+    # config.add_show_field 'r1_image_view_type_tesim', :label => 'Image View Type' # 14
     config.add_show_field 'r1_inscription_tesim', :label => 'Inscription' # 9
     config.add_show_field 'r1_kaltura_id_s', :label => 'Kaltura ID' # 3
     config.add_show_field 'r2_kaltura_id_s', :label => 'Kaltura ID' # 1
