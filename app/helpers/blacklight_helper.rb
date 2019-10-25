@@ -318,11 +318,11 @@ end
 
 def get_stereoscopes_multiviews args
   collection = args['collection_tesim'][0]
-  if args['identifier_tesim'].present?
-    parentid = args['identifier_tesim'][0]
+  if args['r1_identifier_tesim'].present?
+    parentid = args['r1_identifier_tesim'][0]
   end
   sequence = args['work_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=identifier_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=r1_identifier_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
   @response = response['response']['docs']
   return @response
 end
