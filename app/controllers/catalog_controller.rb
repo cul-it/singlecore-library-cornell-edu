@@ -365,7 +365,7 @@ class CatalogController < ApplicationController
     # config.add_show_field 'preservation_collection__id_tesim', :label => 'PreservationCollectionID' # 10
     # config.add_show_field 'preservation_item_id_tesim', :label => 'PreservationItemID' # 10
     # config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
-    config.add_show_field 'compound_agent_tesim', :label => 'Agent Role', helper_method: :compound_agent
+    config.add_show_field 'agent_hash_tesim', :label => 'Agent Role', helper_method: :compound_agent
     # config.add_show_field 'r1_agent_role_tesim', :label => 'Agent_Role', :link_to_search => true # 55
     # config.add_show_field 'r2_agent_role_tesim', :label => 'Agent_Role' # 28
     # config.add_show_field 'r3_agent_role_tesim', :label => 'Agent_Role' # 9
@@ -387,7 +387,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'r1_condition_tesim', :label => 'Condition' # 3
     # config.add_show_field 'r1_country_tesim', :label => 'Country', :link_to_search => true # 38
     config.add_show_field 'r1_culture_tesim', :label => 'Culture', :link_to_search => true # 34
-    config.add_show_field 'compound_date_tesim', :label => 'Date', helper_method: :compound_date
+    config.add_show_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_date
     # config.add_show_field 'r1_date_tesim', :label => 'Date' # 62
     # config.add_show_field 'r2_date_tesim', :label => 'Date' # 12
     # config.add_show_field 'r3_date_tesim', :label => 'Date' # 2
@@ -399,7 +399,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'r3_description_tesim', :label => 'Description' # 1
     config.add_show_field 'r1_event_name_tesim', :label => 'Event' # 7
     config.add_show_field 'r1_exhibition_tesim', :label => 'Exhibition' # 1
-    config.add_show_field 'compound_identifier_tesim', :label => 'Identifier', helper_method: :compound_identifier
+    config.add_show_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_identifier
     # config.add_show_field 'r1_identifier_tesim', :label => 'Identifier' # 52
     # config.add_show_field 'r2_identifier_tesim', :label => 'Identifier' # 19
     # config.add_show_field 'r3_identifier_tesim', :label => 'Identifier' # 7
@@ -421,7 +421,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'r1_kaltura_playlist_s', :label => 'Kaltura Playlist' # 1
     config.add_show_field 'r1_keywords_subject_tesim', :label => 'Keywords' # 3
     config.add_show_field 'r1_language_tesim', :label => 'Language' # 12
-    config.add_show_field 'compound_legacy_label_tesim', :label => 'Legacy Label', helper_method: :compound_legacy_label
+    config.add_show_field 'legacy_label_hash_tesim', :label => 'Legacy Label', helper_method: :compound_legacy_label
     # config.add_show_field 'r1_legacy_label_tesim', :label => 'Legacy_Label' # 10
     # config.add_show_field 'r2_legacy_label_tesim', :label => 'Legacy_Label' # 4
     # config.add_show_field 'r3_legacy_label_tesim', :label => 'Legacy_Label' # 3
@@ -439,7 +439,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'r3_location_tesim', :label => 'Location' # 1
     config.add_show_field 'r4_location_tesim', :label => 'Location' # 1
     config.add_show_field 'r1_mat_tech_tesim', :label => 'Materials/Techniques' # 36
-    config.add_show_field 'compound_measurement_tesim', :label => 'Measurement', helper_method: :compound_measurement
+    config.add_show_field 'measurement_hash_tesim', :label => 'Measurement', helper_method: :compound_measurement
     # config.add_show_field 'r1_measurement_dimension_tesim', :label => 'Measurement_Dimension' # 14
     # config.add_show_field 'r2_measurement_dimension_tesim', :label => 'Measurement_Dimension' # 5
     # config.add_show_field 'r3_measurement_dimension_tesim', :label => 'Measurement_Dimension' # 2
@@ -477,7 +477,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'r1_species_tesim', :label => 'Species' # 2
     config.add_show_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true # 50
     config.add_show_field 'r2_subject_tesim', :label => 'Subject' # 4
-    config.add_show_field 'compound_title_tesim', :label => 'Title', helper_method: :compound_title
+    config.add_show_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_title
     # config.add_show_field 'r1_title_language_tesim', :label => 'Title_Language' # 6
     # config.add_show_field 'r2_title_language_tesim', :label => 'Title_Language' # 6
     # config.add_show_field 'r3_title_language_tesim', :label => 'Title_Language' # 1

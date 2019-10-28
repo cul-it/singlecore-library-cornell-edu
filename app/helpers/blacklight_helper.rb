@@ -480,8 +480,8 @@ end
 
 def compound_agent args
   Rails.logger.level = 0
-  if args[:document]["compound_agent_tesim"].present?
-    compound = JSON.parse(args[:document]["compound_agent_tesim"][0])
+  if args[:document]["agent_hash_tesim"].present?
+    compound = JSON.parse(args[:document]["agent_hash_tesim"][0])
     parts = []
     compound.each do | part |
       row = part['agent']
@@ -494,8 +494,8 @@ end
 
 def compound_date args
   Rails.logger.level = 0
-  if args[:document]["compound_date_tesim"].present?
-    compound = JSON.parse(args[:document]["compound_date_tesim"][0])
+  if args[:document]["date_hash_tesim"].present?
+    compound = JSON.parse(args[:document]["date_hash_tesim"][0])
     parts = []
     compound.each do | part |
       row = part['date']
@@ -508,8 +508,8 @@ end
 
 def compound_identifier args
   Rails.logger.level = 0
-  if args[:document]["compound_identifier_tesim"].present?
-    compound = JSON.parse(args[:document]["compound_identifier_tesim"][0])
+  if args[:document]["identifier_hash_tesim"].present?
+    compound = JSON.parse(args[:document]["identifier_hash_tesim"][0])
     parts = []
     compound.each do | part |
       row = part['identifier']
@@ -522,8 +522,8 @@ end
 
 def compound_legacy_label args
   Rails.logger.level = 0
-  if args[:document]["compound_legacy_label_tesim"].present?
-    compound = JSON.parse(args[:document]["compound_legacy_label_tesim"][0])
+  if args[:document]["legacy_label_hash_tesim"].present?
+    compound = JSON.parse(args[:document]["legacy_label_hash_tesim"][0])
     parts = []
     compound.each do | part |
       row = part['legacy_label']
@@ -536,8 +536,8 @@ end
 
 def compound_measurement args
   Rails.logger.level = 0
-  if args[:document]["compound_measurement_tesim"].present?
-    compound = JSON.parse(args[:document]["compound_measurement_tesim"][0])
+  if args[:document]["measurement_hash_tesim"].present?
+    compound = JSON.parse(args[:document]["measurement_hash_tesim"][0])
     parts = []
     compound.each do | part |
       row = part['measurement_dimension']
@@ -552,8 +552,8 @@ end
 
 def compound_title args
   Rails.logger.level = 0
-  if args[:document]["compound_title_tesim"].present?
-    compound = JSON.parse(args[:document]["compound_title_tesim"][0])
+  if args[:document]["title_hash_tesim"].present?
+    compound = JSON.parse(args[:document]["title_hash_tesim"][0])
     parts = []
     compound.each do | part |
       row = part['title']
