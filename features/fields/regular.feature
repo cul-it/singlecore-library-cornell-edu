@@ -20,6 +20,7 @@ Feature: Asset regular fields
     | Coordinates | Coordinates | 3851180 | 43.564966,4.189368 |
     | Country | Country | 3851180 | France |
     | Date  | Date  | 26303879 | 1998-08-01 |
+    | Date | Date | 26305773 | 1989-09 |
     | Description | Description | 595408 | "George and Priscilla Slocum Galleries Given |
     | Founder | Agent | 3851180 | Louis IX |
     | Identifier | ID Number | 595408 | 100_1398 |
