@@ -308,7 +308,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
     config.add_index_field 'r1_country_tesim', :label => 'Country', :link_to_search => true # 38
     config.add_index_field 'r1_culture_tesim', :label => 'Culture', :link_to_search => true # 34
-    config.add_index_field 'r1_date_tesim', :label => 'Date'
+    config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_date
     config.add_index_field 'r1_description_tesim', :label => 'Description' # 53
     config.add_index_field 'earliest_date_isi', :label => 'Earliest Date' # 60
     config.add_index_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_identifier
