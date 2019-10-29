@@ -303,32 +303,48 @@ class CatalogController < ApplicationController
     config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
-    config.add_index_field 'author_tesim', :label => 'Creator', :link_to_search => true
-    config.add_index_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
-    config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
-    config.add_index_field 'photographer_creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_index_field 'architect_creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_index_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_index_field 'occasion_tesim', :label => 'Occasion'
-    config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
-    config.add_index_field 'common_name_tesim', :label => 'Common Name'
-    config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
-    config.add_index_field 'volume_tesim', :label => 'Volume'
-    config.add_index_field 'page_tesim', :label => 'Page'
+    config.add_index_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent, :link_to_search => true
+    config.add_index_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
+    config.add_index_field 'r1_country_tesim', :label => 'Country', :link_to_search => true # 38
+    config.add_index_field 'r1_culture_tesim', :label => 'Culture', :link_to_search => true # 34
+    config.add_index_field 'r1_date_tesim', :label => 'Date'
+    config.add_index_field 'r1_description_tesim', :label => 'Description' # 53
+    config.add_index_field 'earliest_date_isi', :label => 'Earliest Date' # 60
+    config.add_index_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_identifier
+    config.add_index_field 'r1_keywords_subject_tesim', :label => 'Keywords' # 3
+    config.add_index_field 'latest_date_isi', :label => 'Latest Date' # 60
+    config.add_index_field 'r1_location_tesim', :label => 'Location', :link_to_search => true # 46
+    config.add_index_field 'r1_mat_tech_tesim', :label => 'Materials/Techniques' # 36
+    config.add_index_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
+    config.add_index_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true # 50
+    config.add_index_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_title
+    config.add_index_field 'work_type_tesim', :label => 'Work Type' # 56
+  # replaced by agent config.add_index_field 'author_tesim', :label => 'Creator', :link_to_search => true
+    # replaced by agent config.add_index_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
+    # replaced by agent config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true
+    # config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
+    # config.add_index_field 'photographer_creator_tesim', :label => 'Creator', :link_to_search => true
+    # config.add_index_field 'architect_creator_tesim', :label => 'Creator', :link_to_search => true
+    # config.add_index_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
+    # config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
+    # config.add_index_field 'occasion_tesim', :label => 'Occasion'
+    # config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
+    # config.add_index_field 'common_name_tesim', :label => 'Common Name'
+    # config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
+    # config.add_index_field 'volume_tesim', :label => 'Volume'
+    # config.add_index_field 'page_tesim', :label => 'Page'
 
     # these index fields are from the dlxs collections
-    config.add_index_field 'publication_tesim', :label => 'Publication'
+    # config.add_index_field 'publication_tesim', :label => 'Publication'
 
-    config.add_index_field 'publisher_tesim', :label => 'Publisher'
-    config.add_index_field 'pubplace_tesim', :label => 'Publication Place'
-    config.add_index_field 'pubdate_tesim', :label => 'Date'
+    # config.add_index_field 'publisher_tesim', :label => 'Publisher'
+    # config.add_index_field 'pubplace_tesim', :label => 'Publication Place'
+    # config.add_index_field 'pubdate_tesim', :label => 'Date'
 
-    config.add_index_field 'image_ocr_tesim',:label => 'text'
-    config.add_index_field 'book_title', :label => 'Book Title'
-    config.add_index_field 'r1_date_tesim', :label => 'Date'
-    config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
+    # config.add_index_field 'image_ocr_tesim',:label => 'text'
+    # config.add_index_field 'book_title', :label => 'Book Title'
+    # config.add_index_field 'r1_date_tesim', :label => 'Date'
+    # config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
 
     #config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
 
