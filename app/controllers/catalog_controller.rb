@@ -318,7 +318,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'r1_mat_tech_tesim', :label => 'Materials/Techniques' # 36
     config.add_index_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
     config.add_index_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true # 50
-    config.add_index_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_title
+    # already there config.add_index_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_title
     config.add_index_field 'work_type_tesim', :label => 'Work Type' # 56
   # replaced by agent config.add_index_field 'author_tesim', :label => 'Creator', :link_to_search => true
     # replaced by agent config.add_index_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
