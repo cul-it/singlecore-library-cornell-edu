@@ -540,10 +540,17 @@ def compound_measurement args
     compound = JSON.parse(arg)
     parts = []
     compound.each do | part |
-      row = part['measurement_dimension']
-      row += ': ' + part['measurement'] if part['measurement'].present?
-      row += ' ' + part['measurement_units'] if part['measurement_units'].present?
-      parts << row
+      row = ''
+      if part['measurement_dimension'].present?
+        row += part['measurement_dimension'] + ": "
+      end
+      if part['measurement'].present?
+        row += part['measurement'] + ' '
+      end
+      if part['measurement_units'].present?
+        row += part['measurement_units']
+      end
+      parts << row unless row.empty?
     end
     return parts.join('<br />').html_safe
   end
