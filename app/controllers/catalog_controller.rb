@@ -251,10 +251,10 @@ class CatalogController < ApplicationController
                          maxlength: 6
                        }
     config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
-    config.add_facet_field 'illustrator_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
-    config.add_facet_field 'second_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
-    config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
-    config.add_facet_field 'architect_creator_tesim', :label => 'Architect', :show => false
+    # replaced by agent config.add_facet_field 'illustrator_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
+    # replaced by agent config.add_facet_field 'second_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
+    # replaced by agent config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
+    # replaced by agent config.add_facet_field 'architect_creator_tesim', :label => 'Architect', :show => false
     config.add_facet_field 'location_tesim', :label => 'Location', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'system_tesim', :label => 'System', :sort => 'count', :show => false
@@ -276,22 +276,23 @@ class CatalogController < ApplicationController
     config.add_facet_field 'creation_site_location_tesim', :label => 'Site', show: false
     config.add_facet_field 'region_location_tesim', :label => 'Region', show: false
     config.add_facet_field 'set_title_tesim', :label => 'Set', :show => true, :limit => 5
-    config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
+    # replaced by agent config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
+    config.add_facet_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent, :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
     config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
-    config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
+    # replaced by agent config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
     config.add_facet_field 'other_location_tesim', :label => 'Site', :show => false
     config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
     config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
     config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
-    config.add_facet_field 'designer_creator_tesim', :label => 'Designer', :show => false
-    config.add_facet_field 'writer_creator_tesim', :label => 'Writer', :show => false
-    config.add_facet_field 'composer_creator_tesim', :label => 'Composer', :show => false
-    config.add_facet_field 'musician_creator_tesim', :label => 'Musician', :show => false
-    config.add_facet_field 'lyricist_creator_tesim', :label => 'Lyricist', :show => false
-    config.add_facet_field 'arranger_creator_tesim', :label => 'Arranger', :show => false
-    config.add_facet_field 'performer_creator_tesim', :label => 'Performer', :show => false
+    # replaced by agent config.add_facet_field 'designer_creator_tesim', :label => 'Designer', :show => false
+    # replaced by agent config.add_facet_field 'writer_creator_tesim', :label => 'Writer', :show => false
+    # replaced by agent config.add_facet_field 'composer_creator_tesim', :label => 'Composer', :show => false
+    # replaced by agent config.add_facet_field 'musician_creator_tesim', :label => 'Musician', :show => false
+    # replaced by agent config.add_facet_field 'lyricist_creator_tesim', :label => 'Lyricist', :show => false
+    # replaced by agent config.add_facet_field 'arranger_creator_tesim', :label => 'Arranger', :show => false
+    # replaced by agent config.add_facet_field 'performer_creator_tesim', :label => 'Performer', :show => false
     config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
 
     if ENV["COLLECTIONS"] == "development"
