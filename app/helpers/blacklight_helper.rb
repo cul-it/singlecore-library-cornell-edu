@@ -551,9 +551,9 @@ end
 
 
 def compound_title args
-  Rails.logger.level = 0
-  if args[:document]["title_hash_tesim"].present?
-    compound = JSON.parse(args[:document]["title_hash_tesim"][0])
+  arg = (args.is_a? String) ? args : args[:document]["title_hash_tesim"][0]
+  if arg.present?
+    compound = JSON.parse(arg)
     parts = []
     compound.each do | part |
       row = part['title']
