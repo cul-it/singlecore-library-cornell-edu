@@ -56,3 +56,9 @@ end
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
+def what_is(element)
+  puts "\n********************* what is V\n"
+  puts element.inspect
+  puts element['innerHTML']
+  puts "\n********************* what is ^\n"
+end
