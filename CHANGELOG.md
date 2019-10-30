@@ -6,6 +6,42 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### changed
+- for each of the non-compound r*_xxx_tesim fields, make a copyfield that combines all the r*_xxx_tesim into xxx_tesim,
+(unless xxx_tesim already exists):
+   - r1_alternate_title_tesim
+   - r1_annotation_tesim
+   - r1_bibliography_tesim (already exists)
+   - r1_cataloger_tesim
+   - r1_condition_tesim
+   - r1_country_tesim
+   - r1_culture_tesim
+   - r1_description_tesim (already exists)
+   - r1_event_name_tesim
+   - r1_exhibition_tesim
+   - r1_inscription_tesim
+   - r1_kaltura_id_s -> kaltura_id_ssm
+   - r1_kaltura_playlist_s -> kaltura_playlist_ssm
+   - r1_keywords_subject_tesim
+   - r1_language_tesim
+   - r1_location_tesim
+   - r1_mat_tech_tesim (already exists)
+   - r1_notes_tesim
+   - r1_ocr_transcription_tesim
+   - r1_provenance_tesim
+   - r1_reference_tesim
+   - r1_related_work_tesim
+   - r1_relationships_tesim
+   - r1_rights_tesim
+   - r1_series_tesim
+   - r1_site_tesim
+   - r1_source_tesim
+   - r1_species_tesim
+   - r1_subject_tesim (already exists)
+   - r1_transcription_tesim
+   - r1_translation_as_tesim
+   - r1_translation_of_tesim
+   - r1_translation_tesim
+   - r1_venue_tesim
 - replaced the index section with an alpha list of the index fields specified in the MAP spreadsheet
 - replaced the facet section of catalog_controller.rb with new fields
 - replaced the config.add_show_field section of catalog_controller.rb with an alpha list of the new fields
