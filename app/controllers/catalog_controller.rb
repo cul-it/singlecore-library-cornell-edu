@@ -265,11 +265,11 @@ class CatalogController < ApplicationController
     config.add_facet_field 'lang_tesim', :label => 'Language', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5, :sort => 'index'
     config.add_facet_field 'mat_tech_tesim', :label => 'Materials/Techniques', :show => true, :limit => 5
-    config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5, show: false
     config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5, show: false
     config.add_facet_field 'fd_27325_tsi', :label => 'Year of photo', :limit => 5, show: false
     config.add_facet_field 'senechal_tesim', :label => 'Senechal', :limit => 5, show: false
     config.add_facet_field 'village_tesim', :label => 'Village', :limit => 5, show: false
+    # now legacy_label config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5, show: false
     config.add_facet_field 'keywords_tesim', :label => 'Keywords', :limit => 5, show: false
     config.add_facet_field 'repository_tesim', :label => 'Repository', :limit => 5
     config.add_facet_field 'archival_collection_tesim', :label => 'Archival Collection', :limit => 5
