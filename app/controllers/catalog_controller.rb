@@ -458,7 +458,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'r2_location_tesim', :label => 'Location' # 2
     config.add_show_field 'r3_location_tesim', :label => 'Location' # 1
     config.add_show_field 'r4_location_tesim', :label => 'Location' # 1
-    config.add_show_field 'r1_mat_tech_tesim', :label => 'Materials/Techniques' # 36
+    config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true # 36
+    # config.add_show_field 'r1_mat_tech_tesim', :label => 'Materials/Techniques' # 36
     config.add_show_field 'measurement_hash_tesim', :label => 'Measurement', helper_method: :compound_measurement
     # config.add_show_field 'r1_measurement_dimension_tesim', :label => 'Measurement_Dimension' # 14
     # config.add_show_field 'r2_measurement_dimension_tesim', :label => 'Measurement_Dimension' # 5
