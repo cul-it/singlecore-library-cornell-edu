@@ -258,7 +258,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'location_tesim', :label => 'Location', :show => false
     # config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
     config.add_facet_field 'work_type_tesim', :label => 'Work Type' # 56
-    config.add_facet_field 'system_tesim', :label => 'System', :sort => 'count', :show => false
+    # now part of subject_tesim config.add_facet_field 'system_tesim', :label => 'System', :sort => 'count', :show => false
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
     config.add_facet_field 'loci_location_tesim', :label => 'Location', :sort => 'count', :limit => 5
