@@ -317,7 +317,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'r1_keywords_subject_tesim', :label => 'Keywords' # 3
     config.add_index_field 'latest_date_isi', :label => 'Latest Date' # 60
     config.add_index_field 'r1_location_tesim', :label => 'Location', :link_to_search => true # 46
-    config.add_index_field 'r1_mat_tech_tesim', :label => 'Materials/Techniques' # 36
+    config.add_index_field 'mat_tech_tesim', :label => 'Materials/Techniques' # 36
     config.add_index_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
     config.add_index_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true # 50
     # already there config.add_index_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_title
