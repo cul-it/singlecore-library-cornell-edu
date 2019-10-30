@@ -485,10 +485,12 @@ def compound_agent args
     parts = []
     compound.each do | part |
       row = part['agent']
-      row += ' (' + part['agent_role'] + ')' if part['agent_role'].present?
-      parts << row
+      row.split(/\|/).each do | agent |
+        agent += ' (' + part['agent_role'] + ')' if part['agent_role'].present?
+        parts << agent
+      end
     end
-    return parts.join('<br />').html_safe
+    return (args.is_a? String) ? parts : parts.join('<br />').html_safe
   end
 end
 
