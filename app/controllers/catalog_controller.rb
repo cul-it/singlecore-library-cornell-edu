@@ -308,18 +308,18 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     config.add_index_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent, :link_to_search => true
     config.add_index_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
-    config.add_index_field 'r1_country_tesim', :label => 'Country', :link_to_search => true # 38
-    config.add_index_field 'r1_culture_tesim', :label => 'Culture', :link_to_search => true # 34
+    config.add_index_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
+    config.add_index_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
     config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_date
-    config.add_index_field 'r1_description_tesim', :label => 'Description' # 53
+    config.add_index_field 'description_tesim', :label => 'Description' # 53
     config.add_index_field 'earliest_date_isi', :label => 'Earliest Date' # 60
     config.add_index_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_identifier
-    config.add_index_field 'r1_keywords_subject_tesim', :label => 'Keywords' # 3
+    config.add_index_field 'keywords_subject_tesim', :label => 'Keywords' # 3
     config.add_index_field 'latest_date_isi', :label => 'Latest Date' # 60
-    config.add_index_field 'r1_location_tesim', :label => 'Location', :link_to_search => true # 46
+    config.add_index_field 'location_tesim', :label => 'Location', :link_to_search => true # 46
     config.add_index_field 'mat_tech_tesim', :label => 'Materials/Techniques' # 36
     config.add_index_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
-    config.add_index_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true # 50
+    config.add_index_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
     # already there config.add_index_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_title
     config.add_index_field 'work_type_tesim', :label => 'Work Type' # 56
   # replaced by agent config.add_index_field 'author_tesim', :label => 'Creator', :link_to_search => true
