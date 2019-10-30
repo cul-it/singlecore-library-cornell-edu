@@ -396,17 +396,13 @@ class CatalogController < ApplicationController
     # config.add_show_field 'r3_agent_tesim', :label => 'Agent' # 9
     # config.add_show_field 'r4_agent_tesim', :label => 'Agent' # 4
     # config.add_show_field 'r5_agent_tesim', :label => 'Agent' # 1
-    config.add_show_field 'r1_alternate_title_tesim', :label => 'Alternate Title' # 5
-    config.add_show_field 'r1_annotation_tesim', :label => 'Annotation' # 3
-    config.add_show_field 'r1_bibliography_tesim', :label => 'Bibliography' # 7
-    config.add_show_field 'r2_bibliography_tesim', :label => 'Bibliography' # 1
-    config.add_show_field 'r3_bibliography_tesim', :label => 'Bibliography' # 1
-    config.add_show_field 'r4_bibliography_tesim', :label => 'Bibliography' # 1
-    config.add_show_field 'r5_bibliography_tesim', :label => 'Bibliography' # 1
-    config.add_show_field 'r1_cataloger_tesim', :label => 'Cataloger' # 4
-    config.add_show_field 'r1_condition_tesim', :label => 'Condition' # 3
+    config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title' # 5
+    config.add_show_field 'annotation_tesim', :label => 'Annotation' # 3
+    config.add_show_field 'bibliography_tesim', :label => 'Bibliography' # 7
+    config.add_show_field 'cataloger_tesim', :label => 'Cataloger' # 4
+    config.add_show_field 'condition_tesim', :label => 'Condition' # 3
     # config.add_show_field 'r1_country_tesim', :label => 'Country', :link_to_search => true # 38
-    config.add_show_field 'r1_culture_tesim', :label => 'Culture', :link_to_search => true # 34
+    config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
     config.add_show_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_date
     # config.add_show_field 'r1_date_tesim', :label => 'Date' # 62
     # config.add_show_field 'r2_date_tesim', :label => 'Date' # 12
@@ -414,11 +410,9 @@ class CatalogController < ApplicationController
     # config.add_show_field 'r1_date_type_tesim', :label => 'Date_Type' # 7
     # config.add_show_field 'r2_date_type_tesim', :label => 'Date_Type' # 11
     # config.add_show_field 'r3_date_type_tesim', :label => 'Date_Type' # 1
-    config.add_show_field 'r1_description_tesim', :label => 'Description' # 53
-    config.add_show_field 'r2_description_tesim', :label => 'Description' # 4
-    config.add_show_field 'r3_description_tesim', :label => 'Description' # 1
-    config.add_show_field 'r1_event_name_tesim', :label => 'Event' # 7
-    config.add_show_field 'r1_exhibition_tesim', :label => 'Exhibition' # 1
+    config.add_show_field 'description_tesim', :label => 'Description' # 53
+    config.add_show_field 'event_name_tesim', :label => 'Event' # 7
+    config.add_show_field 'exhibition_tesim', :label => 'Exhibition' # 1
     config.add_show_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_identifier
     # config.add_show_field 'r1_identifier_tesim', :label => 'Identifier' # 52
     # config.add_show_field 'r2_identifier_tesim', :label => 'Identifier' # 19
@@ -432,15 +426,11 @@ class CatalogController < ApplicationController
     # config.add_show_field 'r5_identifier_type_tesim', :label => 'Identifier_Type' # 1
     # config.add_show_field 'r1_image_view_desc_tesim', :label => 'Image View Description' # 16
     # config.add_show_field 'r1_image_view_type_tesim', :label => 'Image View Type' # 14
-    config.add_show_field 'r1_inscription_tesim', :label => 'Inscription' # 9
-    config.add_show_field 'r1_kaltura_id_s', :label => 'Kaltura ID' # 3
-    config.add_show_field 'r2_kaltura_id_s', :label => 'Kaltura ID' # 1
-    config.add_show_field 'r3_kaltura_id_s', :label => 'Kaltura ID' # 1
-    config.add_show_field 'r4_kaltura_id_s', :label => 'Kaltura ID' # 1
-    config.add_show_field 'r5_kaltura_id_s', :label => 'Kaltura ID' # 1
-    config.add_show_field 'r1_kaltura_playlist_s', :label => 'Kaltura Playlist' # 1
-    config.add_show_field 'r1_keywords_subject_tesim', :label => 'Keywords' # 3
-    config.add_show_field 'r1_language_tesim', :label => 'Language' # 12
+    config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
+    config.add_show_field 'kaltura_id_ssm', :label => 'Kaltura ID' # 3
+    config.add_show_field 'kaltura_playlist_ssm', :label => 'Kaltura Playlist' # 1
+    config.add_show_field 'keywords_subject_tesim', :label => 'Keywords' # 3
+    config.add_show_field 'language_tesim', :label => 'Language' # 12
     config.add_show_field 'legacy_label_hash_tesim', :label => 'Legacy Label', helper_method: :compound_legacy_label
     # config.add_show_field 'r1_legacy_label_tesim', :label => 'Legacy_Label' # 10
     # config.add_show_field 'r2_legacy_label_tesim', :label => 'Legacy_Label' # 4
@@ -454,10 +444,7 @@ class CatalogController < ApplicationController
     # config.add_show_field 'r4_legacy_value_tesim', :label => 'Legacy_Value' # 3
     # config.add_show_field 'r5_legacy_value_tesim', :label => 'Legacy_Value' # 2
     # config.add_show_field 'r6_legacy_value_tesim', :label => 'Legacy_Value' # 1
-    config.add_show_field 'r1_location_tesim', :label => 'Location', :link_to_search => true # 46
-    config.add_show_field 'r2_location_tesim', :label => 'Location' # 2
-    config.add_show_field 'r3_location_tesim', :label => 'Location' # 1
-    config.add_show_field 'r4_location_tesim', :label => 'Location' # 1
+    config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true # 46
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true # 36
     # config.add_show_field 'r1_mat_tech_tesim', :label => 'Materials/Techniques' # 36
     config.add_show_field 'measurement_hash_tesim', :label => 'Measurement', helper_method: :compound_measurement
@@ -476,26 +463,17 @@ class CatalogController < ApplicationController
     # config.add_show_field 'r3_measurement_units_tesim', :label => 'Measurement_Unit' # 2
     # config.add_show_field 'r4_measurement_units_tesim', :label => 'Measurement_Unit' # 2
     # config.add_show_field 'r5_measurement_units_tesim', :label => 'Measurement_Unit' # 1
-    config.add_show_field 'r1_notes_tesim', :label => 'Notes' # 33
-    config.add_show_field 'r2_notes_tesim', :label => 'Notes' # 6
-    config.add_show_field 'r3_notes_tesim', :label => 'Notes' # 1
-    config.add_show_field 'r1_ocr_transcription_tesim', :label => 'OCR Text' # 1
-    config.add_show_field 'r2_ocr_transcription_tesim', :label => 'OCR Text' # 1
-    config.add_show_field 'r3_ocr_transcription_tesim', :label => 'OCR Text' # 1
-    config.add_show_field 'r4_ocr_transcription_tesim', :label => 'OCR Text' # 1
-    config.add_show_field 'r1_provenance_tesim', :label => 'Provenance' # 9
-    config.add_show_field 'r1_reference_tesim', :label => 'References' # 2
-    config.add_show_field 'r1_related_work_tesim', :label => 'Related Work' # 3
-    config.add_show_field 'r1_relationships_tesim', :label => 'Relationships' # 9
-    config.add_show_field 'r2_relationships_tesim', :label => 'Relationships' # 1
-    config.add_show_field 'r1_rights_tesim', :label => 'Rights' # 61
-    config.add_show_field 'r2_rights_tesim', :label => 'Rights' # 1
-    config.add_show_field 'r1_series_tesim', :label => 'Series' # 7
-    config.add_show_field 'r2_series_tesim', :label => 'Series' # 1
-    config.add_show_field 'r1_site_tesim', :label => 'Site', :link_to_search => true # 22
-    config.add_show_field 'r1_source_tesim', :label => 'Source' # 21
-    config.add_show_field 'r2_source_tesim', :label => 'Source' # 2
-    config.add_show_field 'r1_species_tesim', :label => 'Species' # 2
+    config.add_show_field 'notes_tesim', :label => 'Notes' # 33
+    config.add_show_field 'ocr_transcription_tesim', :label => 'OCR Text' # 1
+    config.add_show_field 'provenance_tesim', :label => 'Provenance' # 9
+    config.add_show_field 'reference_tesim', :label => 'References' # 2
+    config.add_show_field 'related_work_tesim', :label => 'Related Work' # 3
+    config.add_show_field 'relationships_tesim', :label => 'Relationships' # 9
+    config.add_show_field 'rights_tesim', :label => 'Rights' # 61
+    config.add_show_field 'series_tesim', :label => 'Series' # 7
+    config.add_show_field 'site_tesim', :label => 'Site', :link_to_search => true # 22
+    config.add_show_field 'source_tesim', :label => 'Source' # 21
+    config.add_show_field 'species_tesim', :label => 'Species' # 2
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
     # config.add_show_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true # 50
     # config.add_show_field 'r2_subject_tesim', :label => 'Subject', :link_to_search => true # 4
@@ -506,14 +484,11 @@ class CatalogController < ApplicationController
     # config.add_show_field 'r1_title_tesim', :label => 'Title' # 63
     # config.add_show_field 'r2_title_tesim', :label => 'Title' # 7
     # config.add_show_field 'r3_title_tesim', :label => 'Title' # 1
-    config.add_show_field 'r1_transcription_tesim', :label => 'Transcription' # 10
-    config.add_show_field 'r2_transcription_tesim', :label => 'Transcription', helper_method: :autolink_field # 2
-    config.add_show_field 'r1_translation_as_tesim', :label => 'isTranslatedAs' # 1
-    config.add_show_field 'r1_translation_of_tesim', :label => 'isTranslationOf' # 1
-    config.add_show_field 'r1_translation_tesim', :label => 'Translation' # 3
-    config.add_show_field 'r1_venue_tesim', :label => 'Venue' # 4
-    config.add_show_field 'r2_venue_tesim', :label => 'Venue' # 2
-    config.add_show_field 'r3_venue_tesim', :label => 'Venue' # 1
+    config.add_show_field 'transcription_tesim', :label => 'Transcription' # 10
+    config.add_show_field 'translation_as_tesim', :label => 'isTranslatedAs' # 1
+    config.add_show_field 'translation_of_tesim', :label => 'isTranslationOf' # 1
+    config.add_show_field 'translation_tesim', :label => 'Translation' # 3
+    config.add_show_field 'venue_tesim', :label => 'Venue' # 4
     config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
     # config.add_show_field 'set_title_tesim', :label => 'Set Title', :link_to_search => true # 8
     # config.add_show_field 'style_period_tesim', :label => 'Style/Period' # 21
