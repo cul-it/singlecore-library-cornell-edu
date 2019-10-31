@@ -585,7 +585,7 @@ def compound_title args
     parts = []
     compound.each do | part |
       row = part['title']
-      row += ' (' + part['language'] + ')' if part['language'].present?
+      row += ' (' + part['title_language'] + ')' if part['title_language'].present?
       parts << row
     end
     return parts.join('<br />').html_safe
