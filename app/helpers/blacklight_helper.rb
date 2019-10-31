@@ -501,8 +501,10 @@ def compound_date args
     parts = []
     compound.each do | part |
       row = part['date']
-      row += ' (' + part['date_type'] + ')' if part['date_type'].present?
-      parts << row
+      row.split(/\|/).each do | date |
+        date += ' (' + part['date_type'] + ')' if part['date_type'].present?
+        parts << date
+      end
     end
     return parts.join('<br />').html_safe
   end
