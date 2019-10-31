@@ -37,6 +37,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
    - r1_source_tesim
    - r1_species_tesim
    - r1_subject_tesim (already exists)
+   - r1_title_tesim (only add the r1_title, not *_title_tesim to the copyfield)
    - r1_transcription_tesim
    - r1_translation_as_tesim
    - r1_translation_of_tesim
