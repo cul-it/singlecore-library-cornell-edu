@@ -522,6 +522,25 @@ def compound_identifier args
   end
 end
 
+def compound_image_view args
+  arg = (args.is_a? String) ? args : args[:document]["image_view_desc_hash_tesim"][0]
+  if arg.present?
+    compound = JSON.parse(arg)
+    parts = []
+    compound.each do | part |
+      if part['image_view_desc'].present? && part['image_view_type'].present?
+        row = part['image_view_desc'] + ' (' + part['image_view_type'] + ')'
+      else
+        row = ''
+        row += part['image_view_desc'] if part['image_view_desc'].present?
+        row += part['image_view_type'] if part['image_view_type'].present?
+      end
+      parts << row
+    end
+    return parts.join('<br />').html_safe
+  end
+end
+
 def compound_legacy_label args
   arg = (args.is_a? String) ? args : args[:document]["legacy_label_hash_tesim"][0]
   if arg.present?

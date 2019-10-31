@@ -424,6 +424,7 @@ class CatalogController < ApplicationController
     # config.add_show_field 'r3_identifier_type_tesim', :label => 'Identifier_Type' # 7
     # config.add_show_field 'r4_identifier_type_tesim', :label => 'Identifier_Type' # 3
     # config.add_show_field 'r5_identifier_type_tesim', :label => 'Identifier_Type' # 1
+    config.add_show_field 'image_view_desc_hash_tesim', :label => 'Image View', helper_method: :compound_image_view
     # config.add_show_field 'r1_image_view_desc_tesim', :label => 'Image View Description' # 16
     # config.add_show_field 'r1_image_view_type_tesim', :label => 'Image View Type' # 14
     config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
