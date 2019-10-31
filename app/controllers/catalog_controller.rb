@@ -277,12 +277,12 @@ class CatalogController < ApplicationController
     # replaced by r1_site_tesim config.add_facet_field 'creation_site_location_tesim', :label => 'Site', show: false
     config.add_facet_field 'site_tesim', :label => 'Site', show: false
     # replaced by r1_location_tesim config.add_facet_field 'region_location_tesim', :label => 'Region', show: false
-    config.add_facet_field 'location_tesim', :label => 'Region', show: false
+    # duplicate config.add_facet_field 'location_tesim', :label => 'Region', show: false
     config.add_facet_field 'set_title_tesim', :label => 'Set', :show => true, :limit => 5
     # replaced by agent config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent, :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
-    config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
+    # now in date_hash_tesim config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
     # replaced by agent config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
     config.add_facet_field 'other_location_tesim', :label => 'Site', :show => false
