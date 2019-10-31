@@ -478,6 +478,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
     # config.add_show_field 'r1_subject_tesim', :label => 'Subject', :link_to_search => true # 50
     # config.add_show_field 'r2_subject_tesim', :label => 'Subject', :link_to_search => true # 4
+    config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_title
     # config.add_show_field 'r1_title_language_tesim', :label => 'Title_Language' # 6
     # config.add_show_field 'r2_title_language_tesim', :label => 'Title_Language' # 6
