@@ -296,7 +296,7 @@ class CatalogController < ApplicationController
     # replaced by agent config.add_facet_field 'lyricist_creator_tesim', :label => 'Lyricist', :show => false
     # replaced by agent config.add_facet_field 'arranger_creator_tesim', :label => 'Arranger', :show => false
     # replaced by agent config.add_facet_field 'performer_creator_tesim', :label => 'Performer', :show => false
-    config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
+    # not in MAP spreadsheet config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
