@@ -287,8 +287,8 @@ class CatalogController < ApplicationController
     # replaced by agent config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
     config.add_facet_field 'other_location_tesim', :label => 'Site', :show => false
     config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
-    config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
-    config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
+    #not used config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
+    #part of date_hash config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
     # replaced by agent config.add_facet_field 'designer_creator_tesim', :label => 'Designer', :show => false
     # replaced by agent config.add_facet_field 'writer_creator_tesim', :label => 'Writer', :show => false
     # replaced by agent config.add_facet_field 'composer_creator_tesim', :label => 'Composer', :show => false
