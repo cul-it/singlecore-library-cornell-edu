@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   end
 
-resources :solr_documents, except: [:index], path: '/catalog', controller: 'catalog' do
+resources :solr_documents, except: [:index], path: '/catalog', controller: 'catalog', constraints: { id: /[a-zA-Z0-9_.:\-]+/ } do
       concerns :exportable
 end
 
