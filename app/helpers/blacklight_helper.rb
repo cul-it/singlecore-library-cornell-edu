@@ -586,7 +586,7 @@ def compound_title args
     compound = JSON.parse(arg)
     parts = []
     compound.each do | part |
-      row = part['title']
+      row = part['title'].present? ? part['title'] : ''
       row += ' (' + part['title_language'] + ')' if part['title_language'].present?
       parts << row
     end
