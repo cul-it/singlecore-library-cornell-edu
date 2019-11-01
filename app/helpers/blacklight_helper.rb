@@ -516,7 +516,7 @@ def compound_identifier args
     compound = JSON.parse(arg)
     parts = []
     compound.each do | part |
-      row = part['identifier']
+      row = part['identifier'].present? ? part['identifier'] : ''
       row += ' (' + part['identifier_type'] + ')' if part['identifier_type'].present?
       parts << row
     end
