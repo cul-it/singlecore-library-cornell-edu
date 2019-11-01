@@ -484,7 +484,7 @@ def compound_agent args
     compound = JSON.parse(arg)
     parts = []
     compound.each do | part |
-      row = part['agent']
+      row = part['agent'].present? ? part['agent'] : ''
       row.split(/\|/).each do | agent |
         agent += ' (' + part['agent_role'] + ')' if part['agent_role'].present?
         parts << agent
