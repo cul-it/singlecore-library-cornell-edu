@@ -500,7 +500,7 @@ def compound_date args
     compound = JSON.parse(arg)
     parts = []
     compound.each do | part |
-      row = part['date']
+      row = part['date'].present? ? part['date'] : ''
       row.split(/\|/).each do | date |
         date += ' (' + part['date_type'] + ')' if part['date_type'].present?
         parts << date
