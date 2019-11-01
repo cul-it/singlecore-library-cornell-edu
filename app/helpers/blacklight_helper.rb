@@ -549,7 +549,7 @@ def compound_legacy_label args
     compound = JSON.parse(arg)
     parts = []
     compound.each do | part |
-      row = part['legacy_label']
+      row = part['legacy_label'].present? ? part['legacy_label'] : ''
       row += ': ' + part['legacy_value'] if part['legacy_value'].present?
       parts << row
     end
