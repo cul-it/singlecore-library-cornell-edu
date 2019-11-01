@@ -16,8 +16,8 @@ class ApplicationController < ActionController::Base
       AND -solr_loader_tesim:"eCommons"
       AND -(collection_tesim:"Cornell Collection of Blaschka Invertebrate Models" AND portal_sequence_isi:[2 TO *])
       AND -(collection_tesim:"Seneca Haudenosaunee Archaeological Materials, circa 1688-1754" AND work_sequence_isi:[2 TO *])
-      AND -(collection_tesim:"Icelandic Stereoscopes" AND work_sequence_isi:[2 TO *])'
-
+      AND -(collection_tesim:"Icelandic Stereoscopes" AND work_sequence_isi:[2 TO *])
+      AND id:ss\:*'
 
     elsif environment == 'production'
       fq = '(collection_tesim:"Adler Hip Hop Archive"  AND -adler_status:"Suppress for portal")
