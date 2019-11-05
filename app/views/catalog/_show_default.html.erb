@@ -58,7 +58,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @url_related_link_tesim %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'Squeezes3Dlink']);"><%= @title_related_link_tesim %></a></li>
 					<% end %>
 			 		<% if @collection_website.present? %>
-						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
+						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website</a></li>
 					<% end %>
 					<% if @finding_aid.present? %>
 						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @finding_aid %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'FindingAid']);">Finding aid</a></li>
@@ -103,7 +103,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 				<div class="well">
           			<h2>About the Collection</h2>
 					<ul class="fa-ul collection-links">
-						<li><i class="fa-li fa fa-desktop" aria-hidden="true"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Collection website</a></li>
+						<li><i class="fa-li fa fa-desktop" aria-hidden="true"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website</a></li>
             			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
               				<li><i class="fa-li fa fa-book" aria-hidden="true"></i><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust</a></li>
               			<% end %>
