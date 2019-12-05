@@ -23,6 +23,8 @@ class ApplicationController < ActionController::Base
       OR display_target_tesim:"bento"
       OR collection_tesim:"Indonesian Music Archive"
       OR -collection_tesim:"Samuel J. May Anti-Slavery Collection"
+      OR -collection_tesim:"Language of Flowers"
+      OR -collection_tesim:"Home Economics Archive: Research, Tradition and History"
       OR -format_tesim:"Page"
       OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -solr_loader_tesim:"eCommons"
       AND +(collection_tesim:"New York State Aerial Photographs"
