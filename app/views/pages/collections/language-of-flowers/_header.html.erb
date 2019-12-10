@@ -1,5 +1,9 @@
 <div class="mann-header mann-header--flowers">
-	<%= render partial: 'pages/collections/language-of-flowers/menu' %>
+	<div class="navbar">
+		<div class="container">
+	        <%= render partial: 'pages/collections/language-of-flowers/title' %>
+		</div>
+	</div>
 	<%# stick the hero image on the home page only %>
 	<% if current_page?('/collections/language-of-flowers') %>
 		<div class="hero">
