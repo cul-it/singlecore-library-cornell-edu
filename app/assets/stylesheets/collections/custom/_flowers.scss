@@ -37,9 +37,6 @@ $flowers-brown: #724437;
 	}
 }
 .mann-layout--flowers {
-	// .well.highlight {
-	// 	background: url("/collections/chla/upfeathers.png");
-	// }
 	.collection-browse {
 		margin-bottom: 1em;
 		a {
@@ -74,7 +71,7 @@ $flowers-brown: #724437;
 @media (min-width: $screen-sm) { 
 	.mann-header--flowers {
 		.hero {
-			background: url("/collections/language-of-flowers/troncin.jpg") no-repeat;
+			background: url("/collections/flowers/troncin.jpg") no-repeat;
 		}
 	}
 }

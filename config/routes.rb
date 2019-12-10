@@ -97,7 +97,7 @@ end
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/fallout' => 'high_voltage/pages#show', :id => 'collections/fallout/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
-    get '/collections/language-of-flowers' => 'high_voltage/pages#show', :id => 'collections/language-of-flowers/index'
+    get '/collections/flowers' => 'high_voltage/pages#show', :id => 'collections/flowers/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
     get '/collections/seneca' => 'high_voltage/pages#show', :id => 'collections/seneca/index'
   end
