@@ -4,24 +4,13 @@
 	        <%= render partial: 'pages/collections/flowers/title' %>
 		</div>
 	</div>
-	<%# stick the hero image on the home page only %>
-	<% if current_page?('/collections/language-of-flowers') %>
-		<div class="hero">
-			<div class="container">
-				<div class="search-bar search-bar-home row">
-					<div class="col-md-8">
-						<%= render '/catalog/search_form', { :@collection_search => "Language of Flowers"}  %>
-					</div>
-				</div>
-			</div>
-		</div>
-	<% else %>
-		<div class="search-bar">
-			<div class="container">
+	<div class="hero">
+		<div class="container">
+			<div class="search-bar search-bar-home row">
 				<div class="col-md-8">
 					<%= render '/catalog/search_form', { :@collection_search => "Language of Flowers"}  %>
 				</div>
 			</div>
 		</div>
-	<% end %>
+	</div>
 </div>
