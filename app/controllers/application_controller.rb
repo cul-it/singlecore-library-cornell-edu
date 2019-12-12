@@ -77,6 +77,7 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "Postcards of female and male impersonators and cross-dressing in Europe and the United States, 1900-1931, 1955"
       OR collection_tesim: "Stereoscope Pictures From Iceland"
       OR collection_tesim: "Afrika Bambaataa Vinyl Collection"
+      OR collection_tesim: "Nuclear Fallout Pamphlets"
       ))'
     end
   end
