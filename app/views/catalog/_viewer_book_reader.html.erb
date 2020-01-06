@@ -2,7 +2,7 @@
     <div class="row">
       <div class="col-sm-8 text-center">
         <div class="cover" data-no-turbolink>
-          <% unless @book_id.include?('chla') || @book_id.include?('hivebees') || @book_id.include?('may') || @book_id.include?('hearth') %>
+          <% unless @book_id.include?('chla') || @book_id.include?('hivebees') || @book_id.include?('may') || @book_id.include?('hearth') || @book_id.include?('flow') %>
             <img src="http://hydrastg.library.cornell.edu/fedora/get/<%= @book_id %>/thumbnailImage" class="img-responsive img-thumbnail" alt="">
           <% else %>
             <img src="<%= chla_thumbnail(@document) %>" class="img-responsive img-thumbnail" alt=""></a>
