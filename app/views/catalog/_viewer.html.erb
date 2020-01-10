@@ -127,6 +127,9 @@
 <% elsif (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
   <%= render partial: 'viewer_hathi'%>
 
+<%# chla lit of ag sciences series, do not display viewer box %>
+<% elsif (render_document_show_field_value :document => @document, :field => 'id').include?('chlalitofagseries') %>
+  
 <%# display book reader %>
 <% elsif !@book_id.blank? && @project != "616" && @pdf != true %>
   <%= render partial: 'viewer_book_reader'%>

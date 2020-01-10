@@ -1,0 +1,13 @@
+<% @members_ids = render_document_show_field_value(:document => @document, :field => 'member_ids_ssim') %>
+
+<% if @members_ids.present? %>
+	<h2>Series</h2>
+<% end %> 
+<ul>
+	<% get_chla_series(document).each do |book| %>
+		<li>
+	        <%= book["title_tesim"][0] %>:
+			<%= link_to "Read book","http://reader.library.cornell.edu/docviewer/digital?id="+book["id"], "aria-label" => book["id"] %> |  <%= link_to "More information","/catalog/"+book["id"], "aria-label" => book["id"] %>
+		</li>
+	<% end %>
+</ul>
