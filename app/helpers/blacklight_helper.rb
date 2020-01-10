@@ -385,7 +385,7 @@ def chla_thumbnail args
   if !args['id'].include?('articles')
    thumb = args['id']
    typeResponse = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
-   if typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Page"  
+   if typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Page" || typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Series"
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
    else
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}_1&wt=json&indent=true"))
