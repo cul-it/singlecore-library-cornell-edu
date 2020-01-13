@@ -378,8 +378,18 @@ def get_chla_series args
   series = args['id']
   response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{series}*+AND+has_model_ssim:\"Series\"&wt=json&indent=true&sort=id%20asc&rows=10000"))
   @response = response['response']['docs']
+  Rails.logger.info("STEPHANIEMILLER = #{@response.inspect}")
   return @response
 end
+
+def get_chla_series_book(id)
+  book_id = id.rstrip
+  book_id = book_id.lstrip
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{book_id}+AND+has_model_ssim:Book&wt=json&indent=true&sort=id%20asc&rows=10000"))
+  @response = response['response']['docs']
+  return @response[0]
+end
+
 
 def get_chla_tocs args
   journal = args['id']
