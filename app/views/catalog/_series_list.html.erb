@@ -1,13 +1,15 @@
 <% @members_ids = render_document_show_field_value(:document => @document, :field => 'member_ids_ssim') %>
-
+<% member_array = @members_ids.split("<br \/>") %>
 <% if @members_ids.present? %>
 	<h2>Series</h2>
 <% end %> 
 <ul>
-	<% get_chla_series(document).each do |book| %>
+   <% member_array.each do | book_id | %>
+	<% book_object = get_chla_series_book(book_id) %>
+    <%#= book_object.inspect %>
 		<li>
-	        <%= book["title_tesim"][0] %>:
-			<%= link_to "Read book","http://reader.library.cornell.edu/docviewer/digital?id="+book["id"], "aria-label" => book["id"] %> |  <%= link_to "More information","/catalog/"+book["id"], "aria-label" => book["id"] %>
+	        <%= book_object["title_tesim"][0] %>:
+			<%= link_to "Read book","http://reader.library.cornell.edu/docviewer/digital?id="+book_object["id"], "aria-label" => book_object["id"] %> |  <%= link_to "More information","/catalog/"+book_object["id"], "aria-label" => book_object["id"] %>
 		</li>
-	<% end %>
+   <% end %>
 </ul>
