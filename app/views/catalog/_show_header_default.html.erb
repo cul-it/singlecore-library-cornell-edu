@@ -1,3 +1,7 @@
+<% @page_number = render_document_show_field_value(:document => @document, :field => 'page_number_tesim') %>
+<% @id = render_document_show_field_value(:document => @document, :field => 'id') %>
+
+
 <% # bookmark/folder functions -%>
 <% if document["title_tesim"].present? && document["translation_title_tesim"].present? %>
   	<h1>
@@ -7,6 +11,12 @@
 	<h1>
 	    <%= document["translation_title_tesim"][0] %>
 	</h1>
+<% elsif render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Page" %>
+	<%= render_document_heading(document, :tag => :h1) %>
+	<% if !document["page_number_tesim"].blank? %>
+		<span class="label label-default">Page <%= @page_number %></span>
+		<span class="view-book-link">of <a href="/catalog/<%= @id %>">[Title of parent object]</a></span>
+	<% end %>
 <% else %>
   <%= render_document_heading(document, :tag => :h1) %>
 <% end %>
