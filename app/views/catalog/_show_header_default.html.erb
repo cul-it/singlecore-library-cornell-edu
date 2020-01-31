@@ -14,8 +14,10 @@
 <% elsif render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Page" %>
 	<%= render_document_heading(document, :tag => :h1) %>
 	<% if !document["page_number_tesim"].blank? %>
-		<span class="label label-default">Page <%= @page_number %></span>
-		<span class="view-book-link">of <a href="/catalog/<%= @id %>">[Title of parent object]</a></span>
+		<div class="parent-link">
+			<span class="label label-default">Page <%= @page_number %></span>
+			of <a href="#">[Title of parent object + need helper to strip last _# out of id]</a>
+		</div>
 	<% end %>
 <% else %>
   <%= render_document_heading(document, :tag => :h1) %>
