@@ -325,7 +325,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'date_tesim', :label => 'Date'
     config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
 
-    #config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
+    config.add_index_field 'format_tesim', :label => 'Format'
 
     if ENV["COLLECTIONS"] == "development"
       config.add_index_field 'collection_sequence_isi', :label => 'Collection Sequence'
