@@ -15,9 +15,13 @@
 	<%= render_document_heading(document, :tag => :h1) %>
 	<% if !document["page_number_tesim"].blank? %>
 		<div class="parent-link">
-			<span class="label label-default">Page <%= @page_number %></span>
-			<% parentId = document["id"][0..document["id"].rindex('_') - 1] %>
-			<% parentTitle = document["title_tesim"][0][0..document["title_tesim"][0].rindex('-') - 2] %>
+			    <span class="label label-default">Page <%= @page_number %></span>
+			    <% parentId = document["id"][0..document["id"].rindex('_') - 1] %>
+			    <% if document["title_tesim"][0].size < 10 %>
+			       <% parentTitle = "Link to parent document" %>
+			    <% else %>
+			       <% parentTitle = document["title_tesim"][0][0..document["title_tesim"][0].rindex('-') - 2] %>
+                            <% end %>
 			of <a href="/catalog/<%= parentId %>" ><%= parentTitle %></a>
 		</div>
 	<% end %>

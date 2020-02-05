@@ -24,6 +24,11 @@
       <%= link_to_document document, document["translation_title_tesim"][0], counter: counter %>
     <% else %>
       <%= link_to_document document, document_show_link_field(document), counter: counter %>
+      <% if document["page_number_tesim"].present? %>
+        <%# Page <% render_document_show_field_value(:document => @document, :field => 'page_number_tesim') %>
+        <span class="label label-default">Page <%= document["page_number_tesim"][0] %></span>
+        <%#= document.inspect %>
+      <% end %>
     <% end %>
 
   </h5>
