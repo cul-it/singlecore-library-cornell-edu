@@ -74,10 +74,6 @@ class CatalogController < ApplicationController
       facet_params = { f: { collection_tesim: ['Mysteries at Eleusis: Images of Inscriptions'] } }
       redirect_to search_catalog_path(facet_params)
     end
-    if params[:subject] == "fallout" && params[:f].nil?
-      facet_params = { f: { collection_tesim: ['Nuclear Fallout Shelter Collection'] } }
-      redirect_to search_catalog_path(facet_params)
-    end
     if params[:subject] == "gems" && params[:f].nil?
       facet_params = { f: { collection_tesim: ['Cornell Gem Impressions Collection'] } }
       redirect_to search_catalog_path(facet_params)
@@ -345,11 +341,11 @@ class CatalogController < ApplicationController
     # config.add_index_field 'pubdate_tesim', :label => 'Date'
 
     # config.add_index_field 'image_ocr_tesim',:label => 'text'
-    # config.add_index_field 'book_title', :label => 'Book Title'
-    # config.add_index_field 'r1_date_tesim', :label => 'Date'
-    # config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
+    config.add_index_field 'book_title', :label => 'Book Title'
+    config.add_index_field 'date_tesim', :label => 'Date'
+    config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
 
-    #config.add_index_field 'download_link_tesim', helper_method: 'image_download', :label => 'Download'
+    config.add_index_field 'format_tesim', :label => 'Format'
 
     if ENV["COLLECTIONS"] == "development"
       config.add_index_field 'collection_sequence_isi', :label => 'Collection Sequence'
@@ -594,8 +590,8 @@ class CatalogController < ApplicationController
     #config.add_show_field 'elevation_tesim', :label => 'Elevation'
     config.add_show_field 'addresscreator_tesim', :label => 'Address (Creator)'
     # identifier
-    #config.add_show_field 'id_number_tesim', :label => 'Identifier', helper_method: :chla
-    #config.add_show_field 'identifier_tesim', :label => 'Identifier', helper_method: :chla
+    config.add_show_field 'id_number_tesim', :label => 'ID Number'
+    config.add_show_field 'identifier_tesim', :label => 'Identifier'#, helper_method: :chla
     config.add_show_field 'accession_tesim', :label => 'Accession'
     #config.add_show_field 'bibid_tesim', :label => 'Catalog Record', helper_method: :catalog_record
     config.add_show_field 'call_number_tesim', :label => 'Call Number'

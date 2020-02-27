@@ -349,6 +349,17 @@ end
   return @response
 end
 
+def get_anthro_multiviews args
+  collection = args['collection_tesim'][0]
+  if args['old_catalog_number_tesim'].present?
+    parentid = args['old_catalog_number_tesim'][0]
+  end
+  sequence = args['work_sequence_isi']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=old_catalog_number_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
+  @response = response['response']['docs']
+  return @response
+end
+
 def get_hathi_multiviews args
   ark = args['arkID_tesim'][0]
   response = JSON.parse(HTTPClient.get_content("https://catalog.hathitrust.org/api/volumes/brief/htid/coo1.#{ark}.json"))
@@ -363,6 +374,23 @@ def get_chla_issues args
   return @response
 end
 
+def get_chla_series args
+  series = args['id']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{series}*+AND+has_model_ssim:\"Series\"&wt=json&indent=true&sort=id%20asc&rows=10000"))
+  @response = response['response']['docs']
+  Rails.logger.info("STEPHANIEMILLER = #{@response.inspect}")
+  return @response
+end
+
+def get_chla_series_book(id)
+  book_id = id.rstrip
+  book_id = book_id.lstrip
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{book_id}+AND+has_model_ssim:Book&wt=json&indent=true&sort=id%20asc&rows=10000"))
+  @response = response['response']['docs']
+  return @response[0]
+end
+
+
 def get_chla_tocs args
   journal = args['id']
   response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{journal}"))
@@ -374,7 +402,7 @@ def chla_thumbnail args
   if !args['id'].include?('articles')
    thumb = args['id']
    typeResponse = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
-   if typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Page"
+   if typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Page" || typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Series"
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
    else
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}_1&wt=json&indent=true"))
@@ -391,7 +419,7 @@ end
   }
 
 def is_multi_image? args
-  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_blaschka_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_impersonator_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_stereoscopes_multiviews(args).length > 1 && args['work_sequence_isi'].present?)
+  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_blaschka_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_impersonator_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_stereoscopes_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_anthro_multiviews(args).length > 1 && args['work_sequence_isi'].present?)
     return true
   end
 end
@@ -403,7 +431,8 @@ end
     '4803' => 'seneca',
     '3686' => 'zorn',
     '3786' => 'blaschka',
-    '962' => 'stereoscopes'
+    '962' => 'stereoscopes',
+    '273' => 'anthrocollections'
   }
 
 def publication options={}

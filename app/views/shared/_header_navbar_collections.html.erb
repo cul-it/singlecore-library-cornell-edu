@@ -5,13 +5,6 @@
                 <a class="cul-brand" href="https://library.cornell.edu">Cornell University Library</a>
                 <h1><%= link_to "Digital Collections", root_path, class: "brand" %></h1>
             </div>
-            <div class="col-sm-6">
-                <% unless !has_search_parameters? && current_page?('/') %>
-                  <div class="search-box">
-                      <%= render 'catalog/search_form'  %>
-                  </div>
-                <% end %>
-            </div>
         </div>
     </div>
 </div>

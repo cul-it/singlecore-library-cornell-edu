@@ -24,6 +24,8 @@ class ApplicationController < ActionController::Base
       OR display_target_tesim:"bento"
       OR collection_tesim:"Indonesian Music Archive"
       OR -collection_tesim:"Samuel J. May Anti-Slavery Collection"
+      OR -collection_tesim:"Language of Flowers"
+      OR -collection_tesim:"Home Economics Archive: Research, Tradition and History"
       OR -format_tesim:"Page"
       OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -solr_loader_tesim:"eCommons"
       AND +(collection_tesim:"New York State Aerial Photographs"
@@ -75,6 +77,8 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "Joe Conzo Jr. Archive"
       OR collection_tesim: "Postcards of female and male impersonators and cross-dressing in Europe and the United States, 1900-1931, 1955"
       OR collection_tesim: "Stereoscope Pictures From Iceland"
+      OR collection_tesim: "Afrika Bambaataa Vinyl Collection"
+      OR collection_tesim: "Nuclear Fallout Pamphlets"
       ))'
     end
   end

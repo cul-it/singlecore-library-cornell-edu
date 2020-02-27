@@ -117,6 +117,9 @@
     <% if @collection_selected == "Knowledge of the World in Early Modern Japan" %>
         <a href="http://hdl.handle.net/1813.001/7927747"><%= @link_label %><%= @external_link_icon %></a>
     <% end %>
+    <% if @collection_selected == "Language of Flowers" %>
+        <a href="/collections/flowers"><%= @link_label %></a>
+    <% end %>
     <% if @collection_selected == "Lindsay Cooper Digital Archive" %>
         <a href="/collections/lindsaycooper"><%= @link_label %></a>
     <% end %>
@@ -128,6 +131,9 @@
     <% end %>
     <% if @collection_selected == "New York State Aerial Photographs" %>
         <a href="/collections/aerialny"><%= @link_label %></a>
+    <% end %>
+    <% if @collection_selected == "Nuclear Fallout Pamphlets" %>
+        <a href="/collections/fallout"><%= @link_label %></a>
     <% end %>
     <% if @collection_selected == "NYS Historical Dendrochronology" %>
         <a href="/collections/nys-dendro"><%= @link_label %></a>

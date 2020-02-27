@@ -68,12 +68,14 @@ end
 
   # prod pages
   get '/collections/aerialny' => 'high_voltage/pages#show', :id => 'collections/aerialny/index'
+  get '/collections/afrika-bambaataa' => 'high_voltage/pages#show', :id => 'collections/afrika-bambaataa/index'
   get '/collections/art2301' => 'high_voltage/pages#show', :id => 'collections/art2301/index'
   get '/collections/artifactsandart' => 'high_voltage/pages#show', :id => 'collections/artifactsandart/index'
   get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
   get '/collections/blaschka' => 'high_voltage/pages#show', :id => 'collections/blaschka/index'
   get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
   get '/collections/eleusis' => 'high_voltage/pages#show', :id => 'collections/eleusis/index'
+  get '/collections/fallout' => 'high_voltage/pages#show', :id => 'collections/fallout/index'
   get '/collections/impersonator-postcards' => 'high_voltage/pages#show', :id => 'collections/impersonator-postcards/index'
   get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
   get '/collections/iwo-jpfo' => 'high_voltage/pages#show', :id => 'collections/iwo-jpfo/index'
@@ -92,10 +94,10 @@ end
 
   # dev pages
   if ENV['COLLECTIONS'] == "development"
-    get '/collections/afrika-bambaataa' => 'high_voltage/pages#show', :id => 'collections/afrika-bambaataa/index'
     get '/collections/anthrocollections' => 'high_voltage/pages#show', :id => 'collections/anthrocollections/index'
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/hearth' => 'high_voltage/pages#show', :id => 'collections/hearth/index'
+    get '/collections/flowers' => 'high_voltage/pages#show', :id => 'collections/flowers/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
     get '/collections/seneca' => 'high_voltage/pages#show', :id => 'collections/seneca/index'
   end

@@ -1,0 +1,83 @@
+// Variables
+// ------------
+
+$flowers-red: #8b0f0f;
+$flowers-brown: #724437;
+
+
+// Custom styles
+// --------------
+
+
+.mann-header--flowers {
+	h2 {
+		color: white;
+	}
+	.navbar-toggle {
+		background: $flowers-brown;
+	}
+	.navbar {
+		background: $flowers-brown;
+	}
+	.navbar-nav > li > a {
+		background: $flowers-red;
+	}
+	.navbar-nav > li > a:hover {
+		border: 0;
+		background: $flowers-brown;
+	}
+	.navbar-collapse {
+		padding-left: 0;
+	}
+	.search-bar {
+		.glyphicon {
+			color: white;
+			background: $flowers-red;
+		}
+	}
+}
+.mann-layout--flowers {
+	.collection-browse {
+		margin-bottom: 1em;
+		a {
+			background: $flowers-red;
+			color: white;
+		}
+		a:hover {
+			background: $flowers-brown;
+		}
+	}
+	.sidebar {
+		.nav-header {
+			color: $flowers-red;
+		}
+		a:hover {
+			background-color: $flowers-brown;
+			color: white;
+		}
+	}
+	.jumplinks {
+		padding-left: 15px;
+		li {
+			margin-bottom: .5em;
+		}
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up)
+@media (min-width: $screen-sm) { 
+	.mann-header--flowers {
+		.hero {
+			background: url("/collections/flowers/troncin.jpg") no-repeat;
+		}
+	}
+}
+// Medium devices (desktops, 992px and up)
+// @media (min-width: $screen-md) {
+// }
+// Large devices (desktops, 1200px and up)
+// @media (min-width: $screen-lg) {
+// }

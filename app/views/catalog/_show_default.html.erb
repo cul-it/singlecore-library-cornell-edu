@@ -80,8 +80,6 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 		<% end %>
 		</div>
 
-
-
 	<%# for books -%>
 	<% else %>
 		<div class="col-sm-8 item-info">
@@ -95,6 +93,9 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			</dl>
       		<% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal"  %>
       			<%= render 'issue_list', :document => @document %>
+      		<% end %>
+      		<% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Series"  %>
+      			<%= render 'series_list', :document => @document %>
       		<% end %>
 			<%= render partial: 'catalog/show_maplet_default' %>
 		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
@@ -137,6 +138,10 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 				<%= render partial: 'about_hearth' %>
 			<% end %>
 
+			<%# if Language of Flowers collection box %>
+			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Language of Flowers')%>
+				<%= render partial: 'about_flowers' %>
+			<% end %>
 
 		</div>
 		</div>
