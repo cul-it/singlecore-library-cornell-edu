@@ -195,6 +195,8 @@ GEM
     leaflet-markercluster-rails (0.7.0)
       railties (>= 3.1)
     leaflet-rails (0.7.7)
+    libnotify (0.9.4)
+      ffi (>= 1.0.11)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -215,7 +217,7 @@ GEM
     multi_json (1.13.1)
     multi_test (0.1.2)
     nenv (0.3.0)
-    nokogiri (1.10.3)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -391,6 +393,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails (= 4.2.1)
   leaflet-rails (= 0.7.7)
+  libnotify
   nokogiri (>= 1.8.5)
   openseadragon
   poltergeist
