@@ -23,7 +23,7 @@ RSpec.feature 'Item' do
   end
 
   scenario 'bolivian read item link displays' do
-    visit solr_document_path('bol:0001')
+    visit solr_document_path('bol0001')
     expect(page).to have_content "Read item"
   end
 
