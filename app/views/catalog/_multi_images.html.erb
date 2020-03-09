@@ -92,7 +92,7 @@
 				<div class="multi-image">
 					<a href="/catalog/<%= image['id'] %>" data-turbolinks="false" aria-label="<%= image['id'] %>">
 						<img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" alt="" />
-						<% if image['title_tesim'][0].present? %>
+						<% if image['title_tesim'].present? %>
 						<span class="caption">
 							<%= image['title_tesim'][0] %>
 						</span>
