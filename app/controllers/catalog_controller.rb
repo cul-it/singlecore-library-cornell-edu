@@ -489,7 +489,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'venue_tesim', :label => 'Venue' # 4
     config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
     # config.add_show_field 'set_title_tesim', :label => 'Set Title', :link_to_search => true # 8
-    # config.add_show_field 'style_period_tesim', :label => 'Style/Period' # 21
+    config.add_show_field 'style_period_tesim', :label => 'Style/Period' # 21
     # config.add_show_field 'thumbnail_tesim', :label => 'Thumbnail' # 63
     config.add_show_field 'updated_by_tesim', :label => 'Updated By' # 63
     config.add_show_field 'updated_on_ss', :label => 'Updated On' # 63
