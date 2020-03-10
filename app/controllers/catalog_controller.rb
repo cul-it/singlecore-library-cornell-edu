@@ -371,7 +371,7 @@ class CatalogController < ApplicationController
     # config.add_show_field 'file_count_tesim', :label => 'File Count' # 63
     config.add_show_field 'filename_s', :label => 'Filename' # 63
     config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid' # 26
-    # config.add_show_field 'folder_tesim', :label => 'Folder' # 17
+    config.add_show_field 'folder_tesim', :label => 'Folder' # 17
     # config.add_show_field 'id', :label => 'id' # 63
     # config.add_show_field 'id_number_tesim', :label => 'ID Number', helper_method: :chla # 61
     # config.add_show_field 'latest_date_isi', :label => 'Latest Date' # 60
