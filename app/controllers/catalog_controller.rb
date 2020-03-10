@@ -294,7 +294,7 @@ class CatalogController < ApplicationController
     # replaced by agent config.add_facet_field 'performer_creator_tesim', :label => 'Performer', :show => false
     # not in MAP spreadsheet config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
 
-    if ENV["COLLECTIONS"] == "development"
+    if "#{ENV['COLLECTIONS']}" == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
     end
 
@@ -347,7 +347,7 @@ class CatalogController < ApplicationController
 
     config.add_index_field 'format_tesim', :label => 'Format'
 
-    if ENV["COLLECTIONS"] == "development"
+    if "#{ENV['COLLECTIONS']}" == "development"
       config.add_index_field 'collection_sequence_isi', :label => 'Collection Sequence'
     end
 
