@@ -380,7 +380,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'longitude_tsi', :label => 'Longitude' # 21
     # config.add_show_field 'preservation_collection__id_tesim', :label => 'PreservationCollectionID' # 10
     # config.add_show_field 'preservation_item_id_tesim', :label => 'PreservationItemID' # 10
-    # config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
+    config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
     config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent
     # config.add_show_field 'r1_agent_role_tesim', :label => 'Agent_Role', :link_to_search => true # 55
     # config.add_show_field 'r2_agent_role_tesim', :label => 'Agent_Role' # 28
