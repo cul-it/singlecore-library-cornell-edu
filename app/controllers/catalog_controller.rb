@@ -355,7 +355,7 @@ class CatalogController < ApplicationController
     # these are generated from the digcoll-ingest collections and the MAP spreadsheet
     config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
     # config.add_show_field 'artstor_classification_display_tesim', :label => 'Artstor Classification Display' # 42
-    # config.add_show_field 'bibid_tesim', :label => 'BibID', helper_method: :catalog_record # 3
+    config.add_show_field 'bibid_tesim', :label => 'BibID', helper_method: :catalog_record # 3
     # config.add_show_field 'box_tesim', :label => 'Box' # 20
     # config.add_show_field 'cite_as_tesim', :label => 'Cite As' # 31
     config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true # 7
