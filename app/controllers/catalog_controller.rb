@@ -274,7 +274,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'site_tesim', :label => 'Site', show: false
     # replaced by r1_location_tesim config.add_facet_field 'region_location_tesim', :label => 'Region', show: false
     # duplicate config.add_facet_field 'location_tesim', :label => 'Region', show: false
-    config.add_facet_field 'set_title_tesim', :label => 'Set', :show => true, :limit => 5
+    # config.add_facet_field 'set_title_tesim', :label => 'Set', :show => true, :limit => 5
     # replaced by agent config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent, :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
@@ -488,7 +488,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'translation_tesim', :label => 'Translation' # 3
     config.add_show_field 'venue_tesim', :label => 'Venue' # 4
     config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
-    # config.add_show_field 'set_title_tesim', :label => 'Set Title', :link_to_search => true # 8
+    config.add_show_field 'set_title_tesim', :label => 'Set Title', :link_to_search => true # 8
     config.add_show_field 'style_period_tesim', :label => 'Style/Period' # 21
     # config.add_show_field 'thumbnail_tesim', :label => 'Thumbnail' # 63
     config.add_show_field 'updated_by_tesim', :label => 'Updated By' # 63
