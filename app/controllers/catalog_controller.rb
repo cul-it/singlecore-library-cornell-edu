@@ -350,6 +350,8 @@ class CatalogController < ApplicationController
     if "#{ENV['COLLECTIONS']}" == "development"
       config.add_index_field 'collection_sequence_isi', :label => 'Collection Sequence'
     end
+    config.add_index_field 'collection_sequence_isi', :label => 'Collection Sequence'
+
       save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
       Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: in before_action"
       results = "|#{ENV['COLLECTIONS']}|"
