@@ -367,7 +367,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'dcmi_type_tesim', :label => 'DCMI Type' # 2
     # config.add_show_field 'disable_download_tesim', :label => 'Disable Download' # 4
     # config.add_show_field 'earliest_date_isi', :label => 'Earliest Date' # 60
-    # config.add_show_field 'elevation_tesim', :label => 'Elevation' # 7
+    config.add_show_field 'elevation_tesim', :label => 'Elevation' # 7
     # config.add_show_field 'file_count_tesim', :label => 'File Count' # 63
     # config.add_show_field 'filename_tesim', :label => 'Filename' # 63
     config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid' # 26
