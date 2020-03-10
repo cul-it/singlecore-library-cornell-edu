@@ -369,7 +369,7 @@ class CatalogController < ApplicationController
     # config.add_show_field 'earliest_date_isi', :label => 'Earliest Date' # 60
     config.add_show_field 'elevation_tesim', :label => 'Elevation' # 7
     # config.add_show_field 'file_count_tesim', :label => 'File Count' # 63
-    # config.add_show_field 'filename_tesim', :label => 'Filename' # 63
+    config.add_show_field 'filename_s', :label => 'Filename' # 63
     config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid' # 26
     # config.add_show_field 'folder_tesim', :label => 'Folder' # 17
     # config.add_show_field 'id', :label => 'id' # 63
