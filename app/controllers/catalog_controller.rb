@@ -497,7 +497,7 @@ class CatalogController < ApplicationController
     # if ENV["COLLECTIONS"] == "development"
     #   config.add_show_field 'work_sequence_isi', :label => 'Work Sequence' # 5
     # end
-    config.add_show_field 'work_type_tesim', :label => 'Work Type' # 56
+    config.add_show_field 'type_tesim', :label => 'Work Type' # 56
 
     # special case fields that were not in the MAP spreadsheet
     config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
