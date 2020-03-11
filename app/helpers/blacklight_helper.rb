@@ -402,17 +402,18 @@ def chla_thumbnail args
   if !args['id'].include?('articles')
    thumb = args['id']
    typeResponse = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
+
+   save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+   Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: in chla_thumbnail"
+   puts typeResponse.to_yaml
+   Rails.logger.level = save_level
+
    if typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Page" || typeResponse['response']['docs'][0]['format_tesim'][0].to_s == "Series"
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
    else
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}_1&wt=json&indent=true"))
    end
    @response = response['response']['docs']
-
-   save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-   Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: in chla_thumbnail"
-   puts @response.to_yaml
-   Rails.logger.level = save_level
    if @response[0]['awsthumbnail_tesim'].present?
       return @response[0]['awsthumbnail_tesim'][0].to_s
    end
