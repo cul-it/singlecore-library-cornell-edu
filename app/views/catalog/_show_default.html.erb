@@ -18,7 +18,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 
 <%if @show == "yes" %>
 
-	<% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
+	<% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_path_ss') %>
 	<% @ssc_site  = render_document_show_field_value(:document => @document, :field => 'ssc_site_tesim') %>
 	<% @bibid  = render_document_show_field_value(:document => @document, :field => 'bibid_ssi') %>
 	<% @url_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'url_related_link_tesim') %>
@@ -119,7 +119,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 				      		</li>
 				    	<% end %>
           			</ul>
-          			
+
 				</div>
 			<% end %>
 

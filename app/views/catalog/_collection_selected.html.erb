@@ -1,10 +1,10 @@
 <% @link_label = "About the collection" %>
 <% @external_link_icon = '<i class="fa fa-external-link" aria-hidden="true"></i>'.html_safe %>
 <!-- TODO: try using collection_website_tesim field -->
-<%# @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ss') %>
+<%# @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_path_ss') %>
 
 
-<div class="well well-collection">  
+<div class="well well-collection">
     <h2><%= @collection_selected %></h2>
     <% if @collection_selected == "19th Century Prison Reform Collection" %>
         <a href="/collections/prison-reform"><%= @link_label %></a>
