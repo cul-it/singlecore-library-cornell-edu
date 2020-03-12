@@ -494,9 +494,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'updated_by_tesim', :label => 'Updated By' # 63
     config.add_show_field 'updated_on_ss', :label => 'Updated On' # 63
     config.add_show_field 'vol_issue_no_tesim', :label => 'Volume/Issue' # 3
-    # if ENV["COLLECTIONS"] == "development"
-    #   config.add_show_field 'work_sequence_isi', :label => 'Work Sequence' # 5
-    # end
+    if ENV["COLLECTIONS"] == "development"
+      config.add_show_field 'work_sequence_isi', :label => 'Work Sequence' # 5
+    end
     config.add_show_field 'type_tesim', :label => 'Work Type' # 56
 
     # special case fields that were not in the MAP spreadsheet
