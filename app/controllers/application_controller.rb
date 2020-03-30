@@ -20,16 +20,15 @@ class ApplicationController < ActionController::Base
 
 
     elsif environment == 'production'
-      fq = '(collection_tesim:"Adler Hip Hop Archive"  AND -adler_status:"Suppress for portal")
+      fq = '(collection_tesim:"Adler Hip Hop Archive" AND -adler_status:"Suppress for portal")
       OR display_target_tesim:"bento"
       OR collection_tesim:"Indonesian Music Archive"
       OR -collection_tesim:"Samuel J. May Anti-Slavery Collection"
-      OR -collection_tesim:"Language of Flowers"
-      OR -collection_tesim:"Home Economics Archive: Research, Tradition and History"
-      OR -format_tesim:"Page"
+      OR display_target_tesim:"portal-prod"
       OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -solr_loader_tesim:"eCommons"
       AND +(collection_tesim:"New York State Aerial Photographs"
       OR collection_tesim:"Huntington Free Library Native American Collection"
+      OR collection_tesim:"Adler Hip Hop Archive"
       OR collection_tesim:"John Reps Collection - Bastides"
       OR collection_tesim:"Persuasive Maps: PJ Mode Collection"
       OR collection_tesim:"Ragamala Paintings"
@@ -79,6 +78,8 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "Stereoscope Pictures From Iceland"
       OR collection_tesim: "Afrika Bambaataa Vinyl Collection"
       OR collection_tesim: "Nuclear Fallout Pamphlets"
+      OR collection_tesim:"Language of Flowers"
+      OR collection_tesim:"Home Economics Archive: Research, Tradition and History"
       ))'
     end
   end
