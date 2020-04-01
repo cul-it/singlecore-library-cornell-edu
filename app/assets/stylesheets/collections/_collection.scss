@@ -72,6 +72,20 @@
 		font-size: 10px;
 	}
 }
+.collection-banner--japanesetheater {
+	background-image: linear-gradient(bottom, rgb(56,100,130) 31%, rgb(52,84,120) 70%);
+	background-image: -o-linear-gradient(bottom, rgb(56,100,130) 31%, rgb(52,84,120) 70%);
+	background-image: -moz-linear-gradient(bottom, rgb(56,100,130) 31%, rgb(52,84,120) 70%);
+	background-image: -webkit-linear-gradient(bottom, rgb(56,100,130) 31%, rgb(52,84,120) 70%);
+	background-image: -ms-linear-gradient(bottom, rgb(56,100,130) 31%, rgb(52,84,120) 70%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.31, rgb(56,100,130)),
+		color-stop(0.7, rgb(52,84,120))
+	);
+}
 
 // Two column pages
 // ------------------------- //

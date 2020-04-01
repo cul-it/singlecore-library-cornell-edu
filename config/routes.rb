@@ -98,6 +98,7 @@ end
   if ENV['COLLECTIONS'] == "development"
     get '/collections/anthrocollections' => 'high_voltage/pages#show', :id => 'collections/anthrocollections/index'
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
+    get '/collections/japanesetheater' => 'high_voltage/pages#show', :id => 'collections/japanesetheater/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
     get '/collections/seneca' => 'high_voltage/pages#show', :id => 'collections/seneca/index'
   end
