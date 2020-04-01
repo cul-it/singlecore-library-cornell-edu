@@ -73,6 +73,7 @@
 	}
 }
 .collection-banner--japanesetheater {
+	background: #365c7d;
 	background-image: linear-gradient(bottom, rgb(56,100,130) 31%, rgb(52,84,120) 70%);
 	background-image: -o-linear-gradient(bottom, rgb(56,100,130) 31%, rgb(52,84,120) 70%);
 	background-image: -moz-linear-gradient(bottom, rgb(56,100,130) 31%, rgb(52,84,120) 70%);
@@ -84,6 +85,21 @@
 		left top,
 		color-stop(0.31, rgb(56,100,130)),
 		color-stop(0.7, rgb(52,84,120))
+	);
+}
+.collection-banner--japaneseworld {
+	background: #456266;
+	background-image: linear-gradient(bottom, rgb(84,119,124) 0%, rgb(69,98,102) 65%);
+	background-image: -o-linear-gradient(bottom, rgb(84,119,124) 0%, rgb(69,98,102) 65%);
+	background-image: -moz-linear-gradient(bottom, rgb(84,119,124) 0%, rgb(69,98,102) 65%);
+	background-image: -webkit-linear-gradient(bottom, rgb(84,119,124) 0%, rgb(69,98,102) 65%);
+	background-image: -ms-linear-gradient(bottom, rgb(84,119,124) 0%, rgb(69,98,102) 65%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, rgb(84,119,124)),
+		color-stop(0.65, rgb(69,98,102))
 	);
 }
 
