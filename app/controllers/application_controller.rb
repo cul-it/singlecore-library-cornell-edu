@@ -79,6 +79,8 @@ class ApplicationController < ActionController::Base
       OR collection_tesim: "Nuclear Fallout Pamphlets"
       OR collection_tesim:"Language of Flowers"
       OR collection_tesim:"Home Economics Archive: Research, Tradition and History"
+      OR collection_tesim:"Theatre Prints and Books from Early Modern Japan"
+      OR collection_tesim:"Knowledge of the World in Early Modern Japan"
       ))'
     end
   end
