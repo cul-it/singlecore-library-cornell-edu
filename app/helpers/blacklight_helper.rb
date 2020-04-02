@@ -508,6 +508,16 @@ def has_collection_selected?
 end
 
 def compound_agent args
+  save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+  Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: for add_show_field"
+  puts args[:config].inspect
+  config = args[:config]
+  config.label = "My Agent Label"
+  puts args[:config].to_yaml
+  #config.add_show_field 'id', :label => 'Forum ID'
+  Rails.logger.level = save_level
+
+
   arg = (args.is_a? String) ? args : args[:document]["agent_hash_tesim"][0]
   if arg.present?
     compound = JSON.parse(arg)

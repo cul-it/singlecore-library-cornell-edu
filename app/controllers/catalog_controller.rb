@@ -328,6 +328,20 @@ class CatalogController < ApplicationController
     config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
     #config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent
     config.add_show_field 'agent_hash_tesim', :label => 'Agent', accessor: :agent_hash
+    if true
+      #compound = JSON.parse(params[:document]["agent_hash_tesim"][0])
+      config.add_show_field 'r1_agent_tesim', :label => 'r1_agent_role'
+      config.add_show_field 'r2_agent_tesim', :label => 'r2_agent_role'
+      config.add_show_field 'r3_agent_tesim', :label => 'r3_agent_role'
+
+
+      save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+      Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: for add_show_field"
+      #puts params.inspect
+      puts "jgr25_params".to_yaml
+      Rails.logger.level = save_level
+
+    end
     config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title' # 5
     config.add_show_field 'annotation_tesim', :label => 'Annotation' # 3
     config.add_show_field 'bibliography_tesim', :label => 'Bibliography' # 7
