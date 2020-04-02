@@ -81,6 +81,8 @@ end
   get '/collections/impersonator-postcards' => 'high_voltage/pages#show', :id => 'collections/impersonator-postcards/index'
   get '/collections/indonesianmusic' => 'high_voltage/pages#show', :id => 'collections/indonesianmusic/index'
   get '/collections/iwo-jpfo' => 'high_voltage/pages#show', :id => 'collections/iwo-jpfo/index'
+  get '/collections/japanesetheater' => 'high_voltage/pages#show', :id => 'collections/japanesetheater/index'
+  get '/collections/japaneseworld' => 'high_voltage/pages#show', :id => 'collections/japaneseworld/index'
   get '/collections/lindsaycooper' => 'high_voltage/pages#show', :id => 'collections/lindsaycooper/index'
   get '/collections/prison-reform' => 'high_voltage/pages#show', :id => 'collections/prison-reform/index'
   get '/collections/punkflyers' => 'high_voltage/pages#show', :id => 'collections/punkflyers/index'
@@ -98,8 +100,6 @@ end
   if ENV['COLLECTIONS'] == "development"
     get '/collections/anthrocollections' => 'high_voltage/pages#show', :id => 'collections/anthrocollections/index'
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
-    get '/collections/japanesetheater' => 'high_voltage/pages#show', :id => 'collections/japanesetheater/index'
-    get '/collections/japaneseworld' => 'high_voltage/pages#show', :id => 'collections/japaneseworld/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
     get '/collections/seneca' => 'high_voltage/pages#show', :id => 'collections/seneca/index'
   end
