@@ -6,13 +6,6 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include BlacklightMaps::ControllerOverride
 
-  # add_show_tools_partial :my_agent_hash_action
-  add_show_tools_partial :my_custom_action
-
-  # def my_agent_hash_action
-  #   'hello from my_agent_hash'
-  # end
-
   before_action  do
     if params[:sbjct].present? && params[:f].nil?
       redirect_to search_catalog_path
