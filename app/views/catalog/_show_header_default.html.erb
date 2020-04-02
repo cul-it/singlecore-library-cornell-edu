@@ -1,6 +1,9 @@
 <% @page_number = render_document_show_field_value(:document => @document, :field => 'page_number_tesim') %>
 <% @id = render_document_show_field_value(:document => @document, :field => 'id') %>
-
+<% iid = render_document_show_field_value(:document => @document, :field => 'id') %>
+<% @format = render_document_show_field_value(:document => @document, :field => 'format_tesim') %>
+<%#= @id.inspect %>
+<%#= @format.inspect %>
 
 <% # bookmark/folder functions -%>
 <% if document["title_tesim"].present? && document["translation_title_tesim"].present? %>
@@ -25,6 +28,24 @@
 			of <a href="/catalog/<%= parentId %>" ><%= parentTitle %></a>
 		</div>
 	<% end %>
+<% elsif render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Issue" %>
+   <% @journals_title = get_journal_title_given_issue_id(@id) %>
+   <% journal_title = @journals_title["title_tesim"][0] %>
+	<%= render_document_heading(document, :tag => :h1) %>
+	<% if !@journals_title.nil? %>
+		<div class="parent-link">
+			From
+		    <% parentId = document["id"][0..document["id"].index('_') - 1] %>
+		    <% if journal_title.size < 10 %>
+		       <% parentTitle = "Link to parent document" %>
+		    <% else %>
+		       <% parentTitle = journal_title %>
+            <% end %>
+			<a href="/catalog/<%= parentId %>" ><%= parentTitle %></a>
+		</div>
+	<% end %>
+	
+	
 <% else %>
   <%= render_document_heading(document, :tag => :h1) %>
 <% end %>
