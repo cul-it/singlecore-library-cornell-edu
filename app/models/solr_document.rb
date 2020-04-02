@@ -22,8 +22,24 @@ class SolrDocument
 
   def dlxs_thumbnail
     "http://hydrastg.library.cornell.edu/fedora/objects/#{id}/datastreams/thumbnailImage/content"
-end
+  end
 
+  def agent_hash
+    compound = JSON.parse(first(:agent_hash_tesim))
+    compound.inspect
+    parts = []
+    parts << '<div class="compound-field agent">'
+    compound.each do | part |
+      parts << '<span class="qualifier">'
+      parts << part['agent_role'].capitalize + ':'
+      parts << '</span> '
+      parts << '<span class="value">'
+      parts << part['agent']
+      parts << '</span>'
+    end
+    parts << '</div>'
+    return parts.join('').html_safe
+  end
 
 
 end

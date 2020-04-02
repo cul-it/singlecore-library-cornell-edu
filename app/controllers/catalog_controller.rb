@@ -326,7 +326,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'preservation_collection__id_tesim', :label => 'PreservationCollectionID' # 10
     config.add_show_field 'preservation_item_id_tesim', :label => 'PreservationItemID' # 10
     config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
-    config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent
+    #config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent
+    config.add_show_field 'agent_hash_tesim', :label => 'Agent', accessor: :agent_hash
     config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title' # 5
     config.add_show_field 'annotation_tesim', :label => 'Annotation' # 3
     config.add_show_field 'bibliography_tesim', :label => 'Bibliography' # 7
