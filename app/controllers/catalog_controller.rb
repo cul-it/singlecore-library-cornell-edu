@@ -323,11 +323,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'agent_hash_tesim', :label => 'Agent', accessor: :agent_hash
     if true
       #compound = JSON.parse(params[:document]["agent_hash_tesim"][0])
-      config.add_show_field 'r1_agent_tesim', :label => 'r1_agent_role'
-      config.add_show_field 'r2_agent_tesim', :label => 'r2_agent_role'
-      config.add_show_field 'r3_agent_tesim', :label => 'r3_agent_role'
-
-
       save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
       Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: for add_show_field"
       #puts params.inspect
