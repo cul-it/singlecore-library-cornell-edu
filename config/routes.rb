@@ -104,10 +104,6 @@ end
 
   get '/collections/:subject' => 'catalog#index'
 
-  # override rendering of MAP hash fields
-  #get '/catalog/:id/my_agent_hash_action' => 'catalog#my_agent_hash_action', as: 'my_agent_hash_action'
-  get '/catalog/:id/my_custom_action' => 'catalog#my_custom_action', as: 'my_custom_action_catalog'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
