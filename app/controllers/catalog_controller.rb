@@ -9,12 +9,8 @@ class CatalogController < ApplicationController
   # add_show_tools_partial :my_agent_hash_action
   add_show_tools_partial :my_custom_action
 
-  # def my_custom_action
-  #   save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-  #   Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: in my_custom_action"
-  #   puts params.to_yaml
-  #   Rails.logger.level = save_level
-  #   "my_custom_action"
+  # def my_agent_hash_action
+  #   'hello from my_agent_hash'
   # end
 
   before_action  do
@@ -332,7 +328,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
     #config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent
     config.add_show_field 'agent_hash_tesim', :label => 'Agent', accessor: :agent_hash
-    #config.add_show_field 'agent_hash_tesim', :label => 'Agent'
     if true
       #compound = JSON.parse(params[:document]["agent_hash_tesim"][0])
       save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
