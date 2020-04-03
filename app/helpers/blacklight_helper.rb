@@ -398,6 +398,15 @@ def get_chla_tocs args
   return @response
 end
 
+def get_journal_title_given_issue_id(issue_id)
+  idstring = issue_id.rstrip
+  idstring = idstring.lstrip
+  journalID = idstring[0..idstring.index('_') - 1]
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?fl=title_tesim&q=id:#{journalID}&wt=json"))
+  @response = response['response']['docs'][0]
+  return @response
+end
+
 def chla_thumbnail args
   if !args['id'].include?('articles')
    thumb = args['id']
