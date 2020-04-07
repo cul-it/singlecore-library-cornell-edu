@@ -260,7 +260,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'archival_collection_tesim', :label => 'Archival Collection', :limit => 5
     config.add_facet_field 'format_tesim', :label => 'Format', :limit => 5
     config.add_facet_field 'site_tesim', :label => 'Site', show: false
-    config.add_facet_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent, :show => false
+    config.add_facet_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display, :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
     config.add_facet_field 'other_location_tesim', :label => 'Site', :show => false
@@ -274,14 +274,14 @@ class CatalogController < ApplicationController
     config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
-    config.add_index_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent, :link_to_search => true
+    config.add_index_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display, :link_to_search => true
     config.add_index_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
     config.add_index_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
     config.add_index_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
-    config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_date
+    config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
     config.add_index_field 'description_tesim', :label => 'Description' # 53
     config.add_index_field 'earliest_date_isi', :label => 'Earliest Date' # 60
-    config.add_index_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_identifier
+    config.add_index_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
     config.add_index_field 'keywords_subject_tesim', :label => 'Keywords' # 3
     config.add_index_field 'latest_date_isi', :label => 'Latest Date' # 60
     config.add_index_field 'location_tesim', :label => 'Location', :link_to_search => true # 46
@@ -319,8 +319,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'preservation_collection__id_tesim', :label => 'PreservationCollectionID' # 10
     config.add_show_field 'preservation_item_id_tesim', :label => 'PreservationItemID' # 10
     config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
-    #config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_agent
-    config.add_show_field 'agent_hash_tesim', :label => 'Agent', accessor: :agent_hash
+    config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display
+    #config.add_show_field 'agent_hash_tesim', :label => 'Agent', accessor: :agent_hash
     if true
       #compound = JSON.parse(params[:document]["agent_hash_tesim"][0])
       save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
@@ -337,21 +337,21 @@ class CatalogController < ApplicationController
     config.add_show_field 'condition_tesim', :label => 'Condition' # 3
     config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
-    config.add_show_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_date
+    config.add_show_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
     config.add_show_field 'description_tesim', :label => 'Description' # 53
     config.add_show_field 'event_name_tesim', :label => 'Event' # 7
     config.add_show_field 'exhibition_tesim', :label => 'Exhibition' # 1
-    config.add_show_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_identifier
-    config.add_show_field 'image_view_desc_hash_tesim', :label => 'Image View', helper_method: :compound_image_view
+    config.add_show_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
+    config.add_show_field 'image_view_desc_hash_tesim', :label => 'Image View', helper_method: :compound_field_display
     config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
     config.add_show_field 'kaltura_id_ssm', :label => 'Kaltura ID' # 3
     config.add_show_field 'kaltura_playlist_ssm', :label => 'Kaltura Playlist' # 1
     config.add_show_field 'keywords_subject_tesim', :label => 'Keywords' # 3
     config.add_show_field 'language_tesim', :label => 'Language' # 12
-    config.add_show_field 'legacy_label_hash_tesim', :label => 'Legacy Label', helper_method: :compound_legacy_label
+    config.add_show_field 'legacy_label_hash_tesim', :label => 'Legacy Label', helper_method: :compound_field_display
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true # 46
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true # 36
-    config.add_show_field 'measurement_hash_tesim', :label => 'Measurement', helper_method: :compound_measurement
+    config.add_show_field 'measurement_hash_tesim', :label => 'Measurement', helper_method: :compound_field_display
     config.add_show_field 'notes_tesim', :label => 'Notes' # 33
     config.add_show_field 'ocr_transcription_tesim', :label => 'OCR Text' # 1
     config.add_show_field 'provenance_tesim', :label => 'Provenance' # 9
@@ -365,7 +365,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'species_tesim', :label => 'Species' # 2
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
-    config.add_show_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_title
+    config.add_show_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_field_display
     config.add_show_field 'transcription_tesim', :label => 'Transcription' # 10
     config.add_show_field 'translation_as_tesim', :label => 'isTranslatedAs' # 1
     config.add_show_field 'translation_of_tesim', :label => 'isTranslationOf' # 1
