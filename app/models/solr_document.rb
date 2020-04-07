@@ -31,14 +31,15 @@ class SolrDocument
     compound.each do | part |
       if part['agent_role'].present?
         parts << '<span class="qualifier">'
-        parts << part['agent_role'].capitalize + ':'
-        parts << '</span> '
+        parts << part['agent_role'].capitalize + ': '
+        parts << '</span>'
       end
       if part['agent'].present?
         parts << '<span class="value">'
         parts << part['agent']
         parts << '</span>'
       end
+      parts << '<br />'
     end
     parts << '</div>'
     parts.join('').html_safe
