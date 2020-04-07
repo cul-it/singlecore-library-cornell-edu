@@ -535,9 +535,10 @@ end
 
 def compound_agent args
   save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-  Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: for add_show_field"
-  puts args[:config].inspect
+  Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: for compound_agent helper"
+  puts args.inspect
   config = args[:config]
+  config.add_show_field 'agent_hash_tesim', :label => 'My Agent Label'
   config.label = "My Agent Label"
   puts args[:config].to_yaml
   #config.add_show_field 'id', :label => 'Forum ID'
