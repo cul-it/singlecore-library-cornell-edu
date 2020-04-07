@@ -516,6 +516,23 @@ def has_collection_selected?
   end
 end
 
+def compound_field_display args
+  field = args[:field]
+  doc = args[:document]
+  if doc[field][0].present?
+    compound = JSON.parse(doc[field][0])
+    parts = []
+    compound.each do |row|
+      lines = []
+      row.each do |key, value|
+        lines << value
+      end
+      parts << lines.join(' - ')
+    end
+    parts.join('<br />').html_safe
+  end
+end
+
 def compound_agent args
   save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
   Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: for add_show_field"
