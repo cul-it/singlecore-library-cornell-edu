@@ -529,6 +529,13 @@ def compound_field_display args
       end
       parts << lines.join(' - ')
     end
+
+    save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+    Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: in compound_field_display"
+    puts field.to_yaml
+    puts compound.inspect
+    Rails.logger.level = save_level
+
     parts.join('<br />').html_safe
   end
 end
