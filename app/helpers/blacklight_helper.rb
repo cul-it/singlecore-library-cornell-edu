@@ -519,23 +519,20 @@ end
 def compound_field_display args
   field = args[:field]
   doc = args[:document]
-  if doc[field][0].present?
-    compound = JSON.parse(doc[field][0])
+  json = doc[field].first
+
+  if json.present?
+    compound = JSON.parse(json)
     parts = []
     compound.each do |row|
-      lines = []
-      row.each do |key, value|
-        lines << value
+      row.each do |values|
+        lines = []
+        values.each do |key,value|
+          lines << value
+        end
+        parts << lines.join(' - ')
       end
-      parts << lines.join(' - ')
     end
-
-    save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-    Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: in compound_field_display"
-    puts field.to_yaml
-    puts compound.inspect
-    Rails.logger.level = save_level
-
     parts.join('<br />').html_safe
   end
 end
