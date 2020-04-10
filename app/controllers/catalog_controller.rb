@@ -417,7 +417,7 @@ class CatalogController < ApplicationController
     config.add_sort_field 'latest_date_isi asc, title_tesi asc', :label => 'year (ascending)'
     config.add_sort_field 'title_ssi asc, latest_date_isi asc', :label => 'title (a to z)'
     config.add_sort_field 'title_ssi desc, latest_date_isi desc', :label => 'title (z to a)'
-    config.add_sort_field 'author_t asc, latest_date_isi asc', :label => 'author (a to z)'
+    config.add_sort_field 'author_ssi asc, latest_date_isi asc', :label => 'author (a to z)'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
