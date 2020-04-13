@@ -424,5 +424,15 @@ class CatalogController < ApplicationController
     config.spell_max = 5
   end
 
+  def display_agent_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_agent_role_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+    end
+    return true
+  end
 
 end
