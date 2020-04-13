@@ -307,7 +307,7 @@ class CatalogController < ApplicationController
     #config.add_show_field 'title_tesim', :label => 'Title'
     #config.add_show_field 'title_language_tesim', :label => 'Title Language'
     #config.add_show_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_field_display
-    config.add_show_field 'r1_title_tesim', :label => 'Title 1', if: :display_title_show_field?
+    config.add_show_field 'r1_title_tesim', :label => 'Title', if: :display_title_show_field?
     config.add_show_field 'r2_title_tesim', :label => 'Title 2', if: :display_title_show_field?
     config.add_show_field 'r3_title_tesim', :label => 'Title 3', if: :display_title_show_field?
     config.add_show_field 'r4_title_tesim', :label => 'Title 4', if: :display_title_show_field?
@@ -335,7 +335,7 @@ class CatalogController < ApplicationController
     # Agent Roles qualifier
     #config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display
     #config.add_show_field 'agent_hash_tesim', :label => 'Agent', accessor: :agent_hash
-    config.add_show_field 'r1_agent_tesim', :label => 'Agent 1', if: :display_agent_show_field?
+    config.add_show_field 'r1_agent_tesim', :label => 'Agent', if: :display_agent_show_field?
     config.add_show_field 'r2_agent_tesim', :label => 'Agent 2', if: :display_agent_show_field?
     config.add_show_field 'r3_agent_tesim', :label => 'Agent 3', if: :display_agent_show_field?
     config.add_show_field 'r4_agent_tesim', :label => 'Agent 4', if: :display_agent_show_field?
@@ -352,7 +352,7 @@ class CatalogController < ApplicationController
 
     # Date type qualifier
     #config.add_show_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
-    config.add_show_field 'r1_date_tesim', :label => 'Date 1', if: :display_date_show_field?
+    config.add_show_field 'r1_date_tesim', :label => 'Date', if: :display_date_show_field?
     config.add_show_field 'r2_date_tesim', :label => 'Date 2', if: :display_date_show_field?
     config.add_show_field 'r3_date_tesim', :label => 'Date 3', if: :display_date_show_field?
     config.add_show_field 'r4_date_tesim', :label => 'Date 4', if: :display_date_show_field?
@@ -363,7 +363,7 @@ class CatalogController < ApplicationController
 
     # Identifier type qualifier
     #config.add_show_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
-    config.add_show_field 'r1_identifier_tesim', :label => 'Identifier 1', if: :display_identifier_show_field?
+    config.add_show_field 'r1_identifier_tesim', :label => 'Identifier', if: :display_identifier_show_field?
     config.add_show_field 'r2_identifier_tesim', :label => 'Identifier 2', if: :display_identifier_show_field?
     config.add_show_field 'r3_identifier_tesim', :label => 'Identifier 3', if: :display_identifier_show_field?
     config.add_show_field 'r4_identifier_tesim', :label => 'Identifier 4', if: :display_identifier_show_field?
@@ -381,7 +381,7 @@ class CatalogController < ApplicationController
 
     # Legacy label and value qualifier
     #config.add_show_field 'legacy_label_hash_tesim', :label => 'Legacy Label', helper_method: :compound_field_display
-    config.add_show_field 'r1_legacy_value_tesim', :label => 'Legacy Value 1', if: :display_legacy_value_show_field?
+    config.add_show_field 'r1_legacy_value_tesim', :label => 'Legacy Value', if: :display_legacy_value_show_field?
     config.add_show_field 'r2_legacy_value_tesim', :label => 'Legacy Value 2', if: :display_legacy_value_show_field?
     config.add_show_field 'r3_legacy_value_tesim', :label => 'Legacy Value 3', if: :display_legacy_value_show_field?
     config.add_show_field 'r4_legacy_value_tesim', :label => 'Legacy Value 4', if: :display_legacy_value_show_field?
@@ -394,7 +394,7 @@ class CatalogController < ApplicationController
 
     # Measurement qualifiers
     config.add_show_field 'measurement_hash_tesim', :label => 'Measurement', helper_method: :compound_measurement_field_display
-    # config.add_show_field 'r1_measurement_tesim', :label => 'Measurement 1', if: :display_measurement_show_field?
+    # config.add_show_field 'r1_measurement_tesim', :label => 'Measurement', if: :display_measurement_show_field?
     # config.add_show_field 'r2_measurement_tesim', :label => 'Measurement 2', if: :display_measurement_show_field?
     # config.add_show_field 'r3_measurement_tesim', :label => 'Measurement 3', if: :display_measurement_show_field?
     # config.add_show_field 'r4_measurement_tesim', :label => 'Measurement 4', if: :display_measurement_show_field?
