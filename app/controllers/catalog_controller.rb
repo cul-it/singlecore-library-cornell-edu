@@ -247,7 +247,7 @@ class CatalogController < ApplicationController
                          segments: true,
                          maxlength: 6
                        }
-    config.add_facet_field 'creator_ssi', :label => 'Creator', :sort => 'count', :limit => 5
+    config.add_facet_field 'agent_tesim', :label => 'Agent', :sort => 'count', :limit => 5
     config.add_facet_field 'location_tesim', :label => 'Location', :show => false
     config.add_facet_field 'work_type_tesim', :label => 'Work Type' # 56
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
