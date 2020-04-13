@@ -321,17 +321,17 @@ class CatalogController < ApplicationController
     config.add_show_field 'preservation_collection__id_tesim', :label => 'PreservationCollectionID' # 10
     config.add_show_field 'preservation_item_id_tesim', :label => 'PreservationItemID' # 10
     config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
-    config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display
-    #config.add_show_field 'agent_hash_tesim', :label => 'Agent', accessor: :agent_hash
-    if true
-      #compound = JSON.parse(params[:document]["agent_hash_tesim"][0])
-      save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-      Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: for add_show_field"
-      #puts params.inspect
-      puts "jgr25_params".to_yaml
-      Rails.logger.level = save_level
 
-    end
+    # Agent Roles qualifier
+    #config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display
+    #config.add_show_field 'agent_hash_tesim', :label => 'Agent', accessor: :agent_hash
+    config.add_show_field 'r1_agent_tesim', :label => 'Agent R1', if: :display_agent_show_field?
+    config.add_show_field 'r2_agent_tesim', :label => 'Agent R2', if: :display_agent_show_field?
+    config.add_show_field 'r3_agent_tesim', :label => 'Agent R3', if: :display_agent_show_field?
+    config.add_show_field 'r4_agent_tesim', :label => 'Agent R4', if: :display_agent_show_field?
+    config.add_show_field 'r5_agent_tesim', :label => 'Agent R5', if: :display_agent_show_field?
+    config.add_show_field 'r6_agent_tesim', :label => 'Agent R6', if: :display_agent_show_field?
+
     config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title' # 5
     config.add_show_field 'annotation_tesim', :label => 'Annotation' # 3
     config.add_show_field 'bibliography_tesim', :label => 'Bibliography' # 7
