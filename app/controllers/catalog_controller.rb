@@ -359,7 +359,10 @@ class CatalogController < ApplicationController
     config.add_show_field 'r4_identifier_tesim', :label => 'Identifier 4', if: :display_identifier_show_field?
     config.add_show_field 'r5_identifier_tesim', :label => 'Identifier 5', if: :display_identifier_show_field?
     config.add_show_field 'r6_identifier_tesim', :label => 'Identifier 6', if: :display_identifier_show_field?
+
+    # "Image View Description and Image View Type are separate fields and a record is not required to have either." -mhk33 3/31/2020
     config.add_show_field 'image_view_desc_hash_tesim', :label => 'Image View', helper_method: :compound_field_display
+
     config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
     config.add_show_field 'kaltura_id_ssm', :label => 'Kaltura ID' # 3
     config.add_show_field 'kaltura_playlist_ssm', :label => 'Kaltura Playlist' # 1
