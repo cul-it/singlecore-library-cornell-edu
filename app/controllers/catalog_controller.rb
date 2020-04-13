@@ -487,7 +487,7 @@ class CatalogController < ApplicationController
     role = parts.first + '_date_type_' + parts.last
     qualifier = solr_doc[role]
     if qualifier.present?
-      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ') + ' Date'
     end
     return true
   end
