@@ -246,7 +246,7 @@ class CatalogController < ApplicationController
                          segments: true,
                          maxlength: 6
                        }
-    config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
+    config.add_facet_field 'creator_ssi', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'location_tesim', :label => 'Location', :show => false
     config.add_facet_field 'work_type_tesim', :label => 'Work Type' # 56
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
@@ -417,7 +417,7 @@ class CatalogController < ApplicationController
     config.add_sort_field 'latest_date_isi asc, title_tesi asc', :label => 'year (ascending)'
     config.add_sort_field 'title_ssi asc, latest_date_isi asc', :label => 'title (a to z)'
     config.add_sort_field 'title_ssi desc, latest_date_isi desc', :label => 'title (z to a)'
-    config.add_sort_field 'author_ssi asc, latest_date_isi asc', :label => 'author (a to z)'
+    config.add_sort_field 'creator_ssi asc, latest_date_isi asc', :label => 'author (a to z)'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
