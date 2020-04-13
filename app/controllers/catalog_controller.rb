@@ -368,7 +368,17 @@ class CatalogController < ApplicationController
     config.add_show_field 'kaltura_playlist_ssm', :label => 'Kaltura Playlist' # 1
     config.add_show_field 'keywords_subject_tesim', :label => 'Keywords' # 3
     config.add_show_field 'language_tesim', :label => 'Language' # 12
-    config.add_show_field 'legacy_label_hash_tesim', :label => 'Legacy Label', helper_method: :compound_field_display
+
+    # Legacy label and value qualifier
+    #config.add_show_field 'legacy_label_hash_tesim', :label => 'Legacy Label', helper_method: :compound_field_display
+    config.add_show_field 'r1_legacy_value_tesim', :label => 'Legacy Value 1', if: :display_legacy_value_show_field?
+    config.add_show_field 'r2_legacy_value_tesim', :label => 'Legacy Value 2', if: :display_legacy_value_show_field?
+    config.add_show_field 'r3_legacy_value_tesim', :label => 'Legacy Value 3', if: :display_legacy_value_show_field?
+    config.add_show_field 'r4_legacy_value_tesim', :label => 'Legacy Value 4', if: :display_legacy_value_show_field?
+    config.add_show_field 'r5_legacy_value_tesim', :label => 'Legacy Value 5', if: :display_legacy_value_show_field?
+    config.add_show_field 'r6_legacy_value_tesim', :label => 'Legacy Value 6', if: :display_legacy_value_show_field?
+    config.add_show_field 'r7_legacy_value_tesim', :label => 'Legacy Value 7', if: :display_legacy_value_show_field?
+
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true # 46
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true # 36
     config.add_show_field 'measurement_hash_tesim', :label => 'Measurement', helper_method: :compound_field_display
@@ -468,6 +478,17 @@ class CatalogController < ApplicationController
     field = field_config['field']
     parts = field.split('_')
     role = parts.first + '_identifier_type_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+    end
+    return true
+  end
+
+  def display_legacy_value_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_legacy_label_' + parts.last
     qualifier = solr_doc[role]
     if qualifier.present?
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
