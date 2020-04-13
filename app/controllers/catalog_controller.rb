@@ -530,7 +530,18 @@ class CatalogController < ApplicationController
     if text.present?
       field_config['label'] = text.split.map(&:capitalize).join(' ')
     end
-
     return true
   end
+
+  def display_title_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_title_language_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+    end
+    return true
+  end
+
 end
