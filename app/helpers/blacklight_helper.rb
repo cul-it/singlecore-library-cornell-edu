@@ -537,4 +537,32 @@ def compound_field_display args
   end
 end
 
+def compound_measurement_field_display args
+  field = args[:field]
+  doc = args[:document]
+  json = doc[field].first
+
+  if json.present?
+    compound = JSON.parse(json)
+    parts = []
+    compound.each do |row|
+      row.each do |values|
+        value = values['measurement']
+        slug = []
+        if values['measurement_units'].present?
+          slug << values['measurement_units']
+        end
+        if values['measurement_dimension'].present?
+          slug << values['measurement_dimension']
+        end
+        if slug.first.present?
+          value += ' (' + slug.join(', ') + ')'
+        end
+        parts << value
+      end
+    end
+    parts.join('<br />').html_safe
+  end
+end
+
 end
