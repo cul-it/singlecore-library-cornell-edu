@@ -350,7 +350,15 @@ class CatalogController < ApplicationController
     config.add_show_field 'description_tesim', :label => 'Description' # 53
     config.add_show_field 'event_name_tesim', :label => 'Event' # 7
     config.add_show_field 'exhibition_tesim', :label => 'Exhibition' # 1
-    config.add_show_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
+
+    # Identifier type qualifier
+    #config.add_show_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
+    config.add_show_field 'r1_identifier_tesim', :label => 'Identifier 1', if: :display_identifier_show_field?
+    config.add_show_field 'r2_identifier_tesim', :label => 'Identifier 2', if: :display_identifier_show_field?
+    config.add_show_field 'r3_identifier_tesim', :label => 'Identifier 3', if: :display_identifier_show_field?
+    config.add_show_field 'r4_identifier_tesim', :label => 'Identifier 4', if: :display_identifier_show_field?
+    config.add_show_field 'r5_identifier_tesim', :label => 'Identifier 5', if: :display_identifier_show_field?
+    config.add_show_field 'r6_identifier_tesim', :label => 'Identifier 6', if: :display_identifier_show_field?
     config.add_show_field 'image_view_desc_hash_tesim', :label => 'Image View', helper_method: :compound_field_display
     config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
     config.add_show_field 'kaltura_id_ssm', :label => 'Kaltura ID' # 3
@@ -446,6 +454,17 @@ class CatalogController < ApplicationController
     field = field_config['field']
     parts = field.split('_')
     role = parts.first + '_date_type_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+    end
+    return true
+  end
+
+  def display_identifier_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_identifier_type_' + parts.last
     qualifier = solr_doc[role]
     if qualifier.present?
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
