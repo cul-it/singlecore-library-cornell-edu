@@ -259,9 +259,10 @@ class CatalogController < ApplicationController
     config.add_facet_field 'keywords_tesim', :label => 'Keywords', :limit => 5, show: false
     config.add_facet_field 'repository_tesim', :label => 'Repository', :limit => 5
     config.add_facet_field 'archival_collection_tesim', :label => 'Archival Collection', :limit => 5
-    config.add_facet_field 'format_tesim', :label => 'Format', :limit => 5
-    config.add_facet_field 'site_tesim', :label => 'Site', show: false
-    config.add_facet_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display, :show => false
+    config.add_facet_field 'creation_site_location_tesim', :label => 'Site', show: false
+    config.add_facet_field 'region_location_tesim', :label => 'Region', show: false
+    config.add_facet_field 'set_title_tesim', :label => 'Set', :show => true, :limit => 5
+    config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
     config.add_facet_field 'other_location_tesim', :label => 'Site', :show => false
