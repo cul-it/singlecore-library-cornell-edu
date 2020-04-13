@@ -239,8 +239,9 @@ class CatalogController < ApplicationController
     config.show.display_type_field = 'project_id_ssi'
 
     # solr fields that will be treated as facets by the blacklight application
-    config.add_facet_field 'collection_tesim', :label => 'Collection', :sort => 'index', :limit => true
-    config.add_facet_field 'r1_date_tesim', :label => 'Date', :limit => 5
+    config.add_facet_field 'collection_tesim', :label => 'Collection', :sort => 'index', :limit => 5, :collapse => false
+    config.add_facet_field 'format_tesim', :label => 'Format', :limit => 5, :collapse => false
+    config.add_facet_field 'date_tesim', :label => 'Date', :limit => 5
     config.add_facet_field 'latest_date_isi', :label => 'Date Range',  range: {
                          num_segments: 6,
                          segments: true,
