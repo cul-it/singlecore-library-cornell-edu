@@ -339,7 +339,14 @@ class CatalogController < ApplicationController
     config.add_show_field 'condition_tesim', :label => 'Condition' # 3
     config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
-    config.add_show_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
+
+    # Date type qualifier
+    #config.add_show_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
+    config.add_show_field 'r1_date_tesim', :label => 'Date 1', if: :display_date_show_field?
+    config.add_show_field 'r2_date_tesim', :label => 'Date 2', if: :display_date_show_field?
+    config.add_show_field 'r3_date_tesim', :label => 'Date 3', if: :display_date_show_field?
+    config.add_show_field 'r4_date_tesim', :label => 'Date 4', if: :display_date_show_field?
+
     config.add_show_field 'description_tesim', :label => 'Description' # 53
     config.add_show_field 'event_name_tesim', :label => 'Event' # 7
     config.add_show_field 'exhibition_tesim', :label => 'Exhibition' # 1
@@ -435,4 +442,14 @@ class CatalogController < ApplicationController
     return true
   end
 
+  def display_date_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_date_type_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+    end
+    return true
+  end
 end
