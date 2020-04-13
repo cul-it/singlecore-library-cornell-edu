@@ -300,8 +300,16 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the show (single result) view
     # these are generated from the digcoll-ingest collections and the MAP spreadsheet
-    config.add_show_field 'title_tesim', :label => 'Title'
-    config.add_show_field 'title_language_tesim', :label => 'Title Language'
+
+    # Title qualifier
+    #config.add_show_field 'title_tesim', :label => 'Title'
+    #config.add_show_field 'title_language_tesim', :label => 'Title Language'
+    #config.add_show_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_field_display
+    config.add_show_field 'r1_title_tesim', :label => 'Title 1', if: :display_title_show_field?
+    config.add_show_field 'r2_title_tesim', :label => 'Title 2', if: :display_title_show_field?
+    config.add_show_field 'r3_title_tesim', :label => 'Title 3', if: :display_title_show_field?
+    config.add_show_field 'r4_title_tesim', :label => 'Title 4', if: :display_title_show_field?
+
     config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
     config.add_show_field 'bibid_tesim', :label => 'BibID', helper_method: :catalog_record # 3
     config.add_show_field 'box_tesim', :label => 'Box' # 20
@@ -404,7 +412,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'species_tesim', :label => 'Species' # 2
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
-    config.add_show_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_field_display
     config.add_show_field 'transcription_tesim', :label => 'Transcription' # 10
     config.add_show_field 'translation_as_tesim', :label => 'isTranslatedAs' # 1
     config.add_show_field 'translation_of_tesim', :label => 'isTranslationOf' # 1
