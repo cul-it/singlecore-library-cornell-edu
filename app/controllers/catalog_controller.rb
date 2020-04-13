@@ -381,7 +381,16 @@ class CatalogController < ApplicationController
 
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true # 46
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true # 36
+
+    # Measurement qualifiers
     config.add_show_field 'measurement_hash_tesim', :label => 'Measurement', helper_method: :compound_field_display
+    config.add_show_field 'r1_measurement_tesim', :label => 'Measurement 1', if: :display_measurement_show_field?
+    config.add_show_field 'r2_measurement_tesim', :label => 'Measurement 2', if: :display_measurement_show_field?
+    config.add_show_field 'r3_measurement_tesim', :label => 'Measurement 3', if: :display_measurement_show_field?
+    config.add_show_field 'r4_measurement_tesim', :label => 'Measurement 4', if: :display_measurement_show_field?
+    config.add_show_field 'r5_measurement_tesim', :label => 'Measurement 5', if: :display_measurement_show_field?
+    config.add_show_field 'r6_measurement_tesim', :label => 'Measurement 6', if: :display_measurement_show_field?
+
     config.add_show_field 'notes_tesim', :label => 'Notes' # 33
     config.add_show_field 'ocr_transcription_tesim', :label => 'OCR Text' # 1
     config.add_show_field 'provenance_tesim', :label => 'Provenance' # 9
@@ -493,6 +502,28 @@ class CatalogController < ApplicationController
     if qualifier.present?
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
     end
+    return true
+  end
+
+  def display_measurement_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_measurement_dimension_' + parts.last
+    label = []
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      label << qualifier.first
+    end
+    role = parts.first + '_measurement_units_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      label << qualifier.first
+    end
+    text = label.join(' ')
+    if text.present?
+      field_config['label'] = text.split.map(&:capitalize).join(' ')
+    end
+
     return true
   end
 end
