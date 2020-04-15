@@ -316,7 +316,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
     config.add_index_field 'work_type_tesim', :label => 'Work Type' # 56
     config.add_index_field 'book_title', :label => 'Book Title'
-    config.add_index_field 'date_tesim', :label => 'Date'
+    #config.add_index_field 'date_tesim', :label => 'Date'
     config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
     config.add_index_field 'format_tesim', :label => 'Format'
 
