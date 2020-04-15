@@ -302,7 +302,12 @@ class CatalogController < ApplicationController
 
     config.add_index_field 'description_tesim', :label => 'Description' # 53
     config.add_index_field 'earliest_date_isi', :label => 'Earliest Date' # 60
-    config.add_index_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
+    #config.add_index_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
+    for n in 1..config.max_r_count[:identifier]
+      label = 'Identifier' + (n == 1 ? '' : ' ' + n.to_s)
+      config.add_index_field 'r' + n.to_s + '_identifier_tesim', :label => label, if: :display_identifier_show_field?
+    end
+
     config.add_index_field 'keywords_subject_tesim', :label => 'Keywords' # 3
     config.add_index_field 'latest_date_isi', :label => 'Latest Date' # 60
     config.add_index_field 'location_tesim', :label => 'Location', :link_to_search => true # 46
