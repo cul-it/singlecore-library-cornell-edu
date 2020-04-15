@@ -331,10 +331,10 @@ class CatalogController < ApplicationController
     #config.add_show_field 'title_tesim', :label => 'Title'
     #config.add_show_field 'title_language_tesim', :label => 'Title Language'
     #config.add_show_field 'title_hash_tesim', :label => 'Title', helper_method: :compound_field_display
-    config.add_show_field 'r1_title_tesim', :label => 'Title', if: :display_title_show_field?
-    config.add_show_field 'r2_title_tesim', :label => 'Title 2', if: :display_title_show_field?
-    config.add_show_field 'r3_title_tesim', :label => 'Title 3', if: :display_title_show_field?
-    config.add_show_field 'r4_title_tesim', :label => 'Title 4', if: :display_title_show_field?
+    for n in 1..config.max_r_count[:title]
+      label = 'Title' + (n == 1 ? '' : ' ' + n.to_s)
+      config.add_show_field 'r' + n.to_s + '_title_tesim', :label => label, if: :display_title_show_field?
+    end
 
     config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
     config.add_show_field 'bibid_tesim', :label => 'BibID', helper_method: :catalog_record # 3
