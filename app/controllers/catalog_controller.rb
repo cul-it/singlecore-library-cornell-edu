@@ -541,7 +541,8 @@ class CatalogController < ApplicationController
     role = parts.first + '_title_language_' + parts.last
     qualifier = solr_doc[role]
     if qualifier.present?
-      field_config['label'] = 'Title (' + qualifier.first.split.map(&:capitalize).join(' ') + ')'
+      // remove parens then prefix and surround with parens
+      field_config['label'] = 'Title (' + qualifier.first.gsub(/[()]/,"").split.map(&:capitalize).join(' ') + ')'
     end
     return true
   end
