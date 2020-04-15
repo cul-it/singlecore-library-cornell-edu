@@ -212,6 +212,15 @@ class CatalogController < ApplicationController
       :fl => '*,score',
           }
 
+    config.max_r_count = {
+      :date => 4,
+      :title => 4,
+      :measurement => 6,
+      :identifier => 6,
+      :agent => 6,
+      :legacy_value => 7,
+    }
+
     config.default_per_page = 20
 
     ## blacklight-maps configuration default values
