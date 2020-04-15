@@ -285,7 +285,12 @@ class CatalogController < ApplicationController
     config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
-    config.add_index_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display, :link_to_search => true
+    #config.add_index_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display, :link_to_search => true
+    for n in 1..config.max_r_count[:agent]
+      label = 'Agent' + (n == 1 ? '' : ' ' + n.to_s)
+      config.add_index_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_show_field?
+    end
+
     config.add_index_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
     config.add_index_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
     config.add_index_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
