@@ -415,6 +415,9 @@ def chla_thumbnail args
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
    else
      response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}_1&wt=json&indent=true"))
+     if @response[0].nil?
+        response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{thumb}&wt=json&indent=true"))
+     end
    end
    @response = response['response']['docs']
    return @response[0]['awsthumbnail_tesim'][0].to_s
