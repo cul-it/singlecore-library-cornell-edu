@@ -70,7 +70,9 @@
           fullPageButton: "full-page",
           minZoomImageRatio: 1,
           prefixUrl: "/images/",
-          tileSources: "<%= render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>"
+          tileSources: "<%= render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>",
+          crossOriginPolicy: 'Anonymous',
+          ajaxWithCredentials: false
         });
     }
     window.onload = initOpenSeadragon;
@@ -92,7 +94,10 @@
           fullPageButton: "full-page",
           minZoomImageRatio: 1,
           prefixUrl: "/images/",
-          tileSources: "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= @project %>/<%= @asset %>/image/info.json"
+          tileSources: "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= @project %>/<%= @asset %>/image/info.json",
+          crossOriginPolicy: false,
+          ajaxWithCredentials: false,
+          loadTilesWithAjax: true
         });
     }
     window.onload = initOpenSeadragon;
