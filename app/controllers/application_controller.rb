@@ -89,7 +89,6 @@ class ApplicationController < ActionController::Base
 
       fq = '(collection_tesim:"Adler Hip Hop Archive" AND -adler_status:"Suppress for portal")
       OR display_target_tesim:"bento"
-      :gamelan, OR collection_tesim:"Indonesian Music Archive"
       OR -collection_tesim:("Liberian Law Collection"
         "Donovan Nuremberg Trials Collection"
         "Scottsboro Trials Collection"
@@ -110,6 +109,7 @@ class ApplicationController < ActionController::Base
       :conzo, OR collection_tesim: "Joe Conzo Jr. Archive"
       :eleusis, OR collection_tesim:"Mysteries at Eleusis: Images of Inscriptions"
       :fallout, OR collection_tesim: "Nuclear Fallout Pamphlets"
+      :gamelan, OR collection_tesim:"Indonesian Music Archive"
       :gems, OR collection_tesim:"Cornell Gem Impressions Collection"
       :hill, OR collection_tesim:"Hill Ornithology Collection"
       :hiphopflyers, OR collection_tesim:"Hip Hop Party and Event Flyers"
