@@ -94,10 +94,11 @@ class ApplicationController < ActionController::Base
         "Scottsboro Trials Collection"
         "Trial Pamphlets Collection")
       OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -solr_loader_tesim:"eCommons"
-      AND +('
+      AND +(
+      project_id_ssi:('
       :adler, OR collection_tesim:"Adler Hip Hop Archive"
       :adwhite, OR collection_tesim:"Andrew Dickson White Architectural Photographs Collection"
-      :aerial,  collection_tesim:"New York State Aerial Photographs"
+      :aerial, OR collection_tesim:"New York State Aerial Photographs"
       :anthrocollections, OR collection_tesim:"Selections from the Cornell Anthropology Collections"
       :artifacts, OR collection_tesim:"Campus Artifacts, Art & Memorabilia"
       :bam, OR collection_tesim: "Afrika Bambaataa Vinyl Collection"
@@ -126,7 +127,7 @@ class ApplicationController < ActionController::Base
       :lindsaycooper, OR collection_tesim: "Lindsay Cooper Digital Archive"
       :loewentheil, OR collection_tesim:"Loewentheil Collection of African-American Photographs"
       :obama, OR collection_tesim:"Obama Visual Iconography"
-      :page OR collection_tesim: "Art 2301 Printmaking Student Portfolios"
+      :page, OR collection_tesim: "Art 2301 Printmaking Student Portfolios"
       :pjmode, OR collection_tesim:"Persuasive Maps: PJ Mode Collection"
       :politicalamericana, OR collection_tesim: "Political Americana"
       :prisonwritings, OR collection_tesim: "19th Century Prison Reform Collection"
@@ -146,6 +147,7 @@ class ApplicationController < ActionController::Base
       :tellennasbeh, OR collection_tesim:"Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin"
       :vicos, OR collection_tesim:"Vicos Collection"
       :willardstraight, OR collection_tesim:"Willard D. Straight in Korea"
+      ')
       OR collection_tesim: (
         "Alfredo Montalvo Bolivian Digital Pamphlets Collection"
         "Core Historical Literature of Agriculture"
