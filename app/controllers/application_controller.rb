@@ -146,12 +146,14 @@ class ApplicationController < ActionController::Base
       :tellennasbeh, OR collection_tesim:"Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin"
       :vicos, OR collection_tesim:"Vicos Collection"
       :willardstraight, OR collection_tesim:"Willard D. Straight in Korea"
-      OR collection_tesim: "Core Historical Literature of Agriculture"
-      OR collection_tesim: "Hive & the Honeybee"
-      OR collection_tesim:"Alfredo Montalvo Bolivian Digital Pamphlets Collection"
-      OR collection_tesim:"Home Economics Archive: Research, Tradition and History"
-      OR collection_tesim:"Language of Flowers"
-      OR collection_tesim:"Wordsworth Collection"
+      OR collection_tesim: (
+        "Alfredo Montalvo Bolivian Digital Pamphlets Collection"
+        "Core Historical Literature of Agriculture"
+        "Hive & the Honeybee"
+        "Home Economics Archive: Research, Tradition and History"
+        "Language of Flowers"
+        "Wordsworth Collection"
+        )
       ))'
     end
   end
