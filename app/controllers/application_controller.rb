@@ -26,7 +26,6 @@ class ApplicationController < ActionController::Base
       OR -collection_tesim:"Donovan Nuremberg Trials Collection"
       OR -collection_tesim:"Scottsboro Trials Collection"
       OR -collection_tesim:"Trial Pamphlets Collection"
-      OR display_target_tesim:"portal-prod"
       OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -solr_loader_tesim:"eCommons"
       AND +(collection_tesim:"New York State Aerial Photographs"
       OR collection_tesim:"Huntington Free Library Native American Collection"
