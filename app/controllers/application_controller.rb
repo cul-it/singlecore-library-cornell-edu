@@ -86,13 +86,13 @@ class ApplicationController < ActionController::Base
 
 
     elsif environment == 'production'
+
       fq = '(collection_tesim:"Adler Hip Hop Archive" AND -adler_status:"Suppress for portal")
       OR display_target_tesim:"bento"
-      OR collection_tesim:"Indonesian Music Archive"
-      OR -collection_tesim:"Liberian Law Collection"
-      OR -collection_tesim:"Donovan Nuremberg Trials Collection"
-      OR -collection_tesim:"Scottsboro Trials Collection"
-      OR -collection_tesim:"Trial Pamphlets Collection"
+      OR -collection_tesim:("Liberian Law Collection"
+        "Donovan Nuremberg Trials Collection"
+        "Scottsboro Trials Collection"
+        "Trial Pamphlets Collection")
       OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -solr_loader_tesim:"eCommons"
       AND +(collection_tesim:"New York State Aerial Photographs"
       OR collection_tesim:"Huntington Free Library Native American Collection"
