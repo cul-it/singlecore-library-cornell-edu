@@ -126,6 +126,7 @@ class ApplicationController < ActionController::Base
       :lindsaycooper, OR collection_tesim: "Lindsay Cooper Digital Archive"
       :loewentheil, OR collection_tesim:"Loewentheil Collection of African-American Photographs"
       :obama, OR collection_tesim:"Obama Visual Iconography"
+      :page OR collection_tesim: "Art 2301 Printmaking Student Portfolios"
       :pjmode, OR collection_tesim:"Persuasive Maps: PJ Mode Collection"
       :politicalamericana, OR collection_tesim: "Political Americana"
       :prisonwritings, OR collection_tesim: "19th Century Prison Reform Collection"
@@ -151,7 +152,6 @@ class ApplicationController < ActionController::Base
       OR collection_tesim:"Home Economics Archive: Research, Tradition and History"
       OR collection_tesim:"Language of Flowers"
       OR collection_tesim:"Wordsworth Collection"
-      page: OR collection_tesim: "Art 2301 Printmaking Student Portfolios"
       ))'
     end
   end
