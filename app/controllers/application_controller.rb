@@ -107,16 +107,98 @@ class ApplicationController < ActionController::Base
         ssc[:paniccioli],
         ssc[:seneca]
       ].join(' OR ')
-      fq += ')
-      OR collection_tesim: (
-        "Alfredo Montalvo Bolivian Digital Pamphlets Collection"
-        "Core Historical Literature of Agriculture"
-        "Hive & the Honeybee"
-        "Home Economics Archive: Research, Tradition and History"
-        "Language of Flowers"
-        "Wordsworth Collection"
-        )
-      ))'
+      fq_forum += '))'
+
+      # non-JSTOR filters
+      fq_dlxs = '(-project_id_ssi:* AND
+        -solr_loader_tesim:"eCommons" AND
+        -active_fedora_model_ssi:"Page" AND
+        collection_tesim:('
+      fq_dlxs += [  # include these dlxs collections
+        '"Alfredo Montalvo Bolivian Digital Pamphlets Collection"',
+        '"Core Historical Literature of Agriculture"',
+        '"Hive & the Honeybee"',
+        '"Home Economics Archive: Research, Tradition and History"',
+        '"Language of Flowers"',
+        '"Samuel J. May Anti-Slavery Collection"',
+        '"Wordsworth Collection"'
+      ].join(' OR ')
+      fq_dlxs += '))'
+
+      fq = [fq_dlxs, fq_forum].join(' OR ')
+
+
+      # fq = '(collection_tesim:"Adler Hip Hop Archive" AND -adler_status:"Suppress for portal")
+      # OR display_target_tesim:"bento"
+      # OR -collection_tesim:("Liberian Law Collection"
+      #   "Donovan Nuremberg Trials Collection"
+      #   "Scottsboro Trials Collection"
+      #   "Trial Pamphlets Collection")
+      # OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -solr_loader_tesim:"eCommons"
+      # AND +( project_id_ssi:('
+      # fq +=
+      # [
+      #   ssc[:adler],
+      #   ssc[:adwhite],
+      #   ssc[:aerial],
+      #   ssc[:anthrocollections],
+      #   ssc[:artifacts],
+      #   ssc[:bam],
+      #   ssc[:bastides],
+      #   ssc[:beyondtaj],
+      #   ssc[:blaschka],
+      #   ssc[:cast],
+      #   ssc[:coins],
+      #   ssc[:conzo],
+      #   ssc[:eleusis],
+      #   ssc[:fallout],
+      #   ssc[:gamelan],
+      #   ssc[:gems],
+      #   ssc[:hill],
+      #   ssc[:hiphopflyers],
+      #   ssc[:howell],
+      #   ssc[:impersonator],
+      #   ssc[:isbell],
+      #   ssc[:iwo],
+      #   ssc[:japantheatre],
+      #   ssc[:japanworld],
+      #   ssc[:johnclairmiller],
+      #   ssc[:johnclairmillericeland],
+      #   ssc[:karma],
+      #   ssc[:kingsbury],
+      #   ssc[:lindsaycooper],
+      #   ssc[:loewentheil],
+      #   ssc[:obama],
+      #   ssc[:page],
+      #   ssc[:pjmode],
+      #   ssc[:politicalamericana],
+      #   ssc[:prisonwritings],
+      #   ssc[:punkflyers],
+      #   ssc[:ragamala],
+      #   ssc[:railroad],
+      #   ssc[:repsslides],
+      #   ssc[:rmc],
+      #   ssc[:rudin],
+      #   ssc[:squeezes],
+      #   ssc[:srilanka],
+      #   ssc[:stereoscopes],
+      #   ssc[:sterrett],
+      #   ssc[:tamang],
+      #   ssc[:tarr],
+      #   ssc[:tellennasbeh],
+      #   ssc[:vicos],
+      #   ssc[:willardstraight],
+      # ].join(' OR ')
+      # fq += ')
+      # OR collection_tesim: (
+      #   "Alfredo Montalvo Bolivian Digital Pamphlets Collection"
+      #   "Core Historical Literature of Agriculture"
+      #   "Hive & the Honeybee"
+      #   "Home Economics Archive: Research, Tradition and History"
+      #   "Language of Flowers"
+      #   "Wordsworth Collection"
+      #   )
+      # ))'
 
 save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
 Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: in create_scanit_link"
