@@ -132,10 +132,8 @@ class ApplicationController < ActionController::Base
       fq_forum += '))'
 
       # non-JSTOR filters
-      fq_dlxs = '(-project_id_ssi:* AND
-        -solr_loader_tesim:"eCommons" AND
-        -active_fedora_model_ssi:"Page" AND
-        collection_tesim:('
+      fq_dlxs = '(-active_fedora_model_ssi:"Page" AND
+        id:('
       fq_dlxs += [  # include these dlxs collections
         '"Alfredo Montalvo Bolivian Digital Pamphlets Collection"',
         '"Core Historical Literature of Agriculture"',
