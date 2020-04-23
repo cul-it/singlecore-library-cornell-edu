@@ -120,7 +120,6 @@ class ApplicationController < ActionController::Base
         '"Hive & the Honeybee"',
         '"Home Economics Archive: Research, Tradition and History"',
         '"Language of Flowers"',
-        '"Samuel J. May Anti-Slavery Collection"',
         '"Wordsworth Collection"'
       ].join(' OR ')
       fq_dlxs += '))'
