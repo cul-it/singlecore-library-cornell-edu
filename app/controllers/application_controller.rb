@@ -135,13 +135,26 @@ class ApplicationController < ActionController::Base
       fq_dlxs = '(-active_fedora_model_ssi:"Page" AND
         id:('
       fq_dlxs += [  # include these dlxs collections
-        '"Alfredo Montalvo Bolivian Digital Pamphlets Collection"',
-        '"Core Historical Literature of Agriculture"',
-        '"Hive & the Honeybee"',
-        '"Home Economics Archive: Research, Tradition and History"',
-        '"Language of Flowers"',
-        '"Wordsworth Collection"'
-      ].join(' OR ')
+        dlxs[:bol],
+        dlxs[:chla],
+        dlxs[:chla],
+        dlxs[:cmip],
+        dlxs[:cooper],
+        # dlxs[:ezra],
+        dlxs[:flo],
+        dlxs[:hearth],
+        dlxs[:hivebees],
+        dlxs[:hunt],
+        dlxs[:izq],
+        # dlxs[:liber],
+        # dlxs[:may],
+        # dlxs[:nur],
+        dlxs[:regmi],
+        # dlxs[:sat],
+        # dlxs[:scott],
+        dlxs[:sea],
+        dlxs[:witchcraft]
+      ].join(' ')
       fq_dlxs += '))'
 
       fq = [fq_dlxs, fq_forum].join(' OR ')
