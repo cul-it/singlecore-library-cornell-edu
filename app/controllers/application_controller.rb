@@ -76,6 +76,28 @@ class ApplicationController < ActionController::Base
       willardstraight: 89
     }
 
+    dlxs = {
+      bol: "bol*",			        # Alfredo Montalvo Bolivian Digital Pamphlets Collection
+      chla: "chla*",			      # Core Historical Library of Agriculture
+      chla: "chla*",			      # Core Historical Literature of Agriculture
+      cmip: "cmip*",			      # Cornell Modern Indonesia Collection
+      cooper: "cooper*",		    # Cooper Bridge Plan Collection
+      ezra: "ezra*",			      # Ezra Cornell Papers
+      flo: "flo*",			        # Language of Flowers
+      hearth: "hearth*",		    # Home Economics Archive: Research
+      hivebees: "hivebees*",    # Hive and the Honeybee
+      hunt: "hunt*",			      # Huntington Free Library Native American Collection
+      izq: "izq*",			        # History of the Left in Latin America
+      liber: "liber*",		    	# Liberian Law Collection
+      may: "may*",			        # Samuel J. May Anti-Slavery Collection
+      nur: "nur*",			        # Donovan Nuremberg Trials Collection
+      regmi: "regmi*",		      # Regmi Research Series
+      sat: "sat*",			        # Trial Pamphlets Collection
+      scott: "scott*",			    # Scottsboro Trials Collection
+      sea: "sea*",			        # Southeast Asia Visions
+      witchcraft: "witchcraft*",# Digital Witchcraft Collection
+    }
+
     environment = 'production'
     if environment == 'development'
       fq = '-active_fedora_model_ssi:"Page"
