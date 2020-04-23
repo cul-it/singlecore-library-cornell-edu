@@ -88,67 +88,24 @@ class ApplicationController < ActionController::Base
 
     elsif environment == 'production'
 
-      fq = '(collection_tesim:"Adler Hip Hop Archive" AND -adler_status:"Suppress for portal")
-      OR display_target_tesim:"bento"
-      OR -collection_tesim:("Liberian Law Collection"
-        "Donovan Nuremberg Trials Collection"
-        "Scottsboro Trials Collection"
-        "Trial Pamphlets Collection")
-      OR (-status_ssi:"Unpublished" AND -status_ssi:"Suppressed" AND -active_fedora_model_ssi:"Page" AND -solr_loader_tesim:"eCommons"
-      AND +( project_id_ssi:('
-      fq +=
-      [
-        ssc[:adler],
-        ssc[:adwhite],
-        ssc[:aerial],
-        ssc[:anthrocollections],
-        ssc[:artifacts],
-        ssc[:bam],
-        ssc[:bastides],
-        ssc[:beyondtaj],
-        ssc[:blaschka],
-        ssc[:cast],
-        ssc[:coins],
-        ssc[:conzo],
-        ssc[:eleusis],
-        ssc[:fallout],
-        ssc[:gamelan],
-        ssc[:gems],
-        ssc[:hill],
-        ssc[:hiphopflyers],
-        ssc[:howell],
-        ssc[:impersonator],
-        ssc[:isbell],
-        ssc[:iwo],
-        ssc[:japantheatre],
-        ssc[:japanworld],
-        ssc[:johnclairmiller],
-        ssc[:johnclairmillericeland],
-        ssc[:karma],
-        ssc[:kingsbury],
-        ssc[:lindsaycooper],
-        ssc[:loewentheil],
-        ssc[:obama],
-        ssc[:page],
-        ssc[:pjmode],
-        ssc[:politicalamericana],
-        ssc[:prisonwritings],
-        ssc[:punkflyers],
-        ssc[:ragamala],
-        ssc[:railroad],
-        ssc[:repsslides],
-        ssc[:rmc],
-        ssc[:rmc],
-        ssc[:rudin],
-        ssc[:squeezes],
-        ssc[:srilanka],
-        ssc[:stereoscopes],
-        ssc[:sterrett],
-        ssc[:tamang],
-        ssc[:tarr],
-        ssc[:tellennasbeh],
-        ssc[:vicos],
-        ssc[:willardstraight],
+      # JSTOR Forum filters
+      fq_forum = '(project_id_ssi:* AND
+        (status_ssi:"Published" OR publish_to_portal_tesim:1) AND
+        -adler_status:"Suppress for portal" AND
+        -project_id_ssi:('
+      fq_forum += [   # skip these collections
+        ssc[:ahearn],
+        ssc[:claireholt],
+        ssc[:culmaps],
+        ssc[:dendro],
+        ssc[:divinecomedy],
+        ssc[:dynkin],
+        ssc[:harrisson],
+        ssc[:kassoy],
+        ssc[:kmoddl],
+        ssc[:leuenberger],
+        ssc[:paniccioli],
+        ssc[:seneca]
       ].join(' OR ')
       fq += ')
       OR collection_tesim: (
