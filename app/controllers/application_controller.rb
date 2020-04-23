@@ -111,7 +111,7 @@ class ApplicationController < ActionController::Base
     elsif environment == 'production'
 
       # JSTOR Forum filters
-      fq_forum = '(project_id_ssi:* AND
+      fq_forum = '(id:ss* AND
         (status_ssi:"Published" OR publish_to_portal_tesim:1) AND
         -adler_status:"Suppress for portal" AND
         -project_id_ssi:('
