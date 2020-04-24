@@ -219,8 +219,7 @@ class ApplicationController < ActionController::Base
       ].join(' ')
       fq_other += ')'
 
-      fq = [fq_dlxs, fq_forum, fq_other].join(' OR ')
-
+      fq = '(' + [fq_dlxs, fq_forum, fq_other].join(' OR ').gsub(/\s+/, " ") + ')'
 
 save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
 Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: in create_scanit_link"
