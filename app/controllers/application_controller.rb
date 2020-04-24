@@ -102,11 +102,14 @@ class ApplicationController < ActionController::Base
     }
 
     if environment == 'development'
-      fq = '-active_fedora_model_ssi:"Page"
-      AND -(collection_tesim:"Cornell Collection of Blaschka Invertebrate Models" AND portal_sequence_isi:[2 TO *])
-      AND -(collection_tesim:"Seneca Haudenosaunee Archaeological Materials, circa 1688-1754" AND work_sequence_isi:[2 TO *])
-      AND -(collection_tesim:"Icelandic Stereoscopes" AND work_sequence_isi:[2 TO *])'
-
+       fqa = ['-active_fedora_model_ssi:"Page"',
+        '-solr_loader_tesim:"eCommons"',
+        '-(project_id_ssi:' + ssc[:blaschka].to_s + ' AND portal_sequence_isi:[2 TO *])',
+        '-(project_id_ssi:' + ssc[:seneca].to_s + ' AND work_sequence_isi:[2 TO *])',
+        '-(project_id_ssi:' + ssc[:stereoscopes].to_s + ' AND work_sequence_isi:[2 TO *])'
+      ]
+      # these [2 TO *] exclusions make it so only one item shows up in search results, not all images separately
+      fq = fqa.join(' AND ')
 
     elsif environment == 'production'
 
