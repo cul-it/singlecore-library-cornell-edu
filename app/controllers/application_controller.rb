@@ -116,7 +116,7 @@ class ApplicationController < ActionController::Base
 
       # JSTOR Forum filters
       fq_forum = '(id:ss* AND
-        (status_ssi:"Published" OR publish_to_portal_tesim:1) AND
+        (status_ssi:"Published" OR publish_to_portal_tesim:*) AND
         -adler_status:"Suppress for portal" AND
         -project_id_ssi:('
       fq_forum += [   # skip these collections
