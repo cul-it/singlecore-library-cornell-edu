@@ -98,6 +98,10 @@ class ApplicationController < ActionController::Base
       witchcraft: "witchcraft*",# Digital Witchcraft Collection
     }
 
+    other = {
+      wordsworth: '"Wordsworth Collection"'
+    }
+
     environment = 'production'
     if environment == 'development'
       fq = '-active_fedora_model_ssi:"Page"
@@ -155,9 +159,16 @@ class ApplicationController < ActionController::Base
         dlxs[:sea],
         dlxs[:witchcraft]
       ].join(' ')
-      fq_dlxs += '))'
+      fq_dlxs += ')'
 
-      fq = [fq_dlxs, fq_forum].join(' OR ')
+      # dlxs collections that have collection_tesim but no id prefix
+      fq_other = 'collection_tesim:('
+      fq_other += [
+        other[:wordsworth]
+      ].join(' ')
+      fq_other += '))'
+
+      fq = [fq_dlxs, fq_forum, fq_other].join(' OR ')
 
 
       # fq = '(collection_tesim:"Adler Hip Hop Archive" AND -adler_status:"Suppress for portal")
