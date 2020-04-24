@@ -102,7 +102,6 @@ class ApplicationController < ActionController::Base
       wordsworth: '"Wordsworth Collection"'
     }
 
-    environment = 'production'
     if environment == 'development'
       fq = '-active_fedora_model_ssi:"Page"
       AND -collection_tesim:"Core Historical Library of Agriculture"
@@ -220,13 +219,6 @@ class ApplicationController < ActionController::Base
       fq_other += ')'
 
       fq = '(' + [fq_dlxs, fq_forum, fq_other].join(' OR ').gsub(/\s+/, " ") + ')'
-
-save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: in create_scanit_link"
-puts fq.to_yaml
-Rails.logger.level = save_level
-      return fq
-
     end
   end
 
