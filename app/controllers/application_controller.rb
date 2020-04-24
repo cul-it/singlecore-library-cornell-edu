@@ -210,14 +210,14 @@ class ApplicationController < ActionController::Base
         dlxs[:sea],
         dlxs[:witchcraft]
       ].join(' ')
-      fq_dlxs += ')'
+      fq_dlxs += '))'
 
       # dlxs collections that have collection_tesim but no id prefix
       fq_other = 'collection_tesim:('
       fq_other += [
         other[:wordsworth]
       ].join(' ')
-      fq_other += '))'
+      fq_other += ')'
 
       fq = [fq_dlxs, fq_forum, fq_other].join(' OR ')
 
