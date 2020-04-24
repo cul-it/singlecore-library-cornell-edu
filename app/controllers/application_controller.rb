@@ -78,7 +78,6 @@ class ApplicationController < ActionController::Base
 
     dlxs = {
       bol: "bol*",			        # Alfredo Montalvo Bolivian Digital Pamphlets Collection
-      chla: "chla*",			      # Core Historical Library of Agriculture
       chla: "chla*",			      # Core Historical Literature of Agriculture
       cmip: "cmip*",			      # Cornell Modern Indonesia Collection
       cooper: "cooper*",		    # Cooper Bridge Plan Collection
@@ -190,7 +189,6 @@ class ApplicationController < ActionController::Base
         id:('
       fq_dlxs += [  # include these dlxs collections
         dlxs[:bol],
-        dlxs[:chla],
         dlxs[:chla],
         dlxs[:cmip],
         dlxs[:cooper],
