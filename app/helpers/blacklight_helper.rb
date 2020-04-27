@@ -352,12 +352,15 @@ end
 def get_compound_object args
   if args['id'].start_with?('ss:')
     if args['compound_object_ssm'].present?
-      # forum does not include the first media element's IIIF url
-      tileSources = [render_document_show_field_value(:document => args, :field => 'content_metadata_image_iiif_info_ssm')]
+      # forum sometimes does not include the first media element's IIIF url
+      default_iiif = render_document_show_field_value(:document => args, :field => 'content_metadata_image_iiif_info_ssm')
+      tileSources = []
       args['compound_object_ssm'].each { |json|
         compound = JSON.parse(json)
         if compound['iiif_url'].present?
           tileSources << compound['iiif_url'] + '/info.json'
+        elsif default_iiif.present?
+          tileSources << default_iiif
         end
       }
       return tileSources
