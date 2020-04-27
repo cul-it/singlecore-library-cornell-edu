@@ -356,21 +356,12 @@ def get_compound_object args
       tileSources = [render_document_show_field_value(:document => args, :field => 'content_metadata_image_iiif_info_ssm')]
       args['compound_object_ssm'].each { |json|
         compound = JSON.parse(json)
-
         if compound['iiif_url'].present?
           tileSources << compound['iiif_url'] + '/info.json'
         end
       }
-
-      save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-      Rails.logger.warn "jgr25_log #{__FILE__} #{__LINE__} #{__method__}: in create_scanit_link"
-      puts tileSources.to_yaml
-      puts tileSources.inspect
-      Rails.logger.level = save_level
-
-          return tileSources
+      return tileSources
     end
-    false
   end
   false
 end
