@@ -139,7 +139,7 @@ class ApplicationController < ActionController::Base
         ssc[:dynkin],
         #ssc[:eleusis],
         #ssc[:fallout],
-        #ssc[:gamelan],
+        #ssc[:gamelan],   -- forced
         #ssc[:gems],
         ssc[:harrisson],
         #ssc[:hill],
@@ -185,6 +185,8 @@ class ApplicationController < ActionController::Base
       ].join(' OR ')
       fq_forum += '))'
 
+      fq_forum_force = 'project_id_ssi:' + ssc[:gamelan]
+
       # non-JSTOR filters
       fq_dlxs = '(-active_fedora_model_ssi:"Page" AND
         id:('
@@ -217,7 +219,7 @@ class ApplicationController < ActionController::Base
       ].join(' ')
       fq_other += ')'
 
-      fq = '(' + [fq_dlxs, fq_forum, fq_other].join(' OR ').gsub(/\s+/, " ") + ')'
+      fq = '(' + [fq_dlxs, fq_forum, fq_forum_force, fq_other].join(' OR ').gsub(/\s+/, " ") + ')'
     end
   end
 
