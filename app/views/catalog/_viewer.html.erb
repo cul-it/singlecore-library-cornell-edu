@@ -32,6 +32,8 @@
   <div class="col-sm-10">
 <% end %>
 
+<% compound = get_compound_object(@document) %>
+
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
   <%# Display IIIF viewer unless there is no image in Forum %>
   <% unless @media.include?('ss_noimage') %>
@@ -57,7 +59,6 @@
 
 <%# display artstor iiif if we have it %>
 <% if render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm').present? %>
-  <% compound = get_compound_object(@document) %>
   <script>
     //<![CDATA[
     function initOpenSeadragon() {
