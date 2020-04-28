@@ -63,7 +63,6 @@
     function initOpenSeadragon() {
     OpenSeadragon ({
           id: "openseadragon1",
-          toolbar: "image-toolbar",
           zoomInButton:   "zoom-in",
           zoomOutButton:  "zoom-out",
           homeButton:     "home",
@@ -75,6 +74,7 @@
           tileSources: <%= compound.to_s.html_safe %>,
           sequenceMode: true
           <% else %>
+          toolbar: "image-toolbar",
           tileSources: "<%= render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>",
           <% end %>
         });
