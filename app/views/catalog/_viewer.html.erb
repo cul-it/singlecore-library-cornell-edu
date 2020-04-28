@@ -78,6 +78,9 @@
           nextButton:     "next-image",
           previousButton: "previous-image",
           showReferenceStrip: true,
+          referenceStripScroll: "vertical",
+          referenceStripPosition: 'BOTTOM_RIGHT', // 3 does not work either!
+          referenceStripSizeRatio: 0.15,
           tileSources: <%= compound.to_s.html_safe %>,
           sequenceMode: true
           <% else %>
