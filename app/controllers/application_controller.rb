@@ -191,22 +191,22 @@ class ApplicationController < ActionController::Base
       fq_dlxs += [  # include these dlxs collections
         dlxs[:bol],
         dlxs[:chla],
-        dlxs[:cmip],
-        dlxs[:cooper],
+        # dlxs[:cmip],
+        # dlxs[:cooper],
         # dlxs[:ezra],
         dlxs[:flo],
         dlxs[:hearth],
         dlxs[:hivebees],
         dlxs[:hunt],
-        dlxs[:izq],
+        # dlxs[:izq],
         # dlxs[:liber],
         # dlxs[:may],
         # dlxs[:nur],
-        dlxs[:regmi],
+        # dlxs[:regmi],
         # dlxs[:sat],
         # dlxs[:scott],
-        dlxs[:sea],
-        dlxs[:witchcraft]
+        # dlxs[:sea],
+        # dlxs[:witchcraft]
       ].join(' ')
       fq_dlxs += '))'
 
