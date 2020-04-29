@@ -95,10 +95,7 @@ class ApplicationController < ActionController::Base
       scott: "scott*",			    # Scottsboro Trials Collection
       sea: "sea*",			        # Southeast Asia Visions
       witchcraft: "witchcraft*",# Digital Witchcraft Collection
-    }
-
-    other = {
-      wordsworth: '"Wordsworth Collection"'
+      words: "words*"           # Wordsworth Collection
     }
 
     if environment == 'development'
@@ -115,11 +112,10 @@ class ApplicationController < ActionController::Base
 
       # JSTOR Forum filters
       fq_forum = '(id:ss* AND
-        (status_ssi:"Published" OR publish_to_portal_tesim:*) AND
-        -adler_status:"Suppress for portal" AND
+        status_ssi:"Published" AND
         -project_id_ssi:('
       fq_forum += [   # comment out any collections you want to display
-        #ssc[:adler],
+        ssc[:adler],  # special - see below
         #ssc[:adwhite],
         #ssc[:aerial],
         ssc[:ahearn],
@@ -139,7 +135,7 @@ class ApplicationController < ActionController::Base
         ssc[:dynkin],
         #ssc[:eleusis],
         #ssc[:fallout],
-        #ssc[:gamelan],
+        ssc[:gamelan],   # special - see below
         #ssc[:gems],
         ssc[:harrisson],
         #ssc[:hill],
@@ -185,6 +181,12 @@ class ApplicationController < ActionController::Base
       ].join(' OR ')
       fq_forum += '))'
 
+      fq_forum_special =
+        # gamelan does not care about status_ssi
+        '(project_id_ssi:' + ssc[:gamelan].to_s + ' OR ' +
+        # adler does not use status_ssi but has it's own status
+        '(project_id_ssi:' + ssc[:adler].to_s + ' AND publish_to_portal_tesim:*))'
+
       # non-JSTOR filters
       fq_dlxs = '(-active_fedora_model_ssi:"Page" AND
         id:('
@@ -206,18 +208,12 @@ class ApplicationController < ActionController::Base
         # dlxs[:sat],
         # dlxs[:scott],
         # dlxs[:sea],
-        # dlxs[:witchcraft]
+        # dlxs[:witchcraft],
+        dlxs[:words]
       ].join(' ')
       fq_dlxs += '))'
 
-      # dlxs collections that have collection_tesim but no id prefix
-      fq_other = 'collection_tesim:('
-      fq_other += [
-        other[:wordsworth]
-      ].join(' ')
-      fq_other += ')'
-
-      fq = '(' + [fq_dlxs, fq_forum, fq_other].join(' OR ').gsub(/\s+/, " ") + ')'
+      fq = '(' + [fq_dlxs, fq_forum, fq_forum_special].join(' OR ').gsub(/\s+/, " ") + ')'
     end
   end
 
