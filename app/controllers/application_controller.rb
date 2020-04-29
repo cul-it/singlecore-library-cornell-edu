@@ -115,7 +115,7 @@ class ApplicationController < ActionController::Base
         status_ssi:"Published" AND
         -project_id_ssi:('
       fq_forum += [   # comment out any collections you want to display
-        #ssc[:adler],
+        ssc[:adler],  # special - see below
         #ssc[:adwhite],
         #ssc[:aerial],
         ssc[:ahearn],
@@ -135,7 +135,7 @@ class ApplicationController < ActionController::Base
         ssc[:dynkin],
         #ssc[:eleusis],
         #ssc[:fallout],
-        #ssc[:gamelan],   -- forced
+        ssc[:gamelan],   # special - see below
         #ssc[:gems],
         ssc[:harrisson],
         #ssc[:hill],
