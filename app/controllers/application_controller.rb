@@ -209,7 +209,7 @@ class ApplicationController < ActionController::Base
         # dlxs[:scott],
         # dlxs[:sea],
         # dlxs[:witchcraft],
-        dlxs[:wordsworth]
+        dlxs[:words]
       ].join(' ')
       fq_dlxs += '))'
 
