@@ -184,6 +184,8 @@ class ApplicationController < ActionController::Base
       fq_forum_special =
         # gamelan does not care about status_ssi
         '(project_id_ssi:' + ssc[:gamelan].to_s + ' OR ' +
+        # adler does not use status_ssi but has it's own status
+        '(project_id_ssi:' + ssc[:adler].to_s + ' AND publish_to_portal_tesim:*))'
 
       # non-JSTOR filters
       fq_dlxs = '(-active_fedora_model_ssi:"Page" AND
