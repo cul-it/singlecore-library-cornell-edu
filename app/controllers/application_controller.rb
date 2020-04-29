@@ -95,10 +95,7 @@ class ApplicationController < ActionController::Base
       scott: "scott*",			    # Scottsboro Trials Collection
       sea: "sea*",			        # Southeast Asia Visions
       witchcraft: "witchcraft*",# Digital Witchcraft Collection
-    }
-
-    other = {
-      wordsworth: '"Wordsworth Collection"'
+      words: "words*"           # Wordsworth Collection
     }
 
     if environment == 'development'
@@ -208,18 +205,12 @@ class ApplicationController < ActionController::Base
         # dlxs[:sat],
         # dlxs[:scott],
         # dlxs[:sea],
-        # dlxs[:witchcraft]
+        # dlxs[:witchcraft],
+        dlxs[:wordsworth]
       ].join(' ')
       fq_dlxs += '))'
 
-      # dlxs collections that have collection_tesim but no id prefix
-      fq_other = 'collection_tesim:('
-      fq_other += [
-        other[:wordsworth]
-      ].join(' ')
-      fq_other += ')'
-
-      fq = '(' + [fq_dlxs, fq_forum, fq_forum_force, fq_other].join(' OR ').gsub(/\s+/, " ") + ')'
+      fq = '(' + [fq_dlxs, fq_forum, fq_forum_force].join(' OR ').gsub(/\s+/, " ") + ')'
     end
   end
 
