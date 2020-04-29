@@ -181,7 +181,7 @@ class ApplicationController < ActionController::Base
       ].join(' OR ')
       fq_forum += '))'
 
-      fq_forum_force = 'project_id_ssi:' + ssc[:gamelan]
+      fq_forum_special =
 
       # non-JSTOR filters
       fq_dlxs = '(-active_fedora_model_ssi:"Page" AND
@@ -209,7 +209,7 @@ class ApplicationController < ActionController::Base
       ].join(' ')
       fq_dlxs += '))'
 
-      fq = '(' + [fq_dlxs, fq_forum, fq_forum_force].join(' OR ').gsub(/\s+/, " ") + ')'
+      fq = '(' + [fq_dlxs, fq_forum, fq_forum_special].join(' OR ').gsub(/\s+/, " ") + ')'
     end
   end
 
