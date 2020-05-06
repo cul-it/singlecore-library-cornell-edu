@@ -50,9 +50,6 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 		<% if !@collection_website.blank? || !@ssc_site.blank? || @bibid.present? || @finding_aid.present? %>
 			<div class="well">
 				<h2>About the collection</h2>
-				<% if @bibid.present? %>
-		 			<%= render partial: 'cataloginfo'%>
-		 		<% end %>
 		 		<ul class="fa-ul collection-links">
 		 			<% if @url_related_link_tesim.present? %>
 						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @url_related_link_tesim %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'Squeezes3Dlink']);"><%= @title_related_link_tesim %></a></li>
