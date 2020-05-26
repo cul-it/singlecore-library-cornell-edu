@@ -274,7 +274,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
     config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
-    config.add_facet_field 'other_location_tesim', :label => 'Site', :show => false
+    config.add_facet_field 'site_tesim', :label => 'Site', :show => false
     config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
 
     if "#{ENV['COLLECTIONS']}" == "development"
