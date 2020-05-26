@@ -22,7 +22,7 @@ Feature: Asset regular fields
     | Date  | Date  | 26303879 | 1998-08-01 |
     | Date | Date | 26305773 | 1989-09 |
     | Description | Description | 595408 | "George and Priscilla Slocum Galleries Given |
-    | Founder | Agent | 3851180 | Louis IX |
+    | Founder | Founder | 3851180 | Louis IX |
     | Identifier | ID Number | 595408 | 100_1398 |
     | Image View Description | Image View Description | 595408 | Front View |
     | Image View Type | Image View Type | 595408 | General |
