@@ -350,17 +350,6 @@ def get_impersonator_multiviews args
   return @response
 end
 
-def get_stereoscopes_multiviews args
-  collection = args['collection_tesim'][0]
-  if args['identifier_tesim'].present?
-    parentid = args['identifier_tesim'][0]
-  end
-  sequence = args['work_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=identifier_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
-  @response = response['response']['docs']
-  return @response
-end
-
 def get_zorn_multiviews args
   collection = args['collection_tesim'][0]
   if args['plan_number_tesim'].present?
@@ -455,7 +444,7 @@ end
   }
 
 def is_multi_image? args
-  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_impersonator_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_stereoscopes_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_anthro_multiviews(args).length > 1 && args['work_sequence_isi'].present?)
+  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_impersonator_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_anthro_multiviews(args).length > 1 && args['work_sequence_isi'].present?)
     return true
   end
 end
@@ -466,7 +455,6 @@ end
     '20019' => 'impersonator',
     '4803' => 'seneca',
     '3686' => 'zorn',
-    '962' => 'stereoscopes',
     '273' => 'anthrocollections'
   }
 
