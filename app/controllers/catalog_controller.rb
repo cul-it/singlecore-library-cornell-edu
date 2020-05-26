@@ -293,6 +293,7 @@ class CatalogController < ApplicationController
 
     config.add_index_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
     config.add_index_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
+    config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_index_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
     #config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
     for n in 1..config.max_r_count[:agent]
