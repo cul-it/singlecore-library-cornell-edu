@@ -372,17 +372,6 @@ end
   return @response
 end
 
-def get_blaschka_multiviews args
-  collection = args['collection_tesim'][0]
-  if args['identifier_blaschka_isi'].present?
-  parentid = args['identifier_blaschka_isi']
-end
-  sequence = args['portal_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=identifier_blaschka_isi:\"#{parentid}\"&wt=json&indent=true&sort=portal_sequence_isi%20asc&rows=100"))
-  @response = response['response']['docs']
-  return @response
-end
-
 def get_anthro_multiviews args
   collection = args['collection_tesim'][0]
   if args['old_catalog_number_tesim'].present?
