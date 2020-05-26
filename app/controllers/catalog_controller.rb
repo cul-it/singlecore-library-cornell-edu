@@ -395,8 +395,8 @@ class CatalogController < ApplicationController
 
     # "Image View Description and Image View Type are separate fields and a record is not required to have either." -mhk33 3/31/2020
     #config.add_show_field 'image_view_desc_hash_tesim', :label => 'Image View', helper_method: :compound_field_display
-    config.add_show_field 'image_view_type', :label => 'Image View'
-    config.add_show_field 'image_view_desc', :label => 'Image View Description'
+    config.add_show_field 'image_view_type_tesim', :label => 'Image View'
+    config.add_show_field 'image_view_desc_tesim', :label => 'Image View Description'
 
     config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
     config.add_show_field 'kaltura_id_ssm', :label => 'Kaltura ID' # 3
