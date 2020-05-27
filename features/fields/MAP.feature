@@ -5,7 +5,9 @@ Feature: Asset MAP fields
 
     @fields
     @fields-MAP
-    Scenario Outline: View MAP field labels across assets
+    @fields-MAP-qualifiers
+    @DIGCOLL-1547
+    Scenario Outline: View MAP qualifier field labels across assets
         Given I go to asset id '<id>'
             Then I should see the field labeled '<new_label>'
             And the field labeled '<new_label>' should begin with '<starting>'
@@ -60,4 +62,20 @@ Feature: Asset MAP fields
     | Title | Title (Yiddish Romanized) | 21073017 | Tsvey vekhntlekher briv fun froyen shtot komitet |
     | Title | Title (Yiddish) | 21073017 | צוויי וועכנטלעכער |
 
+    @fields
+    @fields-MAP
+    @fields-MAP-multivalued
+    Scenario Outline: View MAP field labels with multiple values across assets
+        Given I go to asset id '<id>'
+            Then I should see the field labeled '<new_label>'
+            And the field labeled '<new_label>' should begin with '<starting>'
+            And the field labeled '<new_label>' should also contain '<somewhere>'
 
+    Examples:
+    | label | id | new_label | starting | somewhere |
+    | Agent | 455376 | Performer | Afrika Bambaataa | Soul Sonic Force |
+    | Agent | 455376 | Performer | Afrika Bambaataa | Lisa Lee |
+    | Measurement | 945968 | Measurement | torso: 130 x 85 (shoulders) (centimeters, height x width) | left arm: 107 (centimeters, height) |
+    | Date | 945968 | Date | ca. 1890-1900 | 2008 (image) |
+    | Title | 49887 | Title | 坂東彥三倭 | Yōshū Chikanobu zuga |
+    | Title | 49887 | Title | 坂東彥三倭 | Bandō Hikosa Yamato |
