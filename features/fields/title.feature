@@ -19,5 +19,5 @@ Feature: Asset title
     | nickname | asset_title |
     | adler | Beastie Boys: Hello Nasty |
     | adler | Polaroid photo of Chuck D and someone else |
-    | adwhite |  Giza. Pyramid of Khafre and Sphinx |
+    | adwhite |  Giza. Pyramid of Khufu and Sphinx |
     # | alisonmasonkingsbury | A good cure |
