@@ -26,3 +26,10 @@ Then("the field labeled {string} should begin with {string}") do |string, string
         find(:xpath, "//dt[text()='#{string}:']").first(:xpath, "//following-sibling::dd[starts-with(.,'#{string2}')]")
     end
 end
+
+
+Then("the field labeled {string} should also contain {string}") do |string, string2|
+    within "div.item-info" do
+        expect(find('dt', text: "#{string}:").find('+dd')).to have_content(string2)
+    end
+end
