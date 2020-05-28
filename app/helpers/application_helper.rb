@@ -24,4 +24,30 @@ module ApplicationHelper
     end
   end
 
+  def new_render_document_show_field_value(args, options=nil)
+    document = args[:document]
+    doc_presenter = show_presenter(document)
+    fields = doc_presenter.configuration.show_fields
+    field = args[:field]
+    fields = document_show_fields(document)
+#******************
+save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
+msg = ["****************** #{__method__}"]
+    if fields[field].present?
+      conf = fields[field];
+      return doc_presenter.field_value(conf)
+    else
+      msg << "Missing field: " + field.to_s
+      msg << fields.inspect
+    end
+msg << args[:field].inspect
+msg << options.inspect
+msg << '******************'
+puts msg.to_yaml
+Rails.logger.level = save_level
+#*******************
+    ''
+  end
+
 end
