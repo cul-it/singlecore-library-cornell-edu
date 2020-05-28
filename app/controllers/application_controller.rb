@@ -102,18 +102,21 @@ class ApplicationController < ActionController::Base
     if environment == 'development'
        fqa = ['-active_fedora_model_ssi:"Page"',
         '-solr_loader_tesim:"eCommons"',
-        '-(project_id_ssi:' + ssc[:blaschka].to_s + ' AND portal_sequence_isi:[2 TO *])',
-        '-(project_id_ssi:' + ssc[:seneca].to_s + ' AND work_sequence_isi:[2 TO *])',
-        '-(project_id_ssi:' + ssc[:stereoscopes].to_s + ' AND work_sequence_isi:[2 TO *])'
+        '-(compound_object_count_isi:[2 TO *] AND work_sequence_isi:[2 TO *])'
       ]
       # these [2 TO *] exclusions make it so only one item shows up in search results, not all images separately
       fq = fqa.join(' AND ')
 
     elsif environment == 'production'
 
+              # do not display extra item records when compound images are in play
+              #'(compound_object_count_isi:* AND -work_sequence_isi:[2 TO *]))'
+
+
       # JSTOR Forum filters
       fq_forum = '(id:ss* AND
         status_ssi:"Published" AND
+        -(compound_object_count_isi:[2 TO *] AND work_sequence_isi:[2 TO *]) AND
         -project_id_ssi:('
       fq_forum += [   # comment out any collections you want to display
         ssc[:adler],  # special - see below
