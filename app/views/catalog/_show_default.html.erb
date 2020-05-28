@@ -1,34 +1,34 @@
 <%# default partial to display solr document fields in catalog show view -%>
 
 <%# show Adler Adler items that are not suppressed for portal %>
-<% if render_document_show_field_value(:document => @document, :field => 'adler_status') != 'Suppress for portal' && render_document_show_field_value(:document => @document, :field => 'collection_tesim' == "Adler Hip Hop Archive") %>
+<% if new_render_document_show_field_value(:document => @document, :field => 'adler_status') != 'Suppress for portal' && new_render_document_show_field_value(:document => @document, :field => 'collection_tesim' == "Adler Hip Hop Archive") %>
 	<% @show = "yes" %>
 <% end %>
 
 <%# show Adler 'suppress for portal' items on stg %>
-<% if render_document_show_field_value(:document => @document, :field => 'adler_status') == 'Suppress for portal' && render_document_show_field_value(:document => @document, :field => 'collection_tesim' == "Adler Hip Hop Archive") && ENV["COLLECTIONS"] == "development" %>
+<% if new_render_document_show_field_value(:document => @document, :field => 'adler_status') == 'Suppress for portal' && new_render_document_show_field_value(:document => @document, :field => 'collection_tesim' == "Adler Hip Hop Archive") && ENV["COLLECTIONS"] == "development" %>
 	<% @show = "yes" %>
 <% end %>
 
 <%# show Wordsworth items %>
-<% if render_document_show_field_value(:document => @document, :field => 'status_ssi') == "Published"  ||
-render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" || render_document_show_field_value(:document => @document, :field => 'collection_tesim') == "Wordsworth Collection" %>
+<% if new_render_document_show_field_value(:document => @document, :field => 'status_ssi') == "Published"  ||
+new_render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" || new_render_document_show_field_value(:document => @document, :field => 'collection_tesim') == "Wordsworth Collection" %>
 	<% @show = "yes" %>
 <% end %>
 
 <%if @show == "yes" %>
 
-	<% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_path_ss') %>
-	<% @ssc_site  = render_document_show_field_value(:document => @document, :field => 'ssc_site_tesim') %>
-	<% @bibid  = render_document_show_field_value(:document => @document, :field => 'collection_bibid_ssi') %>
-	<% @url_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'url_related_link_tesim') %>
-	<% @title_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'title_related_link_tesim') %>
-	<% @finding_aid  = render_document_show_field_value(:document => @document, :field => 'finding_aid_tesim') %>
+	<% @collection_website = new_render_document_show_field_value(:document => @document, :field => 'collection_website_path_ss') %>
+	<% @ssc_site  = new_render_document_show_field_value(:document => @document, :field => 'ssc_site_tesim') %>
+	<% @bibid  = new_render_document_show_field_value(:document => @document, :field => 'collection_bibid_ssi') %>
+	<% @url_related_link_tesim  = new_render_document_show_field_value(:document => @document, :field => 'url_related_link_tesim') %>
+	<% @title_related_link_tesim  = new_render_document_show_field_value(:document => @document, :field => 'title_related_link_tesim') %>
+	<% @finding_aid  = new_render_document_show_field_value(:document => @document, :field => 'finding_aid_tesim') %>
 
 	<%= render 'pub_status', :document => @document %>
 
 	<%# show viewer unless it's a journal %>
-	<% unless render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal" %>
+	<% unless new_render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal" %>
 		<%= render 'viewer' %>
 	<% end %>
 
@@ -39,7 +39,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			  <% document_show_fields(document).each do |field_name, field| -%>
 			    <% if should_render_show_field? document, field %>
 				    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
-				    <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
+				    <dd class="blacklight-<%= field_name.parameterize %>"><%= new_render_document_show_field_value document, field: field_name %></dd>
 			    <% end -%>
 			  <% end -%>
 			</dl>
@@ -84,14 +84,14 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			  <% document_show_fields(document).each do |field_name, field| -%>
 			    <% if should_render_show_field? document, field %>
 				    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
-				    <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
+				    <dd class="blacklight-<%= field_name.parameterize %>"><%= new_render_document_show_field_value document, field: field_name %></dd>
 			    <% end -%>
 			  <% end -%>
 			</dl>
-      		<% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal"  %>
+      		<% if new_render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal"  %>
       			<%= render 'issue_list', :document => @document %>
       		<% end %>
-      		<% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Series"  %>
+      		<% if new_render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Series"  %>
       			<%= render 'series_list', :document => @document %>
       		<% end %>
 			<%= render partial: 'catalog/show_maplet_default' %>
@@ -102,7 +102,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
           			<h2>About the Collection</h2>
 					<ul class="fa-ul collection-links">
 						<li><i class="fa-li fa fa-desktop" aria-hidden="true"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website</a></li>
-            			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
+            			<% if (new_render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
               				<li><i class="fa-li fa fa-book" aria-hidden="true"></i><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust</a></li>
               			<% end %>
 
@@ -121,22 +121,22 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			<% end %>
 
 			<%# if CHLA show collection box %>
-			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') && !(render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Hive')%>
+			<% if (new_render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') && !(new_render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Hive')%>
 				<%= render partial: 'about_chla' %>
 			<% end %>
 
 			<%# if Hive and Honeybee show collection box %>
-			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') && (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Hive')%>
+			<% if (new_render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') && (new_render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Hive')%>
 				<%= render partial: 'about_hive' %>
 			<% end %>
 
 			<%# if HEARTH collection box %>
-			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Home Economics Archive')%>
+			<% if (new_render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Home Economics Archive')%>
 				<%= render partial: 'about_hearth' %>
 			<% end %>
 
 			<%# if Language of Flowers collection box %>
-			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Language of Flowers')%>
+			<% if (new_render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Language of Flowers')%>
 				<%= render partial: 'about_flowers' %>
 			<% end %>
 
