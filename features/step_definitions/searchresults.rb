@@ -19,3 +19,11 @@ Then("the first search result should have field {string} starting {string}") do 
     end
   end
 end
+
+Then("there should be {int} search results") do |int|
+  expect(page.find('div#searchresults div#documents')).to have_selector('div.document', count: int)
+end
+
+Then("I should see {int} additional views") do |int|
+  expect(page.find('div.multi-image-wrapper')).to have_selector('div.multi-image', count: int)
+end
