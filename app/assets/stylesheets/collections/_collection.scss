@@ -164,6 +164,10 @@
 		margin-top: .75em;
 	}
 }
+// Give space to sidebar images
+.sidebar-image {
+	margin: 2em 0;
+}
 
 // Sets - as used in Ragamala
 // ---------------------------- //
@@ -293,6 +297,12 @@
 	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: 700;
+}
+
+// Misc collection-specific classes that don't warrant their own partial
+// ------------------------------------------------------------------------
+.chhc-logo {
+	max-width: 50%;
 }
 
 

@@ -102,6 +102,7 @@ end
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
     get '/collections/seneca' => 'high_voltage/pages#show', :id => 'collections/seneca/index'
+    get '/collections/paniccioli' => 'high_voltage/pages#show', :id => 'collections/paniccioli/index'
   end
 
   get '/collections/:subject' => 'catalog#index'
