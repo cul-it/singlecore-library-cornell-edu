@@ -38,6 +38,9 @@ Given("I browse collection nicknamed {string}") do |string|
     when "cast"
         full = 'Cornell Cast Collection'
 
+    when "chla"
+        full = 'Core Historical Literature of Agriculture'
+
     when "coin"
         full = 'Cornell Coin Collection'
 
