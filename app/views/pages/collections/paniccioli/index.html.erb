@@ -14,13 +14,17 @@
 				<h3>Search or <a href="/?f[collection_tesim][]=Ernie+Paniccioli+Photo+Archive&view=gallery">browse the collection</a></h3>
 				<%= render '/catalog/search_form', { :@collection_search => "Ernie Paniccioli Photo Archive"}  %>
 			</div>
-			<a href="https://rmc.library.cornell.edu/hiphop/">
-				<%= image_tag "collections/afrika-bambaataa/Cornell_hiphop_logo_with-URL.jpg" , alt: "Cornell Hip Hop Collection", class: "img-responsive" %>
-			</a>
-			<%= image_tag "collections/paniccioli/paniccioli-crop.jpg" , alt: "", class: "img-responsive", style: "margin-top: 2em" %>
-			<p class="caption">
-				Ernie Paniccioli
-			</p>
+			<div class="sidebar-image">
+				<%= image_tag "collections/paniccioli/paniccioli-crop.jpg" , alt: "", class: "img-responsive" %>
+				<p class="caption">
+					Ernie Paniccioli
+				</p>
+			</div>
+			<div class="sidebar-image">
+				<a href="https://rmc.library.cornell.edu/hiphop/">
+					<%= image_tag "collections/afrika-bambaataa/Cornell_hiphop_logo_with-URL.jpg" , alt: "Cornell Hip Hop Collection", class: "chhc-logo" %>
+				</a>
+			</div>
 		</div>
 		<div class="col-sm-8 col-sm-pull-4">
 			<p>This collection offers digital versions of <a href="/?f[collection_tesim][]=Ernie+Paniccioli+Photo+Archive&view=gallery">more than 18,000 photographs</a> by Ernie Paniccioli, one of Hip Hop’s most prolific and celebrated photographers. Presented by Cornell University Library’s Hip Hop archives with the permission of Ernie Paniccioli, these photographs provide an unprecedented visual history of Hip Hop culture of the 1980s, 90s, and early 2000s.</p>
