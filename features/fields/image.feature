@@ -20,12 +20,11 @@ Feature: Compound and Related Images
     @image
     @image-multi
     Scenario Outline: Multi image collections should show Additional Views
-        Given I browse collection nicknamed '<nickname>'
-            And I search for asset '<asset_title>'
-            And I click on text '<asset_title>'
-            Then show me the page
+        Given I go to asset id '<id>'
             Then I should see <count> additional views
 
     Examples:
-    | nickname | asset_title | count |
-    | impersonator  | Monsieur R. Bertin - Imitant Yvette Guilbert | 10 |
+    | nickname | id | count |
+    | impersonator | 24415896 | 1 |
+    | seneca | 22376760 | 1 |
+    | zorn | 123 | 1 |
