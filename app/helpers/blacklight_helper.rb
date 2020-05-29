@@ -433,7 +433,7 @@ end
   }
 
 def is_multi_image? args
-  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_impersonator_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_anthro_multiviews(args).length > 1 && args['work_sequence_isi'].present?)
+  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']))
     return true
   end
 end
@@ -444,7 +444,6 @@ end
     '20019' => 'impersonator',
     '4803' => 'seneca',
     '3686' => 'zorn',
-    '273' => 'anthrocollections'
   }
 
 def publication options={}
