@@ -328,6 +328,7 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     # these are generated from the digcoll-ingest collections and the MAP spreadsheet
 
+    # Title
     # Title qualifier
     #config.add_show_field 'title_tesim', :label => 'Title'
     #config.add_show_field 'title_language_tesim', :label => 'Title Language'
@@ -336,45 +337,25 @@ class CatalogController < ApplicationController
       label = 'Title' + (n == 1 ? '' : ' ' + n.to_s)
       config.add_show_field 'r' + n.to_s + '_title_tesim', :label => label, if: :display_title_show_field?
     end
+    config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title' # 5
 
-    config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
-    config.add_show_field 'bibid_tesim', :label => 'BibID', helper_method: :catalog_record # 3
-    config.add_show_field 'box_tesim', :label => 'Box' # 20
-    config.add_show_field 'cite_as_tesim', :label => 'Cite As' # 31
-    config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true # 7
+    # Collection
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_show_field 'created_on_tsi', :label => 'Created On' # 63
-    config.add_show_field 'created_by_tesim', :label => 'Created By', :link_to_search => true # 63
-    config.add_show_field 'dcmi_type_tesim', :label => 'DCMI Type' # 2
-    config.add_show_field 'elevation_tesim', :label => 'Elevation' # 7
-    config.add_show_field 'filename_s', :label => 'Filename' # 63
-    config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid' # 26
-    config.add_show_field 'folder_tesim', :label => 'Folder' # 17
-    config.add_show_field 'id_number_tesim', :label => 'ID Number', helper_method: :chla # 61
-    config.add_show_field 'latitude_tsi', :label => 'Latitude' # 21
-    config.add_show_field 'longitude_tsi', :label => 'Longitude' # 21
-    config.add_show_field 'location_facet_tesim', :label => 'Location', :link_to_search => true
-    config.add_show_field 'preservation_collection__id_tesim', :label => 'PreservationCollectionID' # 10
-    config.add_show_field 'preservation_item_id_tesim', :label => 'PreservationItemID' # 10
-    config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
+    config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
+    config.add_show_field 'set_title_tesim', :label => 'Set Title', :link_to_search => true # 8
 
+    # Agent
     # Agent Roles qualifier
     #config.add_show_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display
     #config.add_show_field 'agent_hash_tesim', :label => 'Agent', accessor: :agent_hash
     #config.add_show_field 'r1_agent_tesim', :label => 'Agent', if: :display_agent_show_field?
     for n in 1..config.max_r_count[:agent]
       label = 'Agent' + (n == 1 ? '' : ' ' + n.to_s)
-      config.add_show_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_show_field?
+      config.add_show_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_show_field?, :link_to_search => true
     end
-
-    config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title' # 5
-    config.add_show_field 'annotation_tesim', :label => 'Annotation' # 3
-    config.add_show_field 'bibliography_tesim', :label => 'Bibliography' # 7
     config.add_show_field 'cataloger_tesim', :label => 'Cataloger' # 4
-    config.add_show_field 'condition_tesim', :label => 'Condition' # 3
-    config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
-    config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
 
+    # Date
     # Date type qualifier
     #config.add_show_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
     #config.add_show_field 'r1_date_tesim', :label => 'Date', if: :display_date_show_field?
@@ -383,10 +364,19 @@ class CatalogController < ApplicationController
       config.add_show_field 'r' + n.to_s + '_date_tesim', :label => label, if: :display_date_show_field?
     end
 
-    config.add_show_field 'description_tesim', :label => 'Description' # 53
-    config.add_show_field 'event_name_tesim', :label => 'Event' # 7
-    config.add_show_field 'exhibition_tesim', :label => 'Exhibition' # 1
+    # Location
+    config.add_show_field 'site_tesim', :label => 'Site', :link_to_search => true # 22
+    config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true # 46
+    config.add_show_field 'location_facet_tesim', :label => 'Location', :link_to_search => true
+    # special case fields that were not in the MAP spreadsheet
+    config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
+    config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
+    config.add_show_field 'venue_tesim', :label => 'Venue' # 4
+    config.add_show_field 'latitude_tsi', :label => 'Latitude' # 21
+    config.add_show_field 'longitude_tsi', :label => 'Longitude' # 21
 
+    
+    # Identifier
     # Identifier type qualifier
     #config.add_show_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
     #config.add_show_field 'r1_identifier_tesim', :label => 'Identifier', if: :display_identifier_show_field?
@@ -394,18 +384,16 @@ class CatalogController < ApplicationController
       label = 'Identifier' + (n == 1 ? '' : ' ' + n.to_s)
       config.add_show_field 'r' + n.to_s + '_identifier_tesim', :label => label, if: :display_identifier_show_field?
     end
-
-    # "Image View Description and Image View Type are separate fields and a record is not required to have either." -mhk33 3/31/2020
-    #config.add_show_field 'image_view_desc_hash_tesim', :label => 'Image View', helper_method: :compound_field_display
-    config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
-    config.add_show_field 'image_view_desc_tesim', :label => 'Image View Description'
-
-    config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
+    config.add_show_field 'id_number_tesim', :label => 'ID Number'
+    config.add_show_field 'bibid_tesim', :label => 'BibID', helper_method: :catalog_record # 3
+    config.add_show_field 'filename_s', :label => 'File Name' # 63
     config.add_show_field 'kaltura_id_ssm', :label => 'Kaltura ID' # 3
     config.add_show_field 'kaltura_playlist_ssm', :label => 'Kaltura Playlist' # 1
-    config.add_show_field 'keywords_subject_tesim', :label => 'Keywords' # 3
-    config.add_show_field 'language_tesim', :label => 'Language' # 12
 
+    # Collection- and item-specific
+    config.add_show_field 'event_name_tesim', :label => 'Event' # 7
+    config.add_show_field 'exhibition_tesim', :label => 'Exhibition' # 1
+    config.add_show_field 'elevation_tesim', :label => 'Elevation' # 7
     # Legacy label and value qualifier
     #config.add_show_field 'legacy_label_hash_tesim', :label => 'Legacy Label', helper_method: :compound_field_display
     #config.add_show_field 'r1_legacy_value_tesim', :label => 'Legacy Value', if: :display_legacy_value_show_field?
@@ -413,44 +401,73 @@ class CatalogController < ApplicationController
       label = 'Legacy value' + (n == 1 ? '' : ' ' + n.to_s)
       config.add_show_field 'r' + n.to_s + '_legacy_value_tesim', :label => label, if: :display_legacy_value_show_field?
     end
+    config.add_show_field 'species_tesim', :label => 'Species' # 2
 
-    config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true # 46
+    # Translation, transcription, etc.
+    config.add_show_field 'translation_tesim', :label => 'Translation' # 3
+    config.add_show_field 'transcription_tesim', :label => 'Transcription' # 10
+    config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
+    config.add_show_field 'translation_as_tesim', :label => 'Translated as' # 1
+    config.add_show_field 'translation_of_tesim', :label => 'Translation of' # 1
+  
+    # Work type, subject, etc.
+    config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
+    config.add_show_field 'keywords_subject_tesim', :label => 'Keywords' # 3
+    config.add_show_field 'type_tesim', :label => 'Work Type' # 56
     config.add_show_field 'mat_tech_tesim', :label => 'Materials/Techniques', :link_to_search => true # 36
+    config.add_show_field 'style_period_tesim', :label => 'Style/Period' # 21
+    config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
+    config.add_show_field 'language_tesim', :label => 'Language' # 12
+    # "Image View Description and Image View Type are separate fields and a record is not required to have either." -mhk33 3/31/2020
+    #config.add_show_field 'image_view_desc_hash_tesim', :label => 'Image View', helper_method: :compound_field_display
+    config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
+    config.add_show_field 'image_view_desc_tesim', :label => 'Image View Description'
 
+    # Item size
     # Measurement qualifiers
     config.add_show_field 'measurement_hash_tesim', :label => 'Measurement', helper_method: :compound_measurement_field_display
 
+    # Description, notes
+    config.add_show_field 'description_tesim', :label => 'Description', helper_method: :autolink_field # 53
+    config.add_show_field 'annotation_tesim', :label => 'Annotation' # 3
+    config.add_show_field 'condition_tesim', :label => 'Condition' # 3
     config.add_show_field 'notes_tesim', :label => 'Notes' # 33
-    config.add_show_field 'ocr_transcription_tesim', :label => 'OCR Text' # 1
-    config.add_show_field 'provenance_tesim', :label => 'Provenance' # 9
-    config.add_show_field 'reference_tesim', :label => 'References' # 2
-    config.add_show_field 'related_work_tesim', :label => 'Related Work' # 3
-    config.add_show_field 'relationships_tesim', :label => 'Relationships' # 9
-    config.add_show_field 'rights_tesim', :label => 'Rights' # 61
-    config.add_show_field 'series_tesim', :label => 'Series' # 7
-    config.add_show_field 'site_tesim', :label => 'Site', :link_to_search => true # 22
-    config.add_show_field 'source_tesim', :label => 'Source' # 21
-    config.add_show_field 'species_tesim', :label => 'Species' # 2
-    config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
-    config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
-    config.add_show_field 'transcription_tesim', :label => 'Transcription' # 10
-    config.add_show_field 'translation_as_tesim', :label => 'isTranslatedAs' # 1
-    config.add_show_field 'translation_of_tesim', :label => 'isTranslationOf' # 1
-    config.add_show_field 'translation_tesim', :label => 'Translation' # 3
-    config.add_show_field 'venue_tesim', :label => 'Venue' # 4
-    config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
-    config.add_show_field 'set_title_tesim', :label => 'Set Title', :link_to_search => true # 8
-    config.add_show_field 'style_period_tesim', :label => 'Style/Period' # 21
-    config.add_show_field 'updated_by_tesim', :label => 'Updated By' # 63
-    config.add_show_field 'updated_on_ss', :label => 'Updated On' # 63
+
+    # References, publishing info
     config.add_show_field 'vol_issue_no_tesim', :label => 'Volume/Issue' # 3
+    config.add_show_field 'cite_as_tesim', :label => 'Cite As' # 31
+    config.add_show_field 'bibliography_tesim', :label => 'Bibliography', helper_method: :autolink_field # 7
+    config.add_show_field 'reference_tesim', :label => 'References' # 2
+    config.add_show_field 'source_tesim', :label => 'Source', helper_method: :autolink_field # 21
+    config.add_show_field 'related_work_tesim', :label => 'Related Work' # 3
+    config.add_show_field 'relationships_tesim', :label => 'Relationships', helper_method: :relationships # 9
+
+    # Archival collection info
+    config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
+    config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
+    config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true # 7
+    config.add_show_field 'series_tesim', :label => 'Series' # 7
+    config.add_show_field 'provenance_tesim', :label => 'Provenance' # 9
+    config.add_show_field 'box_tesim', :label => 'Box' # 20
+    config.add_show_field 'folder_tesim', :label => 'Folder' # 17
+
+    # Display at end
+    config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field # 61
     if ENV["COLLECTIONS"] == "development"
       config.add_show_field 'work_sequence_isi', :label => 'Work Sequence' # 5
+      config.add_show_field 'updated_on_ss', :label => 'Updated On' # 63
     end
-    config.add_show_field 'type_tesim', :label => 'Work Type' # 56
 
-    # special case fields that were not in the MAP spreadsheet
-    config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
+    # Do not display - to delete
+    # config.add_show_field 'created_on_tsi', :label => 'Created On' # 63
+    # config.add_show_field 'created_by_tesim', :label => 'Created By', :link_to_search => true # 63
+    # config.add_show_field 'dcmi_type_tesim', :label => 'DCMI Type' # 2
+    # config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid' # 26
+    # config.add_show_field 'preservation_collection__id_tesim', :label => 'PreservationCollectionID' # 10
+    # config.add_show_field 'preservation_item_id_tesim', :label => 'PreservationItemID' # 10
+    # config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
+    # config.add_show_field 'ocr_transcription_tesim', :label => 'OCR Text' # 1
+    # config.add_show_field 'updated_by_tesim', :label => 'Updated By' # 63
 
     config.add_search_field 'all_fields', :label => 'All Fields'
     config.add_search_field('title') do |field|
@@ -473,9 +490,7 @@ class CatalogController < ApplicationController
         :pf => '$aubject_pf',
       }
     end
-
-
-
+    
     # "sort results by" select (pulldown)
     config.add_sort_field 'collection_sequence_isi asc, portfolio_creator_ssi asc, identifier_blaschka_isi asc, score desc, latest_date_isi asc', :label => 'relevance'
     config.add_sort_field 'latest_date_isi desc, title_tesi asc', :label => 'year (descending)'
