@@ -16,3 +16,7 @@ def what_is(element)
     puts "\n"
     puts "\n********************* what is ^\n"
   end
+
+And(/^I click on text '(.*?)'$/) do |text|
+    click_link(text)
+end
