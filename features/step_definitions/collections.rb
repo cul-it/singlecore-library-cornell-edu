@@ -68,6 +68,9 @@ Given("I browse collection nicknamed {string}") do |string|
     when "huntingtonfreelibrary"
         full = 'Huntington Free Library Native American Collection'
 
+    when "impersonator"
+        full = 'Postcards of female and male impersonators and cross-dressing in Europe and the United States, 1900-1930'
+
     when "isbellandes"
         full = 'Billie Jean Isbell Andean Collection'
 
@@ -133,6 +136,9 @@ Given("I browse collection nicknamed {string}") do |string|
 
     when "sterrett"
         full = 'The J. R. Sitlington Sterrett Collection of Archaeological Photographs'
+
+    when "stereoscopes"
+        full = 'Stereoscope Pictures From Iceland'
 
     when "straight"
         full = 'Willard D. Straight in Korea'
