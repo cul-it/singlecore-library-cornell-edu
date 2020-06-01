@@ -295,7 +295,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_index_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
     #config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
-    for n in 1..config.max_r_count[:agent]
+    for n in 1..config.max_r_count[:date]
       label = 'Date' + (n == 1 ? '' : ' ' + n.to_s)
       config.add_index_field 'r' + n.to_s + '_date_tesim', :label => label, if: :display_date_show_field?
     end
@@ -358,7 +358,7 @@ class CatalogController < ApplicationController
     # Date type qualifier
     #config.add_show_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
     #config.add_show_field 'r1_date_tesim', :label => 'Date', if: :display_date_show_field?
-    for n in 1..config.max_r_count[:agent]
+    for n in 1..config.max_r_count[:date]
       label = 'Date' + (n == 1 ? '' : ' ' + n.to_s)
       config.add_show_field 'r' + n.to_s + '_date_tesim', :label => label, if: :display_date_show_field?, :link_to_search => true
     end
@@ -372,7 +372,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'venue_tesim', :label => 'Venue' # 4
     config.add_show_field 'latitude_tsi', :label => 'Latitude' # 21
     config.add_show_field 'longitude_tsi', :label => 'Longitude' # 21
- 
+
     # Identifier
     # Identifier type qualifier
     #config.add_show_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
@@ -406,7 +406,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
     config.add_show_field 'translation_as_tesim', :label => 'Translated as', helper_method: :autolink_field # 1
     config.add_show_field 'translation_of_tesim', :label => 'Translation of' # 1
-  
+
     # Work type, subject, etc.
     config.add_show_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
     config.add_show_field 'keywords_subject_tesim', :label => 'Keywords' # 3
