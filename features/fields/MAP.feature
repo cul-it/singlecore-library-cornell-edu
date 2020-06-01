@@ -77,3 +77,18 @@ Feature: Asset MAP fields
     | Date | 945968 | Date | ca. 1890-1900 | 2008 (image) |
     | Title | 49887 | Title | 坂東彥三倭 | Yōshū Chikanobu zuga |
     | Title | 49887 | Title | 坂東彥三倭 | Bandō Hikosa Yamato |
+
+    @fields-MAP-complete
+    @DIGCOLL-1651
+    Scenario Outline: Confirm that all fields are showing
+        Given I go to asset id '<id>'
+            Then the field labeled '<new_label>' should begin with '<starting>'
+
+    Examples:
+    | id | new_label | starting |
+    | 19343333  | Notes  | The collection includes four maps  |
+    | 9415856 | Country | Iceland |
+    | 9415856 | Transcription | Íslenskir hestar í vetrarbúningi |
+    | 9415856 | Transcription 2 | Íslenskir hestar í vetrarbúningi |
+    | 9415856 | Culture | Icelandic |
+    | 9415856 | Rights | This image is believed to be in the public domain under Icelandic and US law |
