@@ -1,9 +1,9 @@
 # encoding: UTF-8
 Feature: Compound and Related Images
+@image
 
     Scenario Outline: Both Compound and Related Images should coexist in the collections
 
-    @image
     @image-compound
     Scenario Outline: Compound images should not show one item record per image
         Given I browse collection nicknamed '<nickname>'
@@ -17,7 +17,6 @@ Feature: Compound and Related Images
     | political-americana | National Convention & Election Handbook and Envelope | 1 |
     | stereoscopes | Gluggafoss | 1 |
 
-    @image
     @image-multi
     Scenario Outline: Multi image collections should show Additional Views
         Given I go to asset id '<id>'
