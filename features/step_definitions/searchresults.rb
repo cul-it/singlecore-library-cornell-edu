@@ -34,3 +34,11 @@ Then("result {int} field {string} should begin {string}") do |int, string, strin
     dd = dt.sibling('dd', match: :first, text: /^#{string2}/)
   end
 end
+
+Then("the field labeled {string} should begin {string} and link to facet {string}") do |string, string2, string3|
+  within ("div#document div.item-info dl") do
+    dt = page.find('dt', text: /^#{string}:$/)
+    dd = dt.sibling('dd', match: :first, text: /^#{string2}/)
+    expect(dd).to have_link(href: /[^_]#{string3}/)
+  end
+end
