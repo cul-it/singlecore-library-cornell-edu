@@ -1,10 +1,10 @@
 # encoding: UTF-8
 Feature: Asset MAP fields
+@fields
+@fields-MAP
 
     Scenario Outline: Check the values of common MAP fields across assets
 
-    @fields
-    @fields-MAP
     @fields-MAP-qualifiers
     @DIGCOLL-1547
     Scenario Outline: View MAP qualifier field labels across assets
@@ -62,8 +62,6 @@ Feature: Asset MAP fields
     | Title | Title (Yiddish Romanized) | 21073017 | Tsvey vekhntlekher briv fun froyen shtot komitet |
     | Title | Title (Yiddish) | 21073017 | צוויי וועכנטלעכער |
 
-    @fields
-    @fields-MAP
     @fields-MAP-multivalued
     Scenario Outline: View MAP field labels with multiple values across assets
         Given I go to asset id '<id>'
