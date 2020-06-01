@@ -13,7 +13,7 @@ Feature: Asset MAP fields
             And the field labeled '<new_label>' should begin with '<starting>'
 
     Examples:
-    | label | new_label | id | starting |
+    | category | new_label | id | starting |
     | Agent | Creator | 21812058 | Lindsay Cooper |
     | Agent | Writer | 21812058 | Robert Iannapollo |
     | Agent | Composer | 21812058 | Lindsay Cooper |
@@ -70,7 +70,7 @@ Feature: Asset MAP fields
             And the field labeled '<new_label>' should also contain '<somewhere>'
 
     Examples:
-    | label | id | new_label | starting | somewhere |
+    | category | id | new_label | starting | somewhere |
     | Agent | 455376 | Performer | Afrika Bambaataa | Soul Sonic Force |
     | Agent | 455376 | Performer | Afrika Bambaataa | Lisa Lee |
     | Measurement | 945968 | Measurement | torso: 130 x 85 (shoulders) (centimeters, height x width) | left arm: 107 (centimeters, height) |
