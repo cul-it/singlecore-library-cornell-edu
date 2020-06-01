@@ -37,8 +37,6 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
-    appsignal (2.9.9)
-      rack
     arel (6.0.4)
     autoprefixer-rails (9.6.0)
       execjs
@@ -231,7 +229,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.1.0)
-    rack (1.6.11)
+    rack (1.6.13)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.11.1)
@@ -368,7 +366,6 @@ PLATFORMS
 
 DEPENDENCIES
   actionview (>= 4.2.11.1)
-  appsignal
   blacklight
   blacklight-gallery
   blacklight-maps
