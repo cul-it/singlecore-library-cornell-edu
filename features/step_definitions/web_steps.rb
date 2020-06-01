@@ -12,7 +12,7 @@ def what_is(element)
     puts "\n"
     puts element.inspect
     puts "\n"
-    puts element['innerHTML']
+    puts element.text
     puts "\n"
     puts "\n********************* what is ^\n"
   end

@@ -59,6 +59,6 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 def what_is(element)
   puts "\n********************* what is V\n"
   puts element.inspect
-  puts element['innerHTML']
+  puts element.to_s
   puts "\n********************* what is ^\n"
 end
