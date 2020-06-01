@@ -261,21 +261,20 @@ class CatalogController < ApplicationController
     config.add_facet_field 'work_type_tesim', :label => 'Work Type' # 56
     config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
-    config.add_facet_field 'loci_location_tesim', :label => 'Location', :sort => 'count', :limit => 5
-    config.add_facet_field 'lang_tesim', :label => 'Language', :sort => 'count', :limit => 5
+    #config.add_facet_field 'loci_location_tesim', :label => 'Location', :sort => 'count', :limit => 5
+    #config.add_facet_field 'lang_tesim', :label => 'Language', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5, :sort => 'index'
     config.add_facet_field 'mat_tech_tesim', :label => 'Materials/Techniques', :show => true, :limit => 5
-    config.add_facet_field 'keywords_tesim', :label => 'Keywords', :limit => 5, show: false
+    #config.add_facet_field 'keywords_tesim', :label => 'Keywords', :limit => 5, show: false
     config.add_facet_field 'repository_tesim', :label => 'Repository', :limit => 5
     config.add_facet_field 'archival_collection_tesim', :label => 'Archival Collection', :limit => 5
-    config.add_facet_field 'creation_site_location_tesim', :label => 'Site', show: false
-    config.add_facet_field 'region_location_tesim', :label => 'Region', show: false
     config.add_facet_field 'set_title_tesim', :label => 'Set', :show => true, :limit => 5
-    config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
-    config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
+    #config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
+    #config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
     config.add_facet_field 'site_tesim', :label => 'Site', :show => false
     config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
+    config.add_facet_field 'where_ssim', :label => 'Coordinates', :show => false
 
     if "#{ENV['COLLECTIONS']}" == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
@@ -361,21 +360,19 @@ class CatalogController < ApplicationController
     #config.add_show_field 'r1_date_tesim', :label => 'Date', if: :display_date_show_field?
     for n in 1..config.max_r_count[:agent]
       label = 'Date' + (n == 1 ? '' : ' ' + n.to_s)
-      config.add_show_field 'r' + n.to_s + '_date_tesim', :label => label, if: :display_date_show_field?
+      config.add_show_field 'r' + n.to_s + '_date_tesim', :label => label, if: :display_date_show_field?, :link_to_search => true
     end
 
     # Location
     config.add_show_field 'site_tesim', :label => 'Site', :link_to_search => true # 22
     config.add_show_field 'location_tesim', :label => 'Location', :link_to_search => true # 46
     config.add_show_field 'location_facet_tesim', :label => 'Location', :link_to_search => true
-    # special case fields that were not in the MAP spreadsheet
     config.add_show_field 'where_ssim', :label => 'Coordinates', :link_to_search => true
     config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
     config.add_show_field 'venue_tesim', :label => 'Venue' # 4
     config.add_show_field 'latitude_tsi', :label => 'Latitude' # 21
     config.add_show_field 'longitude_tsi', :label => 'Longitude' # 21
-
-    
+ 
     # Identifier
     # Identifier type qualifier
     #config.add_show_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
@@ -405,9 +402,9 @@ class CatalogController < ApplicationController
 
     # Translation, transcription, etc.
     config.add_show_field 'translation_tesim', :label => 'Translation' # 3
-    config.add_show_field 'transcription_tesim', :label => 'Transcription' # 10
+    config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :autolink_field # 10
     config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
-    config.add_show_field 'translation_as_tesim', :label => 'Translated as' # 1
+    config.add_show_field 'translation_as_tesim', :label => 'Translated as', helper_method: :autolink_field # 1
     config.add_show_field 'translation_of_tesim', :label => 'Translation of' # 1
   
     # Work type, subject, etc.
@@ -431,14 +428,14 @@ class CatalogController < ApplicationController
     config.add_show_field 'description_tesim', :label => 'Description', helper_method: :autolink_field # 53
     config.add_show_field 'annotation_tesim', :label => 'Annotation' # 3
     config.add_show_field 'condition_tesim', :label => 'Condition' # 3
-    config.add_show_field 'notes_tesim', :label => 'Notes' # 33
+    config.add_show_field 'notes_tesim', :label => 'Notes', helper_method: :autolink_field # 33
 
     # References, publishing info
     config.add_show_field 'vol_issue_no_tesim', :label => 'Volume/Issue' # 3
     config.add_show_field 'cite_as_tesim', :label => 'Cite As' # 31
     config.add_show_field 'bibliography_tesim', :label => 'Bibliography', helper_method: :autolink_field # 7
-    config.add_show_field 'reference_tesim', :label => 'References' # 2
-    config.add_show_field 'source_tesim', :label => 'Source', helper_method: :autolink_field # 21
+    config.add_show_field 'reference_tesim', :label => 'References', helper_method: :autolink_field # 2
+    config.add_show_field 'source_tesim', :label => 'Source' # 21
     config.add_show_field 'related_work_tesim', :label => 'Related Work' # 3
     config.add_show_field 'relationships_tesim', :label => 'Relationships', helper_method: :relationships # 9
 
@@ -490,7 +487,7 @@ class CatalogController < ApplicationController
         :pf => '$aubject_pf',
       }
     end
-    
+
     # "sort results by" select (pulldown)
     config.add_sort_field 'collection_sequence_isi asc, portfolio_creator_ssi asc, identifier_blaschka_isi asc, score desc, latest_date_isi asc', :label => 'relevance'
     config.add_sort_field 'latest_date_isi desc, title_tesi asc', :label => 'year (descending)'
