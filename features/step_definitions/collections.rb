@@ -122,6 +122,9 @@ Given("I browse collection nicknamed {string}") do |string|
     when "political-americana"
         full = 'Political Americana'
 
+    when "prisonwritings"
+        full = '19th Century Prison Reform Collection'
+
     when "punkflyers"
         full = 'Punk Flyers'
 
