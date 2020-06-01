@@ -3,7 +3,8 @@ ruby "2.5.5"
 
 gem "blacklight"
 gem 'sprockets', '>= 3.7.2'
-gem 'nokogiri', '>= 1.8.5'
+gem 'nokogiri', '>= 1.10.8'
+gem 'appsignal'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.11.1'
 gem 'actionview', '>= 4.2.11.1'
@@ -24,7 +25,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 #devise
-gem 'devise'
+gem "devise", ">= 4.7.1"
 
 gem 'rails_autolink'
 # Use jquery as the JavaScript library
@@ -38,7 +39,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'openseadragon'
 
-gem 'rubyzip'
+gem "rubyzip", ">= 1.3.0"
 
 # Use font-awesome for icons
 gem 'font-awesome-sass', '~> 4.3.0'
