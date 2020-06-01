@@ -82,13 +82,23 @@ Feature: Asset MAP fields
     @DIGCOLL-1651
     Scenario Outline: Confirm that all fields are showing
         Given I go to asset id '<id>'
-            Then the field labeled '<new_label>' should begin with '<starting>'
+            Then the field labeled '<new_label>' should begin with '<somewhere>'
 
     Examples:
-    | id | new_label | starting |
+    | id | new_label | somewhere |
     | 19343333  | Notes  | The collection includes four maps  |
     | 9415856 | Country | Iceland |
     | 9415856 | Transcription | Íslenskir hestar í vetrarbúningi |
-    | 9415856 | Transcription 2 | Íslenskir hestar í vetrarbúningi |
     | 9415856 | Culture | Icelandic |
     | 9415856 | Rights | This image is believed to be in the public domain under Icelandic and US law |
+    | 9415849 | Transcription | Íþróttamót Rvk 1911. |
+
+    @fields-MAP-facet-links
+    @DIGCOLL-1654
+    Scenario Outline: Link field values to facets so similar items can be found
+        Given I go to asset id '<id>'
+            Then the field labeled '<new_label>' should begin '<starting>' and link to facet '<facet>'
+
+    Examples:
+    | category | id | new_label | starting | facet |
+    | Agent | 455376 | Performer | Afrika Bambaataa | agent_tesim |
