@@ -416,12 +416,10 @@ def is_multi_image? args
   end
 end
 
-
-
   MULTI_IMAGE_COLLECTIONS = {
     '20019' => 'impersonator',
     '4803' => 'seneca',
-    '3686' => 'zorn',
+    '3686' => 'tellennasbeh',
   }
 
 def publication options={}
