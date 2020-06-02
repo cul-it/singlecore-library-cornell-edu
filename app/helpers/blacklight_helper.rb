@@ -328,35 +328,13 @@ def get_compound_object args
   false
 end
 
-def get_seneca_multiviews args
+def get_multiviews args
   collection = args['collection_tesim'][0]
-  if args['catalog_number_tesim'].present?
-    parentid = args['catalog_number_tesim'][0]
+  if args['work_group_ssi'].present?
+    parentid = args['work_group_ssi']
   end
   sequence = args['work_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=catalog_number_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
-  @response = response['response']['docs']
-  return @response
-end
-
-def get_impersonator_multiviews args
-  collection = args['collection_tesim'][0]
-  if args['card_number_tesim'].present?
-    parentid = args['card_number_tesim'][0]
-  end
-  sequence = args['work_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=card_number_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
-  @response = response['response']['docs']
-  return @response
-end
-
-def get_zorn_multiviews args
-  collection = args['collection_tesim'][0]
-  if args['plan_number_tesim'].present?
-  parentid = args['plan_number_tesim'][0]
-end
-  sequence = args['portal_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=plan_number_tesim:\"#{parentid}\"&wt=json&indent=true&sort=portal_sequence_isi%20asc&rows=100"))
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=work_group_ssi:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
   @response = response['response']['docs']
   return @response
 end
