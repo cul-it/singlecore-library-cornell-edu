@@ -350,7 +350,7 @@ class CatalogController < ApplicationController
     #config.add_show_field 'r1_agent_tesim', :label => 'Agent', if: :display_agent_show_field?
     for n in 1..config.max_r_count[:agent]
       label = 'Agent' + (n == 1 ? '' : ' ' + n.to_s)
-      config.add_show_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_show_field?, :link_to_search => true
+      config.add_show_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_show_field?, helper_method: :link_to_agent_facet
     end
     config.add_show_field 'cataloger_tesim', :label => 'Cataloger' # 4
 
@@ -360,7 +360,7 @@ class CatalogController < ApplicationController
     #config.add_show_field 'r1_date_tesim', :label => 'Date', if: :display_date_show_field?
     for n in 1..config.max_r_count[:date]
       label = 'Date' + (n == 1 ? '' : ' ' + n.to_s)
-      config.add_show_field 'r' + n.to_s + '_date_tesim', :label => label, if: :display_date_show_field?, :link_to_search => true
+      config.add_show_field 'r' + n.to_s + '_date_tesim', :label => label, if: :display_date_show_field?, helper_method: :link_to_date_facet
     end
 
     # Location
@@ -402,7 +402,7 @@ class CatalogController < ApplicationController
 
     # Translation, transcription, etc.
     config.add_show_field 'translation_tesim', :label => 'Translation' # 3
-    config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :autolink_field # 10
+    config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :link_to_transcription_facet # 10
     config.add_show_field 'inscription_tesim', :label => 'Inscription' # 9
     config.add_show_field 'translation_as_tesim', :label => 'Translated as', helper_method: :autolink_field # 1
     config.add_show_field 'translation_of_tesim', :label => 'Translation of' # 1
