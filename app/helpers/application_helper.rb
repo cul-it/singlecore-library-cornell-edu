@@ -50,4 +50,25 @@ Rails.logger.level = save_level
     ''
   end
 
+  def link_to_agent_facet(options={})
+    facet_links('agent_tesim', options)
+  end
+
+  def link_to_date_facet(options={})
+    facet_links('date_tesim', options)
+  end
+
+  def link_to_transcription_facet(options={})
+    facet_links('transcription_tesim', options)
+  end
+
+  def facet_links(solr_field, options)
+    facet = "#{request.protocol}#{request.host_with_port}/?f[#{solr_field}][]="
+    safe_join(
+      options[:value].map do |value|
+        link_to("#{value}", "#{facet}#{URI.escape(value)}") << "<br />".html_safe
+      end
+    )
+  end
+
 end
