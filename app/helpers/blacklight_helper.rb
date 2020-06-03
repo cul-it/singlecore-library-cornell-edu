@@ -105,7 +105,7 @@ def measurements options={}
       m_dimension = measurement_dimension + ')'
       measurements << m_dimension
     end
-  elsif options[:document]['map_measurement_tesim'].present? && options[:document]['map_measurement_unit_tesim'].present? && 
+  elsif options[:document]['map_measurement_tesim'].present? && options[:document]['map_measurement_unit_tesim'].present? &&
     !options[:document]['map_measurement_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement_tesim'].each do |measurement|
@@ -117,7 +117,7 @@ def measurements options={}
       measurements << m_unit
     end
   else
-    options[:document]['map_measurement_tesim'].present? && !options[:document]['map_measurement_unit_tesim'].present? && 
+    options[:document]['map_measurement_tesim'].present? && !options[:document]['map_measurement_unit_tesim'].present? &&
     !options[:document]['map_measurement_dimension_tesim'].present?
     measurements = []
     options[:document]['map_measurement_tesim'].each do |measurement|
@@ -467,7 +467,7 @@ def autolink_field args
     return args[:document][args[:field]].join("<br>").html_safe
    end
   else
-   return args[:document][args[:field]].join("<br>").html_safe    
+   return args[:document][args[:field]].join("<br>").html_safe
   end
 end
 
@@ -521,6 +521,18 @@ def has_collection_selected?
 end
 
 
+def asset_visible?(document)
+  # eid = id.sub(':', '\:')
+  if document.id.present?
+    eid = document.id
+    fq = URI.escape(@fq)
+    response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{eid}&fq=#{fq}&fl=id&wt=json&indent=true&rows=1")).with_indifferent_access
+    count = response['response']['numFound']
+    count > 0
+  else
+    false
+  end
+end
 
 
 
