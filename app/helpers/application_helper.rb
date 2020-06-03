@@ -24,4 +24,28 @@ module ApplicationHelper
     end
   end
 
+
+
+def asset_visible?(id)
+  # eid = id.sub(':', '\:')
+  eid = id
+  fq = set_fq("production")
+  fq = URI.escape(fq)
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{eid}&fq=#{fq}&wt=json&indent=true&rows=1")).with_indifferent_access
+  @response = response['response']['docs']
+#******************
+save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
+msg = ["****************** #{__method__}"]
+msg << @fq.inspect
+msg << response['response'].keys.inspect
+msg << '******************'
+puts msg.to_yaml
+Rails.logger.level = save_level
+#*******************
+  true
+end
+
+
+
 end
