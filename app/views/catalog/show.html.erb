@@ -1,42 +1,7 @@
 <div id="content" class="col-sm-12">
 
-  <% show = "no" %>
-  <% id = render_document_show_field_value(:document => @document, :field => 'id')%>
-  <% can_show = asset_visible?(id) %>
-
-  <% if ENV["COLLECTIONS"] == "production" %>
-    <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Adler Hip Hop Archive")%>
-      <% if !render_document_show_field_value(:document => @document, :field => 'adler_status').present?%>
-        <% show = "yes" %>
-      <% end %>
-    <% end %>
-    <% if render_document_show_field_value(:document => @document, :field => 'status_ssi')  == "Published"%>
-      <% show = "yes" %>
-    <% end %>
-    <% if render_document_show_field_value(:document => @document, :field => 'active_fedora_model_ssi') == "Book" %>
-      <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Huntington") || render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Alfredo")  %>
-        <% show = "yes" %>
-      <% end %>
-    <% end %>
-    <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Indonesian") ||
-      render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Wordsworth") ||
-      render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Core Historical") ||
-      render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Honeybees") ||
-      render_document_show_field_value(:document => @document, :field => 'display_target_tesim').include?("portal-prod")|| render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Home Economics")
-       %>
-
-      <% show = "yes" %>
-    <% end %>
-    <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Samuel J. May")%>
-      <% show = "no" %>
-    <% end %>
-  <% end %>
-
-  <% if ENV["COLLECTIONS"] == "development" %>
-    <% show = "yes" %>
-  <% end %>
 <% show = "yes" %>
-  <%if show == "yes" %>
+  <%if asset_visible?(@document) %>
   	<%= render_document_main_content_partial %>
   <% else %>
     <h1>Item restricted</h1>
