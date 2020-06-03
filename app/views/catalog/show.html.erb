@@ -1,6 +1,8 @@
 <div id="content" class="col-sm-12">
 
   <% show = "no" %>
+  <% id = render_document_show_field_value(:document => @document, :field => 'id')%>
+  <% can_show = asset_visible?(id) %>
 
   <% if ENV["COLLECTIONS"] == "production" %>
     <% if render_document_show_field_value(:document => @document, :field => 'collection_tesim').include?("Adler Hip Hop Archive")%>
