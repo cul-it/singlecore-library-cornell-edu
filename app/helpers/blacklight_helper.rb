@@ -543,4 +543,17 @@ def compound_measurement_field_display args
   end
 end
 
+def asset_visible?(document)
+  # eid = id.sub(':', '\:')
+  if document.id.present?
+    eid = document.id
+    fq = URI.escape(@fq)
+    response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{eid}&fq=#{fq}&fl=id&wt=json&indent=true&rows=1")).with_indifferent_access
+    count = response['response']['numFound']
+    count > 0
+  else
+    false
+  end
+
 end
+
