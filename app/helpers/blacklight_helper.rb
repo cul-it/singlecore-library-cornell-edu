@@ -3,8 +3,8 @@ module BlacklightHelper
   include Blacklight::BlacklightMapsHelperBehavior
 
   def id_to_subject(subject)
-  params[:subject] = subject.downcase
-end
+    params[:subject] = subject.downcase
+  end
 
   # create a link to a bbox spatial search
   def link_to_bbox_search bbox_coordinates
@@ -419,7 +419,7 @@ end
   MULTI_IMAGE_COLLECTIONS = {
     '20019' => 'impersonator',
     '4803' => 'seneca',
-    '3686' => 'tellennasbeh',
+    '3686' => 'tellennasbeh'
   }
 
 def publication options={}
