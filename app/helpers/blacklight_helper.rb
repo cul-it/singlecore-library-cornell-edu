@@ -435,7 +435,7 @@ def autolink_field args
   Rails.logger.info("MIAMI = #{args}")
   if !args[:document]["collection_tesim"].nil?
    collection = args[:document]["collection_tesim"][0]
-   if collection == "Persuasive Maps: PJ Mode Collection" || "Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin"
+   if (collection == "Persuasive Maps: PJ Mode Collection" || collection == "Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin")
     return auto_link(args[:document][args[:field]].join("<br>")).html_safe
    else
     return args[:document][args[:field]].join("<br>").html_safe
@@ -555,5 +555,6 @@ def asset_visible?(document)
     false
   end
 
+end
 end
 
