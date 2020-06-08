@@ -511,6 +511,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'img_view_desc_tesim', :label => 'Image View Description'
     config.add_show_field 'img_view_type_tesim', :label => 'Image View Type'
     config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
+    config.add_show_field 'context_tesim', :label => 'Context'
     # item size
     config.add_show_field 'extent_tesim', :label => 'Extent', helper_method: :extent_units
     config.add_show_field 'measurement_units_tesim', :label => 'Measurement Units'
