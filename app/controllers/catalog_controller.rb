@@ -345,7 +345,6 @@ class CatalogController < ApplicationController
 
     config.add_index_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
     config.add_index_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
-    config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_index_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
     #config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
     for n in 1..config.max_r_count[:date]
@@ -368,10 +367,6 @@ class CatalogController < ApplicationController
     config.add_index_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
     config.add_index_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
     config.add_index_field 'work_type_tesim', :label => 'Work Type' # 56
-    config.add_index_field 'book_title', :label => 'Book Title'
-    #config.add_index_field 'date_tesim', :label => 'Date'
-    config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
-    config.add_index_field 'format_tesim', :label => 'Format'
 
     if "#{ENV['COLLECTIONS']}" == "development"
       config.add_index_field 'collection_sequence_isi', :label => 'Collection Sequence'
