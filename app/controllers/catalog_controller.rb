@@ -310,6 +310,33 @@ class CatalogController < ApplicationController
     config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
+    config.add_index_field 'author_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
+    config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
+    config.add_index_field 'photographer_creator_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'architect_creator_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
+    config.add_index_field 'occasion_tesim', :label => 'Occasion'
+    config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
+    config.add_index_field 'common_name_tesim', :label => 'Common Name'
+    config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
+    config.add_index_field 'volume_tesim', :label => 'Volume'
+    config.add_index_field 'page_tesim', :label => 'Page'
+
+    # these index fields are from the dlxs collections
+    config.add_index_field 'publication_tesim', :label => 'Publication'
+
+    config.add_index_field 'publisher_tesim', :label => 'Publisher'
+    config.add_index_field 'pubplace_tesim', :label => 'Publication Place'
+    config.add_index_field 'pubdate_tesim', :label => 'Date'
+    config.add_index_field 'book_title', :label => 'Book Title'
+    config.add_index_field 'date_tesim', :label => 'Date'
+    config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
+
+    config.add_index_field 'format_tesim', :label => 'Format'
+
     #config.add_index_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display, :link_to_search => true
     for n in 1..config.max_r_count[:agent]
       label = 'Agent' + (n == 1 ? '' : ' ' + n.to_s)
