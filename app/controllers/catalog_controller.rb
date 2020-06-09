@@ -606,8 +606,9 @@ class CatalogController < ApplicationController
     # "Image View Description and Image View Type are separate fields and a record is not required to have either." -mhk33 3/31/2020
     config.add_show_field 'image_view_desc_tesim', :label => 'Image View Description'
 
+    config.add_show_field 'context_tesim', :label => 'Context'
     # item size
-    config.add_show_field 'extent_tesim', :label => 'Extent', helper_method: :extent_units
+    config.add_show_field 'extent_tesim', :label => 'Extent' #, helper_method: :extent_units
     config.add_show_field 'measurement_units_tesim', :label => 'Measurement Units'
     config.add_show_field 'extent_orig_tesim', :label => 'Original Extent'
     config.add_show_field 'letter_height_tesim', :label => 'Letter Height'
