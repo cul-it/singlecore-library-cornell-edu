@@ -4,18 +4,19 @@
 <% if @members_ids.present? %>
 	<h2>Issue list</h2>
 <% end %> 
-<ul>
+
 <% count = 0 %>
 <% old_date = "" %>
 <% get_chla_issues(document).each do |issue| %>
 <% date = issue["date_tesim"][0] %>
  <% if count == 0 %>
-    <b>  <%= issue["date_tesim"][0] %>  </b>
+    <h3>  <%= issue["date_tesim"][0] %>  </h3>
       <% count = count + 1 %>
+      <ul>
  <% else %>
      <% if count > 0 and date != old_date %>
-         <% date = issue["date_tesim"][0] %>
-       <b>  <%= issue["date_tesim"][0] %> </b>
+      </ul>   <% date = issue["date_tesim"][0] %>
+       <h3>  <%= issue["date_tesim"][0] %> </h3> <ul>
      <% end %>
  <% end %>      
         <li>
@@ -23,4 +24,4 @@
 	    </li>
   <% old_date = date %>
 <% end %>
-</ul>
+
