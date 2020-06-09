@@ -379,7 +379,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'lyricist_creator_tesim', :label => 'Lyricist', :link_to_search => true
     config.add_show_field 'arranger_creator_tesim', :label => 'Arranger', :link_to_search => true
     # date
-    config.add_show_field 'date_tesim', :label => 'Publication Year', :link_to_search => true
+    config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
     config.add_show_field 'date_display_tesim', :label => 'Issue Date'
     config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
@@ -513,7 +513,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
     config.add_show_field 'context_tesim', :label => 'Context'
     # item size
-    config.add_show_field 'extent_tesim', :label => 'Extent', helper_method: :extent_units
+    config.add_show_field 'extent_tesim', :label => 'Extent' #, helper_method: :extent_units
     config.add_show_field 'measurement_units_tesim', :label => 'Measurement Units'
     config.add_show_field 'extent_orig_tesim', :label => 'Original Extent'
     config.add_show_field 'letter_height_tesim', :label => 'Letter Height'

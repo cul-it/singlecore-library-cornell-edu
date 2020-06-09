@@ -5,11 +5,22 @@
 	<h2>Issue list</h2>
 <% end %> 
 <ul>
+<% count = 0 %>
+<% old_date = "" %>
 <% get_chla_issues(document).each do |issue| %>
-
+<% date = issue["date_tesim"][0] %>
+ <% if count == 0 %>
+    <b>  <%= issue["date_tesim"][0] %>  </b>
+      <% count = count + 1 %>
+ <% else %>
+     <% if count > 0 and date != old_date %>
+         <% date = issue["date_tesim"][0] %>
+       <b>  <%= issue["date_tesim"][0] %> </b>
+     <% end %>
+ <% end %>      
         <li>
-          <%= issue["title_tesim"][0] %>:
-		     <%= link_to "Read issue","http://reader.library.cornell.edu/docviewer/digital?id="+issue["id"], "aria-label" => issue["id"] %> |  <%= link_to "More information","/catalog/"+issue["id"], "aria-label" => issue["id"] %>
+           <%= link_to issue["date_display_tesim"][0], "/catalog/"+issue["id"], "aria-label" => issue["id"] %> <%= issue["title_tesim"][0] %>
 	    </li>
+  <% old_date = date %>
 <% end %>
 </ul>
