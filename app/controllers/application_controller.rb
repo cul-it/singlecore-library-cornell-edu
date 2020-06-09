@@ -102,7 +102,6 @@ class ApplicationController < ActionController::Base
        fqa = ['-active_fedora_model_ssi:"Page"',
         '-solr_loader_tesim:"eCommons"',
         '-(project_id_ssi:' + ssc[:blaschka].to_s + ' AND portal_sequence_isi:[2 TO *])',
-        '-(project_id_ssi:' + ssc[:seneca].to_s + ' AND work_sequence_isi:[2 TO *])',
         '-(project_id_ssi:' + ssc[:stereoscopes].to_s + ' AND work_sequence_isi:[2 TO *])'
       ]
       # these [2 TO *] exclusions make it so only one item shows up in search results, not all images separately
