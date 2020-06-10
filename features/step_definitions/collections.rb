@@ -20,6 +20,9 @@ Given("I browse collection nicknamed {string}") do |string|
     when "art2301"
         full = 'Art 2301 Printmaking Student Portfolios'
 
+    when "artifacts"
+        full = 'Campus Artifacts, Art & Memorabilia'
+
     when "afrika-bambaataa"
         full = 'Afrika Bambaataa Hip Hop Archive'
 
