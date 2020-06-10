@@ -31,21 +31,21 @@ Feature: Confirm that collections have the correct number of assets
 	| fallout | 15 |
 	| gamelan | 565 |
 	| gems | 3794 |
-	| harrisson | 111 |
+	| harrisson | 276 |
 	| hill | 202 |
 	| hiphopflyers | 494 |
 	| howell | 416 |
 	| impersonator | 884 |
 	| isbell | 1190 |
 	| iwo | 1740 |
-	| japantheatre | 111 |
+	| japantheatre | 1076 |
 	| japanworld | 4231 |
 	| johnclairmiller | 240 |
 	| johnclairmillericeland | 616 |
 	| karma | 4140 |
 	| kassoy | 139 |
 	| kingsbury | 522 |
-	| kmoddl | 111 |
+	| kmoddl | 223 |
 	| leuenberger | 231 |
 	| lindsaycooper | 589 |
 	| loewentheil | 1481 |
@@ -58,20 +58,20 @@ Feature: Confirm that collections have the correct number of assets
 	| punkflyers | 2102 |
 	| rackeralbums | 81 |
 	| ragamala | 4123 |
-	| railroad | 111 |
+	| railroad | 1655 |
 	| repsslides | 1357 |
 	| rmc | 19444 |
 	| rudin | 517 |
-	| seneca | 604 |
+	| seneca | 2731 |
 	| squeezes | 369 |
 	| srilanka | 527 |
-	| stereoscopes | 111 |
-	| sterrett | 111 |
+	| stereoscopes | 213 |
+	| sterrett | 545 |
 	| tamang | 2539 |
 	| tarr | 2136 |
 	| tellennasbeh | 52 |
-	| vicos | 111 |
-	| willardstraight | 111 |
+	#| vicos | 111 |
+	| willardstraight | 176 |
     # dlxs collections
 	| bol | 714 |
 	| chla | 1073983 |
@@ -81,19 +81,18 @@ Feature: Confirm that collections have the correct number of assets
 	| hearth | 667340 |
 	| hunt | 124 |
 	| izq: | 3 |
-	| izquierda | 111 |
+	#| izquierda | 111 |
 	| liber | 1205 |
-	| may | 111 |
+	| may | 145441 |
 	| nur | 16504 |
-	| regmi: | 111 |
-	| sea | 111 |
-	| sat | 111 |
-	| scott | 111 |
+	| regmi: | 19 |
+	| sea | 4 |
+	| sat | 42038 |
+	| scott | 4541 |
 	| witchcraft | 102 |
-	| words | 111 |
+	| words | 446 |
     # other collections
     | art2301 | 55 |
     | claireholt | 1785 |
-    | cmip: | 24 |
+    # | cmip: | 24 | - collection removed
     | maps | 1616 |
-    |
