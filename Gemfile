@@ -6,8 +6,11 @@ gem 'sprockets', '>= 3.7.2'
 gem 'nokogiri', '>= 1.10.8'
 gem 'appsignal'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails' #, '4.2.11.1'
-gem 'actionview' #, '>= 4.2.11.1'
+gem 'rails'#, '>= 5.2.4.2' #'4.2.11.1'
+gem 'actionview'#, '>= 5.2.4.2' # '>= 4.2.11.1'
+gem 'activesupport'
+gem 'actionpack'
+gem "rest-client", ">= 1.8.0"
 gem "dotenv-rails"
 gem "dotenv-deployment"
 gem 'httpclient'
