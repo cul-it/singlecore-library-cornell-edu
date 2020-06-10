@@ -157,7 +157,40 @@ Given("I browse collection nicknamed {string}") do |string|
 
     when "vicos"
         full = 'Vicos Collection'
-
+	when "bol"
+		full = 'Alfredo Montalvo Bolivian Digital Pamphlets Collection'
+	when "chla"
+		full = 'Core Historical Literature of Agriculture'
+	when "ezra"
+		full = 'Ezra Cornell Papers, Ezra Cornell Letters'
+	when "flow"
+		full = 'Language of Flowers'
+	when "hivebees"
+		full = 'Hive and the Honeybee'
+	when "hearth"
+		full = 'Home Economics Archive: Research, Tradition and History'
+	when "hunt"
+		full = 'Huntington Free Library Native American Collection'
+	when "izq:"
+		full = 'History of the Left in Latin America'
+	when "liber"
+		full = 'Liberian Law Collection'
+	when "may"
+		full = 'Samuel J. May Anti-Slavery Collection'
+	when "nur"
+		full = 'Donovan Nuremberg Trials Collection'
+	when "regmi:"
+		full = 'Regmi Research Series'
+	when "sea"
+		full = 'Southeast Asia Visions'
+	when "sat"
+		full = 'Trial Pamphlets Collection'
+	when "scott"
+		full = 'Scottsboro Trials Collection'
+	when "witchcraft"
+		full = 'Digital Witchcraft Collection'
+	when "words"
+		full = 'Wordsworth Collection'
     else
         full = "Unknown collection nickname"
     end
