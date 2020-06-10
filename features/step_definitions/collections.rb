@@ -41,6 +41,9 @@ Given("I browse collection nicknamed {string}") do |string|
     when "chla"
         full = 'Core Historical Literature of Agriculture'
 
+    when "claireholt"
+        full = 'Claire Holt Papers: Images of Indonesian Art, Architecture, and Culture'
+
     when "coin"
         full = 'Cornell Coin Collection'
 
@@ -55,6 +58,9 @@ Given("I browse collection nicknamed {string}") do |string|
 
     when "fallout"
         full = 'Nuclear Fallout Shelter Collection'
+
+    when "gamelan"
+        full = 'Indonesian Music Archive'
 
     when "gems"
         full = 'Cornell Gem Impressions Collection'
@@ -152,6 +158,9 @@ Given("I browse collection nicknamed {string}") do |string|
     when "tamang"
         full = 'Digital Tamang'
 
+    when "tarr"
+        full = 'Historic Glacial Images of Alaska and Greenland'
+
     when "tell-en-nasbeh"
         full = 'Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin'
 
@@ -190,7 +199,9 @@ Given("I browse collection nicknamed {string}") do |string|
 	when "witchcraft"
 		full = 'Digital Witchcraft Collection'
 	when "words"
-		full = 'Wordsworth Collection'
+        full = 'Wordsworth Collection'
+    when "cmip:"
+        full = "Cornell Modern Indonesia Collection"
     else
         full = "Unknown collection nickname"
     end

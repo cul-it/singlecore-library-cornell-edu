@@ -12,84 +12,88 @@ Feature: Confirm that collections have the correct number of assets
     | nickname | count |
 	| adler | 7498 |
 	| adwhite | 1364 |
-	| aerial | 111 |
-	| ahearn | 111 |
+	| aerial | 3390 |
+	| ahearn | 909 |
 	| anthrocollections | 1271 |
 	| artifacts | 1673 |
 	| bam | 2311 |
-	| bastides | 111 |
+	| bastides | 2652 |
 	| beyondtaj | 6688 |
 	| blaschka | 248 |
-	| cast | 111 |
-	| coins | 111 |
-	| conzo | 111 |
+	| cast | 967 |
+	| coins | 1804 |
+	| conzo | 7616 |
 	| culmaps | 111 |
-	| dendro | 111 |
-	| divinecomedy | 111 |
-	| dynkin | 111 |
-	| eleusis | 111 |
-	| fallout | 111 |
-	| gamelan | 111 |
-	| gems | 111 |
+	| dendro | 98 |
+	| divinecomedy | 1898 |
+	| dynkin | 915 |
+	| eleusis | 847 |
+	| fallout | 15 |
+	| gamelan | 565 |
+	| gems | 3794 |
 	| harrisson | 111 |
-	| hill | 111 |
-	| hiphopflyers | 111 |
-	| howell | 111 |
+	| hill | 202 |
+	| hiphopflyers | 494 |
+	| howell | 416 |
 	| impersonator | 884 |
-	| isbell | 111 |
+	| isbell | 1190 |
 	| iwo | 1740 |
 	| japantheatre | 111 |
-	| japanworld | 111 |
-	| johnclairmiller | 111 |
-	| johnclairmillericeland | 111 |
-	| karma | 111 |
+	| japanworld | 4231 |
+	| johnclairmiller | 240 |
+	| johnclairmillericeland | 616 |
+	| karma | 4140 |
 	| kassoy | 139 |
 	| kingsbury | 522 |
 	| kmoddl | 111 |
-	| leuenberger | 111 |
-	| lindsaycooper | 111 |
-	| loewentheil | 111 |
-	| obama | 111 |
+	| leuenberger | 231 |
+	| lindsaycooper | 589 |
+	| loewentheil | 1481 |
+	| obama | 200 |
 	| page | 111 |
-	| paniccioli | 111 |
-	| pjmode | 111 |
-	| politicalamericana | 111 |
+	| paniccioli | 27894 |
+	| pjmode | 1070 |
+	| politicalamericana | 2223 |
 	| prisonwritings | 449 |
-	| punkflyers | 111 |
-	| rackeralbums | 111 |
-	| ragamala | 111 |
+	| punkflyers | 2102 |
+	| rackeralbums | 81 |
+	| ragamala | 4123 |
 	| railroad | 111 |
-	| repsslides | 111 |
-	| rmc | 111 |
-	| rudin | 111 |
+	| repsslides | 1357 |
+	| rmc | 19444 |
+	| rudin | 517 |
 	| seneca | 604 |
-	| squeezes | 111 |
-	| srilanka | 111 |
+	| squeezes | 369 |
+	| srilanka | 527 |
 	| stereoscopes | 111 |
 	| sterrett | 111 |
-	| tamang | 111 |
-	| tarr | 111 |
+	| tamang | 2539 |
+	| tarr | 2136 |
 	| tellennasbeh | 52 |
 	| vicos | 111 |
 	| willardstraight | 111 |
     # dlxs collections
 	| bol | 714 |
-	| chla | 111 |
-	| ezra | 111 |
-	| flow | 111 |
-	| hivebees | 111 |
-	| hearth | 111 |
-	| hunt | 111 |
-	| izq: | 111 |
+	| chla | 1073983 |
+	| ezra | 26256 |
+	| flow | 23590 |
+	| hivebees | 34434 |
+	| hearth | 667340 |
+	| hunt | 124 |
+	| izq: | 3 |
 	| izquierda | 111 |
-	| liber | 111 |
+	| liber | 1205 |
 	| may | 111 |
-	| nur | 111 |
+	| nur | 16504 |
 	| regmi: | 111 |
 	| sea | 111 |
 	| sat | 111 |
 	| scott | 111 |
-	| witchcraft | 111 |
+	| witchcraft | 102 |
 	| words | 111 |
     # other collections
     | art2301 | 55 |
+    | claireholt | 1785 |
+    | cmip: | 24 |
+    | maps | 1616 |
+    |
