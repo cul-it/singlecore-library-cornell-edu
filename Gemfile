@@ -1,16 +1,18 @@
 source 'http://rubygems.org'
 ruby "2.5.5"
 
-gem "blacklight"
+gem "blacklight", "6.2.0"
 gem 'sprockets', '>= 3.7.2'
 gem 'nokogiri', '>= 1.10.8'
 gem 'appsignal'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.11.1'
-gem 'actionview', '>= 4.2.11.1'
+gem 'rails' #, '4.2.11.1'
+gem 'actionview' #, '>= 4.2.11.1'
 gem "dotenv-rails"
 gem "dotenv-deployment"
 gem 'httpclient'
+gem "websocket-extensions", ">= 0.1.5"
+gem "kaminari", ">= 1.2.1"
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '1.3.13'
 # Use SCSS for stylesheets
@@ -45,7 +47,7 @@ gem "rubyzip", ">= 1.3.0"
 gem 'font-awesome-sass', '~> 4.3.0'
 
 #static pages gem
-gem 'high_voltage', '~> 2.3.0'
+gem 'high_voltage', '~> 3.1'
 
 gem 'blacklight-gallery'
 
