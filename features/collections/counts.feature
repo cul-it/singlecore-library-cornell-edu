@@ -6,7 +6,7 @@ Feature: Confirm that collections have the correct number of assets
     @digcoll-1657
     Scenario Outline: Check collection counts using facets
         Given I browse collection nicknamed '<nickname>'
-        Then there should be <count> search results
+        Then the collection should show <count> assets
 
     Examples:
     | nickname | count |
