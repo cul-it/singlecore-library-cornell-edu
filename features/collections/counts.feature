@@ -23,7 +23,7 @@ Feature: Confirm that collections have the correct number of assets
 	| cast | 967 |
 	| coins | 1804 |
 	| conzo | 7616 |
-	| culmaps | 111 |
+	| culmaps | 1616 |
 	| dendro | 98 |
 	| divinecomedy | 1898 |
 	| dynkin | 915 |
@@ -50,7 +50,7 @@ Feature: Confirm that collections have the correct number of assets
 	| lindsaycooper | 589 |
 	| loewentheil | 1481 |
 	| obama | 200 |
-	| page | 111 |
+	| page | 55 |
 	| paniccioli | 27894 |
 	| pjmode | 1070 |
 	| politicalamericana | 2223 |
