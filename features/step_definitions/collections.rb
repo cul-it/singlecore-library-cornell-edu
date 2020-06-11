@@ -24,7 +24,7 @@ Given("I browse collection nicknamed {string}") do |string|
         full = 'Art 2301 Printmaking Student Portfolios'
 
     when "artifacts"
-        full = 'Campus Artifacts, Art & Memorabilia'
+        full = 'Campus Artifacts, Art %26 Memorabilia'
 
     when "afrika-bambaataa"
         full = 'Afrika Bambaataa Hip Hop Archive'
