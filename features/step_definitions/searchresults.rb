@@ -28,12 +28,10 @@ end
 Then("the collection should show {int} assets") do |int|
   # put the commas into the integer
   int = int.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
-  test = page.find.("div#sortAndPerPage")
-  what_is test
-  within ("div#sortAndPerPage") do
-    strongs = find(:xpath, '//span[@class="page_entries"]').text
-    puts "\n" + strongs.inspect
-    expect(strongs).to have_content(int)
+  what_is page.find("span.page_entries")
+  within ("div#sortAndPerPage span.page_entries") do
+    strongs = all(:xpath, '//strong')
+    expect(strongs[3]).to have_content(int)
   end
   # page.find(:xpath, "//head/meta[@name=\"totalResults\" and @content=\"#{int}\"]", :visible => :all)
 end
