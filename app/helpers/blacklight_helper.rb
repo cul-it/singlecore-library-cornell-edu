@@ -348,7 +348,7 @@ end
 
 def get_chla_issues args
   journal = args['id']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{journal}*+AND+has_model_ssim:\"Issue\"&wt=json&indent=true&sort=latest_date_isi%20asc,title_ssi%20asc&rows=10000"))
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{journal}*+AND+has_model_ssim:\"Issue\"&wt=json&indent=true&sort=latest_date_isi%20asc,id%20asc&rows=10000"))
   @response = response['response']['docs']
   return @response
 end
