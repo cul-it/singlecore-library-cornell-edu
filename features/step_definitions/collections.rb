@@ -8,6 +8,9 @@ Given("I browse collection nicknamed {string}") do |string|
     when "adwhite"
         full = 'Andrew Dickson White Architectural Photographs Collection'
 
+    when "aerial"
+        full = 'New York State Aerial Photographs'
+
     when "ahearn"
         full = 'Charlie Ahearn Archive'
 
@@ -26,10 +29,16 @@ Given("I browse collection nicknamed {string}") do |string|
     when "afrika-bambaataa"
         full = 'Afrika Bambaataa Hip Hop Archive'
 
+    when "bam"
+        full = 'Afrika Bambaataa Vinyl Collection'
+
     when "bastides"
         full = 'John Reps Collection - Bastides'
 
     when "beyondthetaj"
+        full = 'Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia'
+
+    when "beyondtaj"
         full = 'Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia'
 
     when "bolivianpamphlets"
@@ -205,8 +214,62 @@ Given("I browse collection nicknamed {string}") do |string|
         full = 'Wordsworth Collection'
     when "cmip:"
         full = "Cornell Modern Indonesia Collection"
+    when "coins"
+		full = 'Cornell Coin Collection'
+	when "conzo"
+		full = 'Joe Conzo Jr. Archive'
+	when "culmaps"
+		full = 'Cornell University Library Map Collection'
+	when "dendro"
+		full = 'NYS Historical Dendrochronology'
+	when "dynkin"
+		full = 'Eugene B. Dynkin Collection of Mathematics Interviews'
+	when "harrisson"
+		full = 'Tom Harrisson Photographs'
+	when "hill"
+		full = 'Hill Ornithology Collection'
+	when "isbell"
+		full = 'Billie Jean Isbell Andean Collection'
+	when "iwo"
+		full = 'International Workers\’ Order (IWO) and Jewish People\'s Fraternal Order (JPFO)'
+	when "japantheatre"
+		full = 'Theatre Prints and Books from Early Modern Japan'
+	when "japanworld"
+		full = 'Knowledge of the World in Early Modern Japan'
+	when "johnclairmillericeland"
+		full = 'John Clair Miller Image Collection of Twentieth-Century Architecture in Iceland'
+	when "kassoy"
+		full = 'Bernard Kassoy Teacher News Cartoons'
+	when "kingsbury"
+		full = 'Alison Mason Kingsbury: Life and Art'
+	when "leuenberger"
+		full = 'Leuenberger Map Collection'
+	when "page"
+		full = 'Art 2301 Printmaking Student Portfolios'
+	when "pjmode"
+		full = 'Persuasive Maps: PJ Mode Collection'
+	when "politicalamericana"
+		full = 'Political Americana'
+	when "rackeralbums"
+		full = 'Efraim Racker Art Albums'
+	when "ragamala"
+		full = 'Ragamala Paintings'
+	when "repsslides"
+		full = 'John Reps Collection - Urban Explorer'
+	when "seneca"
+		full = 'Seneca Haudenosaunee Archaeological Materials, circa 1688-1754'
+	when "squeezes"
+		full = 'Cornell Squeeze Collection'
+	when "srilanka"
+		full = 'Depicting the Sri Lankan Vernacular'
+	when "tellennasbeh"
+		full = 'Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin'
+	when "willardstraight"
+		full = 'Willard D. Straight in Korea'
+
     else
         full = "Unknown collection nickname"
+        raise "Unknown collection nickname: #{string}"
     end
 
     visit("/?f[collection_tesim][]=#{full}")
