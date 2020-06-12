@@ -14,6 +14,10 @@ Given("I go to asset id {string}") do |string|
     visit("/catalog/ss:#{string}")
 end
 
+Given("I go to asset {string}") do |string|
+    visit("/catalog/#{string}")
+end
+
 Then("I should see the field labeled {string}") do |string|
     within "div.item-info" do
         find(:xpath, "//dt[text()='#{string}:']")
