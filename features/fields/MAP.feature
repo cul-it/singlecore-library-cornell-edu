@@ -36,12 +36,12 @@ Feature: Asset MAP fields
     | Identifier | Berlin Catalog No. | 1972751 | 201 |
     | Identifier | Inventory No. | 1972751 | FG 193 |
     | Identifier | Stosch Category | 1972751 | Category 1: Egyptian Gems |
-    | Legacy Label | Original Blaschka Species Name | 20108070 | Terebella emmalini |
-    | Legacy Label | Common Name | 20108070 | Spaghetti Worm |
-    | Legacy Label | Old Genus | 20108070 | Terebella |
-    | Legacy Label | Old Species | 20108070 | emmalini |
-    | Legacy Label | Current Genus | 20108070 | Pista |
-    | Legacy Label | Current Species | 20108070 | cretacea |
+    | Legacy Label | Original Blaschka Species Name | 20108068 | Terebella emmalini |
+    | Legacy Label | Common Name | 20108068 | Spaghetti Worm |
+    | Legacy Label | Old Genus | 20108068 | Terebella |
+    | Legacy Label | Old Species | 20108068 | emmalini |
+    | Legacy Label | Current Genus | 20108068 | Pista |
+    | Legacy Label | Current Species | 20108068 | cretacea |
     | Legacy Label | Canticle | 265890 | Inferno |
     | Legacy Label | Canto | 265890 | 34 |
     | Legacy Label | Canticle Image | 265890 | 37 |
