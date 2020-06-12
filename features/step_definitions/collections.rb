@@ -171,7 +171,7 @@ Given("I browse collection nicknamed {string}") do |string|
 	when "rmc"
 		full = 'Images from the Rare Book and Manuscript Collections'
 	when "rudin"
-		full = 'Rudin Slavery Collection'
+		full = 'Gail and Stephen Rudin Slavery Collection, 1728-1973'
 	when "sat"
 		full = 'Trial Pamphlets Collection'
 	when "scott"
