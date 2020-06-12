@@ -585,7 +585,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'translation_as_tesim', :label => 'Translated as', helper_method: :autolink_field
 
     # work type, subject, etc.
-    config.add_show_field 'lang_tesim', :label => 'Language'
+    config.add_show_field 'lang_tesim', :label => 'Language', if: :display_lang_tesim?
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'culture_orig_tesim', :label => 'Original Culture'
     config.add_show_field 'style_period_tesim', :label => 'Style/Period'
@@ -828,6 +828,14 @@ class CatalogController < ApplicationController
       true
     else
       false
+    end
+  end
+
+  def display_lang_tesim?(field_config, solr_doc)
+    if solr_doc['language_tesim'].present?
+      false
+    else
+      true
     end
   end
 
