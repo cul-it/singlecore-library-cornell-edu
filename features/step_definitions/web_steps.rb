@@ -15,7 +15,11 @@ def what_is(element)
     puts element.text
     puts "\n"
     puts "\n********************* what is ^\n"
-  end
+end
+
+def where_am_i
+    puts "\n" + page.current_url.inspect
+end
 
 And(/^I click on text '(.*?)'$/) do |text|
     click_link(text)

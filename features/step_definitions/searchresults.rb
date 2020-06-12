@@ -28,6 +28,7 @@ end
 Then("the collection should show {int} assets") do |int|
   # put the commas into the integer
   int = int.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
+  where_am_i
   within ("div#sortAndPerPage span.page_entries") do
     strongs = all(:xpath, '//strong')
     expect(strongs[3]).to have_content(int)
