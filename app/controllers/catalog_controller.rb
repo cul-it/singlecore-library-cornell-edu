@@ -775,8 +775,10 @@ class CatalogController < ApplicationController
     qualifier = solr_doc[role]
     if qualifier.present?
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+      true
+    else
+      false
     end
-    return true
   end
 
   def display_legacy_value_show_field?(field_config, solr_doc)
@@ -786,8 +788,10 @@ class CatalogController < ApplicationController
     qualifier = solr_doc[role]
     if qualifier.present?
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+      true
+    else
+      false
     end
-    return true
   end
 
   def display_measurement_show_field?(field_config, solr_doc)
@@ -807,8 +811,10 @@ class CatalogController < ApplicationController
     text = label.join(' ')
     if text.present?
       field_config['label'] = text.split.map(&:capitalize).join(' ')
+      true
+    else
+      false
     end
-    return true
   end
 
   def display_title_show_field?(field_config, solr_doc)
@@ -819,8 +825,10 @@ class CatalogController < ApplicationController
     if qualifier.present?
       # remove parens then prefix and surround with parens
       field_config['label'] = 'Title (' + qualifier.first.gsub(/[()]/,"").split.map(&:capitalize).join(' ') + ')'
+      true
+    else
+      false
     end
-    return true
   end
 
 end
