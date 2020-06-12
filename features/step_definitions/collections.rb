@@ -19,7 +19,7 @@ Given("I browse collection nicknamed {string}") do |string|
 	when "art2301"
 		full = 'Art 2301 Printmaking Student Portfolios'
 	when "artifacts"
-		full = 'Campus Artifacts, Art %26 Memorabilia'
+		full = 'Campus Artifacts, Art & Memorabilia'
 	when "bam"
 		full = 'Afrika Bambaataa Vinyl Collection'
 	when "bastides"
@@ -213,6 +213,6 @@ Given("I browse collection nicknamed {string}") do |string|
         raise "Unknown collection nickname: #{string}"
     end
 
-    uri = URI.escape(full)
+    uri = URI.escape(full).gsub('&', '%26')
     visit("/?f[collection_tesim][]=#{uri}")
 end
