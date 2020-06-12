@@ -762,8 +762,10 @@ class CatalogController < ApplicationController
     qualifier = solr_doc[role]
     if qualifier.present?
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ') + ' Date'
+      true
+    else
+      false
     end
-    return true
   end
 
   def display_identifier_show_field?(field_config, solr_doc)
