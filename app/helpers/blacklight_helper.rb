@@ -21,7 +21,7 @@ module BlacklightHelper
     new_params[:spatial_search_type] = "point"
     new_params[:coordinates] = "#{point_coordinates[1]},#{point_coordinates[0]}"
     new_params[:view] = default_document_index_view_type
-    link_to(t('blacklight.maps.interactions.point_search'), search_catalog_path(new_params))
+    link_to(t('blacklight.maps.interactions.point_search'), search_catalog_path(new_params.permit(:spatial_search_type, :coordinates, :view)))
   end
 
   # create a link to a location name facet value
