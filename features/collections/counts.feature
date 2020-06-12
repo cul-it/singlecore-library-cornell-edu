@@ -73,24 +73,24 @@ Feature: Confirm that collections have the correct number of assets
 	#| vicos | 111 |
 	| willardstraight | 176 |
     # dlxs collections
-	| bol | 714 |
-	| chla | 1073983 |
-	| ezra | 26256 |
-	| flow | 23590 |
-	| hivebees | 34434 |
-	| hearth | 667340 |
-	| hunt | 124 |
-	| izq: | 3 |
-	#| izquierda | 111 |
-	| liber | 1205 |
-	| may | 145441 |
-	| nur | 16504 |
-	| regmi: | 19 |
-	| sea | 4 |
-	| sat | 42038 |
-	| scott | 4541 |
-	| witchcraft | 102 |
-	| words | 446 |
+	# | bol | 714 |
+	# | chla | 1073983 |
+	# | ezra | 26256 |
+	# | flow | 23590 |
+	# | hivebees | 34434 |
+	# | hearth | 667340 |
+	# | hunt | 124 |
+	# | izq: | 3 |
+	# #| izquierda | 111 |
+	# | liber | 1205 |
+	# | may | 145441 |
+	# | nur | 16504 |
+	# | regmi: | 19 |
+	# | sea | 4 |
+	# | sat | 42038 |
+	# | scott | 4541 |
+	# | witchcraft | 102 |
+	# | words | 446 |
     # other collections
     | art2301 | 55 |
     | claireholt | 1785 |
