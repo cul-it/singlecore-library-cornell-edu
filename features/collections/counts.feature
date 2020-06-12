@@ -51,7 +51,7 @@ Feature: Confirm that collections have the correct number of assets
 	| loewentheil | 1481 |
 	| obama | 200 |
 	| page | 55 |
-	| paniccioli | 27894 |
+	| paniccioli | 27895 |
 	| pjmode | 1070 |
 	| politicalamericana | 2223 |
 	| prisonwritings | 449 |
