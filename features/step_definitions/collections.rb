@@ -65,7 +65,7 @@ Given("I browse collection nicknamed {string}") do |string|
 	when "ezra"
 		full = 'Ezra Cornell Papers, Ezra Cornell Letters'
 	when "fallout"
-		full = 'Nuclear Fallout Shelter Collection'
+		full = 'Nuclear Fallout Pamphlets'
 	when "flow"
 		full = 'Language of Flowers'
 	when "gamelan"
