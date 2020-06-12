@@ -97,7 +97,7 @@ Given("I browse collection nicknamed {string}") do |string|
 	when "isbellandes"
 		full = 'Billie Jean Isbell Andean Collection'
 	when "iwo"
-		full = 'International Workers%39 Order (IWO) and Jewish People%39s Fraternal Order (JPFO)'
+		full = "International Workers’ Order (IWO) and Jewish People's Fraternal Order (JPFO)"
 	when "izq:"
 		full = 'History of the Left in Latin America'
 	when "japanesetheater"
