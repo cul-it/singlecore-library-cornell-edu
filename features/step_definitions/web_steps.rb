@@ -17,6 +17,10 @@ def what_is(element)
     puts "\n********************* what is ^\n"
 end
 
+Given("where am I") do
+    where_am_i
+end
+
 def where_am_i
     puts "\n" + page.current_url.inspect
 end
