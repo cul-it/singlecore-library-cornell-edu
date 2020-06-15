@@ -132,40 +132,40 @@ Feature: Support for DLXS collections
         # | annotation_tesim | Annotation | xxx | yyy |
         # | archaeological_date_tesim | Archaeological Date | xxx | yyy |
         # | archaeological_style_period_tesim | Archaeological Period | xxx | yyy |
-        | architect_creator_tesim | Architect | xxx | yyy |
-        | architectural_firm_creator_tesim | Architectural Firm | xxx | yyy |
-        | archival_collection_tesim | Archival Collection | xxx | yyy |
-        | arranger_creator_tesim | Arranger | xxx | yyy |
-        | art_bio_tesim | Artist Biography | xxx | yyy |
-        | author_tesim | Creator | xxx | yyy |
-        | bam_number_tesim | Bam Number | xxx | yyy |
-        | berlin_catalog_tesim | Berlin Catalog | xxx | yyy |
-        | bibid_tesim | Catalog Record | xxx | yyy |
-        | bibliography_tesim | Bibliography | xxx | yyy |
-        | box_box_folder_tesim | Box | xxx | yyy |
-        | box_tesim | Box # 20| xxx | yyy |
-        | call_number_tesim | Call Number | xxx | yyy |
-        | canticle_tesim | Canticle | xxx | yyy |
-        | canto_tesim | Canto | xxx | yyy |
-        | card_number_tesim | Card Number | xxx | yyy |
-        | catalog_number_tesim | Catalog Number | xxx | yyy |
-        | cataloger_tesim | Cataloger | xxx | yyy |
-        | century_tesim | Century | xxx | yyy |
-        | cite_as_tesim | Cite As | xxx | yyy |
-        | city_location_tesim | Location | xxx | yyy |
-        | collecting_program_tesim | Collecting Program | xxx | yyy |
-        | collection_number_tesim | Collection Number | xxx | yyy |
-        | collection_tesim | Collection | xxx | yyy |
-        | collector_tesim | Collector | xxx | yyy |
-        | collectors_notes_tesim | Collectors Notes| xxx | yyy |
-        | column_no_tesim | Column Number | xxx | yyy |
-        | common_name_tesim | Common Name | xxx | yyy |
-        | composer_creator_tesim | Composer | xxx | yyy |
-        | condition_tesim | Condition | xxx | yyy |
-        | context_tesim | Context | xxx | yyy |
-        | coordinates_tesim | Coordinates | xxx | yyy |
-        | country_location_tesim | Country | xxx | yyy |
-        | country_tesim | Country | xxx | yyy |
+        # | architect_creator_tesim | Architect | xxx | yyy |
+        # | architectural_firm_creator_tesim | Architectural Firm | xxx | yyy |
+        # | archival_collection_tesim | Archival Collection | xxx | yyy |
+        # | arranger_creator_tesim | Arranger | xxx | yyy |
+        # | art_bio_tesim | Artist Biography | xxx | yyy |
+        | author_tesim | Creator | hunt0001_1 | Perez, Manuel |
+        # | bam_number_tesim | Bam Number | xxx | yyy |
+        # | berlin_catalog_tesim | Berlin Catalog | xxx | yyy |
+        | bibid_tesim | Catalog Record | chla1043101_01 | 1043101 |
+        # | bibliography_tesim | Bibliography | xxx | yyy |
+        # | box_box_folder_tesim | Box | xxx | yyy |
+        # | box_tesim | Box # 20| xxx | yyy |
+        # | call_number_tesim | Call Number | xxx | yyy |
+        # | canticle_tesim | Canticle | xxx | yyy |
+        # | canto_tesim | Canto | xxx | yyy |
+        # | card_number_tesim | Card Number | xxx | yyy |
+        # | catalog_number_tesim | Catalog Number | xxx | yyy |
+        # | cataloger_tesim | Cataloger | xxx | yyy |
+        # | century_tesim | Century | xxx | yyy |
+        # | cite_as_tesim | Cite As | xxx | yyy |
+        # | city_location_tesim | Location | xxx | yyy |
+        # | collecting_program_tesim | Collecting Program | xxx | yyy |
+        # | collection_number_tesim | Collection Number | xxx | yyy |
+        | collection_tesim | Collection | hearth1891092 | Home Economics Archive |
+        # | collector_tesim | Collector | xxx | yyy |
+        # | collectors_notes_tesim | Collectors Notes| xxx | yyy |
+        # | column_no_tesim | Column Number | xxx | yyy |
+        # | common_name_tesim | Common Name | xxx | yyy |
+        # | composer_creator_tesim | Composer | xxx | yyy |
+        # | condition_tesim | Condition | xxx | yyy |
+        # | context_tesim | Context | xxx | yyy |
+        # | coordinates_tesim | Coordinates | xxx | yyy |
+        # | country_location_tesim | Country | xxx | yyy |
+        # | country_tesim | Country | xxx | yyy |
         | creation_site_location_tesim | Site | xxx | yyy |
         | creation_site_orig_tesim | Original Site | xxx | yyy |
         | creator_bio_tesim | Creator Biography | xxx | yyy |
