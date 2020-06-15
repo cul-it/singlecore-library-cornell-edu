@@ -58,3 +58,15 @@ Feature: Support for DLXS collections
     # | hearth1891092_102_103 | Note | Digitization funded by Institute of Museum |
     # | hearth1891092_102_103 | Publisher | The Butterick company, inc. |
     # | hearth1891092_102_103 | Publication Place | New York |
+    | hunt0001_102 | Title | Arte de el idioma mexicano |
+    | hunt0001_102 | Creator | Perez, Manuel |
+    | hunt0001_102 | Site | Mexico |
+    | hunt0001_102 | Language | English |
+    | hunt0001_102 | Keywords | Nahuatl language - Grammar |
+    | hunt0001_102 | Extent | 450 300dpi JPEG page images |
+    | hunt0001_102 | Note | 450 p. |
+    | hunt0001_102 | Publisher | F. de Ribera Calderon |
+    | hunt0001_102 | Publication Place | Mexico |
+    | hunt0001_102 | Publication Date | 1713 |
+    | hunt0001_102 | Repository | Cornell University Library |
+    | hunt0001_102 | Rights | The images in this collection are in the public domain |
