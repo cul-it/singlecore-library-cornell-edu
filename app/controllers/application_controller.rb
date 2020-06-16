@@ -90,7 +90,6 @@ class ApplicationController < ActionController::Base
       liber: "liber*",		    	# Liberian Law Collection
       may: "may*",			        # Samuel J. May Anti-Slavery Collection
       nur: "nur*",			        # Donovan Nuremberg Trials Collection
-      regmi: "regmi*",		      # Regmi Research Series
       sat: "sat*",			        # Trial Pamphlets Collection
       scott: "scott*",			    # Scottsboro Trials Collection
       sea: "sea*",			        # Southeast Asia Visions
@@ -204,7 +203,6 @@ class ApplicationController < ActionController::Base
         # dlxs[:liber],
         # dlxs[:may],
         # dlxs[:nur],
-        # dlxs[:regmi],
         # dlxs[:sat],
         # dlxs[:scott],
         # dlxs[:sea],
