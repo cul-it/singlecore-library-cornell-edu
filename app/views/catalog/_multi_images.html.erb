@@ -7,7 +7,7 @@
 					<a href="/catalog/<%= image['id'] %>" data-turbolinks="false" aria-label="<%= image['id'] %>">
 					    <img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" alt="" />
 						<span class="caption">
-							<%= image['title_tesim'][0] %>
+							<%= image['title_tesim'].present? ? image['title_tesim'][0] : '' %>
 						</span>
 					</a>
 				</div>
@@ -24,7 +24,7 @@
 					<a href="/catalog/<%= image['id'] %>" data-turbolinks="false" aria-label="<%= image['id'] %>">
 							<img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" alt="" />
 						<span class="caption">
-							<%= image['title_tesim'][0] %>
+							<%= image['title_tesim'].present? ? image['title_tesim'][0] : '' %>
 						</span>
 					</a>
 				</div>
@@ -59,7 +59,7 @@
 					<a href="/catalog/<%= image['id'] %>" data-turbolinks="false" aria-label="<%= image['id'] %>">
 						<img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" alt="" />
 						<span class="caption">
-							<%= image['title_tesim'][0] %>
+							<%= image['title_tesim'].present? ? image['title_tesim'][0] : '' %>
 						</span>
 					</a>
 				</div>
@@ -76,7 +76,7 @@
 					<a href="/catalog/<%= image['id'] %>" data-turbolinks="false" aria-label="<%= image['id'] %>">
 						<img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" alt="" />
 						<span class="caption">
-							<%= image['title_tesim'][0] %>
+							<%= image['title_tesim'].present? ? image['title_tesim'][0] : '' %>
 						</span>
 					</a>
 				</div>
@@ -93,7 +93,7 @@
 					<a href="/catalog/<%= image['id'] %>" data-turbolinks="false" aria-label="<%= image['id'] %>">
 						<img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" alt="" />
 						<span class="caption">
-							<%= image['title_tesim'][0] %>
+							<%= image['title_tesim'].present? ? image['title_tesim'][0] : '' %>
 						</span>
 					</a>
 				</div>
