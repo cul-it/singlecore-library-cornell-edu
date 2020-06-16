@@ -527,6 +527,7 @@ def asset_visible?(document)
     environment = ENV['RAILS_ENV']
     if environment == 'development'
       # see app/controllers/application_controller.rb:100
+      # leave out the work_sequence_isi:[2 TO *] clauses to allow viewing multi-image
       fqa = ['-active_fedora_model_ssi:"Page"',
         '-solr_loader_tesim:"eCommons"']
       fq = fqa.join(' AND ')
