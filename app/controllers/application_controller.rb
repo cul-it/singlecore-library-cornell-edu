@@ -79,7 +79,6 @@ class ApplicationController < ActionController::Base
     dlxs = {
       bol: "bol*",			        # Alfredo Montalvo Bolivian Digital Pamphlets Collection
       chla: "chla*",			      # Core Historical Literature of Agriculture
-      cmip: "cmip*",			      # Cornell Modern Indonesia Collection
       cooper: "cooper*",		    # Cooper Bridge Plan Collection
       ezra: "ezra*",			      # Ezra Cornell Papers
       flo: "flo*",			        # Language of Flowers
@@ -192,7 +191,6 @@ class ApplicationController < ActionController::Base
       fq_dlxs += [  # include these dlxs collections
         dlxs[:bol],
         dlxs[:chla],
-        # dlxs[:cmip],
         # dlxs[:cooper],
         # dlxs[:ezra],
         dlxs[:flo],
