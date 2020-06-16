@@ -85,7 +85,7 @@ class ApplicationController < ActionController::Base
       hearth: "hearth*",		    # Home Economics Archive: Research
       hivebees: "hivebees*",    # Hive and the Honeybee
       hunt: "hunt*",			      # Huntington Free Library Native American Collection
-      izq: "izq*",			        # History of the Left in Latin America
+      izquierda: "izquierda*",  # History of the Left in Latin America
       liber: "liber*",		    	# Liberian Law Collection
       may: "may*",			        # Samuel J. May Anti-Slavery Collection
       nur: "nur*",			        # Donovan Nuremberg Trials Collection
@@ -197,7 +197,7 @@ class ApplicationController < ActionController::Base
         dlxs[:hearth],
         dlxs[:hivebees],
         dlxs[:hunt],
-        # dlxs[:izq],
+        # dlxs[:izquierda],
         # dlxs[:liber],
         # dlxs[:may],
         # dlxs[:nur],
