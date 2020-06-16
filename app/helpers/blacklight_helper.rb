@@ -520,12 +520,20 @@ def has_collection_selected?
   end
 end
 
-
 def asset_visible?(document)
   # eid = id.sub(':', '\:')
   if document.id.present?
-    eid = document.id
-    fq = URI.escape(@fq)
+    eid = document.id.sub(':', '\:')
+    environment = ENV['RAILS_ENV']
+    if environment == 'development'
+      # see app/controllers/application_controller.rb:100
+      fqa = ['-active_fedora_model_ssi:"Page"',
+        '-solr_loader_tesim:"eCommons"']
+      fq = fqa.join(' AND ')
+    else
+      fq = @fq
+    end
+    fq = URI.escape(fq)
     response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{eid}&fq=#{fq}&fl=id&wt=json&indent=true&rows=1")).with_indifferent_access
     count = response['response']['numFound']
     count > 0
@@ -533,7 +541,5 @@ def asset_visible?(document)
     false
   end
 end
-
-
 
 end
