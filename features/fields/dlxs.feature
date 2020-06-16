@@ -122,7 +122,7 @@ Feature: Support for DLXS collections
     Examples:
     | internal | field | asset_id | starting |
     | author_tesim | Creator | hunt0001_1 | Perez, Manuel |
-    | bibid_tesim | Catalog Record | chla1043101 | 1043101 |
+    | bibid_tesim | Catalog Record | chla1043101_01 | 1043101 |
     | collection_tesim | Collection | bol0001 | Alfredo Montalvo Bolivian Digital Pamphlets Collec |
     | creation_site_location_tesim | Site | bol0001 | Sucre |
     | creator_tesim | Creator | bol0001 | Fernández, Hilarión |
