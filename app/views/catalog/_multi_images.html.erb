@@ -6,12 +6,9 @@
 				<div class="multi-image">
 					<a href="/catalog/<%= image['id'] %>" data-turbolinks="false" aria-label="<%= image['id'] %>">
 					    <img src='<%= image["media_URL_size_2_tesim"][0] %>' class="img-responsive" alt="" />
-						<%# hiding seneca titles for now because many lack them %>
-						<% if @document["collection_nickname_ssi"] != 'seneca' %>
-							<span class="caption">
-								<%= image['title_tesim'][0] %>
-							</span>
-						<% end %>
+						<span class="caption">
+							<%= image['title_tesim'].present? ? image['title_tesim'][0] : '' %>
+						</span>
 					</a>
 				</div>
 			<% end %>
