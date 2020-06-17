@@ -80,18 +80,16 @@ class ApplicationController < ActionController::Base
     dlxs = {
       bol: "bol*",			        # Alfredo Montalvo Bolivian Digital Pamphlets Collection
       chla: "chla*",			      # Core Historical Literature of Agriculture
-      cmip: "cmip*",			      # Cornell Modern Indonesia Collection
       cooper: "cooper*",		    # Cooper Bridge Plan Collection
       ezra: "ezra*",			      # Ezra Cornell Papers
       flo: "flo*",			        # Language of Flowers
       hearth: "hearth*",		    # Home Economics Archive: Research
       hivebees: "hivebees*",    # Hive and the Honeybee
       hunt: "hunt*",			      # Huntington Free Library Native American Collection
-      izq: "izq*",			        # History of the Left in Latin America
+      izquierda: "izquierda*",  # History of the Left in Latin America
       liber: "liber*",		    	# Liberian Law Collection
       may: "may*",			        # Samuel J. May Anti-Slavery Collection
       nur: "nur*",			        # Donovan Nuremberg Trials Collection
-      regmi: "regmi*",		      # Regmi Research Series
       sat: "sat*",			        # Trial Pamphlets Collection
       scott: "scott*",			    # Scottsboro Trials Collection
       sea: "sea*",			        # Southeast Asia Visions
@@ -197,18 +195,16 @@ class ApplicationController < ActionController::Base
       fq_dlxs += [  # include these dlxs collections
         dlxs[:bol],
         dlxs[:chla],
-        # dlxs[:cmip],
         # dlxs[:cooper],
         # dlxs[:ezra],
         dlxs[:flo],
         dlxs[:hearth],
         dlxs[:hivebees],
         dlxs[:hunt],
-        # dlxs[:izq],
+        # dlxs[:izquierda],
         # dlxs[:liber],
         # dlxs[:may],
         # dlxs[:nur],
-        # dlxs[:regmi],
         # dlxs[:sat],
         # dlxs[:scott],
         # dlxs[:sea],
