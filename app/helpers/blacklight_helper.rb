@@ -282,65 +282,10 @@ def get_tracks args
     return @response
   end
 
-def get_seneca_multiviews args
-  collection = args['collection_tesim'][0]
-  if args['catalog_number_tesim'].present?
-    parentid = args['catalog_number_tesim'][0]
   end
-  sequence = args['work_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=catalog_number_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
-  @response = response['response']['docs']
-  return @response
 end
 
-def get_impersonator_multiviews args
   collection = args['collection_tesim'][0]
-  if args['card_number_tesim'].present?
-    parentid = args['card_number_tesim'][0]
-  end
-  sequence = args['work_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=card_number_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
-  @response = response['response']['docs']
-  return @response
-end
-
-def get_stereoscopes_multiviews args
-  collection = args['collection_tesim'][0]
-  if args['identifier_tesim'].present?
-    parentid = args['identifier_tesim'][0]
-  end
-  sequence = args['work_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=identifier_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
-  @response = response['response']['docs']
-  return @response
-end
-
-def get_zorn_multiviews args
-  collection = args['collection_tesim'][0]
-  if args['plan_number_tesim'].present?
-  parentid = args['plan_number_tesim'][0]
-end
-  sequence = args['portal_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=plan_number_tesim:\"#{parentid}\"&wt=json&indent=true&sort=portal_sequence_isi%20asc&rows=100"))
-  @response = response['response']['docs']
-  return @response
-end
-
-def get_blaschka_multiviews args
-  collection = args['collection_tesim'][0]
-  if args['identifier_blaschka_isi'].present?
-  parentid = args['identifier_blaschka_isi']
-end
-  sequence = args['portal_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=identifier_blaschka_isi:\"#{parentid}\"&wt=json&indent=true&sort=portal_sequence_isi%20asc&rows=100"))
-  @response = response['response']['docs']
-  return @response
-end
-
-def get_anthro_multiviews args
-  collection = args['collection_tesim'][0]
-  if args['old_catalog_number_tesim'].present?
-    parentid = args['old_catalog_number_tesim'][0]
   end
   sequence = args['work_sequence_isi']
   response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=old_catalog_number_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
@@ -420,20 +365,15 @@ end
   }
 
 def is_multi_image? args
-  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_blaschka_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_impersonator_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_stereoscopes_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_anthro_multiviews(args).length > 1 && args['work_sequence_isi'].present?)
+  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']))
     return true
   end
 end
 
-
-
   MULTI_IMAGE_COLLECTIONS = {
     '20019' => 'impersonator',
     '4803' => 'seneca',
-    '3686' => 'zorn',
-    '3786' => 'blaschka',
-    '962' => 'stereoscopes',
-    '273' => 'anthrocollections'
+    '3686' => 'tellennasbeh'
   }
 
 def publication options={}
