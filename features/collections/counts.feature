@@ -62,7 +62,7 @@ Feature: Confirm that collections have the correct number of assets
 	| repsslides | 1357 |
 	| rmc | 19444 |
 	| rudin | 517 |
-	| seneca | 2731 |
+	| seneca | 604 |
 	| squeezes | 369 |
 	| srilanka | 527 |
 	| stereoscopes | 213 |
