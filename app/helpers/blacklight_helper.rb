@@ -319,10 +319,33 @@ end
 def get_multiviews args
   collection = args['collection_tesim'][0]
   if args['work_group_ssi'].present?
-    parentid = args['work_group_ssi']
+    parent = 'work_group_ssi'
+  elsif args['card_number_tesim'].present?
+    parent = 'card_number_tesim'
+  elsif args['catalog_number_tesim'].present?
+    parent = 'catalog_number_tesim'
+  elsif args['plan_number_tesim'].present?
+    parent = 'plan_number_tesim'
+  else
+    raise 'unknown multiview parent field'
   end
-  sequence = args['work_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=work_group_ssi:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
+  if args["#{parent}"].present?
+    if args["#{parent}"].kind_of?(Array)
+      parentid = args["#{parent}"].first.to_s
+    else
+      parentid = args["#{parent}"].to_s
+    end
+  else
+    raise 'missing multiview parent field'
+  end
+  if args['work_sequence_isi'].present?
+    sequence = 'work_sequence_isi'
+  elsif args['portal_sequence_isi'].present?
+    sequence = 'portal_sequence_isi'
+  else
+    raise 'unknown multiview sequence field'
+  end
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=#{parent}:#{parentid}&fq=#{sequence}:[1%20TO%20*]&wt=json&indent=true&sort=#{sequence}%20asc&rows=100"))
   @response = response['response']['docs']
   return @response
 end
