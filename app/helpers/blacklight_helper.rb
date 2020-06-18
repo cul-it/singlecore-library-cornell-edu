@@ -17,7 +17,7 @@ end
 
     # create a link to a spatial search for a set of point coordinates
   def link_to_point_search point_coordinates
-    new_params = params.except(:controller, :action, :view, :id, :spatial_search_type, :coordinates)
+    new_params = params.permit(:controller, :action, :view, :id, :spatial_search_type, :coordinates)
     new_params[:spatial_search_type] = "point"
     new_params[:coordinates] = "#{point_coordinates[1]},#{point_coordinates[0]}"
     new_params[:view] = default_document_index_view_type
@@ -33,13 +33,13 @@ end
     end
     new_params[:view] = default_document_index_view_type
     link_to(displayvalue.presence || field_value,
-            search_catalog_path(new_params.except(:id, :spatial_search_type, :coordinates)))
+            search_catalog_path(new_params.permit(:id, :spatial_search_type, :coordinates)))
   end
 
 
   # create a link to a spatial search for a set of point coordinates
   def link_to_point_search point_coordinates
-    new_params = params.except(:controller, :action, :view, :id, :spatial_search_type, :coordinates)
+    new_params = params.permit(:controller, :action, :view, :id, :spatial_search_type, :coordinates)
     new_params[:spatial_search_type] = "point"
     new_params[:coordinates] = "#{point_coordinates[1]},#{point_coordinates[0]}"
     new_params[:view] = default_document_index_view_type
