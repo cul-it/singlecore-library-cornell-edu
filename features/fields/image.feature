@@ -25,5 +25,5 @@ Feature: Compound and Related Images
     Examples:
     | nickname | id | count |
     | impersonator | 24415896 | 1 |
-    # | seneca | 22376760 | 22 |
+    | seneca | 22376760 | 6 |
     | tellennasbeh | 19102646 | 1 |
