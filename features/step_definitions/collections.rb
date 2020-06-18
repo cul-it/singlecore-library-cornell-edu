@@ -63,7 +63,7 @@ Given("I browse collection nicknamed {string}") do |string|
 	when "eleusis"
 		full = 'Mysteries at Eleusis: Images of Inscriptions'
 	when "ezra"
-		full = 'Ezra Cornell Papers, Ezra Cornell Letters'
+		full = 'Ezra Cornell Papers'
 	when "fallout"
 		full = 'Nuclear Fallout Pamphlets'
 	when "flow"
@@ -98,7 +98,7 @@ Given("I browse collection nicknamed {string}") do |string|
 		full = 'Billie Jean Isbell Andean Collection'
 	when "iwo"
 		full = "International Workers’ Order (IWO) and Jewish People's Fraternal Order (JPFO)"
-	when "izq:"
+	when "izquierda"
 		full = 'History of the Left in Latin America'
 	when "japanesetheater"
 		full = 'Theatre Prints and Books from Early Modern Japan'
