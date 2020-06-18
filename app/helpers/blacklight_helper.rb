@@ -33,7 +33,7 @@ module BlacklightHelper
     end
     new_params[:view] = default_document_index_view_type
     link_to(displayvalue.presence || field_value,
-            search_catalog_path(new_params.except(:id, :spatial_search_type, :coordinates)))
+            search_catalog_path(new_params.permit(:id, :spatial_search_type, :coordinates)))
   end
 
 def image_download options={}
