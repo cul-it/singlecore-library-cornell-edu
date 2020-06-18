@@ -109,7 +109,12 @@ Feature: Support for DLXS collections
 	| Book | scott1001 | Subject | Scottsboro Trials Collection |
 	| Book | scott1001 | Extent | 63 300dpi JPEG page images |
 	| Book | scott1001 | Publication Place | Scottsboro, AL |
-    # skipping witchcraft for now
+    # title too long? | Book | witchcraft096 | Title | A True Relation of the Arraignment of Thirty Witches |
+    | Book | witchcraft096 | Collection | Digital Witchcraft Collection |
+    | Book | witchcraft096 | Creator | Unknown |
+    | Book | witchcraft096 | Identifier | witchcraft096 |
+    | Book | witchcraft096 | Extent | 8 300dpi JPEG page image |
+    | Book | witchcraft096 | Publisher | Printed by I. H |
 	| Journal/Periodical | words1214796 | Title | Philological museum |
 	| Journal/Periodical | words1214796 | Collection | Wordsworth Collection |
 	| Journal/Periodical | words1214796 | Subject | Classical philology |
