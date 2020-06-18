@@ -69,14 +69,25 @@
     function initOpenSeadragon() {
     OpenSeadragon ({
           id: "openseadragon1",
-          toolbar: "image-toolbar",
           zoomInButton:   "zoom-in",
           zoomOutButton:  "zoom-out",
           homeButton:     "home",
           fullPageButton: "full-page",
           minZoomImageRatio: 1,
           prefixUrl: "/images/",
-          tileSources: "<%= render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>"
+          <% if compound.present? %>
+          nextButton:     "next-image",
+          previousButton: "previous-image",
+          showReferenceStrip: true,
+          referenceStripScroll: "vertical",
+          referenceStripPosition: 'BOTTOM_RIGHT', // 3 does not work either!
+          referenceStripSizeRatio: 0.15,
+          tileSources: <%= compound.to_s.html_safe %>,
+          sequenceMode: true
+          <% else %>
+          toolbar: "image-toolbar",
+          tileSources: "<%= render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>",
+          <% end %>
         });
     }
     window.onload = initOpenSeadragon;
@@ -98,7 +109,10 @@
           fullPageButton: "full-page",
           minZoomImageRatio: 1,
           prefixUrl: "/images/",
-          tileSources: "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= @project %>/<%= @asset %>/image/info.json"
+          tileSources: "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= @project %>/<%= @asset %>/1/iiif/info.json",
+          crossOriginPolicy: false,
+          ajaxWithCredentials: false,
+          loadTilesWithAjax: true
         });
     }
     window.onload = initOpenSeadragon;
@@ -114,8 +128,7 @@
   <div class="col-sm-2 multi-images">
     <%= render 'multi_images' %>
   </div>
-
-  <% end %>
+<% end %>
 <%# done with iiif stuff %>
 
 <%# display av player %>
@@ -136,6 +149,9 @@
 
 <%# chla lit of ag sciences series, do not display viewer box %>
 <% elsif (render_document_show_field_value :document => @document, :field => 'id').include?('chlalitofagseries') %>
+
+<%# oai display for ecommons - do not show viewer box %>
+<% elsif @metadata_structure == 'oai' %>
 
 <%# display book reader %>
 <% elsif !@book_id.blank? && @project != "616" && @pdf != true %>
