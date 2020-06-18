@@ -82,9 +82,10 @@ Feature: Support for DLXS collections
 	| Page | liber001_26 | Extent | 56 300dpi JPEG page images |
 	| Page | liber001_26 | Publisher | Legislative Council, Commwealth of Liberia |
 	| Page | liber001_26 | Publication Place | Moravia, Liberia |
-	| Page | may814201_117 | Title | UNS 115 |
-	| Page | may814201_117 | Collection | Samuel J. May Anti-Slavery Collection |
-	| Page | may814201_117 | Identifier | may814201_117 |
+	| Book | may814201 | Title | The unconstitutionality of slavery |
+	| Book | may814201 | Collection | Samuel J. May Anti-Slavery Collection |
+	| Book | may814201 | Extent | 160 p. |
+	| Book | may814201 | Publisher | Published by Bela Marsh |
 	| Book | nur00419 | Title | R & A No. 3081 |
 	| Book | nur00419 | Collection | Donovan Nuremberg Trials Collection |
 	| Book | nur00419 | Creator | The authors name is not given |
