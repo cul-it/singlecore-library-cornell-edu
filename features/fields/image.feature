@@ -27,3 +27,5 @@ Feature: Compound and Related Images
     | impersonator | 24415896 | 1 |
     | seneca | 22376760 | 6 |
     | tellennasbeh | 19102646 | 1 |
+    | zorn | 19102650 | 1 |
+
