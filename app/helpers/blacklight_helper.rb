@@ -288,29 +288,20 @@ def get_compound_object args
       if args['content_metadata_image_iiif_info_ssm'].present?
         # forum sometimes does not include the first media element's IIIF url
         default_iiif = render_document_show_field_value(:document => args, :field => 'content_metadata_image_iiif_info_ssm')
-        tileSources = []
-        args['compound_object_ssm'].each { |json|
-          compound = JSON.parse(json)
-          if compound['iiif_url'].present?
-            tileSources << compound['iiif_url'] + '/info.json'
-          elsif default_iiif.present?
-            tileSources << default_iiif
-          end
-        }
-        return tileSources
-      else
-        # assume IIIF images are not available for this collection
-        # assume we've generated static IIIF images
-        tileSources = []
-        max_seq = args['compound_object_ssm'].count
-        project = args['project_id_ssi']
-        id = args['id']
-        path = 'https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/'
-        for seq in 1..max_seq do
-          tileSources << path + [project, id, seq, 'iiif', 'info.json'].join('/')
-        end
-        return tileSources
       end
+      tileSources = []
+      args['compound_object_ssm'].each { |json|
+        compound = JSON.parse(json)
+        if compound['iiif_url'].present?
+          tileSources << compound['iiif_url'] + '/info.json'
+        elsif default_iiif.present?
+          tileSources << default_iiif
+        end
+      }
+      return tileSources
+    else
+      # no compound objects available
+      return []
     end
   end
   false
