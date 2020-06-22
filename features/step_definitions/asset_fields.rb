@@ -38,3 +38,8 @@ Then("the field labeled {string} should also contain {string}") do |string, stri
         expect(find('dt', text: "#{string}:").find('+dd')).to have_content(string2)
     end
 end
+
+
+Then("I should see images in the referencestrip") do
+    expect(page.find("div.referencestrip")).to have_selector("div.openseadragon-container > div.displayregion")
+end
