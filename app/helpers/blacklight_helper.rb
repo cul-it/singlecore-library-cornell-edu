@@ -21,7 +21,7 @@ end
     new_params[:spatial_search_type] = "point"
     new_params[:coordinates] = "#{point_coordinates[1]},#{point_coordinates[0]}"
     new_params[:view] = default_document_index_view_type
-    link_to(t('blacklight.maps.interactions.point_search'), search_catalog_path(new_params.permit(:spatial_search_type, :coordinates, :view)))
+    link_to(t('blacklight.maps.interactions.point_search'), search_catalog_path(new_params))
   end
 
   # create a link to a location name facet value
@@ -35,6 +35,18 @@ end
     link_to(displayvalue.presence || field_value,
             search_catalog_path(new_params.permit(:id, :spatial_search_type, :coordinates)))
   end
+
+
+  # create a link to a spatial search for a set of point coordinates
+  def link_to_point_search point_coordinates
+    new_params = params.permit(:controller, :action, :view, :id, :spatial_search_type, :coordinates)
+    new_params[:spatial_search_type] = "point"
+    new_params[:coordinates] = "#{point_coordinates[1]},#{point_coordinates[0]}"
+    new_params[:view] = default_document_index_view_type
+    link_to(t('blacklight.maps.interactions.point_search'), search_catalog_path(new_params))
+  end
+
+
 
 def image_download options={}
     options[:document] # the original document
@@ -282,64 +294,68 @@ def get_tracks args
     return @response
   end
 
-def get_compound_object args
-  if args['id'].start_with?('ss:')
-    if args['compound_object_ssm'].present?
-      if args['content_metadata_image_iiif_info_ssm'].present?
-        # forum sometimes does not include the first media element's IIIF url
-        default_iiif = render_document_show_field_value(:document => args, :field => 'content_metadata_image_iiif_info_ssm')
-      end
-      tileSources = []
-      args['compound_object_ssm'].each { |json|
-        compound = JSON.parse(json)
-        if compound['iiif_url'].present?
-          tileSources << compound['iiif_url'] + '/info.json'
-        elsif default_iiif.present?
-          tileSources << default_iiif
-        end
-      }
-      return tileSources
-    else
-      # no compound objects available
-      return []
-    end
+def get_seneca_multiviews args
+  collection = args['collection_tesim'][0]
+  if args['catalog_number_tesim'].present?
+    parentid = args['catalog_number_tesim'][0]
   end
-  false
+  sequence = args['work_sequence_isi']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=catalog_number_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
+  @response = response['response']['docs']
+  return @response
 end
 
-def get_multiviews args
+def get_impersonator_multiviews args
   collection = args['collection_tesim'][0]
-  if args['work_group_ssi'].present?
-    parent = 'work_group_ssi'
-  elsif args['card_number_tesim'].present?
-    parent = 'card_number_tesim'
-  elsif args['catalog_number_tesim'].present?
-    parent = 'catalog_number_tesim'
-  elsif args['plan_number_tesim'].present?
-    parent = 'plan_number_tesim'
-  else
-    Rails.logger.warn("unknown multiview parent field " + args['id'])
-    return []
+  if args['card_number_tesim'].present?
+    parentid = args['card_number_tesim'][0]
   end
-  if args["#{parent}"].present?
-    if args["#{parent}"].kind_of?(Array)
-      parentid = args["#{parent}"].first.to_s
-    else
-      parentid = args["#{parent}"].to_s
-    end
-  else
-    Rails.logger.warn("missing multiview parent field " + args['id'])
-    return []
+  sequence = args['work_sequence_isi']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=card_number_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
+  @response = response['response']['docs']
+  return @response
+end
+
+def get_stereoscopes_multiviews args
+  collection = args['collection_tesim'][0]
+  if args['identifier_tesim'].present?
+    parentid = args['identifier_tesim'][0]
   end
-  if args['work_sequence_isi'].present?
-    sequence = 'work_sequence_isi'
-  elsif args['portal_sequence_isi'].present?
-    sequence = 'portal_sequence_isi'
-  else
-    Rails.logger.warn("unknown multiview sequence field " + args['id'])
-    return []
+  sequence = args['work_sequence_isi']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=identifier_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
+  @response = response['response']['docs']
+  return @response
+end
+
+def get_zorn_multiviews args
+  collection = args['collection_tesim'][0]
+  if args['plan_number_tesim'].present?
+  parentid = args['plan_number_tesim'][0]
+end
+  sequence = args['portal_sequence_isi']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=plan_number_tesim:\"#{parentid}\"&wt=json&indent=true&sort=portal_sequence_isi%20asc&rows=100"))
+  @response = response['response']['docs']
+  return @response
+end
+
+def get_blaschka_multiviews args
+  collection = args['collection_tesim'][0]
+  if args['identifier_blaschka_isi'].present?
+  parentid = args['identifier_blaschka_isi']
+end
+  sequence = args['portal_sequence_isi']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=identifier_blaschka_isi:\"#{parentid}\"&wt=json&indent=true&sort=portal_sequence_isi%20asc&rows=100"))
+  @response = response['response']['docs']
+  return @response
+end
+
+def get_anthro_multiviews args
+  collection = args['collection_tesim'][0]
+  if args['old_catalog_number_tesim'].present?
+    parentid = args['old_catalog_number_tesim'][0]
   end
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=#{parent}:#{parentid}&fq=#{sequence}:[1%20TO%20*]&wt=json&indent=true&sort=#{sequence}%20asc&rows=100"))
+  sequence = args['work_sequence_isi']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=old_catalog_number_tesim:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
   @response = response['response']['docs']
   return @response
 end
@@ -416,15 +432,20 @@ end
   }
 
 def is_multi_image? args
-  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']))
+  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_zorn_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_blaschka_multiviews(args).length > 1) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_seneca_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_impersonator_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_stereoscopes_multiviews(args).length > 1 && args['work_sequence_isi'].present?) || (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']) && get_anthro_multiviews(args).length > 1 && args['work_sequence_isi'].present?)
     return true
   end
 end
 
+
+
   MULTI_IMAGE_COLLECTIONS = {
     '20019' => 'impersonator',
     '4803' => 'seneca',
-    '3686' => 'tellennasbeh'
+    '3686' => 'zorn',
+    '3786' => 'blaschka',
+    '962' => 'stereoscopes',
+    '273' => 'anthrocollections'
   }
 
 def publication options={}
@@ -440,7 +461,7 @@ def autolink_field args
   Rails.logger.info("MIAMI = #{args}")
   if !args[:document]["collection_tesim"].nil?
    collection = args[:document]["collection_tesim"][0]
-   if (collection == "Persuasive Maps: PJ Mode Collection" || collection == "Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin")
+   if collection == "Persuasive Maps: PJ Mode Collection" || "Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin"
     return auto_link(args[:document][args[:field]].join("<br>")).html_safe
    else
     return args[:document][args[:field]].join("<br>").html_safe
