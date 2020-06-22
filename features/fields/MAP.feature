@@ -105,8 +105,8 @@ Feature: Asset MAP fields
 
     Examples:
     | category | id | new_label | starting | facet |
-    | Agent | 455376 | Performer | Afrika Bambaataa | agent_tesim |
-    | Agent | 455376 | Graphic Designer | Eddie Ed | agent_tesim |
-    | Agent | 455376 | Promoter | Red, Spider, Sunshine | agent_tesim |
-    | Date | 945856 | Date | ca. 1890-1900 | date_tesim |
-    | Transcription | 265952 | Transcription | Che Rifeo Trojano | transcription_tesim |
+    # | Agent | 455376 | Performer | Afrika Bambaataa | agent_tesim |
+    # | Agent | 455376 | Graphic Designer | Eddie Ed | agent_tesim |
+    # | Agent | 455376 | Promoter | Red, Spider, Sunshine | agent_tesim |
+    # | Date | 945856 | Date | ca. 1890-1900 | date_tesim |
+    # | Transcription | 265952 | Transcription | Che Rifeo Trojano | transcription_tesim |
