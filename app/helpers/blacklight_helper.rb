@@ -318,7 +318,8 @@ def get_multiviews args
   elsif args['plan_number_tesim'].present?
     parent = 'plan_number_tesim'
   else
-    raise 'unknown multiview parent field'
+    Rails.logger.warn("unknown multiview parent field " + args['id'])
+    return []
   end
   if args["#{parent}"].present?
     if args["#{parent}"].kind_of?(Array)
@@ -327,14 +328,16 @@ def get_multiviews args
       parentid = args["#{parent}"].to_s
     end
   else
-    raise 'missing multiview parent field'
+    Rails.logger.warn("missing multiview parent field " + args['id'])
+    return []
   end
   if args['work_sequence_isi'].present?
     sequence = 'work_sequence_isi'
   elsif args['portal_sequence_isi'].present?
     sequence = 'portal_sequence_isi'
   else
-    raise 'unknown multiview sequence field'
+    Rails.logger.warn("unknown multiview sequence field " + args['id'])
+    return []
   end
   response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=#{parent}:#{parentid}&fq=#{sequence}:[1%20TO%20*]&wt=json&indent=true&sort=#{sequence}%20asc&rows=100"))
   @response = response['response']['docs']
