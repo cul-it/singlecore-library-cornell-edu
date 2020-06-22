@@ -41,10 +41,10 @@ RSpec.feature 'Item' do
     end
   end
 
-  scenario 'anthro multiview' do
-    visit solr_document_path('ss:1334130')
+  scenario 'impersonator multiview' do
+    visit solr_document_path('ss:24415891')
     within (".multi-images") do
-      have_link 'Ball of brown cotton yarn'
+      have_link 'Bertin - Imitant la Tortojada'
     end
   end
 
