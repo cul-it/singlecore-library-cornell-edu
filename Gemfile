@@ -77,6 +77,8 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'poltergeist'
   gem 'xray-rails'
+  gem 'selenium-webdriver'
+  gem 'puma'
 end
 
 group :test do
