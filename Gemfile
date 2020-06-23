@@ -78,6 +78,7 @@ group :development, :test do
   gem 'poltergeist'
   gem 'xray-rails'
   gem 'selenium-webdriver'
+  gem 'webrick'
 end
 
 group :test do
