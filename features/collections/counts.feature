@@ -48,7 +48,7 @@ Feature: Confirm that collections have the correct number of assets
 	| kmoddl | 223 |
 	| leuenberger | 231 |
 	| lindsaycooper | 589 |
-	| loewentheil | 1481 |
+	| loewentheil | 1476 |
 	| obama | 200 |
 	| page | 55 |
 	| paniccioli | 27894 |
