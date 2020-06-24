@@ -19,7 +19,7 @@ Feature: Compound and Related Images
 
     @image-multi
     Scenario Outline: Multi image collections should show Additional Views
-        Given I go to asset id '<id>'
+        Given I go to Forum asset id '<id>'
             Then I should see <count> additional views
 
     Examples:

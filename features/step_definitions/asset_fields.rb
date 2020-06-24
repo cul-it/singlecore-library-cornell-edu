@@ -10,7 +10,7 @@ Then("the page header should contain {string}") do |string|
     end
 end
 
-Given("I go to asset id {string}") do |string|
+Given("I go to Forum asset id {string}") do |string|
     visit("/catalog/ss:#{string}")
 end
 

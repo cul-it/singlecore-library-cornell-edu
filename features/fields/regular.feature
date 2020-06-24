@@ -6,7 +6,7 @@ Feature: Asset regular fields
     @fields
     @fields-regular
     Scenario Outline: View regular field labels across assets
-        Given I go to asset id '<id>'
+        Given I go to Forum asset id <id>
             Then I should see the field labeled '<new_label>'
             And the field labeled '<new_label>' should begin with '<starting>'
 
