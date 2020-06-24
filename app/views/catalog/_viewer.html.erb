@@ -7,6 +7,7 @@
 <% @media = render_document_show_field_value(:document => @document, :field => 'media_URL_tesim')  %>
 <% @filename = render_document_show_field_value(:document => @document, :field => 'filename_s')  %>
 <% @disable_download = render_document_show_field_value(:document => @document, :field => 'disable_download_tesim')  %>
+<% @metadata_structure = render_document_show_field_value(:document => @document, :field => 'metadata_structure_tesim') %>
 
 <% @chlaid = render_document_show_field_value(:document => @document, :field => 'identifier_tesim') %>
 
@@ -32,18 +33,24 @@
   <div class="col-sm-10">
 <% end %>
 
+<% compound = get_compound_object(@document) %>
+
 <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
   <%# Display IIIF viewer unless there is no image in Forum %>
   <% unless @media.include?('ss_noimage') %>
     <div id="image-toolbar" aria-hidden="true">
       <div class="image-controls">
         <% unless @project == "893" || @disable_download == "1" || !@download_url.present? %>
-          <a href="<%= @download_url %>" class="download-link" title="Download" onclick="ga('send', 'event', 'download', 'click', 'viewer-<%= @project %>-<%= @book_id %>')">Download<i class="fa fa-download"></i></a>
+          <a href="<%= @download_url %>" class="download-link" title="Download this image" onclick="ga('send', 'event', 'download', 'click', 'viewer-<%= @project %>-<%= @book_id %>')">Download<i class="fa fa-download"></i></a>
         <% end %>
         <a id="zoom-in" href="#zoom-in"><i class="fa fa-plus-circle" aria-hidden="true"></i><span class="sr-only">Zoom in</span></a>
         <a id="zoom-out" href="#zoom-out"><i class="fa fa-minus-circle" aria-hidden="true"></i><span class="sr-only">Zoom out</span></a>
         <a id="home" href="#home"><i class="fa fa-refresh" aria-hidden="true"></i><span class="sr-only">Reset image</span></a>
         <a id="full-page" href="#full-page" onclick="ga('send', 'event', 'viewer', 'click', 'fullscreen', 'viewer-<%= @project %>-<%= @book_id %>')"><i class="fa fa-expand" aria-hidden="true"></i><span class="sr-only">Full screen</span></a>
+        <% if compound.present? %>
+        <a id="previous-image" href="#previous-image"><i class="fa fa-arrow-left" aria-hidden="true"></i><span class="sr-only">Previous image</span></a>
+        <a id="next-image" href="#next-image"><i class="fa fa-arrow-right" aria-hidden="true"></i><span class="sr-only">Next image</span></a>
+        <% end %>
       </div>
     </div>
     <div id="openseadragon1" aria-hidden="true"></div>
@@ -62,14 +69,25 @@
     function initOpenSeadragon() {
     OpenSeadragon ({
           id: "openseadragon1",
-          toolbar: "image-toolbar",
           zoomInButton:   "zoom-in",
           zoomOutButton:  "zoom-out",
           homeButton:     "home",
           fullPageButton: "full-page",
           minZoomImageRatio: 1,
           prefixUrl: "/images/",
-          tileSources: "<%= render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>"
+          <% if compound.present? %>
+          nextButton:     "next-image",
+          previousButton: "previous-image",
+          showReferenceStrip: true,
+          referenceStripScroll: "vertical",
+          referenceStripPosition: 'BOTTOM_RIGHT', // 3 does not work either!
+          referenceStripSizeRatio: 0.15,
+          tileSources: <%= compound.to_s.html_safe %>,
+          sequenceMode: true
+          <% else %>
+          toolbar: "image-toolbar",
+          tileSources: "<%= render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>",
+          <% end %>
         });
     }
     window.onload = initOpenSeadragon;
@@ -91,7 +109,10 @@
           fullPageButton: "full-page",
           minZoomImageRatio: 1,
           prefixUrl: "/images/",
-          tileSources: "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= @project %>/<%= @asset %>/image/info.json"
+          tileSources: "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/<%= @project %>/<%= @asset %>/1/iiif/info.json",
+          crossOriginPolicy: false,
+          ajaxWithCredentials: false,
+          loadTilesWithAjax: true
         });
     }
     window.onload = initOpenSeadragon;
@@ -107,8 +128,7 @@
   <div class="col-sm-2 multi-images">
     <%= render 'multi_images' %>
   </div>
-
-  <% end %>
+<% end %>
 <%# done with iiif stuff %>
 
 <%# display av player %>
@@ -129,6 +149,9 @@
 
 <%# chla lit of ag sciences series, do not display viewer box %>
 <% elsif (render_document_show_field_value :document => @document, :field => 'id').include?('chlalitofagseries') %>
+
+<%# oai display for ecommons - do not show viewer box %>
+<% elsif @metadata_structure == 'oai' %>
 
 <%# display book reader %>
 <% elsif !@book_id.blank? && @project != "616" && @pdf != true %>

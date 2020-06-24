@@ -77,6 +77,8 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'poltergeist'
   gem 'xray-rails'
+  gem 'selenium-webdriver'
+  gem 'webrick'
 end
 
 group :test do
@@ -93,7 +95,7 @@ group :test do
   gem 'simplecov-rcov'
 end
 
-gem 'coveralls', require: false
+gem 'coveralls', '~> 0.8', require: false
 
 gem 'rsolr', '~> 1.0.6'
 gem 'devise-guests', '~> 0.3'
