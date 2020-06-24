@@ -19,11 +19,10 @@
 #
 # Running simplecov
 
-# require 'simplecov'
-# require 'simplecov-rcov'
-# SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
-# SimpleCov.start 'rails' if ENV['COVERAGE']
-# SimpleCov.start
+require 'simplecov'
+require 'simplecov-rcov'
+SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
+SimpleCov.start 'rails' if ENV['COVERAGE']
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
