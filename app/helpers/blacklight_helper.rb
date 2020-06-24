@@ -307,6 +307,39 @@ def get_compound_object args
   false
 end
 
+def get_url_exists?(url_in, https = true)
+  require "net/http"
+  url = URI.parse(url_in)
+  req = Net::HTTP.new(url.host, url.port)
+  req.use_ssl = https
+  res = req.request_head(url.path)
+#******************
+save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
+msg = ["****************** #{__method__}"]
+msg << res.inspect
+msg << '******************'
+puts msg.to_yaml
+Rails.logger.level = save_level
+#*******************
+  res.code == "200"
+end
+
+def get_aws_iiif_url args
+  project = args['project_id_ssi'] || nil
+  id = args['id'] || nil
+  if project.present? && id.present?
+    id.gsub!('ss:', '')
+    prefix = "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public"
+    new_path = [ prefix, project, id, '1', 'iiif', 'info.json' ].join('/')
+    if get_url_exists?(new_path)
+      new_path
+    else
+      old_path = [ prefix, project, id, 'image', 'info.json' ].join('/')
+    end
+  end
+end
+
 def get_multiviews args
   collection = args['collection_tesim'][0]
   if args['work_group_ssi'].present?
