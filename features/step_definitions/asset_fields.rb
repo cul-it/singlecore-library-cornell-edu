@@ -52,10 +52,9 @@ end
 
 Then("I should see an image") do
     within "div#openseadragon1" do
-        message = find("div.openseadragon-message")
-        if message.present?
-            expect(message).not_to have_content("Unable to open")
+        list = all("div.openseadragon-container > div.openseadragon-message")
+        list.each do | x |
+            x.should have_no_content("Unable to open")
         end
-        # expect(find("div.openseadragon-container")).not_to have_selector("div.openseadragon-message")
     end
 end
