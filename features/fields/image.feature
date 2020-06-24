@@ -41,3 +41,17 @@ Feature: Compound and Related Images
     | anthrocollections | 2620202 |
     | political-americana | 12503349 |
     | stereoscopes | 9415843 |
+
+    @javascript
+    @multi-image
+    @multi-image-unpublished
+    Scenario Outline: Unpublished Forum images should show static IIIF images from AWS S3
+        Given I go to Forum asset id '<id>'
+            Then I should find an unpublished image
+            And the field labeled 'Title' should begin with '<starting>'
+            And I should see an image
+
+    Examples:
+    | nickname | starting | id |
+    | seneca | American beech charcoal | 24767699 |
+    | seneca | American beech charcoal | 22376848 |

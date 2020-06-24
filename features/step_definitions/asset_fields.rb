@@ -43,3 +43,19 @@ end
 Then("I should see images in the referencestrip") do
     expect(page.find("div.referencestrip")).to have_selector("div.openseadragon-container > div.displayregion")
 end
+
+Then("I should find an unpublished image") do
+    within "div#document" do
+        expect(find("div.unpublished")).to have_content("Unpublished")
+    end
+end
+
+Then("I should see an image") do
+    within "div#openseadragon1" do
+        message = find("div.openseadragon-message")
+        if message.present?
+            expect(message).not_to have_content("Unable to open")
+        end
+        # expect(find("div.openseadragon-container")).not_to have_selector("div.openseadragon-message")
+    end
+end
