@@ -61,6 +61,15 @@ Given("I click more » on the {string} facet") do |string|
     end
 end
 
+Given("I go to page {int} of the facet modal") do |int|
+    x = int.to_i
+    if x > 1
+        for n in 1..x do
+            page.find("div.prev_next_links > a.btn", text: 'Next »').click
+        end
+    end
+end
+
 Then("I should not see a facet labeled {string}") do |string|
     labels = page.all("a.facet_select")
     labels.each do | label |
