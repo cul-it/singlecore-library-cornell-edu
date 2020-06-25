@@ -23,9 +23,35 @@ Examples:
 Scenario Outline: Certain assets only show in the appropriate environment
     Given I enable the '<environment>' environment
         And I go to asset '<id>'
-        Then show environment
         Then I see the asset is suppressed
 
 Examples:
 | comment | environment | id |
 | Articles | production  | chla7043995_7-8_articles_27 |
+| Unpublished | production  | ss:26304225 |
+| Adler suppressed | production | ss:26304125 |
+# | gamelan ignores status_ssi? | production | ss:9904778 |
+| ahearn | production | ss:15337425 |
+# | claireholt | production | nnn |
+| culmaps | production | ss:9472503 |
+| dendro | production | ss:22143504 |
+| divinecomedy | production | ss:303416 |
+| dynkin | production | ss:22361895 |
+| harrisson | production | ss:25914539 |
+| kassoy | production | ss:479861 |
+| kmoddl | production | ss:372824 |
+| leuenberger | production | ss:9469095 |
+| paniccioli | production | ss:8432316 |
+| seneca | production | ss:24767712 |
+| cooper | production | cooper:0107 |
+| ezra | production | ezraGene000 |
+| izquierda | production | izquierda1300_1359 |
+| liber | production | liber100_99 |
+| may | production | may927218_9 |
+| nur | production | nur27870_1 |
+| sat | production | satkf06_99 |
+| scott | production | scott7042_2 |
+| sea | production | seaA29c_8 |
+| witchcraft | production | witchcraft176_99 |
+| conflicting multi-image/compound object | production | ss:2620137 |
+| active_fedora_model_ssi Page | production | nur00420_4 |
