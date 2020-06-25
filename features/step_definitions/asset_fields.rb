@@ -50,7 +50,7 @@ Then("I should find an unpublished image") do
     end
 end
 
-Then("I should see an image") do
+Then("I should see an IIIF image") do
     within "div#openseadragon1" do
         list = all("div.openseadragon-container > div.openseadragon-message")
         list.each do | x |

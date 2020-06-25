@@ -49,7 +49,7 @@ Feature: Compound and Related Images
         Given I go to Forum asset id '<id>'
             Then I should find an unpublished image
             And the field labeled 'Title' should begin with '<starting>'
-            And I should see an image
+            And I should see an IIIF image
 
     Examples:
     | nickname | starting | id |
