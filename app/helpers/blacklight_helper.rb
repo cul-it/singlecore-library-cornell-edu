@@ -313,15 +313,6 @@ def get_url_exists?(url_in, https = true)
   req = Net::HTTP.new(url.host, url.port)
   req.use_ssl = https
   res = req.request_head(url.path)
-#******************
-save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
-msg = ["****************** #{__method__}"]
-msg << res.inspect
-msg << '******************'
-puts msg.to_yaml
-Rails.logger.level = save_level
-#*******************
   res.code == "200"
 end
 
