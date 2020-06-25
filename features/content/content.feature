@@ -11,6 +11,7 @@ Scenario Outline: Only certain Formats should be visible in production
         And I click more » on the '<facet>' facet
         And I go to page <page> of the facet modal
         Then I should not see a facet labeled '<unwanted>'
+        Then I enable the 'development' environment
 
 Examples:
 | environment | facet | unwanted | page |
@@ -24,6 +25,7 @@ Scenario Outline: Certain assets only show in the appropriate environment
     Given I enable the '<environment>' environment
         And I go to asset '<id>'
         Then I see the asset is suppressed
+        Then I enable the 'development' environment
 
 Examples:
 | comment | environment | id |
