@@ -16,3 +16,14 @@ Examples:
 | production  | Format  | Articles  | 1 |
 | production  | Collection  | Bernard Kassoy Teacher News Cartoons | 1 |
 | production  | Collection  | Digital Tamang | 2 |
+
+@DIGCOLL-1682
+Scenario Outline: Certain assets only show in the appropriate environment
+    Given I enable the '<environment>' environment
+        And I go to asset '<id>'
+        Then show environment
+        Then I see the asset is suppressed
+
+Examples:
+| comment | environment | id |
+| Articles | production  | chla7043995_7-8_articles_27 |
