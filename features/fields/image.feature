@@ -53,5 +53,20 @@ Feature: Compound and Related Images
 
     Examples:
     | nickname | starting | id |
-    | seneca | American beech charcoal | 24767699 |
+    | adler | Shabba-Doo | 26304313 |
+    | artifacts | Lounge 159 and Plaque | 1791489 |
+    | cast | Kaufmann Auditorium | 172762 |
+    | dendro | Bouwerie House | 22142926 |
+    | dynkin | Anatoliy Skorokhod | 21214105 |
+    | harrisson | Batang Kayan and Pujungan | 25032424 |
+    | leuenberger | Israeli Wall and Settlements | 9387297 |
+    | loewentheil | Erotica | 2983260 |
+    | obama | The end of white America? | 1282486 |
+    | paniccioli | Christopher Wallace | 23019390 |
+    | ragamala | Unidentified Deity | 9011771 |
     | seneca | American beech charcoal | 22376848 |
+    | seneca | American beech charcoal | 24767699 |
+    | seneca | Marten long bone | 22376742 |
+    | squeezes | Latin Column 1 | 3307295 |
+    | rare | Fuegians going to trade in Zapallos | 572113 |
+
