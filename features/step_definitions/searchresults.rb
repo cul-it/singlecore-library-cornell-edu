@@ -53,8 +53,3 @@ Then("the field labeled {string} should begin {string} and link to facet {string
     expect(dd).to have_link(href: /[^_]#{string3}/)
   end
 end
-
-Given("I search for everything") do
-  search = URI.escape("/?utf8=✓&q=&search_field=all_fields")
-  visit(search)
-end

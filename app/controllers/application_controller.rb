@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   skip_after_action :discard_flash_if_xhr
   layout 'blacklight'
 
+
   def set_fq(environment)
     ssc = {
       adler: 893,
