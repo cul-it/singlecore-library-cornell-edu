@@ -92,5 +92,9 @@ Then("the page title should contain {string}") do |string|
 end
 
 Given("I enable the {string} environment") do |string|
-    RAILS_ENV=string
+    if ['development', 'test', 'production'].include?(string)
+        ENV['RAILS_ENV']=string
+    else
+        expect(false)
+    end
 end
