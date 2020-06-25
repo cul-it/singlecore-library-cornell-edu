@@ -4,6 +4,7 @@ Feature: Check the visibility of content in development vs production
 @content
 
 @DIGCOLL-1682
+@content-formats
 Scenario Outline: Only certain Formats should be visible in production
     Given I enable the '<environment>' environment
         And I search for everything
@@ -18,6 +19,7 @@ Examples:
 | production  | Collection  | Digital Tamang | 2 |
 
 @DIGCOLL-1682
+@content-assets-suppressed
 Scenario Outline: Certain assets only show in the appropriate environment
     Given I enable the '<environment>' environment
         And I go to asset '<id>'
