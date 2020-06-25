@@ -98,7 +98,7 @@ class ApplicationController < ActionController::Base
     }
 
     if environment == 'development'
-       fqa = ['-active_fedora_model_ssi:"Page"', '-has_model_ssim:"Article"',
+       fqa = ['-active_fedora_model_ssi:"Page"', '-format_tesim:"Article"',
         '-solr_loader_tesim:"eCommons"',
         '-(project_id_ssi:' + ssc[:blaschka].to_s + ' AND portal_sequence_isi:[2 TO *])',
         '-(project_id_ssi:' + ssc[:seneca].to_s + ' AND work_sequence_isi:[2 TO *])',
