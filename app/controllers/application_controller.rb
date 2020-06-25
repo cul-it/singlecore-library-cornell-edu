@@ -97,7 +97,7 @@ class ApplicationController < ActionController::Base
     }
 
     if environment == 'development'
-       fqa = ['-active_fedora_model_ssi:"Page"',
+       fqa = ['-active_fedora_model_ssi:"Page"', '-format_tesim:"Article"',
         '-solr_loader_tesim:"eCommons"',
         '-(project_id_ssi:' + ssc[:blaschka].to_s + ' AND portal_sequence_isi:[2 TO *])',
         '-(project_id_ssi:' + ssc[:seneca].to_s + ' AND work_sequence_isi:[2 TO *])',
@@ -189,7 +189,7 @@ class ApplicationController < ActionController::Base
         '(project_id_ssi:' + ssc[:adler].to_s + ' AND publish_to_portal_tesim:*))'
 
       # non-JSTOR filters
-      fq_dlxs = '(-active_fedora_model_ssi:"Page" AND
+      fq_dlxs = '(-has_model_ssim:"Article" AND
         id:('
       fq_dlxs += [  # include these dlxs collections
         dlxs[:bol],
