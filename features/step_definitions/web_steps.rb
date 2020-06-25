@@ -76,3 +76,8 @@ Then("I should not see a facet labeled {string}") do |string|
         expect(label).not_to have_content(string)
     end
 end
+
+Then("I see the asset is suppressed") do
+    expect(page.find('div#content h1')).to have_content('Item restricted')
+    pending # Write code here that turns the phrase above into concrete actions
+end
