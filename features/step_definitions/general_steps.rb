@@ -94,7 +94,15 @@ end
 Given("I enable the {string} environment") do |string|
     if ['development', 'test', 'production'].include?(string)
         ENV['RAILS_ENV']=string
+        ENV["COLLECTIONS"]=string
     else
         expect(false)
     end
+end
+
+Then("show environment") do
+    puts "/n******************************"
+    puts "ENV['RAILS_ENV'] " + ENV['RAILS_ENV']
+    puts "ENV['COLLECTIONS'] " + ENV['COLLECTIONS']
+    puts "******************************/n"
 end
