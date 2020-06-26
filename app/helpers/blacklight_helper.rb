@@ -309,35 +309,33 @@ end
 
 def get_multiviews args
   collection = args['collection_tesim'][0]
-  if args['work_group_ssi'].present?
-    parent = 'work_group_ssi'
-  elsif args['card_number_tesim'].present?
-    parent = 'card_number_tesim'
-  elsif args['catalog_number_tesim'].present?
-    parent = 'catalog_number_tesim'
-  elsif args['plan_number_tesim'].present?
-    parent = 'plan_number_tesim'
-  else
-    Rails.logger.warn("unknown multiview parent field " + args['id'])
-    return []
-  end
-  if args["#{parent}"].present?
-    if args["#{parent}"].kind_of?(Array)
-      parentid = args["#{parent}"].first.to_s
-    else
-      parentid = args["#{parent}"].to_s
-    end
-  else
-    Rails.logger.warn("missing multiview parent field " + args['id'])
-    return []
-  end
   if args['work_sequence_isi'].present?
     sequence = 'work_sequence_isi'
+    if args['card_number_tesim'].present?
+      # impersonators
+      parent = 'card_number_tesim'
+    elsif args['catalog_number_tesim'].present?
+      # seneca
+      parent = 'catalog_number_tesim'
+    elsif args['old_catalog_number_tesim'].present?
+      # anthrocollections
+      parent = 'old_catalog_number_tesim'
+    else
+      return []
+    end
   elsif args['portal_sequence_isi'].present?
     sequence = 'portal_sequence_isi'
+    if args['plan_number_tesim'].present?
+      # tellennasbeh
+      parent = 'plan_number_tesim'
+    else
+      return []
+    end
+  end
+  if args["#{parent}"].kind_of?(Array)
+    parentid = args["#{parent}"].first.to_s
   else
-    Rails.logger.warn("unknown multiview sequence field " + args['id'])
-    return []
+    parentid = args["#{parent}"].to_s
   end
   response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=#{parent}:#{parentid}&fq=#{sequence}:[1%20TO%20*]&wt=json&indent=true&sort=#{sequence}%20asc&rows=100"))
   @response = response['response']['docs']
