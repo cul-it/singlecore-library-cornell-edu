@@ -320,18 +320,16 @@ def get_multiviews args
     elsif args['old_catalog_number_tesim'].present?
       # anthrocollections
       parent = 'old_catalog_number_tesim'
-    else
-      return []
     end
   elsif args['portal_sequence_isi'].present?
     sequence = 'portal_sequence_isi'
     if args['plan_number_tesim'].present?
       # tellennasbeh
       parent = 'plan_number_tesim'
-    else
-      return []
     end
   end
+  return [] unless parent.present? && sequence.present?
+
   if args["#{parent}"].kind_of?(Array)
     parentid = args["#{parent}"].first.to_s
   else
