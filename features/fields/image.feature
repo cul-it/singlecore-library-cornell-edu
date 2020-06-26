@@ -27,11 +27,14 @@ Feature: Compound and Related Images
     | impersonator | 24415896 | 1 |
     | seneca | 22376760 | 6 |
     | tellennasbeh | 19102646 | 1 |
-    | zorn | 19102650 | 1 |
+    | tellennasbeh | 19102650 | 1 |
+    | anthrocollections | 1334130 | 6 |
 
     # @javascript
     # @image-compound-views
     # Scenario Outline: Compound images should show the correct number of additional images
+    #     # Timed out with the following resources still waiting http://webstats.library.cornell.edu/piwik.js (Capybara::Poltergeist::StatusFailError)
+    #     Given PENDING
     #     Given I go to asset id '<id>'
     #         Then I should see images in the referencestrip
 
