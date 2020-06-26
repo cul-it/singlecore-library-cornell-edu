@@ -44,7 +44,7 @@ Feature: Compound and Related Images
 
     @javascript
     @multi-image
-    @multi-image-unpublished
+    @multi-image-static-iiif
     Scenario Outline: Unpublished Forum images should show static IIIF images from AWS S3
         Given I go to Forum asset id '<id>'
             Then I should find an unpublished image
@@ -55,7 +55,7 @@ Feature: Compound and Related Images
     | nickname | starting | id |
     | adler | Shabba-Doo | 26304313 |
     | artifacts | Lounge 159 and Plaque | 1791489 |
-    | cast | Kaufmann Auditorium | 172762 |
+    | cast | Mycenaean seal ring | 19081182 |
     | dendro | Bouwerie House | 22142926 |
     | dynkin | Anatoliy Skorokhod | 21214105 |
     | harrisson | Batang Kayan and Pujungan | 25032424 |
