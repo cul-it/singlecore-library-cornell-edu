@@ -28,7 +28,7 @@ Feature: Compound and Related Images
     | seneca | 22376760 | 6 |
     | tellennasbeh | 19102646 | 1 |
     | tellennasbeh | 19102650 | 1 |
-    | anthrocollections | 1334130 | 7 |
+    | anthrocollections | 1334130 | 6 |
 
     # @javascript
     # @image-compound-views
