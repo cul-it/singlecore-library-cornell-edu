@@ -30,15 +30,15 @@ Feature: Compound and Related Images
     | tellennasbeh | 19102650 | 1 |
     | anthrocollections | 1334130 | 6 |
 
-    # @javascript
-    # @image-compound-views
-    # Scenario Outline: Compound images should show the correct number of additional images
-    #     Given I go to asset id '<id>'
-    #         Then I should see images in the referencestrip
+    @javascript
+    @image-compound-views
+    Scenario Outline: Compound images should show the correct number of additional images
+        Given I go to asset id '<id>'
+            Then I should see images in the referencestrip
 
-    # Examples:
-    # | nickname | id |
-    # | blaschka  | 20108189  |
-    # | anthrocollections | 2620202 |
-    # | political-americana | 12503349 |
-    # | stereoscopes | 9415843 |
+    Examples:
+    | nickname | id |
+    | blaschka  | 20108189  |
+    | anthrocollections | 2620202 |
+    | political-americana | 12503349 |
+    | stereoscopes | 9415843 |
