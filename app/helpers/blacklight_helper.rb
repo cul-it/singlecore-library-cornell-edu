@@ -414,16 +414,9 @@ end
   }
 
 def is_multi_image? args
-  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']))
-    return true
-  end
+  mv = get_multiviews(args)
+  mv.any?
 end
-
-  MULTI_IMAGE_COLLECTIONS = {
-    '20019' => 'impersonator',
-    '4803' => 'seneca',
-    '3686' => 'tellennasbeh'
-  }
 
 def publication options={}
 options[:document] # the original document
