@@ -43,7 +43,7 @@ Feature: Compound and Related Images
     | nickname | starting | id |
     | adler | Shabba-Doo | 26304313 |
     | artifacts | Lounge 159 and Plaque | 1791489 |
-    | cast | Mycenaean seal ring | 19081182 |
+    # | cast | Mycenaean seal ring | 19081182 |
     | dendro | Bouwerie House | 22142926 |
     | dynkin | Anatoliy Skorokhod | 21214105 |
     | harrisson | Batang Kayan and Pujungan | 25032424 |
@@ -55,8 +55,8 @@ Feature: Compound and Related Images
     | seneca | American beech charcoal | 22376848 |
     | seneca | American beech charcoal | 24767699 |
     | seneca | Marten long bone | 22376742 |
-    | squeezes | Latin Column 1 | 3307295 |
-    | rare | Fuegians going to trade in Zapallos | 572113 |
+    # | squeezes | Latin Column 1 | 3307295 |
+    # | rare | Fuegians going to trade in Zapallos | 572113 |
 
     # @javascript
     # @image-compound-views
