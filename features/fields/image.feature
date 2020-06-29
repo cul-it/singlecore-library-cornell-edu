@@ -72,3 +72,13 @@ Feature: Compound and Related Images
     # | anthrocollections | 2620202 |
     # | political-americana | 12503349 |
     # | stereoscopes | 9415843 |
+
+    @DIGCOLL-1680
+    Scenario Outline: Static IIIF images should show up for either AWS S3 path form
+    Given I go to asset '<id>'
+        Then I should see an IIIF image
+
+    Examples:
+    | comment | id |
+    | old path format | ss:25570254 |
+    | both path formats | ss:8616573 |
