@@ -307,6 +307,21 @@ def get_compound_object args
   false
 end
 
+def get_aws_iiif_url args
+  project = args['project_id_ssi'] || nil
+  id = args['id'] || nil
+  if project.present? && id.present?
+    id.gsub!('ss:', '')
+    prefix = "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public"
+    new_path = [ prefix, project, id, '1', 'iiif', 'info.json' ].join('/')
+    if get_url_exists?(new_path)
+      new_path
+    else
+      old_path = [ prefix, project, id, 'image', 'info.json' ].join('/')
+    end
+  end
+end
+
 def get_multiviews args
   collection = args['collection_tesim'][0]
   if args['work_sequence_isi'].present?
@@ -493,7 +508,7 @@ def asset_visible?(document)
   if document.id.present?
     eid = document.id.sub(':', '\:')
     environment = ENV['RAILS_ENV']
-    if environment == 'development'
+    if environment == 'development' || environment == 'test'
       # see app/controllers/application_controller.rb:100
       # leave out the work_sequence_isi:[2 TO *] clauses to allow viewing multi-image
       fqa = ['-active_fedora_model_ssi:"Page"',
@@ -509,6 +524,21 @@ def asset_visible?(document)
   else
     false
   end
+end
+
+def get_url_exists?(url_string)
+  url = URI.parse(url_string)
+  req = Net::HTTP.new(url.host, url.port)
+  req.use_ssl = (url.scheme == 'https')
+  path = url.path if url.path.present?
+  res = req.request_head(path || '/')
+  if res.kind_of?(Net::HTTPRedirection)
+    get_url_exists?(res['location']) # Go after any redirect and make sure you can access the redirected URL
+  else
+    ! %W(4 5).include?(res.code[0]) # Not from 4xx or 5xx families
+  end
+rescue Errno::ENOENT
+  false #false if can't find the server
 end
 
 end

@@ -10,7 +10,7 @@ Then("the page header should contain {string}") do |string|
     end
 end
 
-Given("I go to asset id {string}") do |string|
+Given("I go to Forum asset id {string}") do |string|
     visit("/catalog/ss:#{string}")
 end
 
@@ -42,4 +42,19 @@ end
 
 Then("I should see images in the referencestrip") do
     expect(page.find("div.referencestrip")).to have_selector("div.openseadragon-container > div.displayregion")
+end
+
+Then("I should find an unpublished image") do
+    within "div#document" do
+        expect(find("div.unpublished")).to have_content("Unpublished")
+    end
+end
+
+Then("I should see an IIIF image") do
+    within "div#openseadragon1" do
+        list = all("div.openseadragon-container > div.openseadragon-message")
+        list.each do | x |
+            x.should have_no_content("Unable to open")
+        end
+    end
 end
