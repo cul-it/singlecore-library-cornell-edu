@@ -52,7 +52,7 @@ Feature: Confirm that collections have the correct number of assets
 	| obama | 200 |
 	| page | 55 |
 	| paniccioli | 27894 |
-	| pjmode | 1070 |
+	| pjmode | 1073 |
 	| politicalamericana | 2223 |
 	| prisonwritings | 449 |
 	| punkflyers | 2102 |
