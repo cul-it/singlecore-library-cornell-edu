@@ -333,35 +333,31 @@ end
 
 def get_multiviews args
   collection = args['collection_tesim'][0]
-  if args['work_group_ssi'].present?
-    parent = 'work_group_ssi'
-  elsif args['card_number_tesim'].present?
-    parent = 'card_number_tesim'
-  elsif args['catalog_number_tesim'].present?
-    parent = 'catalog_number_tesim'
-  elsif args['plan_number_tesim'].present?
-    parent = 'plan_number_tesim'
-  else
-    Rails.logger.warn("unknown multiview parent field " + args['id'])
-    return []
-  end
-  if args["#{parent}"].present?
-    if args["#{parent}"].kind_of?(Array)
-      parentid = args["#{parent}"].first.to_s
-    else
-      parentid = args["#{parent}"].to_s
-    end
-  else
-    Rails.logger.warn("missing multiview parent field " + args['id'])
-    return []
-  end
   if args['work_sequence_isi'].present?
     sequence = 'work_sequence_isi'
+    if args['card_number_tesim'].present?
+      # impersonators
+      parent = 'card_number_tesim'
+    elsif args['catalog_number_tesim'].present?
+      # seneca
+      parent = 'catalog_number_tesim'
+    elsif args['old_catalog_number_tesim'].present?
+      # anthrocollections
+      parent = 'old_catalog_number_tesim'
+    end
   elsif args['portal_sequence_isi'].present?
     sequence = 'portal_sequence_isi'
+    if args['plan_number_tesim'].present?
+      # tellennasbeh
+      parent = 'plan_number_tesim'
+    end
+  end
+  return [] unless parent.present? && sequence.present?
+
+  if args["#{parent}"].kind_of?(Array)
+    parentid = args["#{parent}"].first.to_s
   else
-    Rails.logger.warn("unknown multiview sequence field " + args['id'])
-    return []
+    parentid = args["#{parent}"].to_s
   end
   response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=#{parent}:#{parentid}&fq=#{sequence}:[1%20TO%20*]&wt=json&indent=true&sort=#{sequence}%20asc&rows=100"))
   @response = response['response']['docs']
@@ -440,16 +436,9 @@ end
   }
 
 def is_multi_image? args
-  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']))
-    return true
-  end
+  mv = get_multiviews(args)
+  mv.any?
 end
-
-  MULTI_IMAGE_COLLECTIONS = {
-    '20019' => 'impersonator',
-    '4803' => 'seneca',
-    '3686' => 'tellennasbeh'
-  }
 
 def publication options={}
 options[:document] # the original document
