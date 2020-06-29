@@ -58,3 +58,17 @@ Feature: Compound and Related Images
     | squeezes | Latin Column 1 | 3307295 |
     | rare | Fuegians going to trade in Zapallos | 572113 |
 
+    # @javascript
+    # @image-compound-views
+    # Scenario Outline: Compound images should show the correct number of additional images
+    #     # Timed out with the following resources still waiting http://webstats.library.cornell.edu/piwik.js (Capybara::Poltergeist::StatusFailError)
+    #     Given PENDING
+    #     Given I go to asset id '<id>'
+    #         Then I should see images in the referencestrip
+
+    # Examples:
+    # | nickname | id |
+    # | blaschka  | 20108189  |
+    # | anthrocollections | 2620202 |
+    # | political-americana | 12503349 |
+    # | stereoscopes | 9415843 |
