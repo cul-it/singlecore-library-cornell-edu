@@ -233,6 +233,7 @@ GEM
     openseadragon (0.5.0)
       rails (> 3.2.0)
     orm_adapter (0.5.0)
+    phantomjs (2.1.1.0)
     poltergeist (1.18.1)
       capybara (>= 2.1, < 4)
       cliver (~> 0.3.1)
@@ -417,6 +418,7 @@ DEPENDENCIES
   leaflet-rails (= 0.7.7)
   nokogiri (>= 1.10.8)
   openseadragon
+  phantomjs (~> 2.1, >= 2.1.1.0)
   poltergeist
   rails
   rails_autolink
