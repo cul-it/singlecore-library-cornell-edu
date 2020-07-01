@@ -90,8 +90,7 @@ Feature: Compound and Related Images
     @image-compound-views
     Scenario Outline: Compound images should show the correct number of additional images
         # Timed out with the following resources still waiting http://webstats.library.cornell.edu/piwik.js (Capybara::Poltergeist::StatusFailError)
-        Given PENDING
-        Given I go to asset id '<id>'
+        Given I go to Forum asset id '<id>'
             Then I should see images in the referencestrip
 
     Examples:
