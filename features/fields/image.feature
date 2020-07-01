@@ -100,6 +100,7 @@ Feature: Compound and Related Images
     | political-americana | 12503349 |
     | stereoscopes | 9415843 |
 
+
     @DIGCOLL-1680
     Scenario Outline: Static IIIF images should show up for either AWS S3 path form
     Given I go to asset '<id>'
