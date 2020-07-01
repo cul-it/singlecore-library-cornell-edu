@@ -79,6 +79,7 @@ group :development, :test do
   gem 'xray-rails'
   gem 'selenium-webdriver'
   gem 'webrick'
+  gem 'phantomjs', '~> 2.1', '>= 2.1.1.0'
 end
 
 group :test do

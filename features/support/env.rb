@@ -6,6 +6,11 @@
 
 require 'cucumber/rails'
 require 'capybara/poltergeist'
+
+Phantomjs.path # Force install on require
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app, :phantomjs => Phantomjs.path)
+end
 Capybara.javascript_driver = :poltergeist
 
 # Capybara defaults to CSS3 selectors rather than XPath.
