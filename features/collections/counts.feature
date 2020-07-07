@@ -78,7 +78,7 @@ Feature: Confirm that collections have the correct number of assets
 	| willardstraight | 176 |
     # dlxs collections
 	| bol | 714 |
-	| chla | 1073983 |
+	# | chla | 1132199 |
 	| ezra | 26256 |
 	| flow | 23590 |
 	| hivebees | 34434 |
