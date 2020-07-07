@@ -56,7 +56,7 @@ Feature: Confirm that collections have the correct number of assets
 	| obama | 200 |
 	| page | 55 |
 	| paniccioli | 27894 |
-	| pjmode | 1075 |
+	| pjmode | 1079 |
 	| politicalamericana | 2223 |
 	| prisonwritings | 449 |
 	| punkflyers | 2102 |
@@ -78,7 +78,7 @@ Feature: Confirm that collections have the correct number of assets
 	| willardstraight | 176 |
     # dlxs collections
 	| bol | 714 |
-	| chla | 1073983 |
+	# | chla | 1132199 |
 	| ezra | 26256 |
 	| flow | 23590 |
 	| hivebees | 34434 |
