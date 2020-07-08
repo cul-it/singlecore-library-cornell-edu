@@ -516,6 +516,8 @@ def asset_visible?(document)
       fq = fqa.join(' AND ')
     else
       fq = @fq
+      fq.slice! '-(work_sequence_isi:[2 TO *] AND -compound_object_count_isi:1) AND'
+      fq
     end
     fq = URI.escape(fq)
     response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{eid}&fq=#{fq}&fl=id&wt=json&indent=true&rows=1")).with_indifferent_access

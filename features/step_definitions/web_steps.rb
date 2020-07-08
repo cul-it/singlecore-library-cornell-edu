@@ -80,3 +80,7 @@ end
 Then("I see the asset is suppressed") do
     expect(page.find('div#content h1')).to have_content('Item restricted')
 end
+
+Then("I see the asset is not suppressed") do
+    expect(page.find('div#content h1')).not_to have_content('Item restricted')
+end

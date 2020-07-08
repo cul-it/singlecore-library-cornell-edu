@@ -55,10 +55,27 @@ Examples:
 | scott | production | scott7042_2 |
 | sea | production | seaA29c_8 |
 | witchcraft | production | witchcraft176_99 |
-| conflicting multi-image/compound object | production | ss:2620137 |
 | active_fedora_model_ssi Page | production | nur00420_4 |
 | suppressed rare | production | ss:550947 |
 | suppressed clairholt | production | ss:321396 |
 | suppressed sterrett | production | ss:12561355 |
 | suppressed artifacts | production | ss:640913 |
+
+@DIGCOLL-1686
+@content-assets-not-suppressed
+Scenario Outline: In production, only the first multiview object shows in the index, but multiview objects are available
+    Given I enable the 'production' environment
+        And I browse collection nicknamed '<nickname>'
+        And I search for asset '<asset_title>'
+        Then I should not see id '<id>' in the search results
+        And I go to asset '<id>'
+        Then the asset title field should contain '<second_title>'
+        Then I enable the 'development' environment
+
+Examples:
+    | nickname | asset_title | second_title | id | comment |
+    | impersonator | Arigon - Imitateur | Arigon - Imitateur (verso) | ss:24415885 | back of postcard |
+    | anthrocollections | Stingray spines | Stingray spines | ss:3235765 | multi-image and compound object |
+    | impersonator | Florin Imitateur | Florin Imitateur (verso) | ss:24415925 | back of postcard |
+    | anthrocollections | Hand spun cotton thread | Ball of hand spun cotton yarn | ss:1334128 | multi-image |
 
