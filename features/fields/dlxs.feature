@@ -139,9 +139,9 @@ Feature: Support for DLXS collections
     | keywords_tesim | Keywords | hunt0001_1 | Nahuatl language - Grammar |
     | lang_tesim | Language | bol0001 | Spanish |
     | language_tesim | Language | bol0001 | Spanish |
-    | location_facet_tesim | Location | bol0001 | Sucre |
+    | location_facet_tesim | Site | bol0001 | Sucre |
     | note_tesim | Note | chla1043101 | 424 p. |
-    | notes_tesim | Notes | chla1043101 | 424 p. |
+    # | notes_tesim | Notes | chla1043101 | 424 p. |
     | pubdate_tesim | Publication Date | bol0001 | 1848 |
     | publication_tesim | Publication | words1214796 | Cambridge, Printed by J. Smith for Deightons [etc. |
     | publisher_tesim | Publisher | bol0001 | Imprenta de Beeche y Compañía |

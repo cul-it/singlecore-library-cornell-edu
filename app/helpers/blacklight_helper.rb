@@ -288,41 +288,69 @@ def get_compound_object args
       if args['content_metadata_image_iiif_info_ssm'].present?
         # forum sometimes does not include the first media element's IIIF url
         default_iiif = render_document_show_field_value(:document => args, :field => 'content_metadata_image_iiif_info_ssm')
-        tileSources = []
-        args['compound_object_ssm'].each { |json|
-          compound = JSON.parse(json)
-          if compound['iiif_url'].present?
-            tileSources << compound['iiif_url'] + '/info.json'
-          elsif default_iiif.present?
-            tileSources << default_iiif
-          end
-        }
-        return tileSources
-      else
-        # assume IIIF images are not available for this collection
-        # assume we've generated static IIIF images
-        tileSources = []
-        max_seq = args['compound_object_ssm'].count
-        project = args['project_id_ssi']
-        id = args['id']
-        path = 'https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public/'
-        for seq in 1..max_seq do
-          tileSources << path + [project, id, seq, 'iiif', 'info.json'].join('/')
-        end
-        return tileSources
       end
+      tileSources = []
+      args['compound_object_ssm'].each { |json|
+        compound = JSON.parse(json)
+        if compound['iiif_url'].present?
+          tileSources << compound['iiif_url'] + '/info.json'
+        elsif default_iiif.present?
+          tileSources << default_iiif
+        end
+      }
+      return tileSources
+    else
+      # no compound objects available
+      return []
     end
   end
   false
 end
 
+def get_aws_iiif_url args
+  project = args['project_id_ssi'] || nil
+  id = args['id'] || nil
+  if project.present? && id.present?
+    id.gsub!('ss:', '')
+    prefix = "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public"
+    new_path = [ prefix, project, id, '1', 'iiif', 'info.json' ].join('/')
+    if get_url_exists?(new_path)
+      new_path
+    else
+      old_path = [ prefix, project, id, 'image', 'info.json' ].join('/')
+    end
+  end
+end
+
 def get_multiviews args
   collection = args['collection_tesim'][0]
-  if args['work_group_ssi'].present?
-    parentid = args['work_group_ssi']
+  if args['work_sequence_isi'].present?
+    sequence = 'work_sequence_isi'
+    if args['card_number_tesim'].present?
+      # impersonators
+      parent = 'card_number_tesim'
+    elsif args['catalog_number_tesim'].present?
+      # seneca
+      parent = 'catalog_number_tesim'
+    elsif args['old_catalog_number_tesim'].present?
+      # anthrocollections
+      parent = 'old_catalog_number_tesim'
+    end
+  elsif args['portal_sequence_isi'].present?
+    sequence = 'portal_sequence_isi'
+    if args['plan_number_tesim'].present?
+      # tellennasbeh
+      parent = 'plan_number_tesim'
+    end
   end
-  sequence = args['work_sequence_isi']
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=work_group_ssi:\"#{parentid}\"&fq=work_sequence_isi:[1%20TO%20*]&wt=json&indent=true&sort=work_sequence_isi%20asc&rows=100"))
+  return [] unless parent.present? && sequence.present?
+
+  if args["#{parent}"].kind_of?(Array)
+    parentid = args["#{parent}"].first.to_s
+  else
+    parentid = args["#{parent}"].to_s
+  end
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=#{parent}:#{parentid}&fq=#{sequence}:[1%20TO%20*]&wt=json&indent=true&sort=#{sequence}%20asc&rows=100"))
   @response = response['response']['docs']
   return @response
 end
@@ -399,16 +427,9 @@ end
   }
 
 def is_multi_image? args
-  if (MULTI_IMAGE_COLLECTIONS.include?(args['project_id_ssi']))
-    return true
-  end
+  mv = get_multiviews(args)
+  mv.any?
 end
-
-  MULTI_IMAGE_COLLECTIONS = {
-    '20019' => 'impersonator',
-    '4803' => 'seneca',
-    '3686' => 'tellennasbeh'
-  }
 
 def publication options={}
 options[:document] # the original document
@@ -536,7 +557,7 @@ def asset_visible?(document)
   if document.id.present?
     eid = document.id.sub(':', '\:')
     environment = ENV['RAILS_ENV']
-    if environment == 'development'
+    if environment == 'development' || environment == 'test'
       # see app/controllers/application_controller.rb:100
       # leave out the work_sequence_isi:[2 TO *] clauses to allow viewing multi-image
       fqa = ['-active_fedora_model_ssi:"Page"',
@@ -544,6 +565,8 @@ def asset_visible?(document)
       fq = fqa.join(' AND ')
     else
       fq = @fq
+      fq.slice! '-(work_sequence_isi:[2 TO *] AND -compound_object_count_isi:1) AND'
+      fq
     end
     fq = URI.escape(fq)
     response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{eid}&fq=#{fq}&fl=id&wt=json&indent=true&rows=1")).with_indifferent_access
@@ -552,6 +575,21 @@ def asset_visible?(document)
   else
     false
   end
+end
+
+def get_url_exists?(url_string)
+  url = URI.parse(url_string)
+  req = Net::HTTP.new(url.host, url.port)
+  req.use_ssl = (url.scheme == 'https')
+  path = url.path if url.path.present?
+  res = req.request_head(path || '/')
+  if res.kind_of?(Net::HTTPRedirection)
+    get_url_exists?(res['location']) # Go after any redirect and make sure you can access the redirected URL
+  else
+    ! %W(4 5).include?(res.code[0]) # Not from 4xx or 5xx families
+  end
+rescue Errno::ENOENT
+  false #false if can't find the server
 end
 
 end

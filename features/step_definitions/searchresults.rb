@@ -53,3 +53,16 @@ Then("the field labeled {string} should begin {string} and link to facet {string
     expect(dd).to have_link(href: /[^_]#{string3}/)
   end
 end
+
+Given("I search for everything") do
+  search = URI.escape("/?utf8=✓&q=&search_field=all_fields")
+  visit(search)
+end
+
+Then("I should not see id {string} in the search results") do |string|
+  link = "a[href=\"/catalog/#{string}\"]"
+  rows = page.all("div.documentHeader h5.index_title")
+  rows.each do |row|
+    expect(row).not_to have_selector(link)
+  end
+end

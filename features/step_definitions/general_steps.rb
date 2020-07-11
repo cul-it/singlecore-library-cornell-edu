@@ -90,3 +90,19 @@ end
 Then("the page title should contain {string}") do |string|
     find(:xpath, '//title', visible: false).native.text.should have_content("#{string}")
 end
+
+Given("I enable the {string} environment") do |string|
+    if ['development', 'test', 'production'].include?(string)
+        ENV['RAILS_ENV']=string
+        ENV["COLLECTIONS"]=string
+    else
+        expect(false)
+    end
+end
+
+Then("show environment") do
+    puts "/n******************************"
+    puts "ENV['RAILS_ENV'] " + ENV['RAILS_ENV']
+    puts "ENV['COLLECTIONS'] " + ENV['COLLECTIONS']
+    puts "******************************/n"
+end
