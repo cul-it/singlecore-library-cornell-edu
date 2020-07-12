@@ -66,7 +66,7 @@ Feature: Confirm that collections have the correct number of assets
 	| repsslides | 1357 |
 	| rmc | 19444 |
 	| rudin | 517 |
-	| seneca | 604 |
+	| seneca | 685 |
 	| squeezes | 369 |
 	| srilanka | 527 |
 	| stereoscopes | 213 |
@@ -84,7 +84,7 @@ Feature: Confirm that collections have the correct number of assets
 	| hivebees | 34434 |
 	| hearth | 667340 |
 	| hunt | 124 |
-	| izquierda | 105 |
+	| izquierda | 2736 |
 	| liber | 1205 |
 	| may | 224560 |
 	| nur | 16504 |
