@@ -133,7 +133,7 @@ Feature: Support for DLXS collections
     | creation_site_location_tesim | Site | bol0001 | Sucre |
     | creator_tesim | Creator | bol0001 | Fernández, Hilarión |
     | date_display_tesim | Issue Date | chla1043101_01 | 1850 |
-    | date_tesim | Date | chla1043101 | 1850 |
+    | date_tesim | Date | chla1043101_01 | 1850 |
     | extent_tesim | Extent | bol0001 | 16 300dpi JPEG page images |
     | identifier_tesim | Identifier | bol0001_1 | bol0001 |
     | keywords_tesim | Keywords | hunt0001_1 | Nahuatl language - Grammar |
