@@ -76,7 +76,7 @@ Feature: Compound and Related Images
     | dynkin | Anatoliy Skorokhod | 21214105 |
     | harrisson | Batang Kayan and Pujungan | 25032424 |
     | leuenberger | Israeli Wall and Settlements | 9387297 |
-    | loewentheil | Erotica | 2983260 |
+    | loewentheil | American POWs released | 2983257 |
     | obama | The end of white America? | 1282486 |
     | paniccioli | Christopher Wallace | 23019390 |
     | ragamala | Unidentified Deity | 9011771 |
