@@ -92,7 +92,7 @@ Feature: Confirm that collections have the correct number of assets
 	| sea | 4 |
 	| sat | 42038 |
 	| scott | 4541 |
-	| witchcraft | 5073 |
+	# witchcraft | 5073 |
 	| words | 446 |
     # other collections
     | art2301 | 55 |
