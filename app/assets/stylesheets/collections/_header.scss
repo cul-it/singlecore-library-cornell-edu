@@ -127,6 +127,13 @@
 	padding: .5em 0;
 	text-align: center;
 }
+//service alert - for outages, e.g. maps, etc.
+.service-alert {
+	margin-top: .5em;
+	.alert {
+		margin-bottom: .5em;
+	}
+}
 
 // MEDIA QUERIES
 // -------------------------

@@ -49,7 +49,11 @@
 
   <body class="<%= render_body_class %>">
     <% if ENV["COLLECTIONS"] == "development" %>
-    <%= render :partial => 'shared/stg_message' %>
+        <%= render :partial => 'shared/stg_message' %>
+    <% end %>
+
+    <% if ENV["SERVICE_ALERT"] == "on" %>
+        <%= render partial: 'shared/alert' %>
     <% end %>
 
     <%= render :partial => 'shared/cornell' %>
