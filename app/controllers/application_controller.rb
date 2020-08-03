@@ -158,7 +158,7 @@ class ApplicationController < ActionController::Base
         #ssc[:loewentheil],
         #ssc[:obama],
         #ssc[:page],
-        ssc[:paniccioli],
+        #ssc[:paniccioli],
         #ssc[:pjmode],
         #ssc[:politicalamericana],
         #ssc[:prisonwritings],
