@@ -570,6 +570,8 @@ class CatalogController < ApplicationController
     # archival collection info
     config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
     config.add_show_field 'location_repo_tesim', :label => 'Repository Location'
+    config.add_show_field 'witness_tesim', :label => 'Witnesses'
+    config.add_show_field 'onames_tesim', :label => 'Other Names'
     config.add_show_field 'repo_orig_tesim', :label => 'Original Repository'
     config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true
     config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true
