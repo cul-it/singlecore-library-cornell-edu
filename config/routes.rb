@@ -69,6 +69,7 @@ end
   # prod pages
   get '/collections/aerialny' => 'high_voltage/pages#show', :id => 'collections/aerialny/index'
   get '/collections/afrika-bambaataa' => 'high_voltage/pages#show', :id => 'collections/afrika-bambaataa/index'
+  get '/collections/anthrocollections' => 'high_voltage/pages#show', :id => 'collections/anthrocollections/index'
   get '/collections/art2301' => 'high_voltage/pages#show', :id => 'collections/art2301/index'
   get '/collections/artifactsandart' => 'high_voltage/pages#show', :id => 'collections/artifactsandart/index'
   get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
@@ -99,7 +100,6 @@ end
 
   # dev pages
   if ENV['COLLECTIONS'] == "development"
-    get '/collections/anthrocollections' => 'high_voltage/pages#show', :id => 'collections/anthrocollections/index'
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
     get '/collections/seneca' => 'high_voltage/pages#show', :id => 'collections/seneca/index'
