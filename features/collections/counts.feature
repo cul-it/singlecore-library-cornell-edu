@@ -91,7 +91,7 @@ Feature: Confirm that collections have the correct number of assets
 	| regmi: | 19 |
 	| sea | 4 |
 	| sat | 42038 |
-	| scott | 4541 |
+	# | scott | 4541 |
 	# witchcraft | 5073 |
 	| words | 446 |
     # other collections
