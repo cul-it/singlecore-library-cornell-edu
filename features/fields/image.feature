@@ -121,4 +121,5 @@ Feature: Compound and Related Images
         | id | label | starting |
         | ss:2619950  | Old Catalog Number  | 870.15.3 |
         | ss:28448935 | Catalog Number | 1952.WH64.1 |
+        # the next one should be | ss:19102626 | Plan Number | 057 | but that field is suppressed
         | ss:19102626 | Title | Plan 57 |
