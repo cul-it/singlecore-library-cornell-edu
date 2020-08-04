@@ -428,7 +428,7 @@ end
 
 def is_multi_image? args
   mv = get_multiviews(args)
-  mv.any?
+  mv.any? && mv.count > 1
 end
 
 def publication options={}

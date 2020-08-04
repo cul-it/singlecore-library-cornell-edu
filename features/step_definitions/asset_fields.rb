@@ -58,3 +58,7 @@ Then("I should see an IIIF image") do
         end
     end
 end
+
+Given("I should not see the multiimage group region") do
+    expect(page.find('div#document')).not_to have_selector("div.multi-images")
+end
