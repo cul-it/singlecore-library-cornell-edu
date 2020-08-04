@@ -17,10 +17,13 @@ Feature: Compound and Related Images
     | political-americana | National Convention & Election Handbook and Envelope | 1 |
     | stereoscopes | Gluggafoss | 1 |
 
+    @javascript
     @image-multi
     Scenario Outline: Multi image collections should show Additional Views
         Given I go to Forum asset id '<id>'
             Then I should see <count> additional views
+            # check the url of the first multi-image
+            And I check the image 'div.multi-image:nth-child(1) > a:nth-child(1) > img:nth-child(1)'
 
     Examples:
     | nickname | id | count |
@@ -29,6 +32,12 @@ Feature: Compound and Related Images
     | tellennasbeh | 19102646 | 1 |
     | tellennasbeh | 19102650 | 1 |
     | anthrocollections | 1334130 | 6 |
+
+    @javascript
+    @broken-image
+    Scenario: Test broken images
+    Given I got to the home page
+        Then I check the image 'img#broken-image'
 
     @javascript
     @multi-image

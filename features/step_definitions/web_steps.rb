@@ -84,3 +84,19 @@ end
 Then("I see the asset is not suppressed") do
     expect(page.find('div#content h1')).not_to have_content('Item restricted')
 end
+
+Then("I check the image {string}") do |string|
+    this_url = page.current_url
+    image = page.find(string)['src']
+    visit image.to_s
+    expect(page.find('body')).not_to have_content('Bad Request')
+    visit this_url
+    # page.execute_script("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", image)
+    # puts page.evaluate_script("function fileExists(url) { var http = new XMLHttpRequest(); http.open('HEAD', url, false); http.send(); return http.status; } fileExists(#{image});")
+    puts page.execute_script("http = new XMLHttpRequest(); http.open('HEAD', url, false); http.send(); echo http.status; } ")
+    puts page.evaluate_script("'hello world'")
+end
+
+Given("I got to the home page") do
+    visit '/'
+end
