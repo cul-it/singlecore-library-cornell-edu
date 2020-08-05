@@ -31,7 +31,11 @@
         <%# download PDF link %>
         <% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Scottsboro') %>
           <div class="reader-link" data-no-turbolink>
+            <% if @document['format_tesim'][0] != "Page" %>
             <a class="btn btn-portal btn-lg" href="http://s3.amazonaws.com/cul-hydra/scott/<%= @book_id %>/pdfs/<%= @book_id %>.pdf">Download PDF<i class="fa fa-download" aria-hidden="true"></i></a>
+            <% else %>
+            <a class="btn btn-portal btn-lg" href="http://s3.amazonaws.com/cul-hydra/scott/<%= @document['id'][0..@document['id'].rindex('_') - 1] %>/pdfs/<%= @document['id'][0..@document['id'].rindex('_') - 1] %>.pdf">Download PDF<i class="fa fa-download" aria-hidden="true"></i></a>
+            <% end %>
           </div>
           <%= render 'pdf_accessibility' %>
         <% end %>

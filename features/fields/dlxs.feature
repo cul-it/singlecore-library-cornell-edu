@@ -40,7 +40,7 @@ Feature: Support for DLXS collections
 	| Book | hivebees5017167 | Title | Langstroth on the hive and the honey-bee |
 	| Book | hivebees5017167 | Collection | Core Historical Literature of Agriculture |
 	| Book | hivebees5017167 | Creator | Langstroth, L.L. 1810-1895. |
-	| Book | hivebees5017167 | Date | 1853 |
+	# date missing now? | Book | hivebees5017167 | Date | 1853 |
 	| Book | hivebees5017167 | Identifier | hivebees5017167 |
 	| Book | hivebees5017167 | Subject | Bees |
 	| Book | hivebees5017167 | Extent | 390 300dpi JPEG page images |
@@ -133,7 +133,7 @@ Feature: Support for DLXS collections
     | creation_site_location_tesim | Site | bol0001 | Sucre |
     | creator_tesim | Creator | bol0001 | Fernández, Hilarión |
     | date_display_tesim | Issue Date | chla1043101_01 | 1850 |
-    | date_tesim | Date | chla1043101 | 1850 |
+    | date_tesim | Date | chla1043101_01 | 1850 |
     | extent_tesim | Extent | bol0001 | 16 300dpi JPEG page images |
     | identifier_tesim | Identifier | bol0001_1 | bol0001 |
     | keywords_tesim | Keywords | hunt0001_1 | Nahuatl language - Grammar |

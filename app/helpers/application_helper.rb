@@ -6,10 +6,10 @@ module ApplicationHelper
     ss_thumb = render_index_field_value :document => document, :field => "media_URL_size_2_tesim"
     aws_thumb = render_index_field_value :document => document, :field => "awsthumbnail_tesim"
     if ss_thumb.present?
-      return image_tag(ss_thumb, options={})
+      return image_tag(ss_thumb, options)
     end
     if aws_thumb.present?
-      return image_tag(aws_thumb, options={})
+      return image_tag(aws_thumb, options)
     end
   end
 

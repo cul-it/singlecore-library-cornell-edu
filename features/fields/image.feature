@@ -76,7 +76,7 @@ Feature: Compound and Related Images
     | dynkin | Anatoliy Skorokhod | 21214105 |
     | harrisson | Batang Kayan and Pujungan | 25032424 |
     | leuenberger | Israeli Wall and Settlements | 9387297 |
-    | loewentheil | Erotica | 2983260 |
+    | loewentheil | American POWs released | 2983257 |
     | obama | The end of white America? | 1282486 |
     | paniccioli | Christopher Wallace | 23019390 |
     | ragamala | Unidentified Deity | 9011771 |
@@ -110,3 +110,16 @@ Feature: Compound and Related Images
     | comment | id |
     | old path format | ss:25570254 |
     | both path formats | ss:8616573 |
+
+    @DIGCOLL-1711
+    Scenario Outline: Multi-Image groups with just one member should not show the Multi-Image area on the page
+    Given I go to asset '<id>'
+        And the field labeled '<label>' should begin with '<starting>'
+        And I should not see the multiimage group region
+
+    Examples:
+        | id | label | starting |
+        | ss:2619950  | Old Catalog Number  | 870.15.3 |
+        | ss:28448935 | Catalog Number | 1952.WH64.1 |
+        # the next one should be | ss:19102626 | Plan Number | 057 | but that field is suppressed
+        | ss:19102626 | Title | Plan 57 |
