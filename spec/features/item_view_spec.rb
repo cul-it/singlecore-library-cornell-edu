@@ -17,9 +17,11 @@ RSpec.feature 'Item' do
   end
 
   scenario 'date added click to search' do
-  	visit solr_document_path('ss:8435794')
-  	click_link '2015-08-25'
-  	expect(page).to have_content "Date posted"
+    visit solr_document_path('ss:8435794')
+    within ("dd.blacklight-date_tesim") do
+      click_link '2015-08-25'
+    end
+  	expect(page).to have_content "Posted Date"
   end
 
   scenario 'bolivian read item link displays' do
