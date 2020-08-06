@@ -63,7 +63,7 @@ Given("I browse collection nicknamed {string}") do |string|
 	when "eleusis"
 		full = 'Mysteries at Eleusis: Images of Inscriptions'
 	when "ezra"
-		full = 'Ezra Cornell Papers'
+		full = 'Ezra Cornell Papers, Ezra Cornell Letters'
 	when "fallout"
 		full = 'Nuclear Fallout Pamphlets'
 	when "flow"
