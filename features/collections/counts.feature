@@ -14,7 +14,7 @@ Feature: Confirm that collections have the correct number of assets
 	# note: if one of these fails, someone may be adding items to the collection
 	# it's ok to just comment out the offending collection to get your PR through
 	#
-	# | adler | 11193 |
+	| adler | 11193 |
 	| adwhite | 1364 |
 	| aerial | 3390 |
 	| ahearn | 909 |
@@ -23,7 +23,7 @@ Feature: Confirm that collections have the correct number of assets
 	| bam | 2311 |
 	| bastides | 2652 |
 	| beyondtaj | 6688 |
-	| blaschka | 248 |
+	| blaschka | 249 |
 	| cast | 967 |
 	| coins | 1804 |
 	| conzo | 7616 |
@@ -41,7 +41,7 @@ Feature: Confirm that collections have the correct number of assets
 	| howell | 416 |
 	| impersonator | 884 |
 	| isbell | 1190 |
-	| iwo | 1740 |
+	| iwo | 1741 |
 	| japantheatre | 1076 |
 	| japanworld | 4231 |
 	| johnclairmiller | 240 |
@@ -52,11 +52,11 @@ Feature: Confirm that collections have the correct number of assets
 	| kmoddl | 223 |
 	| leuenberger | 231 |
 	| lindsaycooper | 589 |
-	| loewentheil | 1476 |
+	| loewentheil | 1481 |
 	| obama | 200 |
 	| page | 55 |
-	| paniccioli | 27894 |
-	| pjmode | 1083 |
+	| paniccioli | 27895 |
+	| pjmode | 1074 |
 	| politicalamericana | 2223 |
 	| prisonwritings | 449 |
 	| punkflyers | 2102 |
@@ -66,7 +66,7 @@ Feature: Confirm that collections have the correct number of assets
 	| repsslides | 1357 |
 	| rmc | 19444 |
 	| rudin | 517 |
-	| seneca | 685 |
+	| seneca | 710 |
 	| squeezes | 369 |
 	| srilanka | 527 |
 	| stereoscopes | 213 |
@@ -78,21 +78,21 @@ Feature: Confirm that collections have the correct number of assets
 	| willardstraight | 176 |
     # dlxs collections
 	| bol | 30938 |
-	# | chla | 1132199 |
-	| ezra | 26256 |
+	| chla | 1182144 |
+	| ezra | 26257 |
 	| flow | 23590 |
-	| hivebees | 34478 |
-	| hearth | 667340 |
+	| hivebees | 34479 |
+	| hearth | 667370 |
 	| hunt | 33392 |
-	| izquierda | 2736 |
+	| izquierda | 2740 |
 	| liber | 1205 |
 	| may | 224560 |
 	| nur | 16504 |
 	| regmi: | 19 |
-	| sea | 4 |
+	| sea | 3997 |
 	| sat | 42038 |
-	# | scott | 4541 |
-	# witchcraft | 5073 |
+	| scott | 4542 |
+	| witchcraft | 23076 |
 	| words | 446 |
     # other collections
     | art2301 | 55 |
