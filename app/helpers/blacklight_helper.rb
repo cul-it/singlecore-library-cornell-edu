@@ -326,7 +326,10 @@ def get_multiviews args
   collection = args['collection_tesim'][0]
   if args['work_sequence_isi'].present?
     sequence = 'work_sequence_isi'
-    if args['card_number_tesim'].present?
+    if args['work_group_ssi'].present?
+      # MAP form for all collections
+      parent = 'work_group_ssi'
+    elsif args['card_number_tesim'].present?
       # impersonators
       parent = 'card_number_tesim'
     elsif args['catalog_number_tesim'].present?
