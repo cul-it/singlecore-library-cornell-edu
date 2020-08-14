@@ -27,7 +27,7 @@ Feature: Confirm that collections have the correct number of assets
 	| cast | 967 |
 	| coins | 1804 |
 	| conzo | 7616 |
-	| culmaps | 1616 |
+	| culmaps | 1531 |
 	| dendro | 98 |
 	| divinecomedy | 1898 |
 	| dynkin | 915 |
@@ -82,7 +82,7 @@ Feature: Confirm that collections have the correct number of assets
 	| ezra | 26256 |
 	| flow | 23590 |
 	| hivebees | 34478 |
-	| hearth | 667340 |
+	#| hearth | 667340 |
 	| hunt | 33392 |
 	| izquierda | 2736 |
 	| liber | 1205 |
@@ -98,4 +98,4 @@ Feature: Confirm that collections have the correct number of assets
     | art2301 | 55 |
     | claireholt | 1785 |
     # | cmip: | 24 | - collection removed
-    | maps | 1616 |
+    # maps | 1616 |
