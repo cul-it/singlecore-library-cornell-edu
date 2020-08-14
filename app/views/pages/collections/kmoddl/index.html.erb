@@ -1,0 +1,61 @@
+<% content_for :page_title, 'Reuleaux Kinematic Mechanisms Collection' %>
+<%= render partial: 'pages/collections/kmoddl/header' %>
+<div class="collection-banner hidden-xs">
+	<div class="container">
+		<a href="/catalog/ss:21813139"><%= image_tag "collections/rudin/21813139.jpg" , alt: "Harpers Weekly Engraving, 'The Effects of the Proclamation'", class: "img-responsive", title: "Harpers Weekly Engraving, 'The Effects of the Proclamation'" %></a>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4 col-sm-push-8 sidebar">
+			<div class="collection-search well">
+				<h3>Search or <a href="#browse">browse the collection</a></h3>
+				<%= render '/catalog/search_form', { :@collection_search => "Reuleaux Kinematic Mechanisms Collection"}  %>
+			</div>
+			<a href="/catalog/ss:21813545">
+				<%= image_tag "collections/rudin/21813545.png" , alt: "Deed of freedom for 14 year old Henry Blake", class: "img-responsive" %>
+			</a>
+			<p class="caption">
+				Deed of freedom for 14 year old Henry Blake
+			</p>
+		</div>
+		<div class="col-sm-8 col-sm-pull-4">
+			<p>The Kinematics Models for Design Digital Library (KMODDL) was developed at Cornell University in 2003-2005 as an open access, multimedia resource for learning and teaching about kinematics – the geometry of pure motion – and the history and theory of machines. The core of KMODDL is the <a href="/catalog?f[collection_tesim][]=Reuleaux+Kinematic+Mechanisms+Collection">Reuleaux Collection of Mechanisms and Machines</a>, an important collection of 19th-century machine elements held by Cornell University’s Sibley School of Mechanical and Aerospace Engineering. The Reuleaux Collection at Cornell University comprises more than 200 models developed by Franz Reuleaux (1829-1905), the founder of kinematics, for teaching and researching the principles of mechanical motion. The KMODDL Collection in the Cornell University Library Digital Portal provides online access to the Reuleaux Collection via still and moving images and descriptions of the models. Books and full-text documents related to KMODDL are located in the <a href="https://ecommons.cornell.edu/handle/1813/57656">eCommons</a> repository.</p>
+
+			<p>The original KMODDL digital resource was a collection in the National Science Digital Library, developed through a collaborative grant with the faculty of the Cornell University College of Engineering, the Cornell University Library, and several external partners. The original site has been archived and is made available via the <a href="wayback.archive-it.org/2566/20180418122029/http:/kmoddl.library.cornell.edu/">WayBack Machine Archive-It</a> service. (NOTE: not all resources or navigation are functional on this archived version of the KMODDL website.)</p>
+
+			<p>Further background on Kinematics, the Reuleaux Collection and the KMODDL project can be found under <a href="/collections/kmoddl/about">About KMODDL</a> based on information written for the original site.</p>
+
+			<h3 id="browse">Browse the Collection</h3>
+			<p>The Reuleaux models are classified according to the alphanumeric system employed in the catalog of the manufacturer, Gustav Voigt. The letter in a model's ID (e.g., D14 or S35) refers to a class of mechanism; the number is a specific instance of the class. This classification scheme is a simplified version of the taxonomy of machine elements elaborated in Reuleaux's work.</p>
+			<h4>Model Classes (Voigt Taxonomy)</h4>
+			<ol type="A">
+				<li>Lower Element Pairs</li>
+				<li>Higher Element Pairs</li>
+				<li>Simple Kinematic Chains</li>
+				<li>Crank Mechanisms</li>
+				<li>Excentric Slider Cranks</li>
+				<li>Crank Chamber Mechanisms</li>
+				<li>Simple Gear Trains</li>
+				<li>Model Support Pedestals</li>
+				<li>Chamber Wheel Mechanisms</li>
+				<li>Complex Slider Crank Mechanisms</li>
+				<li>Positive Return Constant Breadth Cams</li>
+				<li>Screw Mechanisms</li>
+				<li>Ratchet Mechanisms</li>
+				<li>Planetary Gear Trains</li>
+				<li>Jointed Couplings</li>
+				<li>Gear Teeth Profiles</li>
+				<li>Cycloid Rolling Models</li>
+				<li>Straight-line Mechanisms</li>
+				<li>Parallel Guide Mechanisms</li>
+				<li>Rotating Arm Guide Mechanisms</li>
+				<li>Belt Drive Mechanisms</li>
+				<li>Friction Wheels</li>
+				<li>Clock Escapements</li>
+				<li>Reversing and Shifting Belt and Gear Mechanisms</li>
+				<li>Coupling Mechanisms</li>
+			</ol>
+		</div>
+	</div>
+</div>
