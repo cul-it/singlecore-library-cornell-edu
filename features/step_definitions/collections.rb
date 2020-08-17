@@ -179,7 +179,7 @@ Given("I browse collection nicknamed {string}") do |string|
 	when "sea"
 		full = 'Southeast Asia Visions'
 	when "seneca"
-		full = 'Seneca Haudenosaunee Archaeological Materials, circa 1688-1754'
+		full = 'Onöndowa\'ga:\' (Seneca) Haudenosaunee Archaeological Materials, circa 1688-1754'
 	when "squeeze"
 		full = 'Cornell Squeeze Collection'
 	when "squeezes"
