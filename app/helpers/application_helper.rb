@@ -5,6 +5,18 @@ module ApplicationHelper
   def render_thumbnail(document, options)
     ss_thumb = render_index_field_value :document => document, :field => "media_URL_size_2_tesim"
     aws_thumb = render_index_field_value :document => document, :field => "awsthumbnail_tesim"
+#******************
+save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
+msg = ["****************** #{__method__}"]
+msg << "ss_thumb" + ss_thumb.inspect
+msg << "aws_thumb" + aws_thumb.inspect
+msg << "document " + document.inspect
+msg << "options " + options.inspect
+msg << '******************'
+puts msg.to_yaml
+Rails.logger.level = save_level
+#*******************
     if ss_thumb.present?
       return image_tag(ss_thumb, options)
     end
