@@ -27,7 +27,7 @@ Feature: Confirm that collections have the correct number of assets
 	| cast | 967 |
 	| coins | 1804 |
 	| conzo | 7616 |
-	| culmaps | 1616 |
+	| culmaps | 1531 |
 	| dendro | 98 |
 	| divinecomedy | 1898 |
 	| dynkin | 915 |
@@ -49,7 +49,7 @@ Feature: Confirm that collections have the correct number of assets
 	| karma | 4140 |
 	| kassoy | 139 |
 	| kingsbury | 522 |
-	| kmoddl | 223 |
+	| kmoddl | 234 |
 	| leuenberger | 231 |
 	| lindsaycooper | 589 |
 	| loewentheil | 1481 |
@@ -66,7 +66,7 @@ Feature: Confirm that collections have the correct number of assets
 	| repsslides | 1357 |
 	| rmc | 19444 |
 	| rudin | 517 |
-	| seneca | 685 |
+	| seneca | 697 |
 	| squeezes | 369 |
 	| srilanka | 527 |
 	| stereoscopes | 213 |
@@ -98,4 +98,4 @@ Feature: Confirm that collections have the correct number of assets
     | art2301 | 55 |
     | claireholt | 1785 |
     # | cmip: | 24 | - collection removed
-    | maps | 1616 |
+    # maps | 1616 |
