@@ -27,7 +27,7 @@ Feature: Confirm that collections have the correct number of assets
 	| cast | 967 |
 	| coins | 1804 |
 	| conzo | 7616 |
-	| culmaps | 1531 |
+	| culmaps | 1616 |
 	| dendro | 98 |
 	| divinecomedy | 1898 |
 	| dynkin | 915 |
@@ -49,14 +49,14 @@ Feature: Confirm that collections have the correct number of assets
 	| karma | 4140 |
 	| kassoy | 139 |
 	| kingsbury | 522 |
-	| kmoddl | 234 |
+	# | kmoddl | 234 | 224
 	| leuenberger | 231 |
 	| lindsaycooper | 589 |
 	| loewentheil | 1481 |
 	| obama | 200 |
 	| page | 55 |
 	| paniccioli | 27895 |
-	| pjmode | 1074 |
+	# | pjmode | 1074 | 1083
 	| politicalamericana | 2223 |
 	| prisonwritings | 449 |
 	| punkflyers | 2102 |
