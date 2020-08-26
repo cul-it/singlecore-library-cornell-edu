@@ -8,7 +8,7 @@ Feature: Asset MAP fields
     @fields-MAP-qualifiers
     @DIGCOLL-1547
     Scenario Outline: View MAP qualifier field labels across assets
-        Given I go to asset id '<id>'
+        Given I go to Forum asset id '<id>'
             Then I should see the field labeled '<new_label>'
             And the field labeled '<new_label>' should begin with '<starting>'
 
@@ -64,7 +64,7 @@ Feature: Asset MAP fields
 
     @fields-MAP-multivalued
     Scenario Outline: View MAP field labels with multiple values across assets
-        Given I go to asset id '<id>'
+        Given I go to Forum asset id '<id>'
             Then I should see the field labeled '<new_label>'
             And the field labeled '<new_label>' should begin with '<starting>'
             And the field labeled '<new_label>' should also contain '<somewhere>'
@@ -81,7 +81,7 @@ Feature: Asset MAP fields
     @fields-MAP-complete
     @DIGCOLL-1651
     Scenario Outline: Confirm that all fields are showing
-        Given I go to asset id '<id>'
+        Given I go to Forum asset id '<id>'
             Then the field labeled '<new_label>' should begin with '<somewhere>'
 
     Examples:
@@ -96,7 +96,7 @@ Feature: Asset MAP fields
     @fields-MAP-facet-links
     @DIGCOLL-1654
     Scenario Outline: Link field values to facets so similar items can be found
-        Given I go to asset id '<id>'
+        Given I go to Forum asset id '<id>'
             Then the field labeled '<new_label>' should begin '<starting>' and link to facet '<facet>'
 
     Examples:
