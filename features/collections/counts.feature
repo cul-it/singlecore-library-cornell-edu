@@ -41,7 +41,7 @@ Feature: Confirm that collections have the correct number of assets
 	| howell | 416 |
 	| impersonator | 884 |
 	| isbell | 1190 |
-	| iwo | 1740 |
+	| iwo | 1739 |
 	| japantheatre | 1076 |
 	| japanworld | 4231 |
 	| johnclairmiller | 240 |
