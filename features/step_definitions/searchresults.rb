@@ -28,9 +28,10 @@ end
 Then("the collection should show {int} assets") do |int|
   # put the commas into the integer
   int = int.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
-  within ("div#sortAndPerPage span.page_entries") do
-    strongs = all(:xpath, '//strong')
-    expect(strongs[3]).to have_content(int)
+  begin
+    expect(page.find("div#sortAndPerPage span.page_entries strong[3]")).to have_content(int)
+  rescue Capybara::ElementNotFound => e
+    expect(int).to have_content(0)
   end
   # page.find(:xpath, "//head/meta[@name=\"totalResults\" and @content=\"#{int}\"]", :visible => :all)
 end
