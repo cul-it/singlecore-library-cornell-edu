@@ -301,6 +301,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'arranger_creator_tesim', :label => 'Arranger', :show => false
     config.add_facet_field 'performer_creator_tesim', :label => 'Performer', :show => false
     config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
+    config.add_facet_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'status_ssi', :label => 'Status'
@@ -435,6 +436,8 @@ class CatalogController < ApplicationController
       config.add_show_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_show_field?, helper_method: :link_to_agent_facet
     end
 
+    config.add_show_field 'designer_creator_tesim', :label => 'Designer', :link_to_search => true
+    config.add_show_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :link_to_search => true
     # date
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
     config.add_show_field 'date_display_tesim', :label => 'Issue Date'
@@ -511,13 +514,13 @@ class CatalogController < ApplicationController
     config.add_show_field 'internal_number_tesim', :label => 'Internal Number'
     config.add_show_field 'exhibit_number_tesim', :label => 'Exhibit Number'
     config.add_show_field 'railroad_reporting_mark_tesim', :label => 'Railroad Reporting Mark'
-    config.add_show_field 'voigt_cat_no_tesim', :label => 'Voigt Catalog Number'
     config.add_show_field 'map_identifier2_tesim', :label => 'Context'
     config.add_show_field 'identifier2_tesim', :label => 'Topographic Map'
     config.add_show_field 'map_identifier3_tesim', :label => 'Original File Name'
     config.add_show_field 'old_catalog_number_tesim', :label => 'Old Catalog Number'
     config.add_show_field 'bam_number_tesim', :label => 'Bam Number'
     config.add_show_field 'item_number_tesim', :label => 'Item Number'
+    config.add_show_field 'voight_number_tesim', :label => 'Voigt Catalog Model Number'
 
     # Identifier type qualifier
     for n in 1..config.max_r_count[:identifier]
@@ -640,6 +643,7 @@ class CatalogController < ApplicationController
 
     # description, notes
     config.add_show_field 'description_tesim', :label => 'Description', helper_method: :autolink_field
+    config.add_show_field 'description2_tesim', :label => 'Description 2', helper_method: :autolink_field
     config.add_show_field 'devanagari_description_tesim', :label => 'Description (Devanagari)'
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes', helper_method: :autolink_field
     config.add_show_field 'note_tesim', :label => 'Note', helper_method: :autolink_field
