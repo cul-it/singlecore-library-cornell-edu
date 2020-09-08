@@ -67,13 +67,13 @@ Scenario Outline: In production, only the first multiview object shows in the in
     Given I enable the 'production' environment
         And I browse collection nicknamed '<nickname>'
         And I search for asset '<asset_title>'
-        Then I should not see id '<id>' in the search results
-        And I go to asset '<id>'
+        Then I should not see id '<second_id>' in the search results
+        And I go to asset '<second_id>'
         Then the asset title field should contain '<second_title>'
         Then I enable the 'development' environment
 
 Examples:
-    | nickname | asset_title | second_title | id | comment |
+    | nickname | asset_title | second_title | second_id | comment |
     | impersonator | Arigon - Imitateur | Arigon - Imitateur (verso) | ss:24415885 | back of postcard |
     | anthrocollections | Stingray spines | Stingray spines | ss:3235765 | multi-image and compound object |
     | impersonator | Florin Imitateur | Florin Imitateur (verso) | ss:24415925 | back of postcard |
