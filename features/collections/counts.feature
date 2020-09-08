@@ -37,11 +37,11 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | aerial | 3299 | 3390 |
 	| forum | ahearn | 909 | 909 |
 	| forum | anthrocollections | 976 | 1271 |
-	| forum | artifacts | 610 | 1673 |
+	| forum | artifacts | 611 | 1673 | # prod 610
 	| forum | bam | 2311 | 2311 |
 	| forum | bastides | 2523 | 2652 |
 	| forum | beyondtaj | 6682 | 6688 |
-	| forum | blaschka | 249 | 249 |
+	| forum | blaschka | 249 | 249 | # prod 251
 	| forum | cast | 882 | 967 |
 	| forum | coins | 1791 | 1804 |
 	| forum | conzo | 6055 | 7616 |
