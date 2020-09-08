@@ -113,7 +113,7 @@ class ApplicationController < ActionController::Base
       # JSTOR Forum filters
       fq_forum = '(id:ss* AND
         publishing_status_tesim:"Published" AND
-        -(work_sequence_isi:[2 TO *] AND -compound_object_count_isi:1) AND
+        -work_sequence_isi:[2 TO *] AND
         -project_id_ssi:('
       fq_forum += [   # comment out any collections you want to display
         ssc[:adler],  # special - see below

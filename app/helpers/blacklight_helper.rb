@@ -568,7 +568,7 @@ def asset_visible?(document)
       fq = fqa.join(' AND ')
     else
       fq = @fq
-      fq.slice! '-(work_sequence_isi:[2 TO *] AND -compound_object_count_isi:1) AND'
+      fq.slice! '-work_sequence_isi:[2 TO *] AND'
       fq
     end
     fq = URI.escape(fq)
