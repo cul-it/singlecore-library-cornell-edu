@@ -29,7 +29,7 @@ Feature: Confirm that collections have the correct number of assets
 	| dlxs | regmi: | 0 | 19 |
 	| dlxs | sat | 42038 | 42038 |
 	| dlxs | scott | 0 | 4542 |
-	| dlxs | sea | 0 | 3997 |
+	| dlxs | sea | 0 | 124420 |
 	| dlxs | witchcraft | 23076 | 23076 |
 	| dlxs | words | 446 | 446 |
 	| forum | adler | 1717 | 11193 |
