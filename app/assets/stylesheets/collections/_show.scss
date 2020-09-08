@@ -229,11 +229,17 @@ label.toggle_bookmark {
 	}
 }
 
-// Well for non-IIIF viewer stuff
+// GIF viewer
 // ------------------------------- //
-// .other-viewer.well {
-// 	background: $gray-darker;
-// }
+.other-viewer.well.gif-viewer {
+	background: black;
+	text-align: center;
+	img {
+		display: inline-block;
+		max-width: 100%;
+		height: auto;
+	}
+}
 
 // Catalog info
 // ------------------------------ //
