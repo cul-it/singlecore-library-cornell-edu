@@ -12,7 +12,7 @@ Feature: Support for DLXS collections
 	| Book | bol0001 | Title | Manifiesto dirijido por la representación |
 	| Book | bol0001 | Collection | Alfredo Montalvo Bolivian Digital Pamphlets Collection |
 	| Book | bol0001 | Creator | Fernández, Hilarión |
-	| Book | bol0001 | Site | Sucre |
+	| Book | bol0001 | Location | Sucre |
 	| Book | bol0001 | Language |  Spanish |
 	| Book | bol0001 | Subject | Bolivia - Pamphlets |
 	| Book | bol0001 | Extent | 16 300dpi JPEG page images|
@@ -58,7 +58,7 @@ Feature: Support for DLXS collections
 	| Issue | hearth1891092_102_103 | Publication Place | New York |
 	| Issue | hunt0001_102 | Title | Arte de el idioma mexicano |
 	| Issue | hunt0001_102 | Creator | Perez, Manuel |
-	| Issue | hunt0001_102 | Site | Mexico |
+	| Issue | hunt0001_102 | Location | Mexico |
 	| Issue | hunt0001_102 | Language | English |
 	| Issue | hunt0001_102 | Keywords | Nahuatl language - Grammar |
 	| Issue | hunt0001_102 | Extent | 450 300dpi JPEG page images |
@@ -130,7 +130,7 @@ Feature: Support for DLXS collections
     | author_tesim | Creator | hunt0001_1 | Perez, Manuel |
     | bibid_tesim | Catalog Record | chla1043101_01 | 1043101 |
     | collection_tesim | Collection | bol0001 | Alfredo Montalvo Bolivian Digital Pamphlets Collec |
-    | creation_site_location_tesim | Site | bol0001 | Sucre |
+    | creation_site_location_tesim | Location | bol0001 | Sucre |
     | creator_tesim | Creator | bol0001 | Fernández, Hilarión |
     | date_display_tesim | Issue Date | chla1043101_01 | 1850 |
     | date_tesim | Date | chla1043101_01 | 1850 |
@@ -139,9 +139,9 @@ Feature: Support for DLXS collections
     | keywords_tesim | Keywords | hunt0001_1 | Nahuatl language - Grammar |
     | lang_tesim | Language | bol0001 | Spanish |
     | language_tesim | Language | bol0001 | Spanish |
-    | location_facet_tesim | Site | bol0001 | Sucre |
-    | note_tesim | Note | chla1043101 | 424 p. |
-    # | notes_tesim | Notes | chla1043101 | 424 p. |
+    | location_facet_tesim | Location | bol0001 | Sucre |
+    | note_tesim | Notes | chla1043101 | 424 p. |
+    | notes_tesim | Notes | chla1043101 | 424 p. |
     | pubdate_tesim | Publication Date | bol0001 | 1848 |
     | publication_tesim | Publication | words1214796 | Cambridge, Printed by J. Smith for Deightons [etc. |
     | publisher_tesim | Publisher | bol0001 | Imprenta de Beeche y Compañía |
