@@ -16,7 +16,7 @@ Feature: Confirm that collections have the correct number of assets
 	| source | nickname | prod_count | dev_count |
 	| dlxs | bol | 30938 | 30938 |
 	| dlxs | chla | 1182144 | 1182144 |
-	| dlxs | coop | 7 | 7 |
+	| dlxs | coop | 0 | 7 |
 	| dlxs | ezra | 0 | 26257 |
 	| dlxs | flow | 23590 | 23590 |
 	| dlxs | hearth | 667370 | 667370 |
