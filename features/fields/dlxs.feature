@@ -26,7 +26,7 @@ Feature: Support for DLXS collections
 	| Page | chla1043101_01_100 | Subject | Agriculture |
 	| Page | chla1043101_01_100 | Extent | 424 |
 	| Series | ezra0001_1 | Title | Correspondence: June 17, 1828 - September 22, 1830 |
-	| Series | ezra0001_1 | Collection | Ezra Cornell Letters |
+	| Series | ezra0001_1 | Collection | Ezra Cornell Papers |
 	| Series | ezra0001_1 | Extent | 35 |
 	| Book | flow1685158 | Title | Symbolorum et emblematum centuriae |
 	| Book | flow1685158 | Collection | Language of Flowers |
@@ -38,7 +38,7 @@ Feature: Support for DLXS collections
 	| Book | flow1685158 | Publisher | Typis Voegelinanis |
 	| Book | flow1685158 | Publication Place | Leipzig |
 	| Book | hivebees5017167 | Title | Langstroth on the hive and the honey-bee |
-	| Book | hivebees5017167 | Collection | Core Historical Literature of Agriculture |
+	| Book | hivebees5017167 | Collection | Hive and the Honeybee |
 	| Book | hivebees5017167 | Creator | Langstroth, L.L. 1810-1895. |
 	# date missing now? | Book | hivebees5017167 | Date | 1853 |
 	| Book | hivebees5017167 | Identifier | hivebees5017167 |
