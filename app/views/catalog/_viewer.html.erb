@@ -28,16 +28,16 @@
 <%# display iiif image viewer if it is artstor not pdf and not gamelan %>
 <% if !@project.blank? && (@kaltura.blank? && @project != '616' && @pdf != true)%>
 
-<%# set up separate div for main and secondary images if this is zorn, blaschka or costumes %>
-<% if is_multi_image?(@document) == true %>
-  <div class="col-sm-10">
-<% end %>
+  <%# set up separate div for main and secondary images if this is zorn, blaschka or costumes %>
+  <% if is_multi_image?(@document) == true %>
+    <div class="col-sm-10">
+  <% end %>
 
-<% compound = get_compound_object(@document) %>
+  <% compound = get_compound_object(@document) %>
 
-<% @asset = request.original_url.split('ss')[1].split(':')[1] %>
-  <%# Display IIIF viewer unless there is no image in Forum %>
-  <% unless @media.include?('ss_noimage') %>
+  <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
+  <%# Display IIIF viewer unless there is no image in Forum or if it's a GIF %>
+  <% unless @media.include?('ss_noimage') || @filename.include?('.gif') %>
     <div id="image-toolbar" aria-hidden="true">
       <div class="image-controls">
         <% unless @project == "893" || @disable_download == "1" || !@download_url.present? %>
@@ -56,108 +56,111 @@
     <div id="openseadragon1" aria-hidden="true"></div>
   <% end %>
 
-  <div id="print-image">
-  <% if render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim').present? %>
-  <img src="<%= render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim') %>" alt="">
+  <%# gif display %>
+  <% if @filename.include?('gif') %>
+    <%= render partial: 'viewer_gif'%>
   <% end %>
+
+  <div id="print-image">
+    <% if render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim').present? %>
+      <img src="<%= render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim') %>" alt="">
+    <% end %>
   </div>
 
-<%# display artstor iiif if we have it %>
-<% if render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm').present? %>
-  <script>
-    //<![CDATA[
-    function initOpenSeadragon() {
-    OpenSeadragon ({
-          id: "openseadragon1",
-          zoomInButton:   "zoom-in",
-          zoomOutButton:  "zoom-out",
-          homeButton:     "home",
-          fullPageButton: "full-page",
-          minZoomImageRatio: 1,
-          prefixUrl: "/images/",
-          <% if compound.present? %>
-          nextButton:     "next-image",
-          previousButton: "previous-image",
-          showReferenceStrip: true,
-          referenceStripScroll: "vertical",
-          referenceStripPosition: 'BOTTOM_RIGHT', // 3 does not work either!
-          referenceStripSizeRatio: 0.15,
-          tileSources: <%= compound.to_s.html_safe %>,
-          sequenceMode: true
-          <% else %>
-          toolbar: "image-toolbar",
-          tileSources: "<%= render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>",
-          <% end %>
-        });
-    }
-    window.onload = initOpenSeadragon;
-    document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
-    //]]>
-  </script>
+  <%# display artstor iiif if we have it %>
+  <% if render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm').present? %>
+    <script>
+      //<![CDATA[
+      function initOpenSeadragon() {
+      OpenSeadragon ({
+            id: "openseadragon1",
+            zoomInButton:   "zoom-in",
+            zoomOutButton:  "zoom-out",
+            homeButton:     "home",
+            fullPageButton: "full-page",
+            minZoomImageRatio: 1,
+            prefixUrl: "/images/",
+            <% if compound.present? %>
+            nextButton:     "next-image",
+            previousButton: "previous-image",
+            showReferenceStrip: true,
+            referenceStripScroll: "vertical",
+            referenceStripPosition: 'BOTTOM_RIGHT', // 3 does not work either!
+            referenceStripSizeRatio: 0.15,
+            tileSources: <%= compound.to_s.html_safe %>,
+            sequenceMode: true
+            <% else %>
+            toolbar: "image-toolbar",
+            tileSources: "<%= render_document_show_field_value(:document => @document, :field => 'content_metadata_image_iiif_info_ssm') %>",
+            <% end %>
+          });
+      }
+      window.onload = initOpenSeadragon;
+      document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
+      //]]>
+    </script>
+  <%# display our own iiif if we did not have artstor %>
+  <% else %>
+    <script>
+      //<![CDATA[
+      function initOpenSeadragon() {
+      OpenSeadragon ({
+            id: "openseadragon1",
+            toolbar: "image-toolbar",
+            zoomInButton:   "zoom-in",
+            zoomOutButton:  "zoom-out",
+            homeButton:     "home",
+            fullPageButton: "full-page",
+            minZoomImageRatio: 1,
+            prefixUrl: "/images/",
+            tileSources: "<%= get_aws_iiif_url(@document) %>",
+            crossOriginPolicy: false,
+            ajaxWithCredentials: false,
+            loadTilesWithAjax: true
+          });
+      }
+      window.onload = initOpenSeadragon;
+      document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
+      //]]>
+    </script>
+  <% end %>
 
-<%# display our own iiif if we did not have artstor %>
-<% else %>
-  <script>
-    //<![CDATA[
-    function initOpenSeadragon() {
-    OpenSeadragon ({
-          id: "openseadragon1",
-          toolbar: "image-toolbar",
-          zoomInButton:   "zoom-in",
-          zoomOutButton:  "zoom-out",
-          homeButton:     "home",
-          fullPageButton: "full-page",
-          minZoomImageRatio: 1,
-          prefixUrl: "/images/",
-          tileSources: "<%= get_aws_iiif_url(@document) %>",
-          crossOriginPolicy: false,
-          ajaxWithCredentials: false,
-          loadTilesWithAjax: true
-        });
-    }
-    window.onload = initOpenSeadragon;
-    document.addEventListener("page:load", initOpenSeadragon); // Initialize when using turbolinks
-    //]]>
-  </script>
+  <%# close up previous div and open the next then display the multiple views %>
+  <% if is_multi_image?(@document) == true %>
+    </div>
+    <div class="col-sm-2 multi-images">
+      <%= render 'multi_images' %>
+    </div>
+  <% end %>
+  <%# done with iiif stuff %>
 
-<% end %>
+  <%# display av player %>
+  <% elsif !@kaltura.blank? && @kaltura_playlist.blank? %>
+    <%= render partial: 'viewer_kaltura_player'%>
 
-<%# close up previous div and open the next then display the multiple views %>
-<% if is_multi_image?(@document) == true %>
-</div>
-  <div class="col-sm-2 multi-images">
-    <%= render 'multi_images' %>
-  </div>
-<% end %>
-<%# done with iiif stuff %>
+  <%# display av playlist %>
+  <% elsif !@kaltura_playlist.blank? %>
+    <%= render partial: 'viewer_kaltura_playlist'%>
 
-<%# display av player %>
-<% elsif !@kaltura.blank? && @kaltura_playlist.blank? %>
-  <%= render partial: 'viewer_kaltura_player'%>
+  <%# inline pdf viewer for adler and rudin %>
+  <% elsif @pdf == true && (@project == '893'|| @project == '4409') %>
+    <%= render partial: 'viewer_pdf'%>
 
-<%# display av playlist %>
-<% elsif !@kaltura_playlist.blank? %>
-  <%= render partial: 'viewer_kaltura_playlist'%>
+  <%# hathi viewer for wordsworth %>
+  <% elsif (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
+    <%= render partial: 'viewer_hathi'%>
 
-<%# inline pdf viewer for adler and rudin %>
-<% elsif @pdf == true && (@project == '893'|| @project == '4409') %>
-  <%= render partial: 'viewer_pdf'%>
+  <%# chla lit of ag sciences series, do not display viewer box %>
+  <% elsif (render_document_show_field_value :document => @document, :field => 'id').include?('chlalitofagseries') %>
 
-<%# hathi viewer for wordsworth %>
-<% elsif (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
-  <%= render partial: 'viewer_hathi'%>
+  <%# oai display for ecommons - do not show viewer box %>
+  <% elsif @metadata_structure == 'oai' %>
 
-<%# chla lit of ag sciences series, do not display viewer box %>
-<% elsif (render_document_show_field_value :document => @document, :field => 'id').include?('chlalitofagseries') %>
+  <%# display book reader %>
+  <% elsif !@book_id.blank? && @project != "616" && @pdf != true %>
+    <%= render partial: 'viewer_book_reader'%>
 
-<%# oai display for ecommons - do not show viewer box %>
-<% elsif @metadata_structure == 'oai' %>
-
-<%# display book reader %>
-<% elsif !@book_id.blank? && @project != "616" && @pdf != true %>
-  <%= render partial: 'viewer_book_reader'%>
-
-<%# pdf links from jstor forum %>
-<% elsif  @pdf == true %>
-  <%= render partial: 'viewer_pdf_download'%>
-<% end %>
+  <%# pdf links from jstor forum %>
+  <% elsif  @pdf == true %>
+    <%= render partial: 'viewer_pdf_download'%>
+  <% end %>
