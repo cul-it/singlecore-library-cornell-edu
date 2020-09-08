@@ -57,7 +57,7 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | hill | 202 | 202 |
 	| forum | hiphopflyers | 494 | 494 |
 	| forum | howell | 416 | 416 |
-	| forum | impersonator | 884 | 884 |
+	| forum | impersonator | 442 | 884 |
 	| forum | isbell | 1188 | 1190 |
 	| forum | iwo | 1741 | 1741 |
 	| forum | japantheatre | 926 | 1076 |
