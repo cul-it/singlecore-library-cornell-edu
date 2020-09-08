@@ -48,6 +48,8 @@ Given("I browse collection nicknamed {string}") do |string|
 		full = 'Cornell Coin Collection'
 	when "coins"
 		full = 'Cornell Coin Collection'
+	when "coop"
+		full = 'Cooper Bridge Plan Collection'
 	when "conzo"
 		full = 'Joe Conzo Jr. Archive'
 	when "culmaps"
