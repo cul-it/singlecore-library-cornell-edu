@@ -91,7 +91,7 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | sterrett | 341 | 545 |
 	| forum | tamang | 2539 | 2539 |
 	| forum | tarr | 1948 | 2136 |
-	| forum | tellennasbeh | 52 | 52 |
+	| forum | tellennasbeh | 44 | 52 |
 	| forum | vicos | 2246 | 2246 |
 	| forum | willardstraight | 176 | 176 |
 	| other | art2301 | 55 | 55 |
