@@ -595,5 +595,16 @@ rescue Errno::ENOENT
   false #false if can't find the server
 end
 
+def publication_status(document)
+  if document["publishing_status_tesim"].present?
+    status = document["publishing_status_tesim"]
+  elsif document["status_ssi"].present?
+    status = document["status_ssi"] # legacy field
+  else
+    status = 'Unknown Publishing Status'
+  end
+  status = status.kind_of?(Array) ? status.first : status
+end
+
 end
 
