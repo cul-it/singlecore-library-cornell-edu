@@ -43,7 +43,7 @@ Feature: Compound and Related Images
     | nickname | starting | id |
     | adler | Shabba-Doo | 26304313 |
     | artifacts | Lounge 159 and Plaque | 1791489 |
-    # | cast | Mycenaean seal ring | 19081182 |
+    | cast | Mycenaean seal ring | 19081185 |
     | dendro | Bouwerie House | 22142926 |
     | dynkin | Anatoliy Skorokhod | 21214105 |
     | harrisson | Batang Kayan and Pujungan | 25032424 |
