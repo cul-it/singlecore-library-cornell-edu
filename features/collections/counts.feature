@@ -41,7 +41,7 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | bam | 2311 | 2311 |
 	| forum | bastides | 2523 | 2652 |
 	| forum | beyondtaj | 6682 | 6688 |
-	| forum | blaschka | 249 | 249 | # prod 251
+	| forum | blaschka | 248 | 249 | # 20108237 is deleted
 	| forum | cast | 882 | 967 |
 	| forum | coins | 1791 | 1804 |
 	| forum | conzo | 6055 | 7616 |
