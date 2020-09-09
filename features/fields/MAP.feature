@@ -48,7 +48,7 @@ Feature: Asset MAP fields
     | Legacy Label | Canto Image | 265890 | 1 |
     | Legacy Label | Volume Image | 265890 | 39 |
     | Measurement | Measurement | 945968 | torso: 130 x 85 (shoulders) (centimeters, height x width) |
-    | Measurement | Measurement | 22377128 | 0.64 (grams, weight) |
+    | Measurement | Measurement | 22377128 | 12 (millimeters, width) |
     | Title Language | Title (English) | 20632920 | Chaim Zinger and Yosel Cutler Write Songs |
     | Title Language | Title (Yiddish Romanized) | 20632920 | Hitlers mapole |
     | Title Language | Title (Yiddish) | 20632920 | היטלערס מפּלה |
