@@ -62,3 +62,9 @@ end
 Given("I should not see the multiimage group region") do
     expect(page.find('div#document')).not_to have_selector("div.multi-images")
 end
+
+Then("the issues listed should start in {int}") do |int|
+    # html.js body.blacklight-catalog.blacklight-catalog-show div#main-container div#maincontent.container div.row div#content.col-sm-12 div#document.document div#doc_chla1043101 div.col-sm-8.item-info h3
+    # /html/body/div[6]/div/div[2]/div/div[2]/div/div[1]/h3[1]
+    expect(page.first('div.item-info > h3')).to have_content(int)
+end

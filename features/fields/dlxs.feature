@@ -150,3 +150,15 @@ Feature: Support for DLXS collections
     | rights_tesim | Rights | bol0001 | The content in the Alfredo Montalvo Bolivian Digit |
     | subject_tesim | Subject | bol0001 | Bolivia - Pamphlets |
     | title_tesim | Title | bol0001 | Manifiesto dirijido por la representación naciona |
+
+	Scenario Outline: Journals should list the issues available
+		Given I go to asset '<asset_id>'
+			Then the field labeled 'Title' should begin with '<title>'
+			And the issues listed should start in <year>
+
+	Examples:
+		| asset_id | title | year |
+		| chla1043101 | Rural New Yorker  | 1850 |
+		| chla1895809 | Modern Farmer | 1930 |
+		| chla7031969 | Cornell extension bulletin | 1916 |
+		| hearth1891092 | The Delineator | 1891 |
