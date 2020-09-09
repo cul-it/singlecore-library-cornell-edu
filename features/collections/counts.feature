@@ -70,10 +70,10 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | kmoddl | 0 | 234 |
 	| forum | leuenberger | 0 | 231 |
 	| forum | lindsaycooper | 589 | 589 |
-	| forum | loewentheil | 638 | 1481 |
+	| forum | loewentheil | 643 | 1481 | # 643 are published, 2 Suppressed
 	| forum | obama | 87 | 200 |
 	| forum | page | 55 | 55 |
-	| forum | paniccioli | 19580 | 27895 |
+	| forum | paniccioli | 19538 | 27895 |
 	| forum | pjmode | 862 | 1083 |
 	| forum | politicalamericana | 2012 | 2223 |
 	| forum | prisonwritings | 449 | 449 |
