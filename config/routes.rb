@@ -104,6 +104,7 @@ end
     get '/collections/kmoddl' => 'high_voltage/pages#show', :id => 'collections/kmoddl/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
     get '/collections/seneca' => 'high_voltage/pages#show', :id => 'collections/seneca/index'
+    get '/collections/scottsboro' => 'high_voltage/pages#show', :id => 'collections/scottsboro/index'
   end
 
   get '/collections/:subject' => 'catalog#index'
