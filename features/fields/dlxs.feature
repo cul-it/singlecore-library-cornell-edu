@@ -40,7 +40,7 @@ Feature: Support for DLXS collections
 	| Book | hivebees5017167 | Title | Langstroth on the hive and the honey-bee |
 	| Book | hivebees5017167 | Collection | Hive and the Honeybee |
 	| Book | hivebees5017167 | Creator | Langstroth, L.L. 1810-1895. |
-	# date missing now? | Book | hivebees5017167 | Date | 1853 |
+	| Book | hivebees5017167 | Date | 1853 |
 	| Book | hivebees5017167 | Identifier | hivebees5017167 |
 	| Book | hivebees5017167 | Subject | Bees |
 	| Book | hivebees5017167 | Extent | 390 300dpi JPEG page images |
@@ -160,5 +160,5 @@ Feature: Support for DLXS collections
 		| asset_id | title | year |
 		| chla1043101 | Rural New Yorker  | 1850 |
 		| chla1895809 | Modern Farmer | 1930 |
-		| chla7031969 | Cornell extension bulletin | 1916 |
+		| chla7031969 | Cornell extension bulletin | 1925 |
 		| hearth1891092 | The Delineator | 1891 |
