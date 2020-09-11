@@ -15,11 +15,11 @@ Feature: Confirm that collections have the correct number of assets
 	Examples:
 	| source | nickname | prod_count | dev_count |
 	| dlxs | bol | 30938 | 30938 |
-	| dlxs | chla | 1182144 | 1182144 |
+	| dlxs | chla | 1182145 | 1182145 |
 	| dlxs | coop | 0 | 7 |
 	| dlxs | ezra | 0 | 26257 |
 	| dlxs | flow | 23590 | 23590 |
-	| dlxs | hearth | 667370 | 667370 |
+	| dlxs | hearth | 667363 | 667363 |
 	| dlxs | hivebees | 34479 | 34479 |
 	| dlxs | hunt | 33392 | 33392 |
 	| dlxs | izquierda | 2740 | 2740 |
@@ -36,12 +36,12 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | adwhite | 1364 | 1364 |
 	| forum | aerial | 3299 | 3390 |
 	| forum | ahearn | 909 | 909 |
-	| forum | anthrocollections | 976 | 1271 |
+	| forum | anthrocollections | 1004 | 1271 |
 	| forum | artifacts | 611 | 1673 | # prod 610
 	| forum | bam | 2311 | 2311 |
 	| forum | bastides | 2523 | 2652 |
 	| forum | beyondtaj | 6682 | 6688 |
-	| forum | blaschka | 248 | 249 | # 20108237 is deleted
+	| forum | blaschka | 251 | 252 | # 20108237 is deleted
 	| forum | cast | 882 | 967 |
 	| forum | coins | 1791 | 1804 |
 	| forum | conzo | 6055 | 7616 |
