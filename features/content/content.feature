@@ -69,11 +69,16 @@ Scenario Outline: In production, only the first multiview object shows in the in
         And I search for asset '<asset_title>'
         Then I should not see id '<second_id>' in the search results
         And I go to asset '<second_id>'
-        Then the asset title field should contain '<second_title>'
+        Then the field labeled 'Title' should begin with '<second_title>'
         Then I enable the 'development' environment
 
 Examples:
     | nickname | asset_title | second_title | second_id | comment |
     | impersonator | Arigon - Imitateur | Arigon - Imitateur (verso) | ss:24415885 | back of postcard |
     | impersonator | Florin Imitateur | Florin Imitateur (verso) | ss:24415925 | back of postcard |
+    # | seneca | Gooseberry seed | Gooseberry seed | ss:22376969 | pita |
+    | blaschka | Histioteuthis reversa | Histioteuthis reversa | ss:20108238 | |
+    | tellennasbeh | Plan 109 (center) | Plan 109 (center) | ss:19102646 | |
 
+Scenario: Reset to development environment in case of failure above
+    Given I enable the 'development' environment

@@ -26,8 +26,7 @@ end
 
 
 Then("the field labeled {string} should begin with {string}") do |string, string2|
-    within "div.item-info" do
-        #expect(find(:xpath, "//dt[text()='#{string}:']").first(:xpath, "//following-sibling::dd").text).to match(/^#{string2}/)
+    within ("div.item-info") do
         find(:xpath, "//dt[text()='#{string}:']").first(:xpath, "//following-sibling::dd[starts-with(.,'#{string2}')]")
     end
 end
