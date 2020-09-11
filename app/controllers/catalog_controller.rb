@@ -520,7 +520,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'old_catalog_number_tesim', :label => 'Old Catalog Number'
     config.add_show_field 'bam_number_tesim', :label => 'Bam Number'
     config.add_show_field 'item_number_tesim', :label => 'Item Number'
-    config.add_show_field 'voight_number_tesim', :label => 'Voigt Catalog Model Number'
+    config.add_show_field 'voight_number_tesim', :label => 'Voigt Catalog Model'
 
     # Identifier type qualifier
     for n in 1..config.max_r_count[:identifier]
