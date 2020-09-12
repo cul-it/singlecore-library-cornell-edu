@@ -14,7 +14,7 @@ Feature: Confirm that collections have the correct number of assets
 
 	Examples:
 	| source | nickname | prod_count | dev_count |
-	| dlxs | bol | 30938 | 30938 |
+	| dlxs | bol | 30939 | 30939 |
 	| dlxs | chla | 1182145 | 1182145 |
 	| dlxs | coop | 0 | 7 |
 	| dlxs | ezra | 0 | 26257 |
