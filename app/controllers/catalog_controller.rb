@@ -646,7 +646,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'description2_tesim', :label => 'Description 2', helper_method: :autolink_field
     config.add_show_field 'devanagari_description_tesim', :label => 'Description (Devanagari)'
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes', helper_method: :autolink_field
-    config.add_show_field 'note_tesim', :label => 'Note', helper_method: :autolink_field
+    # config.add_show_field 'note_tesim', :label => 'Note', helper_method: :autolink_field
     config.add_show_field 'notes_2_tesim', :label => 'Note'
     config.add_show_field 'annotation_tesim', :label => 'Annotation'
     config.add_show_field 'condition_tesim', :label => 'Condition'
