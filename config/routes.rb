@@ -91,6 +91,7 @@ end
   get '/collections/ragamala' => 'high_voltage/pages#show', :id => 'collections/ragamala/index'
   get '/collections/railroad' => 'high_voltage/pages#show', :id => 'collections/railroad/index'
   get '/collections/rudin' => 'high_voltage/pages#show', :id => 'collections/rudin/index'
+  get '/collections/seneca' => 'high_voltage/pages#show', :id => 'collections/seneca/index'
   get '/collections/srilanka' => 'high_voltage/pages#show', :id => 'collections/srilanka/index'
   get '/collections/stereoscopes' => 'high_voltage/pages#show', :id => 'collections/stereoscopes/index'
   get '/collections/tamang' => 'high_voltage/pages#show', :id => 'collections/tamang/index'
@@ -103,7 +104,7 @@ end
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/kmoddl' => 'high_voltage/pages#show', :id => 'collections/kmoddl/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
-    get '/collections/seneca' => 'high_voltage/pages#show', :id => 'collections/seneca/index'
+    get '/collections/scottsboro' => 'high_voltage/pages#show', :id => 'collections/scottsboro/index'
   end
 
   get '/collections/:subject' => 'catalog#index'
