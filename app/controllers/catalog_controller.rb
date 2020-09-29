@@ -304,7 +304,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :show => false
 
     if ENV["COLLECTIONS"] == "development"
-      config.add_facet_field 'status_ssi', :label => 'Status'
+      config.add_facet_field 'publishing_status_tesim', :label => 'Status'
     end
 
     # Have BL send all facet field names to Solr
