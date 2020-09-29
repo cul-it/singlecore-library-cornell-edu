@@ -169,7 +169,7 @@ class ApplicationController < ActionController::Base
         #ssc[:repsslides],
         #ssc[:rmc],
         #ssc[:rudin],
-        ssc[:seneca],
+        #ssc[:seneca],
         #ssc[:squeezes],
         #ssc[:srilanka],
         #ssc[:stereoscopes],

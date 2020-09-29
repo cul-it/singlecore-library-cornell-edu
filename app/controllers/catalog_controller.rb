@@ -682,6 +682,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'location_repo_tesim', :label => 'Repository Location'
     config.add_show_field 'witness_tesim', :label => 'Witnesses'
     config.add_show_field 'people_tesim', :label => 'People'
+    config.add_show_field 'geography_tesim', :label => 'Places'
     config.add_show_field 'onames_tesim', :label => 'Other Names'
     config.add_show_field 'repo_orig_tesim', :label => 'Original Repository'
     config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true
