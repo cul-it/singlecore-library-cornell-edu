@@ -278,16 +278,6 @@ def get_tracks args
     collection = args['collection_tesim'][0].gsub(" ","+")
     occasion = args['r1_event_name_tesim'][0].gsub(" ","+")
     response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=collection_tesim:\"Indonesian+Music+Archive\"+AND+r1_event_name_tesim:\"#{occasion}\"+AND+date_tesim:\"#{date}\"&wt=json&indent=true&sort=id%20asc&rows=100")).with_indifferent_access
-
-#******************
-save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
-msg = [" #{__method__} ".center(60,'Z')]
-msg << "response: " + response['response']['docs'].inspect
-msg << 'Z' * 60
-puts msg.to_yaml
-Rails.logger.level = save_level
-#*******************
     @response = response['response']['docs']
     return @response
   end
