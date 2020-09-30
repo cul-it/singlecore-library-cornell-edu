@@ -335,7 +335,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'pubplace_tesim', :label => 'Publication Place'
     config.add_index_field 'pubdate_tesim', :label => 'Date'
     config.add_index_field 'book_title', :label => 'Book Title'
-    config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
+    config.add_index_field 'date_tesim', :label => 'Date'
     config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
 
     config.add_index_field 'format_tesim', :label => 'Format'
@@ -439,7 +439,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'designer_creator_tesim', :label => 'Designer', :link_to_search => true
     config.add_show_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :link_to_search => true
     # date
-    config.add_show_field 'date_hash_tesim', :label => 'Date', :link_to_search => true, helper_method: :compound_field_display
+    config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
     config.add_show_field 'date_display_tesim', :label => 'Issue Date'
     config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
