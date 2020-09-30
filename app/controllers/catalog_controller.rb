@@ -528,8 +528,8 @@ class CatalogController < ApplicationController
       config.add_show_field 'r' + n.to_s + '_identifier_tesim', :label => label, if: :display_identifier_show_field?
     end
     config.add_show_field 'filename_s', :label => 'File Name' # 63
-    config.add_show_field 'kaltura_id_ssm', :label => 'Kaltura ID' # 3
-    config.add_show_field 'kaltura_playlist_ssm', :label => 'Kaltura Playlist' # 1
+    config.add_show_field 'kaltura_id_sim', :label => 'Kaltura ID' # 3
+    config.add_show_field 'kaltura_playlist_sim', :label => 'Kaltura Playlist' # 1
 
     # collection- and item-specific
     config.add_show_field 'occasion_tesim', :label => 'Occasion'

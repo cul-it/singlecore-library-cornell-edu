@@ -19,8 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
    - r1_event_name_tesim
    - r1_exhibition_tesim
    - r1_inscription_tesim
-   - r1_kaltura_id_s -> kaltura_id_ssm
-   - r1_kaltura_playlist_s -> kaltura_playlist_ssm
+   - r1_kaltura_id_s -> kaltura_id_sim
+   - r1_kaltura_playlist_s -> kaltura_playlist_sim
    - r1_keywords_subject_tesim
    - r1_language_tesim
    - r1_location_tesim
