@@ -319,7 +319,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'architect_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_index_field 'occasion_tesim', :label => 'Occasion'
+    config.add_index_field 'r1_event_name_tesim', :label => 'Occasion'
     config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
     config.add_index_field 'common_name_tesim', :label => 'Common Name'
     config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
@@ -532,7 +532,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'kaltura_playlist_sim', :label => 'Kaltura Playlist' # 1
 
     # collection- and item-specific
-    config.add_show_field 'occasion_tesim', :label => 'Occasion'
+    config.add_show_field 'r1_event_name_tesim', :label => 'Occasion'
     config.add_show_field 'track_ssi', :label => 'Track'
     config.add_show_field 'track_isi', :label => 'Track'
     config.add_show_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
