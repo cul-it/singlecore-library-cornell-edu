@@ -2,6 +2,11 @@ Then /^show me the page$/ do
     print page.html
 end
 
+Then("show me the element {string}") do |string|
+    element = page.first(string)
+    what_is element
+end
+
 Then(/^I sleep (\d+) seconds$/) do |wait_seconds|
     sleep wait_seconds.to_i
 end
