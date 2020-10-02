@@ -419,7 +419,7 @@ def chla_thumbnail args
 
    end
    @response = response['response']['docs']
-   return @response[0]['awsthumbnail_tesim'][0].present? ? @response[0]['awsthumbnail_tesim'][0].to_s : ''
+   return @response[0]['awsthumbnail_tesim'].present? ? @response[0]['awsthumbnail_tesim'][0].to_s : ''
   end
 end
 
