@@ -16,7 +16,6 @@ Feature: Confirm that collections have the correct number of assets
 	| source | nickname | prod_count | dev_count |
 	| dlxs | bol | 30939 | 30939 |
 	| dlxs | chla | 1182145 | 1182145 |
-	| dlxs | coop | 0 | 7 |
 	| dlxs | ezra | 0 | 26257 |
 	| dlxs | flow | 23590 | 23590 |
 	| dlxs | hearth | 667363 | 667363 |
@@ -26,7 +25,6 @@ Feature: Confirm that collections have the correct number of assets
 	| dlxs | liber | 1205 | 1205 |
 	| dlxs | may | 224560 | 224560 |
 	| dlxs | nur | 16504 | 16504 |
-	| dlxs | regmi: | 0 | 19 |
 	| dlxs | sat | 42038 | 42038 |
 	| dlxs | scott | 0 | 4542 |
 	| dlxs | sea | 0 | 124420 |
@@ -115,7 +113,6 @@ Feature: Confirm that collections have the correct number of assets
 	| source | nickname | digital | prod_count | digital_stg | dev_count |
 	| dlxs | bol | 30939 | 30939 | 30939 | 30939 |
 	| dlxs | chla | 1182145 | 1182145 | 1182145 | 1182145 |
-	| dlxs | coop | 7 | 0 | 7 | 7 |
 	| dlxs | ezra | 0 | 0 | 26257 | 26257 |
 	| dlxs | flow | 23590 | 23590 | 23590 | 23590 |
 	| dlxs | hearth | 667363 | 667363 | 667363 | 667363 |
@@ -125,7 +122,6 @@ Feature: Confirm that collections have the correct number of assets
 	| dlxs | liber | 1205 | 1205 | 1205 | 1205 |
 	| dlxs | may | 224560 | 224560 | 224560 | 224560 |
 	| dlxs | nur | 16504 | 16504 | 16504 | 16504 |
-	| dlxs | regmi: | 0 | 0 | 19 | 19 |
 	| dlxs | sat | 42038 | 42038 | 42038 | 42038 |
 	| dlxs | scott | 0 | 0 | 4542 | 4542 |
 	| dlxs | sea | 0 | 0 | 124420 | 124420 |
