@@ -42,7 +42,6 @@ end
 Then("show environment") do
     show_environment
 end
-end
 
 And(/^I click on text '(.*?)'$/) do |text|
     click_link(text)

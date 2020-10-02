@@ -25,42 +25,23 @@ Then("there should be {int} search results") do |int|
 end
 
 Then("the collection should show {int} assets") do |int|
-  # put the commas into the integer
-  int = int.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
   begin
-    begin
+    if int.to_s == '0'
+      expect(page).not_to have_selector("div#sortAndPerPage span.page_entries strong[3]")
+    else
+      # put the commas into the integer
+      int = int.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
       expect(page.find("div#sortAndPerPage span.page_entries strong[3]")).to have_content(int)
-    rescue Capybara::ElementNotFound => e
-      expect(int).to have_content(0)
-      raise e
     end
+  rescue Capybara::ElementNotFound => e
+    where_am_i
+    show_environment
+    raise e
   rescue RSpec::Expectations::ExpectationNotMetError => e
     where_am_i
     show_environment
     raise e
   end
-  # page.find(:xpath, "//head/meta[@name=\"totalResults\" and @content=\"#{int}\"]", :visible => :all)
-end
-
-Then("the collection should show {int} assets on {string}") do |int,site|
-  # put the commas into the integer
-  int = int.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
-  begin
-    go_to_site site
-    begin
-      expect(page.find("div#sortAndPerPage span.page_entries strong[3]")).to have_content(int)
-    rescue Capybara::ElementNotFound => e
-      expect(int).to have_content(0)
-      raise e
-    end
-  rescue RSpec::Expectations::ExpectationNotMetError => e
-    where_am_i
-    show_environment
-    raise e
-  ensure
-    go_to_this_site
-  end
-  # page.find(:xpath, "//head/meta[@name=\"totalResults\" and @content=\"#{int}\"]", :visible => :all)
 end
 
 Then("I should see {int} additional views") do |int|
