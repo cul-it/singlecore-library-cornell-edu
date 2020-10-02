@@ -1,6 +1,5 @@
-Given("I browse collection nicknamed {string}") do |string|
-
-    case "#{string}"
+def get_collection_path(nickname)
+    case "#{nickname}"
 
 	when "adler"
 		full = 'Adler Hip Hop Archive'
@@ -215,6 +214,10 @@ Given("I browse collection nicknamed {string}") do |string|
         raise "Unknown collection nickname: #{string}"
     end
 
-    uri = URI.escape(full).gsub('&', '%26')
+	uri = URI.escape(full).gsub('&', '%26')
+end
+
+Given("I browse collection nicknamed {string}") do |string|
+	uri = get_collection_path(string)
     visit("/?f[collection_tesim][]=#{uri}")
 end
