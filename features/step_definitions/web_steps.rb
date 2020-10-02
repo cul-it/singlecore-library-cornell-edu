@@ -42,25 +42,7 @@ end
 Then("show environment") do
     show_environment
 end
-
-And("I visit site {string}") do |site|
-    go_to_site(site)
 end
-
-Then("I return to this site") do
-    go_to_this_site
-end
-
-def go_to_site(string)
-    Capybara.run_server = false
-    Capybara.app_host = string
-end
-
-def go_to_this_site
-    Capybara.run_server = true
-    Capybara.app_host = 'http://www.example.com'
-end
-
 
 And(/^I click on text '(.*?)'$/) do |text|
     click_link(text)
