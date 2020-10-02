@@ -97,14 +97,18 @@ Feature: Confirm that collections have the correct number of assets
 
 	Scenario Outline: Check legacy system counts
 	Given I enable the 'production' environment
+		And I browse collection nicknamed '<nickname>' on 'https://digital.library.cornell.edu'
+		And show me the element 'div#sortAndPerPage'
+		Then I return to this site
 		And I browse collection nicknamed '<nickname>'
         Then the collection should show <prod_count> assets
-		And I browse collection nicknamed '<nickname>' on 'https://digital.library.corell.edu'
-		Then the collection should show <digital> assets
+		And I browse collection nicknamed '<nickname>' on 'https://digital.library.cornell.edu'
+		Then show me the element 'div#sortAndPerPage'
+		Then the collection should show <digital> assets on 'https://digital.library.cornell.edu'
 		Then I enable the 'development' environment
 		And I browse collection nicknamed '<nickname>'
         Then the collection should show <dev_count> assets
-		And I browse collection nicknamed '<nickname>' on 'https://digital-stg.library.corell.edu'
+		And I browse collection nicknamed '<nickname>' on 'https://digital-stg.library.cornell.edu'
 		Then the collection should show <digital_stg> assets
 
 
