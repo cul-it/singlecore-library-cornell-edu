@@ -221,3 +221,8 @@ Given("I browse collection nicknamed {string}") do |string|
 	uri = get_collection_path(string)
     visit("/?f[collection_tesim][]=#{uri}")
 end
+
+Given("I browse collection nicknamed {string} on {string}") do |string,domain|
+	uri = get_collection_path(string)
+    visit("#{domain}/?f[collection_tesim][]=#{uri}")
+end
