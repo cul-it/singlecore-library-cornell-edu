@@ -346,29 +346,11 @@ class CatalogController < ApplicationController
       config.add_index_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_show_field?
     end
 
-    config.add_index_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true # 37
-    config.add_index_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
-    config.add_index_field 'culture_tesim', :label => 'Culture', :link_to_search => true # 34
     #config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
     for n in 1..config.max_r_count[:date]
       label = 'Date' + (n == 1 ? '' : ' ' + n.to_s)
       config.add_index_field 'r' + n.to_s + '_date_tesim', :label => label, if: :display_date_show_field?
     end
-
-    config.add_index_field 'description_tesim', :label => 'Description' # 53
-    config.add_index_field 'earliest_date_isi', :label => 'Earliest Date' # 60
-    #config.add_index_field 'identifier_hash_tesim', :label => 'Identifier', helper_method: :compound_field_display
-    for n in 1..config.max_r_count[:identifier]
-      label = 'Identifier' + (n == 1 ? '' : ' ' + n.to_s)
-      config.add_index_field 'r' + n.to_s + '_identifier_tesim', :label => label, if: :display_identifier_show_field?
-    end
-
-    config.add_index_field 'keywords_subject_tesim', :label => 'Keywords' # 3
-    config.add_index_field 'latest_date_isi', :label => 'Latest Date' # 60
-    config.add_index_field 'mat_tech_tesim', :label => 'Materials/Techniques' # 36
-    config.add_index_field 'repository_tesim', :label => 'Repository', :link_to_search => true # 58
-    config.add_index_field 'subject_tesim', :label => 'Subject', :link_to_search => true # 50
-    config.add_index_field 'work_type_tesim', :label => 'Work Type' # 56
 
     if "#{ENV['COLLECTIONS']}" == "development"
       config.add_index_field 'collection_sequence_isi', :label => 'Collection Sequence'
