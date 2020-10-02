@@ -100,7 +100,6 @@ Feature: Confirm that collections have the correct number of assets
 		And I browse collection nicknamed '<nickname>'
         Then the collection should show <prod_count> assets
 		And I browse collection nicknamed '<nickname>' on 'https://digital.library.corell.edu'
-		Then show me the page
 		Then the collection should show <digital> assets
 		Then I enable the 'development' environment
 		And I browse collection nicknamed '<nickname>'
