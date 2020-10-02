@@ -16,26 +16,26 @@ Feature: Confirm that collections have the correct number of assets
 	| source | nickname | prod_count | dev_count |
 	| dlxs | bol | 30939 | 30939 |
 	| dlxs | chla | 1182145 | 1182145 |
-	| dlxs | ezra | 0 | 26257 |
-	| dlxs | flow | 23590 | 23590 |
+	# | dlxs | ezra | 0 | 26257 |
+	| dlxs | flow | 23671 | 23671 |
 	| dlxs | hearth | 667363 | 667363 |
 	| dlxs | hivebees | 34479 | 34479 |
 	| dlxs | hunt | 33392 | 33392 |
-	| dlxs | izquierda | 2740 | 2740 |
-	| dlxs | liber | 1205 | 1205 |
-	| dlxs | may | 224560 | 224560 |
-	| dlxs | nur | 16504 | 16504 |
-	| dlxs | sat | 42038 | 42038 |
+	| dlxs | izquierda | 0 | 2740 |
+	| dlxs | liber | 0 | 1205 |
+	| dlxs | may | 0 | 224560 |
+	| dlxs | nur | 0 | 16504 |
+	| dlxs | sat | 0 | 42038 |
 	| dlxs | scott | 0 | 4542 |
 	| dlxs | sea | 0 | 124420 |
-	| dlxs | witchcraft | 23076 | 23076 |
+	| dlxs | witchcraft | 0 | 23076 |
 	| dlxs | words | 446 | 446 |
 	| forum | adler | 1717 | 11193 |
 	| forum | adwhite | 1364 | 1364 |
 	| forum | aerial | 3299 | 3390 |
-	| forum | ahearn | 909 | 909 |
-	| forum | anthrocollections | 1004 | 1271 |
-	| forum | artifacts | 611 | 1673 | # prod 610
+	| forum | ahearn | 0 | 909 |
+	| forum | anthrocollections | 992 | 1271 |
+	| forum | artifacts | 610 | 1673 |
 	| forum | bam | 2311 | 2311 |
 	| forum | bastides | 2523 | 2652 |
 	| forum | beyondtaj | 6682 | 6688 |
@@ -71,7 +71,7 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | loewentheil | 643 | 1481 | # 643 are published, 2 Suppressed
 	| forum | obama | 87 | 200 |
 	| forum | page | 55 | 55 |
-	| forum | paniccioli | 19538 | 27895 |
+	| forum | paniccioli | 19581 | 27895 |
 	| forum | pjmode | 862 | 1083 |
 	| forum | politicalamericana | 2012 | 2223 |
 	| forum | prisonwritings | 449 | 449 |
@@ -82,7 +82,7 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | repsslides | 1357 | 1357 |
 	| forum | rmc | 11438 | 19444 |
 	| forum | rudin | 517 | 517 |
-	| forum | seneca | 0 | 697 |
+	| forum | seneca | 693 | 697 |
 	| forum | squeezes | 185 | 369 |
 	| forum | srilanka | 527 | 527 |
 	| forum | stereoscopes | 213 | 213 |
