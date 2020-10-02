@@ -24,10 +24,13 @@ end
 
 Given("where am I") do
     where_am_i
+    show_environment
 end
 
 def where_am_i
-    puts "\n" + page.current_url.inspect
+    puts "\n" + URI.parse(current_url).to_s
+end
+
 def show_environment
     puts "\n******************************"
     puts "Capybara.app_host " + Capybara.app_host.to_s
