@@ -116,8 +116,8 @@ Feature: Confirm that collections have the correct number of assets
 	| source | nickname | digital | prod_count | digital_stg | dev_count |
 	| dlxs | bol | 30939 | 30939 | 30939 | 30939 |
 	| dlxs | chla | 1182145 | 1182145 | 1182145 | 1182145 |
-	| dlxs | ezra | 0 | 0 | 26257 | 26257 |
-	| dlxs | flow | 23590 | 23590 | 23590 | 23590 |
+	# | dlxs | ezra | 0 | 0 | 26257 | 26257 |
+	| dlxs | flow | 23590 | 23671 | 23671 | 23671 |
 	| dlxs | hearth | 667363 | 667363 | 667363 | 667363 |
 	| dlxs | hivebees | 34479 | 34479 | 34479 | 34479 |
 	| dlxs | hunt | 33392 | 33392 | 33392 | 33392 |
