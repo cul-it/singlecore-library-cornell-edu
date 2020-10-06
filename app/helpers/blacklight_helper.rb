@@ -506,6 +506,47 @@ def has_collection_selected?
   end
 end
 
+def compound_field_hash(field:, document:, key_name:, value_name:)
+  parts = {}
+  if document[field].present?
+    json = document[field].first
+    compound = JSON.parse(json)
+    compound.each do |row|
+      row.each do |values|
+        key = values[key_name]
+        parts[key] = values[value_name]
+      end
+    end
+    parts
+  end
+#******************
+save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
+msg = [" #{__method__} ".center(60,'Z')]
+msg << "field: " + field.inspect
+msg << "key_name: " + key_name.inspect
+msg << "compound: " + compound.inspect
+msg << "parts: " + parts.inspect
+msg << 'Z' * 60
+puts msg.to_yaml
+Rails.logger.level = save_level
+#*******************
+end
+
+def compound_legacy_label(document)
+  parts = compound_field_hash(document: document,
+    field: 'legacy_label_hash_tesim',
+    key_name: 'legacy_label',
+    value_name:'legacy_value')
+end
+
+def compound_identifier(document)
+  parts = compound_field_hash(document: document,
+    field: 'identifier_hash_tesim',
+    key_name: 'identifier_type',
+    value_name:'identifier')
+end
+
 def compound_field_display args
   field = args[:field]
   doc = args[:document]
