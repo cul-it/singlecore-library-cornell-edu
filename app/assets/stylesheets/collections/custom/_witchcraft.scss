@@ -1,0 +1,49 @@
+// Variables
+// --------------
+
+$font-family-witchcraft-display: 'Overlock', cursive;
+@import url(//fonts.googleapis.com/css?family=Lancelot|Overlock);
+$witchcraft-red: #932129;
+
+
+.collection-banner-witchcraft {
+	background: black;
+	h2 {
+		font-family: $font-family-witchcraft-display;
+		color: white;
+		padding: .25em 0;
+	}
+}
+.witchcraft-layout {
+	h3, h4 {
+		color: $witchcraft-red;
+		font-family: $font-family-witchcraft-display;
+	}
+	.collection-browse {
+		a {
+			background: $witchcraft-red;
+		}
+	}
+}
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up) 
+@media (min-width: $screen-sm) { 
+	.collection-banner-witchcraft {
+		background: black url("/collections/witchcraft/hero_1200w.jpg") no-repeat top right;
+		h2 {
+			padding: 1em 0;
+			font-size: 48px;
+		}
+	}
+}
+
+// Medium devices (desktops, 992px and up)
+// @media (min-width: $screen-md) {
+// }
+
+// Large devices (desktops, 1200px and up)
+// @media (min-width: $screen-lg) {
+// }
