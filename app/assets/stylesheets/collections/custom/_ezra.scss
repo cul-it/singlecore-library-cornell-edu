@@ -1,0 +1,45 @@
+// Variables
+// --------------
+
+$ezra-red: #b41b1d;
+
+
+.collection-banner-ezra {
+	background: $ezra-red;
+	h2 {
+		font-family: $font-family-serif;
+		color: white;
+		padding: .25em 0;
+	}
+}
+// .ezra-layout {
+// 	// h3, h4 {
+// 	// 	color: $ezra-red;
+// 	// }
+// 	// .collection-browse {
+// 	// 	a {
+// 	// 		background: $ezra-red;
+// 	// 	}
+// 	// }
+// }
+
+// MEDIA QUERIES
+// -------------------------
+
+// Small devices (tablets, 768px and up) 
+@media (min-width: $screen-sm) { 
+	.collection-banner-ezra {
+		background: $ezra-red url("/collections/ezra/banner_bg.gif") repeat-x;
+		h2 {
+			padding: 1em 0;
+		}
+	}
+}
+
+// Medium devices (desktops, 992px and up)
+// @media (min-width: $screen-md) {
+// }
+
+// Large devices (desktops, 1200px and up)
+// @media (min-width: $screen-lg) {
+// }
