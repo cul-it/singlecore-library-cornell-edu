@@ -34,7 +34,7 @@ Feature: Support for DLXS collections
 	| Book | flow1685158 | Catalog Record | 1685158 |
 	| Book | flow1685158 | Subject | Emblems |
 	| Book | flow1685158 | Extent | 432 300dpi JPG page images |
-	| Book | flow1685158 | Note | 432 p. |
+	| Book | flow1685158 | Notes | 432 p. |
 	| Book | flow1685158 | Publisher | Typis Voegelinanis |
 	| Book | flow1685158 | Publication Place | Leipzig |
 	| Book | hivebees5017167 | Title | Langstroth on the hive and the honey-bee |
@@ -53,7 +53,7 @@ Feature: Support for DLXS collections
 	| Issue | hearth1891092_102_103 | Catalog Record | 1891092 |
 	| Issue | hearth1891092_102_103 | Subject | Dressmaking |
 	| Issue | hearth1891092_102_103 | Extent | 1138 300dpi JPG page images |
-	| Issue | hearth1891092_102_103 | Note | Digitization funded by Institute of Museum |
+	| Issue | hearth1891092_102_103 | Notes | Digitization funded by Institute of Museum |
 	| Issue | hearth1891092_102_103 | Publisher | The Butterick company, inc. |
 	| Issue | hearth1891092_102_103 | Publication Place | New York |
 	| Issue | hunt0001_102 | Title | Arte de el idioma mexicano |
@@ -62,7 +62,7 @@ Feature: Support for DLXS collections
 	| Issue | hunt0001_102 | Language | English |
 	| Issue | hunt0001_102 | Keywords | Nahuatl language - Grammar |
 	| Issue | hunt0001_102 | Extent | 450 300dpi JPEG page images |
-	| Issue | hunt0001_102 | Note | 450 p. |
+	| Issue | hunt0001_102 | Notes | 450 p. |
 	| Issue | hunt0001_102 | Publisher | F. de Ribera Calderon |
 	| Issue | hunt0001_102 | Publication Place | Mexico |
 	| Issue | hunt0001_102 | Publication Date | 1713 |
