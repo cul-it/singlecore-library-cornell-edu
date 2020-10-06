@@ -48,7 +48,7 @@ Feature: Asset MAP fields
     | Legacy Label | Old Species | 20108068 | emmalini |
     | Legacy Label | Original Blaschka Species Name | 20108068 | Terebella emmalini |
     | Legacy Label | Volume Image | 265890 | 39 |
-    | Measurement | Measurement | 22377128 | 12 (millimeters, width) |
+    | Measurement | Measurement | 22377128 | 0.64 (grams, weight) |
     | Measurement | Measurement | 945968 | torso: 130 x 85 (shoulders) (centimeters, height x width) |
     | Series | Series | 298201 | Gender roles series |
     | Title Language | Title (English) | 18860179 | Nordic House |

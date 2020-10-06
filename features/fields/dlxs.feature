@@ -38,7 +38,7 @@ Feature: Support for DLXS collections
 	| Book | flow1685158 | Publisher | Typis Voegelinanis |
 	| Book | flow1685158 | Publication Place | Leipzig |
 	| Book | hivebees5017167 | Title | Langstroth on the hive and the honey-bee |
-	| Book | hivebees5017167 | Collection | Hive and the Honeybee |
+	| Book | hivebees5017167 | Collection | Core Historical Literature of Agriculture |
 	| Book | hivebees5017167 | Creator | Langstroth, L.L. 1810-1895. |
 	| Book | hivebees5017167 | Date | 1853 |
 	| Book | hivebees5017167 | Identifier | hivebees5017167 |
@@ -160,5 +160,5 @@ Feature: Support for DLXS collections
 		| asset_id | title | year |
 		| chla1043101 | Rural New Yorker  | 1850 |
 		| chla1895809 | Modern Farmer | 1930 |
-		| chla7031969 | Cornell extension bulletin | 1925 |
+		| chla7031969 | Cornell extension bulletin | 1916 |
 		| hearth1891092 | The Delineator | 1891 |
