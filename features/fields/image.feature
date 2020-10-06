@@ -51,9 +51,9 @@ Feature: Compound and Related Images
     | obama | The end of white America? | 1282486 |
     | paniccioli | Christopher Wallace | 23019390 |
     | ragamala | Unidentified Deity | 9011771 |
-    | seneca | American beech charcoal | 22376848 |
-    | seneca | American beech charcoal | 24767699 |
-    | seneca | Marten long bone | 22376742 |
+    # | seneca | American beech charcoal | 22376848 |
+    # | seneca | American beech charcoal | 24767699 |
+    # | seneca | Marten long bone | 22376742 |
 
     @javascript
     @image-compound-views
