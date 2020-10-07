@@ -506,25 +506,22 @@ def has_collection_selected?
   end
 end
 
-def compound_field_hash(field:, document:, key_name:, value_name:, find_key:)
+def compound_field_search(field:, document:, find_key_name:, find_key_value:, return_key_name:)
   if document[field].present?
     json = document[field].first
     compound = JSON.parse(json)
     compound.each do |row|
       row.each do |values|
-          #******************
-          save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-          Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
-          msg = [" #{__method__} ".center(60,'Z')]
-          msg << "field: " + field.inspect
-          msg << "key_name: " + key_name.inspect
-          msg << "values: " + values.inspect
-          msg << 'Z' * 60
-          puts msg.to_yaml
-          Rails.logger.level = save_level
-          #*******************
-        if values[key_name] == find_key
-          return values[value_name]
+        found_row = return_value = nil
+        values.each do |key,value|
+          if key == find_key_name && value == find_key_value
+            found_row = key
+          elsif key == return_key_name
+            return_value = value
+          end
+        end
+        if found_row.present?
+          return return_value
         end
       end
     end
@@ -533,20 +530,20 @@ def compound_field_hash(field:, document:, key_name:, value_name:, find_key:)
 end
 
 def compound_legacy_label(document, find_key)
-  parts = compound_field_hash(document: document,
+  parts = compound_field_search(document: document,
     field: 'legacy_label_hash_tesim',
-    key_name: 'legacy_label',
-    value_name:'legacy_value',
-    find_key: find_key)
+    find_key_name: 'legacy_label',
+    find_key_value: find_key,
+    return_key_name:'legacy_value')
   return parts
 end
 
 def compound_identifier(document, find_key)
-  parts = compound_field_hash(document: document,
+  parts = compound_field_search(document: document,
     field: 'identifier_hash_tesim',
-    key_name: 'identifier_type',
-    value_name:'identifier',
-    find_key: find_key)
+    find_key_name: 'identifier_type',
+    find_key_value: find_key,
+    return_key_name:'identifier')
   return parts
 end
 
