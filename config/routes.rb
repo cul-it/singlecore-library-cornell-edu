@@ -102,9 +102,11 @@ end
   # dev pages
   if ENV['COLLECTIONS'] == "development"
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
+    get '/collections/ezra-cornell' => 'high_voltage/pages#show', :id => 'collections/ezra-cornell/index'
     get '/collections/kmoddl' => 'high_voltage/pages#show', :id => 'collections/kmoddl/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
     get '/collections/scottsboro' => 'high_voltage/pages#show', :id => 'collections/scottsboro/index'
+    get '/collections/witchcraft' => 'high_voltage/pages#show', :id => 'collections/witchcraft/index'
   end
 
   get '/collections/:subject' => 'catalog#index'
