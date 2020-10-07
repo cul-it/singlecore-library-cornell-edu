@@ -506,45 +506,48 @@ def has_collection_selected?
   end
 end
 
-def compound_field_hash(field:, document:, key_name:, value_name:)
-  parts = {}
+def compound_field_hash(field:, document:, key_name:, value_name:, find_key:)
   if document[field].present?
     json = document[field].first
     compound = JSON.parse(json)
     compound.each do |row|
       row.each do |values|
-        key = values[key_name]
-        parts[key] = values[value_name]
+          #******************
+          save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+          Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
+          msg = [" #{__method__} ".center(60,'Z')]
+          msg << "field: " + field.inspect
+          msg << "key_name: " + key_name.inspect
+          msg << "values: " + values.inspect
+          msg << 'Z' * 60
+          puts msg.to_yaml
+          Rails.logger.level = save_level
+          #*******************
+        if values[key_name] == find_key
+          return values[value_name]
+        end
       end
     end
-    parts
   end
-#******************
-save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
-Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
-msg = [" #{__method__} ".center(60,'Z')]
-msg << "field: " + field.inspect
-msg << "key_name: " + key_name.inspect
-msg << "compound: " + compound.inspect
-msg << "parts: " + parts.inspect
-msg << 'Z' * 60
-puts msg.to_yaml
-Rails.logger.level = save_level
-#*******************
+  return nil
 end
 
-def compound_legacy_label(document)
+def compound_legacy_label(document, find_key)
   parts = compound_field_hash(document: document,
     field: 'legacy_label_hash_tesim',
     key_name: 'legacy_label',
-    value_name:'legacy_value')
+    value_name:'legacy_value',
+    find_key: find_key)
+  return parts
 end
 
-def compound_identifier(document)
+def compound_identifier(document, find_key)
   parts = compound_field_hash(document: document,
     field: 'identifier_hash_tesim',
     key_name: 'identifier_type',
-    value_name:'identifier')
+    value_name:'identifier',
+    find_key: find_key)
+  return parts
 end
 
 def compound_field_display args

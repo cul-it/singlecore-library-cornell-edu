@@ -1,14 +1,12 @@
 <% document = locals[:document] %>
 <% collection_nickname = (render_index_field_value document, :field => 'collection_nickname_ssi').present? ? (render_index_field_value document, :field => 'collection_nickname_ssi') : '' %>
 <% if collection_nickname == 'blaschka' %>
-    <% identifier = compound_identifier document %>
-    <h3>Identifer</h3>
-    <%= identifier.inspect %>
-    <% if identifier.present? && identifier["Common Name"].present? %>
-        <div class="blaschka-common-name"><%=h 'Common Name: ' + identifier['Common Name'] %></div>
+    <% identifier = compound_identifier document, 'Common Name' %>
+    <% if identifier.present? %>
+        <div class="blaschka-common-name"><%=h 'Common Name: ' + identifier %></div>
     <% end %>
-    <% label = compound_legacy_label document %>
-    <% if label.present? && label['Blaschka Number'].present? %>
-        <div class="blaschka-number"><%=h 'Blaschka Number: ' + label['Blaschka Number'] %></div>
+    <% label = compound_legacy_label document, 'Blaschka Number' %>
+    <% if label.present? %>
+        <div class="blaschka-number"><%=h 'Blaschka Number: ' + label %></div>
     <% end %>
 <% end %>
