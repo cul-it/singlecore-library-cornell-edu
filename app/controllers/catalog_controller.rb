@@ -367,7 +367,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'map_title_language2_tesim', :label => 'Translated Title Language'
     config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title'
     config.add_show_field 'project_title_tesim', :label => 'Project Title'
-    config.add_show_field 'common_name_tesim', :label => 'Common Name'
+    # config.add_show_field 'common_name_tesim', :label => 'Common Name'  // now for index only
     config.add_show_field 'yiddish_title_tesim', :label => 'Title (Yiddish)'
     config.add_show_field 'romanized_yiddish_title_tesim', :label => 'Romanized Title (Yiddish)'
     # Title qualifier
@@ -491,7 +491,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'collection_number_tesim', :label => 'Collection Number'
     config.add_show_field 'card_number_tesim', :label => 'Card Number'
     config.add_show_field 'catalog_number_tesim', :label => 'Catalog Number'
-    config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
+    # config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number' // now for index only
     config.add_show_field 'identifier_cornell_isi', :label => 'Cornell Number'
     config.add_show_field 'plan_number_isi', :label => 'Plan Number'
     config.add_show_field 'internal_number_tesim', :label => 'Internal Number'
