@@ -52,11 +52,11 @@ def image_download options={}
     end
 
   end
-# Link Relationships field (map_relationships_tesim) to it's related item
+# Link Relationships field (relationships_tesim) to it's related item
 def relationships options={}
-  if options[:document]['map_relationships_tesim'].present?
+  if options[:document]['relationships_tesim'].present?
     relationships = []
-    options[:document]['map_relationships_tesim'].each do |relationship|
+    options[:document]['relationships_tesim'].each do |relationship|
       r = link_to relationship, '/catalog/ss:' + relationship
       relationships << r
     end
