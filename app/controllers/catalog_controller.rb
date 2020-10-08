@@ -421,7 +421,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'designer_creator_tesim', :label => 'Designer', :link_to_search => true
     config.add_show_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :link_to_search => true
     # date
-    config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
+    config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true, helper_method: :link_to_date_facet
     config.add_show_field 'date_display_tesim', :label => 'Issue Date'
     config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
     config.add_show_field 'full_text_date_tesim', :label => 'Date'

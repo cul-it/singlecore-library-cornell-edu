@@ -67,7 +67,7 @@ Rails.logger.level = save_level
   end
 
   def link_to_date_facet(options={})
-    facet_links('date_tesim', options)
+    facet_links('date_facet_tesim', options)
   end
 
   def link_to_transcription_facet(options={})
