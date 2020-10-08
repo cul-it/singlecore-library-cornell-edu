@@ -302,7 +302,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'performer_creator_tesim', :label => 'Performer', :show => false
     config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
     config.add_facet_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :show => false
-    config.add_facet_field 'notes_tesim', :label => 'Notes', :show => false
+    config.add_facet_field 'notes_tesim', :label => 'Notes', :show => false, :link_to_search => true
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'publishing_status_tesim', :label => 'Status'
@@ -635,7 +635,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'annotation_tesim', :label => 'Annotation'
     config.add_show_field 'condition_tesim', :label => 'Condition'
 
-    config.add_show_field 'notes_tesim', :label => 'Notes', helper_method: :autolink_field # 33
+    config.add_show_field 'notes_tesim', :label => 'Notes', :link_to_search => true # 33
 
     # references, publishing info
     config.add_show_field 'map_relationships_tesim', :label => 'Relationships', helper_method: :relationships
