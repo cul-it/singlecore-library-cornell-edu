@@ -24,7 +24,6 @@ Feature: Asset MAP fields
     | Annotation | Annotation | 25566643 | Society of Soul |
     | Date | Acquisition Date | 50534 | 1981-07-20 |
     | Date | Chronology Date | 22143404 | SSHOriginalEasternWhitePine.crn |
-    | Date | Date | 945965 | before 1872 |
     | Date | Image Date | 50534 | 2012-06-29 |
     | Date | Ring Sequence Date | 22143404 | 1691-1836 |
     | Identifier | Accession Number | 1972751 | 01_1_0138 |
@@ -76,7 +75,6 @@ Feature: Asset MAP fields
     | Agent | 455376 | Performer | Afrika Bambaataa | Soul Sonic Force |
     | Agent | 455376 | Performer | Afrika Bambaataa | Lisa Lee |
     | Measurement | 945968 | Measurement | torso: 130 x 85 (shoulders) (centimeters, height x width) | left arm: 107 (centimeters, height) |
-    | Date | 945968 | Date | ca. 1890-1900 | 2008 (image) |
     | Title | 49887 | Title | 坂東彥三倭 | Yōshū Chikanobu zuga |
     | Title | 49887 | Title | 坂東彥三倭 | Bandō Hikosa Yamato |
 
@@ -106,5 +104,4 @@ Feature: Asset MAP fields
     | Agent | 455376 | Performer | Afrika Bambaataa | agent_tesim |
     | Agent | 455376 | Graphic Designer | Eddie Ed | agent_tesim |
     | Agent | 455376 | Promoter | Red, Spider, Sunshine | agent_tesim |
-    | Date | 945856 | Date | ca. 1890-1900 | date_tesim |
     | Transcription | 265952 | Transcription | Che Rifeo Trojano | transcription_tesim |

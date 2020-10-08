@@ -15,5 +15,4 @@ Feature: Asset title
     | nickname | asset_title | field_name | content |
     # | bastides | Hastingues: Distant View Detail | Creator | Reps, John William (American urban planning historian) |
     | bastides | Hastingues: Distant View Detail | Collection | John Reps Collection - Bastides |
-    | bastides | Hastingues: Distant View Detail | Date | 2001 |
 
