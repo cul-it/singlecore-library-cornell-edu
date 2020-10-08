@@ -638,7 +638,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'notes_tesim', :label => 'Notes', helper_method: :autolink_field # 33
 
     # references, publishing info
-    config.add_show_field 'map_relationships_tesim', :label => 'Relationships', helper_method: :relationships
+    config.add_show_field 'relationships_tesim', :label => 'Relationships', helper_method: :relationships
     config.add_show_field 'publication_tesim', :label => 'Publication'
     config.add_show_field 'publisher_tesim', :label => 'Publisher'
     config.add_show_field 'pubplace_tesim', :label => 'Publication Place'
