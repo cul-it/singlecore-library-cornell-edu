@@ -302,6 +302,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'performer_creator_tesim', :label => 'Performer', :show => false
     config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
     config.add_facet_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :show => false
+    config.add_facet_field 'notes_tesim', :label => 'Notes', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'publishing_status_tesim', :label => 'Status'
