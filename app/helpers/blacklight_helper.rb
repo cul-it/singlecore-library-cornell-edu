@@ -457,10 +457,6 @@ def autolink_field args
   end
 end
 
-def autolink_notes args
-  return auto_link(args[:document][args[:field]].join("<br>")).html_safe
-end
-
 def chla args
   if args[:document]["collection_tesim"].present?
   collection = args[:document]["collection_tesim"][0]

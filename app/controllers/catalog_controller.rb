@@ -634,7 +634,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'annotation_tesim', :label => 'Annotation'
     config.add_show_field 'condition_tesim', :label => 'Condition'
 
-    config.add_show_field 'notes_tesim', :label => 'Notes', helper_method: :autolink_notes # 33
+    config.add_show_field 'notes_tesim', :label => 'Notes', helper_method: :autolink_field # 33
 
     # references, publishing info
     config.add_show_field 'map_relationships_tesim', :label => 'Relationships', helper_method: :relationships
