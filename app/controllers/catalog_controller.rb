@@ -288,7 +288,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
     config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
     config.add_facet_field 'other_location_tesim', :label => 'Site', :show => false
-    config.add_facet_field 'site_tesim', :label => 'Site', :show => true
+    config.add_facet_field 'site_tesim', :label => 'Site', :show => false
     config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
     config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
     config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
