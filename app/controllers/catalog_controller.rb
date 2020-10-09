@@ -344,7 +344,7 @@ class CatalogController < ApplicationController
     #config.add_index_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display, :link_to_search => true
     for n in 1..config.max_r_count[:agent]
       label = 'Agent' + (n == 1 ? '' : ' ' + n.to_s)
-      config.add_index_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_show_field?
+      config.add_index_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_index_field?
     end
 
     #config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
@@ -743,6 +743,22 @@ class CatalogController < ApplicationController
     qualifier = solr_doc[role]
     if qualifier.present?
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+    end
+    return true
+  end
+
+  def display_agent_index_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_agent_role_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      skips = ['performer'] # use lower case
+      if skips.include? qualifier.first.downcase
+        return false
+      else
+        field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+      end
     end
     return true
   end
