@@ -744,7 +744,7 @@ class CatalogController < ApplicationController
     if qualifier.present?
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
     end
-    return true
+    true # qualifier not required
   end
 
   def display_agent_index_field?(field_config, solr_doc)
