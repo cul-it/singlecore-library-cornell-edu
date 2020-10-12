@@ -1,0 +1,33 @@
+<% content_for :page_title, 'Samuel J. May Anti-Slavery Manuscripts Collection' %>
+<div class="collection-banner">
+	<div class="container">
+		<h2>Samuel J. May Anti-Slavery Manuscripts Collection</h2>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4 col-sm-push-8 sidebar">
+			<div class="collection-search well">
+				<%# TODO: Collection not yet ingested, unsure what name of collection will be %>
+				<h3>Search or <a href="/?f%5Bcollection_tesim%5D%5B%5D=Samuel+J.+May+Anti-Slavery+Manuscripts+Collection&view=list">browse the collection</a></h3>
+				<%= render '/catalog/search_form', { :@collection_search => "Samuel May J. Anti-Slavery Manuscripts Collection"}  %>
+			</div>
+		</div>
+		<div class="col-sm-8 col-sm-pull-4">
+			<p>The Cornell University Library May Anti-Slavery Manuscript Collection consists mainly of correspondence among American abolitionists, including many letters to Samuel Joseph May. Also included are May's diaries from 1859-1861 and 1865-1870; correspondence among members of May's family and the family of James Miller McKim; and some correspondence with Daniel Willard Fiske and George William Harris concerning the building of the May Anti-Slavery Collection at Cornell University. Correspondents include Lyman Abbott, John Brown, Henry Grafton Chapman, Maria Weston Chapman, David Lee Child, Lydia Maria Child, Daniel Willard Fiske, William Lloyd Garrison, D.C. Haynes, George William Harris, H.B. Holmes, Oliver Otis Howard, Oliver Johnson, Joseph May, Lucretia F. May, Samuel May Jr., Samuel Joseph May, James Miller McKim, William Forster Mitchell, Lucretia Coffin Mott, Wendell Phillips, Reuben Tomlinson, George Cabot Ward, and Theodore G. Wright.</p>
+			<p>Digitized versions available for:</p>
+			<ul>
+				<li><strong style="color: #b31b1b;">TODO: create links to these in the portal like <a href="http://ebooks.library.cornell.edu/a/antislavery/">dlxs site</a></strong></li>
+			    <li>Box 5: Lydia Maria Child Correspondence (1820-1860)</li>
+			    <li>Box 6: Lydia Maria Child Correspondence (1861-1880)</li>
+			    <li>Box 9: Correspondence Authors A-Ba</li>
+			    <li>Box 10: Correspondence Authors Bb-Broo</li>
+			</ul>
+			<p>The Cornell University Library May Anti-Slavery Manuscript Collection is open to the general public, in accordance with the terms set forth in the Guidelines for Using Public Domain Text, Images, Audio and Video Reproduced from Cornell Digital Library Collections.</p>
+			<div class="collection-browse">
+				<%# TODO: Collection not yet ingested, unsure what name of collection will be %>
+				<a href="/?f%5Bcollection_tesim%5D%5B%5D=Samuel+May+Manuscripts+Collection&view=list" class="btn btn-lg btn-primary">Search or browse the collection</a>
+			</div>
+		</div>
+	</div>
+</div>
