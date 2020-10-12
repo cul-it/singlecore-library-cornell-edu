@@ -361,7 +361,7 @@ class CatalogController < ApplicationController
     # these are generated from the digcoll-ingest collections and the MAP spreadsheet
 
     # title
-    config.add_show_field 'title_tesim', :label => 'Title', if: :dlxs_collection?
+    config.add_show_field 'title_tesim', :label => 'Title', if: :no_forum_version?
     config.add_show_field 'pj_full_title_tesim', :label => 'Full Title'
     config.add_show_field 'map_title_language_tesim', :label => 'Title Language'
     config.add_show_field 'translation_title_tesim', :label => 'Translated Title'
@@ -422,7 +422,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'designer_creator_tesim', :label => 'Designer', :link_to_search => true
     config.add_show_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :link_to_search => true
     # date
-    config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true, helper_method: :link_to_date_facet
+    config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true, helper_method: :link_to_date_facet, if: :no_forum_version?
     config.add_show_field 'date_display_tesim', :label => 'Issue Date'
     config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
@@ -736,6 +736,20 @@ class CatalogController < ApplicationController
     config.spell_max = 5
   end
 
+  def no_forum_version?(field_config, solr_doc)
+    field = field_config['field']
+    case field
+    when 'agent_tesim'
+      solr_doc['r1_agent_tesim'].nil?
+    when 'date_tesim'
+      solr_doc['r1_date_tesim'].nil?
+    when 'title_tesim'
+      solr_doc['r1_title_tesim'].nil?
+    else
+      raise "Error: field has an invalid value (#{field})"
+    end
+  end
+
   def display_agent_show_field?(field_config, solr_doc)
     field = field_config['field']
     parts = field.split('_')
@@ -821,11 +835,6 @@ class CatalogController < ApplicationController
       field_config['label'] = text.split.map(&:capitalize).join(' ')
     end
     true
-  end
-
-  def dlxs_collection?(field_config, solr_doc)
-    structure = solr_doc['metadata_structure_tesim'] || []
-    structure.first == 'dlxs'
   end
 
   def display_title_show_field?(field_config, solr_doc)
