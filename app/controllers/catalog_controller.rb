@@ -760,7 +760,7 @@ class CatalogController < ApplicationController
         field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
       end
     end
-    return true
+    true # qualifier not required
   end
 
   def display_date_show_field?(field_config, solr_doc)
@@ -770,10 +770,8 @@ class CatalogController < ApplicationController
     qualifier = solr_doc[role]
     if qualifier.present?
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ') + ' Date'
-      true
-    else
-      false
     end
+    true # qualifier not required
   end
 
   def display_identifier_show_field?(field_config, solr_doc)
@@ -783,10 +781,8 @@ class CatalogController < ApplicationController
     qualifier = solr_doc[role]
     if qualifier.present?
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
-      true
-    else
-      false
     end
+    true # qualifier not required
   end
 
   def display_legacy_value_show_field?(field_config, solr_doc)
@@ -798,7 +794,7 @@ class CatalogController < ApplicationController
       field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
       true
     else
-      false
+      false # qualifier required
     end
   end
 
@@ -810,19 +806,21 @@ class CatalogController < ApplicationController
     qualifier = solr_doc[role]
     if qualifier.present?
       label << qualifier.first
+    else
+      return false # qualifier required
     end
     role = parts.first + '_measurement_units_' + parts.last
     qualifier = solr_doc[role]
     if qualifier.present?
       label << qualifier.first
+    else
+      return false # qualifier required
     end
     text = label.join(' ')
     if text.present?
       field_config['label'] = text.split.map(&:capitalize).join(' ')
-      true
-    else
-      false
     end
+    true
   end
 
   def display_title_show_field?(field_config, solr_doc)
@@ -833,10 +831,8 @@ class CatalogController < ApplicationController
     if qualifier.present?
       # remove parens then prefix and surround with parens
       field_config['label'] = 'Title (' + qualifier.first.gsub(/[()]/,"").split.map(&:capitalize).join(' ') + ')'
-      true
-    else
-      false
     end
+    true # qualifier not required
   end
 
   def display_lang_tesim?(field_config, solr_doc)
