@@ -361,7 +361,7 @@ class CatalogController < ApplicationController
     # these are generated from the digcoll-ingest collections and the MAP spreadsheet
 
     # title
-    config.add_show_field 'title_tesim', :label => 'Title'
+    config.add_show_field 'title_tesim', :label => 'Title', if: :dlxs_collection?
     config.add_show_field 'pj_full_title_tesim', :label => 'Full Title'
     config.add_show_field 'map_title_language_tesim', :label => 'Title Language'
     config.add_show_field 'translation_title_tesim', :label => 'Translated Title'
@@ -821,6 +821,11 @@ class CatalogController < ApplicationController
       field_config['label'] = text.split.map(&:capitalize).join(' ')
     end
     true
+  end
+
+  def dlxs_collection?(field_config, solr_doc)
+    structure = solr_doc['metadata_structure_tesim'] || []
+    structure.first == 'dlxs'
   end
 
   def display_title_show_field?(field_config, solr_doc)
