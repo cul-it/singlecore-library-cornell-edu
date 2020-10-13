@@ -25,10 +25,10 @@ Feature: Compound and Related Images
     Examples:
     | nickname | id | count |
     | impersonator | 24415896 | 1 |
-    | seneca | 22376760 | 7 |
+    | seneca | 22376760 | 6 |
     | tellennasbeh | 19102646 | 1 |
     | tellennasbeh | 19102650 | 1 |
-    | anthrocollections | 1334130 | 6 |
+    # not multi image now | anthrocollections | 1334130 | 6 |
 
     @javascript
     @multi-image
@@ -52,9 +52,9 @@ Feature: Compound and Related Images
     | obama | The end of white America? | 1282486 |
     | paniccioli | Christopher Wallace | 23019390 |
     | ragamala | Unidentified Deity | 9011771 |
-    | seneca | American beech charcoal | 22376848 |
-    | seneca | American beech charcoal | 24767699 |
-    | seneca | Marten long bone | 22376742 |
+    #  published | seneca | American beech charcoal | 22376848 |
+    #  published | seneca | American beech charcoal | 24767699 |
+    #  published | seneca | Marten long bone | 22376742 |
     # | squeezes | Latin Column 1 | 3307295 |
     # | rare | Fuegians going to trade in Zapallos | 572113 |
 
@@ -80,9 +80,9 @@ Feature: Compound and Related Images
     | obama | The end of white America? | 1282486 |
     | paniccioli | Christopher Wallace | 23019390 |
     | ragamala | Unidentified Deity | 9011771 |
-    | seneca | American beech charcoal | 22376848 |
-    | seneca | American beech charcoal | 24767699 |
-    | seneca | Marten long bone | 22376742 |
+    #  published | seneca | American beech charcoal | 22376848 |
+    #  published | seneca | American beech charcoal | 24767699 |
+    #  published | seneca | Marten long bone | 22376742 |
     # | squeezes | Latin Column 1 | 3307295 |
     # | rare | Fuegians going to trade in Zapallos | 572113 |
 

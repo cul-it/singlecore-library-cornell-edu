@@ -44,7 +44,7 @@ Examples:
 | kmoddl | production | ss:372824 |
 | leuenberger | production | ss:9469095 |
 | paniccioli | production | ss:8432316 |
-| seneca | production | ss:24767712 |
+# | seneca | production | ss:24767712 |
 | cooper | production | cooper:0107 |
 | ezra | production | ezraGene000 |
 | izquierda | production | izquierda1300_1359 |
@@ -75,7 +75,7 @@ Scenario Outline: In production, only the first multiview object shows in the in
 Examples:
     | nickname | asset_title | second_title | id | comment |
     | impersonator | Arigon - Imitateur | Arigon - Imitateur (verso) | ss:24415885 | back of postcard |
-    | anthrocollections | Stingray spines | Stingray spines | ss:3235765 | multi-image and compound object |
+    #  not multiview now | anthrocollections | Stingray spines | Stingray spines | ss:3235765 | multi-image and compound object |
     | impersonator | Florin Imitateur | Florin Imitateur (verso) | ss:24415925 | back of postcard |
-    | anthrocollections | Hand spun cotton thread | Ball of hand spun cotton yarn | ss:1334128 | multi-image |
+    #  not multiview now | anthrocollections | Hand spun cotton thread | Ball of hand spun cotton yarn | ss:1334128 | multi-image |
 

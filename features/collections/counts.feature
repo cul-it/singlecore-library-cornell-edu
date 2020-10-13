@@ -17,13 +17,13 @@ Feature: Confirm that collections have the correct number of assets
 	# | adler | 11193 |
 	| adwhite | 1364 |
 	| aerial | 3390 |
-	| ahearn | 909 |
+	| ahearn | 907 |
 	| anthrocollections | 1271 |
 	| artifacts | 1673 |
 	| bam | 2311 |
 	| bastides | 2652 |
 	| beyondtaj | 6688 |
-	| blaschka | 248 |
+	| blaschka | 251 |
 	| cast | 967 |
 	| coins | 1804 |
 	| conzo | 7616 |
@@ -66,7 +66,7 @@ Feature: Confirm that collections have the correct number of assets
 	| repsslides | 1357 |
 	| rmc | 19444 |
 	| rudin | 517 |
-	| seneca | 697 |
+	| seneca | 693 |
 	| squeezes | 369 |
 	| srilanka | 527 |
 	| stereoscopes | 213 |
@@ -79,7 +79,7 @@ Feature: Confirm that collections have the correct number of assets
     # dlxs collections
 	| bol | 30938 |
 	# | chla | 1132199 |
-	| ezra | 26256 |
+	| ezra | 559 |
 	| flow | 23590 |
 	| hivebees | 34478 |
 	#| hearth | 667340 |
