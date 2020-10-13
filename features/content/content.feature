@@ -44,7 +44,7 @@ Examples:
 | kmoddl | production | ss:372824 |
 | leuenberger | production | ss:9469095 |
 | paniccioli | production | ss:8432316 |
-| seneca | production | ss:24767712 |
+# | seneca | production | ss:24767712 |
 | cooper | production | cooper:0107 |
 | ezra | production | ezraGene000 |
 | izquierda | production | izquierda1300_1359 |
