@@ -8,12 +8,12 @@ Scenario Outline: Some item record fields should link to a facet search
 
 Examples:
     | label | id | facet | starting |
-    | Identifier | 9468621 | creator_facet_tesim | Touchstone 3Pictures | # adler_creator_tesim
+    | Author | 9468621 | creator_facet_tesim | Touchstone Pictures | # adler_creator_tesim
     | Archaeological Date | 19102655 | archaeological_date_tesim | ca. 3200 BCE |
     | Architect | 18860196 | architect_creator_tesim | Alvar Aalto |
-    | Architectural Firm | 18860225 | architectural_firm_creator_tesim | Studio |
-    | Archival Collection | 13450404 | archival_collection_tesim | start |
-    | Arranger | 13450404 | arranger_creator_tesim | start |
+    | Architectural Firm | 18860225 | architectural_firm_creator_tesim | Studio Granda |
+    | Archival Collection | 20632840 | archival_collection_tesim | International Workers Order (IWO) Records |
+    # none found | Arranger | 13450404 | arranger_creator_tesim | start |
     | Creator | 13450404 | author_tesim | start |
     | Collecting Program | 13450404 | collecting_program_tesim | start |
     | Collection | 13450404 | collection_tesim | start |
