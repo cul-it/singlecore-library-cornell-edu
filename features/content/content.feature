@@ -79,6 +79,8 @@ Examples:
     # | seneca | Gooseberry seed | Gooseberry seed | ss:22376969 | pita |
     | blaschka | Histioteuthis reversa | Histioteuthis reversa | ss:20108238 | |
     | tellennasbeh | Plan 109 (center) | Plan 109 (center) | ss:19102646 | |
+    #  not multiview now | anthrocollections | Stingray spines | Stingray spines | ss:3235765 | multi-image and compound object |
+    #  not multiview now | anthrocollections | Hand spun cotton thread | Ball of hand spun cotton yarn | ss:1334128 | multi-image |
 
 Scenario: Reset to development environment in case of failure above
     Given I enable the 'development' environment

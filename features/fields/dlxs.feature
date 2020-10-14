@@ -26,7 +26,7 @@ Feature: Support for DLXS collections
 	| Page | chla1043101_01_100 | Subject | Agriculture |
 	| Page | chla1043101_01_100 | Extent | 424 |
 	| Series | ezra0001_1 | Title | Correspondence: June 17, 1828 - September 22, 1830 |
-	| Series | ezra0001_1 | Collection | Ezra Cornell Papers |
+	| Series | ezra0001_1 | Collection | Ezra Cornell |
 	| Series | ezra0001_1 | Extent | 35 |
 	| Book | flow1685158 | Title | Symbolorum et emblematum centuriae |
 	| Book | flow1685158 | Collection | Language of Flowers |
