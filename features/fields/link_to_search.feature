@@ -4,7 +4,7 @@ Feature: Some fields should link to a facet search
 @DIGCOLL-1585
 Scenario Outline: Some item record fields should link to a facet search
     Given I go to Forum asset id '<id>'
-    Then the field labeled '<label>' should begin '<starting>' and link to a search
+    Then the field labeled '<label>' should begin '<starting>' and link to a facet search
 
 Examples:
     | label | id | facet | starting |

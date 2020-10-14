@@ -46,18 +46,18 @@ Then("result {int} field {string} should begin {string}") do |int, string, strin
   end
 end
 
-Then("the field labeled {string} should begin {string} and link to a search") do |string, string2|
+Then("the field labeled {string} should begin {string} and link to a facet search") do |string, string2|
   within ("div#document div.item-info dl") do
-    dt = page.find('dt', text: /^#{string}:$/)
-    dd = dt.sibling('dd', match: :first, text: /^#{string2}/)
-    expect(dd).to have_selector('a', match: :first, text: /^#{string2}/)
+    dd = page.find('dt', text: /^#{string}:$/).find('+dd')
+    expect(dd).to have_content(string2)
+    expect(dd).to have_link(href: /\?f\%5B/)  # ?f[
   end
 end
 
 Then("the field labeled {string} should begin {string} and link to facet {string}") do |string, string2, string3|
   within ("div#document div.item-info dl") do
-    dt = page.find('dt', text: /^#{string}:$/)
-    dd = dt.sibling('dd', match: :first, text: /^#{string2}/)
+    dd = page.find('dt', text: /^#{string}:$/).find('+dd')
+    expect(dd).to have_content(string2)
     expect(dd).to have_link(href: /[^_]#{string3}/)
   end
 end
