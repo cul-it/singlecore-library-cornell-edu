@@ -35,6 +35,9 @@
 .special-collections {
 	h2 {
 		margin-top: .5em;
+		a {
+			color: $gray-dark;
+		}
 	}
 	.btn-primary {
 		background: $gray;
