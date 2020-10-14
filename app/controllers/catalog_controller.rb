@@ -684,7 +684,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
     config.add_show_field 'disclaimer_tesim', :label => 'Disclaimer'
     config.add_show_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
-    config.add_show_field 'tocplusLinks_tesim', :label => 'Table of Contents', helper_method: :autolink_field
+    config.add_show_field 'tocplusLinks_tesim', :label => 'Contents', helper_method: :autolink_field
     if ENV["COLLECTIONS"] == "development"
       config.add_show_field 'work_sequence_isi', :label => 'Work Sequence' # 5
       config.add_show_field 'updated_on_ss', :label => 'Updated On' # 63
