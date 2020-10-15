@@ -11,7 +11,7 @@ a,
 a:active,
 a:focus { 
 	color: $link-color;
-	text-decoration: underline;
+	// text-decoration: underline;
 	-webkit-text-decoration-skip: ink;
 }
 a:hover {
