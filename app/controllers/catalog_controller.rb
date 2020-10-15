@@ -328,7 +328,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'volume_tesim', :label => 'Volume'
     config.add_index_field 'page_tesim', :label => 'Page'
     config.add_index_field 'creation_site_location_tesim', :label => 'Site', :link_to_search => true
-    config.add_index_field 'location_tesim', :label => 'Location', :link_to_search => true
+    config.add_index_field 'location_facet_tesim', :label => 'Location', :link_to_search => true
 
     # these index fields are from the dlxs collections
     config.add_index_field 'publication_tesim', :label => 'Publication'
