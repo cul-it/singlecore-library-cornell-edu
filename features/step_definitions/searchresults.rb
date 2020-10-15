@@ -54,6 +54,14 @@ Then("the index field labeled {string} should begin {string} and link to a facet
   end
 end
 
+Then("the index field labeled {string} should begin {string} and link to facet {string}") do |string, string2, string3|
+  within page.first("div#documents div.document dl.document-metadata") do
+    dd = page.first('dt', text: /^#{string}:$/).find('+dd')
+    expect(dd).to have_content(string2)
+    expect(dd).to have_link(href: /[^_]#{string3}/)
+  end
+end
+
 Then("the field labeled {string} should begin {string} and link to a facet search") do |string, string2|
   within ("div#document div.item-info dl") do
     dd = page.find('dt', text: /^#{string}:$/).find('+dd')
