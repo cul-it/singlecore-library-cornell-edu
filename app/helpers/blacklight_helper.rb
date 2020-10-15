@@ -274,10 +274,10 @@ def catalog_info(bibid)
 end
 
 def get_tracks args
-    date = args['date_tesim'][0].gsub(" ","+")
+    date = args['date_facet_tesim'][0].gsub(" ","+")
     collection = args['collection_tesim'][0].gsub(" ","+")
     occasion = args['r1_event_name_tesim'][0].gsub(" ","+")
-    response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=collection_tesim:\"Indonesian+Music+Archive\"+AND+r1_event_name_tesim:\"#{occasion}\"+AND+date_tesim:\"#{date}\"&wt=json&indent=true&sort=id%20asc&rows=100")).with_indifferent_access
+    response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=collection_tesim:\"Indonesian+Music+Archive\"+AND+r1_event_name_tesim:\"#{occasion}\"+AND+date_facet_tesim:\"#{date}\"&wt=json&indent=true&sort=id%20asc&rows=100")).with_indifferent_access
     @response = response['response']['docs']
     return @response
   end
