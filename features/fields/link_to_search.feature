@@ -62,7 +62,7 @@ Scenario Outline: Some index fields should link to a facet search
 
 Examples:
     | label | asset_title | starting | facet | MAP_facet |
-    | Author | Ad for EP by Busy Bee | Jazzchild Records | adler_creator_tesim | adler_creator_tesim | # :creator_facet_tesim
+    | Author | Ad for EP by Busy Bee | Jazzchild Records | creator_facet_tesim | creator_facet_tesim | # :adler_creator_tesim
     | Creator | Norræna húsið | Alvar Aalto | architect_creator_tesim | architect_creator_tesim |
     | Creator | Notices of the Indian Archipelago | Moor, J. H | author_tesim | author_tesim |
     | Collection | Raspberry or Blackberry seed | Onöndowa | collection_tesim | collection_tesim |
