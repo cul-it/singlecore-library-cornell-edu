@@ -11,11 +11,11 @@ a,
 a:active,
 a:focus { 
 	color: $link-color;
-	// text-decoration: underline;
+	text-decoration: underline;
 	-webkit-text-decoration-skip: ink;
 }
 a:hover {
-	color: $link-color-hover;
+	color: black;
 }
 
 // Remove underlines from buttons and dropdown menus
