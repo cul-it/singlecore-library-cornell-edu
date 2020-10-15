@@ -11,7 +11,8 @@ $gray-light: #eeeeee;
 // -----------------//
 
 $body-bg: white;
-$link-color: $gray-dark;
+// $link-color: $gray-dark;
+$link-color: #114A7F;
 $link-color-hover: $text-color;
 
 
@@ -23,7 +24,8 @@ $well-bg: $gray-light;
 // Typography
 // -----------------//
 
-$font-family-sans-serif:  'Helvetica Neue', Arial, sans-serif;
+$font-family-sans-serif:  'Inter','Helvetica Neue', Arial, sans-serif; @import
+url('//fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 $font-family-serif:  'Merriweather', serif;        @import
 url('//fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
