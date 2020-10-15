@@ -41,15 +41,15 @@ Examples:
     | Site | ss:290915 | Chuschi (Peru) | other_location_tesim | location_facet_tesim | Location |
     | Performer | ss:24415882 | Albertin | performer_creator_tesim | agent_tesim | Performer |
     | Photographer | ss:319746 | F. Bodmer | photographer_creator_tesim | agent_tesim | Photographer |
-    | Principal Performer | ss:9904702 | Para Niyaga Mangkunegaran | principle_performer_creator_tesim | agent_tesim | Principal Performer |
-    | Region | ss:2600802 | Alaska | region_location_tesim | region_location_tesim | Region |
-    | Repository | words6016990 | Division of Rare and Manuscript Collection | repository_tesim | repository_tesim | Repository |
+    | Principal Performer | ss:9904702 | Para Niyaga Mangkunegaran | principle_performer_creator_tesim | agent_tesim | Performer |
+    | Region | ss:2600802 | Alaska | region_location_tesim | location_facet_tesim | Location |
+    | Repository | ss:320916 | Division of Rare and Manuscript Collection | repository_tesim | repository_tesim | Repository |
     # none found | Creator | ss:3213121 | start | second_creator_tesim | second_creator_tesim | Creator |
-    | Senechal | ss:3851336 | Eustache de Beaumarchais | senechal_tesim | senechal_tesim | Senechal |
+    | Senechal | ss:3851336 | Eustache de Beaumarchais | senechal_tesim | agent_tesim | Senechal |
     | Set | ss:11086940 | Mimure | set_title_tesim | set_title_tesim | Set |
     | Subcollection | ss:544126 | University Archives | sub_coll_tesim | sub_coll_tesim | Subcollection |
     | Subject | chla5077679_4170_002_61 | Entomology | subject_tesim | subject_tesim | Subject |
-    | System | ss:3698368 | The Painters System | system_tesim | system_tesim | System |
+    | System | ss:3698368 | The Painters System | system_tesim | subject_tesim | Subject |
     | Work Type | ss:3213121 | jars | type_tesim | type_tesim | Work Type |
     # none found | Village | ss:3213121 | start | village_tesim | village_tesim | Village |
     | Coordinates | ss:18860175 | 64.138123,-21.946869 | where_ssim | where_ssim | Coordinates |
