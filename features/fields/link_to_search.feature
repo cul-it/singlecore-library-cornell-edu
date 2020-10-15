@@ -5,11 +5,11 @@ Feature: Some fields should link to a facet search
 Scenario Outline: Some item record fields should link to a facet search
     Given I go to asset '<id>'
     # Then the field labeled '<label>' should begin '<starting>' and link to facet '<facet>'
-    Then the field labeled '<label>' should begin '<starting>' and link to facet '<MAP_facet>'
+    Then the field labeled '<MAP_label>' should begin '<starting>' and link to facet '<MAP_facet>'
 
 Examples:
     | label | id | starting | facet | MAP_facet | MAP_label |
-    | Author | ss:9468621 | Touchstone Pictures | creator_facet_tesim | creator_facet_tesim | Author | # adler_creator_tesim
+    | Author | ss:9468621 | Touchstone Pictures | creator_facet_tesim | agent_tesim | Creator | # adler_creator_tesim
     | Archaeological Date | ss:19102655 | ca. 3200 BCE | archaeological_date_tesim | archaeological_date_tesim | Archaeological Date |
     | Architect | ss:18860196 | Alvar Aalto | architect_creator_tesim | architect_creator_tesim | Architect |
     | Architectural Firm | ss:18860225 | Studio Granda | architectural_firm_creator_tesim | architectural_firm_creator_tesim | Architectural Firm |
@@ -58,7 +58,7 @@ Examples:
 Scenario Outline: Some index fields should link to a facet search
     Given I search for title '<asset_title>'
     # Then the index field labeled '<label>' should begin '<starting>' and link to facet '<facet>'
-    Then the index field labeled '<label>' should begin '<starting>' and link to facet '<MAP_facet>'
+    Then the index field labeled '<MAP_label>' should begin '<starting>' and link to facet '<MAP_facet>'
 
 Examples:
     | label | asset_title | starting | facet | MAP_facet | MAP_label |
