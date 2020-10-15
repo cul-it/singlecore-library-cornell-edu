@@ -468,7 +468,16 @@ def chla args
 end
 end
 
-
+def first_agent_only args
+  links = link_to_agent_facet(args)
+  parts = links.split('<br />')
+  if parts.count > 1
+    output = parts.first + ', ...'
+  else
+    output = parts.first
+  end
+  output.html_safe
+end
 
 def extent_units args
   if args[:document]["collection_tesim"].present?

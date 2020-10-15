@@ -344,7 +344,7 @@ class CatalogController < ApplicationController
     #config.add_index_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display, :link_to_search => true
     for n in 1..config.max_r_count[:agent]
       label = 'Agent' + (n == 1 ? '' : ' ' + n.to_s)
-      config.add_index_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_index_field?
+      config.add_index_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_index_field?, helper_method: :first_agent_only
     end
 
     #config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
