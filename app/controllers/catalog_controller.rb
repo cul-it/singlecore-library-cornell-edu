@@ -768,12 +768,7 @@ class CatalogController < ApplicationController
     role = parts.first + '_agent_role_' + parts.last
     qualifier = solr_doc[role]
     if qualifier.present?
-      skips = ['performer'] # use lower case
-      if skips.include? qualifier.first.downcase
-        return false
-      else
-        field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
-      end
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
     end
     true # qualifier not required
   end
