@@ -62,14 +62,14 @@ Scenario Outline: Some index fields should link to a facet search
 
 Examples:
     | label | asset_title | starting | facet | MAP_facet | MAP_label |
-    | Author | Ad for EP by Busy Bee | Jazzchild Records | creator_facet_tesim | creator_facet_tesim | Author | # :adler_creator_tesim
-    | Creator | Norræna húsið | Alvar Aalto | architect_creator_tesim | architect_creator_tesim | Creator |
-    | Creator | Notices of the Indian Archipelago, and adjacent | Moor, J. H | author_tesim | author_tesim | Creator |
+    | Author | Ad for EP by Busy Bee | Jazzchild Records | creator_facet_tesim | agent_tesim | Author | # :adler_creator_tesim
+    | Creator | Norræna húsið | Alvar Aalto | architect_creator_tesim | agent_tesim | Creator |
+    | Creator | Notices of the Indian Archipelago, and adjacent | Moor, J. H | author_tesim | agent_tesim | Creator |
     | Collection | Raspberry or Blackberry seed | Onöndowa | collection_tesim | collection_tesim | Collection |
     | Site | Chahta vba isht taloa holisso | New York | creation_site_location_tesim | creation_site_location_tesim | Site |
-    | Creator | Filled-in Test Units on the West Lawn | Peregrine A. Gerard-Little | creator_tesim | creator_tesim | Creator |
-    | Creator | Illustrazioni sulla Divina commedia | Scaramuzza, Francesco | illustrator_creator_tesim | illustrator_creator_tesim | Creator |
+    | Creator | Filled-in Test Units on the West Lawn | Peregrine A. Gerard-Little | creator_tesim | agent_tesim | Creator |
+    | Creator | Illustrazioni sulla Divina commedia | Scaramuzza, Francesco | illustrator_creator_tesim | agent_tesim | Creator |
     | Location | Elderberry seed | White Springs | location_tesim | location_tesim | Location |
-    | Creator | Flavor Flav, Crazy Legs | Paniccioli, Ernie | photographer_creator_tesim | photographer_creator_tesim | Creator |
-    | Principal Performer | Rangkep: Bondet--to gerong without seseg | Bp. Soekanto Sastrodarsono | principle_performer_creator_tesim | principle_performer_creator_tesim | Principal Performer |
+    | Creator | Flavor Flav, Crazy Legs | Paniccioli, Ernie | photographer_creator_tesim | agent_tesim | Creator |
+    | Principal Performer | Rangkep: Bondet--to gerong without seseg | Bp. Soekanto Sastrodarsono | principle_performer_creator_tesim | agent_tesim | Principal Performer |
     | Set | Evrard Ventilator | I. Chamber Wheel Mechanisms | set_title_tesim | set_title_tesim | Set |
