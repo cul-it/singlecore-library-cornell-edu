@@ -303,6 +303,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
     config.add_facet_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :show => false
     config.add_facet_field 'country_tesim', :label => 'Country', :show => false
+    config.add_facet_field 'legacy_value_tesim', :label => 'Legacy Value', :show => false
 
     if ENV["COLLECTIONS"] == "development"
       config.add_facet_field 'publishing_status_tesim', :label => 'Status'
@@ -557,7 +558,7 @@ class CatalogController < ApplicationController
     #config.add_show_field 'r1_legacy_value_tesim', :label => 'Legacy Value', if: :display_legacy_value_show_field?
     for n in 1..config.max_r_count[:legacy_value]
       label = 'Legacy value' + (n == 1 ? '' : ' ' + n.to_s)
-      config.add_show_field 'r' + n.to_s + '_legacy_value_tesim', :label => label, if: :display_legacy_value_show_field?
+      config.add_show_field 'r' + n.to_s + '_legacy_value_tesim', :label => label, if: :display_legacy_value_show_field?, :link_to_search => :legacy_value_tesim
     end
     config.add_show_field 'species_tesim', :label => 'Species' # 2
 
