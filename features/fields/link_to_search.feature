@@ -32,10 +32,10 @@ Examples:
     | Founder | ss:3851176 | Louis IX | founder_tesim | agent_tesim | Founder |
     | Creator | ss:265777 | Flaxman, John | illustrator_creator_tesim | agent_tesim | Illustrator |
     | Keywords | hunt0050_741 | Choctaw language | keywords_tesim | keywords_tesim | Keywords | # not in MAP
-    | Location | ss:22142868 | Coeymans, Albany | location_tesim | location_tesim | Location |
+    | Location | ss:22142868 | Coeymans, Albany | location_tesim | location_facet_tesim | Location |
     # none found | Lyricist | ss:3213121 | start | lyricist_creator_tesim | lyricist_creator_tesim | Lyricist |
     | Manufacturer | ss:372506 | Gustav Voigt Werkstatt | manufacturer_creator_tesim | agent_tesim | Manufacturer |
-    | Site | ss:1334105 | Peru | map_site_tesim | map_site_tesim | Site |
+    | Site | ss:1334105 | Peru | map_site_tesim | site_tesim | Site |
     | Materials/Techniques | ss:1265574 | photomontages | mat_tech_tesim | mat_tech_tesim | Materials/Techniques |
     | Musician | ss:21811897 | Dean Brodrick | musician_creator_tesim | agent_tesim | Musician |
     | Site | ss:290915 | Chuschi (Peru) | other_location_tesim | location_facet_tesim | Location |
@@ -62,14 +62,14 @@ Scenario Outline: Some index fields should link to a facet search
 
 Examples:
     | label | asset_title | starting | facet | MAP_facet | MAP_label |
-    | Author | Ad for EP by Busy Bee | Jazzchild Records | creator_facet_tesim | agent_tesim | Author | # :adler_creator_tesim
+    | Author | Ad for EP by Busy Bee | Jazzchild Records | creator_facet_tesim | agent_tesim | Creator | # :adler_creator_tesim
     | Creator | Norræna húsið | Alvar Aalto | architect_creator_tesim | agent_tesim | Creator |
-    | Creator | Notices of the Indian Archipelago, and adjacent | Moor, J. H | author_tesim | agent_tesim | Creator |
+    | Creator | Notices of the Indian Archipelago, and adjacent | Moor, J. H | author_tesim | author_tesim | Creator | # none in MAP
     | Collection | Raspberry or Blackberry seed | Onöndowa | collection_tesim | collection_tesim | Collection |
-    | Site | Chahta vba isht taloa holisso | New York | creation_site_location_tesim | creation_site_location_tesim | Site |
-    | Creator | Filled-in Test Units on the West Lawn | Peregrine A. Gerard-Little | creator_tesim | agent_tesim | Creator |
-    | Creator | Illustrazioni sulla Divina commedia | Scaramuzza, Francesco | illustrator_creator_tesim | agent_tesim | Creator |
-    | Location | Elderberry seed | White Springs | location_tesim | location_tesim | Location |
-    | Creator | Flavor Flav, Crazy Legs | Paniccioli, Ernie | photographer_creator_tesim | agent_tesim | Creator |
-    | Principal Performer | Rangkep: Bondet--to gerong without seseg | Bp. Soekanto Sastrodarsono | principle_performer_creator_tesim | agent_tesim | Principal Performer |
+    | Site | Chahta vba isht taloa holisso, or Choctaw | New York | creation_site_location_tesim | location_facet_tesim | Location |
+    | Creator | Filled-in Test Units on the West Lawn | Peregrine A. Gerard-Little | creator_tesim | agent_tesim | Photographer |
+    | Creator | Illustrazioni sulla Divina commedia | Scaramuzza, Francesco | illustrator_creator_tesim | agent_tesim | Illustrator |
+    | Location | Elderberry seed | White Springs | location_tesim | location_facet_tesim | Location |
+    | Creator | Flavor Flav, Crazy Legs | Paniccioli, Ernie | photographer_creator_tesim | agent_tesim | Photographer |
+    | Principal Performer | Rangkep: Bondet--to gerong without seseg | Bp. Soekanto Sastrodarsono | principle_performer_creator_tesim | agent_tesim | Performer |
     | Set | Evrard Ventilator | I. Chamber Wheel Mechanisms | set_title_tesim | set_title_tesim | Set |
