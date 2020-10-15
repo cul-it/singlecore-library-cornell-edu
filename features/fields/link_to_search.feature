@@ -47,7 +47,7 @@ Examples:
     # none found | Creator | ss:3213121 | start | second_creator_tesim | second_creator_tesim | Creator |
     | Senechal | ss:3851336 | Eustache de Beaumarchais | senechal_tesim | agent_tesim | Senechal |
     | Set | ss:11086940 | Mimure | set_title_tesim | set_title_tesim | Set |
-    | Subcollection | ss:544126 | University Archives | sub_coll_tesim | sub_coll_tesim | Subcollection |
+    # pending | Subcollection | ss:544126 | University Archives | sub_coll_tesim | sub_coll_tesim | Subcollection |
     | Subject | chla5077679_4170_002_61 | Entomology | subject_tesim | subject_tesim | Subject |
     | System | ss:3698368 | The Painters System | system_tesim | subject_tesim | Subject |
     | Work Type | ss:3213121 | jars | type_tesim | type_tesim | Work Type |
