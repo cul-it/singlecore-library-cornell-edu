@@ -19,11 +19,19 @@ class CannedQueryController < ApplicationController
   def search_params nickname
     key = nickname.to_sym
     @can[key] unless @can[key].nil?
-   end
+  end
 
   def redirect
-  search = search_params(params['id'])
-  redirect_to search_catalog_path(search)
+    search = search_params(params['id'])
+    if search.present?
+      redirect_to search_catalog_path(search)
+    else
+      not_found
+    end
+  end
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
   end
 
 end
