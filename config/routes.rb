@@ -1,5 +1,8 @@
 
 Rails.application.routes.draw do
+  get 'canned_query/index'
+  get '/cq/:id' => 'canned_query#redirect', :id => 'nickname'
+
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   root to: "catalog#index"
   devise_for :users
