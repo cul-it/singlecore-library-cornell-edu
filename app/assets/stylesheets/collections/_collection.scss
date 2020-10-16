@@ -282,9 +282,10 @@
 	border: 2px solid $border-color;
 	margin-bottom: .75em;
 	h2 {
-		font-size: 18px;
-		line-height: 1.2em;
+		font-size: 16px;
+		line-height: 1.6em;
 		margin-bottom: 0;
+		font-weight: 700;
 	}
 	a {
 		font-size: 14px;
@@ -292,6 +293,7 @@
 		display: inline-block;
 		i {
 			margin-left: .25em;
+			color: $cornell-dark-red;
 		}
 	}
 }
