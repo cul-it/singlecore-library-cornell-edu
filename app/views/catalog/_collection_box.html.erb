@@ -1,0 +1,19 @@
+<%# if CHLA show collection box %>
+<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') && !(render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Hive')%>
+	<%= render partial: 'about_chla' %>
+<% end %>
+
+<%# if Hive and Honeybee show collection box %>
+<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') && (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Hive')%>
+	<%= render partial: 'about_hive' %>
+<% end %>
+
+<%# if HEARTH collection box %>
+<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Home Economics Archive')%>
+	<%= render partial: 'about_hearth' %>
+<% end %>
+
+<%# if Language of Flowers collection box %>
+<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Language of Flowers')%>
+	<%= render partial: 'about_flowers' %>
+<% end %>
