@@ -33,9 +33,9 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 	<% end %>
 
 	<%# for images and audio - TODO: DRY this up -%>
-		<% if !@project.blank? && @kaltura.blank? || !@kaltura.blank? %>
+	<% if !@project.blank? && @kaltura.blank? || !@kaltura.blank? %>
 		<div class="col-sm-8 item-info">
-			<dl class="metadata dl-horizontal">
+			<dl class="metadata">
 			  <% document_show_fields(document).each do |field_name, field| -%>
 			    <% if should_render_show_field? document, field %>
 				    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
@@ -80,7 +80,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 	<%# for books -%>
 	<% else %>
 		<div class="col-sm-8 item-info">
-			<dl class="metadata dl-horizontal">
+			<dl class="metadata">
 			  <% document_show_fields(document).each do |field_name, field| -%>
 			    <% if should_render_show_field? document, field %>
 				    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
@@ -120,25 +120,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 				</div>
 			<% end %>
 
-			<%# if CHLA show collection box %>
-			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') && !(render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Hive')%>
-				<%= render partial: 'about_chla' %>
-			<% end %>
-
-			<%# if Hive and Honeybee show collection box %>
-			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Core Historical') && (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Hive')%>
-				<%= render partial: 'about_hive' %>
-			<% end %>
-
-			<%# if HEARTH collection box %>
-			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Home Economics Archive')%>
-				<%= render partial: 'about_hearth' %>
-			<% end %>
-
-			<%# if Language of Flowers collection box %>
-			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Language of Flowers')%>
-				<%= render partial: 'about_flowers' %>
-			<% end %>
+			<%= render partial: 'collection_box' %>
 
 		</div>
 		</div>
