@@ -1,5 +1,5 @@
 <% @link_label = "About the collection" %>
-<% @external_link_icon = '<i class="fa fa-external-link" aria-hidden="true"></i>'.html_safe %>
+<% @arrow_right = '<i class="fa fa-arrow-right" aria-hidden="true"></i>'.html_safe %>
 <!-- TODO: try using collection_website_tesim field -->
 <%# @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_path_ss') %>
 
@@ -7,189 +7,189 @@
 <div class="well well-collection">
     <h2><%= @collection_selected %></h2>
     <% if @collection_selected == "19th Century Prison Reform Collection" %>
-        <a href="/collections/prison-reform"><%= @link_label %></a>
+        <a href="/collections/prison-reform"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Adler Hip Hop Archive" %>
-        <a href="http://rmc.library.cornell.edu/hiphop/adler.php"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://rmc.library.cornell.edu/hiphop/adler.php"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Afrika Bambaataa Vinyl Collection" %>
-        <a href="/collections/afrika-bambaataa"><%= @link_label %></a>
+        <a href="/collections/afrika-bambaataa"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Alison Mason Kingsbury: Life and Art" %>
-        <a href="http://rmc.library.cornell.edu/alisonmasonkingsbury/"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://rmc.library.cornell.edu/alisonmasonkingsbury/"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Andrew Dickson White Architectural Photographs Collection" %>
-        <a href="http://resolver.library.cornell.edu/misc/4077228"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://resolver.library.cornell.edu/misc/4077228"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Art 2301 Printmaking Student Portfolios" %>
-        <a href="/collections/art2301"><%= @link_label %></a>
+        <a href="/collections/art2301"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia" %>
-        <a href="http://beyondthetaj.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://beyondthetaj.library.cornell.edu/"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Billie Jean Isbell Andean Collection" %>
-        <a href="http://isbellandes.library.cornell.edu"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://isbellandes.library.cornell.edu"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Campus Artifacts, Art & Memorabilia" %>
-        <a href="/collections/artifactsandart"><%= @link_label %></a>
+        <a href="/collections/artifactsandart"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Charlie Ahearn Archive" %>
-        <a href="http://rmc.library.cornell.edu/hiphop/"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://rmc.library.cornell.edu/hiphop/"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Cornell Cast Collection" %>
-        <a href="http://hdl.handle.net/1813.001/8946675e"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://hdl.handle.net/1813.001/8946675e"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Cornell Coin Collection" %>
-        <a href="http://hdl.handle.net/1813.001/8946679a"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://hdl.handle.net/1813.001/8946679a"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Cornell Collection of Blaschka Invertebrate Models" %>
-        <a href="/collections/blaschka"><%= @link_label %></a>
+        <a href="/collections/blaschka"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Cornell Gem Impressions Collection" %>
-        <a href="http://hdl.handle.net/1813.001/8788389a"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://hdl.handle.net/1813.001/8788389a"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Core Historical Literature of Agriculture" %>
-        <a href="/collections/chla"><%= @link_label %></a>
+        <a href="/collections/chla"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Cornell Squeeze Collection" %>
-        <a href="http://hdl.handle.net/1813.001/8946690d"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://hdl.handle.net/1813.001/8946690d"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Cornell University Library Map Collection" %>
-        <a href="https://olinuris.library.cornell.edu/collections/maps/sections/digital-images"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="https://olinuris.library.cornell.edu/collections/maps/sections/digital-images"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Digital Tamang" %>
-        <a href="/collections/tamang"><%= @link_label %></a>
+        <a href="/collections/tamang"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin" %>
-        <a href="/collections/tell-en-nasbeh"><%= @link_label %></a>
+        <a href="/collections/tell-en-nasbeh"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Divine Comedy Image Archive" %>
-        <a href="http://resolver.library.cornell.edu/misc/7889273"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://resolver.library.cornell.edu/misc/7889273"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Efraim Racker Art Albums" %>
-        <a href="http://hdl.handle.net/1813.001/8293942"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://hdl.handle.net/1813.001/8293942"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Ernie Paniccioli Photo Archive" %>
-        <a href="/collections/paniccioli"><%= @link_label %></a>
+        <a href="/collections/paniccioli"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Hip Hop Party and Event Flyers" %>
-        <a href="http://rmc.library.cornell.edu/hiphop/flyers.php"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://rmc.library.cornell.edu/hiphop/flyers.php"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Historic Glacial Images of Alaska and Greenland" %>
-        <a href="/collections/tarr"><%= @link_label %></a>
+        <a href="/collections/tarr"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Hive and the Honeybee" %>
-        <a href="/collections/bees"><%= @link_label %></a>
+        <a href="/collections/bees"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Home Economics Archive: Research, Tradition and History" %>
-        <a href="/collections/hearth"><%= @link_label %></a>
+        <a href="/collections/hearth"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Icelandic and Faroese Photographs of Frederick W.W. Howell" %>
-        <a href="http://resolver.library.cornell.edu/misc/5618018"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://resolver.library.cornell.edu/misc/5618018"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Stereoscope Pictures From Iceland" %>
-        <a href="/collections/stereoscopes"><%= @link_label %></a>
+        <a href="/collections/stereoscopes"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Images from the Rare Book and Manuscript Collections" %>
-        <a href="http://rmc-images.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://rmc-images.library.cornell.edu/"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Indonesian Music Archive" %>
-        <a href="/collections/indonesianmusic"><%= @link_label %></a>
+        <a href="/collections/indonesianmusic"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "International Workers’ Order (IWO) and Jewish People's Fraternal Order (JPFO)" %>
-        <a href="/collections/iwo-jpfo"><%= @link_label %></a>
+        <a href="/collections/iwo-jpfo"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Joe Conzo Jr. Archive" %>
-        <a href="http://rmc.library.cornell.edu/hiphop/conzo.php"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://rmc.library.cornell.edu/hiphop/conzo.php"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "John Clair Miller" %>
-        <a href="https://johnclairmiller.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="https://johnclairmiller.library.cornell.edu/"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "John Clair Miller Image Collection of Twentieth-Century Architecture in Iceland" %>
-        <a href="https://johnclairmiller.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="https://johnclairmiller.library.cornell.edu/"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "John Reps Collection - Bastides" %>
-        <a href="http://hdl.handle.net/1813.001/9225346a"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://hdl.handle.net/1813.001/9225346a"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "John Reps Collection - Urban Explorer" %>
-        <a href="http://hdl.handle.net/1813.001/8268684"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://hdl.handle.net/1813.001/8268684"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Knowledge of the World in Early Modern Japan" %>
-        <a href="/collections/japaneseworld"><%= @link_label %></a>
+        <a href="/collections/japaneseworld"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Language of Flowers" %>
-        <a href="/collections/flowers"><%= @link_label %></a>
+        <a href="/collections/flowers"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Lindsay Cooper Digital Archive" %>
-        <a href="/collections/lindsaycooper"><%= @link_label %></a>
+        <a href="/collections/lindsaycooper"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Loewentheil Collection of African-American Photographs" %>
-        <a href="https://rare.library.cornell.edu/collections/photography"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="https://rare.library.cornell.edu/collections/photography"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Mysteries at Eleusis: Images of Inscriptions" %>
-        <a href="/collections/eleusis"><%= @link_label %></a>
+        <a href="/collections/eleusis"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "New York State Aerial Photographs" %>
-        <a href="/collections/aerialny"><%= @link_label %></a>
+        <a href="/collections/aerialny"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Nuclear Fallout Pamphlets" %>
-        <a href="/collections/fallout"><%= @link_label %></a>
+        <a href="/collections/fallout"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "NYS Historical Dendrochronology" %>
-        <a href="/collections/nys-dendro"><%= @link_label %></a>
+        <a href="/collections/nys-dendro"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Obama Visual Iconography" %>
-        <a href="http://rmc.library.cornell.edu/obama/"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://rmc.library.cornell.edu/obama/"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Onöndowa'ga:' (Seneca) Haudenosaunee Archaeological Materials, circa 1688-1754" %>
-        <a href="/collections/seneca"><%= @link_label %></a>
+        <a href="/collections/seneca"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Persuasive Maps: PJ Mode Collection" %>
-        <a href="http://persuasivemaps.library.cornell.edu/"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://persuasivemaps.library.cornell.edu/"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Political Americana" %>
-        <a href="http://resolver.library.cornell.edu/misc/5458453"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://resolver.library.cornell.edu/misc/5458453"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Postcards of female and male impersonators and cross-dressing in Europe and the United States, 1900-1930" %>
-        <a href="/collections/impersonator-postcards"><%= @link_label %></a>
+        <a href="/collections/impersonator-postcards"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Punk Flyers" %>
-        <a href="/collections/punkflyers"><%= @link_label %></a>
+        <a href="/collections/punkflyers"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Ragamala Paintings" %>
-        <a href="/collections/ragamala"><%= @link_label %></a>
+        <a href="/collections/ragamala"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Reuleaux Kinematic Mechanisms Collection" %>
-        <a href="/collections/kmoddl"><%= @link_label %></a>
+        <a href="/collections/kmoddl"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Gail and Stephen Rudin Slavery Collection, 1728-1973" %>
-        <a href="/collections/rudin"><%= @link_label %></a>
+        <a href="/collections/rudin"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Scottsboro Trials Collection" %>
-        <a href="/collections/scottsboro"><%= @link_label %></a>
+        <a href="/collections/scottsboro"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Selections from the Cornell Anthropology Collections" %>
-        <a href="/collections/anthrocollections"><%= @link_label %></a>
+        <a href="/collections/anthrocollections"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Depicting the Sri Lankan Vernacular" %>
-        <a href="/collections/srilanka"><%= @link_label %></a>
+        <a href="/collections/srilanka"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "The J. R. Sitlington Sterrett Collection of Archaeological Photographs" %>
-        <a href="http://hdl.handle.net/1813.001/9861575a"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://hdl.handle.net/1813.001/9861575a"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Theatre Prints and Books from Early Modern Japan" %>
-        <a href="/collections/japanesetheater"><%= @link_label %></a>
+        <a href="/collections/japanesetheater"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "U.S. President's Railroad Commission Photographs" %>
-        <a href="/collections/railroad"><%= @link_label %></a>
+        <a href="/collections/railroad"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Vicos Collection" %>
-        <a href="http://resolver.library.cornell.edu/misc/6802783"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://resolver.library.cornell.edu/misc/6802783"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Willard D. Straight in Korea" %>
-        <a href="http://resolver.library.cornell.edu/misc/5861081"><%= @link_label %><%= @external_link_icon %></a>
+        <a href="http://resolver.library.cornell.edu/misc/5861081"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
     <% if @collection_selected == "Wordsworth Collection" %>
-        <a href="/collections/wordsworth"><%= @link_label %></a>
+        <a href="/collections/wordsworth"><%= @link_label %><%= @arrow_right %></a>
     <% end %>
 </div>
