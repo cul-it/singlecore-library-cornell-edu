@@ -50,23 +50,23 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 		<% if !@collection_website.blank? || !@ssc_site.blank? || @bibid.present? || @finding_aid.present? %>
 			<div class="well">
 				<h2>About the collection</h2>
-		 		<ul class="fa-ul collection-links">
+		 		<ul class="list-unstyled collection-links">
 		 			<% if @url_related_link_tesim.present? %>
-						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @url_related_link_tesim %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'Squeezes3Dlink']);"><%= @title_related_link_tesim %></a></li>
+						<li><a href="<%= @url_related_link_tesim %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'Squeezes3Dlink']);"><%= @title_related_link_tesim %><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 					<% end %>
 			 		<% if @collection_website.present? %>
-						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website</a></li>
+						<li><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 					<% end %>
 					<% if @finding_aid.present? %>
-						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @finding_aid %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'FindingAid']);">Finding aid</a></li>
+						<li><a href="<%= @finding_aid %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'FindingAid']);">Finding aid<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 					<% end %>
 					<% if @bibid.present? %>
-						<li><i class="fa-li fa fa-external-link"></i>
-							<%= link_to "Catalog record","https://newcatalog.library.cornell.edu/catalog/#{@bibid}" %>
+						<li>
+							<a href="https://newcatalog.library.cornell.edu/catalog/#{@bibid}">Catalog record<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 						</li>
 					<% end %>
 			 		<% if !@ssc_site.blank? %>
-						<li><i class="fa-li fa fa-external-link"></i><a href="<%= @ssc_site %>" class="ss-link"  onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'SharedShelf']);">View collection in ARTstor</a></li>
+						<li><a href="<%= @ssc_site %>" class="ss-link"  onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'SharedShelf']);">View collection in ARTstor<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 					<% end %>
 				</ul>
 			</div>
@@ -100,8 +100,8 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			<% if @collection_website.present? %>
 				<div class="well">
           			<h2>About the Collection</h2>
-					<ul class="fa-ul collection-links">
-						<li><i class="fa-li fa fa-desktop" aria-hidden="true"></i><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website</a></li>
+					<ul class="list-unstyled collection-links">
+						<li><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
             			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
               				<li><i class="fa-li fa fa-book" aria-hidden="true"></i><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust</a></li>
               			<% end %>

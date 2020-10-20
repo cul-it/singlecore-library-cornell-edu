@@ -25,7 +25,6 @@
 	h2 {
 		font-size: 18px;
 		margin: 0 0 1em;
-		color: $cornell-red;
 		font-weight: 700;
 	}
 	h3 {
@@ -47,20 +46,16 @@
 // Collection info
 // ------------------------ //
 .collection-links {
-	margin-left: 1.5em;
 	margin-bottom: 0;
 	li {
 		margin-bottom: .5em;
 		font-size: 14px;
+		top: .4em;
 	}
 	i {
 		font-size: 90%;
-	}
-	.fa-ul {
-		margin-left: 1.5em;
-	}
-	.fa-li {
-		top: .4em;
+		color: $cornell-red;
+		margin-left: .3em;
 	}
 }
 .summary {
