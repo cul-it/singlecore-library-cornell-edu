@@ -61,6 +61,11 @@
     <%= render partial: 'viewer_gif'%>
   <% end %>
 
+  <%# no forum image %>
+  <% if !@media.present? %>
+    <%= render partial: 'viewer_no_image'%>
+  <% end %>
+
   <div id="print-image">
     <% if render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim').present? %>
       <img src="<%= render_document_show_field_value(:document => @document, :field => 'media_URL_size_3_tesim') %>" alt="">
