@@ -36,8 +36,8 @@
   <% compound = get_compound_object(@document) %>
 
   <% @asset = request.original_url.split('ss')[1].split(':')[1] %>
-  <%# Display IIIF viewer unless there is no image in Forum or if it's a GIF %>
-  <% unless @media.include?('ss_noimage') || @filename.include?('.gif') %>
+  <%# Display IIIF viewer unless there is no image in Forum, if it's a GIF, or media_url_tesim is missing %>
+  <% unless @media.include?('ss_noimage') || @filename.include?('.gif') || !@media.present? %>
     <div id="image-toolbar" aria-hidden="true">
       <div class="image-controls">
         <% unless @project == "893" || @disable_download == "1" || !@download_url.present? %>
