@@ -79,3 +79,4 @@ Examples:
     | impersonator | Florin Imitateur | Florin Imitateur (verso) | ss:24415925 | back of postcard |
     #  not multiview now | anthrocollections | Hand spun cotton thread | Ball of hand spun cotton yarn | ss:1334128 | multi-image |
 
+@DIGCOLL-1797
