@@ -80,3 +80,14 @@ Examples:
     #  not multiview now | anthrocollections | Hand spun cotton thread | Ball of hand spun cotton yarn | ss:1334128 | multi-image |
 
 @DIGCOLL-1797
+@collection-sorting
+@javascript
+Scenario Outline: When viewing results in some collections, I would like to sort by date, title, or author
+    Given I browse collection nicknamed '<nickname>'
+    And I sort the results by '<criteria>'
+    Then the first search result title should start with '<starting>'
+
+Examples:
+    | nickname | criteria | starting |
+    | rudin  | year (descending) | William Throop and Adrian Scrope  |
+    | rudin  | title (a to z) | A brief account of the construction |
