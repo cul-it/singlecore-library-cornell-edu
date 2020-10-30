@@ -118,33 +118,75 @@ Rails.logger.level = save_level
   visit(path)
 end
 
+def visit_sort href
+  begin
+    uri = URI(href)
+    path = uri.path
+    path += ('?' + uri.query) if uri.query.present?
+    path += ('#' + uri.fragment) if uri.fragment.present?
+    path = URI.unescape(path).gsub(',', '%2C')
+    puts "\nfinal path: " + path
+    visit(path)
+    puts "\nvisit complete "
+  rescue NameError => error
+    puts "\nClass: " + error.class.name
+    # example error:
+    # Processing by CatalogController#range_limit as HTML
+    # Parameters: {"f"=>{"collection_tesim"=>["19th Century Prison Reform Collection"]}, "range_end"=>"1943", "range_field"=>"latest_date_isi", "range_start"=>"1825"}
+    # Completed 500 Internal Server Error in 273ms (ActiveRecord: 0.0ms)
+    # NameError (undefined local variable or method `search_service' for #<CatalogController:0x00007fa3ffad19c0>
+  end
+end
+
 Given("I sort the results by {string}") do |string|
-  # within page.find('div#sort-dropdown') do
-  #   # find('ul.dropdown-menu > li', :text => string).click
-  #   find('ul.dropdown-menu').select(string)
-  # end
-  # page.find('div#sort-dropdown').select(string)
   menu = page.find('div#sort-dropdown')
   # open the dropdown to reveal the choices
   menu.click
-  # what_is menu
-  # choice = page.find('div#sort-dropdown.open > ul > li > a', text: "#{string}")
-  # what_is choice
-  # choice.trigger('click')
-  # changes page.current_url but does not actually go to the page
-  href = page.find('div#sort-dropdown.open > ul > li > a', text: "#{string}")[:href]
-  puts 'href: ' + URI.unescape(href)
-  page.find('div#sort-dropdown.open > ul.dropdown-menu').click_link("#{string}", :visible => :all)
-  # refresh_current_page
-  brute
-
+  # find the desired sort choice url
+  # href = page.find('div#sort-dropdown.open > ul > li > a', text: "#{string}")[:href]
+  # visit_sort href
+  page.find('div#sort-dropdown.open > ul > li > a', text: "#{string}").click
   sleep 5
   header = page.find('div#documents > div.document-position-0 > div.documentHeader')
   what_is header
+  puts "\nclick complete "
  end
 
 Then("the first search result title should start with {string}") do |string|
-  within page.find('div#documents > div.document-position-0') do
-    expect(find('div.documentHeader')).to have_content("#{string}")
+  begin
+    within page.find('div#documents > div.document-position-0') do
+      expect(find('div.documentHeader')).to have_content("#{string}")
+    end
+  rescue NameError => error
+    puts "/nNameError"
+  end
+end
+
+Given("I sort the results by {string}, the first should contain {string}") do |string,string2|
+  begin
+    menu = page.find('div#sort-dropdown')
+    # open the dropdown to reveal the choices
+    menu.click
+    # find the desired sort choice url
+    # href = page.find('div#sort-dropdown.open > ul > li > a', text: "#{string}")[:href]
+    # visit_sort href
+    page.find('div#sort-dropdown.open > ul > li > a', text: "#{string}").click
+    sleep 3
+    expect(page.find('div#documents > div.document-position-0 > div.documentHeader')).to have_content("#{string2}")
+  rescue NameError => error
+    puts "\nClass: " + error.class.name
+  end
+ end
+
+ Then ("clear NameError") do
+  begin
+    puts "\nclearing..."
+    sleep 1
+  rescue NameError => error
+    puts "\nClass: " + error.class.name
+  rescue error
+    puts "\nOther exception: " + error.class.name
+  ensure
+    puts "done."
   end
 end

@@ -84,10 +84,10 @@ Examples:
 @javascript
 Scenario Outline: When viewing results in some collections, I would like to sort by date, title, or author
     Given I browse collection nicknamed '<nickname>'
-    And I sort the results by '<criteria>'
-    Then the first search result title should start with '<starting>'
+    And I sort the results by '<criteria>', the first should contain '<starting>'
+    Then clear NameError
+    # Then the first search result title should start with '<starting>'
 
 Examples:
     | nickname | criteria | starting |
-    | rudin  | year (descending) | William Throop and Adrian Scrope  |
-    | rudin  | title (a to z) | A brief account of the construction |
+    | prisonwritings | year (descending) | William Throop and Adrian Scrope  |

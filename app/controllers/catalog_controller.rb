@@ -5,6 +5,31 @@ class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
   include BlacklightMaps::ControllerOverride
+  # include Blacklight::SearchFields
+
+  def search_service
+    #******************
+    save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+    Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
+    msg = [" #{__method__} ".center(60,'Z')]
+    msg << 'Z' * 60
+    puts msg.to_yaml
+    Rails.logger.level = save_level
+    #*******************
+    # search_service_class.new(config: blacklight_config, user_params: search_state.to_h)
+  end
+
+  def search_results args
+    #******************
+    save_level = Rails.logger.level; Rails.logger.level = Logger::WARN
+    Rails.logger.warn "jgr25_log\n#{__method__} #{__LINE__} #{__FILE__}:"
+    msg = [" #{__method__} ".center(60,'Z')]
+    msg << "args: " + args.inspect
+    msg << 'Z' * 60
+    puts msg.to_yaml
+    Rails.logger.level = save_level
+    #*******************
+  end
 
   before_action  do
     if params[:sbjct].present? && params[:f].nil?
