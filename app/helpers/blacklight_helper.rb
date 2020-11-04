@@ -335,6 +335,9 @@ def get_multiviews args
     elsif args['old_catalog_number_tesim'].present?
       # anthrocollections
       parent = 'old_catalog_number_tesim'
+    elsif args['work_group_tesim'].present?
+      # kmoddl
+      parent = 'work_group_tesim'
     end
   elsif args['portal_sequence_isi'].present?
     sequence = 'portal_sequence_isi'
