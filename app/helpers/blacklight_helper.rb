@@ -311,7 +311,7 @@ def get_aws_iiif_url args
   project = args['project_id_ssi'] || nil
   id = args['id'] || nil
   if project.present? && id.present?
-    id.gsub!('ss:', '')
+    id = id.gsub('ss:', '')
     prefix = "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public"
     new_path = [ prefix, project, id, '1', 'iiif', 'info.json' ].join('/')
     if get_url_exists?(new_path)
@@ -353,7 +353,9 @@ def get_multiviews args
   else
     parentid = args["#{parent}"].to_s
   end
-  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=#{parent}:#{parentid}&fq=#{sequence}:[1%20TO%20*]&wt=json&indent=true&sort=#{sequence}%20asc&rows=100"))
+
+  uri = "#{ENV['SOLR_URL']}/select?q=#{parent}:#{parentid}&fq=#{sequence}:[1%20TO%20*]&wt=json&indent=true&sort=#{sequence}%20asc&rows=100"
+  response = JSON.parse(HTTPClient.get_content(uri))
   @response = response['response']['docs']
   return @response
 end
