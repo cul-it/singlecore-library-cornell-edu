@@ -2,9 +2,7 @@
 	<h2>Additional views</h2>
 	<div class="multi-image-wrapper">
 		<% get_multiviews(@document).each do |image| %>
-			<% image_id_no_prefix = image["id"].gsub("ss:", "") %>
-			<% document_id_no_prefix = @document["id"].gsub("ss:", "") %>
-			<% if image_id_no_prefix != document_id_no_prefix %>
+			<% if image["id"] != @document["id"] %>
 				<div class="multi-image">
 					<a href="/catalog/<%= image['id'] %>" data-turbolinks="false" aria-label="<%= image['id'] %>">
 						<%= render_thumbnail(image, {class: "img-responsive" }) %>
