@@ -311,7 +311,7 @@ def get_aws_iiif_url args
   project = args['project_id_ssi'] || nil
   id = args['id'] || nil
   if project.present? && id.present?
-    id.gsub!('ss:', '')
+    id = id.gsub('ss:', '')
     prefix = "https://s3.amazonaws.com/sharedshelftosolr.library.cornell.edu/public"
     new_path = [ prefix, project, id, '1', 'iiif', 'info.json' ].join('/')
     if get_url_exists?(new_path)
