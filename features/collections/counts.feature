@@ -14,7 +14,7 @@ Feature: Confirm that collections have the correct number of assets
 	# note: if one of these fails, someone may be adding items to the collection
 	# it's ok to just comment out the offending collection to get your PR through
 	#
-	# | adler | 11193 |
+	| adler | 11193 |
 	| adwhite | 1364 |
 	| aerial | 3390 |
 	| ahearn | 907 |
@@ -49,7 +49,7 @@ Feature: Confirm that collections have the correct number of assets
 	| karma | 4140 |
 	| kassoy | 139 |
 	| kingsbury | 522 |
-	| kmoddl | 234 |
+	| kmoddl | 307 |
 	| leuenberger | 231 |
 	| lindsaycooper | 589 |
 	| loewentheil | 1476 |
@@ -79,8 +79,8 @@ Feature: Confirm that collections have the correct number of assets
     # dlxs collections
 	| bol | 30938 |
 	# | chla | 1132199 |
-	| ezra | 559 |
-	| flow | 23590 |
+	| ezra | 560 |
+	| flow | 23637 |
 	| hivebees | 34478 |
 	#| hearth | 667340 |
 	| hunt | 33392 |
