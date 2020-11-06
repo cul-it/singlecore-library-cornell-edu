@@ -113,7 +113,7 @@ Feature: Support for DLXS collections
     | Book | witchcraft096 | Collection | Digital Witchcraft Collection |
     | Book | witchcraft096 | Creator | Unknown |
     | Book | witchcraft096 | Identifier | witchcraft096 |
-    | Book | witchcraft096 | Extent | 8 300dpi JPEG page image |
+    | Book | witchcraft096 | Extent | 7 300dpi JPEG page image |
     | Book | witchcraft096 | Publisher | Printed by I. H |
 	| Journal/Periodical | words1214796 | Title | Philological museum |
 	| Journal/Periodical | words1214796 | Collection | Wordsworth Collection |
