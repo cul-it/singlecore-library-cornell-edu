@@ -146,8 +146,12 @@ class CatalogController < ApplicationController
       facet_params = { f: { collection_tesim: ['Cornell University Library Map Collection'] } }
       redirect_to search_catalog_path(facet_params)
     end
-    if params[:subject] == "may-antislavery" && params[:f].nil?
-      facet_params = { f: { collection_tesim: ['Samuel J. May Anti-Slavery Collection'] } }
+    if params[:subject] == "may-pamphlet" && params[:f].nil?
+      facet_params = { f: { collection_tesim: ['Samuel J. May Anti-Slavery Pamphlet Collection'] } }
+      redirect_to search_catalog_path(facet_params)
+    end
+    if params[:subject] == "may-manuscript" && params[:f].nil?
+      facet_params = { f: { collection_tesim: ['Samuel J. May Anti-Slavery Manuscript Collection'] } }
       redirect_to search_catalog_path(facet_params)
     end
     if params[:subject] == "obama" && params[:f].nil?
