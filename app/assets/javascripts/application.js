@@ -13,14 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //
-// Required by Blacklight
-//= require blacklight/blacklight
-//= require_tree .
-//
 //= require 'blacklight_range_limit'
 // Required by Blacklight-Maps
 //= require blacklight-maps
 //= require blacklight_gallery
+// Required by Blacklight
+//= require blacklight/blacklight
+//= require_tree .
 //
 //= require accessibility
 //= require jquery.rwdImageMaps.min
