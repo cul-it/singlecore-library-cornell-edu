@@ -364,10 +364,14 @@ def get_multiviews args
 end
 
 def get_hathi_multiviews args
-  ark = args['arkID_tesim'][0]
-  response = JSON.parse(HTTPClient.get_content("https://catalog.hathitrust.org/api/volumes/brief/htid/coo1.#{ark}.json"))
-  @response = response['items']
-  return @response.select { |item| item['orig'] == 'Cornell University'}
+  if args['arkID_tesim'].present? && args['arkID_tesim'][0].present?
+    ark = args['arkID_tesim'][0]
+    response = JSON.parse(HTTPClient.get_content("https://catalog.hathitrust.org/api/volumes/brief/htid/coo1.#{ark}.json"))
+    @response = response['items']
+    return @response.select { |item| item['orig'] == 'Cornell University'}
+  else
+    []
+  end
 end
 
 def get_chla_issues args
