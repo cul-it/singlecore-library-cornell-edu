@@ -8,10 +8,10 @@ Feature: Check the visibility of content in development vs production
 Scenario Outline: I can sort search results by relavance, title, date, and author
     Given I browse collection nicknamed '<nickname>'
     When I sort the results by '<sort>'
-    Then the first search result title should start "<starting>"
+    Then the first search result title contains "<title>"
 
 Examples:
-    | nickname | sort | starting |
+    | nickname | sort | title |
     | adwhite | relevance | Giza. Pyramids of Khafre and Menkaure (Chefren and Mykerinus) |
     | adwhite | year (descending) | Capitol |
     | adwhite | year (ascending) | Giza. Pyramids of Khafre and Menkaure (Chefren and Mykerinus) |
