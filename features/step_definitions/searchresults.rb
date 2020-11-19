@@ -104,3 +104,12 @@ Then("I should not see id {string} in the search results") do |string|
     expect(row).not_to have_selector(link)
   end
 end
+
+Then("the first search result title should start {string}") do |string|
+  expect(page.first("div.documentHeader h5.index_title a")).to have_content(string)
+end
+
+When("I sort the results by {string}") do |string|
+  page.find(:css, "div#sort-dropdown button.dropdown-toggle", visible: false).click
+  click_link("#{string}")
+end
