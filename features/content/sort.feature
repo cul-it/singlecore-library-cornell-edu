@@ -24,3 +24,9 @@ Examples:
     | divinecomedy | title (a to z) | Album dantesco contenente centoventicinque |
     | divinecomedy | title (z to a) | Opere di Dante Alighieri. v. 1-3. |
     | divinecomedy | author (a to z) | Album dantesco contenente centoventicinque tavole in rame |
+    | rmc | relevance | Cuneiform tablet. |
+    | rmc | year (descending) | Unleash |
+    | rmc | year (ascending) | Cuneiform tablet. |
+    # | rmc | title (a to z) | A girl in every apartment |
+    | rmc | title (z to a) | Wine Cellars to be Sold. |
+    # | rmc | author (a to z) | Le royaume de Siam |
