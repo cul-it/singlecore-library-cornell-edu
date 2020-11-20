@@ -113,3 +113,12 @@ When("I sort the results by {string}") do |string|
   page.find(:css, "div#sort-dropdown button.dropdown-toggle", visible: false).click
   click_link("#{string}")
 end
+
+Given("I click on the first search result") do
+  page.first("div.documentHeader h5.index_title a").click
+end
+
+Then("I should see link {string} leading to {string}") do |string, string2|
+  # find the link, then it's parent for the have_link
+  expect(page.find("a", text: "#{string}").first(:xpath,".//..")).to have_link(href: "#{string2}", text: "#{string}")
+end
