@@ -87,7 +87,7 @@ Feature: Confirm that collections have the correct number of assets
 	| izquierda | 2736 |
 	| liber | 1205 |
 	#| may | 224560 |
-	| nur | 16504 |
+	| nur | 16503 |
 	| regmi: | 19 |
 	| sea | 4 |
 	| sat | 42038 |
