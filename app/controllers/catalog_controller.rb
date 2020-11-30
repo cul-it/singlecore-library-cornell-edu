@@ -591,10 +591,8 @@ class CatalogController < ApplicationController
     # archival collection info
     config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
     config.add_show_field 'location_repo_tesim', :label => 'Repository Location'
-    config.add_show_field 'witness_tesim', :label => 'Witnesses'
     config.add_show_field 'people_tesim', :label => 'People'
     config.add_show_field 'geography_tesim', :label => 'Places'
-    config.add_show_field 'onames_tesim', :label => 'Other Names'
     config.add_show_field 'repo_orig_tesim', :label => 'Original Repository'
     config.add_show_field 'collecting_program_tesim', :label => 'Collecting Program', :link_to_search => true
     config.add_show_field 'archival_collection_tesim', :label => 'Archival Collection', :link_to_search => true
@@ -602,7 +600,13 @@ class CatalogController < ApplicationController
     config.add_show_field 'box_box_folder_tesim', :label => 'Box'
     config.add_show_field 'folder_box_folder_tesim', :label => 'Folder'
     #dlxs fields
+    config.add_show_field 'witness_tesim', :label => 'Witness'
+    config.add_show_field 'onames_tesim', :label => 'Other Names'
     config.add_show_field 'pubinfo_tesim', :label => 'Publication Info'
+    config.add_show_field 'vol_tesim', :label => 'Volume'
+    config.add_show_field 'subdiv_tesim', :label => 'Subdivision'
+    config.add_show_field 'section_tesim', :label => 'Section'
+    config.add_show_field 'part_tesim', :label => 'Part'
     # display at end
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
     config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
