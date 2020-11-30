@@ -601,6 +601,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
     config.add_show_field 'box_box_folder_tesim', :label => 'Box'
     config.add_show_field 'folder_box_folder_tesim', :label => 'Folder'
+    #dlxs fields
+    config.add_show_field 'pubinfo_tesim', :label => 'Publication Info'
     # display at end
     config.add_show_field 'rights_tesim', :label => 'Rights', helper_method: :autolink_field
     config.add_show_field 'rights_img_tesim', :label => 'Image Rights'
