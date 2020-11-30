@@ -48,12 +48,10 @@ Examples:
 | cooper | production | cooper:0107 |
 | izquierda | production | izquierda1300_1359 |
 | liber | production | liber100_99 |
-| may | production | may927218_9 |
 | nur | production | nur27870_1 |
 | sat | production | satkf06_99 |
 | scott | production | scott7042_2 |
 | sea | production | seaA29c_8 |
-| witchcraft | production | witchcraft176_99 |
 | active_fedora_model_ssi Page | production | nur00420_4 |
 | suppressed rare | production | ss:550947 |
 | suppressed clairholt | production | ss:321396 |
