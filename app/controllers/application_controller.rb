@@ -87,7 +87,8 @@ class ApplicationController < ActionController::Base
       hunt: "hunt*",			      # Huntington Free Library Native American Collection
       izquierda: "izquierda*",  # History of the Left in Latin America
       liber: "liber*",		    	# Liberian Law Collection
-      may: "may*",			        # Samuel J. May Anti-Slavery Collection
+      may: "may*",			        # Samuel J. May Anti-Slavery Pamphlet Collection
+      mmay: "mmay*",            # Samuel J. May Anti-Slavery Manuscript Collection
       nur: "nur*",			        # Donovan Nuremberg Trials Collection
       sat: "sat*",			        # Trial Pamphlets Collection
       scott: "scott*",			    # Scottsboro Trials Collection
@@ -195,19 +196,20 @@ class ApplicationController < ActionController::Base
         dlxs[:bol],
         dlxs[:chla],
         # dlxs[:cooper],
-        # dlxs[:ezra],
+        dlxs[:ezra],
         dlxs[:flo],
         dlxs[:hearth],
         dlxs[:hivebees],
         dlxs[:hunt],
         # dlxs[:izquierda],
         # dlxs[:liber],
-        # dlxs[:may],
+        dlxs[:may],
+        dlxs[:mmay],
         # dlxs[:nur],
         # dlxs[:sat],
         # dlxs[:scott],
         # dlxs[:sea],
-        # dlxs[:witchcraft],
+        dlxs[:witchcraft],
         dlxs[:words]
       ].join(' ')
       fq_dlxs += '))'
