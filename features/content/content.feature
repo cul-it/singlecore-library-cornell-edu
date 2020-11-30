@@ -46,7 +46,6 @@ Examples:
 | paniccioli | production | ss:8432316 |
 # | seneca | production | ss:24767712 |
 | cooper | production | cooper:0107 |
-| ezra | production | ezraGene000 |
 | izquierda | production | izquierda1300_1359 |
 | liber | production | liber100_99 |
 | may | production | may927218_9 |
