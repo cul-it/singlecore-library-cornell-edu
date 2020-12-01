@@ -24,6 +24,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 	<% @url_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'url_related_link_tesim') %>
 	<% @title_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'title_related_link_tesim') %>
 	<% @finding_aid  = render_document_show_field_value(:document => @document, :field => 'finding_aid_tesim') %>
+	<% @id = render_document_show_field_value(:document => @document, :field => 'id') %>
 
 	<%= render 'pub_status', :document => @document %>
 
@@ -62,9 +63,9 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			<div class="well">
 				<h2>About the collection</h2>
 		 		<ul class="list-unstyled collection-links">
-		 			<%# TODO: generalize use of the url related link field %>
+		 			<%# related link %>
 		 			<% if @url_related_link_tesim.present? %>
-						<li><a href="<%= @url_related_link_tesim %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'Squeezes3Dlink']);"><%= @title_related_link_tesim %><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						<li><a href="<%= @url_related_link_tesim %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'RelatedLink-<%= @id %>']);"><%= @title_related_link_tesim %><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 					<% end %>
 					<%# collection website link %>
 			 		<% if @collection_website.present? %>
