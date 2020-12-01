@@ -28,7 +28,7 @@
 			of <a href="/catalog/<%= parentId %>" ><%= parentTitle %></a>
 		</div>
 	<% end %>
-<% elsif render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Issue" %>
+      <% elsif render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Issue" or render_document_show_field_value(:document => @document, :field => 'format_tesim') == "Folder" %>
    <% @journals_title = get_journal_title_given_issue_id(@id) %>
    <% journal_title = @journals_title["title_tesim"][0] %>
 	<%= render_document_heading(document, :tag => :h1) %>
