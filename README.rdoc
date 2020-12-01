@@ -1,1 +1,1 @@
-{<img src="https://coveralls.io/repos/github/cul-it/singlecore-library-cornell-edu/badge.svg?branch=origin%2Fmaster" alt="Coverage Status" />}[https://coveralls.io/github/cul-it/singlecore-library-cornell-edu?branch=origin%2Fmaster]
+{<img src ="https://coveralls.io/repos/github/cul-it/singlecore-library-cornell-edu/badge.svg?branch=origin%2Fmaster" alt="Coverage Status" />}[https://coveralls.io/github/cul-it/singlecore-library-cornell-edu?branch=origin%2Fmaster]
