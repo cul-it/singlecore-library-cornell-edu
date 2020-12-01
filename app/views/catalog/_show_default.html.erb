@@ -108,7 +108,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 							<li><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 						<% end %>
             			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
-              				<li><i class="fa-li fa fa-book" aria-hidden="true"></i><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust</a></li>
+              				<li><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
               			<% end %>
 
               			<% if get_hathi_multiviews(@document).length > 1  %>
