@@ -24,118 +24,90 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 	<% @url_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'url_related_link_tesim') %>
 	<% @title_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'title_related_link_tesim') %>
 	<% @finding_aid  = render_document_show_field_value(:document => @document, :field => 'finding_aid_tesim') %>
+	<% @id = render_document_show_field_value(:document => @document, :field => 'id') %>
 
 	<%= render 'pub_status', :document => @document %>
 
-	<%# show viewer unless it's a journal %>
+	<%# show a viewer unless it's a journal %>
 	<% unless render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal" %>
 		<%= render 'viewer' %>
 	<% end %>
 
-	<%# for images and audio - TODO: DRY this up -%>
-	<% if !@project.blank? && @kaltura.blank? || !@kaltura.blank? %>
-		<div class="col-sm-8 item-info">
-			<dl class="metadata">
-			  <% document_show_fields(document).each do |field_name, field| -%>
-			    <% if should_render_show_field? document, field %>
-				    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
-				    <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
-			    <% end -%>
-			  <% end -%>
-			</dl>
+	<%# display metadata %>
+	<div class="col-sm-8 item-info">
+		<dl class="metadata">
+		  <% document_show_fields(document).each do |field_name, field| -%>
+		    <% if should_render_show_field? document, field %>
+			    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
+			    <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
+		    <% end -%>
+		  <% end -%>
+		</dl>
+		<% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal"  %>
+      		<%= render 'issue_list', :document => @document %>
+  		<% end %>
+  		<% if render_document_show_field_value(:document => @document, :field => 'format_tesim') == "Box"  %>
+  			<%= render 'folder_list', :document => @document %>
+  		<% end %>
+  		<% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Series"  %>
+  			<%= render 'series_list', :document => @document %>
+  		<% end %>
+		<%# for images and audio - TODO: DRY this up -%>
+		<% if !@project.blank? && @kaltura.blank? || !@kaltura.blank? %>
 			<%= render partial: 'catalog/show_maplet_default' %>
 			</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
-		</div>
-		<div class="col-sm-4 more-item-info">
+		<% end %>	
+	</div>
+	<div class="col-sm-4 more-item-info">
 		<% if !@collection_website.blank? || !@ssc_site.blank? || @bibid.present? || @finding_aid.present? %>
 			<div class="well">
 				<h2>About the collection</h2>
 		 		<ul class="list-unstyled collection-links">
+		 			<%# related link %>
 		 			<% if @url_related_link_tesim.present? %>
-						<li><a href="<%= @url_related_link_tesim %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'Squeezes3Dlink']);"><%= @title_related_link_tesim %><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						<li><a href="<%= @url_related_link_tesim %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'RelatedLink-<%= @id %>']);"><%= @title_related_link_tesim %><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 					<% end %>
+					<%# collection website link %>
 			 		<% if @collection_website.present? %>
 						<li><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 					<% end %>
+					<%# finding aid link %>
 					<% if @finding_aid.present? %>
 						<li><a href="<%= @finding_aid %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'FindingAid']);">Finding aid<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 					<% end %>
+					<%# collection catalog record link %>
 					<% if @bibid.present? %>
 						<li>
 							<a href="https://newcatalog.library.cornell.edu/catalog/<%= @bibid %>">Catalog record<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 						</li>
 					<% end %>
+					<%# artstor collection link %>
 			 		<% if !@ssc_site.blank? %>
 						<li><a href="<%= @ssc_site %>" class="ss-link"  onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'SharedShelf']);">View collection in Artstor<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
 					<% end %>
+					<%# hathi wordsworth collection link %>
+					<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
+          				<li><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+          			<% end %>
+          			<%# hathi additional volumes link %>
+          			<% if get_hathi_multiviews(@document).length > 1  %>
+			      		<li>More volumes at Hathi Trust
+			      			<ul>
+					        <% get_hathi_multiviews(@document).each do |item| %>
+					            <li><a href="<%= item['itemURL'] %>"><%= item["enumcron"] %></a></li>
+					        <% end %>
+					      </ul>
+			      		</li>
+			    	<% end %>
 				</ul>
 			</div>
+			<%# show digitizing tell-en-nasbeh image map %>
 			<% if @project == "3686" %>
 				<h3>Additional plans</h3>
 				<%= render partial: 'pages/collections/tell-en-nasbeh/image_map' %>
 			<% end %>
 		<% end %>
-		</div>
-
-	<%# for books -%>
-	<% else %>
-		<div class="col-sm-8 item-info">
-			<dl class="metadata">
-			  <% document_show_fields(document).each do |field_name, field| -%>
-			    <% if should_render_show_field? document, field %>
-				    <dt class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_label document, field: field_name %></dt>
-				    <dd class="blacklight-<%= field_name.parameterize %>"><%= render_document_show_field_value document, field: field_name %></dd>
-			    <% end -%>
-			  <% end -%>
-			</dl>
-      		<% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal"  %>
-      			<%= render 'issue_list', :document => @document %>
-      		<% end %>
-      		<% if render_document_show_field_value(:document => @document, :field => 'format_tesim') == "Box"  %>
-      			<%= render 'folder_list', :document => @document %>
-      		<% end %>
-      		<% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Series"  %>
-      			<%= render 'series_list', :document => @document %>
-      		<% end %>
-			<%= render partial: 'catalog/show_maplet_default' %>
-		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
-		<div class="col-sm-4 more-item-info">
-			<% if !@collection_website.blank? || @bibid.present? || @finding_aid.present? %>
-				<div class="well">
-          			<h2>About the Collection</h2>
-					<ul class="list-unstyled collection-links">
-						<% if @collection_website.present? %>
-							<li><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
-						<% end %>
-            			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
-              				<li><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
-              			<% end %>
-
-              			<% if get_hathi_multiviews(@document).length > 1  %>
-				      		<li><i class="fa-li fa fa-book" aria-hidden="true"></i>More volumes at Hathi Trust
-				      			<ul>
-						        <% get_hathi_multiviews(@document).each do |item| %>
-						            <li><a href="<%= item['itemURL'] %>"><%= item["enumcron"] %></a></li>
-						        <% end %>
-						      </ul>
-				      		</li>
-				    	<% end %>
-						<% if @finding_aid.present? %>
-							<li><a href="<%= @finding_aid %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'FindingAid']);">Finding aid<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
-						<% end %>
-						<% if @bibid.present? %>
-							<li>
-								<a href="https://newcatalog.library.cornell.edu/catalog/<%= @bibid %>">Catalog record<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-							</li>
-						<% end %>
-          			</ul>
-
-				</div>
-			<% end %>
-
-			<%= render partial: 'collection_box' %>
-
-		</div>
-		</div>
-	<% end %>
+		<%# custom mann 'about the collection' content %>
+		<%= render partial: 'collection_box' %>
+	</div>
 <% end %>
