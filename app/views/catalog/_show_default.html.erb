@@ -62,7 +62,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 					<% end %>
 					<% if @bibid.present? %>
 						<li>
-							<a href="https://newcatalog.library.cornell.edu/catalog/#{@bibid}">Catalog record<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+							<a href="https://newcatalog.library.cornell.edu/catalog/<%= @bibid %>">Catalog record<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 						</li>
 					<% end %>
 			 		<% if !@ssc_site.blank? %>
@@ -100,11 +100,13 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			<%= render partial: 'catalog/show_maplet_default' %>
 		</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
 		<div class="col-sm-4 more-item-info">
-			<% if @collection_website.present? %>
+			<% if !@collection_website.blank? || @bibid.present? || @finding_aid.present? %>
 				<div class="well">
           			<h2>About the Collection</h2>
 					<ul class="list-unstyled collection-links">
-						<li><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						<% if @collection_website.present? %>
+							<li><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						<% end %>
             			<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
               				<li><i class="fa-li fa fa-book" aria-hidden="true"></i><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust</a></li>
               			<% end %>
@@ -118,6 +120,14 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 						      </ul>
 				      		</li>
 				    	<% end %>
+						<% if @finding_aid.present? %>
+							<li><a href="<%= @finding_aid %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'FindingAid']);">Finding aid<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						<% end %>
+						<% if @bibid.present? %>
+							<li>
+								<a href="https://newcatalog.library.cornell.edu/catalog/<%= @bibid %>">Catalog record<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+							</li>
+						<% end %>
           			</ul>
 
 				</div>
