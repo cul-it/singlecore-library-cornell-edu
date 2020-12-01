@@ -79,7 +79,7 @@ Feature: Confirm that collections have the correct number of assets
     # dlxs collections
 	| bol | 30938 |
 	# | chla | 1132199 |
-	| ezra | 560 |
+	| ezra | 566 |
 	| flow | 23637 |
 	| hivebees | 34478 |
 	#| hearth | 667340 |
