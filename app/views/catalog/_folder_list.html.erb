@@ -1,0 +1,27 @@
+<% @members_ids = render_document_show_field_value(:document => @document, :field => 'member_ids_ssim') %>
+
+
+<% if @members_ids.present? %>
+	<h2>Folder list</h2>
+<% end %> 
+
+<% count = 0 %>
+<% old_date = "" %>
+<% get_ezra_folders(document).each do |issue| %>
+<% date = issue["date_tesim"][0] %>
+ <% if count == 0 %>
+    <h3>  <%= issue["date_tesim"][0] %>  </h3>
+      <% count = count + 1 %>
+      <ul>
+ <% else %>
+     <% if count > 0 and date != old_date %>
+      </ul>   <% date = issue["date_tesim"][0] %>
+       <h3>  <%= issue["date_tesim"][0] %> </h3> <ul>
+     <% end %>
+ <% end %>      
+        <li>
+           <%= link_to issue["date_display_tesim"][0], "/catalog/"+issue["id"], "aria-label" => issue["id"] %> <%= issue["title_tesim"][0] %>
+	    </li>
+  <% old_date = date %>
+<% end %>
+
