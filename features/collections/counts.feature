@@ -56,7 +56,7 @@ Feature: Confirm that collections have the correct number of assets
 	| obama | 200 |
 	| page | 55 |
 	| paniccioli | 27894 |
-	| pjmode | 1091 |
+	| pjmode | 1094 |
 	| politicalamericana | 2223 |
 	| prisonwritings | 449 |
 	| punkflyers | 2102 |
@@ -73,13 +73,13 @@ Feature: Confirm that collections have the correct number of assets
 	| sterrett | 545 |
 	| tamang | 2539 |
 	| tarr | 2136 |
-	| tellennasbeh | 52 |
+	| tellennasbeh | 56 |
 	#| vicos | 111 |
 	| willardstraight | 176 |
     # dlxs collections
 	| bol | 30938 |
 	# | chla | 1132199 |
-	| ezra | 566 |
+	| ezra | 590 |
 	| flow | 23637 |
 	| hivebees | 34478 |
 	#| hearth | 667340 |
