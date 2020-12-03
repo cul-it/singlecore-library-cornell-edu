@@ -20,7 +20,7 @@
      <% end %>
  <% end %>      
         <li>
-           <%= link_to issue["date_display_tesim"][0], "/catalog/"+issue["id"], "aria-label" => issue["id"] %> <%= issue["title_tesim"][0] %>
+           <%= issue["date_display_tesim"][0] %> <%= link_to issue["title_tesim"][0], "/catalog/"+issue["id"], "aria-label" => issue["id"] %>
 	    </li>
   <% old_date = date %>
 <% end %>
