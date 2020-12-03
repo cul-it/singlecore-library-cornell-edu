@@ -46,16 +46,16 @@ Feature: Support for DLXS collections
 	| Book | hivebees5017167 | Extent | 390 300dpi JPEG page images |
 	| Book | hivebees5017167 | Publisher | Hopkins, Bridgman |
 	| Book | hivebees5017167 | Publication Place |  Northampton |
-	| Issue | hearth1891092_102_103 | Title | Vol. 102, No. 1-6, January-June, 1923 |
-	| Issue | hearth1891092_102_103 | Date | 1923 |
-	| Issue | hearth1891092_102_103 | Issue Date | 1923 |
-	| Issue | hearth1891092_102_103 | Identifier | hearth1891092_102_103 |
-	| Issue | hearth1891092_102_103 | Catalog Record | 1891092 |
-	| Issue | hearth1891092_102_103 | Subject | Dressmaking |
-	| Issue | hearth1891092_102_103 | Extent | 1138 300dpi JPG page images |
-	| Issue | hearth1891092_102_103 | Notes | Digitization funded by Institute of Museum |
-	| Issue | hearth1891092_102_103 | Publisher | The Butterick company, inc. |
-	| Issue | hearth1891092_102_103 | Publication Place | New York |
+	| Issue | hearth1891092_21_4 | Title | Vol. 21, No. 4, April, 1883: The Delineator |
+	| Issue | hearth1891092_21_4 | Date | 1883 |
+	| Issue | hearth1891092_21_4 | Issue Date | 1883 |
+	| Issue | hearth1891092_21_4 | Identifier | hearth1891092_21_4 |
+	| Issue | hearth1891092_21_4 | Catalog Record | 1891092 |
+	| Issue | hearth1891092_21_4 | Subject | Dressmaking |
+	| Issue | hearth1891092_21_4 | Extent | 152 300dpi JPG page images |
+	| Issue | hearth1891092_21_4 | Note | 152 p. |
+	| Issue | hearth1891092_21_4 | Publisher | The Butterick company, inc. |
+	| Issue | hearth1891092_21_4 | Publication Place | New York |
 	| Issue | hunt0001_102 | Title | Arte de el idioma mexicano |
 	| Issue | hunt0001_102 | Creator | Perez, Manuel |
 	| Issue | hunt0001_102 | Location | Mexico |

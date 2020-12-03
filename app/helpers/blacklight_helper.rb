@@ -374,6 +374,13 @@ def get_hathi_multiviews args
   end
 end
 
+def get_ezra_folders args
+  box = args['id']
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{box}*+AND+format_tesim:\"Folder\"&wt=json&indent=true&sort=title_ssi%20asc,id%20asc&rows=10000"))
+  @response = response['response']['docs']
+  return @response
+end
+
 def get_chla_issues args
   journal = args['id']
   response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{journal}*+AND+has_model_ssim:\"Issue\"&wt=json&indent=true&sort=latest_date_isi%20asc,id%20asc&rows=10000"))

@@ -7,26 +7,28 @@
         </div>
       </div>
       <div class="col-sm-4">
-        <div class="reader-link" data-no-turbolink>
-          <% unless (@book_id.include?('witch') || @book_id.include?('hunt') ||@book_id.include?('sea') || @book_id.include?('may') || @book_id.include?('chla') || @book_id.include?('hearth') || @book_id.include?('bol') || @book_id.include?('hive') || @book_id.include?('flow') || @book_id.include?('liber') || @book_id.include?('scott') || @book_id.include?('nur') || @book_id.include?('sat') || @book_id.include?('ezra')) && @document['format_tesim'][0] == "Page" %>
-            <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
-          <% else %>
-            <% if @document['format_tesim'][0] == "Page" %>
-              <% endstring = @document['id'].rindex('_') %>
-              <% bookID = @document['id'][0..endstring - 1] %>
-              <% readerPage = @document['id'][endstring + 1..-1] %>
-              <% @page_number = render_document_show_field_value(:document => @document, :field => 'page_number_tesim') %>
-              <%#= readerPage.inspect %>
-              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= bookID %>#page/<%= readerPage %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read page <%= @page_number %><i class="fa fa-book"></i></a>
-            <% else %>           
-            <% if @document['format_tesim'][0] != "Issue" && @document['format_tesim'][0] != "Article" && @document['format_tesim'][0] != "Page" %>
-              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
-            <% else @document['format_tesim'][0] == "Issue" && @document['format_tesim'][0] != "Article" && @document['format_tesim'][0] != "Page" %>
-              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
-             <% end %>
+        <% unless @book_id.include?('ezra') && @document['format_tesim'][0] == "Box" %>
+          <div class="reader-link" data-no-turbolink>
+            <% unless (@book_id.include?('witch') || @book_id.include?('hunt') ||@book_id.include?('sea') || @book_id.include?('may') || @book_id.include?('chla') || @book_id.include?('hearth') || @book_id.include?('bol') || @book_id.include?('hive') || @book_id.include?('flow') || @book_id.include?('liber') || @book_id.include?('scott') || @book_id.include?('nur') || @book_id.include?('sat') || @book_id.include?('ezra')) && @document['format_tesim'][0] == "Page" %>
+              <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>#page/<%= @page %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+            <% else %>
+              <% if @document['format_tesim'][0] == "Page" %>
+                <% endstring = @document['id'].rindex('_') %>
+                <% bookID = @document['id'][0..endstring - 1] %>
+                <% readerPage = @document['id'][endstring + 1..-1] %>
+                <% @page_number = render_document_show_field_value(:document => @document, :field => 'page_number_tesim') %>
+                <%#= readerPage.inspect %>
+                <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= bookID %>#page/<%= readerPage %>/mode/1up" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Go to page <%= @page_number %><i class="fa fa-book"></i></a>
+              <% else %>           
+              <% if @document['format_tesim'][0] != "Issue" && @document['format_tesim'][0] != "Article" && @document['format_tesim'][0] != "Page" %>
+                <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+              <% else @document['format_tesim'][0] == "Issue" && @document['format_tesim'][0] != "Article" && @document['format_tesim'][0] != "Page" %>
+                <a class="btn btn-portal btn-lg" href="http://reader.library.cornell.edu/docviewer/digital?id=<%= @book_id %>" onclick="javascript:_paq.push(['trackEvent', 'itemview', 'readerthumbnail']);"><i class="fa fa-book-open"></i>Read item<i class="fa fa-book"></i></a>
+               <% end %>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
 
         <%# download PDF link %>
         <% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Scottsboro') %>
