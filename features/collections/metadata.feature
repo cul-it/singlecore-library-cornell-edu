@@ -6,6 +6,7 @@ Feature: Confirm that collections have collection level metadata
 @DIGCOLL-1840
 Scenario Outline: When I'm looking at an asset, I would like to be able to go to the asset's collection's web page.
 Given I browse collection nicknamed '<nickname>'
+	And I sort the results by "title (a to z)"
     And I click on the first search result
     Then I should see link "Digital collection website" leading to "<website>"
 
