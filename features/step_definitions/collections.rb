@@ -138,7 +138,9 @@ def get_collection_path(nickname)
 	when "maps"
 		full = 'Cornell University Library Map Collection'
 	when "may"
-		full = 'Samuel J. May Anti-Slavery Collection'
+		full = 'Samuel J. May Anti-Slavery Pamphlet Collection'
+	when "mmay"
+		full = 'Samuel J. May Anti-Slavery Manuscript Collection'
 	when "nur"
 		full = 'Donovan Nuremberg Trials Collection'
 	when "obama"

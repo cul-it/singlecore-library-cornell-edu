@@ -24,6 +24,7 @@ Feature: Confirm that collections have the correct number of assets
 	| dlxs | izquierda | 0 | 2740 |
 	| dlxs | liber | 0 | 1205 |
 	| dlxs | may | 0 | 224560 |
+	| dlxs | mmay | 0 | 224560 |
 	| dlxs | nur | 0 | 16504 |
 	| dlxs | sat | 0 | 42038 |
 	| dlxs | scott | 0 | 4542 |

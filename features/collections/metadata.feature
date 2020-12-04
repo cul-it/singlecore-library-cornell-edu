@@ -22,6 +22,7 @@ Examples:
 	# | izquierda | url |
 	# | liber | url |
 	# | may | url |
+	# | mmay | url |
 	# | nur | url |
 	# | sat | url |
 	# | scott | url |
