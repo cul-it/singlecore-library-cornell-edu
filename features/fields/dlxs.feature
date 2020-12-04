@@ -133,14 +133,14 @@ Feature: Support for DLXS collections
     | creation_site_location_tesim | Site | bol0001 | Sucre |
     | creator_tesim | Creator | bol0001 | Fernández, Hilarión |
     | date_display_tesim | Issue Date | chla1043101_01 | 1850 |
-    | date_tesim | Date | chla1043101_01 | 1850 |
+    | date_tesim | Date | chla2731292 | 1896 |
     | extent_tesim | Extent | bol0001 | 16 300dpi JPEG page images |
     | identifier_tesim | Identifier | bol0001_1 | bol0001 |
     | keywords_tesim | Keywords | hunt0001_1 | Nahuatl language - Grammar |
     | lang_tesim | Language | bol0001 | Spanish |
     | language_tesim | Language | bol0001 | Spanish |
     | location_facet_tesim | Site | bol0001 | Sucre |
-    | note_tesim | Note | chla1043101 | 424 p. |
+    # | note_tesim | Note | chla1043101 | 424 p. |
     # | notes_tesim | Notes | chla1043101 | 424 p. |
     | pubdate_tesim | Publication Date | bol0001 | 1848 |
     | publication_tesim | Publication | words1214796 | Cambridge, Printed by J. Smith for Deightons [etc. |
