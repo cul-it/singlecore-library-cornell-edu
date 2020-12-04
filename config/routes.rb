@@ -101,6 +101,7 @@ end
 
   # dev pages
   if ENV['COLLECTIONS'] == "development"
+    get '/collections/beyondthetaj' => 'high_voltage/pages#show', :id => 'collections/beyondthetaj/index'
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/kmoddl' => 'high_voltage/pages#show', :id => 'collections/kmoddl/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
