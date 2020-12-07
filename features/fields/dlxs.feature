@@ -25,8 +25,8 @@ Feature: Support for DLXS collections
 	| Page | chla1043101_01_100 | Collection | Core Historical Literature of Agriculture |
 	| Page | chla1043101_01_100 | Subject | Agriculture |
 	| Page | chla1043101_01_100 | Extent | 424 |
-	| Series | ezra0001_1 | Title | Correspondence: June 17, 1828 - September 22, 1830 |
-	| Series | ezra0001_1 | Collection | Ezra Cornell |
+	| Series | ezra0001_1 | Title | Ezra Cornell Correspondence: June 17, 1828 - September 22, 1830 (Box 1/Folder 1) |
+	| Series | ezra0001_1 | Collection | Ezra Cornell Papers |
 	| Series | ezra0001_1 | Extent | 35 |
 	| Book | flow1685158 | Title | Symbolorum et emblematum centuriae |
 	| Book | flow1685158 | Collection | Language of Flowers |
@@ -140,7 +140,7 @@ Feature: Support for DLXS collections
     | lang_tesim | Language | bol0001 | Spanish |
     | language_tesim | Language | bol0001 | Spanish |
     | location_facet_tesim | Site | bol0001 | Sucre |
-    # | note_tesim | Note | chla1043101 | 424 p. |
+    | note_tesim | Note | chla1043101 | 424 p. |
     # | notes_tesim | Notes | chla1043101 | 424 p. |
     | pubdate_tesim | Publication Date | bol0001 | 1848 |
     | publication_tesim | Publication | words1214796 | Cambridge, Printed by J. Smith for Deightons [etc. |
