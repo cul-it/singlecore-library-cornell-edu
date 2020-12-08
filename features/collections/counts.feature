@@ -23,13 +23,13 @@ Feature: Confirm that collections have the correct number of assets
 	| dlxs | hunt | 33392 | 33392 |
 	| dlxs | izquierda | 0 | 2740 |
 	| dlxs | liber | 0 | 1205 |
-	| dlxs | may | 0 | 224560 |
-	| dlxs | mmay | 0 | 224560 |
+	| dlxs | may | 225303 | 225304 |
+	| dlxs | mmay | 2329 | 2329 |
 	| dlxs | nur | 0 | 16504 |
 	| dlxs | sat | 0 | 42038 |
 	| dlxs | scott | 0 | 4542 |
 	| dlxs | sea | 0 | 124420 |
-	| dlxs | witchcraft | 0 | 23076 |
+	| dlxs | witchcraft | 23076 | 23076 |
 	| dlxs | words | 446 | 446 |
 	| forum | adler | 1717 | 11193 |
 	| forum | adwhite | 1364 | 1364 |
@@ -73,7 +73,7 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | obama | 87 | 200 |
 	| forum | page | 55 | 55 |
 	| forum | paniccioli | 19581 | 27895 |
-	| forum | pjmode | 862 | 1088 |
+	| forum | pjmode | 862 | 1091 |
 	| forum | politicalamericana | 2012 | 2223 |
 	| forum | prisonwritings | 449 | 449 |
 	| forum | punkflyers | 2091 | 2102 |
@@ -83,14 +83,14 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | repsslides | 1357 | 1357 |
 	| forum | rmc | 11438 | 19444 |
 	| forum | rudin | 517 | 517 |
-	| forum | seneca | 693 | 697 |
+	| forum | seneca | 691 | 697 |
 	| forum | squeezes | 185 | 369 |
 	| forum | srilanka | 527 | 527 |
 	| forum | stereoscopes | 213 | 213 |
 	| forum | sterrett | 341 | 545 |
 	| forum | tamang | 2539 | 2539 |
 	| forum | tarr | 1948 | 2136 |
-	| forum | tellennasbeh | 44 | 52 |
+	| forum | tellennasbeh | 42 | 52 |
 	| forum | vicos | 2246 | 2246 |
 	| forum | willardstraight | 176 | 176 |
 	| other | art2301 | 55 | 55 |
