@@ -37,7 +37,7 @@ Examples:
 	| artifacts | /collections/artifactsandart |
 	| bam | /collections/afrika-bambaataa |
 	| bastides | http://hdl.handle.net/1813.001/9225346a |
-	| beyondtaj | http://beyondthetaj.library.cornell.edu |
+	| beyondtaj | /collections/beyondthetaj |
 	| blaschka | /collections/blaschka |
 	| cast | http://hdl.handle.net/1813.001/8946675e |
 	| coins | http://hdl.handle.net/1813.001/8946679a |
