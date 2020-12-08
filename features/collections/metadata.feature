@@ -15,9 +15,9 @@ Examples:
 	# | bol | url |
 	| chla | /collections/chla |
 	# | ezra | url |
-	# | flow | url |
+	| flow | /collections/flowers |
 	| hearth | /collections/hearth |
-	# | hivebees | url |
+	| hivebees | /collections/bee |
 	# | hunt | url |
 	# | izquierda | url |
 	# | liber | url |
