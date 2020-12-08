@@ -32,7 +32,7 @@
 
         <%# new code based on if pdf link is in the record %>
         <% if !@document['pdf_link_tesim'].nil? %>
-          <div class="reader_link" data-no-turbolink>
+          <div class="reader-link" data-no-turbolink>
             <a class="btn btn-portal btn-lg" href="<%= @document['pdf_link_tesim'][0] %>">Download PDF<i class="fa fa-download" aria-hidden="true"></i></a>
           </div>
           <%= render 'pdf_accessibility' %>
