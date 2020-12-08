@@ -13,16 +13,16 @@ Given I browse collection nicknamed '<nickname>'
 Examples:
     | nickname | website |
 	# | bol | url |
-	# | chla | url |
+	| chla | /collections/chla |
 	# | ezra | url |
 	# | flow | url |
-	# | hearth | url |
+	| hearth | /collections/hearth |
 	# | hivebees | url |
 	# | hunt | url |
 	# | izquierda | url |
 	# | liber | url |
-	# | may | url |
-	# | mmay | url |
+	| may | https://rmc.library.cornell.edu/mayantislaverycoll/ |
+	| mmay | https://rmc.library.cornell.edu/mayantislaverycoll/ |
 	# | nur | url |
 	# | sat | url |
 	# | scott | url |
