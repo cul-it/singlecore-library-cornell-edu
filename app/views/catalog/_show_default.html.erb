@@ -18,7 +18,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 
 <%if @show == "yes" %>
 
-	<% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_path_ssi') %>
+	<% @collection_website = render_document_show_field_value(:document => @document, :field => 'collection_website_ssi') %>
 	<% @ssc_site  = render_document_show_field_value(:document => @document, :field => 'ssc_site_tesim') %>
 	<% @bibid  = render_document_show_field_value(:document => @document, :field => 'collection_bibid_ssi') %>
 	<% @url_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'url_related_link_tesim') %>
@@ -56,7 +56,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 		<% if !@project.blank? && @kaltura.blank? || !@kaltura.blank? %>
 			<%= render partial: 'catalog/show_maplet_default' %>
 			</div><%# add extra closing div to fix this layout bug: https://issues.library.cornell.edu/browse/DIGCOLL-219 %>
-		<% end %>	
+		<% end %>
 	</div>
 	<div class="col-sm-4 more-item-info">
 		<% if !@collection_website.blank? || !@ssc_site.blank? || @bibid.present? || @finding_aid.present? %>
