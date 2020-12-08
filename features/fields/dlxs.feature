@@ -25,8 +25,8 @@ Feature: Support for DLXS collections
 	| Page | chla1043101_01_100 | Collection | Core Historical Literature of Agriculture |
 	| Page | chla1043101_01_100 | Subject | Agriculture |
 	| Page | chla1043101_01_100 | Extent | 424 |
-	| Series | ezra0001_1 | Title | Correspondence: June 17, 1828 - September 22, 1830 |
-	| Series | ezra0001_1 | Collection | Ezra Cornell |
+	| Series | ezra0001_1 | Title | Ezra Cornell Correspondence: June 17, 1828 - September 22, 1830 (Box 1/Folder 1) |
+	| Series | ezra0001_1 | Collection | Ezra Cornell Papers |
 	| Series | ezra0001_1 | Extent | 35 |
 	| Book | flow1685158 | Title | Symbolorum et emblematum centuriae |
 	| Book | flow1685158 | Collection | Language of Flowers |
@@ -133,7 +133,7 @@ Feature: Support for DLXS collections
     | creation_site_location_tesim | Location | bol0001 | Sucre |
     | creator_tesim | Creator | bol0001 | Fernández, Hilarión |
     | date_display_tesim | Issue Date | chla1043101_01 | 1850 |
-    | date_tesim | Date | chla1043101_01 | 1850 |
+    | date_tesim | Date | chla2731292 | 1896 |
     | extent_tesim | Extent | bol0001 | 16 300dpi JPEG page images |
     | identifier_tesim | Identifier | bol0001_1 | bol0001 |
     | keywords_tesim | Keywords | hunt0001_1 | Nahuatl language - Grammar |

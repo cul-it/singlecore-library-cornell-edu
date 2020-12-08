@@ -76,6 +76,7 @@ end
   get '/collections/art2301' => 'high_voltage/pages#show', :id => 'collections/art2301/index'
   get '/collections/artifactsandart' => 'high_voltage/pages#show', :id => 'collections/artifactsandart/index'
   get '/collections/bees' => 'high_voltage/pages#show', :id => 'collections/bees/index'
+  get '/collections/beyondthetaj' => 'high_voltage/pages#show', :id => 'collections/beyondthetaj/index'
   get '/collections/blaschka' => 'high_voltage/pages#show', :id => 'collections/blaschka/index'
   get '/collections/chla' => 'high_voltage/pages#show', :id => 'collections/chla/index'
   get '/collections/eleusis' => 'high_voltage/pages#show', :id => 'collections/eleusis/index'
