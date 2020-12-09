@@ -401,6 +401,12 @@ def get_chla_series_book(id)
   return @response[0]
 end
 
+def get_articles args
+  issue = args['id'] + '_articles_*'
+  response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=id:#{issue}&wt=json&sort=id%20asc&rows=10000"))
+  @response = response['response']['docs']
+  return @response
+end
 
 def get_chla_tocs args
   journal = args['id']
