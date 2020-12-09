@@ -44,8 +44,11 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 		  <% end -%>
 		</dl>
 		<% if render_document_show_field_value(:document => @document, :field => 'has_model_ssim') == "Journal"  %>
-      		<%= render 'issue_list', :document => @document %>
-  		<% end %>
+      		       <%= render 'issue_list', :document => @document %>
+                <% end %>
+                <% if render_document_show_field_value(:document => @document, :field => 'format_tesim') == "Issue"  %>
+                        <%= render 'article_list', :document => @document %>
+                <% end %>
   		<% if render_document_show_field_value(:document => @document, :field => 'format_tesim') == "Box"  %>
   			<%= render 'folder_list', :document => @document %>
   		<% end %>
