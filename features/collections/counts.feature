@@ -49,7 +49,7 @@ Feature: Confirm that collections have the correct number of assets
 	| karma | 4140 |
 	| kassoy | 139 |
 	| kingsbury | 522 |
-	| kmoddl | 307 |
+	| kmoddl | 347 |
 	| leuenberger | 231 |
 	| lindsaycooper | 589 |
 	| loewentheil | 1476 |
