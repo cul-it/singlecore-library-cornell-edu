@@ -9,7 +9,7 @@
 <% get_articles(document).each do |issue| %>
         <li>
            <%#= issue["id"] %>
-           <%= link_to issue["title_tesim"][0], "/catalog/"+issue["id"], "aria-label" => issue["id"] %> <%#= issue["title_tesim"][0] %>
+           <%= link_to issue["title_tesim"][0], issue["reader_link_ssi"], "aria-label" => issue["reader_link_ssi"] %> <%#= issue["title_tesim"][0] %>
 	    </li>
   <%# old_date = date %>
 <% end %>
