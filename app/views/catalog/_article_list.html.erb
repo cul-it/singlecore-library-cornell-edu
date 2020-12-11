@@ -7,10 +7,12 @@
 
        <ul>
 <% get_articles(document).each do |issue| %>
+       <% unless issue["reader_link_ssi"].nil? %>
         <li>
            <%#= issue["id"] %>
            <%= link_to issue["title_tesim"][0], issue["reader_link_ssi"], "aria-label" => issue["reader_link_ssi"] %> <%#= issue["title_tesim"][0] %>
 	    </li>
+       <% end %>
   <%# old_date = date %>
 <% end %>
          </ul>
