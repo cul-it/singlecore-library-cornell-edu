@@ -25,6 +25,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 	<% @title_related_link_tesim  = render_document_show_field_value(:document => @document, :field => 'title_related_link_tesim') %>
 	<% @finding_aid  = render_document_show_field_value(:document => @document, :field => 'finding_aid_tesim') %>
 	<% @id = render_document_show_field_value(:document => @document, :field => 'id') %>
+	<% @purchase_link = render_document_show_field_value(:document => @document, :field => 'pdfPurchase_link_ssi') %>
 
 	<%= render 'pub_status', :document => @document %>
 
@@ -104,6 +105,13 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			    	<% end %>
 				</ul>
 			</div>
+			<%# purchase link %>
+			<% if @purchase_link.present? %>
+				<div class="well">
+					<h2>Purchase</h2>
+					<a href="<%= @purchase_link %>" class="collection-links" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'Amazon-purchase-<%= @id %>']);">Buy this item in print<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+				</div>
+          	<% end %>
 			<%# show digitizing tell-en-nasbeh image map %>
 			<% if @project == "3686" %>
 				<h3>Additional plans</h3>
