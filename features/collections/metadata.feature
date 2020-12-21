@@ -17,7 +17,7 @@ Examples:
 	| ezra | https://rmc.library.cornell.edu/ezracornellcoll/ |
 	| flow | /collections/flowers |
 	| hearth | /collections/hearth |
-	| hivebees | /collections/bee |
+	| hivebees | /collections/bees |
 	# | hunt | url |
 	# | izquierda | url |
 	# | liber | url |
