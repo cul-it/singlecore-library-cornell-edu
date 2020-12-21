@@ -22,7 +22,7 @@ Examples:
 	# | izquierda | url |
 	# | liber | url |
 	| may | https://rmc.library.cornell.edu/mayantislaverycoll/ |
-	| mmay | https://rmc.library.cornell.edu/mayantislaverycoll/ |
+	# | mmay | https://rmc.library.cornell.edu/mayantislaverycoll/ |
 	# | nur | url |
 	# | sat | url |
 	# | scott | url |
