@@ -14,7 +14,7 @@ Examples:
     | nickname | website |
 	# | bol | url |
 	| chla | /collections/chla |
-	# | ezra | url |
+	| ezra | https://rmc.library.cornell.edu/ezracornellcoll/ |
 	| flow | /collections/flowers |
 	| hearth | /collections/hearth |
 	| hivebees | /collections/bee |
@@ -27,8 +27,8 @@ Examples:
 	# | sat | url |
 	# | scott | url |
 	# | sea | url |
-	# | witchcraft | url |
-	# | words | url |
+	| witchcraft | https://rmc.library.cornell.edu/witchcraftcoll/ |
+	| words | /collections/wordsworth |
 	| adler | http://rmc.library.cornell.edu/hiphop/adler.html |
 	| adwhite | http://resolver.library.cornell.edu/misc/4077228 |
 	| aerial | /collections/aerialny |
