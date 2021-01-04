@@ -53,7 +53,7 @@ Feature: Support for DLXS collections
 	| Issue | hearth1891092_21_4 | Catalog Record | 1891092 |
 	| Issue | hearth1891092_21_4 | Subject | Dressmaking |
 	| Issue | hearth1891092_21_4 | Extent | 152 300dpi JPG page images |
-	| Issue | hearth1891092_21_4 | Note | 152 p. |
+	| Issue | hearth1891092_21_4 | Notes | 152 p. |
 	| Issue | hearth1891092_21_4 | Publisher | The Butterick company, inc. |
 	| Issue | hearth1891092_21_4 | Publication Place | New York |
 	| Issue | hunt0001_102 | Title | Arte de el idioma mexicano |
