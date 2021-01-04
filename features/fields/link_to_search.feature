@@ -43,7 +43,7 @@ Examples:
     | Photographer | ss:20864765 | Plock, H.G. | photographer_creator_tesim | agent_tesim | Photographer |
     | Principal Performer | ss:9904702 | Para Niyaga Mangkunegaran | principle_performer_creator_tesim | agent_tesim | Performer |
     | Region | ss:2600802 | Alaska | region_location_tesim | location_facet_tesim | Location |
-    | Repository | ss:320916 | Division of Rare and Manuscript Collection | repository_tesim | repository_tesim | Repository |
+    | Repository | ss:3317897 | Poznan, Poland, National Museum (original) | repository_tesim | repository_tesim | Repository |
     # none found | Creator | ss:3213121 | start | second_creator_tesim | second_creator_tesim | Creator |
     | Senechal | ss:3851336 | Eustache de Beaumarchais | senechal_tesim | agent_tesim | Senechal |
     | Set | ss:11086940 | Mimure | set_title_tesim | set_title_tesim | Set |
