@@ -40,7 +40,7 @@ Examples:
     | Musician | ss:21811897 | Dean Brodrick | musician_creator_tesim | agent_tesim | Musician |
     | Site | ss:290915 | Chuschi (Peru) | other_location_tesim | location_facet_tesim | Location |
     | Performer | ss:24415882 | Albertin | performer_creator_tesim | agent_tesim | Performer |
-    | Photographer | ss:319746 | F. Bodmer | photographer_creator_tesim | agent_tesim | Photographer |
+    | Photographer | ss:20864765 | Plock, H.G. | photographer_creator_tesim | agent_tesim | Photographer |
     | Principal Performer | ss:9904702 | Para Niyaga Mangkunegaran | principle_performer_creator_tesim | agent_tesim | Performer |
     | Region | ss:2600802 | Alaska | region_location_tesim | location_facet_tesim | Location |
     | Repository | ss:320916 | Division of Rare and Manuscript Collection | repository_tesim | repository_tesim | Repository |
