@@ -94,4 +94,4 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | vicos | 2246 | 2246 |
 	| forum | willardstraight | 176 | 176 |
 	| other | art2301 | 55 | 55 |
-	| other | claireholt | 0 | 1785 |
+	# | other | claireholt | 0 | 1785 |
