@@ -54,7 +54,7 @@ Examples:
 | sea | production | seaA29c_8 |
 | active_fedora_model_ssi Page | production | nur00420_4 |
 | suppressed rare | production | ss:550947 |
-| suppressed clairholt | production | ss:321396 |
+# | suppressed clairholt | production | ss:321396 |
 | suppressed sterrett | production | ss:12561355 |
 | suppressed artifacts | production | ss:640913 |
 
