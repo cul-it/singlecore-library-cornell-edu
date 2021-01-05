@@ -1,6 +1,5 @@
-Given("I browse collection nicknamed {string}") do |string|
-
-    case "#{string}"
+def get_collection_path(nickname)
+    case "#{nickname}"
 
 	when "adler"
 		full = 'Adler Hip Hop Archive'
@@ -48,6 +47,8 @@ Given("I browse collection nicknamed {string}") do |string|
 		full = 'Cornell Coin Collection'
 	when "coins"
 		full = 'Cornell Coin Collection'
+	when "coop"
+		full = 'Cooper Bridge Plan Collection'
 	when "conzo"
 		full = 'Joe Conzo Jr. Archive'
 	when "culmaps"
@@ -63,7 +64,7 @@ Given("I browse collection nicknamed {string}") do |string|
 	when "eleusis"
 		full = 'Mysteries at Eleusis: Images of Inscriptions'
 	when "ezra"
-		full = 'Ezra Cornell Papers'
+		full = 'Ezra Cornell Papers, Ezra Cornell Letters'
 	when "fallout"
 		full = 'Nuclear Fallout Pamphlets'
 	when "flow"
@@ -137,7 +138,9 @@ Given("I browse collection nicknamed {string}") do |string|
 	when "maps"
 		full = 'Cornell University Library Map Collection'
 	when "may"
-		full = 'Samuel J. May Anti-Slavery Collection'
+		full = 'Samuel J. May Anti-Slavery Pamphlet Collection'
+	when "mmay"
+		full = 'Samuel J. May Anti-Slavery Manuscript Collection'
 	when "nur"
 		full = 'Donovan Nuremberg Trials Collection'
 	when "obama"
@@ -213,6 +216,13 @@ Given("I browse collection nicknamed {string}") do |string|
         raise "Unknown collection nickname: #{string}"
     end
 
-    uri = URI.escape(full).gsub('&', '%26')
+	uri = URI.escape(full).gsub('&', '%26')
+end
+
+Given("I browse collection nicknamed {string}") do |string|
+	uri = get_collection_path(string)
     visit("/?f[collection_tesim][]=#{uri}")
 end
+
+
+

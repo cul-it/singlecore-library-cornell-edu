@@ -24,15 +24,24 @@ Then("there should be {int} search results") do |int|
   expect(page.find('div#searchresults div#documents')).to have_selector('div.document', count: int)
 end
 
-
 Then("the collection should show {int} assets") do |int|
-  # put the commas into the integer
-  int = int.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
-  within ("div#sortAndPerPage span.page_entries") do
-    strongs = all(:xpath, '//strong')
-    expect(strongs[3]).to have_content(int)
+  begin
+    if int.to_s == '0'
+      expect(page).not_to have_selector("div#sortAndPerPage span.page_entries strong[3]")
+    else
+      # put the commas into the integer
+      int = int.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
+      expect(page.find("div#sortAndPerPage span.page_entries strong[3]")).to have_content(int)
+    end
+  rescue Capybara::ElementNotFound => e
+    where_am_i
+    show_environment
+    raise e
+  rescue RSpec::Expectations::ExpectationNotMetError => e
+    where_am_i
+    show_environment
+    raise e
   end
-  # page.find(:xpath, "//head/meta[@name=\"totalResults\" and @content=\"#{int}\"]", :visible => :all)
 end
 
 Then("I should see {int} additional views") do |int|
@@ -94,4 +103,22 @@ Then("I should not see id {string} in the search results") do |string|
   rows.each do |row|
     expect(row).not_to have_selector(link)
   end
+end
+
+Then("the first search result title contains {string}") do |string|
+  expect(page.first("div.documentHeader h5.index_title a")).to have_content(string)
+end
+
+When("I sort the results by {string}") do |string|
+  page.find(:css, "div#sort-dropdown button.dropdown-toggle", visible: false).click
+  click_link("#{string}")
+end
+
+Given("I click on the first search result") do
+  page.first("div.documentHeader h5.index_title a").click
+end
+
+Then("I should see link {string} leading to {string}") do |string, string2|
+  # find the link, then it's parent for the have_link
+  expect(page.find("a", text: "#{string}").first(:xpath,".//..")).to have_link(href: "#{string2}", text: "#{string}")
 end

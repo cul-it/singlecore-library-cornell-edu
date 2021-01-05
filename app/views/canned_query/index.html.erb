@@ -1,0 +1,7 @@
+<h1>CannedQuery#index</h1>
+<p>Find me in app/views/canned_query/index.html.erb</p>
+<ul>
+<%-  @can.each do |index, search| -%>
+    <li><%= link_to '/cq/' + index.to_s, '/cq/' + index.to_s %> -> <%= search %></li>
+<% end %>
+</ul>

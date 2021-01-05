@@ -1,5 +1,8 @@
 
 Rails.application.routes.draw do
+  get 'canned_query/index'
+  get '/cq/:id' => 'canned_query#redirect', :id => 'nickname'
+
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   root to: "catalog#index"
   devise_for :users
@@ -110,6 +113,9 @@ end
 
   get '/collections/:subject' => 'catalog#index'
 
+  # override rendering of MAP hash fields
+  #get '/catalog/:id/my_agent_hash_action' => 'catalog#my_agent_hash_action', as: 'my_agent_hash_action'
+  get '/catalog/:id/my_custom_action' => 'catalog#my_custom_action', as: 'my_custom_action_catalog'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

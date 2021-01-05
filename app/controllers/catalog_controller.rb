@@ -228,6 +228,15 @@ class CatalogController < ApplicationController
       :fl => '*,score',
           }
 
+    config.max_r_count = {
+      :date => 4,
+      :title => 4,
+      :measurement => 6,
+      :identifier => 6,
+      :agent => 6,
+      :legacy_value => 7,
+    }
+
     config.default_per_page = 20
 
     ## blacklight-maps configuration default values
@@ -257,12 +266,13 @@ class CatalogController < ApplicationController
     # solr fields that will be treated as facets by the blacklight application
     config.add_facet_field 'collection_tesim', :label => 'Collection', :sort => 'index', :limit => 5, :collapse => false
     config.add_facet_field 'format_tesim', :label => 'Format', :limit => 5, :collapse => false
-    config.add_facet_field 'date_tesim', :label => 'Date', :limit => 5
+    config.add_facet_field 'date_facet_tesim', :label => 'Date', :limit => 5
     config.add_facet_field 'latest_date_isi', :label => 'Date Range',  range: {
                          num_segments: 6,
                          segments: true,
                          maxlength: 6
                        }
+    config.add_facet_field 'agent_tesim', :label => 'Agent', :sort => 'count', :limit => 5
     config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
     config.add_facet_field 'illustrator_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
     config.add_facet_field 'second_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
@@ -294,10 +304,12 @@ class CatalogController < ApplicationController
     config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
     config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
     config.add_facet_field 'other_location_tesim', :label => 'Site', :show => false
+    config.add_facet_field 'site_tesim', :label => 'Site', :show => false
     config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
     config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
     config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
     config.add_facet_field 'designer_creator_tesim', :label => 'Designer', :show => false
+    config.add_facet_field 'where_ssim', :label => 'Coordinates', :show => false
     config.add_facet_field 'writer_creator_tesim', :label => 'Writer', :show => false
     config.add_facet_field 'composer_creator_tesim', :label => 'Composer', :show => false
     config.add_facet_field 'musician_creator_tesim', :label => 'Musician', :show => false
@@ -306,9 +318,11 @@ class CatalogController < ApplicationController
     config.add_facet_field 'performer_creator_tesim', :label => 'Performer', :show => false
     config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
     config.add_facet_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :show => false
+    config.add_facet_field 'country_tesim', :label => 'Country', :show => false
+    config.add_facet_field 'legacy_value_tesim', :label => 'Legacy Value', :show => false
 
     if ENV["COLLECTIONS"] == "development"
-      config.add_facet_field 'status_ssi', :label => 'Status'
+      config.add_facet_field 'publishing_status_tesim', :label => 'Status'
     end
 
     # Have BL send all facet field names to Solr
@@ -323,14 +337,14 @@ class CatalogController < ApplicationController
     config.add_index_field 'architect_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_index_field 'occasion_tesim', :label => 'Occasion'
+    config.add_index_field 'r1_event_name_tesim', :label => 'Occasion'
     config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
     config.add_index_field 'common_name_tesim', :label => 'Common Name'
     config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
     config.add_index_field 'volume_tesim', :label => 'Volume'
     config.add_index_field 'page_tesim', :label => 'Page'
     config.add_index_field 'creation_site_location_tesim', :label => 'Site', :link_to_search => true
-    config.add_index_field 'location_tesim', :label => 'Location', :link_to_search => true
+    config.add_index_field 'location_facet_tesim', :label => 'Location', :link_to_search => true
 
     # these index fields are from the dlxs collections
     config.add_index_field 'publication_tesim', :label => 'Publication'
@@ -338,37 +352,55 @@ class CatalogController < ApplicationController
     config.add_index_field 'publisher_tesim', :label => 'Publisher'
     config.add_index_field 'pubplace_tesim', :label => 'Publication Place'
     config.add_index_field 'pubdate_tesim', :label => 'Date'
-
-    # config.add_index_field 'image_ocr_tesim',:label => 'text'
     config.add_index_field 'book_title', :label => 'Book Title'
     config.add_index_field 'date_tesim', :label => 'Date'
     config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
 
     config.add_index_field 'format_tesim', :label => 'Format'
 
-    if ENV["COLLECTIONS"] == "development"
+    #config.add_index_field 'agent_hash_tesim', :label => 'Agent', helper_method: :compound_field_display, :link_to_search => true
+    for n in 1..config.max_r_count[:agent]
+      label = 'Agent' + (n == 1 ? '' : ' ' + n.to_s)
+      config.add_index_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_index_field?, helper_method: :first_agent_only
+    end
+
+    #config.add_index_field 'date_hash_tesim', :label => 'Date', helper_method: :compound_field_display
+    for n in 1..config.max_r_count[:date]
+      label = 'Date' + (n == 1 ? '' : ' ' + n.to_s)
+      config.add_index_field 'r' + n.to_s + '_date_tesim', :label => label, if: :display_date_show_field?
+    end
+
+    if "#{ENV['COLLECTIONS']}" == "development"
       config.add_index_field 'collection_sequence_isi', :label => 'Collection Sequence'
     end
 
     # solr fields to be displayed in the show (single result) view
+    # these are generated from the digcoll-ingest collections and the MAP spreadsheet
 
-    # updated order for Metadata Application Profile
     # title
-    config.add_show_field 'title_tesim', :label => 'Title'
+    config.add_show_field 'title_tesim', :label => 'Title', if: :no_forum_version?
     config.add_show_field 'pj_full_title_tesim', :label => 'Full Title'
     config.add_show_field 'map_title_language_tesim', :label => 'Title Language'
     config.add_show_field 'translation_title_tesim', :label => 'Translated Title'
     config.add_show_field 'map_title_language2_tesim', :label => 'Translated Title Language'
     config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title'
     config.add_show_field 'project_title_tesim', :label => 'Project Title'
-    config.add_show_field 'common_name_tesim', :label => 'Common Name'
+    # config.add_show_field 'common_name_tesim', :label => 'Common Name'  // now for index only
     config.add_show_field 'yiddish_title_tesim', :label => 'Title (Yiddish)'
     config.add_show_field 'romanized_yiddish_title_tesim', :label => 'Romanized Title (Yiddish)'
+    # Title qualifier
+    for n in 1..config.max_r_count[:title]
+      label = 'Title' + (n == 1 ? '' : ' ' + n.to_s)
+      config.add_show_field 'r' + n.to_s + '_title_tesim', :label => label, if: :display_title_show_field?
+    end
+
     # collection
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
     config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
     config.add_show_field 'dig_coll_tesim', :label => 'Digital Collection'
     config.add_show_field 'set_title_tesim', :label => 'Set', :link_to_search => true
+
+    # Agent
     # creator
     config.add_show_field 'creator_tesim', :label => 'Creator', :link_to_search => true
     config.add_show_field 'role_tesim', :label => 'Creator Role'
@@ -397,10 +429,17 @@ class CatalogController < ApplicationController
     config.add_show_field 'musician_creator_tesim', :label => 'Musician', :link_to_search => true
     config.add_show_field 'lyricist_creator_tesim', :label => 'Lyricist', :link_to_search => true
     config.add_show_field 'arranger_creator_tesim', :label => 'Arranger', :link_to_search => true
+
+    # Agent Roles qualifier
+    for n in 1..config.max_r_count[:agent]
+      label = 'Agent' + (n == 1 ? '' : ' ' + n.to_s)
+      config.add_show_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_show_field?, helper_method: :link_to_agent_facet
+    end
+
     config.add_show_field 'designer_creator_tesim', :label => 'Designer', :link_to_search => true
     config.add_show_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :link_to_search => true
     # date
-    config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true
+    config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true, helper_method: :link_to_date_facet, if: :no_forum_version?
     config.add_show_field 'date_display_tesim', :label => 'Issue Date'
     config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
     config.add_show_field 'full_text_date_tesim', :label => 'Date'
@@ -413,6 +452,12 @@ class CatalogController < ApplicationController
     config.add_show_field 'date_creator_death_tesim', :label => 'Creator Death Date'
     config.add_show_field 'century_tesim', :label => 'Century'
     config.add_show_field 'date_created_on_ssi', :label => 'Date posted', :link_to_search => true
+    # Date type qualifier
+    for n in 1..config.max_r_count[:date]
+      label = 'Date' + (n == 1 ? '' : ' ' + n.to_s)
+      config.add_show_field 'r' + n.to_s + '_date_tesim', :label => label, if: :display_date_show_field?, helper_method: :link_to_date_facet
+    end
+
     # location
     config.add_show_field 'creation_site_location_tesim', :label => 'Site', :link_to_search => true
     config.add_show_field 'other_location_tesim', :label => 'Site', :link_to_search => true
@@ -442,6 +487,12 @@ class CatalogController < ApplicationController
     config.add_show_field 'address_tesim', :label => 'Address'
     config.add_show_field 'elevation_tesim', :label => 'Elevation'
     config.add_show_field 'addresscreator_tesim', :label => 'Address (Creator)'
+
+    config.add_show_field 'site_tesim', :label => 'Site', :link_to_search => true # 22
+    config.add_show_field 'location_facet_tesim', :label => 'Location', :link_to_search => true
+    config.add_show_field 'country_tesim', :label => 'Country', :link_to_search => true # 38
+    config.add_show_field 'venue_tesim', :label => 'Venue' # 4
+
     # identifier
     config.add_show_field 'id_number_tesim', :label => 'ID Number'
     config.add_show_field 'identifier_tesim', :label => 'Identifier'#, helper_method: :chla
@@ -458,7 +509,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'collection_number_tesim', :label => 'Collection Number'
     config.add_show_field 'card_number_tesim', :label => 'Card Number'
     config.add_show_field 'catalog_number_tesim', :label => 'Catalog Number'
-    config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
+    # config.add_show_field 'identifier_blaschka_isi', :label => 'Blaschka Number' // now for index only
     config.add_show_field 'identifier_cornell_isi', :label => 'Cornell Number'
     config.add_show_field 'plan_number_isi', :label => 'Plan Number'
     config.add_show_field 'internal_number_tesim', :label => 'Internal Number'
@@ -472,8 +523,17 @@ class CatalogController < ApplicationController
     config.add_show_field 'item_number_tesim', :label => 'Item Number'
     config.add_show_field 'voight_number_tesim', :label => 'Voigt Catalog Model'
 
+    # Identifier type qualifier
+    for n in 1..config.max_r_count[:identifier]
+      label = 'Identifier' + (n == 1 ? '' : ' ' + n.to_s)
+      config.add_show_field 'r' + n.to_s + '_identifier_tesim', :label => label, if: :display_identifier_show_field?
+    end
+    config.add_show_field 'filename_s', :label => 'File Name' # 63
+    config.add_show_field 'kaltura_id_sim', :label => 'Kaltura ID' # 3
+    config.add_show_field 'kaltura_playlist_sim', :label => 'Kaltura Playlist' # 1
+
     # collection- and item-specific
-    config.add_show_field 'occasion_tesim', :label => 'Occasion'
+    config.add_show_field 'r1_event_name_tesim', :label => 'Occasion'
     config.add_show_field 'track_ssi', :label => 'Track'
     config.add_show_field 'track_isi', :label => 'Track'
     config.add_show_field 'deity_tesim', :label => 'Central Deity', :link_to_search => true
@@ -508,17 +568,28 @@ class CatalogController < ApplicationController
     config.add_show_field 'map_sheet_tesim', :label => 'Sheet'
     config.add_show_field 'map_species_tesim', :label => 'Species'
     config.add_show_field 'original_blaschka_species_tesim', :label => 'Original Blaschka Species Name'
+
+    # Legacy label and value qualifier
+    #config.add_show_field 'legacy_label_hash_tesim', :label => 'Legacy Label', helper_method: :compound_field_display
+    #config.add_show_field 'r1_legacy_value_tesim', :label => 'Legacy Value', if: :display_legacy_value_show_field?
+    for n in 1..config.max_r_count[:legacy_value]
+      label = 'Legacy value' + (n == 1 ? '' : ' ' + n.to_s)
+      config.add_show_field 'r' + n.to_s + '_legacy_value_tesim', :label => label, if: :display_legacy_value_show_field?, :link_to_search => :legacy_value_tesim
+    end
+    config.add_show_field 'species_tesim', :label => 'Species' # 2
+
     # translation, transcription, etc.
     config.add_show_field 'translation_tesim', :label => 'Translation'
     config.add_show_field 'inscription_tesim', :label => 'Inscription'
-    config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :autolink_field
+    config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :link_to_transcription_facet # 10
     config.add_show_field 'r2_transcription_tesim', :label => 'Transcription 2', helper_method: :autolink_field
     config.add_show_field 'devanagari_hamlet_tesim', :label => 'Hamlet (Devanagari)'
     config.add_show_field 'roman_hamlet_tesim', :label => 'Hamlet (Roman Characters)'
     config.add_show_field 'translation_of_tesim', :label => 'Translation of'
     config.add_show_field 'translation_as_tesim', :label => 'Translated as', helper_method: :autolink_field
+
     # work type, subject, etc.
-    config.add_show_field 'lang_tesim', :label => 'Language'
+    config.add_show_field 'lang_tesim', :label => 'Language', if: :display_lang_tesim?
     config.add_show_field 'culture_tesim', :label => 'Culture', :link_to_search => true
     config.add_show_field 'culture_orig_tesim', :label => 'Original Culture'
     config.add_show_field 'style_period_tesim', :label => 'Style/Period'
@@ -533,6 +604,13 @@ class CatalogController < ApplicationController
     config.add_show_field 'img_view_desc_tesim', :label => 'Image View Description'
     config.add_show_field 'img_view_type_tesim', :label => 'Image View Type'
     config.add_show_field 'image_view_type_tesim', :label => 'Image View Type'
+
+    config.add_show_field 'keywords_subject_tesim', :label => 'Keywords' # 3
+    config.add_show_field 'language_tesim', :label => 'Language' # 12
+
+    # "Image View Description and Image View Type are separate fields and a record is not required to have either." -mhk33 3/31/2020
+    config.add_show_field 'image_view_desc_tesim', :label => 'Image View Description'
+
     config.add_show_field 'context_tesim', :label => 'Context'
     # item size
     config.add_show_field 'extent_tesim', :label => 'Extent' #, helper_method: :extent_units
@@ -560,15 +638,22 @@ class CatalogController < ApplicationController
     config.add_show_field 'map_measurement5_tesim', :label => 'Measurement 5', helper_method: :measurements5
     # config.add_show_field 'map_measurement5_unit_tesim', :label => 'Unit 5'
     # config.add_show_field 'map_measurement5_dimension_tesim', :label => 'Dimension 5'
+
+    # Measurement qualifiers
+    config.add_show_field 'measurement_hash_tesim', :label => 'Measurement', helper_method: :compound_measurement_field_display
+
     # description, notes
     config.add_show_field 'description_tesim', :label => 'Description', helper_method: :autolink_field
     config.add_show_field 'description2_tesim', :label => 'Description 2', helper_method: :autolink_field
     config.add_show_field 'devanagari_description_tesim', :label => 'Description (Devanagari)'
     config.add_show_field 'collectors_notes_tesim', :label => 'Collector\'s Notes', helper_method: :autolink_field
-    config.add_show_field 'note_tesim', :label => 'Note', helper_method: :autolink_field
+    # config.add_show_field 'note_tesim', :label => 'Note', helper_method: :autolink_field
     config.add_show_field 'notes_2_tesim', :label => 'Note'
     config.add_show_field 'annotation_tesim', :label => 'Annotation'
     config.add_show_field 'condition_tesim', :label => 'Condition'
+
+    config.add_show_field 'notes_tesim', :label => 'Notes', helper_method: :autolink_field # 33
+
     # references, publishing info
     config.add_show_field 'map_relationships_tesim', :label => 'Relationships', helper_method: :relationships
     config.add_show_field 'publication_tesim', :label => 'Publication'
@@ -588,6 +673,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'series_relation_tesim', :label => 'Series'
     config.add_show_field 'bibliography_tesim', :label => 'Bibliography', helper_method: :autolink_field
     config.add_show_field 'cite_as_tesim', :label => 'Cite As'
+
+    config.add_show_field 'vol_issue_no_tesim', :label => 'Volume/Issue' # 3
+    config.add_show_field 'related_work_tesim', :label => 'Related Work' # 3
+    config.add_show_field 'relationships_tesim', :label => 'Relationships', helper_method: :relationships # 9
+
     # archival collection info
     config.add_show_field 'repository_tesim', :label => 'Repository', :link_to_search => true
     config.add_show_field 'location_repo_tesim', :label => 'Repository Location'
@@ -599,6 +689,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'provenance_tesim', :label => 'Provenance'
     config.add_show_field 'box_box_folder_tesim', :label => 'Box'
     config.add_show_field 'folder_box_folder_tesim', :label => 'Folder'
+
+    config.add_show_field 'series_tesim', :label => 'Series' # 7
+    config.add_show_field 'box_tesim', :label => 'Box' # 20
+    config.add_show_field 'folder_tesim', :label => 'Folder' # 17
+
     #dlxs fields
     config.add_show_field 'witness_tesim', :label => 'Witness'
     config.add_show_field 'onames_tesim', :label => 'Other Names'
@@ -616,11 +711,20 @@ class CatalogController < ApplicationController
     config.add_show_field 'print_source_tesim', :label => 'Print Source'
     config.add_show_field 'tocplusLinks_tesim', :label => 'Contents', helper_method: :autolink_field
     if ENV["COLLECTIONS"] == "development"
-      config.add_show_field 'work_sequence_isi', :label => 'Work Sequence'
+      config.add_show_field 'work_sequence_isi', :label => 'Work Sequence' # 5
+      config.add_show_field 'updated_on_ss', :label => 'Updated On' # 63
     end
 
-    # "fielded" search configuration. Used by pulldown among other places.
-
+    # Do not display - to delete
+    # config.add_show_field 'created_on_tsi', :label => 'Created On' # 63
+    # config.add_show_field 'created_by_tesim', :label => 'Created By', :link_to_search => true # 63
+    # config.add_show_field 'dcmi_type_tesim', :label => 'DCMI Type' # 2
+    # config.add_show_field 'finding_aid_tesim', :label => 'Archival Finding Aid' # 26
+    # config.add_show_field 'preservation_collection__id_tesim', :label => 'PreservationCollectionID' # 10
+    # config.add_show_field 'preservation_item_id_tesim', :label => 'PreservationItemID' # 10
+    # config.add_show_field 'publish_to_portal_tesim', :label => 'Publish to Portal' # 4
+    # config.add_show_field 'ocr_transcription_tesim', :label => 'OCR Text' # 1
+    # config.add_show_field 'updated_by_tesim', :label => 'Updated By' # 63
 
     config.add_search_field 'all_fields', :label => 'All Fields'
     config.add_search_field('title') do |field|
@@ -644,20 +748,134 @@ class CatalogController < ApplicationController
       }
     end
 
-
-
     # "sort results by" select (pulldown)
     config.add_sort_field 'collection_sequence_isi asc, portfolio_creator_ssi asc, identifier_blaschka_isi asc, score desc, latest_date_isi asc', :label => 'relevance'
-    config.add_sort_field 'latest_date_isi desc, title_tesi asc', :label => 'year (descending)'
-    config.add_sort_field 'latest_date_isi asc, title_tesi asc', :label => 'year (ascending)'
+    config.add_sort_field 'latest_date_isi desc, title_ssi asc', :label => 'year (descending)'
+    config.add_sort_field 'latest_date_isi asc, title_ssi asc', :label => 'year (ascending)'
     config.add_sort_field 'title_ssi asc, latest_date_isi asc', :label => 'title (a to z)'
     config.add_sort_field 'title_ssi desc, latest_date_isi desc', :label => 'title (z to a)'
-    config.add_sort_field 'author_t asc, latest_date_isi asc', :label => 'author (a to z)'
+    config.add_sort_field 'creator_ssi asc, latest_date_isi asc', :label => 'author (a to z)'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
   end
 
+  def no_forum_version?(field_config, solr_doc)
+    field = field_config['field']
+    case field
+    when 'agent_tesim'
+      solr_doc['r1_agent_tesim'].nil?
+    when 'date_tesim'
+      solr_doc['r1_date_tesim'].nil?
+    when 'title_tesim'
+      solr_doc['r1_title_tesim'].nil?
+    else
+      raise "Error: field has an invalid value (#{field})"
+    end
+  end
+
+  def display_agent_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_agent_role_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+    end
+    true # qualifier not required
+  end
+
+  def display_agent_index_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_agent_role_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+    end
+    true # qualifier not required
+  end
+
+  def display_date_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_date_type_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      label = qualifier.first.split.map(&:capitalize).join(' ')
+      field_config['label'] = label.include?('Date') ? label : label + ' Date'
+    end
+    true # qualifier not required
+  end
+
+  def display_identifier_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_identifier_type_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+    end
+    true # qualifier not required
+  end
+
+  def display_legacy_value_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_legacy_label_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      field_config['label'] = qualifier.first.split.map(&:capitalize).join(' ')
+      true
+    else
+      false # qualifier required
+    end
+  end
+
+  def display_measurement_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_measurement_dimension_' + parts.last
+    label = []
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      label << qualifier.first
+    else
+      return false # qualifier required
+    end
+    role = parts.first + '_measurement_units_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      label << qualifier.first
+    else
+      return false # qualifier required
+    end
+    text = label.join(' ')
+    if text.present?
+      field_config['label'] = text.split.map(&:capitalize).join(' ')
+    end
+    true
+  end
+
+  def display_title_show_field?(field_config, solr_doc)
+    field = field_config['field']
+    parts = field.split('_')
+    role = parts.first + '_title_language_' + parts.last
+    qualifier = solr_doc[role]
+    if qualifier.present?
+      # remove parens then prefix and surround with parens
+      field_config['label'] = 'Title (' + qualifier.first.gsub(/[()]/,"").split.map(&:capitalize).join(' ') + ')'
+    end
+    true # qualifier not required
+  end
+
+  def display_lang_tesim?(field_config, solr_doc)
+    if solr_doc['language_tesim'].present?
+      false
+    else
+      true
+    end
+  end
 
 end

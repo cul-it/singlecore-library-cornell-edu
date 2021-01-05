@@ -12,6 +12,5 @@ Feature: Search Results index should display a useful subset of the fields
     #| chla  | A Hoosier village | 1  | Creator  | Sims, Newell LeRoy |
     | prisonwritings | James Madison lithograph | 1 | Creator | Gilbert Stuart |
     | prisonwritings | James Madison lithograph | 1 | Collection | 19th Century Prison |
-    | prisonwritings | James Madison lithograph | 1 | Date | ca. 1840 |
     | prisonwritings | James Madison lithograph | 1 | Format | Image |
 

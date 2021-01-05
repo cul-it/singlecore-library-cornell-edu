@@ -1,6 +1,6 @@
 <%# @identifier= render_document_show_field_value(:document => @document, :field => 'id_number_ssi') %>
 <div class="other-viewer well">
-  <% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'occasion_tesim').present? %>
+  <% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'r1_event_name_tesim').present? %>
     <div class="row">
       <div class="col-md-8">
   <% end %>
@@ -17,12 +17,12 @@
     </div>
     <script src="https://cdnapisec.kaltura.com/p/518251/sp/51825100/embedIframeJs/uiconf_id/36571211/partner_id/518251?autoembed=true&entry_id=<%= @kaltura %>&playerId=kaltura_player_1474482853&cache_st=1474482853&width=550&height=412&flashvars[streamerType]=auto"></script>
   </div>
-  <% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'occasion_tesim').present? %>
+  <% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'r1_event_name_tesim').present? %>
     </div>
   <% end %>
-  <% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'occasion_tesim').present? %>
+  <% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'r1_event_name_tesim').present? %>
       <div class="col-md-4 track-list">
-        <% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'occasion_tesim').present? %>
+        <% if @project == "616" && render_document_show_field_value(:document => @document, :field => 'r1_event_name_tesim').present? %>
           <%= render 'track_list', :document => @document %>
         <% end %>
       </div>

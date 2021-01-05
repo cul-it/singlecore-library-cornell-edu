@@ -12,25 +12,23 @@ Feature: Asset regular fields
 
     Examples:
     | label | new_label | id | starting |
-    | Identifier | Identifier | 3851180 | AiguesMortes1966SouthWallFacingChannel.jpg |
-    | Photographer | Photographer | 3851180 | Reps, John William (American urban planning historian) |
+    #| Identifier | ID Number | 3851180 | AiguesMortes1966SouthWallFacingChannel.jpg |
+    #| Photographer | Photographer | 3851180 | Reps, John William (American urban planning historian) |
     | Archival Collection  | Archival Collection  | 26303757 | Adler Hip Hop Archive |
     | Collecting Program  | Collecting Program  | 26303879| Cornell University Hip Hop Collection |
     | Collection | Collection | 926992 | Joe Conzo Jr. Archive |
     | Coordinates | Coordinates | 3851180 | 43.564966,4.189368 |
     | Country | Country | 3851180 | France |
-    | Date  | Date  | 26303879 | 1998-08-01 |
-    | Date | Date | 26305773 | 1989-09 |
     | Description | Description | 595408 | "George and Priscilla Slocum Galleries Given |
     | Founder | Founder | 3851180 | Louis IX |
-    | Identifier | Identifier | 595408 | 100_1398 |
+    | Identifier | ID Number | 595408 | 100_1398 |
     | Image View Description | Image View Description | 595408 | Front View |
     | Image View Type | Image View Type | 595408 | General |
     | Latitude | Latitude | 3851180 | 43.564966 |
     | Location | Location | 3851180 | Gard, Languedoc-Roussillon, France |
     | Longitude | Longitude | 3851180 | 4.189368 |
     | Repository  | Repository  | 26303879 | Division of Rare and Manuscript Collections, Cornell University Library |
-    | Repository Location | Repository Location | 595408 | Shoellkopf House |
+    | Repository Location | Location | 595408 | Shoellkopf House |
     | Rights  | Rights  | 26303879 | This image was created by Cornell University Library |
     | Rights | Rights | 595408 | The content in |
     | Site | Site | 3851180 | Aigues-Mortes |

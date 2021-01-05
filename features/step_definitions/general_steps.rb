@@ -99,10 +99,3 @@ Given("I enable the {string} environment") do |string|
         expect(false)
     end
 end
-
-Then("show environment") do
-    puts "/n******************************"
-    puts "ENV['RAILS_ENV'] " + ENV['RAILS_ENV']
-    puts "ENV['COLLECTIONS'] " + ENV['COLLECTIONS']
-    puts "******************************/n"
-end

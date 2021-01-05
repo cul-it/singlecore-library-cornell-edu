@@ -2,6 +2,11 @@ Then /^show me the page$/ do
     print page.html
 end
 
+Then("show me the element {string}") do |string|
+    element = page.first(string)
+    what_is element
+end
+
 Then(/^I sleep (\d+) seconds$/) do |wait_seconds|
     sleep wait_seconds.to_i
 end
@@ -19,10 +24,23 @@ end
 
 Given("where am I") do
     where_am_i
+    show_environment
 end
 
 def where_am_i
-    puts "\n" + page.current_url.inspect
+    puts "\n" + URI.parse(current_url).to_s
+end
+
+def show_environment
+    puts "\n******************************"
+    puts "Capybara.app_host " + Capybara.app_host.to_s
+    puts "ENV['RAILS_ENV'] " + ENV['RAILS_ENV']
+    puts "ENV['COLLECTIONS'] " + ENV['COLLECTIONS']
+    puts "******************************\n"
+end
+
+Then("show environment") do
+    show_environment
 end
 
 And(/^I click on text '(.*?)'$/) do |text|
