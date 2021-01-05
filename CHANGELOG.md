@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### changed
+- MAP version
 - for each of the non-compound r*_xxx_tesim fields, make a copyfield that combines all the r*_xxx_tesim into xxx_tesim,
 (unless xxx_tesim already exists):
    - r1_alternate_title_tesim
