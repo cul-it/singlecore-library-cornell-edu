@@ -100,7 +100,7 @@ class ApplicationController < ActionController::Base
     if environment == 'development'
        fqa = ['-active_fedora_model_ssi:"Page"', '-format_tesim:"Article"',
         '-solr_loader_tesim:"eCommons"',
-        '-(project_id_ssi:' + ssc[:blaschka].to_s + ' AND portal_sequence_isi:[2 TO *])',
+        '-(project_id_ssi:' + ssc[:blaschka].to_s + ' AND work_sequence_isi:[2 TO *])',
         '-(project_id_ssi:' + ssc[:seneca].to_s + ' AND work_sequence_isi:[2 TO *])',
         '-(project_id_ssi:' + ssc[:stereoscopes].to_s + ' AND work_sequence_isi:[2 TO *])'
       ]
@@ -113,8 +113,8 @@ class ApplicationController < ActionController::Base
 
       # JSTOR Forum filters
       fq_forum = '(id:ss* AND
-        status_ssi:"Published" AND
-        -(work_sequence_isi:[2 TO *] AND -compound_object_count_isi:1) AND
+        publishing_status_tesim:"Published" AND
+        -work_sequence_isi:[2 TO *] AND
         -project_id_ssi:('
       fq_forum += [   # comment out any collections you want to display
         ssc[:adler],  # special - see below

@@ -3,8 +3,8 @@ module BlacklightHelper
   include Blacklight::BlacklightMapsHelperBehavior
 
   def id_to_subject(subject)
-  params[:subject] = subject.downcase
-end
+    params[:subject] = subject.downcase
+  end
 
   # create a link to a bbox spatial search
   def link_to_bbox_search bbox_coordinates
@@ -52,11 +52,11 @@ def image_download options={}
     end
 
   end
-# Link Relationships field (map_relationships_tesim) to it's related item
+# Link Relationships field (relationships_tesim) to it's related item
 def relationships options={}
-  if options[:document]['map_relationships_tesim'].present?
+  if options[:document]['relationships_tesim'].present?
     relationships = []
-    options[:document]['map_relationships_tesim'].each do |relationship|
+    options[:document]['relationships_tesim'].each do |relationship|
       r = link_to relationship, '/catalog/ss:' + relationship
       relationships << r
     end
@@ -274,10 +274,10 @@ def catalog_info(bibid)
 end
 
 def get_tracks args
-    date = args['date_tesim'][0].gsub(" ","+")
+    date = args['date_facet_tesim'][0].gsub(" ","+")
     collection = args['collection_tesim'][0].gsub(" ","+")
-    occasion = args['occasion_tesim'][0].gsub(" ","+")
-    response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=collection_tesim:\"Indonesian+Music+Archive\"+AND+occasion_tesim:\"#{occasion}\"+AND+date_tesim:\"#{date}\"&wt=json&indent=true&sort=track_isi%20asc&rows=100")).with_indifferent_access
+    occasion = args['r1_event_name_tesim'][0].gsub(" ","+")
+    response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/select?q=collection_tesim:\"Indonesian+Music+Archive\"+AND+r1_event_name_tesim:\"#{occasion}\"+AND+date_facet_tesim:\"#{date}\"&wt=json&indent=true&sort=id%20asc&rows=100")).with_indifferent_access
     @response = response['response']['docs']
     return @response
   end
@@ -326,7 +326,10 @@ def get_multiviews args
   collection = args['collection_tesim'][0]
   if args['work_sequence_isi'].present?
     sequence = 'work_sequence_isi'
-    if args['card_number_tesim'].present?
+    if args['work_group_ssi'].present?
+      # MAP form for all collections
+      parent = 'work_group_ssi'
+    elsif args['card_number_tesim'].present?
       # impersonators
       parent = 'card_number_tesim'
     elsif args['catalog_number_tesim'].present?
@@ -492,7 +495,16 @@ def chla args
 end
 end
 
-
+def first_agent_only args
+  links = link_to_agent_facet(args)
+  parts = links.split('<br />')
+  if parts.count > 1
+    output = parts.first + ', ...'
+  else
+    output = parts.first
+  end
+  output.html_safe
+end
 
 def extent_units args
   if args[:document]["collection_tesim"].present?
@@ -530,6 +542,96 @@ def has_collection_selected?
   end
 end
 
+def compound_field_search(field:, document:, find_key_name:, find_key_value:, return_key_name:)
+  if document[field].present?
+    json = document[field].first
+    compound = JSON.parse(json)
+    compound.each do |row|
+      row.each do |values|
+        found_row = return_value = nil
+        values.each do |key,value|
+          if key == find_key_name && value == find_key_value
+            found_row = key
+          elsif key == return_key_name
+            return_value = value
+          end
+        end
+        if found_row.present?
+          return return_value
+        end
+      end
+    end
+  end
+  return nil
+end
+
+def compound_legacy_label(document, find_key)
+  parts = compound_field_search(document: document,
+    field: 'legacy_label_hash_tesim',
+    find_key_name: 'legacy_label',
+    find_key_value: find_key,
+    return_key_name:'legacy_value')
+  return parts
+end
+
+def compound_identifier(document, find_key)
+  parts = compound_field_search(document: document,
+    field: 'identifier_hash_tesim',
+    find_key_name: 'identifier_type',
+    find_key_value: find_key,
+    return_key_name:'identifier')
+  return parts
+end
+
+def compound_field_display args
+  field = args[:field]
+  doc = args[:document]
+  json = doc[field].first
+
+  if json.present?
+    compound = JSON.parse(json)
+    parts = []
+    compound.each do |row|
+      row.each do |values|
+        lines = []
+        values.each do |key,value|
+          lines << value
+        end
+        parts << lines.join(' - ')
+      end
+    end
+    parts.join('<br />').html_safe
+  end
+end
+
+def compound_measurement_field_display args
+  field = args[:field]
+  doc = args[:document]
+  json = doc[field].first
+
+  if json.present?
+    compound = JSON.parse(json)
+    parts = []
+    compound.each do |row|
+      row.each do |values|
+        value = values['measurement']
+        slug = []
+        if values['measurement_units'].present?
+          slug << values['measurement_units']
+        end
+        if values['measurement_dimension'].present?
+          slug << values['measurement_dimension']
+        end
+        if slug.first.present?
+          value += ' (' + slug.join(', ') + ')'
+        end
+        parts << value
+      end
+    end
+    parts.join('<br />').html_safe
+  end
+end
+
 def asset_visible?(document)
   # eid = id.sub(':', '\:')
   if document.id.present?
@@ -543,7 +645,7 @@ def asset_visible?(document)
       fq = fqa.join(' AND ')
     else
       fq = @fq
-      fq.slice! '-(work_sequence_isi:[2 TO *] AND -compound_object_count_isi:1) AND'
+      fq.slice! '-work_sequence_isi:[2 TO *] AND'
       fq
     end
     fq = URI.escape(fq)
@@ -570,4 +672,16 @@ rescue Errno::ENOENT
   false #false if can't find the server
 end
 
+def publication_status(document)
+  if document["publishing_status_tesim"].present?
+    status = document["publishing_status_tesim"]
+  elsif document["status_ssi"].present?
+    status = document["status_ssi"] # legacy field
+  else
+    status = 'Unknown Publishing Status'
+  end
+  status = status.kind_of?(Array) ? status.first : status
 end
+
+end
+

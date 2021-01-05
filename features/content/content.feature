@@ -44,7 +44,7 @@ Examples:
 | kmoddl | production | ss:372824 |
 | leuenberger | production | ss:9469095 |
 | paniccioli | production | ss:8432316 |
-# | seneca | production | ss:24767712 |
+# | seneca | production | ss:24767712 | - no longer suppressed
 | cooper | production | cooper:0107 |
 | izquierda | production | izquierda1300_1359 |
 | liber | production | liber100_99 |
@@ -54,7 +54,7 @@ Examples:
 | sea | production | seaA29c_8 |
 | active_fedora_model_ssi Page | production | nur00420_4 |
 | suppressed rare | production | ss:550947 |
-| suppressed clairholt | production | ss:321396 |
+# | suppressed clairholt | production | ss:321396 |
 | suppressed sterrett | production | ss:12561355 |
 | suppressed artifacts | production | ss:640913 |
 
@@ -64,15 +64,20 @@ Scenario Outline: In production, only the first multiview object shows in the in
     Given I enable the 'production' environment
         And I browse collection nicknamed '<nickname>'
         And I search for asset '<asset_title>'
-        Then I should not see id '<id>' in the search results
-        And I go to asset '<id>'
-        Then the asset title field should contain '<second_title>'
+        Then I should not see id '<second_id>' in the search results
+        And I go to asset '<second_id>'
+        Then the field labeled 'Title' should begin with '<second_title>'
         Then I enable the 'development' environment
 
 Examples:
-    | nickname | asset_title | second_title | id | comment |
+    | nickname | asset_title | second_title | second_id | comment |
     | impersonator | Arigon - Imitateur | Arigon - Imitateur (verso) | ss:24415885 | back of postcard |
-    #  not multiview now | anthrocollections | Stingray spines | Stingray spines | ss:3235765 | multi-image and compound object |
     | impersonator | Florin Imitateur | Florin Imitateur (verso) | ss:24415925 | back of postcard |
+    # | seneca | Gooseberry seed | Gooseberry seed | ss:22376969 | pita |
+    # not multiview now, compound | blaschka | Histioteuthis reversa | Histioteuthis reversa | ss:20108238 | |
+    | tellennasbeh | Plan 109 (center) | Plan 109 (center) | ss:19102646 | |
+    #  not multiview now | anthrocollections | Stingray spines | Stingray spines | ss:3235765 | multi-image and compound object |
     #  not multiview now | anthrocollections | Hand spun cotton thread | Ball of hand spun cotton yarn | ss:1334128 | multi-image |
 
+Scenario: Reset to development environment in case of failure above
+    Given I enable the 'development' environment

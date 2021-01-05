@@ -4,15 +4,10 @@
     <div class="caption">
       	<%= render_document_partials document, blacklight_config.view_config(:gallery).partials, :document_counter => document_counter %>
       	<div class="blacklight-date"><%= render_index_field_value document, :field => 'date_tesim' %></div>
-      	<% if !(render_index_field_value document, :field => 'pubdate_tesim').nil? %>
-      	 <div class="blacklight-pubdate"><%= render_index_field_value document, :field => 'pubdate_tesim' %></div>
+      	<% if !(render_index_field_value document, :field => 'latest_date_isi').nil? %>
+      	 <div class="blacklight-pubdate"><%= render_index_field_value document, :field => 'latest_date_isi' %></div>
       	<% end %>
-        <% if (render_index_field_value document, :field => 'common_name_tesim').present? %>
-          <div class="blaschka-common-name"><%= render_index_field_label document, :field => 'common_name_tesim' %> <%= render_index_field_value document, :field => 'common_name_tesim' %></div>
-        <% end %>
-        <% if (render_index_field_value document, :field => 'identifier_blaschka_isi').present? %>
-          <div class="blaschka-number"><%= render_index_field_label document, :field => 'identifier_blaschka_isi' %> <%= render_index_field_value document, :field => 'identifier_blaschka_isi' %></div>
-        <% end %>
+        <%= render 'blaschka_gallery_fields', :locals => {:document => document} %>
         <div class="blacklight-collection"><%= render_index_field_value document, :field => 'collection_tesim' %></div>
     </div>
   </div>

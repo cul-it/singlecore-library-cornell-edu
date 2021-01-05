@@ -1,10 +1,11 @@
-<% if document["status_ssi"]!= "Published" && ENV["COLLECTIONS"] == "development" %>
-   	<% if document["status_ssi"].present? && document["status_ssi"]== "Unpublished" %>
+<% status = publication_status(document) %>
+<% if status != "Published" && ENV["COLLECTIONS"] == "development" %>
+   	<% if status == "Unpublished" %>
 	   <div class="unpublished">
 	   		<span class="label label-primary">Unpublished</span>
 	   </div>
    	<% end %>
-   	<% if document["status_ssi"].present? && document["status_ssi"]== "Suppressed" %>
+   	<% if status == "Suppressed" %>
 	   <div class="unpublished">
 	   		<span class="label label-primary">Suppressed</span>
 	   </div>

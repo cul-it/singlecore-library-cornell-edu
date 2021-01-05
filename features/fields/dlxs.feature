@@ -12,7 +12,7 @@ Feature: Support for DLXS collections
 	| Book | bol0001 | Title | Manifiesto dirijido por la representación |
 	| Book | bol0001 | Collection | Alfredo Montalvo Bolivian Digital Pamphlets Collection |
 	| Book | bol0001 | Creator | Fernández, Hilarión |
-	| Book | bol0001 | Site | Sucre |
+	| Book | bol0001 | Location | Sucre |
 	| Book | bol0001 | Language |  Spanish |
 	| Book | bol0001 | Subject | Bolivia - Pamphlets |
 	| Book | bol0001 | Extent | 16 300dpi JPEG page images|
@@ -34,13 +34,13 @@ Feature: Support for DLXS collections
 	| Book | flow1685158 | Catalog Record | 1685158 |
 	| Book | flow1685158 | Subject | Emblems |
 	| Book | flow1685158 | Extent | 432 300dpi JPG page images |
-	| Book | flow1685158 | Note | 432 p. |
+	| Book | flow1685158 | Notes | 432 p. |
 	| Book | flow1685158 | Publisher | Typis Voegelinanis |
 	| Book | flow1685158 | Publication Place | Leipzig |
 	| Book | hivebees5017167 | Title | Langstroth on the hive and the honey-bee |
 	| Book | hivebees5017167 | Collection | Core Historical Literature of Agriculture |
 	| Book | hivebees5017167 | Creator | Langstroth, L.L. 1810-1895. |
-	# date missing now? | Book | hivebees5017167 | Date | 1853 |
+	| Book | hivebees5017167 | Date | 1853 |
 	| Book | hivebees5017167 | Identifier | hivebees5017167 |
 	| Book | hivebees5017167 | Subject | Bees |
 	| Book | hivebees5017167 | Extent | 390 300dpi JPEG page images |
@@ -53,16 +53,16 @@ Feature: Support for DLXS collections
 	| Issue | hearth1891092_21_4 | Catalog Record | 1891092 |
 	| Issue | hearth1891092_21_4 | Subject | Dressmaking |
 	| Issue | hearth1891092_21_4 | Extent | 152 300dpi JPG page images |
-	| Issue | hearth1891092_21_4 | Note | 152 p. |
+	| Issue | hearth1891092_21_4 | Notes | 152 p. |
 	| Issue | hearth1891092_21_4 | Publisher | The Butterick company, inc. |
 	| Issue | hearth1891092_21_4 | Publication Place | New York |
 	| Issue | hunt0001_102 | Title | Arte de el idioma mexicano |
 	| Issue | hunt0001_102 | Creator | Perez, Manuel |
-	| Issue | hunt0001_102 | Site | Mexico |
+	| Issue | hunt0001_102 | Location | Mexico |
 	| Issue | hunt0001_102 | Language | English |
 	| Issue | hunt0001_102 | Keywords | Nahuatl language - Grammar |
 	| Issue | hunt0001_102 | Extent | 450 300dpi JPEG page images |
-	| Issue | hunt0001_102 | Note | 450 p. |
+	| Issue | hunt0001_102 | Notes | 450 p. |
 	| Issue | hunt0001_102 | Publisher | F. de Ribera Calderon |
 	| Issue | hunt0001_102 | Publication Place | Mexico |
 	| Issue | hunt0001_102 | Publication Date | 1713 |
@@ -83,7 +83,7 @@ Feature: Support for DLXS collections
 	| Page | liber001_26 | Publisher | Legislative Council, Commwealth of Liberia |
 	| Page | liber001_26 | Publication Place | Moravia, Liberia |
 	| Book | may814201 | Title | The unconstitutionality of slavery |
-	| Book | may814201 | Collection | Samuel J. May Anti-Slavery Pamphlet Collection |
+	# | Book | may814201 | Collection | Samuel J. May Anti-Slavery Pamphlet Collection |
 	| Book | may814201 | Extent | 160 300dpi JPEG page images |
 	| Book | may814201 | Publisher | Published by Bela Marsh |
 	| Book | nur00419 | Title | R & A No. 3081 |
@@ -130,7 +130,7 @@ Feature: Support for DLXS collections
     | author_tesim | Creator | hunt0001_1 | Perez, Manuel |
     | bibid_tesim | Catalog Record | chla1043101_01 | 1043101 |
     | collection_tesim | Collection | bol0001 | Alfredo Montalvo Bolivian Digital Pamphlets Collec |
-    | creation_site_location_tesim | Site | bol0001 | Sucre |
+    | creation_site_location_tesim | Location | bol0001 | Sucre |
     | creator_tesim | Creator | bol0001 | Fernández, Hilarión |
     | date_display_tesim | Issue Date | chla1043101_01 | 1850 |
     | date_tesim | Date | chla2731292 | 1896 |
@@ -139,9 +139,9 @@ Feature: Support for DLXS collections
     | keywords_tesim | Keywords | hunt0001_1 | Nahuatl language - Grammar |
     | lang_tesim | Language | bol0001 | Spanish |
     | language_tesim | Language | bol0001 | Spanish |
-    | location_facet_tesim | Site | bol0001 | Sucre |
-    | note_tesim | Note | chla1043101 | 424 p. |
-    # | notes_tesim | Notes | chla1043101 | 424 p. |
+    | location_facet_tesim | Location | bol0001 | Sucre |
+    | note_tesim | Notes | chla1043101 | 424 p. |
+    | notes_tesim | Notes | chla1043101 | 424 p. |
     | pubdate_tesim | Publication Date | bol0001 | 1848 |
     | publication_tesim | Publication | words1214796 | Cambridge, Printed by J. Smith for Deightons [etc. |
     | publisher_tesim | Publisher | bol0001 | Imprenta de Beeche y Compañía |
@@ -150,3 +150,15 @@ Feature: Support for DLXS collections
     | rights_tesim | Rights | bol0001 | The content in the Alfredo Montalvo Bolivian Digit |
     | subject_tesim | Subject | bol0001 | Bolivia - Pamphlets |
     | title_tesim | Title | bol0001 | Manifiesto dirijido por la representación naciona |
+
+	Scenario Outline: Journals should list the issues available
+		Given I go to asset '<asset_id>'
+			Then the field labeled 'Title' should begin with '<title>'
+			And the issues listed should start in <year>
+
+	Examples:
+		| asset_id | title | year |
+		| chla1043101 | Rural New Yorker  | 1850 |
+		| chla1895809 | Modern Farmer | 1930 |
+		| chla7031969 | Cornell extension bulletin | 1916 |
+		| hearth1891092 | The Delineator | 1878 |

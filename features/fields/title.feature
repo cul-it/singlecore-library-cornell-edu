@@ -13,7 +13,7 @@ Feature: Asset title
             And I click on '<asset_title>'
             Then the page title should contain '<asset_title>'
             And the page header should contain '<asset_title>'
-            And the asset title field should contain '<asset_title>'
+            And the field labeled 'Title' should begin with '<asset_title>'
 
     Examples:
     | nickname | asset_title |

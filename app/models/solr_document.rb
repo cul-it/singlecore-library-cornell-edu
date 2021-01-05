@@ -22,8 +22,6 @@ class SolrDocument
 
   def dlxs_thumbnail
     "http://hydrastg.library.cornell.edu/fedora/objects/#{id}/datastreams/thumbnailImage/content"
-end
-
-
+  end
 
 end
