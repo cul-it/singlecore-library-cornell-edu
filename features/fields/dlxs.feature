@@ -161,4 +161,4 @@ Feature: Support for DLXS collections
 		| chla1043101 | Rural New Yorker  | 1850 |
 		| chla1895809 | Modern Farmer | 1930 |
 		| chla7031969 | Cornell extension bulletin | 1916 |
-		| hearth1891092 | The Delineator | 1891 |
+		| hearth1891092 | The Delineator | 1878 |
