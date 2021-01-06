@@ -107,6 +107,7 @@ end
   if ENV['COLLECTIONS'] == "development"
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/kmoddl' => 'high_voltage/pages#show', :id => 'collections/kmoddl/index'
+    get '/collections/liberian' => 'high_voltage/pages#show', :id => 'collections/liberian/index'
     get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
     get '/collections/scottsboro' => 'high_voltage/pages#show', :id => 'collections/scottsboro/index'
   end

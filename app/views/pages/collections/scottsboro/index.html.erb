@@ -1,15 +1,18 @@
 <% content_for :page_title, 'Scottsboro Trials Collection' %>
 <div class="container">
-	<%= render partial: 'pages/collections/scottsboro/menu' %>
+	<h2>Scottsboro Trials Collection</h2>
 	<div class="row">
-		<div class="col-sm-8">
-			<div class="well">
-				<p>This collection presents a series of historical aerial photographs of the state of New York. It was produced under a Cornell University Library Faculty Grant to Eugenia M. Barnaba, Program Leader, Resource Inventory <a href="https://iris.cals.cornell.edu/">Cornell Institute for Resource Information Sciences</a>.</p>
+		<div class="col-sm-4 col-sm-push-8 sidebar">
+			<div class="collection-search well">
+				<h3>Search or <a href="/?f[collection_tesim][]=Scottsboro+Trials+Collection">browse the collection</a></h3>
+				<%= render '/catalog/search_form', { :@collection_search => "Scottsboro Trials Collection"}  %>
 			</div>
-			<p><a href="/?f%5Bcollection_tesim%5D%5B%5D=New+York+State+Aerial+Photographs&view=maps" class="btn btn-default">Browse collection by map</a></p>
+			<%= image_tag "collections/scottsboro/scottsboro.jpg" , alt: "", class: "img-responsive" %>
 		</div>
-		<div class="col-sm-4">
-			<%= image_tag "collections/aerialny/nycounty.jpg" , alt: "Map illustration of New York state", class: "img-thumbnail img-responsive" %>
+		<div class="col-sm-8 col-sm-pull-4">
+			<p>In the 1930s, nine young African-American men were tried for raping two white women in a train freight car in a groundbreaking case that tested the limits of race relations in the United States. Cornell Law School alumnus Samuel S. Leibowitz (J.D. 1915) represented these teenagers, who came to be known as the "Scottsboro Boys," in several proceedings. He kindly gave several important original documents and artifacts to the Cornell Law Library.</p>
+			<p>The items in this collection include digitized copies of briefs, motions and other trial documents concerning the many Scottsboro Trials.  Additional items in the physical collection include photos, later published material about the trials, and portions of the model train that Liebowitz famously used as a trial exhibit to depict the location and movement of the parties in question.</p>
+			<p>The legacy of the Scottsboro Trials centers on the idea of justice in the court system, the right to a fair trial, and efforts to overcome racial prejudice in the South.  Two landmark U.S. Supreme Court decisions flowed from these cases, establishing that criminal defendants are entitled to effective counsel, <em>Powell v. Alabama</em>, 287 U.S. 45 (1932), and that African-Americans cannot be systematically excluded from criminal juries, <em>Norris v. Alabama</em>, 294 U.S. 587 (1935).  This collection is a somber reminder of a period of American history when racism obstructed justice. It is also a reminder of the constant effort needed by dedicated lawyers and judges for the legal system to function properly.</p>
 		</div>
 	</div>
 </div>
