@@ -581,7 +581,7 @@ class CatalogController < ApplicationController
     # translation, transcription, etc.
     config.add_show_field 'translation_tesim', :label => 'Translation'
     config.add_show_field 'inscription_tesim', :label => 'Inscription'
-    config.add_show_field 'transcription_tesim', :label => 'Transcription', helper_method: :link_to_transcription_facet # 10
+    config.add_show_field 'transcription_tesim', :label => 'Transcription'
     config.add_show_field 'r2_transcription_tesim', :label => 'Transcription 2', helper_method: :autolink_field
     config.add_show_field 'devanagari_hamlet_tesim', :label => 'Hamlet (Devanagari)'
     config.add_show_field 'roman_hamlet_tesim', :label => 'Hamlet (Roman Characters)'
