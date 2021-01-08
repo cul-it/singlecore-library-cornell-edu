@@ -471,17 +471,8 @@ end
 end
 
 def autolink_field args
- # Rails.logger.info("MIAMI = #{args}")
-  if !args[:document]["collection_tesim"].nil?
-   collection = args[:document]["collection_tesim"][0]
-   if (collection == "Persuasive Maps: PJ Mode Collection" || collection == "Digitizing Tell en-Naṣbeh, Biblical Mizpah of Benjamin")
-    return auto_link(args[:document][args[:field]].join("<br>")).html_safe
-   else
-    return args[:document][args[:field]].join("<br>").html_safe
-   end
-  else
-   return args[:document][args[:field]].join("<br>").html_safe
-  end
+  # Rails.logger.info("MIAMI = #{args}")
+  return auto_link(args[:document][args[:field]].join("<br>")).html_safe
 end
 
 def chla args
