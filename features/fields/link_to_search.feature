@@ -64,7 +64,6 @@ Examples:
     | label | asset_title | starting | facet | MAP_facet | MAP_label |
     | Author | Ad for EP by Busy Bee | Jazzchild Records | creator_facet_tesim | agent_tesim | Creator | # :adler_creator_tesim
     | Creator | Norræna húsið | Alvar Aalto | architect_creator_tesim | agent_tesim | Creator |
-    | Creator | Notices of the Indian Archipelago, and adjacent | Moor, J. H | author_tesim | author_tesim | Creator | # none in MAP
     | Collection | Raspberry or Blackberry seed | Onöndowa | collection_tesim | collection_tesim | Collection |
     | Site | Chahta vba isht taloa holisso, or Choctaw | New York | creation_site_location_tesim | location_facet_tesim | Location |
     | Creator | Filled-in Test Units on the West Lawn | Peregrine A. Gerard-Little | creator_tesim | agent_tesim | Photographer |
