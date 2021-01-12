@@ -18,7 +18,7 @@ Feature: Confirm that collections have the correct number of assets
 	| dlxs | chla | 1190622 | 1190622 |
 	| dlxs | ezra | 29604 | 29604 |
 	| dlxs | flow | 23718 | 23718 |
-	| dlxs | hearth | 672555 | 672555 |
+	| dlxs | hearth | 670256 | 670256 |
 	| dlxs | hivebees | 34479 | 34479 |
 	| dlxs | hunt | 33392 | 33392 |
 	| dlxs | izquierda | 0 | 2740 |
