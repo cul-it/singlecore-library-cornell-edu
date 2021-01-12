@@ -274,50 +274,23 @@ class CatalogController < ApplicationController
                        }
     config.add_facet_field 'agent_tesim', :label => 'Agent', :sort => 'count', :limit => 5
     config.add_facet_field 'creator_facet_tesim', :label => 'Creator', :sort => 'count', :limit => 5
-    config.add_facet_field 'illustrator_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
-    config.add_facet_field 'second_creator_tesim', :label => 'Creator', :sort => 'count', :show => false
-    config.add_facet_field 'photographer_creator_tesim', :label => 'Photographer', :show => false
-    config.add_facet_field 'architect_creator_tesim', :label => 'Architect', :show => false
-    config.add_facet_field 'location_tesim', :label => 'Location', :show => false
     config.add_facet_field 'type_tesim', :label => 'Work Type', :sort => 'count', :limit => 5
-    config.add_facet_field 'system_tesim', :label => 'System', :sort => 'count', :show => false
-    config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
     config.add_facet_field 'location_facet_tesim', :label => 'Location', :sort => 'count', :limit => 5
-    config.add_facet_field 'loci_location_tesim', :label => 'Location', :sort => 'count', :limit => 5
     config.add_facet_field 'lang_tesim', :label => 'Language', :sort => 'count', :limit => 5
     config.add_facet_field 'subject_tesim', :label => 'Subject', :limit => 5, :sort => 'index'
     config.add_facet_field 'mat_tech_tesim', :label => 'Materials/Techniques', :show => true, :limit => 5
-    config.add_facet_field 'deity_tesim', :label => 'Central Deity', :limit => 5, show: false
-    config.add_facet_field 'founder_tesim', :label => 'Village Founder', :limit => 5, show: false
-    config.add_facet_field 'fd_27325_tsi', :label => 'Year of photo', :limit => 5, show: false
-    config.add_facet_field 'senechal_tesim', :label => 'Senechal', :limit => 5, show: false
-    config.add_facet_field 'village_tesim', :label => 'Village', :limit => 5, show: false
-    config.add_facet_field 'keywords_tesim', :label => 'Keywords', :limit => 5, show: false
     config.add_facet_field 'repository_tesim', :label => 'Repository', :limit => 5
     config.add_facet_field 'archival_collection_tesim', :label => 'Archival Collection', :limit => 5
-    config.add_facet_field 'creation_site_location_tesim', :label => 'Site', show: false
-    config.add_facet_field 'region_location_tesim', :label => 'Region', show: false
     config.add_facet_field 'set_title_tesim', :label => 'Set', :show => true, :limit => 5
-    config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false
-    config.add_facet_field 'country_location_tesim', :label => 'Country', :show => false
-    config.add_facet_field 'date_created_on_ssi', :label => 'Date posted', :show => false
-    config.add_facet_field 'sub_coll_tesim', :label => 'Subcollection', :show => false
-    config.add_facet_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :show => false
-    config.add_facet_field 'other_location_tesim', :label => 'Site', :show => false
+
+    #facets not displayed (click-to-search)
+    config.add_facet_field 'culture_tesim', :label => 'Culture', :sort => 'count', :show => false
+    config.add_facet_field 'keywords_tesim', :label => 'Keywords', :limit => 5, show: false
+    config.add_facet_field 'creation_site_location_tesim', :label => 'Site', show: false #DLXS
+    config.add_facet_field 'creator_tesim', :label => 'Creator', :show => false #DLXS
     config.add_facet_field 'site_tesim', :label => 'Site', :show => false
     config.add_facet_field 'collecting_program_tesim', :label => 'Collecting Program', :show => false
-    config.add_facet_field 'excavation_date', :label => 'Excavation Date', :show => false
-    config.add_facet_field 'archaeological_date_tesim', :label => 'Archaeological Date', :show => false
-    config.add_facet_field 'designer_creator_tesim', :label => 'Designer', :show => false
     config.add_facet_field 'where_ssim', :label => 'Coordinates', :show => false
-    config.add_facet_field 'writer_creator_tesim', :label => 'Writer', :show => false
-    config.add_facet_field 'composer_creator_tesim', :label => 'Composer', :show => false
-    config.add_facet_field 'musician_creator_tesim', :label => 'Musician', :show => false
-    config.add_facet_field 'lyricist_creator_tesim', :label => 'Lyricist', :show => false
-    config.add_facet_field 'arranger_creator_tesim', :label => 'Arranger', :show => false
-    config.add_facet_field 'performer_creator_tesim', :label => 'Performer', :show => false
-    config.add_facet_field 'map_site_tesim', :label => 'Site', :show => false
-    config.add_facet_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :show => false
     config.add_facet_field 'country_tesim', :label => 'Country', :show => false
     config.add_facet_field 'legacy_value_tesim', :label => 'Legacy Value', :show => false
 
@@ -329,32 +302,25 @@ class CatalogController < ApplicationController
     config.add_facet_fields_to_solr_request!
 
     # solr fields to be displayed in the index (search results) view
-    config.add_index_field 'author_tesim', :label => 'Creator', :link_to_search => true
-    config.add_index_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
-    config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_index_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
-    config.add_index_field 'photographer_creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_index_field 'architect_creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_index_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
+    config.add_index_field 'author_tesim', :label => 'Author', :link_to_search => true #DLXS
+    config.add_index_field 'creator_tesim', :label => 'Creator', :link_to_search => true #DLXS
     config.add_index_field 'collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_index_field 'r1_event_name_tesim', :label => 'Occasion'
     config.add_index_field 'set_title_tesim', :label => 'Set', :link_to_search => true
-    config.add_index_field 'common_name_tesim', :label => 'Common Name'
-    config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number'
-    config.add_index_field 'volume_tesim', :label => 'Volume'
-    config.add_index_field 'page_tesim', :label => 'Page'
-    config.add_index_field 'creation_site_location_tesim', :label => 'Site', :link_to_search => true
+    config.add_index_field 'common_name_tesim', :label => 'Common Name' #Blaschka
+    config.add_index_field 'identifier_blaschka_isi', :label => 'Blaschka Number' #Blaschka
+    config.add_index_field 'creation_site_location_tesim', :label => 'Site', :link_to_search => true #DLXS
     config.add_index_field 'location_facet_tesim', :label => 'Location', :link_to_search => true
 
     # these index fields are from the dlxs collections
     config.add_index_field 'publication_tesim', :label => 'Publication'
-
     config.add_index_field 'publisher_tesim', :label => 'Publisher'
     config.add_index_field 'pubplace_tesim', :label => 'Publication Place'
-    #config.add_index_field 'pubdate_tesim', :label => 'Date'
-    config.add_index_field 'book_title', :label => 'Book Title'
     config.add_index_field 'date_tesim', :label => 'Date'
     config.add_index_field 'serial_pub_date_range_ssi', :label => 'Publication Date Range'
+    #comment out pubdate_tesim because date_tesim is displayed and causes dupe values to display:
+    #config.add_index_field 'pubdate_tesim', :label => 'Date'
+    # do we need this field? what about title_tesim:
+    #config.add_index_field 'book_title', :label => 'Book Title' 
 
     config.add_index_field 'format_tesim', :label => 'Format'
 
@@ -379,15 +345,8 @@ class CatalogController < ApplicationController
 
     # title
     config.add_show_field 'title_tesim', :label => 'Title', if: :no_forum_version?
-    config.add_show_field 'pj_full_title_tesim', :label => 'Full Title'
-    config.add_show_field 'map_title_language_tesim', :label => 'Title Language'
-    config.add_show_field 'translation_title_tesim', :label => 'Translated Title'
-    config.add_show_field 'map_title_language2_tesim', :label => 'Translated Title Language'
     config.add_show_field 'alternate_title_tesim', :label => 'Alternate Title'
-    config.add_show_field 'project_title_tesim', :label => 'Project Title'
     # config.add_show_field 'common_name_tesim', :label => 'Common Name'  // now for index only
-    config.add_show_field 'yiddish_title_tesim', :label => 'Title (Yiddish)'
-    config.add_show_field 'romanized_yiddish_title_tesim', :label => 'Romanized Title (Yiddish)'
     # Title qualifier
     for n in 1..config.max_r_count[:title]
       label = 'Title' + (n == 1 ? '' : ' ' + n.to_s)
@@ -396,39 +355,12 @@ class CatalogController < ApplicationController
 
     # collection
     config.add_show_field 'collection_tesim', :label => 'Collection', :link_to_search => true
-    config.add_show_field 'sub_coll_tesim', :label => 'Subcollection', :link_to_search => true
-    config.add_show_field 'dig_coll_tesim', :label => 'Digital Collection'
     config.add_show_field 'set_title_tesim', :label => 'Set', :link_to_search => true
 
     # Agent
     # creator
-    config.add_show_field 'creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_show_field 'role_tesim', :label => 'Creator Role'
-    config.add_show_field 'yiddish_creator_tesim', :label => 'Creator (Yiddish)'
-    config.add_show_field 'adler_creator_tesim', :label => 'Author', :link_to_search => :creator_facet_tesim
-    config.add_show_field 'photographer_creator_tesim', :label => 'Photographer', :link_to_search => true
-    config.add_show_field 'photographer_tesim', :label => 'Photographer'
-    config.add_show_field 'author_tesim', :label => 'Creator', :link_to_search => true
-    config.add_show_field 'illustrator_creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_show_field 'second_creator_tesim', :label => 'Creator', :link_to_search => true
-    config.add_show_field 'cataloger_tesim', :label => 'Cataloger'
-    config.add_show_field 'performer_creator_tesim', :label => 'Performer', :link_to_search => true
-    config.add_show_field 'principle_performer_creator_tesim', :label => 'Principal Performer', :link_to_search => true
-    config.add_show_field 'performer_matrix_tesim', :label => 'Performer'
-    config.add_show_field 'ensemble_note_tesim', :label => 'Ensemble Note'
-    config.add_show_field 'founder_tesim', :label => 'Founder', :link_to_search => true
-    config.add_show_field 'collector_tesim', :label => 'Collector'
-    config.add_show_field 'creator_orig_tesim', :label => 'Original Creator'
-    config.add_show_field 'other_creator_tesim', :label => 'Other Creator(s)'
-    config.add_show_field 'project_owner_tesim', :label => 'Project Owner'
-    config.add_show_field 'architect_creator_tesim', :label => 'Architect', :link_to_search => true
-    config.add_show_field 'architectural_firm_creator_tesim', :label => 'Architectural Firm', :link_to_search => true
-    config.add_show_field 'manufacturer_tesim', :label => 'Manufacturer'
-    config.add_show_field 'writer_creator_tesim', :label => 'Writer', :link_to_search => true
-    config.add_show_field 'composer_creator_tesim', :label => 'Composer', :link_to_search => true
-    config.add_show_field 'musician_creator_tesim', :label => 'Musician', :link_to_search => true
-    config.add_show_field 'lyricist_creator_tesim', :label => 'Lyricist', :link_to_search => true
-    config.add_show_field 'arranger_creator_tesim', :label => 'Arranger', :link_to_search => true
+    config.add_show_field 'creator_tesim', :label => 'Creator', :link_to_search => true #DLXS
+    config.add_show_field 'author_tesim', :label => 'Creator', :link_to_search => true #DLXS
 
     # Agent Roles qualifier
     for n in 1..config.max_r_count[:agent]
@@ -436,22 +368,10 @@ class CatalogController < ApplicationController
       config.add_show_field 'r' + n.to_s + '_agent_tesim', :label => label, if: :display_agent_show_field?, helper_method: :link_to_agent_facet
     end
 
-    config.add_show_field 'designer_creator_tesim', :label => 'Designer', :link_to_search => true
-    config.add_show_field 'manufacturer_creator_tesim', :label => 'Manufacturer', :link_to_search => true
     # date
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true, helper_method: :link_to_date_facet, if: :no_forum_version?
-    config.add_show_field 'date_display_tesim', :label => 'Issue Date'
-    config.add_show_field 'fd_27325_tsi', :label => 'Date taken', :link_to_search => true
-    config.add_show_field 'full_text_date_tesim', :label => 'Date'
-    config.add_show_field 'acq_date_tesim', :label => 'Acquisition Date'
-    config.add_show_field 'acq_note_tesim', :label => 'Acquisition Note'
-    config.add_show_field 'date_orig_tesim', :label => 'Original Date'
-    config.add_show_field 'excavation_date_tesim', :label => 'Excavation Date', :link_to_search => true
-    config.add_show_field 'archaeological_date_tesim', :label => 'Archaeological Date', :link_to_search => true
-    config.add_show_field 'date_creator_birth_tesim', :label => 'Creator Birth Date'
-    config.add_show_field 'date_creator_death_tesim', :label => 'Creator Death Date'
-    config.add_show_field 'century_tesim', :label => 'Century'
-    config.add_show_field 'date_created_on_ssi', :label => 'Date posted', :link_to_search => true
+    config.add_show_field 'date_display_tesim', :label => 'Issue Date' #DLXS
+    
     # Date type qualifier
     for n in 1..config.max_r_count[:date]
       label = 'Date' + (n == 1 ? '' : ' ' + n.to_s)
