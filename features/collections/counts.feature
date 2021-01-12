@@ -81,7 +81,7 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | ragamala | 4014 | 4123 |
 	| forum | railroad | 1655 | 1655 |
 	| forum | repsslides | 1357 | 1357 |
-	| forum | rmc | 11438 | 19444 |
+	| forum | rmc | 11438 | 19642 |
 	| forum | rudin | 517 | 517 |
 	| forum | seneca | 690 | 692 |
 	| forum | squeezes | 185 | 369 |
