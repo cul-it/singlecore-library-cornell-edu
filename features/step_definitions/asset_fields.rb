@@ -67,3 +67,15 @@ Then("the issues listed should start in {int}") do |int|
     # /html/body/div[6]/div/div[2]/div/div[2]/div/div[1]/h3[1]
     expect(page.first('div.item-info > h3')).to have_content(int)
 end
+
+Then("the publication name should be {string}") do |string|
+    expect(page.first('div#document > div > h1')).to have_content(string)
+end
+
+Then("the first issue year shoud be {string}") do |string|
+    expect(page.first('div.item-info > h3')).to have_content(string)
+end
+
+Then("the last issue year shoud be {string}") do |string|
+    expect(page.all('div.item-info > h3').last).to have_content(string)
+end

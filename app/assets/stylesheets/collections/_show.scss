@@ -296,12 +296,16 @@ label.toggle_bookmark {
 		margin-top: 0;
 	}
 	.multi-image-wrapper {
-		height: 609px;
+		// height: 609px;
 		overflow: scroll;
+		height: 400px;
 	}
 	.playlist-player {
 		width: 560px !important;
 		height: 450px !important;
+	}
+	.multi-images-row {
+		height: auto;
 	}
 }
 
@@ -318,7 +322,7 @@ label.toggle_bookmark {
 	}
 	.multi-image-wrapper {
 		margin-top: 0;
-		height: 679px;
+		height: 500px;
 	}
 }
 // Large devices (desktops, 1200px and up)
