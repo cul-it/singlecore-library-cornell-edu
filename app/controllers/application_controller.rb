@@ -153,7 +153,7 @@ class ApplicationController < ActionController::Base
         #ssc[:karma],
         ssc[:kassoy],
         #ssc[:kingsbury],
-        ssc[:kmoddl],
+        #ssc[:kmoddl],
         ssc[:leuenberger],
         #ssc[:lindsaycooper],
         #ssc[:loewentheil],
