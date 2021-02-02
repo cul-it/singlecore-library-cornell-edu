@@ -66,7 +66,7 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | karma | 4038 | 4140 |
 	| forum | kassoy | 0 | 139 |
 	| forum | kingsbury | 522 | 522 |
-	| forum | kmoddl | 0 | 307 |
+	# | forum | kmoddl | 307 | 307 |
 	| forum | leuenberger | 0 | 231 |
 	| forum | lindsaycooper | 589 | 589 |
 	| forum | loewentheil | 638 | 1476 |

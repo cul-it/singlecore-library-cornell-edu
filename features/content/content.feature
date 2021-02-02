@@ -41,7 +41,6 @@ Examples:
 | dynkin | production | ss:22361895 |
 | harrisson | production | ss:25914539 |
 | kassoy | production | ss:479861 |
-| kmoddl | production | ss:372824 |
 | leuenberger | production | ss:9469095 |
 | paniccioli | production | ss:8432316 |
 # | seneca | production | ss:24767712 | - no longer suppressed
