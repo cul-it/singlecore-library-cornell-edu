@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   concern :exportable, Blacklight::Routes::Exportable.new
 
   # DIGCOLL-1877
-  get '/catalog/facet/:id(.:format)', to: redirect('/catalog/facet_list_disabled')
+  # get '/catalog/facet/:id(.:format)', to: redirect('/catalog/facet_list_disabled')
 
   resource :catalog, only: [:index], controller: 'catalog' do
     concerns :searchable
