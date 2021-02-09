@@ -9,6 +9,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Hash] options
   # @return [Boolean]
   def has_facet_values? fields = facet_field_names, options = {}
+  binding.pry
     facets_from_request(fields).any? { |display_facet| !display_facet.items.empty? && should_render_facet?(display_facet) }
   end
 
@@ -21,6 +22,7 @@ module Blacklight::FacetsHelperBehavior
   # @return String
   def render_facet_partials fields = facet_field_names, options = {}
     safe_join(facets_from_request(fields).map do |display_facet|
+  binding.pry
       render_facet_limit(display_facet, options)
     end.compact, "\n")
   end
@@ -38,6 +40,7 @@ module Blacklight::FacetsHelperBehavior
   # @return [String] 
   def render_facet_limit(display_facet, options = {})
     return unless should_render_facet?(display_facet)
+  binding.pry
     options = options.dup
     options[:partial] ||= facet_partial_name(display_facet)
     options[:layout] ||= "facet_layout" unless options.key?(:layout)
@@ -56,6 +59,7 @@ module Blacklight::FacetsHelperBehavior
   # to filter undesireable facet items so they don't appear in the UI
   def render_facet_limit_list(paginator, facet_field, wrapping_element=:li)
     safe_join(paginator.items.map { |item| render_facet_item(facet_field, item) }.compact.map { |item| content_tag(wrapping_element,item)})
+    binding.pry
   end
 
   ##
@@ -80,6 +84,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Blacklight::Solr::Response::Facets::FacetField] display_facet
   # @return [Boolean] 
   def should_render_facet? display_facet
+    binding.pry
     # display when show is nil or true
     facet_config = facet_configuration_for_field(display_facet.name)
     display = should_render_field?(facet_config, display_facet)
@@ -106,6 +111,7 @@ module Blacklight::FacetsHelperBehavior
   #
   # @return [String]
   def facet_partial_name(display_facet = nil)
+    binding.pry
     config = facet_configuration_for_field(display_facet.name)
     name = config.try(:partial)
     name ||= "facet_pivot" if config.pivot
@@ -123,6 +129,7 @@ module Blacklight::FacetsHelperBehavior
   # @option options [Boolean] :suppress_link display the facet, but don't link to it
   # @return [String]
   def render_facet_value(facet_field, item, options ={})
+  binding.pry
     path = path_for_facet(facet_field, item)
     content_tag(:span, :class => "facet-label") do
       if item.value == "Core Historical Literature of Agriculture" or item.value == "Hive and the Honeybee" or item.value == "Home Economics Archive: Research, Tradition and History"
@@ -139,6 +146,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [String] item
   # @return [String]
   def path_for_facet(facet_field, item)
+    binding.pry
     facet_config = facet_configuration_for_field(facet_field)
     if facet_config.url_method
       send(facet_config.url_method, facet_field, item)
@@ -194,6 +202,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Object] item facet value
   # @return [Boolean]
   def facet_in_params?(field, item)
+    binding.pry
     value = facet_value_for_facet_item(item)
 
     (facet_params(field) || []).include? value
