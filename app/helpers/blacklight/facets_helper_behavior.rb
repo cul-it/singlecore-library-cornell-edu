@@ -21,8 +21,8 @@ module Blacklight::FacetsHelperBehavior
   # @param [Hash] options
   # @return String
   def render_facet_partials fields = facet_field_names, options = {}
-  binding.pry
-  safe_join(facets_from_request(fields).map do |display_facet|
+    binding.pry
+    safe_join(facets_from_request(fields).map do |display_facet|
       render_facet_limit(display_facet, options)
     end.compact, "\n")
   end
@@ -39,8 +39,8 @@ module Blacklight::FacetsHelperBehavior
   # @option options [Hash] :locals locals to pass to the partial
   # @return [String]
   def render_facet_limit(display_facet, options = {})
-  binding.pry
-  return unless should_render_facet?(display_facet)
+    binding.pry
+    return unless should_render_facet?(display_facet)
     options = options.dup
     options[:partial] ||= facet_partial_name(display_facet)
     options[:layout] ||= "facet_layout" unless options.key?(:layout)
@@ -59,14 +59,14 @@ module Blacklight::FacetsHelperBehavior
   # to filter undesireable facet items so they don't appear in the UI
   def render_facet_limit_list(paginator, facet_field, wrapping_element=:li)
     binding.pry
-  safe_join(paginator.items.map { |item| render_facet_item(facet_field, item) }.compact.map { |item| content_tag(wrapping_element,item)})
+    safe_join(paginator.items.map { |item| render_facet_item(facet_field, item) }.compact.map { |item| content_tag(wrapping_element,item)})
   end
 
   ##
   # Renders a single facet item
   def render_facet_item(facet_field, item)
     binding.pry
-  if facet_in_params?(facet_field, item.value )
+    if facet_in_params?(facet_field, item.value )
       if item.value != "info:fedora/afmodel:Book"
        render_selected_facet_value(facet_field, item)
       end
