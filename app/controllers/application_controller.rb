@@ -207,7 +207,7 @@ class ApplicationController < ActionController::Base
         dlxs[:mmay],
         # dlxs[:nur],
         # dlxs[:sat],
-        # dlxs[:scott],
+        dlxs[:scott],
         # dlxs[:sea],
         dlxs[:witchcraft],
         dlxs[:words]
