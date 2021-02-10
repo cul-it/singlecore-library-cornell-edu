@@ -16,7 +16,7 @@ Feature: Confirm that collections have the correct number of assets
 	| source | nickname | prod_count | dev_count |
 	| dlxs | bol | 30938 | 30938 |
 	| dlxs | chla | 1190622 | 1190622 |
-	| dlxs | ezra | 29604 | 29604 |
+	| dlxs | ezra | 29715 | 29715 |
 	| dlxs | flow | 23718 | 23718 |
 	| dlxs | hearth | 670256 | 670256 |
 	| dlxs | hivebees | 34479 | 34479 |
@@ -27,17 +27,17 @@ Feature: Confirm that collections have the correct number of assets
 	| dlxs | mmay | 2329 | 2329 |
 	| dlxs | nur | 0 | 16503 |
 	| dlxs | sat | 0 | 42038 |
-	| dlxs | scott | 0 | 4542 |
+	| dlxs | scott | 4542 | 4542 |
 	| dlxs | sea | 0 | 124420 |
 	| dlxs | witchcraft | 23078 | 23078 |
 	| dlxs | words | 446 | 446 |
-	| forum | adler | 1717 | 11193 |
+	| forum | adler | 1717 | 13465 |
 	| forum | adwhite | 1364 | 1364 |
 	| forum | aerial | 3299 | 3390 |
 	| forum | ahearn | 0 | 907 |
 	| forum | anthrocollections | 992 | 1271 |
 	| forum | artifacts | 610 | 1673 |
-	| forum | bam | 2311 | 2311 |
+	| forum | bam | 2310 | 2310 |
 	| forum | bastides | 2523 | 2652 |
 	| forum | beyondtaj | 6682 | 6688 |
 	| forum | blaschka | 251 | 251 | # 20108237 is deleted
@@ -73,7 +73,7 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | obama | 87 | 200 |
 	| forum | page | 55 | 55 |
 	| forum | paniccioli | 19581 | 27894 |
-	| forum | pjmode | 862 | 1100 |
+	| forum | pjmode | 862 | 1105 |
 	| forum | politicalamericana | 2012 | 2223 |
 	| forum | prisonwritings | 449 | 449 |
 	| forum | punkflyers | 2091 | 2102 |
@@ -81,9 +81,9 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | ragamala | 4014 | 4123 |
 	| forum | railroad | 1655 | 1655 |
 	| forum | repsslides | 1357 | 1357 |
-	| forum | rmc | 11438 | 19869 |
+	| forum | rmc | 11438 | 19871 |
 	| forum | rudin | 517 | 517 |
-	| forum | seneca | 690 | 692 |
+	| forum | seneca | 690 | 690 |
 	| forum | squeezes | 185 | 369 |
 	| forum | srilanka | 526 | 527 |
 	| forum | stereoscopes | 213 | 213 |
