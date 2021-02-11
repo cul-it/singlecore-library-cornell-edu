@@ -14,7 +14,7 @@ Examples:
     | nickname | website |
 	# | bol | url |
 	| chla | /collections/chla |
-	| ezra | https://rmc.library.cornell.edu/ezracornellcoll/ |
+	# ezra | https://rmc.library.cornell.edu/ezracornellcoll/ |
 	| flow | /collections/flowers |
 	| hearth | /collections/hearth |
 	| hivebees | /collections/bees |
@@ -43,7 +43,6 @@ Examples:
 	| coins | http://hdl.handle.net/1813.001/8946679a |
 	| conzo | http://rmc.library.cornell.edu/hiphop/conzo.html |
 	| culmaps | https://olinuris.library.cornell.edu/collections/maps/sections/digital-images |
-	| dendro | /collections/nys-dendro |
 	| divinecomedy | http://resolver.library.cornell.edu/misc/7889273 |
 	| dynkin | /collections/dynkin |
 	| eleusis | http://resolver.library.cornell.edu/misc/5696261 |
