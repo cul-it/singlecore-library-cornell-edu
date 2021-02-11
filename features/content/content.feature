@@ -36,7 +36,6 @@ Examples:
 | ahearn | production | ss:15337425 |
 # | claireholt | production | nnn |
 | culmaps | production | ss:9472503 |
-| dendro | production | ss:22143504 |
 | divinecomedy | production | ss:303416 |
 | dynkin | production | ss:22361895 |
 | harrisson | production | ss:25914539 |

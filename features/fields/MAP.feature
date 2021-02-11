@@ -23,9 +23,7 @@ Feature: Asset MAP fields
     | Agent | Writer | 21812058 | Robert Iannapollo |
     | Annotation | Annotation | 25566643 | Society of Soul |
     | Date | Acquisition Date | 50534 | 1981-07-20 |
-    | Date | Chronology Date | 22143404 | SSHOriginalEasternWhitePine.crn |
     | Date | Image Date | 50534 | 2012-06-29 |
-    | Date | Ring Sequence Date | 22143404 | 1691-1836 |
     | Identifier | Accession Number | 1972751 | 01_1_0138 |
     | Identifier | Accession Number | 3307603 | MA_L_05_10_18 |
     | Identifier | Berlin Catalog No. | 1972751 | 201 |

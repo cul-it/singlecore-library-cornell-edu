@@ -32,7 +32,6 @@ Examples:
     | Founder | ss:3851176 | Louis IX | founder_tesim | agent_tesim | Founder |
     | Creator | ss:265777 | Flaxman, John | illustrator_creator_tesim | agent_tesim | Illustrator |
     | Keywords | hunt0050_741 | Choctaw language | keywords_tesim | keywords_tesim | Keywords | # not in MAP
-    | Location | ss:22142868 | Coeymans, Albany | location_tesim | location_facet_tesim | Location |
     # none found | Lyricist | ss:3213121 | start | lyricist_creator_tesim | lyricist_creator_tesim | Lyricist |
     | Manufacturer | ss:372506 | Gustav Voigt Werkstatt | manufacturer_creator_tesim | agent_tesim | Manufacturer |
     | Site | ss:1334105 | Peru | map_site_tesim | site_tesim | Site |
