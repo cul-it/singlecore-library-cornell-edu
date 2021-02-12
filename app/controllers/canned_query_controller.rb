@@ -26,7 +26,6 @@ class CannedQueryController < ApplicationController
       conzo: { f: { collection_tesim: ['Joe Conzo Jr. Archive'] } },
       coop: { f: { collection_tesim: ['Cooper Bridge Plan Collection'] } },
       culmaps: { f: { collection_tesim: ['Cornell University Library Map Collection'] } },
-      dendro: { f: { collection_tesim: ['NYS Historical Dendrochronology'] } },
       divinecomedy: { f: { collection_tesim: ['Divine Comedy Image Archive'] } },
       dynkin: { f: { collection_tesim: ['Eugene B. Dynkin Collection of Mathematics Interviews'] } },
       eleusis: { f: { collection_tesim: ['Mysteries at Eleusis: Images of Inscriptions'] } },
