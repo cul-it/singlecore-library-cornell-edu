@@ -112,7 +112,6 @@ end
   if ENV['COLLECTIONS'] == "development"
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
     get '/collections/liberian' => 'high_voltage/pages#show', :id => 'collections/liberian/index'
-    get '/collections/nys-dendro' => 'high_voltage/pages#show', :id => 'collections/nys-dendro/index'
   end
 
   get '/collections/:subject' => 'catalog#index'
