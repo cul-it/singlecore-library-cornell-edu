@@ -4,6 +4,7 @@
       <div data-no-turbolink>
         <% if (render_document_show_field_value(:document => @document, :field => 'filename_tesim')).present? %>
           <iframe src = "/ViewerJS/?zoom=page-width#https://s3.amazonaws.com/digital-assets.library.cornell.edu/<%= @project %>/<%= render_document_show_field_value(:document => @document, :field => 'filename_tesim') %>" width='100%' height="600"
+          <% pdf_url = "https://s3.amazonaws.com/digital-assets.library.cornell.edu/#{@project}/#{filename}" %>
           name="<%= render_document_show_field_value(:document => @document, :field => 'title_tesim') %>"
           allowfullscreen webkitallowfullscreen></iframe>
         <% end %>
