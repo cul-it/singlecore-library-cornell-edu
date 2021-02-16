@@ -3,7 +3,13 @@
     <div class="col-sm-12 text-center">
       <div data-no-turbolink>
         <% if (render_document_show_field_value(:document => @document, :field => 'filename_tesim')).present? %>
-          <iframe src = "/ViewerJS/?zoom=page-width#https://s3.amazonaws.com/digital-assets.library.cornell.edu/<%= @project %>/<%= render_document_show_field_value(:document => @document, :field => 'filename_tesim') %>" width='100%' height="600"
+          <% filename = render_document_show_field_value(:document => @document, :field => 'filename_tesim') %>
+          <% id = @id.delete_prefix("ss:") %>
+          <% pdf_url = "https://s3.amazonaws.com/digital-assets.library.cornell.edu/#{@project}/#{id}/1/pdf/#{filename}" %>
+          <% if not get_url_exists?(pdf_url) %>
+          <% pdf_url = "https://s3.amazonaws.com/digital-assets.library.cornell.edu/#{@project}/#{filename}" %>
+          <% end %>
+          <iframe src = "/ViewerJS/?zoom=page-width#<%= pdf_url %>" width='100%' height="600"
           name="<%= render_document_show_field_value(:document => @document, :field => 'title_tesim') %>"
           allowfullscreen webkitallowfullscreen></iframe>
         <% end %>
