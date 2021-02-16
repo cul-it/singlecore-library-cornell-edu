@@ -5,7 +5,7 @@
         <% if (render_document_show_field_value(:document => @document, :field => 'filename_tesim')).present? %>
           <% filename = render_document_show_field_value(:document => @document, :field => 'filename_tesim') %>
           <% id = @id.delete_prefix("ss:") %>
-          <% pdf_url = "https://s3.amazonaws.com/digital-assets.library.cornell.edu/#{@project}/#{id}/1/pdf/#{filename}" %>
+          <% pdf_url = "https://s3.amazonaws.com/digital-assets.library.cornell.edu/public/#{@project}/#{id}/1/pdf/#{filename}" %>
           <% if not get_url_exists?(pdf_url) %>
           <% pdf_url = "https://s3.amazonaws.com/digital-assets.library.cornell.edu/#{@project}/#{filename}" %>
           <% end %>
