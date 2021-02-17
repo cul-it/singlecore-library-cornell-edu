@@ -44,6 +44,40 @@ Then("the collection should show {int} assets") do |int|
   end
 end
 
+Then("the collection should show about {int} assets") do |int|
+  begin
+    if int.to_s == '0'
+      expect(page).not_to have_selector("div#sortAndPerPage span.page_entries strong[3]")
+    else
+      # find the numeric value of the count
+      field = page.find("div#sortAndPerPage span.page_entries strong[3]").text()
+      val = field.gsub(/[\s,]/ ,"").to_i
+      if (val == int.to_i)
+        # great - they match
+      elsif (val > 0)
+        # current count should be within 1% of expected count
+        val2 = int.to_i
+        dif = (val - val2).abs
+        pct = (dif * 100 / val.to_f)
+        expect(pct).to be < 1.0
+      else
+        # check for expected contents on page
+        # put the commas into the integer
+        int = int.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
+        expect(page.find("div#sortAndPerPage span.page_entries strong[3]")).to have_content(int)
+      end
+    end
+  rescue Capybara::ElementNotFound => e
+    where_am_i
+    show_environment
+    raise e
+  rescue RSpec::Expectations::ExpectationNotMetError => e
+    where_am_i
+    show_environment
+    raise e
+  end
+end
+
 Then("I should see {int} additional views") do |int|
   expect(page.find('div.multi-image-wrapper')).to have_selector('div.multi-image', count: int)
 end

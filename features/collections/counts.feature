@@ -7,10 +7,10 @@ Feature: Confirm that collections have the correct number of assets
 	Scenario Outline: check collection counts in development and production
 	    Given I enable the 'production' environment
 		And I browse collection nicknamed '<nickname>'
-        Then the collection should show <prod_count> assets
+        Then the collection should show about <prod_count> assets
 		Then I enable the 'development' environment
 		And I browse collection nicknamed '<nickname>'
-        Then the collection should show <dev_count> assets
+        Then the collection should show about <dev_count> assets
 
 	Examples:
 	| source | nickname | prod_count | dev_count |
