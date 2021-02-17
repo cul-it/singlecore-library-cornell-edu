@@ -267,7 +267,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'collection_tesim', :label => 'Collection', :sort => 'index', :limit => 5, :collapse => false
     config.add_facet_field 'format_tesim', :label => 'Format', :limit => 5, :collapse => false
     config.add_facet_field 'date_facet_tesim', :label => 'Date', :limit => 5
-    config.add_facet_field 'date_tesim', :label => 'Date2', :limit => 5
+    # DIGCOLL-1877 - this date_tesim facet is a temporary solution to keep the web-crawling robots from generating appsignal errors
+    config.add_facet_field 'date_tesim', :label => 'Date2', :limit => 5, :show => false
     config.add_facet_field 'latest_date_isi', :label => 'Date Range',  range: {
                          num_segments: 6,
                          segments: true,
@@ -321,7 +322,7 @@ class CatalogController < ApplicationController
     #comment out pubdate_tesim because date_tesim is displayed and causes dupe values to display:
     #config.add_index_field 'pubdate_tesim', :label => 'Date'
     # do we need this field? what about title_tesim:
-    #config.add_index_field 'book_title', :label => 'Book Title' 
+    #config.add_index_field 'book_title', :label => 'Book Title'
 
     config.add_index_field 'format_tesim', :label => 'Format'
 
@@ -372,7 +373,7 @@ class CatalogController < ApplicationController
     # date
     config.add_show_field 'date_tesim', :label => 'Date', :link_to_search => true, helper_method: :link_to_date_facet, if: :no_forum_version?
     config.add_show_field 'date_display_tesim', :label => 'Issue Date' #DLXS
-    
+
     # Date type qualifier
     for n in 1..config.max_r_count[:date]
       label = 'Date' + (n == 1 ? '' : ' ' + n.to_s)
