@@ -64,7 +64,7 @@ def get_collection_path(nickname)
 	when "eleusis"
 		full = 'Mysteries at Eleusis: Images of Inscriptions'
 	when "ezra"
-		full = 'Ezra Cornell Papers, Ezra Cornell Letters'
+		full = 'Ezra Cornell Papers'
 	when "fallout"
 		full = 'Nuclear Fallout Pamphlets'
 	when "flow"
