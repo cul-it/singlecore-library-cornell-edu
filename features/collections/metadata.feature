@@ -29,7 +29,7 @@ Examples:
 	# | sea | url |
 	| witchcraft | https://rmc.library.cornell.edu/witchcraftcoll/ |
 	| words | /collections/wordsworth |
-	| adler | http://rmc.library.cornell.edu/hiphop/adler.html |
+	| adler | http://rmc.library.cornell.edu/hiphop/adler.php |
 	| adwhite | http://resolver.library.cornell.edu/misc/4077228 |
 	| aerial | /collections/aerialny |
 	| ahearn | http://rmc.library.cornell.edu/hiphop/ |
@@ -41,7 +41,7 @@ Examples:
 	| blaschka | /collections/blaschka |
 	| cast | http://hdl.handle.net/1813.001/8946675e |
 	| coins | http://hdl.handle.net/1813.001/8946679a |
-	| conzo | http://rmc.library.cornell.edu/hiphop/conzo.html |
+	| conzo | http://rmc.library.cornell.edu/hiphop/conzo.php |
 	| culmaps | https://olinuris.library.cornell.edu/collections/maps/sections/digital-images |
 	| divinecomedy | http://resolver.library.cornell.edu/misc/7889273 |
 	| dynkin | /collections/dynkin |
@@ -51,7 +51,7 @@ Examples:
 	| gems | http://hdl.handle.net/1813.001/8788389a |
 	| harrisson | /collections/harrisson |
 	# | hill | url |
-	| hiphopflyers | http://rmc.library.cornell.edu/hiphop/flyers.html |
+	| hiphopflyers | http://rmc.library.cornell.edu/hiphop/flyers.php |
 	| howell | http://resolver.library.cornell.edu/misc/5618018 |
 	| impersonator | /collections/impersonator-postcards |
 	| isbell | http://resolver.library.cornell.edu/misc/5745591 |
@@ -63,7 +63,7 @@ Examples:
 	# | karma | url |
 	# | kassoy | url |
 	| kingsbury | http://rmc.library.cornell.edu/alisonmasonkingsbury/ |
-	| kmoddl | http://resolver.library.cornell.edu/misc/5146902 |
+	| kmoddl | https://digital.library.cornell.edu/collections/kmoddl |
 	# | leuenberger | url |
 	| lindsaycooper | /collections/lindsaycooper |
 	| loewentheil | https://rare.library.cornell.edu/collections/photography |
