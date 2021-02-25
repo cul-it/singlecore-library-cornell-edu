@@ -22,7 +22,7 @@ Feature: Confirm that collections have the correct number of assets
 	| dlxs | hivebees | 34479 | 34479 |
 	| dlxs | hunt | 33392 | 33392 |
 	| dlxs | izquierda | 0 | 2740 |
-	| dlxs | liber | 0 | 1205 |
+	| dlxs | liber | 1205 | 1205 |
 	| dlxs | may | 225331 | 225332 |
 	| dlxs | mmay | 2329 | 2329 |
 	| dlxs | nur | 0 | 16503 |
