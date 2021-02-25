@@ -200,7 +200,7 @@ class ApplicationController < ActionController::Base
         dlxs[:hivebees],
         dlxs[:hunt],
         # dlxs[:izquierda],
-        # dlxs[:liber],
+        dlxs[:liber],
         dlxs[:may],
         dlxs[:mmay],
         # dlxs[:nur],
