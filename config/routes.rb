@@ -92,6 +92,7 @@ end
   get '/collections/japanesetheater' => 'high_voltage/pages#show', :id => 'collections/japanesetheater/index'
   get '/collections/japaneseworld' => 'high_voltage/pages#show', :id => 'collections/japaneseworld/index'
   get '/collections/kmoddl' => 'high_voltage/pages#show', :id => 'collections/kmoddl/index'
+  get '/collections/liberian' => 'high_voltage/pages#show', :id => 'collections/liberian/index'
   get '/collections/lindsaycooper' => 'high_voltage/pages#show', :id => 'collections/lindsaycooper/index'
   get '/collections/paniccioli' => 'high_voltage/pages#show', :id => 'collections/paniccioli/index'
   get '/collections/prison-reform' => 'high_voltage/pages#show', :id => 'collections/prison-reform/index'
@@ -111,7 +112,6 @@ end
   # dev pages
   if ENV['COLLECTIONS'] == "development"
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
-    get '/collections/liberian' => 'high_voltage/pages#show', :id => 'collections/liberian/index'
   end
 
   get '/collections/:subject' => 'catalog#index'
