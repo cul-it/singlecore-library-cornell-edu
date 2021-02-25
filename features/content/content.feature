@@ -45,7 +45,7 @@ Examples:
 # | seneca | production | ss:24767712 | - no longer suppressed
 | cooper | production | cooper:0107 |
 | izquierda | production | izquierda1300_1359 |
-| liber | production | liber100_99 |
+# | liber | production | liber100_99 |
 | nur | production | nur27870_1 |
 | sat | production | satkf06_99 |
 #| scott | production | scott7042_2 |
