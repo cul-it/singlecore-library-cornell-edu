@@ -99,7 +99,9 @@ class ApplicationController < ActionController::Base
     if environment == 'development'
       fqa = ['-active_fedora_model_ssi:"Page"', '-format_tesim:"Article"',
         '-solr_loader_tesim:"eCommons"']
+      fqa << '-(publishing_status_tesim:"Suppressed")'
       fqa << '-(show_multiviews_in_search_results_ssi:"first" AND work_sequence_isi:[2 TO *])'
+
       # these [2 TO *] exclusions make it so only one item shows up in search results, not all images separately
       # work_sequence_isi can be missing or be 1 for MULTI_IMAGE_COLLECTIONS
       # but if it's [2 TO *] - this is a compound object and we don't show the other multi_image items
