@@ -97,12 +97,11 @@ class ApplicationController < ActionController::Base
     }
 
     if environment == 'development'
-       fqa = ['-active_fedora_model_ssi:"Page"', '-format_tesim:"Article"',
-        '-solr_loader_tesim:"eCommons"',
         '-(project_id_ssi:' + ssc[:blaschka].to_s + ' AND work_sequence_isi:[2 TO *])',
         '-(project_id_ssi:' + ssc[:seneca].to_s + ' AND work_sequence_isi:[2 TO *])',
         '-(project_id_ssi:' + ssc[:stereoscopes].to_s + ' AND work_sequence_isi:[2 TO *])'
-      ]
+      fqa = ['-active_fedora_model_ssi:"Page"', '-format_tesim:"Article"',
+        '-solr_loader_tesim:"eCommons"']
       # these [2 TO *] exclusions make it so only one item shows up in search results, not all images separately
       # compound_object_count_isi can be missing or be 1 for MULTI_IMAGE_COLLECTIONS
       # but if it's [2 TO *] - this is a compound object and we don't show the other multi_image items
