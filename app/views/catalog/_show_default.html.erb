@@ -91,7 +91,9 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 					<% end %>
 					<%# hathi wordsworth collection link %>
 					<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
-          				<li><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+          				<% if get_hathi_multiviews(@document).length > 0  %>
+						  <li><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						<% end %>
           			<% end %>
           			<%# hathi additional volumes link %>
           			<% if get_hathi_multiviews(@document).length > 1  %>
