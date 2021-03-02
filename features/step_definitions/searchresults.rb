@@ -139,6 +139,10 @@ Then("I should not see id {string} in the search results") do |string|
   end
 end
 
+Then("I should see id {string} in the search results") do |string|
+  page.first("a[href=\"/catalog/#{string}\"]")
+end
+
 Then("the first search result title contains {string}") do |string|
   expect(page.first("div.documentHeader h5.index_title a")).to have_content(string)
 end

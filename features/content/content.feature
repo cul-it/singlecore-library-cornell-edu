@@ -56,26 +56,34 @@ Examples:
 | suppressed sterrett | production | ss:12561355 |
 | suppressed artifacts | production | ss:640913 |
 
-@DIGCOLL-1686
+@DIGCOLL-1900
+@content-assets-suppressed
+Scenario Outline: Now only Seneca suppresses the second and subsequent of multiple images
+    When I browse collection nicknamed '<nickname>'
+    And I search for asset '<asset_title>'
+    Then I should not see id '<second_id>' in the search results
+    And I go to asset '<second_id>'
+    Then the field labeled 'Title (English)' should begin with '<second_title>'
+
+Examples:
+    | nickname | asset_title | second_title | second_id | comment |
+    | seneca | Worked bone | Worked bone | ss:24135566 | pita |
+
+@DIGCOLL-1900
 @content-assets-not-suppressed
-Scenario Outline: In production, only the first multiview object shows in the index, but multiview objects are available
-    Given I enable the 'production' environment
-        And I browse collection nicknamed '<nickname>'
-        And I search for asset '<asset_title>'
-        Then I should not see id '<second_id>' in the search results
-        And I go to asset '<second_id>'
-        Then the field labeled 'Title' should begin with '<second_title>'
-        Then I enable the 'development' environment
+Scenario Outline: Other collections show the second and subsequent of multiple images
+    Given I browse collection nicknamed '<nickname>'
+    And I search for asset '<asset_title>'
+    Then I should see id '<second_id>' in the search results
+    And I go to asset '<second_id>'
+    Then the field labeled 'Title' should begin with '<second_title>'
 
 Examples:
     | nickname | asset_title | second_title | second_id | comment |
     | impersonator | Arigon - Imitateur | Arigon - Imitateur (verso) | ss:24415885 | back of postcard |
     | impersonator | Florin Imitateur | Florin Imitateur (verso) | ss:24415925 | back of postcard |
-    # | seneca | Gooseberry seed | Gooseberry seed | ss:22376969 | pita |
-    # not multiview now, compound | blaschka | Histioteuthis reversa | Histioteuthis reversa | ss:20108238 | |
     | tellennasbeh | Plan 109 (center) | Plan 109 (center) | ss:19102646 | |
-    #  not multiview now | anthrocollections | Stingray spines | Stingray spines | ss:3235765 | multi-image and compound object |
-    #  not multiview now | anthrocollections | Hand spun cotton thread | Ball of hand spun cotton yarn | ss:1334128 | multi-image |
+    | kmoddl | Verge and Foliot Escapement | Verge and Foliot Escapement | ss:29272027 | 4 views total |
 
 Scenario: Reset to development environment in case of failure above
     Given I enable the 'development' environment
