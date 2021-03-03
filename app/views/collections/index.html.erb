@@ -2,11 +2,11 @@
 <p>Find me in app/views/collections/index.html.erb</p>
 
 <ul>
-<%-  @examples.each do |example| -%>
+<%-  @collections.each do |collection| -%>
     <li>
-    <% if example['collection_tesim'].present? %>
-        <%= example['collection_tesim'][0] %>
-    <% end %>
+    <img src="<%= collection.image =%>" />
+    <a href="<%= collection.search %>"><%= collection.title =%></a> -
+    <a href="<%= collection.landing %>">Example Landing Page</a>
     </li>
 <% end %>
 </ul>
