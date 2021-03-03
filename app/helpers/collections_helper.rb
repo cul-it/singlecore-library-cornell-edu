@@ -9,4 +9,11 @@ module CollectionsHelper
         nicknames.delete('regmi:')
         nicknames
     end
+
+    def get_collection_example(nickname)
+        q = "select?q=*%3A*&fq=collection_nickname_ssi%3A#{nickname}&rows=1&wt=json&indent=true"
+        response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/#{q}"))
+        example = response['response']['docs'][0]
+    end
+
 end
