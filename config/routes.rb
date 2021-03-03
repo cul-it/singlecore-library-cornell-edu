@@ -1,5 +1,7 @@
 
 Rails.application.routes.draw do
+  get 'collections/index'
+
   get 'canned_query/index'
   get '/cq/:id' => 'canned_query#redirect', :id => 'nickname'
 
