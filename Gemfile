@@ -1,63 +1,68 @@
 source 'http://rubygems.org'
 ruby "2.5.5"
 
-gem "blacklight", "6.2.0"
-gem 'sprockets', '>= 3.7.2'
-gem 'nokogiri', '>= 1.10.8'
+gem "blacklight", "7.8.0"
+gem 'sprockets'#, '>= 3.7.2'
+gem 'nokogiri'#, '>= 1.10.8'
 gem 'appsignal'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'#, '>= 5.2.4.2' #'4.2.11.1'
 gem 'actionview'#, '>= 5.2.4.2' # '>= 4.2.11.1'
 gem 'activesupport'
 gem 'actionpack'
-gem "rest-client", ">= 1.8.0"
+gem "rest-client"#, ">= 1.8.0"
 gem "dotenv-rails"
 gem "dotenv-deployment"
 gem 'httpclient'
-gem "websocket-extensions", ">= 0.1.5"
-gem "kaminari", ">= 1.2.1"
+gem "websocket-extensions"#, ">= 0.1.5"
+gem "kaminari"#, ">= 1.2.1"
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '1.3.13'
+gem 'sqlite3'#, '1.3.13'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'#, '~> 5.0'
+gem 'bootstrap-sass'
+gem 'bootstrap'
+gem 'twitter-bootstrap-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'#, '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'#, '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
- #gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
+gem 'i18n', '1.8.3'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 #devise
-gem "devise", ">= 4.7.1"
+gem "devise"#, ">= 4.7.1"
 
 gem 'rails_autolink'
 # Use jquery as the JavaScript library
-gem 'jquery-rails','4.2.1'
+gem 'jquery-rails'#,'4.2.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'#, '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc'#, '~> 0.4.0', group: :doc
 
 gem 'openseadragon'
 
-gem "rubyzip", ">= 1.3.0"
+gem "rubyzip"#, ">= 1.3.0"
 
 # Use font-awesome for icons
-gem 'font-awesome-sass', '~> 4.3.0'
+gem 'font-awesome-sass'#, '~> 4.3.0'
 
 #static pages gem
-gem 'high_voltage', '~> 3.1'
+gem 'high_voltage'#, '~> 3.1'
 
 gem 'blacklight-gallery'
 
 gem 'blacklight-maps'
-gem 'leaflet-rails','0.7.7'
+gem 'leaflet-rails'#,'0.7.7'
 
 gem "blacklight_range_limit"
+gem 'phantomjs', '~> 2.1', '>= 2.1.1.0', :require => 'phantomjs/poltergeist'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -79,7 +84,7 @@ group :development, :test do
   gem 'xray-rails'
   gem 'selenium-webdriver'
   gem 'webrick'
-  gem 'phantomjs', '~> 2.1', '>= 2.1.1.0', :require => 'phantomjs/poltergeist'
+#  gem 'phantomjs', '~> 2.1', '>= 2.1.1.0', :require => 'phantomjs/poltergeist'
 end
 
 group :test do
@@ -96,9 +101,9 @@ group :test do
   gem 'simplecov-rcov'
 end
 
-gem 'coveralls', '~> 0.8', require: false
+gem 'coveralls'#, '~> 0.8', require: false
 
-gem 'rsolr', '~> 1.0.6'
-gem 'devise-guests', '~> 0.3'
+gem 'rsolr'#, '~> 1.0.6'
+gem 'devise-guests'#, '~> 0.3'
 
-gem 'google-analytics-rails', '1.1.1'
+gem 'google-analytics-rails'#, '1.1.1'
