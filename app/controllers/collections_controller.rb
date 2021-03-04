@@ -10,8 +10,8 @@ class CollectionsController < ApplicationController
       @collections << Collection.new(
         n,
         item["collection_tesim"][0],
-        item['media_URL_size_0_tesim'].present? ? item['media_URL_size_0_tesim'][0] : get_image(n),
-        item['collection_website_ssi'].present? ? item['collection_website_ssi'] : get_landing_page(n),
+        get_example_image(item),
+        get_example_landing_page(item),
         "/cq/#{n}"
       )
     }
