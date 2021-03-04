@@ -20,10 +20,10 @@
 		<div class="parent-link">
 			    Page <%= @page_number %>
 			    <% parentId = document["id"][0..document["id"].rindex('_') - 1] %>
-			    <% if document["title_tesim"][0].size < 10 %>
+			    <% if !document["title_tesim"].nil? and document["title_tesim"][0].size < 10 %>
 			       <% parentTitle = "Link to parent document" %>
 			    <% else %>
-			       <% parentTitle = document["title_tesim"][0][0..document["title_tesim"][0].rindex('-') - 2] %>
+			       <% parentTitle = document["book_title_tesim"][0][0..document["title_tesim"][0].rindex('-') - 2] %>
                             <% end %>
 			of <a href="/catalog/<%= parentId %>" ><%= parentTitle %></a>
 		</div>
