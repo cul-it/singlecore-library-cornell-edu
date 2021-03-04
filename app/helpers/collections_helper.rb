@@ -24,6 +24,20 @@ module CollectionsHelper
         end
     end
 
+    def get_example_image(example)
+        source = get_collection_source(example)
+        if source == 'forum'
+            if example['media_URL_size_0_tesim'].present?
+                return example['media_URL_size_0_tesim'][0]
+            end
+        elsif source == 'dlxs'
+            if example['awsthumbnail_tesim'].present?
+                return example['awsthumbnail_tesim'][0]
+            end
+        end
+        get_image(example['collection_nickname_ssi'])
+    end
+
     def get_image(nickname)
         images = {
             adler: '/images/thumb/thumb-ragamala.jpg',
