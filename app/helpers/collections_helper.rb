@@ -16,6 +16,14 @@ module CollectionsHelper
         example = response['response']['docs'][0]
     end
 
+    def get_collection_source(example)
+        if example['publishing_status_tesim'].present?
+            'forum'
+        else
+            'dlxs'
+        end
+    end
+
     def get_image(nickname)
         images = {
             adler: '/images/thumb/thumb-ragamala.jpg',
