@@ -36,7 +36,7 @@
 		<div class="parent-link">
 			From
 		    <% parentId = document["id"][0..document["id"].index('_') - 1] %>
-		    <% if journal_title.size < 10 %>
+		    <% if journal_title.size < 6 %>
 		       <% parentTitle = "Link to parent document" %>
 		    <% else %>
 		       <% parentTitle = journal_title %>
