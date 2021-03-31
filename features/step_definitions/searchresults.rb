@@ -82,6 +82,11 @@ Then("I should see {int} additional views") do |int|
   expect(page.find('div.multi-image-wrapper')).to have_selector('div.multi-image', count: int)
 end
 
+Then("I visit the first additional view") do
+  page.first("div.multi-image > a").click
+end
+
+
 Then("result {int} field {string} should begin {string}") do |int, string, string2|
   within ("div#searchresults div#documents div.document[#{int}] dl") do
     dt = page.find('dt', text: /^#{string}:$/)
