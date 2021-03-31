@@ -2,13 +2,22 @@
 	<div id="skiptocontent"><a href="#maincontent">Skip to main content</a></div>
     <div class="container">
     	<div class="row">
-	      	<div class="cornell-logo col-xs-8 col-sm-6">
-	        	<a href="http://www.cornell.edu">Cornell University<%#= image_tag "cornell-white.gif" , alt: "Cornell University" %></a>
+	      	<div class="col-xs-8 col-sm-6">
+	        	<div class="cornell-logo hidden-xs">
+		          <a href="http://www.cornell.edu" class="insignia">Cornell University</a>
+		          <div class="library-brand">
+		            <a href="https://library.cornell.edu">Library</a>
+		          </div>
+		        </div>
+		        <div class="visible-xs">
+		          <a class="mobile-cornell-logo" href="https://www.cornell.edu">Cornell University</a>
+		          <a class="library-brand-mobile" href="https://library.cornell.edu">Library</a>
+		        </div>
 	      	</div>
 	      	<div class="util-links col-sm-6">
 	          <%= render :partial=>'/user_util_links' %>
 	        </div>
 	    </div>
-        <%= image_tag "cul-logo-white.gif" , alt: "Cornell University Library", class: "cul-print-logo" %>
+        <%= image_tag "CULibraryRed.jpg" , alt: "Cornell University Library", class: "cul-print-logo" %>
     </div>
 </div>
