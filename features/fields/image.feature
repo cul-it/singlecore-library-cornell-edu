@@ -18,6 +18,7 @@ Feature: Compound and Related Images
     | stereoscopes | Gluggafoss | 1 |
 
     @image-multi
+    @DIGCOLL-1942
     Scenario Outline: Multi image collections should show Additional Views
         Given I go to Forum asset id '<id>'
             Then I should see <count> additional views
@@ -29,6 +30,8 @@ Feature: Compound and Related Images
     | tellennasbeh | 19102646 | 1 |
     | tellennasbeh | 19102650 | 1 |
     # not multi image now | anthrocollections | 1334130 | 6 |
+    | seneca | 24767702 | 1 |
+    | seneca | 22376853 | 1 |
 
     @javascript
     @multi-image
@@ -121,3 +124,22 @@ Feature: Compound and Related Images
         | ss:28448935 | Catalog Number | 1952.WH64.1 |
         # the next one should be | ss:19102626 | Plan Number | 057 | but that field is suppressed
         | ss:19102626 | Title | Plan 57 |
+
+    @DIGCOLL-1942
+    @multi-image
+    Scenario Outline: Second and subsequent multi-image items should not show in search, but still should be accessible
+        Given I enable the 'production' environment
+            And I browse collection nicknamed '<nickname>'
+            And I search for asset '<asset_keyword>'
+            Then there should be <count> search results
+            And I click on the first search result
+            Then I should see <multiviews> additional views
+            And I visit the first additional view
+            Then I see the asset is not suppressed
+            Then I enable the 'development' environment
+
+    Examples:
+    | nickname | asset_keyword | count | multiviews |
+    | seneca  | 2440.TR0654.014 | 1 | 1 |
+    | seneca | 2440.TR0525.018 | 1 | 1 |
+    | seneca | 1952.WH329.5 | 1 | 1 |
