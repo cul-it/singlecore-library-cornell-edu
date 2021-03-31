@@ -207,6 +207,7 @@
 // ------------------------------------- //
 .nav-collection {
 	margin-bottom: .5em;
+	margin-right: 0;
 	li:first-child {
 		border: 0;
 	}
@@ -228,6 +229,11 @@
 		background: black;
 		color: white;
 	}
+}
+
+// Fix nav extending outside the window on mobile
+.nav.navbar-nav.nav-collection {
+	margin-right: 0;
 }
 
 // Default mobile nav button - aerial, sri lanka, etc.

@@ -40,49 +40,64 @@
 		font-size: 14px;
 	}
 }
+
+// New CUL logo
 .cornell-logo {
-	padding-top: 4px;
-	padding-bottom: 4px;
+	margin: 1rem 0;
+	background: url("/img/CULibraryRed.svg") no-repeat;
+	.insignia {
+		float: left;
+		margin-right: .5em;
+		width: 100px;
+		height: 100px;
+		text-indent: -99999em;
+	}
+}
+.library-brand {
 	a {
+		text-indent: -99999em;
 		display: block;
-		width: 199px;
-		height: 45px;
-		text-indent: -9999em;
-		background: url("/img/cornell-reduced-red.svg") no-repeat;
+		width: 160px;
+		height: 100px;
+		margin-left: 150px;
 	}
 }
 
-// Library brand
+// New CUL mobile logo
+.mobile-cornell-logo {
+	background: url("/img/cornell-reduced-red.svg") no-repeat;
+	width: 200px;
+	height: 45px;
+	display: block;
+	text-indent: -99999em;
+	margin-top: 1rem;
+}
+.library-brand-mobile {
+	display: block;
+	background: url("/img/CULWordmark.svg") no-repeat;
+	text-indent: -99999em;
+	width: 120px;
+	height: 45px;
+	margin-top: .5rem;
+}
+
+
+// Site brand
 // ------------------- //
+.site-brand {
+	margin-bottom: 1.5rem;
+}
 .brand {
-	text-transform: uppercase;
-	font-size: 24px;
 	font-family: $font-family-cul;
 	color: $gray-dark;
 	line-height: 1em;
 	display: inline-block;
 	text-decoration: none;
+	font-size: 4rem;
 }
 .brand:hover, .brand:active, .brand:focus {
 	color: $gray-dark;
 	text-decoration: none;
-}
-.cul-brand {
-	font-size: 16px;
-	font-family: $font-family-cul;
-	display: block;
-	color: $gray-dark;
-	text-decoration: none;
-}
-.cul-brand:hover, .cul-brand:active, .cul-brand:focus {
-	color: $gray;
-	text-decoration: none;
-}
-.cul {
-	h1 {
-		margin: 0;
-		line-height: 1;
-	}
 }
 
 // Navbar
@@ -140,12 +155,6 @@
 
 // Small devices (tablets, 768px and up)
 @media (min-width: $screen-sm) { 
-	.cul-brand {
-		display: inline-block;
-	}
-	.brand {
-		font-size: 28px;
-	}
 	.util-links {
 		padding-right: 15px;
 		#navbar {
@@ -166,13 +175,13 @@
 			border-bottom: 0;
 		}
 	}
+	.site-brand {
+		margin-bottom: 0;
+	}
 }
 
 // Medium devices (desktops, 992px and up)
 @media (min-width: $screen-md) {
-	// .brand {
-	// 	font-size: 30px;
-	// }
 	.util-links {
 		.nav > li > a {
 			padding: 10px 15px !important;
