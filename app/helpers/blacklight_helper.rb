@@ -636,7 +636,7 @@ def asset_visible?(document)
       fq = fqa.join(' AND ')
     else
       fq = @fq
-      fq.slice! '-work_sequence_isi:[2 TO *] AND'
+      fq.slice! '-(show_multiviews_in_search_results_ssi:"first" AND work_sequence_isi:[2 TO *]) AND'
       fq
     end
     fq = URI.escape(fq)
