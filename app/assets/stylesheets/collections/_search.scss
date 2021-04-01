@@ -55,13 +55,9 @@
 
 .search-box {
 	clear: both;
-	margin-top: .75em;
 	.search-query-form {
 		width: 100%;
 	}
-	// .form-group.col-xs-3 {
-	// 	padding-right: 10px;
-	// }
 	.form-group {
 		margin-bottom: 0;
 	}
@@ -69,6 +65,9 @@
 		.form-control {
 			width: 100%;
 		}
+	}
+	.row {
+		margin-left: 0;
 	}
 }
 
@@ -161,16 +160,6 @@
 	.remove {
 		font-size: 14px;
 	}
-	// .remove:hover {
-	// 	background: white;
-	// 	border-color: #ccc;
-	// 	.glyphicon {
-	// 		color: $gray-dark;
-	// 	}
-	// }
-	// .glyphicon {
-	// 	color: $cornell-red;
-	// }
 }
 .constraints-container {
 	.btn {
@@ -192,12 +181,6 @@
 	border-color: $portal-red;
 	color: white;
 }
-// .constraint-value {
-// 	font-size: 14px;
-// }
-// .text-muted, .appliedFilter .filterName:after, .facet-values .remove, .search_history .filterName, .search_history .filterSeparator, .appliedFilter .filterName:after, .facet-values .remove, .search_history .filterName, .search_history .filterSeparator {
-// 	color: $gray !important;
-// }
 
 // Display labels on view buttons
 // --------------------------------
