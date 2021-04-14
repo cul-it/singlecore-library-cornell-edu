@@ -34,7 +34,8 @@ $blaschka-red-hover: #9D2121;
 		padding: 10px 20px;
 	}
 	.nav > li > a:hover,
-	.nav > li > a:active {
+	.nav > li > a:active,
+	.nav > li > a:focus {
 		background: $blaschka-black;
 	}
 	.nav > .collection-link {
@@ -61,6 +62,7 @@ $blaschka-red-hover: #9D2121;
 	color: white;
 	background: $blaschka-black;
 	padding-bottom: 3em;
+	padding-top: 3em;
 	p {
 		font-weight: 300;
 	}
