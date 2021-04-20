@@ -179,12 +179,19 @@
 	@include make-xs-column(4);
 	@include make-sm-column(2);
 	text-align: center;
+	.caption {
+		margin-top: .5em;
+		font-size: 14px;
+		display: inline-block;
+		text-decoration: underline;
+	}
 }
 .sets {
 	.row {
 		margin-bottom: 2em;
 	}
 }
+// DELETE use of this
 .set-link {
 	margin-top: .5em;
 }
