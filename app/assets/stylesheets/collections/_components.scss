@@ -18,12 +18,18 @@
 .btn:active, .btn:focus {
 	box-shadow: none;
 }
-.btn-portal, .btn-portal:hover, .btn-portal:active, .btn-portal:focus {
+.btn-portal {
   border-radius: 0;
   background: $portal-red;
   color: white;
   font-size: 14px;
   border: 0;
+}
+.btn-portal:hover,
+.btn-portal:active,
+.btn-portal:focus {
+  background: $portal-red-hover;
+  color: white;
 }
 // Bootstrap overrides
 .btn {
@@ -80,7 +86,6 @@
   @include make-sm-column(3);
   margin-bottom: 2em;
   p {
-    color: $gray;
     font-size: 12px;
     a {
       font-size: 14px;

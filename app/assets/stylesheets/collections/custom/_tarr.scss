@@ -1,9 +1,6 @@
 // Variables
 // ------------
 
-$ice-blue: #05b7c7;
-$light-ice-blue: #abe4e9;
-$dark-ice-blue: #049dab;
 $font-family-tarr-serif: 'Cinzel';        @import
 url(//fonts.googleapis.com/css?family=Cinzel);
 
@@ -15,7 +12,7 @@ url(//fonts.googleapis.com/css?family=Cinzel);
 		background: image-url("collections/tarr/2891668.jpg") no-repeat 50% 50%;
 		min-height: 600px;
 		.well {
-			background: rgba(255,255,255,.3);
+			background: rgba(255,255,255,.9);
 			margin-top: 5em;
 			padding: 30px;
 			border: 0;
@@ -30,14 +27,6 @@ url(//fonts.googleapis.com/css?family=Cinzel);
 			}
 		}
 	}
-	.btn-search {
-		.glyphicon {
-			color: $dark-ice-blue;
-		}
-	}
-	.btn-primary {
-		background: $ice-blue;
-	}
 }
 
 .basic-header.tarr-header {
@@ -51,25 +40,8 @@ url(//fonts.googleapis.com/css?family=Cinzel);
 	}
 	.subtitle {
 		font-family: $font-family-tarr-serif;
-		margin: 0 0 25px 0;
+		margin: 0 0 1rem 0;
 		font-size: 16px;
-	}
-	.nav-collection {
-		li > a {
-			text-decoration: none;
-		}
-		li > a:hover {
-			background: $light-ice-blue;
-			color: $gray-dark;
-		}
-		.active > a,
-		.active > a:hover,
-		.active > a:visited,
-		.active > a:active {
-			background: $ice-blue;
-			color: white;
-			text-decoration: none;
-		}
 	}
 }
 .tarr-info {
