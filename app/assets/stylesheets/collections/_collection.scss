@@ -44,6 +44,11 @@
 		background: $gray;
 		border: 0;
 	}
+	.btn-primary:hover,
+	.btn-primary:active,
+	.btn-primary:focus {
+		background: black;
+	}
 	p {
 		margin-bottom: 1em;
 	}
@@ -216,11 +221,9 @@
 		border: 0;
 	}
 	li > a {
-		color: black;
-		text-transform: uppercase;
+		color: $link-color;
 		font-size: 14px;
-		text-decoration: none;
-		background: $gray-light;
+		background: white;
 	}
 	li > a:hover {
 		background: $portal-red;
