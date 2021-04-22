@@ -1,12 +1,13 @@
 <h1>Collections#index</h1>
 <p>Find me in app/views/collections/index.html.erb</p>
 
-<ul>
 <%-  @collections.each do |collection| -%>
-    <li>
-    <img src="<%= collection.image =%>" />
-    <a href="<%= collection.search %>"><%= collection.title =%></a> -
-    <a href="<%= collection.landing %>">Landing Page</a>
-    </li>
+	<div class="media">
+	  <div class="media-left">
+	      <img class="media-object"  src="<%= collection.image =%>" alt="" />
+	  </div>
+	  <div class="media-body">
+	    <div class="media-heading"><a href="<%= collection.landing %>"><%= collection.title =%></a></div>
+	  </div>
+	</div>
 <% end %>
-</ul>
