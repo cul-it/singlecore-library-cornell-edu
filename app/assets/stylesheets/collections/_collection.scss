@@ -33,6 +33,7 @@
 	}
 }
 .special-collections {
+	padding-bottom: 3rem;
 	h2 {
 		margin-top: .5em;
 		a {
@@ -42,6 +43,11 @@
 	.btn-primary {
 		background: $gray;
 		border: 0;
+	}
+	.btn-primary:hover,
+	.btn-primary:active,
+	.btn-primary:focus {
+		background: black;
 	}
 	p {
 		margin-bottom: 1em;
@@ -178,14 +184,17 @@
 	@include make-xs-column(4);
 	@include make-sm-column(2);
 	text-align: center;
+	.caption {
+		margin-top: .5em;
+		font-size: 14px;
+		display: inline-block;
+		text-decoration: underline;
+	}
 }
 .sets {
 	.row {
 		margin-bottom: 2em;
 	}
-}
-.set-link {
-	margin-top: .5em;
 }
 .sets--3col {
 	.set-item {
@@ -207,15 +216,14 @@
 // ------------------------------------- //
 .nav-collection {
 	margin-bottom: .5em;
+	margin-right: 0;
 	li:first-child {
 		border: 0;
 	}
 	li > a {
-		color: black;
-		text-transform: uppercase;
+		color: $link-color;
 		font-size: 14px;
-		text-decoration: none;
-		background: $gray-light;
+		background: white;
 	}
 	li > a:hover {
 		background: $portal-red;
@@ -228,6 +236,11 @@
 		background: black;
 		color: white;
 	}
+}
+
+// Fix nav extending outside the window on mobile
+.nav.navbar-nav.nav-collection {
+	margin-right: 0;
 }
 
 // Default mobile nav button - aerial, sri lanka, etc.

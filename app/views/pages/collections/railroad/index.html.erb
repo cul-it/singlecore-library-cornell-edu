@@ -8,11 +8,10 @@
 				<%= render '/catalog/search_form', { :@collection_search => "U.S. President's Railroad Commission Photographs"}  %>
 			</div>
 			<a href="/catalog/ss:20864752">
-			<%= image_tag "collections/railroad/5003pb60f004.jpg" , alt: "CNW Locomotive #1653 at platform in passenger terminal (fireman side)", class: "img-responsive" %>
+				<%= image_tag "collections/railroad/5003pb60f004.jpg" , alt: "", class: "img-responsive" %>
+				<p class="caption">CNW Locomotive #1653 at platform in passenger terminal (fireman side)</p>
 			</a>
-			<p class="caption">
-				CNW Locomotive #1653 at platform in passenger terminal (fireman side)
-			</p>
+			
 		</div>
 		<div class="col-sm-8 col-sm-pull-4">
 			<p>The U.S. Presidential Railroad Commission was established by Executive Order No. 10891 of November 1, 1960, to consider a controversy between carriers represented by the Eastern, Western, and Southeastern Carriers' Conference Committees and railroad employees. The employees were represented by labor organizations for operating employees: the Brotherhood of Locomotive Engineers (BLE), the Brotherhood of Locomotive Firemen and Enginemen (BLF&E), the Order of Railway Conductors and Brakemen (ORC&B), the Brotherhood of Railroad Trainmen (BRT), and the Switchmen's Union of North America (SUNA).</p>
@@ -24,7 +23,7 @@
 
 			<div class="pull-left img-left">
 				<a href="https://www.archives.gov/nhprc">
-				<%= image_tag "collections/railroad/nhprc-logo-l.jpg" , alt: "National Historical Publications & Records Commission", class: "img-thumbnail img-responsive" %>
+					<%= image_tag "collections/railroad/nhprc-logo-l.jpg" , alt: "National Historical Publications & Records Commission", class: "img-thumbnail img-responsive" %>
 				</a>
 			</div>
 
@@ -36,7 +35,6 @@
 			<h3>Finding aid</h3>
 			<p><a href="http://rmc.library.cornell.edu/EAD/htmldocs/KCL05003p.html" class="finding-aid-link">Guide to the U.S. President's Railroad Commission Photographs<i class="fa fa-external-link" aria-hidden="true"></i></a></p>
 			<%= render partial: 'pages/collections/railroad/sets' %>
-			<%= render partial: 'pages/top' %>
 		</div>
 	</div>
 

@@ -51,10 +51,22 @@ Examples:
 #| scott | production | scott7042_2 |
 | sea | production | seaA29c_8 |
 | active_fedora_model_ssi Page | production | nur00420_4 |
-| suppressed rare | production | ss:550947 |
-# | suppressed clairholt | production | ss:321396 |
-| suppressed sterrett | production | ss:12561355 |
-| suppressed artifacts | production | ss:640913 |
+
+@DIGCOLL-1941
+Scenario Outline: Suppressed Forum items should not be available in the development environment
+    Given I enable the '<environment>' environment
+        And I go to asset '<id>'
+        Then I should see the text 'The page you are looking for doesn't exist.'
+        Then I enable the 'development' environment
+
+Examples:
+    | environment | id |
+    | development | ss:550947 |
+    | production | ss:550947 |
+    | development | ss:12561355 |
+    | production | ss:12561355 |
+    | development | ss:640913 |
+    | production | ss:640913 |
 
 @DIGCOLL-1900
 @content-assets-suppressed
