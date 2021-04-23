@@ -129,13 +129,11 @@ module CollectionsHelper
     end
 
     def get_example_landing_page(example)
-        source = get_collection_source(example)
-        if source == 'forum'
-            if example['collection_website_ssi'].present?
-                return example['collection_website_ssi']
-            end
+        if example['collection_website_ssi'].present?
+            return example['collection_website_ssi']
+        else
+            get_landing_page(example['collection_nickname_ssi'])
         end
-        get_landing_page(example['collection_nickname_ssi'])
     end
 
     def get_landing_page(nickname)
