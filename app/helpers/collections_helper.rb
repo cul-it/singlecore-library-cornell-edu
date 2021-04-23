@@ -222,6 +222,22 @@ module CollectionsHelper
             words: '/collections/kmoddl'
         }
         pages.key?(nickname.to_sym) ? pages[nickname.to_sym] : ''
-   end
+        '/cq/' + nickname;
+    end
+
+    def get_host_name(url)
+        url = "http://#{url}" if URI.parse(url).scheme.nil?
+        host = URI.parse(url).host
+        host.downcase unless host.nil?
+    end
+
+    def is_external_url?(url)
+        host = get_host_name(url)
+        if host.nil?
+            false
+        else
+            ['digital.library.cornell.edu', 'digital-stg.library.cornell.edu', 'localhost', '0.0.0.0'].exclude? host
+        end
+    end
 
 end
