@@ -6,7 +6,11 @@ module CollectionsHelper
         list = response['facet_counts']['facet_fields']['collection_nickname_ssi']
         # commes back as array of (nickname, count, nickname2, count2,...)
         nicknames = list.values_at(* list.each_index.select {|i| i.even?})
+
+        # delete discontinued collections here
         nicknames.delete('regmi:')
+        nicknames.delete('cooper')
+
         nicknames
     end
 
