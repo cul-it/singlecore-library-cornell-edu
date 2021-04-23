@@ -7,7 +7,7 @@
 	      <img class="media-object"  src="<%= collection.image =%>" alt="" />
 	  </div>
 	  <div class="media-body">
-	    <div class="media-heading"><a href="<%= collection.landing %>"><%= collection.title =%></a></div>
+	    <div class="media-heading"><a href="<%= collection.landing %>"><%= collection.title =%><% if is_external_url?(collection.landing) %> <span class="fa fa-external-link" aria-hidden="true"></span><% end %></a></div>
 	  </div>
 	</div>
 <% end %>
