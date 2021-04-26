@@ -141,7 +141,7 @@ module CollectionsHelper
         # explicitly enter portal collection pages if available (like chla) to override facet
         pages = {
             adler: '/collections/adler',
-            adwhite: '/collections/adwhite',
+            adwhite: 'https://rmc.library.cornell.edu/adw/',
             aerial: '/collections/aerial',
             ahearn: '/collections/ahearn',
             anthrocollections: '/collections/anthrocollections',
