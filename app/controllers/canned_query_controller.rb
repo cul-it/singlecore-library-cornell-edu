@@ -60,6 +60,7 @@ class CannedQueryController < ApplicationController
       may: { f: { collection_tesim: ['Samuel J. May Anti-Slavery Pamphlet Collection'] } },
       mmay: { f: { collection_tesim: ['Samuel J. May Anti-Slavery Manuscript Collection'] } },
       nur: { f: { collection_tesim: ['Donovan Nuremberg Trials Collection'] } },
+      nuremberg: { f: { collection_tesim: ['Donovan Nuremberg Trials Collection'] } },
       obama: { f: { collection_tesim: ['Obama Visual Iconography'] } },
       page: { f: { collection_tesim: ['Art 2301 Printmaking Student Portfolios'] } },
       paniccioli: { f: { collection_tesim: ['Ernie Paniccioli Photo Archive'] } },
