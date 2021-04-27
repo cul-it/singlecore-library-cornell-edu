@@ -10,7 +10,7 @@ class CollectionsController < ApplicationController
       @collections << Collection.new(
         n,
         item["collection_tesim"][0],
-        get_example_image(item),
+        get_thumbnail_image(n),
         get_example_landing_page(item),
         "/cq/#{n}"
       )
