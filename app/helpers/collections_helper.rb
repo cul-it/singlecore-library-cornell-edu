@@ -11,6 +11,9 @@ module CollectionsHelper
         nicknames.delete('regmi:')
         nicknames.delete('cooper')
 
+        # delete misnamed izquierda records
+        nicknames.delete('izq')
+
         nicknames
     end
 
