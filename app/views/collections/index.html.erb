@@ -1,10 +1,15 @@
-<%-  @collections.each do |collection| -%>
-	<div class="media">
-	  <div class="media-left">
-	      <img class="media-object"  src="<%= collection.image =%>" alt="" />
-	  </div>
-	  <div class="media-body">
-	    <div class="media-heading"><a href="<%= collection.landing %>"><%= collection.title =%><% if is_external_url?(collection.landing) %> <span class="fa fa-external-link" aria-hidden="true"></span><% end %></a></div>
-	  </div>
+<div class="container">
+	<h2>Collections</h2>
+	<div class="collections-wrapper">
+		<%-  @collections.each do |collection| -%>
+			<div class="collections-item">
+			    <div class="collections-heading">
+			    	<a href="<%= collection.landing %>">
+			    		<img class="img-responsive" src="<%= collection.image =%>" alt="" />
+			    		<div class="collections-title"><%= collection.title =%><% if is_external_url?(collection.landing) %><span class="fa fa-external-link" aria-hidden="true"></span><% end %></div>
+			    	</a>
+			    </div>
+			</div>
+		<% end %>
 	</div>
-<% end %>
+</div>
