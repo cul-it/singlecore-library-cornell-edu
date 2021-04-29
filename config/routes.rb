@@ -72,7 +72,7 @@ end
 
   # no facets on high voltage
   # prod pages
-  get '/collections' => 'catalog#facet', :id => 'collection_tesim'
+  get '/collections' => 'collections#index'
 
   # prod pages
   get '/collections/aerialny' => 'high_voltage/pages#show', :id => 'collections/aerialny/index'
