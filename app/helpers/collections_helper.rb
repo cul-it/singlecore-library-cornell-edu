@@ -50,14 +50,6 @@ module CollectionsHelper
         thumb_path = "/images/thumb/#{thumb}"
         path = File.join(Rails.root, "public", thumb_path)
         image = File.exists?(path) ? thumb_path : "/images/thumb/placeholder.jpg"
-   end
-
-    def get_example_landing_page(example)
-        if example['collection_website_ssi'].present?
-            return example['collection_website_ssi']
-        else
-            get_landing_page(example['collection_nickname_ssi'])
-        end
     end
 
     def get_landing_page(nickname)

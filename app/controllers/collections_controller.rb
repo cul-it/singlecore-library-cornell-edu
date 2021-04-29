@@ -11,7 +11,7 @@ class CollectionsController < ApplicationController
         n,
         item["collection_tesim"][0],
         get_thumbnail_image(n),
-        get_example_landing_page(item),
+        get_landing_page(n),
         "/cq/#{n}"
       )
     }
