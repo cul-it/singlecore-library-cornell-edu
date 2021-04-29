@@ -1,7 +1,13 @@
 module CollectionsHelper
 
     def get_collection_nicknames()
-        q = "select?q=*%3A*&rows=0&wt=json&indent=true&facet=true&facet.field=collection_nickname_ssi&facet.limit=-1"
+        if ENV['RAILS_ENV'] == 'production'
+            fq = set_fq(ENV['RAILS_ENV'])
+            fq = '&fq=' + URI.escape(fq)
+        else
+            fq = ''
+        end
+        q = "select?q=*%3A*#{fq}&rows=0&wt=json&indent=true&facet=true&facet.field=collection_nickname_ssi&facet.limit=-1"
         response = JSON.parse(HTTPClient.get_content("#{ENV['SOLR_URL']}/#{q}"))
         list = response['facet_counts']['facet_fields']['collection_nickname_ssi']
         # commes back as array of (nickname, count, nickname2, count2,...)
