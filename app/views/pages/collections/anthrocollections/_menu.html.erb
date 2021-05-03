@@ -1,15 +1,3 @@
-<!-- <div class="navbar">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#anthro-navbar" aria-expanded="false" aria-controls="navbar">
-        Menu
-        <i class="fa fa-bars"></i>
-    </button>
-    <div id="anthro-navbar" class="collapse navbar-collapse">
-      <ul class="nav">
-        <%= link_to_in_li "Home", "/collections/anthrocollections" %>
-        <%= link_to_in_li "Browse the Collection", "/collections/anthrocollections/browse" %>
-      </ul>
-    </div>
-</div> -->
 <div class="collection-search well">
     <h3>Search or <a href="/?f[collection_tesim][]=Selections+from+the+Cornell+Anthropology+Collections&view=gallery">browse the collection</a></h3>
     <%= render '/catalog/search_form', { :@collection_search => "Selections from the Cornell Anthropology Collections"}  %>
