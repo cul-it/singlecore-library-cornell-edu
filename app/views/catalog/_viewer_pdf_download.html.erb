@@ -9,7 +9,7 @@
     </div>
     <div class="col-sm-4">
       <div class="reader-link" data-no-turbolink>
-        <a class="btn btn-portal btn-lg" href="<%= @media %>" onclick="ga('send', 'event', 'download', 'click', 'pdf-button-<%= @project %>-<%= @book_id %>')">Download PDF<i class="fa fa-download" aria-hidden="true"></i></a>
+        <a class="btn btn-portal btn-lg" href="<%= @media %>" onclick="ga('send', 'event', 'download', 'click', 'pdf-button-<%= @project %>-<%= @book_id %>')">Download PDF<span class="fa fa-download" aria-hidden="true"></span></a>
       </div>
       <%= render 'pdf_accessibility' %>
     </div>

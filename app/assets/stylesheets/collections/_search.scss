@@ -165,7 +165,7 @@
 	.btn {
 		white-space: normal; // allows long labels to wrap on smaller screens
 		margin-bottom: 2px; // need this for when buttons don't fit on one line
-		i {
+		.fa {
 			margin-left: .4em;
 		}
 	}
