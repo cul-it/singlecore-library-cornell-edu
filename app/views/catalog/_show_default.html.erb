@@ -69,30 +69,30 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 		 		<ul class="list-unstyled collection-links">
 		 			<%# related link %>
 		 			<% if @url_related_link_tesim.present? %>
-						<li><a href="<%= @url_related_link_tesim %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'RelatedLink-<%= @id %>']);"><%= @title_related_link_tesim %><i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						<li><a href="<%= @url_related_link_tesim %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'RelatedLink-<%= @id %>']);"><%= @title_related_link_tesim %><span class="fa fa-arrow-right" aria-hidden="true"></span></a></li>
 					<% end %>
 					<%# collection website link %>
 			 		<% if @collection_website.present? %>
-						<li><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						<li><a href="<%= @collection_website %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'CollectionWebsite']);">Digital collection website<span class="fa fa-arrow-right" aria-hidden="true"></span></a></li>
 					<% end %>
 					<%# finding aid link %>
 					<% if @finding_aid.present? %>
-						<li><a href="<%= @finding_aid %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'FindingAid']);">Finding aid<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						<li><a href="<%= @finding_aid %>" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'FindingAid']);">Finding aid<span class="fa fa-arrow-right" aria-hidden="true"></span></a></li>
 					<% end %>
 					<%# collection catalog record link %>
 					<% if @bibid.present? %>
 						<li>
-							<a href="https://newcatalog.library.cornell.edu/catalog/<%= @bibid %>">Catalog record<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+							<a href="https://newcatalog.library.cornell.edu/catalog/<%= @bibid %>">Catalog record<span class="fa fa-arrow-right" aria-hidden="true"></span></a>
 						</li>
 					<% end %>
 					<%# artstor collection link %>
 			 		<% if !@ssc_site.blank? %>
-						<li><a href="<%= @ssc_site %>" class="ss-link"  onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'SharedShelf']);">View collection in Artstor<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						<li><a href="<%= @ssc_site %>" class="ss-link"  onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'SharedShelf']);">View collection in Artstor<span class="fa fa-arrow-right" aria-hidden="true"></span></a></li>
 					<% end %>
 					<%# hathi wordsworth collection link %>
 					<% if (render_document_show_field_value :document => @document, :field => 'collection_tesim').include?('Wordsworth') %>
           				<% if get_hathi_multiviews(@document).length > 0  %>
-						  <li><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust<i class="fa fa-arrow-right" aria-hidden="true"></i></a></li>
+						  <li><a href="https://catalog.hathitrust.org/Record/<%=get_hathi_multiviews(@document)[0]['fromRecord']%>">View this item in Hathi Trust<span class="fa fa-arrow-right" aria-hidden="true"></span></a></li>
 						<% end %>
           			<% end %>
           			<%# hathi additional volumes link %>
@@ -111,7 +111,7 @@ render_document_show_field_value(:document => @document, :field => 'active_fedor
 			<% if @purchase_link.present? %>
 				<div class="well">
 					<h2>Purchase</h2>
-					<a href="<%= @purchase_link %>" class="collection-links" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'Amazon-purchase-<%= @id %>']);">Buy this item in print<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					<a href="<%= @purchase_link %>" class="collection-links" onclick="javascript:_paq.push(['trackEvent', 'ExternalLink', 'Amazon-purchase-<%= @id %>']);">Buy this item in print<span class="fa fa-arrow-right" aria-hidden="true"></span></a>
 				</div>
           	<% end %>
 			<%# show digitizing tell-en-nasbeh image map %>
