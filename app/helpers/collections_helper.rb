@@ -68,7 +68,7 @@ module CollectionsHelper
             divinecomedy: '/collections/divinecomedy',
             dynkin: '/collections/dynkin',
             eleusis: '/collections/eleusis',
-            ezra: '/collections/ezra',
+            ezra: 'https://rmc.library.cornell.edu/ezracornellcoll/',
             fallout: '/collections/fallout',
             flow: '/collections/flow',
             gamelan: '/collections/gamelan',
