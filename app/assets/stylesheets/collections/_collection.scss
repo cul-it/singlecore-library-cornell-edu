@@ -252,7 +252,7 @@
 		background: black;
 		color: white;
 		border-radius: 0;
-		i {
+		.fa {
 			margin-left: .25em;
 			color: white;
 		}
@@ -304,7 +304,7 @@
 		font-size: 14px;
 		margin-top: .5em;
 		display: inline-block;
-		i {
+		.fa {
 			margin-left: .3em;
 			color: $cornell-dark-red;
 		}
