@@ -111,6 +111,7 @@ end
 
   # dev pages
   if ENV['COLLECTIONS'] == "development"
+    get '/collections/bandung' => 'high_voltage/pages#show', :id => 'collections/bandung/index'
     get '/collections/dynkin' => 'high_voltage/pages#show', :id => 'collections/dynkin/index'
   end
 
