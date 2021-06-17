@@ -54,6 +54,7 @@ module CollectionsHelper
             ahearn: '/collections/ahearn',
             anthrocollections: '/collections/anthrocollections',
             artifacts: '/collections/artifacts',
+            bandung: '/collections/bandung',
             bam: '/collections/bam',
             bastides: '/collections/bastides',
             beyondtaj: '/collections/beyondtaj',
