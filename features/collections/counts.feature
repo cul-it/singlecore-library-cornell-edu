@@ -73,7 +73,7 @@ Feature: Confirm that collections have the correct number of assets
 	| forum | obama | 87 | 200 |
 	| forum | page | 55 | 55 |
 	| forum | paniccioli | 19581 | 27894 |
-	| forum | pjmode | 862 | 1105 |
+	| forum | pjmode | 862 | 1117 |
 	| forum | politicalamericana | 2012 | 2223 |
 	| forum | prisonwritings | 449 | 449 |
 	| forum | punkflyers | 2091 | 2102 |
