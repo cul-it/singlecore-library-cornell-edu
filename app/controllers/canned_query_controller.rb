@@ -13,6 +13,7 @@ class CannedQueryController < ApplicationController
       ahearn: { f: { collection_tesim: ['Charlie Ahearn Archive'] } },
       anthrocollections: { f: { collection_tesim: ['Selections from the Cornell Anthropology Collections'] } },
       artifacts: { f: { collection_tesim: ['Campus Artifacts, Art & Memorabilia'] } },
+      bandung: { f: { collection_tesim: ['Bandung Artist Collection'] } },
       bam: { f: { collection_tesim: ['Afrika Bambaataa Vinyl Collection'] } },
       bastides: { f: { collection_tesim: ['John Reps Collection - Bastides'] } },
       beyondtaj: { f: { collection_tesim: ['Beyond the Taj: Architectural Traditions and Landscape Experience in South Asia'] } },

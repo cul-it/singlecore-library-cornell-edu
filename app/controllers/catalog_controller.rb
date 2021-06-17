@@ -38,6 +38,10 @@ class CatalogController < ApplicationController
       facet_params = { f: { collection_tesim: ['Afrika Bambaataa Vinyl Collection'] } }
       redirect_to search_catalog_path(facet_params)
     end
+    if params[:subject] == "bandung" && params[:f].nil?
+      facet_params = { f: { collection_tesim: ['Bandung Artist Collection'] } }
+      redirect_to search_catalog_path(facet_params)
+    end
     if params[:subject] == "bastides" && params[:f].nil?
       facet_params = { f: { collection_tesim: ['John Reps Collection - Bastides'] } }
       redirect_to search_catalog_path(facet_params)
